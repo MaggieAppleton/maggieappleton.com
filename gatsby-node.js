@@ -35,21 +35,17 @@ const createPosts = (createPage, createRedirect, edges) => {
 
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
-    query {
+    query BookQuery {
       allMdx(
-        filter: { frontmatter: { published: { ne: false } } }
-        sort: { order: DESC, fields: [frontmatter___date] }
+        filter: {
+          frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
         edges {
           node {
+            excerpt(pruneLength: 120)
             id
-            parent {
-              ... on File {
-                name
-                sourceInstanceName
-              }
-            }
-            excerpt(pruneLength: 250)
             fields {
               title
               slug
