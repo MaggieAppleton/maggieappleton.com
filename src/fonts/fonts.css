@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'GT Walsheim Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('GT-Walsheim-Pro-Regular.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'GT Walsheim Bold';
+  font-style: bold;
+  font-weight: 700;
+  src: url('GT-Walsheim-Pro-Bold.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'GT Walsheim Light';
+  font-style: normal;
+  font-weight: 200;
+  src: url('GT-Walsheim-Pro-Light.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'GT Walsheim Ultralight';
+  font-style: normal;
+  font-weight: 100;
+  src: url('GT-Walsheim-Ultralight.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Freight Text Pro Light';
+  font-style: normal;
+  font-weight: 100;
+  src: url('FreightTextProLight-Regular.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Freight Text Pro Book';
+  font-style: normal;
+  font-weight: 400;
+  src: url('FreightTextProBook-Regular.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Freight Text Pro Italic';
+  font-style: italic;
+  font-weight: 400;
+  src: url('FreightTextProBook-Italic.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Freight Text Pro Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('FreightTextProBlack-Regular.woff') format('woff');
+  font-display: fallback;
+}
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('Cardo-Regular.woff') format('woff');
+  font-display: fallback;
+}
