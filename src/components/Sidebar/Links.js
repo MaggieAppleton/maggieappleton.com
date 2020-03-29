@@ -13,7 +13,7 @@ export default () => {
       <Link to="./notes" aria-label="View notes page">
         Notes & Research
       </Link>
-      <Link to="./books" aria-label="View books page">
+      <Link to="./bookshelf" aria-label="View books page">
         Bookshelf
       </Link>
       <Link to="./tutorials" aria-label="View tutorials page">
