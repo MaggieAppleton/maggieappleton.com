@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <div
       css={css`
-        height: 260px;
+        height: 240px;
         width: 200px;
         position: fixed;
         z-index: 1;
