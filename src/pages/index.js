@@ -150,7 +150,7 @@ export const pageQuery = graphql`
       }
     }
     allMdx(
-      limit: 3
+      limit: 8
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { ne: false } } }
     ) {
