@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
 import Link from '../components/Link'
 import { bpMaxSM, bpMaxMD } from '../lib/breakpoints'
 
-const Essay = ({
+const NotesPage = ({
   data: { site, allMdx },
   pageContext: { pagination, categories },
 }) => {
@@ -124,14 +124,19 @@ const Essay = ({
   )
 }
 
-export default Essay
+export default NotesPage
 
 export const notesQuery = graphql`
   query {
     site {
       ...site
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      filter: {
+        frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 300)

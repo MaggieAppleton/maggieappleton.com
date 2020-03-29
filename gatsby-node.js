@@ -85,7 +85,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 }
 
 const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
-  const pages = edges.reduce((acc, value, index) => {
+  const notesPage = edges.reduce((acc, value, index) => {
     const pageIndex = Math.floor(index / PAGINATION_OFFSET)
 
     if (!acc[pageIndex]) {
@@ -97,7 +97,7 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
     return acc
   }, [])
 
-  pages.forEach((page, index) => {
+  notesPage.forEach((page, index) => {
     const previousPagePath = `${pathPrefix}/${index + 1}`
     const nextPagePath = index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`
 
@@ -109,8 +109,8 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
           page,
           nextPagePath: index === 0 ? null : nextPagePath,
           previousPagePath:
-            index === pages.length - 1 ? null : previousPagePath,
-          pageCount: pages.length,
+            index === notesPage.length - 1 ? null : previousPagePath,
+          pageCount: notesPage.length,
           pathPrefix,
         },
         ...context,
