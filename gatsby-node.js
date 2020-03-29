@@ -23,7 +23,7 @@ const createPosts = (createPage, createRedirect, edges) => {
 
     createPage({
       path: pagePath,
-      component: path.resolve(`./src/templates/post.js`),
+      component: path.resolve(`./src/templates/notes.js`),
       context: {
         id: node.id,
         prev,

@@ -126,7 +126,7 @@ const Essay = ({
 
 export default Essay
 
-export const pageQuery = graphql`
+export const notesQuery = graphql`
   query {
     site {
       ...site
