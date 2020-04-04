@@ -78,7 +78,9 @@ const Description = styled.p`
   display: inline-block;
 `
 
-export default function Index({ data: { site, allMdx } }) {
+export default function Index({
+  data: { site, notesQuery, illustrationQuery },
+}) {
   const theme = useTheme()
   return (
     <Layout site={site}>
@@ -95,9 +97,9 @@ export default function Index({ data: { site, allMdx } }) {
           column-gap: 3em;
         `}
       >
-        {allMdx.edges.map(({ node: post }) => (
+        {illustrationQuery.edges.map(({ node: illustration }) => (
           <div
-            key={post.id}
+            key={illustration.id}
             css={css`
               margin-bottom: 40px;
             `}
@@ -115,17 +117,54 @@ export default function Index({ data: { site, allMdx } }) {
                 css={css`
                   font-family: ${fonts.walsheimLight};
                 `}
-                to={post.frontmatter.slug}
-                aria-label={`View ${post.frontmatter.title}`}
+                to={illustration.frontmatter.slug}
+                aria-label={`View ${illustration.frontmatter.title}`}
               >
-                {post.frontmatter.title}
+                {illustration.frontmatter.title}
               </Link>
             </h2>
             <Description>
-              {post.excerpt}{' '}
+              {illustration.excerpt}{' '}
               <Link
-                to={post.frontmatter.slug}
-                aria-label={`View ${post.frontmatter.title}`}
+                to={illustration.frontmatter.slug}
+                aria-label={`View ${illustration.frontmatter.title}`}
+              >
+                Read Essay →
+              </Link>
+            </Description>
+          </div>
+        ))}
+        {notesQuery.edges.map(({ node: note }) => (
+          <div
+            key={note.id}
+            css={css`
+              margin-bottom: 40px;
+            `}
+          >
+            <h2
+              css={css({
+                marginBottom: rhythm(0.3),
+                transition: 'all 150ms ease',
+                ':hover': {
+                  color: theme.colors.primary,
+                },
+              })}
+            >
+              <Link
+                css={css`
+                  font-family: ${fonts.walsheimLight};
+                `}
+                to={note.frontmatter.slug}
+                aria-label={`View ${note.frontmatter.title}`}
+              >
+                {note.frontmatter.title}
+              </Link>
+            </h2>
+            <Description>
+              {note.excerpt}{' '}
+              <Link
+                to={note.frontmatter.slug}
+                aria-label={`View ${note.frontmatter.title}`}
               >
                 Read Essay →
               </Link>
@@ -135,7 +174,6 @@ export default function Index({ data: { site, allMdx } }) {
         <Link to="/notes" aria-label="Visit written articles">
           View all essays
         </Link>
-        <hr />
       </Container>
     </Layout>
   )
@@ -149,10 +187,45 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(
-      limit: 8
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false } } }
+
+    illustrationQuery: allMdx(
+      filter: {
+        frontmatter: {
+          categories: { eq: "illustration" }
+          published: { ne: false }
+        }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 120)
+          id
+          fields {
+            title
+            slug
+            date
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
+            }
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            slug
+          }
+        }
+      }
+    }
+
+    notesQuery: allMdx(
+      filter: {
+        frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
     ) {
       edges {
         node {

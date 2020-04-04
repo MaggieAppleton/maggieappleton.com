@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { css } from '@emotion/core'
 import { withTheme } from '../Theming'
 import { rhythm } from '../../lib/typography'
-import { bpMaxSM } from '../../lib/breakpoints'
+import { bpMaxMD } from '../../lib/breakpoints'
 import Message from '../ConfirmMessage/Message'
 import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
@@ -96,6 +96,8 @@ class SignUp extends React.Component {
                 <Form
                   css={css`
                     display: flex;
+                    font-size: 0.9em;
+                    max-width: 90vw;
                     align-items: flex-end;
                     button {
                       margin-left: 10px;
@@ -107,9 +109,13 @@ class SignUp extends React.Component {
                     }
                     input,
                     label {
-                      width: 100%;
+                      max-width: 300px;
                     }
-                    ${bpMaxSM} {
+                    input {
+                      border: 1px solid ${theme.colors.grey};
+                      color: ${theme.colors.grey};
+                    }
+                    ${bpMaxMD} {
                       flex-direction: column;
                       align-items: flex-start;
                       width: auto;
@@ -187,8 +193,9 @@ class SignUp extends React.Component {
                   </button>
                 </Form>
               )}
-              {submitted &&
-                !isSubmitting && <PostSubmissionMessage response={response} />}
+              {submitted && !isSubmitting && (
+                <PostSubmissionMessage response={response} />
+              )}
               {errorMessage && <div>{errorMessage}</div>}
             </>
           )}

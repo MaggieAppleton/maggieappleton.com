@@ -9,9 +9,9 @@ const Footer = ({ author, noSubscribeForm }) => (
   <footer>
     <Container
       css={css`
-        padding-top: 0;
+        padding-top: 60px;
         ${bpMaxSM} {
-          padding-top: 0;
+          padding-top: 30px;
         }
       `}
     >
@@ -31,7 +31,7 @@ const Footer = ({ author, noSubscribeForm }) => (
       >
         <div
           css={css`
-            font-size: 90%;
+            font-size: 0.8em;
             opacity: 0.7;
           `}
         >
