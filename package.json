@@ -52,6 +52,7 @@
     "react-live": "^2.1.2",
     "react-markdown": "^4.1.0",
     "react-share": "^3.0.0",
+    "react-transition-group": "^4.3.0",
     "react-typography": "^0.16.19",
     "serve": "^11.1.0",
     "typescript": "^3.5.3",
