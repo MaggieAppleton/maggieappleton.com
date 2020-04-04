@@ -4,21 +4,21 @@ import Link from 'components/Link'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 
-const IllustrationPage = ({ data: { site } }) => {
+const NotesPage = ({ data: { site } }) => {
   const theme = useTheme()
   return (
     <Layout site={site}>
       <Container>
-        <h1>Illustrations</h1>
+        <h1>Notes & Resoureces</h1>
         <p>You just hit a route that doesn't exist</p>
       </Container>
     </Layout>
   )
 }
 
-export default IllustrationPage
+export default NotesPage
 
-export const illustrationQuery = graphql`
+export const notesQuery = graphql`
   query {
     site {
       ...site

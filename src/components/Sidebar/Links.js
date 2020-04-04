@@ -23,9 +23,6 @@ export default () => {
       <Link to="./about" aria-label="View about page">
         About
       </Link>
-      <Link to="./contact" aria-label="View contact page">
-        Contact
-      </Link>
       <Link
         to="./start"
         css={css`
