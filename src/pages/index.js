@@ -90,13 +90,26 @@ export default function Index({
       <Container
         css={css`
           padding-bottom: 0;
+          padding-top: 0;
           display: grid;
-          grid-gap: 0.2em;
+          grid-gap: 1em;
           grid-template-columns: 30% 70%;
           max-width: 75vw;
+          ${bpMaxMD} {
+            grid-template-columns: 100%;
+          }
+          .illustration {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 0.2em;
+          }
         `}
       >
         <section className="notes">
+          <button>Start Here</button>
+          <h3>Writing, Notes & Research</h3>
+          <p>An open wiki of things I'm currently exploring</p>
           {notesQuery.edges.map(({ node: note }) => (
             <div
               key={note.id}
@@ -104,9 +117,9 @@ export default function Index({
                 margin-bottom: 40px;
               `}
             >
-              <h2
+              <h4
                 css={css({
-                  marginBottom: rhythm(0.3),
+                  marginBottom: rhythm(0.1),
                   transition: 'all 150ms ease',
                   ':hover': {
                     color: theme.colors.primary,
@@ -122,63 +135,50 @@ export default function Index({
                 >
                   {note.frontmatter.title}
                 </Link>
-              </h2>
-              <Description>
-                {note.excerpt}{' '}
-                <Link
-                  to={note.frontmatter.slug}
-                  aria-label={`View ${note.frontmatter.title}`}
-                >
-                  Read Essay →
-                </Link>
-              </Description>
+              </h4>
             </div>
           ))}
           <Link to="/notes" aria-label="Visit written articles">
             View all essays
           </Link>
-        </section>
 
-        <section className="illustration">
-          {illustrationQuery.edges.map(({ node: illustration }) => (
-            <div
-              key={illustration.id}
-              css={css`
-                margin-bottom: 40px;
-              `}
-            >
-              <h2
-                css={css({
-                  marginBottom: rhythm(0.3),
-                  transition: 'all 150ms ease',
-                  ':hover': {
-                    color: theme.colors.primary,
-                  },
-                })}
-              >
-                <Link
-                  css={css`
-                    font-family: ${fonts.walsheimLight};
-                  `}
-                  to={illustration.frontmatter.slug}
-                  aria-label={`View ${illustration.frontmatter.title}`}
-                >
-                  {illustration.frontmatter.title}
-                </Link>
-              </h2>
-              <Description>
-                {illustration.excerpt}{' '}
-                <Link
-                  to={illustration.frontmatter.slug}
-                  aria-label={`View ${illustration.frontmatter.title}`}
-                >
-                  Read Essay →
-                </Link>
-              </Description>
-            </div>
-          ))}
           <div className="reading">
             <p>Now Reading</p>
+          </div>
+        </section>
+
+        <section>
+          <h3>Illustration Work</h3>
+          <div className="illustration">
+            {illustrationQuery.edges.map(({ node: illustration }) => (
+              <Link
+                css={css`
+                  font-family: ${fonts.walsheimLight};
+                `}
+                to={illustration.frontmatter.slug}
+                aria-label={`View ${illustration.frontmatter.title}`}
+              >
+                <div
+                  key={illustration.id}
+                  css={css`
+                    margin-bottom: 40px;
+                  `}
+                >
+                  <img src={illustration.frontmatter.banner} />
+                  <h4
+                    css={css({
+                      marginBottom: rhythm(0.3),
+                      transition: 'all 150ms ease',
+                      ':hover': {
+                        color: theme.colors.primary,
+                      },
+                    })}
+                  >
+                    {illustration.frontmatter.title}
+                  </h4>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       </Container>
@@ -223,6 +223,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+            banner {
+              childImageSharp {
+                fluid(maxWidth: 280) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
         }
       }

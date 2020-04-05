@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from '../Theming'
-import { bpMaxSM, bpMaxMD } from '../../lib/breakpoints'
+import { bpMaxSM, bpMaxMD, bpMinLG } from '../../lib/breakpoints'
 import Links from './Links'
 import { fonts } from '../../lib/typography'
 
@@ -13,7 +13,6 @@ const Sidebar = () => {
     <div
       css={css`
         height: 240px;
-        width: 200px;
         position: fixed;
         z-index: 1;
         top: 26%;
@@ -21,6 +20,12 @@ const Sidebar = () => {
         padding: 0;
         font-family: ${fonts.walsheim};
         border-right: 1px solid ${theme.colors.grey};
+        ${bpMaxMD} {
+          width: 180px;
+        }
+        ${bpMinLG} {
+          width: 220px;
+        }
         ${bpMaxSM} {
           display: none;
           visibility: hidden;
