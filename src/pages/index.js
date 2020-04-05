@@ -78,8 +78,10 @@ const Description = styled.p`
   display: inline-block;
 `
 
+// ------- // Main Section // ---------- //
+
 export default function Index({
-  data: { site, notesQuery, illustrationQuery },
+  data: { site, illustrationQuery, notesQuery },
 }) {
   const theme = useTheme()
   return (
@@ -89,16 +91,26 @@ export default function Index({
         css={css`
           padding-bottom: 0;
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-areas:
+                "header header"
+                "sidebar posts"
+                "footer footer"
+          };
+          grid-template-columns: 30% 70%;
           ${bpMaxMD} {
-            grid-template-columns: 1fr;
+            grid-template-areas:
+                "header"
+                "sidebar"
+                "posts"
+                "footer"
+          };
           }
           max-width: 75vw;
           column-gap: 3em;
         `}
       >
         {illustrationQuery.edges.map(({ node: illustration }) => (
-          <div
+          <section
             key={illustration.id}
             css={css`
               margin-bottom: 40px;
@@ -132,10 +144,10 @@ export default function Index({
                 Read Essay →
               </Link>
             </Description>
-          </div>
+          </section>
         ))}
         {notesQuery.edges.map(({ node: note }) => (
-          <div
+          <section
             key={note.id}
             css={css`
               margin-bottom: 40px;
@@ -169,7 +181,7 @@ export default function Index({
                 Read Essay →
               </Link>
             </Description>
-          </div>
+          </section>
         ))}
         <Link to="/notes" aria-label="Visit written articles">
           View all essays
