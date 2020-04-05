@@ -91,101 +91,96 @@ export default function Index({
         css={css`
           padding-bottom: 0;
           display: grid;
-          grid-template-areas:
-                "header header"
-                "sidebar posts"
-                "footer footer"
-          };
+          grid-gap: 0.2em;
           grid-template-columns: 30% 70%;
-          ${bpMaxMD} {
-            grid-template-areas:
-                "header"
-                "sidebar"
-                "posts"
-                "footer"
-          };
-          }
           max-width: 75vw;
-          column-gap: 3em;
         `}
       >
-        {illustrationQuery.edges.map(({ node: illustration }) => (
-          <section
-            key={illustration.id}
-            css={css`
-              margin-bottom: 40px;
-            `}
-          >
-            <h2
-              css={css({
-                marginBottom: rhythm(0.3),
-                transition: 'all 150ms ease',
-                ':hover': {
-                  color: theme.colors.primary,
-                },
-              })}
+        <section className="notes">
+          {notesQuery.edges.map(({ node: note }) => (
+            <div
+              key={note.id}
+              css={css`
+                margin-bottom: 40px;
+              `}
             >
-              <Link
-                css={css`
-                  font-family: ${fonts.walsheimLight};
-                `}
-                to={illustration.frontmatter.slug}
-                aria-label={`View ${illustration.frontmatter.title}`}
+              <h2
+                css={css({
+                  marginBottom: rhythm(0.3),
+                  transition: 'all 150ms ease',
+                  ':hover': {
+                    color: theme.colors.primary,
+                  },
+                })}
               >
-                {illustration.frontmatter.title}
-              </Link>
-            </h2>
-            <Description>
-              {illustration.excerpt}{' '}
-              <Link
-                to={illustration.frontmatter.slug}
-                aria-label={`View ${illustration.frontmatter.title}`}
-              >
-                Read Essay →
-              </Link>
-            </Description>
-          </section>
-        ))}
-        {notesQuery.edges.map(({ node: note }) => (
-          <section
-            key={note.id}
-            css={css`
-              margin-bottom: 40px;
-            `}
-          >
-            <h2
-              css={css({
-                marginBottom: rhythm(0.3),
-                transition: 'all 150ms ease',
-                ':hover': {
-                  color: theme.colors.primary,
-                },
-              })}
+                <Link
+                  css={css`
+                    font-family: ${fonts.walsheimLight};
+                  `}
+                  to={note.frontmatter.slug}
+                  aria-label={`View ${note.frontmatter.title}`}
+                >
+                  {note.frontmatter.title}
+                </Link>
+              </h2>
+              <Description>
+                {note.excerpt}{' '}
+                <Link
+                  to={note.frontmatter.slug}
+                  aria-label={`View ${note.frontmatter.title}`}
+                >
+                  Read Essay →
+                </Link>
+              </Description>
+            </div>
+          ))}
+          <Link to="/notes" aria-label="Visit written articles">
+            View all essays
+          </Link>
+        </section>
+
+        <section className="illustration">
+          {illustrationQuery.edges.map(({ node: illustration }) => (
+            <div
+              key={illustration.id}
+              css={css`
+                margin-bottom: 40px;
+              `}
             >
-              <Link
-                css={css`
-                  font-family: ${fonts.walsheimLight};
-                `}
-                to={note.frontmatter.slug}
-                aria-label={`View ${note.frontmatter.title}`}
+              <h2
+                css={css({
+                  marginBottom: rhythm(0.3),
+                  transition: 'all 150ms ease',
+                  ':hover': {
+                    color: theme.colors.primary,
+                  },
+                })}
               >
-                {note.frontmatter.title}
-              </Link>
-            </h2>
-            <Description>
-              {note.excerpt}{' '}
-              <Link
-                to={note.frontmatter.slug}
-                aria-label={`View ${note.frontmatter.title}`}
-              >
-                Read Essay →
-              </Link>
-            </Description>
-          </section>
-        ))}
-        <Link to="/notes" aria-label="Visit written articles">
-          View all essays
-        </Link>
+                <Link
+                  css={css`
+                    font-family: ${fonts.walsheimLight};
+                  `}
+                  to={illustration.frontmatter.slug}
+                  aria-label={`View ${illustration.frontmatter.title}`}
+                >
+                  {illustration.frontmatter.title}
+                </Link>
+              </h2>
+              <Description>
+                {illustration.excerpt}{' '}
+                <Link
+                  to={illustration.frontmatter.slug}
+                  aria-label={`View ${illustration.frontmatter.title}`}
+                >
+                  Read Essay →
+                </Link>
+              </Description>
+            </div>
+          ))}
+          <div className="reading">
+            <p>Now Reading</p>
+          </div>
+        </section>
       </Container>
     </Layout>
   )
