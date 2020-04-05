@@ -181,7 +181,6 @@ export default ({
           css={css`
             display: flex;
             flex-direction: column;
-            width: 100%;
             min-height: 100vh;
           `}
         >

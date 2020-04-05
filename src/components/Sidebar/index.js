@@ -13,6 +13,7 @@ const Sidebar = () => {
     <div
       css={css`
         height: 240px;
+        display: inline-block;
         position: fixed;
         z-index: 1;
         top: 26%;

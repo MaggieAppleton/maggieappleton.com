@@ -89,7 +89,6 @@ export default function Index({
           display: grid;
           grid-gap: 2em;
           grid-template-columns: 30% 70%;
-          max-width: 75vw;
           ${bpMaxMD} {
             grid-template-columns: 100%;
           }
@@ -102,7 +101,10 @@ export default function Index({
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
-            grid-gap: 0.2em;
+            grid-gap: 1em;
+          }
+          .books {
+            margin-top: 3em;
           }
           button {
             width: 100%;
@@ -111,6 +113,7 @@ export default function Index({
           }
         `}
       >
+        {/* ------------ Notes Section ------------ */}
         <section className="notes">
           <button>Start Here</button>
           <Link to="./notes">
@@ -149,11 +152,13 @@ export default function Index({
             View all essays
           </Link>
 
-          <div className="reading">
+          {/* ------------ Books Section ------------ */}
+          <section className="books">
             <h3>Now Reading</h3>
-          </div>
+          </section>
         </section>
 
+        {/* ------------ Illustration Section ------------ */}
         <section>
           <h3>Illustration Work</h3>
           <div className="illustration">
@@ -237,7 +242,7 @@ export const pageQuery = graphql`
             slug
             banner {
               childImageSharp {
-                fluid(maxWidth: 400) {
+                fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid
                 }
               }
