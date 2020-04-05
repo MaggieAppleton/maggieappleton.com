@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Layout from 'components/Layout'
 import Link from 'components/Link'
+import Img from 'gatsby-image'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
@@ -71,11 +72,6 @@ const Hero = () => {
     </section>
   )
 }
-
-const Description = styled.p`
-  margin-bottom: 10px;
-  display: inline-block;
-`
 
 // ------- // Main Section // ---------- //
 
@@ -175,7 +171,11 @@ export default function Index({
                     margin-bottom: 40px;
                   `}
                 >
-                  <img src={illustration.frontmatter.banner} />
+                  <Img
+                    fluid={
+                      illustration.frontmatter.banner.childImageSharp.fluid
+                    }
+                  />
                   <h4
                     css={css({
                       marginBottom: rhythm(0.3),
@@ -237,8 +237,8 @@ export const pageQuery = graphql`
             slug
             banner {
               childImageSharp {
-                fluid(maxWidth: 280) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
