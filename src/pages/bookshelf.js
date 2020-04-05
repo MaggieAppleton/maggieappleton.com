@@ -18,7 +18,7 @@ const BookPage = ({ data: { site } }) => {
 
 export default BookPage
 
-export const bookQuery = graphql`
+export const bookPageQuery = graphql`
   query {
     site {
       ...site

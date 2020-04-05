@@ -19,7 +19,7 @@ const AboutPage = ({ data: { site } }) => {
 
 export default AboutPage
 
-export const aboutQuery = graphql`
+export const aboutPageQuery = graphql`
   query {
     site {
       ...site

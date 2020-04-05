@@ -51,8 +51,7 @@ const Hero = () => {
             max-width: 600px;
           `}
         >
-          {' '}
-          I make illustrations that help explain the world of technology and
+          Makes illustrations that help explain the world of technology and
           programming.
         </h2>
         <h4
@@ -92,11 +91,16 @@ export default function Index({
           padding-bottom: 0;
           padding-top: 0;
           display: grid;
-          grid-gap: 1em;
+          grid-gap: 2em;
           grid-template-columns: 30% 70%;
           max-width: 75vw;
           ${bpMaxMD} {
             grid-template-columns: 100%;
+          }
+          h2,
+          h3,
+          h4 {
+            margin-top: 0;
           }
           .illustration {
             display: grid;
@@ -104,17 +108,24 @@ export default function Index({
             grid-template-rows: 1fr 1fr;
             grid-gap: 0.2em;
           }
+          button {
+            width: 100%;
+            max-width: 240px;
+            margin-bottom: 20px;
+          }
         `}
       >
         <section className="notes">
           <button>Start Here</button>
-          <h3>Writing, Notes & Research</h3>
+          <Link to="./notes">
+            <h3>Writing, Notes & Research</h3>
+          </Link>
           <p>An open wiki of things I'm currently exploring</p>
           {notesQuery.edges.map(({ node: note }) => (
             <div
               key={note.id}
               css={css`
-                margin-bottom: 40px;
+                margin-bottom: 1em;
               `}
             >
               <h4
@@ -143,7 +154,7 @@ export default function Index({
           </Link>
 
           <div className="reading">
-            <p>Now Reading</p>
+            <h3>Now Reading</h3>
           </div>
         </section>
 
@@ -203,6 +214,7 @@ export const pageQuery = graphql`
         }
       }
       sort: { order: DESC, fields: frontmatter___date }
+      limit: 6
     ) {
       edges {
         node {
@@ -240,6 +252,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
+      limit: 3
     ) {
       edges {
         node {

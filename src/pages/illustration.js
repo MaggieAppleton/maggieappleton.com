@@ -18,7 +18,7 @@ const IllustrationPage = ({ data: { site } }) => {
 
 export default IllustrationPage
 
-export const illustrationQuery = graphql`
+export const illustrationPageQuery = graphql`
   query {
     site {
       ...site

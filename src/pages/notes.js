@@ -9,7 +9,7 @@ const NotesPage = ({ data: { site } }) => {
   return (
     <Layout site={site}>
       <Container>
-        <h1>Notes & Resoureces</h1>
+        <h1>Notes & Resources</h1>
         <p>You just hit a route that doesn't exist</p>
       </Container>
     </Layout>
@@ -18,7 +18,7 @@ const NotesPage = ({ data: { site } }) => {
 
 export default NotesPage
 
-export const notesQuery = graphql`
+export const notesPageQuery = graphql`
   query {
     site {
       ...site

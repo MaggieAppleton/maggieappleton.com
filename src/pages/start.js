@@ -18,7 +18,7 @@ const StartPage = ({ data: { site } }) => {
 
 export default StartPage
 
-export const startQuery = graphql`
+export const startPageQuery = graphql`
   query {
     site {
       ...site
