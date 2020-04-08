@@ -12,7 +12,9 @@ const Container = props => {
   return (
     <div
       css={css`
-        width: 72vw;
+        box-sizing: content-box;
+        width: calc(100% - 200px);
+        position: relative;
         margin: 0 auto;
         max-width: ${maxWidth + (noHorizontalPadding ? 0 : 80)}px;
         padding: ${noVerticalPadding ? 0 : '40'}px
@@ -23,13 +25,15 @@ const Container = props => {
           margin-left: 0;
         }
         ${bpMaxSM} {
-          width: 98vw;
+          margin-left: 0;
+          width: 100%;
         }
         ${bpMinMD} {
-          margin-left: 190px;
+          margin-left: 180px;
+          width: calc(100% - 280px);
         }
         ${bpMinLG} {
-          margin-left: 260px;
+          margin-left: 200px;
         }
       `}
       {...restProps}

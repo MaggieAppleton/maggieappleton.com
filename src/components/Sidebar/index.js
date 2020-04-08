@@ -10,17 +10,17 @@ import { fonts } from '../../lib/typography'
 const Sidebar = () => {
   const theme = useTheme()
   return (
+    // Container
     <div
       css={css`
-        height: 240px;
-        display: inline-block;
         position: fixed;
-        z-index: 1;
-        top: 26%;
-        overflow-x: hidden;
+        top: 20vh;
+        left: 0;
+        bottom: 20%;
+        width: 280px;
+        display: flex;
+        overflow: hidden;
         padding: 0;
-        font-family: ${fonts.walsheim};
-        border-right: 1px solid ${theme.colors.grey};
         ${bpMaxMD} {
           width: 180px;
         }
@@ -33,8 +33,15 @@ const Sidebar = () => {
         }
       `}
     >
+      {/* Nacvbar */}
       <nav
         css={css`
+          position: absolute;
+          align-items: right;
+          float: right;
+          border-right: 1px solid ${theme.colors.grey};
+          font-family: ${fonts.walsheim};
+          padding: 0 16px;
           a {
             color: ${theme.colors.grey};
             display: flex;
@@ -42,7 +49,6 @@ const Sidebar = () => {
             flex-direction: column;
             text-align: right;
             font-size: 0.8em;
-            padding-right: 16px;
             :hover {
               color: ${theme.colors.orange};
               transition: 0.5s;
