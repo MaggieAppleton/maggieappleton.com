@@ -4,7 +4,7 @@ const _ = require('lodash')
 const paginate = require('gatsby-awesome-pagination')
 const PAGINATION_OFFSET = 7
 
-const createPosts = (createPage, createRedirect, edges) => {
+const createNotes = (createPage, createRedirect, edges) => {
   edges.forEach(({ node }, i) => {
     const prev = i === 0 ? null : edges[i - 1].node
     const next = i === edges.length - 1 ? null : edges[i + 1].node
@@ -35,10 +35,10 @@ const createPosts = (createPage, createRedirect, edges) => {
 
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
-    query BookQuery {
+    query NotesQuery {
       allMdx(
         filter: {
-          frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+          frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
         }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
@@ -66,7 +66,7 @@ exports.createPages = ({ actions, graphql }) =>
 
     const { edges } = data.allMdx
     const { createRedirect, createPage } = actions
-    createPosts(createPage, createRedirect, edges)
+    createNotes(createPage, createRedirect, edges)
     createPaginatedPages(actions.createPage, edges, '/notes', {
       categories: [],
     })

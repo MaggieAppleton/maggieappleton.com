@@ -14,7 +14,7 @@ const NotesPage = ({
 }) => {
   const { page, nextPagePath, previousPagePath } = pagination
 
-  const posts = page
+  const notes = page
     .map(id =>
       allMdx.edges.find(
         edge =>
@@ -22,15 +22,15 @@ const NotesPage = ({
           edge.node.parent.sourceInstanceName !== 'pages',
       ),
     )
-    .filter(post => post !== undefined)
+    .filter(note => note !== undefined)
 
   return (
     <Layout site={site}>
       <SEO />
       <Container noVerticalPadding>
-        {posts.map(({ node: post }) => (
+        {notes.map(({ node: note }) => (
           <div
-            key={post.id}
+            key={note.id}
             css={css`
               :not(:first-of-type) {
                 margin-top: 60px;
@@ -56,7 +56,7 @@ const NotesPage = ({
               flex-direction: column;
             `}
           >
-            {post.frontmatter.banner && (
+            {note.frontmatter.banner && (
               <div
                 css={css`
                   padding: 60px 60px 40px 60px;
@@ -66,10 +66,10 @@ const NotesPage = ({
                 `}
               >
                 <Link
-                  aria-label={`View ${post.frontmatter.title} article`}
-                  to={`/${post.fields.slug}`}
+                  aria-label={`View ${note.frontmatter.title} article`}
+                  to={`/${note.fields.slug}`}
                 >
-                  <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
+                  <Img sizes={note.frontmatter.banner.childImageSharp.fluid} />
                 </Link>
               </div>
             )}
@@ -80,23 +80,23 @@ const NotesPage = ({
               `}
             >
               <Link
-                aria-label={`View ${post.frontmatter.title} article`}
-                to={`/${post.fields.slug}`}
+                aria-label={`View ${note.frontmatter.title} article`}
+                to={`/${note.fields.slug}`}
               >
-                {post.frontmatter.title}
+                {note.frontmatter.title}
               </Link>
             </h2>
-            {/* <small>{post.frontmatter.date}</small> */}
+            {/* <small>{note.frontmatter.date}</small> */}
             <p
               css={css`
                 margin-top: 10px;
               `}
             >
-              {post.excerpt}
+              {note.excerpt}
             </p>{' '}
             <Link
-              to={`/${post.fields.slug}`}
-              aria-label={`view "${post.frontmatter.title}" article`}
+              to={`/${note.fields.slug}`}
+              aria-label={`view "${note.frontmatter.title}" article`}
             >
               Read Article →
             </Link>
