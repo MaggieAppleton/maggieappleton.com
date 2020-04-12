@@ -4,7 +4,7 @@ const _ = require('lodash')
 const paginate = require('gatsby-awesome-pagination')
 const PAGINATION_OFFSET = 7
 
-const createNotes = (createPage, createRedirect, edges) => {
+const createPosts = (createPage, createRedirect, edges) => {
   edges.forEach(({ node }, i) => {
     const prev = i === 0 ? null : edges[i - 1].node
     const next = i === edges.length - 1 ? null : edges[i + 1].node
@@ -35,17 +35,21 @@ const createNotes = (createPage, createRedirect, edges) => {
 
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
-    query NotesQuery {
+    query {
       allMdx(
-        filter: {
-          frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
-        }
-        sort: { order: DESC, fields: frontmatter___date }
+        filter: { frontmatter: { published: { ne: false } } }
+        sort: { order: DESC, fields: [frontmatter___date] }
       ) {
         edges {
           node {
-            excerpt(pruneLength: 120)
             id
+            parent {
+              ... on File {
+                name
+                sourceInstanceName
+              }
+            }
+            excerpt(pruneLength: 250)
             fields {
               title
               slug
@@ -66,7 +70,7 @@ exports.createPages = ({ actions, graphql }) =>
 
     const { edges } = data.allMdx
     const { createRedirect, createPage } = actions
-    createNotes(createPage, createRedirect, edges)
+    createPosts(createPage, createRedirect, edges)
     createPaginatedPages(actions.createPage, edges, '/notes', {
       categories: [],
     })
@@ -85,7 +89,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 }
 
 const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
-  const notesPage = edges.reduce((acc, value, index) => {
+  const pages = edges.reduce((acc, value, index) => {
     const pageIndex = Math.floor(index / PAGINATION_OFFSET)
 
     if (!acc[pageIndex]) {
@@ -97,7 +101,7 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
     return acc
   }, [])
 
-  notesPage.forEach((page, index) => {
+  pages.forEach((page, index) => {
     const previousPagePath = `${pathPrefix}/${index + 1}`
     const nextPagePath = index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`
 
@@ -109,8 +113,8 @@ const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
           page,
           nextPagePath: index === 0 ? null : nextPagePath,
           previousPagePath:
-            index === notesPage.length - 1 ? null : previousPagePath,
-          pageCount: notesPage.length,
+            index === pages.length - 1 ? null : previousPagePath,
+          pageCount: pages.length,
           pathPrefix,
         },
         ...context,
@@ -191,6 +195,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'redirects',
       node,
       value: node.frontmatter.redirects,
+    })
+
+    createNodeField({
+      name: 'isPost',
+      node,
+      value: true,
     })
   }
 }

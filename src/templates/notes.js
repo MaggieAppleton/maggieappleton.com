@@ -2,35 +2,29 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-import Container from 'components/Container'
+import Container from '../components/Container'
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import Link from '../components/Link'
 import { bpMaxSM, bpMaxMD } from '../lib/breakpoints'
 
-const NotesPage = ({
+const Blog = ({
   data: { site, allMdx },
   pageContext: { pagination, categories },
 }) => {
   const { page, nextPagePath, previousPagePath } = pagination
 
-  const notes = page
-    .map(id =>
-      allMdx.edges.find(
-        edge =>
-          edge.node.id === id &&
-          edge.node.parent.sourceInstanceName !== 'pages',
-      ),
-    )
-    .filter(note => note !== undefined)
+  const posts = page
+    .map(id => allMdx.edges.find(edge => edge.node.id === id))
+    .filter(post => post !== undefined)
 
   return (
     <Layout site={site}>
       <SEO />
       <Container noVerticalPadding>
-        {notes.map(({ node: note }) => (
+        {posts.map(({ node: post }) => (
           <div
-            key={note.id}
+            key={post.id}
             css={css`
               :not(:first-of-type) {
                 margin-top: 60px;
@@ -56,7 +50,7 @@ const NotesPage = ({
               flex-direction: column;
             `}
           >
-            {note.frontmatter.banner && (
+            {post.frontmatter.banner && (
               <div
                 css={css`
                   padding: 60px 60px 40px 60px;
@@ -66,10 +60,10 @@ const NotesPage = ({
                 `}
               >
                 <Link
-                  aria-label={`View ${note.frontmatter.title} article`}
-                  to={`/${note.fields.slug}`}
+                  aria-label={`View ${post.frontmatter.title} article`}
+                  to={`/${post.fields.slug}`}
                 >
-                  <Img sizes={note.frontmatter.banner.childImageSharp.fluid} />
+                  <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
                 </Link>
               </div>
             )}
@@ -80,23 +74,23 @@ const NotesPage = ({
               `}
             >
               <Link
-                aria-label={`View ${note.frontmatter.title} article`}
-                to={`/${note.fields.slug}`}
+                aria-label={`View ${post.frontmatter.title} article`}
+                to={`/${post.fields.slug}`}
               >
-                {note.frontmatter.title}
+                {post.frontmatter.title}
               </Link>
             </h2>
-            {/* <small>{note.frontmatter.date}</small> */}
+            {/* <small>{post.frontmatter.date}</small> */}
             <p
               css={css`
                 margin-top: 10px;
               `}
             >
-              {note.excerpt}
+              {post.excerpt}
             </p>{' '}
             <Link
-              to={`/${note.fields.slug}`}
-              aria-label={`view "${note.frontmatter.title}" article`}
+              to={`/${post.fields.slug}`}
+              aria-label={`view "${post.frontmatter.title}" article`}
             >
               Read Article →
             </Link>
@@ -124,18 +118,16 @@ const NotesPage = ({
   )
 }
 
-export default NotesPage
+export default Blog
 
-export const notesQuery = graphql`
+export const pageQuery = graphql`
   query {
     site {
       ...site
     }
     allMdx(
-      filter: {
-        frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
-      }
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fields: { isPost: { eq: true } } }
     ) {
       edges {
         node {
@@ -145,11 +137,6 @@ export const notesQuery = graphql`
             title
             slug
             date
-          }
-          parent {
-            ... on File {
-              sourceInstanceName
-            }
           }
           frontmatter {
             title

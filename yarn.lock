@@ -11082,6 +11082,11 @@ react-reconciler@^0.20.0:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
+react-scrollmagic@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.2.0.tgz#6e5ca428411221605ce4edb667819394c6a4e6c0"
+  integrity sha512-2DlzgJVuFohka0HG71haN4fugXoNUIZ4xT0mb4k03Xx1CyGXqPMxKekFEGhVjYyqpQmibtdTOfh49ZsHzuNVtw==
+
 react-share@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-share/-/react-share-3.0.0.tgz#4855cfccfadbb3c6ef490047ccd144dc38ff7421"
