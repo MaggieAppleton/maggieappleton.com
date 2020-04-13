@@ -1,158 +1,116 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import SEO from 'components/SEO'
 import { css } from '@emotion/core'
-import Container from '../components/Container'
-import SEO from '../components/SEO'
+import Container from 'components/Container'
 import Layout from '../components/Layout'
-import Link from '../components/Link'
-import { bpMaxSM, bpMaxMD } from '../lib/breakpoints'
+import { fonts } from '../lib/typography'
+import Share from '../components/Share'
+import config from '../../config/website'
+import { bpMaxSM } from '../lib/breakpoints'
 
-const Blog = ({
-  data: { site, allMdx },
-  pageContext: { pagination, categories },
-}) => {
-  const { page, nextPagePath, previousPagePath } = pagination
-
-  const posts = page
-    .map(id => allMdx.edges.find(edge => edge.node.id === id))
-    .filter(post => post !== undefined)
+export default function Post({
+  data: { site, mdx },
+  pageContext: { nextPagePath, previousPagePath },
+}) {
+  const author = mdx.frontmatter.author || config.author
+  const date = mdx.frontmatter.date
+  const title = mdx.frontmatter.title
+  const banner = mdx.frontmatter.banner
 
   return (
-    <Layout site={site}>
-      <SEO />
-      <Container noVerticalPadding>
-        {posts.map(({ node: post }) => (
-          <div
-            key={post.id}
+    <Layout site={site} frontmatter={mdx.frontmatter}>
+      <SEO frontmatter={mdx.frontmatter} isEssayPost />
+      <article
+        css={css`
+          width: 100%;
+          display: flex;
+        `}
+      >
+        <Container>
+          <h1
             css={css`
-              :not(:first-of-type) {
-                margin-top: 60px;
-                ${bpMaxMD} {
-                  margin-top: 40px;
-                }
-                ${bpMaxSM} {
-                  margin-top: 20px;
-                }
-              }
-              :first-of-type {
-                margin-top: 20px;
-                ${bpMaxSM} {
-                  margin-top: 20px;
-                }
-              }
-              .gatsby-image-wrapper {
-              }
-              ${bpMaxSM} {
-                padding: 20px;
-              }
-              display: flex;
-              flex-direction: column;
+              text-align: center;
+              margin-bottom: 20px;
             `}
           >
-            {post.frontmatter.banner && (
-              <div
-                css={css`
-                  padding: 60px 60px 40px 60px;
-                  ${bpMaxSM} {
-                    padding: 20px;
-                  }
-                `}
-              >
-                <Link
-                  aria-label={`View ${post.frontmatter.title} article`}
-                  to={`/${post.fields.slug}`}
-                >
-                  <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />
-                </Link>
-              </div>
-            )}
-            <h2
-              css={css`
-                margin-top: 30px;
-                margin-bottom: 10px;
-              `}
-            >
-              <Link
-                aria-label={`View ${post.frontmatter.title} article`}
-                to={`/${post.fields.slug}`}
-              >
-                {post.frontmatter.title}
-              </Link>
-            </h2>
-            {/* <small>{post.frontmatter.date}</small> */}
-            <p
-              css={css`
-                margin-top: 10px;
-              `}
-            >
-              {post.excerpt}
-            </p>{' '}
-            <Link
-              to={`/${post.fields.slug}`}
-              aria-label={`view "${post.frontmatter.title}" article`}
-            >
-              Read Article →
-            </Link>
+            {title}
+          </h1>
+          <div
+            css={css`
+              display: flex;
+              justify-content: center;
+              margin-bottom: 20px;
+              h3,
+              span {
+                text-align: center;
+                font-size: 15px;
+                opacity: 0.6;
+                font-family: ${fonts.regular}, serif;
+                font-weight: normal;
+                margin: 0 5px;
+              }
+            `}
+          >
+            {author && <h3>{author}</h3>}
+            {author && <span>—</span>}
+            {date && <h3>{date}</h3>}
           </div>
-        ))}
-        <div css={css({ marginTop: '30px' })}>
-          {nextPagePath && (
-            <Link to={nextPagePath} aria-label="View next page">
-              Next Page →
-            </Link>
+          {banner && (
+            <div
+              css={css`
+                padding: 30px;
+                ${bpMaxSM} {
+                  padding: 0;
+                }
+              `}
+            >
+              <Img
+                sizes={banner.childImageSharp.fluid}
+                alt={site.siteMetadata.keywords.join(', ')}
+              />
+            </div>
           )}
-          {previousPagePath && (
-            <Link to={previousPagePath} aria-label="View previous page">
-              ← Previous Page
-            </Link>
-          )}
-        </div>
-        <hr
-          css={css`
-            margin: 50px 0;
-          `}
+          <br />
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </Container>
+        {/* <SubscribeForm /> */}
+      </article>
+      <Container noVerticalPadding>
+        <Share
+          url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
+          title={title}
+          twitterHandle={config.twitterHandle}
         />
+        <br />
       </Container>
     </Layout>
   )
 }
 
-export default Blog
-
 export const pageQuery = graphql`
-  query {
+  query($id: String!) {
     site {
       ...site
     }
-    allMdx(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fields: { isPost: { eq: true } } }
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 300)
-          id
-          fields {
-            title
-            slug
-            date
-          }
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            banner {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
+    mdx(fields: { id: { eq: $id } }) {
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        author
+        banner {
+          childImageSharp {
+            fluid(maxWidth: 900) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
-            slug
-            keywords
           }
         }
+        slug
+        keywords
       }
+      body
     }
   }
 `

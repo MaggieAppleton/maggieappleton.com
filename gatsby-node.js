@@ -1,8 +1,6 @@
 const path = require('path')
 
 const _ = require('lodash')
-const paginate = require('gatsby-awesome-pagination')
-const PAGINATION_OFFSET = 7
 
 const createPosts = (createPage, createRedirect, edges) => {
   edges.forEach(({ node }, i) => {
@@ -21,13 +19,16 @@ const createPosts = (createPage, createRedirect, edges) => {
       })
     }
 
+    const previousPagePath = prev ? prev.fields.slug : null
+    const nextPagePath = next ? next.fields.slug : null
+
     createPage({
       path: pagePath,
       component: path.resolve(`./src/templates/notes.js`),
       context: {
         id: node.id,
-        prev,
-        next,
+        previousPagePath,
+        nextPagePath,
       },
     })
   })
@@ -71,9 +72,6 @@ exports.createPages = ({ actions, graphql }) =>
     const { edges } = data.allMdx
     const { createRedirect, createPage } = actions
     createPosts(createPage, createRedirect, edges)
-    createPaginatedPages(actions.createPage, edges, '/notes', {
-      categories: [],
-    })
   })
 
 exports.onCreateWebpackConfig = ({ actions }) => {
@@ -85,41 +83,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         $components: path.resolve(__dirname, 'src/components'),
       },
     },
-  })
-}
-
-const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
-  const pages = edges.reduce((acc, value, index) => {
-    const pageIndex = Math.floor(index / PAGINATION_OFFSET)
-
-    if (!acc[pageIndex]) {
-      acc[pageIndex] = []
-    }
-
-    acc[pageIndex].push(value.node.id)
-
-    return acc
-  }, [])
-
-  pages.forEach((page, index) => {
-    const previousPagePath = `${pathPrefix}/${index + 1}`
-    const nextPagePath = index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`
-
-    createPage({
-      path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
-      component: path.resolve(`src/templates/notes.js`),
-      context: {
-        pagination: {
-          page,
-          nextPagePath: index === 0 ? null : nextPagePath,
-          previousPagePath:
-            index === pages.length - 1 ? null : previousPagePath,
-          pageCount: pages.length,
-          pathPrefix,
-        },
-        ...context,
-      },
-    })
   })
 }
 
