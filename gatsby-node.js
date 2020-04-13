@@ -1,8 +1,9 @@
 const path = require('path')
-
 const _ = require('lodash')
 
-const createPosts = (createPage, createRedirect, edges) => {
+//Defining the createPosts function. It takes two callback functions – createPage() and createRedirect() – and an array of edges
+
+const createPosts = (createPage, createRedirect, edges, templateType) => {
   edges.forEach(({ node }, i) => {
     const prev = i === 0 ? null : edges[i - 1].node
     const next = i === edges.length - 1 ? null : edges[i + 1].node
@@ -24,7 +25,7 @@ const createPosts = (createPage, createRedirect, edges) => {
 
     createPage({
       path: pagePath,
-      component: path.resolve(`./src/templates/noteTemplate.js`),
+      component: path.resolve(templateType),
       context: {
         id: node.id,
         previousPagePath,
@@ -36,10 +37,12 @@ const createPosts = (createPage, createRedirect, edges) => {
 
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
-    query {
-      allMdx(
-        filter: { frontmatter: { published: { ne: false } } }
-        sort: { order: DESC, fields: [frontmatter___date] }
+    query allPostsQuery {
+      notesQuery: allMdx(
+        filter: {
+          frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
         edges {
           node {
@@ -59,19 +62,77 @@ exports.createPages = ({ actions, graphql }) =>
           }
         }
       }
+
+      booksQuery: allMdx(
+        filter: {
+          frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            parent {
+              ... on File {
+                name
+                sourceInstanceName
+              }
+            }
+            excerpt(pruneLength: 250)
+            fields {
+              title
+              slug
+              date
+            }
+          }
+        }
+      }
+
+      illustrationQuery: allMdx(
+        filter: {
+          frontmatter: {
+            categories: { eq: "illustration" }
+            published: { ne: false }
+          }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            parent {
+              ... on File {
+                name
+                sourceInstanceName
+              }
+            }
+            excerpt(pruneLength: 250)
+            fields {
+              title
+              slug
+            }
+          }
+        }
+      }
     }
   `).then(({ data, errors }) => {
     if (errors) {
       return Promise.reject(errors)
     }
 
-    if (_.isEmpty(data.allMdx)) {
+    if (_.isEmpty(data.notesQuery)) {
       return Promise.reject('There are no posts!')
     }
 
-    const { edges } = data.allMdx
+    const noteTemplate = './src/templates/noteTemplate.js'
+    const bookTemplate = './src/templates/bookTemplate.js'
+    const illustrationTemplate = './src/templates/illustrationTemplate.js'
+
+    const { edges } = data.notesQuery
     const { createRedirect, createPage } = actions
-    createPosts(createPage, createRedirect, edges)
+    createPosts(createPage, createRedirect, edges, noteTemplate)
+    createPosts(createPage, createRedirect, edges, bookTemplate)
+    createPosts(createPage, createRedirect, edges, illustrationTemplate)
   })
 
 exports.onCreateWebpackConfig = ({ actions }) => {
