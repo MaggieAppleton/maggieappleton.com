@@ -11,6 +11,5 @@
 - Social media share buttons
 - Site & Theme config files
 - ConvertKit subscribe form (Formik and Yup)
-- Placeholder illustrations by [Katerina Limpitsouni](https://twitter.com/ninalimpi) from [undraw.co](https://undraw.co/)
 
 ## [➞ The Site](https://maggieappleton.com/)
