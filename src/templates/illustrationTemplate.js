@@ -13,7 +13,7 @@ import { bpMaxSM } from '../lib/breakpoints'
 
 export default function Post({
   data: { site, mdx },
-  pageContext: { nextPagePath, previousPagePath },
+  pageContext: { prevPage, nextPage },
 }) {
   const author = mdx.frontmatter.author || config.author
   const title = mdx.frontmatter.title
