@@ -36,7 +36,7 @@ export default function Post({
               margin-bottom: 20px;
             `}
           >
-            {title}
+            {title} Note
           </h1>
           <div
             css={css`
