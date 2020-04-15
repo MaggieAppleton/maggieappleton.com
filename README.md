@@ -14,4 +14,4 @@
 - Programmatically generates multi-category MDX pages, each with different templates
 - Local pagination for each category type
 
-## [➞ The Site](https://maggieappleton.com/)
+## Work in Progress
