@@ -25,6 +25,7 @@ const Hero = () => {
         css={css`
           display: flex;
           flex-direction: column;
+          max-width: 90vw;
         `}
       >
         <h1

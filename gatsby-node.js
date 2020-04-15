@@ -1,59 +1,6 @@
 const path = require('path')
 const _ = require('lodash')
 
-//Defining the createPosts function. It takes two callback functions – createPage() and createRedirect() – and an array of edges
-
-// const createPosts = (createPage, createRedirect, edges) => {
-
-//   if (edges.node.fields.categories === 'notes') {
-//
-//       createPage({
-//         path: pagePath,
-//         component: path.resolve('./src/templates/noteTemplate.js'),
-//         context: {
-//           id: node.id,
-//           prevPage,
-//           nextPage,
-//         },
-//       })
-//     })
-//   }
-
-//   if (edges.node.fields.categories === 'illustration') {
-//     edges.forEach(({ node }, i) => {
-//       const pagePath = node.fields.slug
-//       const prevPage = i === 0 ? null : edges[i - 1].node
-//       const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
-//       createPage({
-//         path: pagePath,
-//         component: path.resolve('./src/templates/illustrationTemplate.js'),
-//         context: {
-//           id: node.id,
-//           prevPage,
-//           nextPage,
-//         },
-//       })
-//     })
-//   }
-
-//   if (edges.node.fields.categories === 'book') {
-//     edges.forEach(({ node }, i) => {
-//       const pagePath = node.fields.slug
-//       const prevPage = i === 0 ? null : edges[i - 1].node
-//       const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
-//       createPage({
-//         path: pagePath,
-//         component: path.resolve('./src/templates/bookTemplate.js'),
-//         context: {
-//           id: node.id,
-//           prevPage,
-//           nextPage,
-//         },
-//       })
-//     })
-//   }
-// }
-
 exports.createPages = ({ actions, graphql }) => {
   const { createRedirect, createPage } = actions
 
