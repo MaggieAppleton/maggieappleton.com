@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Link from 'gatsby-link'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SEO from 'components/SEO'
 import { css } from '@emotion/core'
@@ -77,9 +78,32 @@ export default function Post({
           )}
           <br />
           <MDXRenderer>{mdx.body}</MDXRenderer>
+          {/* Next and Previous */}
+          <div
+            css={css({
+              marginTop: '30px',
+              display: 'grid',
+              gridColumnTemplate: '1fr 1fr',
+            })}
+          >
+            {nextPage && (
+              <Link to={`/${nextPage.fields.slug}`} aria-label="View next page">
+                {nextPage.fields.title} →
+              </Link>
+            )}
+            {prevPage && (
+              <Link
+                to={`/${prevPage.fields.slug}`}
+                aria-label="View previous page"
+              >
+                ← {prevPage.fields.title}
+              </Link>
+            )}
+          </div>
         </Container>
         {/* <SubscribeForm /> */}
       </article>
+
       <Container noVerticalPadding>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}

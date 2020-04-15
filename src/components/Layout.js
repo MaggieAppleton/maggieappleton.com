@@ -91,6 +91,7 @@ const getGlobalStyles = theme => {
     .gatsby-resp-image-image {
       background: none !important;
       box-shadow: 0;
+      padding: 1em; !important;
     }
     button {
       border-radius: 4px;
@@ -182,6 +183,7 @@ export default ({
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            max-width: 80vw;
           `}
         >
           <Helmet
