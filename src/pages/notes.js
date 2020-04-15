@@ -10,7 +10,7 @@ const NotesPage = ({ data: { site } }) => {
     <Layout site={site}>
       <Container>
         <h1>Notes & Resources</h1>
-        <p>You just hit a route that doesn't exist</p>
+        <p>Here's some notes</p>
       </Container>
     </Layout>
   )

@@ -76,7 +76,7 @@ const Hero = () => {
 // ------- // Main Section // ---------- //
 
 export default function Index({
-  data: { site, illustrationQuery, notesQuery },
+  data: { site, bookQuery, illustrationQuery, notesQuery },
 }) {
   const theme = useTheme()
   return (
@@ -155,6 +155,34 @@ export default function Index({
           {/* ------------ Books Section ------------ */}
           <section className="books">
             <h3>Now Reading</h3>
+            {bookQuery.edges.map(({ node: note }) => (
+              <div
+                key={note.id}
+                css={css`
+                  margin-bottom: 1em;
+                `}
+              >
+                <h4
+                  css={css({
+                    marginBottom: rhythm(0.1),
+                    transition: 'all 150ms ease',
+                    ':hover': {
+                      color: theme.colors.primary,
+                    },
+                  })}
+                >
+                  <Link
+                    css={css`
+                      font-family: ${fonts.walsheimLight};
+                    `}
+                    to={note.frontmatter.slug}
+                    aria-label={`View ${note.frontmatter.title}`}
+                  >
+                    {note.frontmatter.title}
+                  </Link>
+                </h4>
+              </div>
+            ))}
           </section>
         </section>
 
@@ -278,6 +306,44 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+          }
+        }
+      }
+    }
+
+    bookQuery: allMdx(
+      filter: {
+        frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 3
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 120)
+          id
+          fields {
+            title
+            slug
+            date
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
+            }
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            slug
+            banner {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

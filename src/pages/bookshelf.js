@@ -10,7 +10,7 @@ const BookPage = ({ data: { site } }) => {
     <Layout site={site}>
       <Container>
         <h1>Books</h1>
-        <p>You just hit a route that doesn't exist</p>
+        <p>Here's some books</p>
       </Container>
     </Layout>
   )

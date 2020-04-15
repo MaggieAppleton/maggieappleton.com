@@ -1,44 +1,122 @@
 const path = require('path')
-
 const _ = require('lodash')
-const paginate = require('gatsby-awesome-pagination')
-const PAGINATION_OFFSET = 7
 
-const createPosts = (createPage, createRedirect, edges) => {
-  edges.forEach(({ node }, i) => {
-    const prev = i === 0 ? null : edges[i - 1].node
-    const next = i === edges.length - 1 ? null : edges[i + 1].node
-    const pagePath = node.fields.slug
+//Defining the createPosts function. It takes two callback functions – createPage() and createRedirect() – and an array of edges
 
-    if (node.fields.redirects) {
-      node.fields.redirects.forEach(fromPath => {
-        createRedirect({
-          fromPath,
-          toPath: pagePath,
-          redirectInBrowser: true,
-          isPermanent: true,
-        })
-      })
-    }
+// const createPosts = (createPage, createRedirect, edges) => {
 
-    createPage({
-      path: pagePath,
-      component: path.resolve(`./src/templates/notes.js`),
-      context: {
-        id: node.id,
-        prev,
-        next,
-      },
-    })
-  })
-}
+//   if (edges.node.fields.categories === 'notes') {
+//
+//       createPage({
+//         path: pagePath,
+//         component: path.resolve('./src/templates/noteTemplate.js'),
+//         context: {
+//           id: node.id,
+//           prevPage,
+//           nextPage,
+//         },
+//       })
+//     })
+//   }
 
-exports.createPages = ({ actions, graphql }) =>
-  graphql(`
+//   if (edges.node.fields.categories === 'illustration') {
+//     edges.forEach(({ node }, i) => {
+//       const pagePath = node.fields.slug
+//       const prevPage = i === 0 ? null : edges[i - 1].node
+//       const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+//       createPage({
+//         path: pagePath,
+//         component: path.resolve('./src/templates/illustrationTemplate.js'),
+//         context: {
+//           id: node.id,
+//           prevPage,
+//           nextPage,
+//         },
+//       })
+//     })
+//   }
+
+//   if (edges.node.fields.categories === 'book') {
+//     edges.forEach(({ node }, i) => {
+//       const pagePath = node.fields.slug
+//       const prevPage = i === 0 ? null : edges[i - 1].node
+//       const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+//       createPage({
+//         path: pagePath,
+//         component: path.resolve('./src/templates/bookTemplate.js'),
+//         context: {
+//           id: node.id,
+//           prevPage,
+//           nextPage,
+//         },
+//       })
+//     })
+//   }
+// }
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createRedirect, createPage } = actions
+
+  return graphql(`
     query {
-      allMdx(
-        filter: { frontmatter: { published: { ne: false } } }
-        sort: { order: DESC, fields: [frontmatter___date] }
+      notesQuery: allMdx(
+        filter: {
+          frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            parent {
+              ... on File {
+                name
+                sourceInstanceName
+              }
+            }
+            excerpt(pruneLength: 250)
+            fields {
+              title
+              slug
+              date
+            }
+          }
+        }
+      }
+
+      illustrationQuery: allMdx(
+        filter: {
+          frontmatter: {
+            categories: { eq: "illustration" }
+            published: { ne: false }
+          }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            parent {
+              ... on File {
+                name
+                sourceInstanceName
+              }
+            }
+            excerpt(pruneLength: 250)
+            fields {
+              title
+              slug
+              date
+            }
+          }
+        }
+      }
+
+      bookQuery: allMdx(
+        filter: {
+          frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
       ) {
         edges {
           node {
@@ -63,18 +141,73 @@ exports.createPages = ({ actions, graphql }) =>
     if (errors) {
       return Promise.reject(errors)
     }
-
-    if (_.isEmpty(data.allMdx)) {
+    if (_.isEmpty(data.notesQuery)) {
       return Promise.reject('There are no posts!')
     }
 
-    const { edges } = data.allMdx
-    const { createRedirect, createPage } = actions
-    createPosts(createPage, createRedirect, edges)
-    createPaginatedPages(actions.createPage, edges, '/notes', {
-      categories: [],
+    const pageRedirects = node => {
+      if (node.fields.redirects) {
+        node.fields.redirects.forEach(fromPath => {
+          createRedirect({
+            fromPath,
+            toPath: node.fields.slug,
+            redirectInBrowser: true,
+            isPermanent: true,
+          })
+        })
+      }
+    }
+
+    data.notesQuery.edges.forEach(({ node }, i) => {
+      const { edges } = data.notesQuery
+      const prevPage = i === 0 ? null : edges[i - 1].node
+      const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+      pageRedirects(node)
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve('./src/templates/noteTemplate.js'),
+        context: {
+          id: node.id,
+          prevPage,
+          nextPage,
+        },
+      })
+    })
+
+    data.illustrationQuery.edges.forEach(({ node }, i) => {
+      const { edges } = data.illustrationQuery
+      const prevPage = i === 0 ? null : edges[i - 1].node
+      const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+
+      pageRedirects(node)
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve('./src/templates/illustrationTemplate.js'),
+        context: {
+          id: node.id,
+          prevPage,
+          nextPage,
+        },
+      })
+    })
+
+    data.bookQuery.edges.forEach(({ node }, i) => {
+      const { edges } = data.bookQuery
+      const prevPage = i === 0 ? null : edges[i - 1].node
+      const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+      pageRedirects(node)
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve('./src/templates/bookTemplate.js'),
+        context: {
+          id: node.id,
+          prevPage,
+          nextPage,
+        },
+      })
     })
   })
+}
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -85,41 +218,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         $components: path.resolve(__dirname, 'src/components'),
       },
     },
-  })
-}
-
-const createPaginatedPages = (createPage, edges, pathPrefix, context) => {
-  const pages = edges.reduce((acc, value, index) => {
-    const pageIndex = Math.floor(index / PAGINATION_OFFSET)
-
-    if (!acc[pageIndex]) {
-      acc[pageIndex] = []
-    }
-
-    acc[pageIndex].push(value.node.id)
-
-    return acc
-  }, [])
-
-  pages.forEach((page, index) => {
-    const previousPagePath = `${pathPrefix}/${index + 1}`
-    const nextPagePath = index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`
-
-    createPage({
-      path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
-      component: path.resolve(`src/templates/notes.js`),
-      context: {
-        pagination: {
-          page,
-          nextPagePath: index === 0 ? null : nextPagePath,
-          previousPagePath:
-            index === pages.length - 1 ? null : previousPagePath,
-          pageCount: pages.length,
-          pathPrefix,
-        },
-        ...context,
-      },
-    })
   })
 }
 
