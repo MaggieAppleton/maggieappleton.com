@@ -183,7 +183,7 @@ export default ({
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            max-width: 80vw;
+            max-width: 1300px;
           `}
         >
           <Helmet

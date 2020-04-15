@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import styled from '@emotion/styled'
 import Layout from 'components/Layout'
 import Link from 'components/Link'
 import Img from 'gatsby-image'
@@ -9,7 +8,7 @@ import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
-import { bpMaxSM, bpMaxMD } from '../lib/breakpoints'
+import { bpMaxMD } from '../lib/breakpoints'
 
 const Hero = () => {
   const theme = useTheme()
@@ -87,7 +86,7 @@ export default function Index({
           padding-bottom: 0;
           padding-top: 0;
           display: grid;
-          grid-gap: 2em;
+          grid-gap: 4em;
           grid-template-columns: 30% 70%;
           ${bpMaxMD} {
             grid-template-columns: 100%;
@@ -149,7 +148,7 @@ export default function Index({
             </div>
           ))}
           <Link to="/notes" aria-label="Visit written articles">
-            View all essays
+            View all notes
           </Link>
 
           {/* ------------ Books Section ------------ */}
