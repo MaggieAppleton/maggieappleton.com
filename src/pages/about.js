@@ -3,6 +3,7 @@ import Layout from 'components/Layout'
 import Link from 'components/Link'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
+import { graphql } from 'gatsby'
 
 const AboutPage = ({ data: { site } }) => {
   const theme = useTheme()

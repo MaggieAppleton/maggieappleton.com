@@ -7,6 +7,7 @@ import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
+import { graphql } from 'gatsby'
 
 const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
   const theme = useTheme()

@@ -7,6 +7,7 @@ import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
+import { graphql } from 'gatsby'
 
 const BookPage = ({ data: { site, bookQuery } }) => {
   const theme = useTheme()
@@ -22,8 +23,11 @@ const BookPage = ({ data: { site, bookQuery } }) => {
               key={note.id}
               css={css`
                 margin-bottom: 1em;
+                display: flex;
+                flex-direction: column;
               `}
             >
+              <Img src={note.frontmatter.cover} />
               <h4
                 css={css({
                   marginBottom: rhythm(0.1),
