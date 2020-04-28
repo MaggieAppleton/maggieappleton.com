@@ -87,7 +87,7 @@ export const bookPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
-            banner {
+            cover {
               childImageSharp {
                 fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid

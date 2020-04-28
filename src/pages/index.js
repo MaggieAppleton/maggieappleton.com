@@ -16,18 +16,9 @@ const Hero = () => {
     <section
       css={css`
         color: ${theme.colors.black};
-        width: 100%;
-        padding: 20px 0 30px 0;
-        display: flex;
       `}
     >
-      <Container
-        css={css`
-          display: flex;
-          flex-direction: column;
-          max-width: 90vw;
-        `}
-      >
+      <Container>
         <h1
           css={css`
             color: ${theme.colors.black};
@@ -88,7 +79,7 @@ export default function Index({
           padding-top: 0;
           display: grid;
           grid-gap: 4em;
-          grid-template-columns: 30% 70%;
+          grid-template-columns: 1fr 3fr;
           ${bpMaxMD} {
             grid-template-columns: 100%;
           }
@@ -205,9 +196,7 @@ export default function Index({
                   `}
                 >
                   <Img
-                    fluid={
-                      illustration.frontmatter.banner.childImageSharp.fluid
-                    }
+                    fluid={illustration.frontmatter.cover.childImageSharp.fluid}
                   />
                   <h4
                     css={css({
@@ -268,7 +257,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
-            banner {
+            cover {
               childImageSharp {
                 fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid
@@ -337,7 +326,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
-            banner {
+            cover {
               childImageSharp {
                 fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid

@@ -18,7 +18,7 @@ export default function Post({
 }) {
   const author = mdx.frontmatter.author || config.author
   const title = mdx.frontmatter.title
-  const banner = mdx.frontmatter.banner
+  const cover = mdx.frontmatter.cover
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
@@ -56,7 +56,7 @@ export default function Post({
           >
             {author} meta
           </div>
-          {banner && (
+          {cover && (
             <div
               css={css`
                 padding: 30px;
@@ -66,7 +66,7 @@ export default function Post({
               `}
             >
               <Img
-                sizes={banner.childImageSharp.fluid}
+                sizes={cover.childImageSharp.fluid}
                 alt={site.siteMetadata.keywords.join(', ')}
               />
             </div>
@@ -120,7 +120,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         author
-        banner {
+        cover {
           childImageSharp {
             fluid(maxWidth: 900) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG

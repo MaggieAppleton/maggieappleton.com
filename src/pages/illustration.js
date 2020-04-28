@@ -33,9 +33,7 @@ const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
                   `}
                 >
                   <Img
-                    fluid={
-                      illustration.frontmatter.banner.childImageSharp.fluid
-                    }
+                    fluid={illustration.frontmatter.cover.childImageSharp.fluid}
                   />
                   <h4
                     css={css({
@@ -97,7 +95,7 @@ export const illustrationPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
-            banner {
+            cover {
               childImageSharp {
                 fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid

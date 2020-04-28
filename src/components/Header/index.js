@@ -16,69 +16,70 @@ const Header = () => {
         width: 100%;
         flex-shrink: 0;
         background: none;
-        padding: 20px;
+        padding-top: 20px;
         font-family: ${fonts.walsheim};
         background: ${theme.colors.headerBg};
+        margin: 0 auto;
+        justify-content: center;
       `}
     >
-      {/* <Container noVerticalPadding> */}
-      <nav
-        css={css`
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        `}
-      >
-        <Link
-          to="/"
-          aria-label="go to homepage"
+      <Container noVerticalPadding>
+        <nav
           css={css`
-            color: ${theme.colors.grey};
-            &:hover {
-              color: ${theme.colors.primary};
-              text-decoration: none;
-              transition: 0.5s;
-            }
-          `}
-        >
-          Hello
-        </Link>
-        <div
-          css={css`
-            font-size: 16px;
-            line-height: 1.25;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            a {
-              text-decoration: none;
-              color: ${theme.colors.grey};
-              margin-left: 16px;
-              margin-right: 16px;
-              :hover {
-                color: ${theme.colors.orange};
-                transition: 0.5s;
-              }
-            }
           `}
         >
-          <div
+          <Link
+            to="/"
+            aria-label="go to homepage"
             css={css`
-              display: flex;
-              align-items: center;
-              ${bpMaxSM} {
-                display: none;
+              color: ${theme.colors.grey};
+              &:hover {
+                color: ${theme.colors.primary};
+                text-decoration: none;
+                transition: 0.5s;
               }
             `}
           >
-            <Links />
+            Hello
+          </Link>
+          <div
+            css={css`
+              font-size: 16px;
+              line-height: 1.25;
+              display: flex;
+              align-items: center;
+              a {
+                text-decoration: none;
+                color: ${theme.colors.grey};
+                margin-left: 16px;
+                margin-right: 16px;
+                :hover {
+                  color: ${theme.colors.orange};
+                  transition: 0.5s;
+                }
+              }
+            `}
+          >
+            <div
+              css={css`
+                display: flex;
+                align-items: center;
+                ${bpMaxSM} {
+                  display: none;
+                }
+              `}
+            >
+              <Links />
+            </div>
+            <MobileMenu>
+              <Links />
+            </MobileMenu>
           </div>
-          <MobileMenu>
-            <Links />
-          </MobileMenu>
-        </div>
-      </nav>
-      {/* </Container> */}
+        </nav>
+      </Container>
     </header>
   )
 }

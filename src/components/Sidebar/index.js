@@ -4,21 +4,20 @@ import { useTheme } from '../Theming'
 import { bpMaxSM, bpMaxMD, bpMinLG } from '../../lib/breakpoints'
 import Links from './Links'
 import { fonts } from '../../lib/typography'
+import Container from '../Container'
 
 // Learning how to build this here: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
 
 const Sidebar = () => {
   const theme = useTheme()
   return (
-    // Container
     <div
       css={css`
-        position: fixed;
-        top: 20vh;
-        left: 0;
-        bottom: 20%;
-        width: 280px;
         display: flex;
+        flex-shrink: 0;
+        left: 0;
+        position: fixed;
+        height: 100%;
         overflow: hidden;
         padding: 0;
         ${bpMaxMD} {
@@ -33,7 +32,7 @@ const Sidebar = () => {
         }
       `}
     >
-      {/* Nacvbar */}
+      {/* Navbar */}
       <nav
         css={css`
           position: absolute;

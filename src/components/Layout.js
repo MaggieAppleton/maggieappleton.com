@@ -178,36 +178,28 @@ export default ({
       <Fragment>
         <Global styles={reset()} />
         <Global styles={getGlobalStyles(theme)} />
-        <div
-          css={css`
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            max-width: 1300px;
-          `}
+
+        <Helmet
+          title={config.siteTitle}
+          meta={[
+            { name: 'description', content: description },
+            { name: 'keywords', content: keywords },
+          ]}
         >
-          <Helmet
-            title={config.siteTitle}
-            meta={[
-              { name: 'description', content: description },
-              { name: 'keywords', content: keywords },
-            ]}
-          >
-            <html lang="en" />
-            <noscript>This site runs best with JavaScript enabled.</noscript>
-          </Helmet>
-          <Sidebar />
-          <Header />
-          <MDXProvider components={mdxComponents}>
-            <Fragment>{children}</Fragment>
-          </MDXProvider>
-          {!noFooter && (
-            <Footer
-              author={site.siteMetadata.author.name}
-              noSubscribeForm={noSubscribeForm}
-            />
-          )}
-        </div>
+          <html lang="en" />
+          <noscript>This site runs best with JavaScript enabled.</noscript>
+        </Helmet>
+        <Header />
+        <Sidebar />
+        <MDXProvider components={mdxComponents}>
+          <Fragment>{children}</Fragment>
+        </MDXProvider>
+        {!noFooter && (
+          <Footer
+            author={site.siteMetadata.author.name}
+            noSubscribeForm={noSubscribeForm}
+          />
+        )}
       </Fragment>
     </ThemeProvider>
   )
