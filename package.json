@@ -12,6 +12,7 @@
     "@hot-loader/react-dom": "16.8.6",
     "@mdx-js/mdx": "^1.1.1",
     "@mdx-js/react": "^1.1.1",
+    "@tippyjs/react": "^4.0.2",
     "core-js": "^3.1.4",
     "dotenv": "^8.0.0",
     "dotenv-parse-variables": "^0.2.2",
