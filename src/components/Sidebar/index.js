@@ -13,15 +13,13 @@ const Sidebar = () => {
   return (
     <div
       css={css`
-        display: flex;
         flex-shrink: 0;
-        left: 0;
         position: fixed;
         height: 100%;
         overflow: hidden;
         padding: 0;
         ${bpMaxMD} {
-          width: 180px;
+          width: 190px;
         }
         ${bpMinLG} {
           width: 220px;
@@ -36,6 +34,8 @@ const Sidebar = () => {
       <nav
         css={css`
           position: absolute;
+          right: 10%;
+          top: 10%;
           align-items: right;
           float: right;
           border-right: 1px solid ${theme.colors.grey};
