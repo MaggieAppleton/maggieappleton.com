@@ -39,7 +39,7 @@ export default function Post({
               margin-bottom: 20px;
             `}
           >
-            {title} Book
+            {title}
           </h1>
           <div
             css={css`
@@ -64,6 +64,7 @@ export default function Post({
           {cover && (
             <div
               css={css`
+                max-width: 300px;
                 padding: 30px;
                 ${bpMaxSM} {
                   padding: 0;
