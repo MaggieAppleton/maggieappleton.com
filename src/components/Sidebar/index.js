@@ -26,7 +26,7 @@ const Sidebar = () => {
         ${bpMinLG} {
           width: 220px;
         }
-        ${bpMaxSM} {
+        ${bpMaxMD} {
           display: none;
           visibility: hidden;
         }

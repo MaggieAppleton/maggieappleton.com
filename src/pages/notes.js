@@ -14,11 +14,14 @@ const NotesPage = ({ data: { site, notesQuery } }) => {
   return (
     <Layout site={site}>
       <Container>
-        <h1>Notes & Resources</h1>
-        <p>Here's some notes</p>
+        <h1>The Digital Garden</h1>
+        <p>
+          An open collection of my notes, resources, sketches, and explorations.
+          These are seedlings I'm cultivating.
+        </p>
+        <h2>Recently Updated</h2>
         {/* ------------ Notes Section ------------ */}
         <section className="notes">
-          <p>An open wiki of things I'm currently exploring</p>
           {notesQuery.edges.map(({ node: note }) => (
             <div
               key={note.id}
