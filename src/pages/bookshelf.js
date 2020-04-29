@@ -8,26 +8,41 @@ import { fonts } from '../lib/typography'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
+import { bpMaxSM } from '../lib/breakpoints'
 
 const BookPage = ({ data: { site, bookQuery } }) => {
   const theme = useTheme()
   return (
     <Layout site={site}>
-      <Container>
+      <Container
+        css={css`
+          .books {
+            display: flex;
+            flex-direction: row;
+            ${bpMaxSM} {
+              flex-direction: column;
+            }
+            img {
+              border-radius: 4px;
+            }
+          }
+        `}
+      >
         <h1>Books</h1>
         <p>Here's some books</p>
         {/* ------------ Books Section ------------ */}
         <section className="books">
-          {bookQuery.edges.map(({ node: note }) => (
+          {bookQuery.edges.map(({ node: book }) => (
             <div
-              key={note.id}
+              key={book.id}
               css={css`
+                padding: 0.8em;
                 margin-bottom: 1em;
-                display: flex;
-                flex-direction: column;
+                width: 300px;
+                min-width: 200px;
               `}
             >
-              <Img src={note.frontmatter.cover} />
+              <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
               <h4
                 css={css({
                   marginBottom: rhythm(0.1),
@@ -41,10 +56,10 @@ const BookPage = ({ data: { site, bookQuery } }) => {
                   css={css`
                     font-family: ${fonts.walsheimLight};
                   `}
-                  to={note.frontmatter.slug}
-                  aria-label={`View ${note.frontmatter.title}`}
+                  to={book.frontmatter.slug}
+                  aria-label={`View ${book.frontmatter.title}`}
                 >
-                  {note.frontmatter.title}
+                  {book.frontmatter.title}
                 </Link>
               </h4>
             </div>

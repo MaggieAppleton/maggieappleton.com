@@ -28,7 +28,7 @@ const Hero = () => {
             font-weight: 100;
             font-size: ${rhythm(2.2)};
             line-height: ${rhythm(2.2)};
-            margin: 0;
+            margin-top: 3vw;
             max-width: ${rhythm(18)};
           `}
         >
@@ -49,17 +49,12 @@ const Hero = () => {
         <h4
           css={css`
             font-family: ${fonts.walsheimLight};
+            margin-bottom: 3vw;
           `}
         >
           Art Director & Lead Illustrator at Egghead.io
         </h4>
       </Container>
-      <div
-        css={css`
-          height: 150px;
-          overflow: hidden;
-        `}
-      />
     </section>
   )
 }
@@ -106,11 +101,11 @@ export default function Index({
       >
         {/* ------------ Notes Section ------------ */}
         <section className="notes">
-          <button>Start Here</button>
+          {/* <button>Start Here</button> */}
           <Link to="./notes">
-            <h3>Writing, Notes & Research</h3>
+            <h3>Digital Garden</h3>
           </Link>
-          <p>An open wiki of things I'm currently exploring</p>
+          <p>A collection of notes, research, & sketches</p>
           {notesQuery.edges.map(({ node: note }) => (
             <div
               key={note.id}
