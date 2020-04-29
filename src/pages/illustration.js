@@ -13,12 +13,19 @@ const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
   const theme = useTheme()
   return (
     <Layout site={site}>
-      <Container>
-        <h1>Illustrations</h1>
-        <p>Here's some illustrations</p>
+      <Container
+        css={css`
+          .illustrationGrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1em;
+          }
+        `}
+      >
+        <h1>Illustration Projects</h1>
+        <p>For fun and profit</p>
         <section>
-          <h3>Illustration Work</h3>
-          <div className="illustration">
+          <div className="illustrationGrid">
             {illustrationQuery.edges.map(({ node: illustration }) => (
               <Link
                 css={css`
@@ -31,6 +38,7 @@ const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
                   key={illustration.id}
                   css={css`
                     margin-bottom: 40px;
+                    max-width: 450px;
                   `}
                 >
                   <Img

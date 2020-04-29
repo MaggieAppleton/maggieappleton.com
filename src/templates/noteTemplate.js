@@ -23,83 +23,80 @@ export default function Post({
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
       <SEO frontmatter={mdx.frontmatter} isEssayPost />
-      <article
+      <Container
         css={css`
-          width: 100%;
-          display: flex;
-          justify-content: center;
+          margin: 0 auto;
+          max-width: 900px;
         `}
       >
-        <Container>
-          <h1
-            css={css`
+        <h1
+          css={css`
+            text-align: center;
+            margin-bottom: 20px;
+          `}
+        >
+          {title} Note
+        </h1>
+        <div
+          css={css`
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            h3,
+            span {
               text-align: center;
-              margin-bottom: 20px;
-            `}
-          >
-            {title} Note
-          </h1>
+              font-size: 15px;
+              opacity: 0.6;
+              font-family: ${fonts.regular}, serif;
+              font-weight: normal;
+              margin: 0 5px;
+            }
+          `}
+        >
+          {date && <h3>{date}</h3>}
+        </div>
+        {cover && (
           <div
             css={css`
-              display: flex;
-              justify-content: center;
-              margin-bottom: 20px;
-              h3,
-              span {
-                text-align: center;
-                font-size: 15px;
-                opacity: 0.6;
-                font-family: ${fonts.regular}, serif;
-                font-weight: normal;
-                margin: 0 5px;
+              padding: 30px;
+              ${bpMaxSM} {
+                padding: 0;
               }
             `}
           >
-            {date && <h3>{date}</h3>}
+            <Img
+              sizes={cover.childImageSharp.fluid}
+              alt={site.siteMetadata.keywords.join(', ')}
+            />
           </div>
-          {cover && (
-            <div
-              css={css`
-                padding: 30px;
-                ${bpMaxSM} {
-                  padding: 0;
-                }
-              `}
-            >
-              <Img
-                sizes={cover.childImageSharp.fluid}
-                alt={site.siteMetadata.keywords.join(', ')}
-              />
-            </div>
-          )}
-          <br />
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+        )}
+        <br />
+        <MDXRenderer>{mdx.body}</MDXRenderer>
 
-          {/* Next and Previous */}
-          <div
-            css={css({
-              marginTop: '30px',
-              display: 'grid',
-              gridColumnTemplate: '1fr 1fr',
-            })}
-          >
-            {nextPage && (
-              <Link to={`/${nextPage.fields.slug}`} aria-label="View next page">
-                {nextPage.fields.title} →
-              </Link>
-            )}
-            {prevPage && (
-              <Link
-                to={`/${prevPage.fields.slug}`}
-                aria-label="View previous page"
-              >
-                ← {prevPage.fields.title}
-              </Link>
-            )}
-          </div>
-        </Container>
-        {/* <SubscribeForm /> */}
-      </article>
+        {/* Next and Previous */}
+        <div
+          css={css({
+            marginTop: '30px',
+            display: 'grid',
+            gridColumnTemplate: '1fr 1fr',
+          })}
+        >
+          {nextPage && (
+            <Link to={`/${nextPage.fields.slug}`} aria-label="View next page">
+              {nextPage.fields.title} →
+            </Link>
+          )}
+          {prevPage && (
+            <Link
+              to={`/${prevPage.fields.slug}`}
+              aria-label="View previous page"
+            >
+              ← {prevPage.fields.title}
+            </Link>
+          )}
+        </div>
+      </Container>
+      {/* <SubscribeForm /> */}
 
       {/* Share Container */}
       <Container noVerticalPadding>

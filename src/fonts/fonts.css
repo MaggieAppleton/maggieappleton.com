@@ -27,28 +27,28 @@
   font-display: fallback;
 }
 @font-face {
-  font-family: 'Freight Text Pro Light';
+  font-family: 'FreightTextProLight-Regular';
   font-style: normal;
   font-weight: 100;
   src: url('FreightTextProLight-Regular.woff') format('woff');
   font-display: fallback;
 }
 @font-face {
-  font-family: 'Freight Text Pro Book';
+  font-family: 'FreightTextProBook-Regular';
   font-style: normal;
   font-weight: 400;
   src: url('FreightTextProBook-Regular.woff') format('woff');
   font-display: fallback;
 }
 @font-face {
-  font-family: 'Freight Text Pro Italic';
+  font-family: 'FreightTextProBook-Italic';
   font-style: italic;
   font-weight: 400;
   src: url('FreightTextProBook-Italic.woff') format('woff');
   font-display: fallback;
 }
 @font-face {
-  font-family: 'Freight Text Pro Bold';
+  font-family: 'FreightTextProBlack-Regular';
   font-style: normal;
   font-weight: 700;
   src: url('FreightTextProBlack-Regular.woff') format('woff');

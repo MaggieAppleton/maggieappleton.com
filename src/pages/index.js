@@ -73,8 +73,8 @@ export default function Index({
           padding-bottom: 0;
           padding-top: 0;
           display: grid;
-          grid-gap: 4em;
-          grid-template-columns: 1fr 3fr;
+          grid-gap: 2.2em;
+          grid-template-columns: 2fr 5fr;
           ${bpMaxMD} {
             grid-template-columns: 100%;
           }
@@ -91,6 +91,12 @@ export default function Index({
           }
           .books {
             margin-top: 3em;
+            border-right: 1px solid ${theme.colors.lightgrey};
+            padding-right: 2em;
+          }
+          .notes {
+            border-right: 1px solid ${theme.colors.lightgrey};
+            padding-right: 2em;
           }
           button {
             width: 100%;
@@ -99,44 +105,52 @@ export default function Index({
           }
         `}
       >
-        {/* ------------ Notes Section ------------ */}
-        <section className="notes">
-          {/* <button>Start Here</button> */}
-          <Link to="./notes">
-            <h3>Digital Garden</h3>
-          </Link>
-          <p>A collection of notes, research, & sketches</p>
-          {notesQuery.edges.map(({ node: note }) => (
-            <div
-              key={note.id}
-              css={css`
-                margin-bottom: 1em;
-              `}
-            >
-              <h4
-                css={css({
-                  marginBottom: rhythm(0.1),
-                  transition: 'all 150ms ease',
-                  ':hover': {
-                    color: theme.colors.primary,
-                  },
-                })}
+        <section>
+          {/* ------------ Notes Section ------------ */}
+          <section className="notes">
+            {/* <button>Start Here</button> */}
+            <Link to="./notes">
+              <h3>
+                <span>🌱</span> The Digital Garden
+              </h3>
+            </Link>
+            <p>
+              An open collection of notes, research, sketches, and thoughts.{' '}
+              <br />
+              Carefully tended over time.
+            </p>
+            {notesQuery.edges.map(({ node: note }) => (
+              <div
+                key={note.id}
+                css={css`
+                  margin-bottom: 1em;
+                `}
               >
-                <Link
-                  css={css`
-                    font-family: ${fonts.walsheimLight};
-                  `}
-                  to={note.frontmatter.slug}
-                  aria-label={`View ${note.frontmatter.title}`}
+                <h4
+                  css={css({
+                    marginBottom: rhythm(0.1),
+                    transition: 'all 150ms ease',
+                    ':hover': {
+                      color: theme.colors.primary,
+                    },
+                  })}
                 >
-                  {note.frontmatter.title}
-                </Link>
-              </h4>
-            </div>
-          ))}
-          <Link to="/notes" aria-label="Visit written articles">
-            View all notes
-          </Link>
+                  <Link
+                    css={css`
+                      font-family: ${fonts.walsheimLight};
+                    `}
+                    to={note.frontmatter.slug}
+                    aria-label={`View ${note.frontmatter.title}`}
+                  >
+                    {note.frontmatter.title}
+                  </Link>
+                </h4>
+              </div>
+            ))}
+            <Link to="/notes" aria-label="Visit written articles">
+              View all notes
+            </Link>
+          </section>
 
           {/* ------------ Books Section ------------ */}
           <section className="books">

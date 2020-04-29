@@ -7,15 +7,15 @@ export const fonts = {
   walsheimLight: 'GT Walsheim Light',
   walsheimUltralight: 'GT Walsheim Ultralight',
   walsheimBold: 'GT Walsheim Bold',
-  light: 'Freight Text Pro Light',
-  regular: 'Freight Text Pro Regular',
-  regularItalic: 'Freight Text Pro Italic',
-  bold: 'Freight Text Pro Bold',
+  light: 'FreightTextProLight-Regular',
+  regular: 'FreightTextProBook-Regular',
+  regularItalic: 'FreightTextProBook-Italic',
+  bold: 'FreightTextProBlack-Regular',
 }
 
 const typography = new Typography({
   baseFontSize: '22px',
-  baseLineHeight: 1.55,
+  baseLineHeight: 1.45,
   headerLineHeight: 1.4,
   headerFontFamily: [fonts.walsheimBold, 'sans-serif'],
   bodyFontFamily: [fonts.regular, 'serif'],
