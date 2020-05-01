@@ -11,6 +11,7 @@ import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
+import NoteSidebar from '../components/mdx/NoteSidebar'
 
 export default function Post({
   data: { site, mdx },
@@ -26,7 +27,7 @@ export default function Post({
       <Container
         css={css`
           margin: 0 auto;
-          max-width: 900px;
+          max-width: 1000px;
         `}
       >
         <h1
@@ -35,7 +36,7 @@ export default function Post({
             margin-bottom: 20px;
           `}
         >
-          {title} Note
+          {title}
         </h1>
         <div
           css={css`
@@ -45,7 +46,7 @@ export default function Post({
             h3,
             span {
               text-align: center;
-              font-size: 15px;
+              font-size: 0.9em;
               opacity: 0.6;
               font-family: ${fonts.regular}, serif;
               font-weight: normal;
@@ -53,32 +54,17 @@ export default function Post({
             }
           `}
         >
-          {date && <h3>{date}</h3>}
+          {date && <h3>Last updated {date}</h3>}
         </div>
-        {cover && (
-          <div
-            css={css`
-              padding: 30px;
-              ${bpMaxSM} {
-                padding: 0;
-              }
-            `}
-          >
-            <Img
-              sizes={cover.childImageSharp.fluid}
-              alt={site.siteMetadata.keywords.join(', ')}
-            />
-          </div>
-        )}
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
-
         {/* Next and Previous */}
         <div
           css={css({
             marginTop: '30px',
             display: 'grid',
             gridColumnTemplate: '1fr 1fr',
+            clear: 'both',
           })}
         >
           {nextPage && (

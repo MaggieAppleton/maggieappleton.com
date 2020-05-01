@@ -18,7 +18,6 @@ const getGlobalStyles = theme => {
   return css`
     body {
       background: ${theme.colors.bodyBg};
-      color: ${theme.colors.text};
     }
     &::selection {
       color: ${theme.colors.white};
@@ -41,7 +40,6 @@ const getGlobalStyles = theme => {
     h4,
     h5,
     h6 {
-      color: ${theme.colors.text};
       a {
         color: ${theme.colors.text};
         &:hover,
