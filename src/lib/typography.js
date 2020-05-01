@@ -1,5 +1,6 @@
 import Typography from 'typography'
 import '../fonts/fonts.css'
+import colors from '../lib/colors'
 
 export const fonts = {
   cardo: 'Cardo',
@@ -17,20 +18,27 @@ const typography = new Typography({
   baseFontSize: '22px',
   baseLineHeight: 1.45,
   headerLineHeight: 1.4,
-  headerFontFamily: [fonts.walsheimBold, 'sans-serif'],
+  headerFontFamily: [fonts.walsheim, 'sans-serif'],
   bodyFontFamily: [fonts.regular, 'serif'],
-  headerColor: '#0C182B',
-  bodyColor: '#1D293C',
+  headerColor: '#121F35',
+  bodyColor: '#334259',
 
   overrideStyles: ({ rhythm }) => ({
     h1: {
-      color: '#0C182B',
+      color: colors.black,
+      fontFamily: fonts.walsheim,
+      fontSize: rhythm(2),
     },
     h2: {
-      color: '#243042',
+      color: colors.darkGrey,
+      fontFamily: fonts.regular,
+      fontSize: rhythm(1.4),
     },
     h3: {
-      color: '#4B576A',
+      color: colors.darkGrey,
+      fontFamily: fonts.walsheimLight,
+      fontSize: rhythm(0.9),
+      letterSpacing: '0.02em',
     },
     'h1,h2,h3,h4,h5,h6': {
       lineHeight: 1,

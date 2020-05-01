@@ -24,12 +24,12 @@ const Hero = () => {
             color: ${theme.colors.black};
             position: relative;
             z-index: 5;
-            font-family: ${fonts.walsheim};
+            font-family: ${fonts.walsheimBold};
             font-weight: 100;
-            font-size: ${rhythm(2.2)};
-            line-height: ${rhythm(2.2)};
+            font-size: ${rhythm(2.4)};
+            line-height: ${rhythm(2.4)};
             margin-top: 3vw;
-            max-width: ${rhythm(18)};
+            max-width: ${rhythm(22)};
           `}
         >
           Maggie Appleton
@@ -37,10 +37,11 @@ const Hero = () => {
         <h2
           css={css`
             font-family: ${fonts.cardo};
+            color: ${theme.colors.darkGrey};
             font-weight: 200;
-            font-size: ${rhythm(1.1)};
-            line-height: ${rhythm(1.4)};
-            max-width: 600px;
+            font-size: ${rhythm(1.2)};
+            line-height: ${rhythm(1.5)};
+            max-width: ${rhythm(22)};
           `}
         >
           Makes illustrations that help explain the world of technology and
@@ -49,7 +50,9 @@ const Hero = () => {
         <h4
           css={css`
             font-family: ${fonts.walsheimLight};
+            font-weight: 300;
             margin-bottom: 3vw;
+            color: ${theme.colors.grey};
           `}
         >
           Art Director & Lead Illustrator at Egghead.io
@@ -91,11 +94,11 @@ export default function Index({
           }
           .books {
             margin-top: 3em;
-            border-right: 1px solid ${theme.colors.lightgrey};
+            border-right: 1px solid ${theme.colors.lightGrey};
             padding-right: 2em;
           }
           .notes {
-            border-right: 1px solid ${theme.colors.lightgrey};
+            border-right: 1px solid ${theme.colors.lightGrey};
             padding-right: 2em;
           }
           button {

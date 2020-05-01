@@ -1,10 +1,12 @@
 import styled from '@emotion/styled'
 
 export default styled.h2`
+  font-size: 1.8em;
   text-align: left;
-  font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
   font-weight: 400;
   line-height: 1.1;
 `
