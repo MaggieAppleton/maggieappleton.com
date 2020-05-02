@@ -77,7 +77,7 @@ export default function Index({
           padding-top: 0;
           display: grid;
           grid-gap: 2.2em;
-          grid-template-columns: 2fr 5fr;
+          grid-template-columns: 2fr 4fr;
           ${bpMaxMD} {
             grid-template-columns: 100%;
           }
@@ -106,6 +106,10 @@ export default function Index({
             max-width: 240px;
             margin-bottom: 20px;
           }
+          .sectionLink {
+            justify-self: end;
+            float: right;
+          }
         `}
       >
         <section>
@@ -118,8 +122,7 @@ export default function Index({
               </h3>
             </Link>
             <p>
-              An open collection of notes, research, sketches, and thoughts.{' '}
-              <br />
+              A collection of essays, notes, research, and sketches. <br />
               Carefully tended over time.
             </p>
             {notesQuery.edges.map(({ node: note }) => (
@@ -150,17 +153,21 @@ export default function Index({
                 </h4>
               </div>
             ))}
-            <Link to="/notes" aria-label="Visit written articles">
-              View all notes
+            <Link
+              className="sectionLink"
+              to="/notes"
+              aria-label="Visit the Garden"
+            >
+              Visit the Garden
             </Link>
           </section>
 
           {/* ------------ Books Section ------------ */}
           <section className="books">
-            <h3>Now Reading</h3>
-            {bookQuery.edges.map(({ node: note }) => (
+            <h3>Currently Reading</h3>
+            {bookQuery.edges.map(({ node: book }) => (
               <div
-                key={note.id}
+                key={book.id}
                 css={css`
                   margin-bottom: 1em;
                 `}
@@ -178,14 +185,22 @@ export default function Index({
                     css={css`
                       font-family: ${fonts.walsheimLight};
                     `}
-                    to={note.frontmatter.slug}
-                    aria-label={`View ${note.frontmatter.title}`}
+                    to={book.frontmatter.slug}
+                    aria-label={`View ${book.frontmatter.title}`}
                   >
-                    {note.frontmatter.title}
+                    <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
+                    {book.frontmatter.title}
                   </Link>
                 </h4>
               </div>
             ))}
+            <Link
+              className="sectionLink"
+              to="/bookshelf"
+              aria-label="Browse the Bookshelf"
+            >
+              Browse the Bookshelf
+            </Link>
           </section>
         </section>
 
@@ -225,6 +240,13 @@ export default function Index({
               </Link>
             ))}
           </div>
+          <Link
+            className="sectionLink"
+            to="/bookshelf"
+            aria-label="See More Illustrations"
+          >
+            See More Illustrations
+          </Link>
         </section>
       </Container>
     </Layout>
@@ -317,7 +339,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 3
+      limit: 1
     ) {
       edges {
         node {
