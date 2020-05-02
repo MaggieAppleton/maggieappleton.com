@@ -9,7 +9,7 @@ import { bpMaxSM, bpMinSM } from '../lib/breakpoints'
 import mdxComponents from './mdx'
 import Header from './Header/'
 import Sidebar from './Sidebar/'
-import reset from '../lib/reset'
+import ResetStyles from '../lib/reset'
 import { fonts } from '../lib/typography'
 import config from '../../config/website'
 import Footer from '../components/Footer'
@@ -174,7 +174,7 @@ export default ({
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
-        <Global styles={reset()} />
+        <Global styles={ResetStyles()} />
         <Global styles={getGlobalStyles(theme)} />
 
         <Helmet
