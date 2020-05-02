@@ -34,24 +34,14 @@ const Share = ({ url, title, twitterHandle }) => {
           border-top: 1px solid ${theme.colors.gray};
         `}
       />
-      <span>Share article</span>
+      <span>Want to share?</span>
       <TwitterShareButton
         url={url}
         quote={title}
         via={twitterHandle.split('@').join('')}
       >
-        Twitter
+        Tell Twitter About It
       </TwitterShareButton>
-      <FacebookShareButton
-        url={url}
-        quote={title}
-        via={twitterHandle.split('@').join('')}
-        css={css`
-          cursor: pointer;
-        `}
-      >
-        Facebook
-      </FacebookShareButton>
     </div>
   )
 }
