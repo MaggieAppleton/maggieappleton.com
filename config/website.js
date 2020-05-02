@@ -26,5 +26,6 @@ module.exports = {
   twitter: 'https://twitter.com/mappletons/',
   twitterHandle: '@mappletons',
   github: 'https://github.com/maggieappleton/',
-  linkedin: '',
+  dribbble: 'https://dribbble.com/mappleton',
+  instagram: 'https://www.instagram.com/maggieappleton/',
 }
