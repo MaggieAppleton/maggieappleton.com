@@ -64,19 +64,14 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md', '.markdown'],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              backgroundColor: '#fafafa',
-              maxWidth: 1035,
-            },
-          },
-        ],
+        gatsbyRemarkPlugins: [`gatsby-remark-images`],
+        plugins: [`gatsby-remark-images`],
       },
     },
-    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-twitter',
     'gatsby-plugin-emotion',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',

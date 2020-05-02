@@ -12,8 +12,8 @@ const Sidebar = () => {
   return (
     <div
       css={css`
-        flex-shrink: 0;
         position: fixed;
+        flex-shrink: 0;
         height: 100%;
         overflow: hidden;
         padding: 0;
