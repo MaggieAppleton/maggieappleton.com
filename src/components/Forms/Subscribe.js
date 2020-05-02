@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { css } from '@emotion/core'
 import { withTheme } from '../Theming'
 import { rhythm } from '../../lib/typography'
-import { bpMaxMD } from '../../lib/breakpoints'
+import { bpMaxSM } from '../../lib/breakpoints'
 import Message from '../ConfirmMessage/Message'
 import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
@@ -71,18 +71,28 @@ class SignUp extends React.Component {
     const successful = response && response.status === 'success'
 
     return (
-      <div>
+      <div
+        css={css`
+          display: flex;
+          justify-content: flex-end;
+        `}
+      >
         {!successful && (
-          <h2
-            css={css`
-              margin-bottom: ${rhythm(1)};
-              margin-top: 0;
-            `}
-          >
-            Join the Newsletter
-          </h2>
+          <>
+            <h3
+              css={css`
+                margin-bottom: ${rhythm(1)};
+                margin-top: 0;
+              `}
+            >
+              Join the newsletter
+            </h3>
+            <p>
+              For weekly notes on visual thinking, culutral anthropology, and
+              web development
+            </p>
+          </>
         )}
-
         <Formik
           initialValues={{
             email_address: '',
@@ -96,6 +106,7 @@ class SignUp extends React.Component {
                 <Form
                   css={css`
                     display: flex;
+                    padding-left: 2em;
                     font-size: 0.9em;
                     max-width: 90vw;
                     align-items: flex-end;
@@ -112,10 +123,11 @@ class SignUp extends React.Component {
                       max-width: 300px;
                     }
                     input {
-                      border: 1px solid ${theme.colors.grey};
+                      padding-top: 6px;
+                      border: 1px solid ${theme.colors.lightGrey};
                       color: ${theme.colors.grey};
                     }
-                    ${bpMaxMD} {
+                    ${bpMaxSM} {
                       flex-direction: column;
                       align-items: flex-start;
                       width: auto;
@@ -151,7 +163,7 @@ class SignUp extends React.Component {
                       aria-label="your first name"
                       aria-required="false"
                       name="first_name"
-                      placeholder="Jane"
+                      placeholder="Margaret Mead"
                       type="text"
                     />
                   </label>
@@ -179,7 +191,7 @@ class SignUp extends React.Component {
                       aria-label="your email address"
                       aria-required="true"
                       name="email_address"
-                      placeholder="jane@acme.com"
+                      placeholder="mead@semiotics.com"
                       type="email"
                     />
                   </label>
