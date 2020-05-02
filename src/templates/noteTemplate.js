@@ -107,7 +107,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         author
-
         slug
         keywords
       }
