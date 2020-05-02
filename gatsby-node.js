@@ -31,6 +31,31 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
 
+      essaysQuery: allMdx(
+        filter: {
+          frontmatter: { categories: { eq: "essay" }, published: { ne: false } }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            parent {
+              ... on File {
+                name
+                sourceInstanceName
+              }
+            }
+            excerpt(pruneLength: 250)
+            fields {
+              title
+              slug
+              date
+            }
+          }
+        }
+      }
+
       illustrationQuery: allMdx(
         filter: {
           frontmatter: {
@@ -113,6 +138,22 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve('./src/templates/noteTemplate.js'),
+        context: {
+          id: node.id,
+          prevPage,
+          nextPage,
+        },
+      })
+    })
+
+    data.essaysQuery.edges.forEach(({ node }, i) => {
+      const { edges } = data.essaysQuery
+      const prevPage = i === 0 ? null : edges[i - 1].node
+      const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+      pageRedirects(node)
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve('./src/templates/essayTemplate.js'),
         context: {
           id: node.id,
           prevPage,
