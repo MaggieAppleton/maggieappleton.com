@@ -116,7 +116,7 @@ export default function Index({
           {/* ------------ Notes Section ------------ */}
           <section className="notes">
             {/* <button>Start Here</button> */}
-            <Link to="./notes">
+            <Link to="./garden">
               <h3>
                 <span>🌱</span> The Digital Garden
               </h3>
@@ -155,7 +155,7 @@ export default function Index({
             ))}
             <Link
               className="sectionLink"
-              to="/notes"
+              to="/garden"
               aria-label="Visit the Garden"
             >
               Visit the Garden

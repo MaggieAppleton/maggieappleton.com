@@ -10,8 +10,8 @@ export default () => {
       <Link to="./illustration" aria-label="View illustration page">
         Illustration Work
       </Link>
-      <Link to="./notes" aria-label="View notes page">
-        Notes & Research
+      <Link to="./garden" aria-label="View notes and essays page">
+        Essays & Notes
       </Link>
       <Link to="./bookshelf" aria-label="View books page">
         Bookshelf

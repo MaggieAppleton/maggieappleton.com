@@ -33,6 +33,7 @@ const typography = new Typography({
       color: colors.darkGrey,
       fontFamily: fonts.regular,
       fontSize: rhythm(1.4),
+      fontWeight: 'normal',
     },
     h3: {
       color: colors.darkGrey,
