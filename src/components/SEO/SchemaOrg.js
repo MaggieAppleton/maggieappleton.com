@@ -9,7 +9,7 @@ export default React.memo(
     defaultTitle,
     description,
     image,
-    isEssayPost,
+    isNotePost,
     organization,
     title,
     url,
@@ -24,7 +24,7 @@ export default React.memo(
       },
     ]
 
-    const schema = isEssayPost
+    const schema = isNotePost
       ? [
           ...baseSchema,
           {

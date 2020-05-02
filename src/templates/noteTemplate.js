@@ -13,17 +13,16 @@ import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
 import NoteSidebar from '../components/mdx/NoteSidebar'
 
-export default function Post({
+export default function Note({
   data: { site, mdx },
   pageContext: { prevPage, nextPage },
 }) {
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
-  const cover = mdx.frontmatter.cover
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
-      <SEO frontmatter={mdx.frontmatter} isEssayPost />
+      <SEO frontmatter={mdx.frontmatter} isNotePost />
       <Container
         css={css`
           margin: 0 auto;
@@ -54,7 +53,7 @@ export default function Post({
             }
           `}
         >
-          {date && <h3>Last updated {date}</h3>}
+          {date && <h3>Last tended on {date}</h3>}
         </div>
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>

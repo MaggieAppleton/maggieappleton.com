@@ -25,7 +25,7 @@ export default function Post({
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
-      <SEO frontmatter={mdx.frontmatter} isEssayPost />
+      <SEO frontmatter={mdx.frontmatter} isNotePost />
       <article
         css={css`
           width: 100%;
