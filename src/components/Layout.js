@@ -14,6 +14,7 @@ import { fonts } from '../lib/typography'
 import config from '../../config/website'
 import Footer from '../components/Footer'
 
+//----------------------           CSS ---------------------- //
 const getGlobalStyles = theme => {
   return css`
     body {
@@ -132,6 +133,7 @@ const getGlobalStyles = theme => {
   `
 }
 
+//----------------------           Main Components ---------------------- //
 export default ({
   site,
   frontmatter = {},
