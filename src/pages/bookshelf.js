@@ -45,24 +45,38 @@ const BookPage = ({ data: { site, bookQuery } }) => {
               <div
                 key={book.id}
                 css={css`
-                  padding: 0.8em;
+                  padding: 1.4em;
                   margin-bottom: 1em;
                   width: 300px;
                   max-width: 240px;
+                  .gatsby-image-wrapper {
+                    transition: all 700ms ease;
+                  }
+                  &:hover {
+                    .gatsby-image-wrapper {
+                      transform: translateY(-4px);
+                      -webkit-box-shadow: 0px 5px 11px -7px rgba(115, 130, 140, 0.98);
+                      box-shadow: 0px 5px 11px -7px rgba(115, 130, 140, 0.98);
+                    }
+                    h4 {
+                      color: ${theme.colors.black};
+                    }
+                  }
                 `}
               >
                 <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
                 <h4
-                  css={css({
-                    marginBottom: rhythm(0.1),
-                    transition: 'all 150ms ease',
-                    ':hover': {
-                      color: theme.colors.primary,
-                    },
-                  })}
+                  css={css`
+                    color: ${theme.colors.grey};
+                    font-weight: 200;
+                    margin-top: 1em;
+                    margin-bottom: ${rhythm(0.1)};
+                    transition: all 700ms ease;
+                  `}
                 >
                   {book.frontmatter.title}
                 </h4>
+                <h6>{book.frontmatter.author}</h6>
               </div>
             </Link>
           ))}
@@ -108,6 +122,7 @@ export const bookPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+            author
             cover {
               childImageSharp {
                 fluid(maxWidth: 300) {

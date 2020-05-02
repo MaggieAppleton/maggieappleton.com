@@ -67,53 +67,6 @@ const Hero = () => {
   )
 }
 
-/* Effect 17: move up fade out, push border */
-
-// .cl-effect-17 a::before {
-// 	color: #fff;
-// 	text-shadow: 0 0 1px rgba(255,255,255,0.3);
-// 	content: attr(data-hover);
-// 	position: absolute;
-// 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-// 	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-// 	transition: transform 0.3s, opacity 0.3s;
-// 	pointer-events: none;
-// }
-
-// .cl-effect-17 a::after {
-// 	content: '';
-// 	position: absolute;
-// 	left: 0;
-// 	bottom: 0;
-// 	width: 100%;
-// 	height: 2px;
-// 	background: #fff;
-// 	opacity: 0;
-// 	-webkit-transform: translateY(5px);
-// 	-moz-transform: translateY(5px);
-// 	transform: translateY(5px);
-// 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-// 	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-// 	transition: transform 0.3s, opacity 0.3s;
-// 	pointer-events: none;
-// }
-
-// .cl-effect-17 a:hover::before,
-// .cl-effect-17 a:focus::before {
-// 	opacity: 0;
-// 	-webkit-transform: translateY(-2px);
-// 	-moz-transform: translateY(-2px);
-// 	transform: translateY(-2px);
-// }
-
-// .cl-effect-17 a:hover::after,
-// .cl-effect-17 a:focus::after {
-// 	opacity: 1;
-// 	-webkit-transform: translateY(0px);
-// 	-moz-transform: translateY(0px);
-// 	transform: translateY(0px);
-// }
-
 const SectionLink = props => {
   const theme = useTheme()
   return (
@@ -173,13 +126,12 @@ export default function Index({
           }
           .books {
             margin-top: 3em;
-            border-right: 1px solid ${theme.colors.lightGrey};
             padding-right: 2em;
+            padding-top: 0.4em;
           }
           .notes {
-            border-right: 1px solid ${theme.colors.lightGrey};
             padding-right: 2em;
-            padding-bottom: 1.2em;
+            padding-bottom: 2em;
           }
           button {
             width: 100%;
@@ -374,7 +326,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 3
+      limit: 4
     ) {
       edges {
         node {
@@ -405,7 +357,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 1
+      limit: 2
     ) {
       edges {
         node {
