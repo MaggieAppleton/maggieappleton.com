@@ -12,7 +12,7 @@ import Share from '../components/Share'
 import config from '../../config/website'
 import { bpMaxSM } from '../lib/breakpoints'
 
-export default function Post({
+export default function Book({
   data: { site, mdx },
   pageContext: { prevPage, nextPage },
 }) {
@@ -21,18 +21,32 @@ export default function Post({
   const title = mdx.frontmatter.title
   const cover = mdx.frontmatter.cover
 
-  console.log(prevPage, nextPage)
-
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
       <SEO frontmatter={mdx.frontmatter} isNotePost />
-      <article
+      <Container
         css={css`
-          width: 100%;
+          margin: 0 auto;
+          max-width: 1000px;
+          margin-top: 2em;
           display: flex;
+          flex-direction: column;
+          .bookInfo {
+            display: flex;
+            flex-direction: row;
+          }
         `}
       >
-        <Container>
+        <div className="bookInfo">
+          <Img
+            css={css`
+              display: block;
+              max-width: 300px;
+              border-radius: 6px;
+            `}
+            sizes={cover.childImageSharp.fluid}
+            alt={site.siteMetadata.keywords.join(', ')}
+          />
           <h1
             css={css`
               text-align: center;
@@ -44,7 +58,6 @@ export default function Post({
           <div
             css={css`
               display: flex;
-              justify-content: center;
               margin-bottom: 20px;
               h3,
               span {
@@ -61,49 +74,33 @@ export default function Post({
             {author && <span>—</span>}
             {date && <h3>{date}</h3>}
           </div>
-          {cover && (
-            <div
-              css={css`
-                max-width: 300px;
-                padding: 30px;
-                ${bpMaxSM} {
-                  padding: 0;
-                }
-              `}
-            >
-              <Img
-                sizes={cover.childImageSharp.fluid}
-                alt={site.siteMetadata.keywords.join(', ')}
-              />
-            </div>
+        </div>
+        <br />
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+        {/* Next and Previous */}
+        <div
+          css={css({
+            marginTop: '30px',
+            display: 'grid',
+            gridColumnTemplate: '1fr 1fr',
+          })}
+        >
+          {nextPage && (
+            <Link to={`/${nextPage.fields.slug}`} aria-label="View next page">
+              {nextPage.fields.title} →
+            </Link>
           )}
-          <br />
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-          {/* Next and Previous */}
-          <div
-            css={css({
-              marginTop: '30px',
-              display: 'grid',
-              gridColumnTemplate: '1fr 1fr',
-            })}
-          >
-            {nextPage && (
-              <Link to={`/${nextPage.fields.slug}`} aria-label="View next page">
-                {nextPage.fields.title} →
-              </Link>
-            )}
-            {prevPage && (
-              <Link
-                to={`/${prevPage.fields.slug}`}
-                aria-label="View previous page"
-              >
-                ← {prevPage.fields.title}
-              </Link>
-            )}
-          </div>
-        </Container>
-        {/* <SubscribeForm /> */}
-      </article>
+          {prevPage && (
+            <Link
+              to={`/${prevPage.fields.slug}`}
+              aria-label="View previous page"
+            >
+              ← {prevPage.fields.title}
+            </Link>
+          )}
+        </div>
+      </Container>
+      {/* <SubscribeForm /> */}
 
       <Container noVerticalPadding>
         <Share

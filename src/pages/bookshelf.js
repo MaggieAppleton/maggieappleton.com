@@ -19,6 +19,7 @@ const BookPage = ({ data: { site, bookQuery } }) => {
           .books {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             ${bpMaxSM} {
               flex-direction: column;
             }
@@ -28,41 +29,40 @@ const BookPage = ({ data: { site, bookQuery } }) => {
           }
         `}
       >
-        <h1>Books</h1>
-        <p>Here's some books</p>
+        <h1>The Bookshelf</h1>
         {/* ------------ Books Section ------------ */}
         <section className="books">
           {bookQuery.edges.map(({ node: book }) => (
-            <div
-              key={book.id}
+            <Link
               css={css`
-                padding: 0.8em;
-                margin-bottom: 1em;
-                width: 300px;
-                min-width: 200px;
+                font-family: ${fonts.walsheimLight};
               `}
+              to={book.frontmatter.slug}
+              aria-label={`View ${book.frontmatter.title}`}
             >
-              <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
-              <h4
-                css={css({
-                  marginBottom: rhythm(0.1),
-                  transition: 'all 150ms ease',
-                  ':hover': {
-                    color: theme.colors.primary,
-                  },
-                })}
+              <div
+                key={book.id}
+                css={css`
+                  padding: 0.8em;
+                  margin-bottom: 1em;
+                  width: 300px;
+                  max-width: 240px;
+                `}
               >
-                <Link
-                  css={css`
-                    font-family: ${fonts.walsheimLight};
-                  `}
-                  to={book.frontmatter.slug}
-                  aria-label={`View ${book.frontmatter.title}`}
+                <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
+                <h4
+                  css={css({
+                    marginBottom: rhythm(0.1),
+                    transition: 'all 150ms ease',
+                    ':hover': {
+                      color: theme.colors.primary,
+                    },
+                  })}
                 >
                   {book.frontmatter.title}
-                </Link>
-              </h4>
-            </div>
+                </h4>
+              </div>
+            </Link>
           ))}
         </section>
       </Container>
@@ -85,7 +85,7 @@ export const bookPageQuery = graphql`
         frontmatter: { categories: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 6
+      limit: 18
     ) {
       edges {
         node {

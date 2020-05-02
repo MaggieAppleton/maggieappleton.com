@@ -9,13 +9,15 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
 import { bpMaxMD } from '../lib/breakpoints'
+import { TooltipLink } from '../components/TooltipLink'
 
 const Hero = () => {
   const theme = useTheme()
   return (
     <section
       css={css`
-        color: ${theme.colors.black};
+        margin-top: ${rhythm(1)};
+        margin-bottom: ${rhythm(1.4)};
       `}
     >
       <Container>
@@ -39,13 +41,13 @@ const Hero = () => {
             font-family: ${fonts.cardo};
             color: ${theme.colors.darkGrey};
             font-weight: 200;
-            font-size: ${rhythm(1.2)};
-            line-height: ${rhythm(1.5)};
+            font-size: ${rhythm(1.3)};
+            line-height: ${rhythm(1.8)};
             max-width: ${rhythm(26)};
           `}
         >
-          Makes illustrated explainations about anthropology, technology, and
-          programming.
+          Helps explain web technology, anthropology, and programming through
+          illustration.
         </h2>
         <h4
           css={css`
@@ -55,10 +57,28 @@ const Hero = () => {
             color: ${theme.colors.grey};
           `}
         >
-          Art Director & Lead Illustrator at Egghead.io
+          Art Director, Lead Illustrator & All-Rounder at{' '}
+          <TooltipLink noToolTip to="https://egghead.io">
+            Egghead.io
+          </TooltipLink>
         </h4>
       </Container>
     </section>
+  )
+}
+
+const SectionLink = props => {
+  return (
+    <Link
+      css={css`
+        justify-self: end;
+        float: right;
+      `}
+      to={props.to}
+      aria-label={props.aria}
+    >
+      {props.children}
+    </Link>
   )
 }
 
@@ -106,10 +126,6 @@ export default function Index({
             max-width: 240px;
             margin-bottom: 20px;
           }
-          .sectionLink {
-            justify-self: end;
-            float: right;
-          }
         `}
       >
         <section>
@@ -117,14 +133,16 @@ export default function Index({
           <section className="notes">
             {/* <button>Start Here</button> */}
             <Link to="/garden">
-              <h3>
-                <span>🌱</span> The Digital Garden
-              </h3>
+              <h3>The Digital Garden</h3>
             </Link>
-            <p>
-              A collection of essays, notes, research, and sketches. <br />
-              Carefully tended over time.
+            <p
+              css={css`
+                margin-bottom: 0.3em;
+              `}
+            >
+              A collection of essays, notes, research, and sketches.
             </p>
+            <h6>Carefully tended over time.</h6>
             {notesQuery.edges.map(({ node: note }) => (
               <div
                 key={note.id}
@@ -153,13 +171,9 @@ export default function Index({
                 </h4>
               </div>
             ))}
-            <Link
-              className="sectionLink"
-              to="/garden"
-              aria-label="Visit the Garden"
-            >
+            <SectionLink to="/garden" aria="Visit the Garden">
               Visit the Garden
-            </Link>
+            </SectionLink>
           </section>
 
           {/* ------------ Books Section ------------ */}
@@ -194,13 +208,9 @@ export default function Index({
                 </h4>
               </div>
             ))}
-            <Link
-              className="sectionLink"
-              to="/bookshelf"
-              aria-label="Browse the Bookshelf"
-            >
+            <SectionLink to="/bookshelf" aria="Browse the Bookshelf">
               Browse the Bookshelf
-            </Link>
+            </SectionLink>
           </section>
         </section>
 
@@ -240,13 +250,9 @@ export default function Index({
               </Link>
             ))}
           </div>
-          <Link
-            className="sectionLink"
-            to="/bookshelf"
-            aria-label="See More Illustrations"
-          >
+          <SectionLink to="/illustration" aria="See More Illustrations">
             See More Illustrations
-          </Link>
+          </SectionLink>
         </section>
       </Container>
     </Layout>

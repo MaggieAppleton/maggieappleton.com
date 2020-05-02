@@ -41,13 +41,18 @@ const typography = new Typography({
       fontSize: rhythm(0.9),
       letterSpacing: '0.02em',
     },
-    'h1,h2,h3,h4,h5,h6': {
-      lineHeight: 1,
-    },
     'h1,h2,h3,h4': {
       lineHeight: 1.25,
       marginTop: rhythm(1),
       marginBottom: rhythm(1 / 2),
+    },
+    'h5, h6': {
+      lineHeight: 1,
+      fontWeight: '100',
+      marginTop: 0,
+    },
+    h6: {
+      color: colors.grey,
     },
     p: {
       marginBottom: rhythm(1 / 2),

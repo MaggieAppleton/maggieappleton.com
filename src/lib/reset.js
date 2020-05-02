@@ -39,10 +39,6 @@ const ResetStyles = () => {
     text-decoration: none;
   }
 
-  p {
-    margin-bottom: 1em;
-  }
-
   a:not([href]):not([tabindex]) {
     color: inherit;
     text-decoration: none;
