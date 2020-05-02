@@ -28,51 +28,42 @@ export default function Book({
         css={css`
           margin: 0 auto;
           max-width: 1000px;
-          margin-top: 2em;
+          margin-top: 3em;
           display: flex;
           flex-direction: column;
           .bookInfo {
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            margin: 0 auto;
+            margin-bottom: 2em;
           }
         `}
       >
         <div className="bookInfo">
           <Img
             css={css`
-              display: block;
-              max-width: 300px;
+              max-width: 220px;
               border-radius: 6px;
             `}
-            sizes={cover.childImageSharp.fluid}
+            fluid={cover.childImageSharp.fluid}
             alt={site.siteMetadata.keywords.join(', ')}
           />
-          <h1
-            css={css`
-              text-align: center;
-              margin-bottom: 20px;
-            `}
-          >
-            {title}
-          </h1>
           <div
             css={css`
               display: flex;
+              flex-direction: column;
               margin-bottom: 20px;
-              h3,
-              span {
-                text-align: center;
-                font-size: 15px;
-                opacity: 0.6;
-                font-family: ${fonts.regular}, serif;
-                font-weight: normal;
-                margin: 0 5px;
-              }
             `}
           >
-            {author && <h3>{author}</h3>}
-            {author && <span>—</span>}
-            {date && <h3>{date}</h3>}
+            <h1
+              css={css`
+                margin-bottom: 20px;
+              `}
+            >
+              {title}
+            </h1>
+            <h3>{author}</h3>
+            {date && <h6>Last updated {date}</h6>}
           </div>
         </div>
         <br />

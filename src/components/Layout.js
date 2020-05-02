@@ -25,7 +25,7 @@ const getGlobalStyles = theme => {
       background-color: ${theme.colors.primary};
     }
     a {
-      color: ${theme.colors.grey};
+      color: ${theme.colors.blue};
       transition: 0.4s;
       text-decoration: none;
       &:hover,

@@ -16,6 +16,8 @@ const BookPage = ({ data: { site, bookQuery } }) => {
     <Layout site={site}>
       <Container
         css={css`
+          margin-top: 1.6em;
+          margin-bottom: 2em;
           .books {
             display: flex;
             flex-direction: row;

@@ -15,6 +15,8 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
     <Layout site={site}>
       <Container
         css={css`
+          margin-top: 1.6em;
+          margin-bottom: 2em;
           display: grid;
           grid-template-columns: 35% 65%;
           .header {

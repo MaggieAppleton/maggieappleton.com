@@ -15,6 +15,8 @@ const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
     <Layout site={site}>
       <Container
         css={css`
+          margin-top: 1.6em;
+          margin-bottom: 2em;
           .illustrationGrid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
