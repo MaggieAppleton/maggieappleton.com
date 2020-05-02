@@ -4,7 +4,6 @@ import { useTheme } from '../Theming'
 import { bpMaxSM, bpMaxMD, bpMinLG } from '../../lib/breakpoints'
 import Links from './Links'
 import { fonts } from '../../lib/typography'
-import Container from '../Container'
 
 // Learning how to build this here: https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
 

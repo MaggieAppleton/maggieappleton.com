@@ -3,10 +3,10 @@ import { animated, useTransition } from 'react-spring'
 
 const SimpleTransition = ({ children, props }) => {
   const transitions = useTransition(children, props.path, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
+    from: { transform: 'translate3d(0px,-15px,0)', opacity: 0 },
+    enter: { transform: 'translate3d(0px,0px,0)', opacity: 1 },
     leave: { opacity: 0 },
-    config: { duration: 1000 },
+    config: { duration: 600 },
   })
 
   return (

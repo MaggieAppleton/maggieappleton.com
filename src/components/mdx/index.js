@@ -5,23 +5,7 @@ import Paragraph from './Paragraph'
 import Code from './Code'
 import Link from '../link'
 import NoteSidebar from './NoteSidebar'
-import styled from '@emotion/styled'
-
-const H3 = styled.h3`
-  text-align: left;
-  max-width: 700px;
-  margin: 0 auto;
-  margin-top: 1em;
-  margin-bottom: 0.4em;
-`
-
-const H4 = styled.h4`
-  text-align: left;
-  max-width: 700px;
-  margin: 0 auto;
-  margin-top: 1em;
-  margin-bottom: 0.4em;
-`
+import { Divider, H3, H4 } from './MdxStyles'
 
 export default {
   h1: props => <Title {...props} />,
@@ -30,6 +14,7 @@ export default {
   h4: props => <H4 {...props} />,
   p: props => <Paragraph {...props} />,
   code: Code,
+  hr: props => <Divider {...props} />,
   pre: preProps => <pre {...preProps} />,
   Link: props => <Link {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,
