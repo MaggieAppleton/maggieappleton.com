@@ -36,7 +36,6 @@ const resetStyles = () => {
     -moz-osx-font-smoothing: grayscale;
   }
   a {
-    transition: 100ms;
     text-decoration: none;
   }
 

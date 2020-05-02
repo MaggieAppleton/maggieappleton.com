@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from 'components/Layout'
-import Link from 'components/Link'
+import { Link } from 'gatsby'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'

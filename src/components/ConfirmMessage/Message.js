@@ -2,7 +2,7 @@ import React from 'react'
 import { css, keyframes } from '@emotion/core'
 import styled from '@emotion/styled'
 import Markdown from 'react-markdown'
-import Link from '../Link'
+import { Link } from 'gatsby'
 import { bpMaxSM } from '../../lib/breakpoints'
 
 export default ({

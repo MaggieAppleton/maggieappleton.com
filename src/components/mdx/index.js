@@ -3,9 +3,9 @@ import Title from './Title'
 import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
 import Code from './Code'
-import Link from '../link'
+import { Link } from 'gatsby'
 import NoteSidebar from './NoteSidebar'
-import { Divider, H3, H4 } from './MdxStyles'
+import { Divider, H3, H4, Blockquote } from './MdxStyles'
 
 export default {
   h1: props => <Title {...props} />,
@@ -15,6 +15,7 @@ export default {
   p: props => <Paragraph {...props} />,
   code: Code,
   hr: props => <Divider {...props} />,
+  blockquote: props => <Blockquote {...props} />,
   pre: preProps => <pre {...preProps} />,
   Link: props => <Link {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,

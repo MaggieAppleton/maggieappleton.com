@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from 'components/Layout'
-import Link from 'components/Link'
+import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
@@ -116,7 +116,7 @@ export default function Index({
           {/* ------------ Notes Section ------------ */}
           <section className="notes">
             {/* <button>Start Here</button> */}
-            <Link to="./garden">
+            <Link to="/garden">
               <h3>
                 <span>🌱</span> The Digital Garden
               </h3>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from './Link'
+import { Link } from 'gatsby'
 import { useTheme } from './Theming'
 import { css } from '@emotion/core'
 import config from '../../config/website'
