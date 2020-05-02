@@ -25,14 +25,12 @@ const getGlobalStyles = theme => {
       background-color: ${theme.colors.primary};
     }
     a {
-      color: ${theme.colors.link};
+      color: ${theme.colors.grey};
+      transition: 0.4s;
       text-decoration: none;
       &:hover,
       &:focus {
-        color: ${theme.colors.link};
-      }
-      &:hover {
-        text-decoration: underline;
+        color: ${theme.colors.orange};
       }
     }
     h1,
