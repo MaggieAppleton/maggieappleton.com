@@ -1,18 +1,21 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMaxSM } from '../lib/breakpoints'
+import { fonts } from '../lib/typography'
 import SubscribeForm from './Forms/Subscribe'
 import { Twitter, GitHub, Instagram, Dribbble } from './Social'
 import Container from './Container'
 
 const Footer = ({ author, noSubscribeForm }) => (
-  <footer>
+  <footer
+    css={css`
+      background-color: #f7f9fb;
+      margin-top: 60px;
+    `}
+  >
     <Container>
       {!noSubscribeForm && (
         <div>
           <SubscribeForm />
-          <br />
-          <br />
         </div>
       )}
       <div
@@ -20,11 +23,13 @@ const Footer = ({ author, noSubscribeForm }) => (
           display: flex;
           align-items: center;
           justify-content: space-between;
+          margin-top: 3em;
         `}
       >
         <div
           css={css`
             font-size: 0.8em;
+            font-family: ${fonts.walsheim};
             opacity: 0.7;
           `}
         >

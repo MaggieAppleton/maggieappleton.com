@@ -41,10 +41,10 @@ const Hero = () => {
             font-weight: 200;
             font-size: ${rhythm(1.2)};
             line-height: ${rhythm(1.5)};
-            max-width: ${rhythm(22)};
+            max-width: ${rhythm(26)};
           `}
         >
-          Makes illustrations that help explain the world of technology and
+          Makes illustrated explainations about anthropology, technology, and
           programming.
         </h2>
         <h4

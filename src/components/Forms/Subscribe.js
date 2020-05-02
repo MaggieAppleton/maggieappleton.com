@@ -3,10 +3,8 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { css } from '@emotion/core'
 import { withTheme } from '../Theming'
-import { rhythm } from '../../lib/typography'
+import { rhythm, fonts } from '../../lib/typography'
 import { bpMaxSM } from '../../lib/breakpoints'
-import Message from '../ConfirmMessage/Message'
-import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
 const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
 
@@ -19,13 +17,12 @@ const SubscribeSchema = Yup.object().shape({
 
 const PostSubmissionMessage = ({ response }) => {
   return (
-    <div>
-      <Message
-        illustration={PleaseConfirmIllustration}
-        title={`Great, one last thing...`}
-        body={`I just sent you an email with the confirmation link. 
-          **Please check your inbox!**`}
-      />
+    <div css={css({})}>
+      <h3>Thanks for joining!</h3>
+      <p>
+        I just sent you an email with the confirmation link – please check your
+        inbox.
+      </p>
     </div>
   )
 }
@@ -74,25 +71,31 @@ class SignUp extends React.Component {
       <div
         css={css`
           display: flex;
-          justify-content: flex-end;
+          flex-direction: column;
+          .formHeader {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+          }
         `}
       >
-        {!successful && (
-          <>
-            <h3
-              css={css`
-                margin-bottom: ${rhythm(1)};
-                margin-top: 0;
-              `}
-            >
-              Join the newsletter
-            </h3>
-            <p>
-              For weekly notes on visual thinking, culutral anthropology, and
-              web development
-            </p>
-          </>
-        )}
+        <div className="formHeader">
+          {!successful && (
+            <>
+              <h3
+                css={css`
+                  margin-top: ${rhythm(1)};
+                `}
+              >
+                Join the newsletter
+              </h3>
+              <p>
+                For weekly notes on visual thinking, culutral anthropology, and
+                web development
+              </p>
+            </>
+          )}
+        </div>
         <Formik
           initialValues={{
             email_address: '',
@@ -106,23 +109,25 @@ class SignUp extends React.Component {
                 <Form
                   css={css`
                     display: flex;
-                    padding-left: 2em;
                     font-size: 0.9em;
-                    max-width: 90vw;
                     align-items: flex-end;
                     button {
                       margin-left: 10px;
                     }
                     .field-error {
-                      display: block;
                       color: ${theme.colors.red};
                       font-size: 80%;
                     }
                     input,
                     label {
-                      max-width: 300px;
+                      max-width: 360px;
+                      font-family: ${fonts.walsheim};
+                      color: ${theme.colors.grey};
                     }
                     input {
+                      width: 200px;
+                      height: 40px;
+                      font-size: 0.8em;
                       padding-top: 6px;
                       border: 1px solid ${theme.colors.lightGrey};
                       color: ${theme.colors.grey};
@@ -205,9 +210,7 @@ class SignUp extends React.Component {
                   </button>
                 </Form>
               )}
-              {submitted && !isSubmitting && (
-                <PostSubmissionMessage response={response} />
-              )}
+              {submitted && <PostSubmissionMessage response={response} />}
               {errorMessage && <div>{errorMessage}</div>}
             </>
           )}
