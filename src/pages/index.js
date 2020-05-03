@@ -9,7 +9,7 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
 import { bpMaxMD } from '../lib/breakpoints'
-import { TooltipLink } from '../components/TooltipLink'
+import { TooltipLink } from '../components/mdx/TooltipLink'
 
 const Hero = () => {
   const theme = useTheme()

@@ -62,7 +62,6 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                 css={css`
                   font-family: ${fonts.regularSans};
                   margin-bottom: 1em;
-                  border-radius: 4px;
                   margin-right: 2em;
                   padding: 1em 1.2em 1em 0;
                   h4 {
@@ -78,7 +77,7 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                   }
                 `}
               >
-                <h4>{essay.frontmatter.title}</h4>
+                <h4>➽ {essay.frontmatter.title}</h4>
                 <h5>{essay.excerpt}</h5>
               </div>
             </Link>
