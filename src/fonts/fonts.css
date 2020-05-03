@@ -20,13 +20,6 @@
   font-display: fallback;
 }
 @font-face {
-  font-family: 'GT Walsheim Ultralight';
-  font-style: normal;
-  font-weight: 100;
-  src: url('GT-Walsheim-Ultralight.woff') format('woff');
-  font-display: fallback;
-}
-@font-face {
   font-family: 'FreightTextProLight-Regular';
   font-style: normal;
   font-weight: 100;
@@ -52,12 +45,5 @@
   font-style: normal;
   font-weight: 700;
   src: url('FreightTextProBlack-Regular.woff') format('woff');
-  font-display: fallback;
-}
-@font-face {
-  font-family: 'Cardo';
-  font-style: normal;
-  font-weight: 400;
-  src: url('Cardo-Regular.woff') format('woff');
   font-display: fallback;
 }

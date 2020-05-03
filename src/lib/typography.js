@@ -3,15 +3,15 @@ import '../fonts/fonts.css'
 import colors from '../lib/colors'
 
 export const fonts = {
-  cardo: 'Cardo',
   walsheim: 'GT Walsheim Regular',
   walsheimLight: 'GT Walsheim Light',
-  walsheimUltralight: 'GT Walsheim Ultralight',
   walsheimBold: 'GT Walsheim Bold',
   light: 'FreightTextProLight-Regular',
   regular: 'FreightTextProBook-Regular',
   regularItalic: 'FreightTextProBook-Italic',
   bold: 'FreightTextProBlack-Regular',
+  regularSans: 'FreightSansProBook-Regular',
+  boldSans: 'FreightSansProBlack-Regular',
 }
 
 const typography = new Typography({

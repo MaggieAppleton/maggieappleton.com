@@ -28,7 +28,7 @@ const Hero = () => {
             z-index: 5;
             font-family: ${fonts.walsheimBold};
             font-weight: 100;
-            font-size: ${rhythm(2.4)};
+            font-size: ${rhythm(2.5)};
             line-height: ${rhythm(2.4)};
             margin-top: 3vw;
             max-width: ${rhythm(22)};
@@ -38,11 +38,11 @@ const Hero = () => {
         </h1>
         <h2
           css={css`
-            font-family: ${fonts.cardo};
+            font-family: ${fonts.regular};
             color: ${theme.colors.darkGrey};
             font-weight: 200;
             font-size: ${rhythm(1.3)};
-            line-height: ${rhythm(1.8)};
+            line-height: ${rhythm(1.7)};
             max-width: ${rhythm(26)};
           `}
         >
@@ -51,13 +51,15 @@ const Hero = () => {
         </h2>
         <h4
           css={css`
+            margin-top: ${rhythm(1)};
             font-family: ${fonts.walsheimLight};
             font-weight: 300;
-            margin-bottom: 3vw;
+            margin-bottom: ${rhythm(1)};
+            line-height: ${rhythm(1)};
             color: ${theme.colors.grey};
           `}
         >
-          Art Director, Lead Illustrator & All-Rounder at{' '}
+          Art Director, Illustrator & Anthropological All-Rounder at{' '}
           <TooltipLink noToolTip to="https://egghead.io">
             Egghead.io
           </TooltipLink>
@@ -117,6 +119,9 @@ export default function Index({
           h3,
           h4 {
             margin-top: 0;
+          }
+          h3 {
+            margin-bottom: 1em;
           }
           .illustration {
             display: grid;
@@ -214,10 +219,17 @@ export default function Index({
                     to={book.frontmatter.slug}
                     aria-label={`View ${book.frontmatter.title}`}
                   >
-                    <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
+                    <Img
+                      css={css`
+                        border-radius: 4px;
+                        max-width: 150px;
+                      `}
+                      fluid={book.frontmatter.cover.childImageSharp.fluid}
+                    />
                     {book.frontmatter.title}
                   </Link>
                 </h4>
+                <p>{book.excerpt}</p>
               </div>
             ))}
             <SectionLink to="/bookshelf" aria="Browse the Bookshelf">
@@ -228,7 +240,7 @@ export default function Index({
 
         {/* ------------ Illustration Section ------------ */}
         <section>
-          <h3>Illustration Work</h3>
+          <h3>Illustration Projects</h3>
           <div className="illustration">
             {illustrationQuery.edges.map(({ node: illustration }) => (
               <Link
@@ -241,15 +253,19 @@ export default function Index({
                 <div
                   key={illustration.id}
                   css={css`
-                    margin-bottom: 40px;
+                    margin-bottom: 1em;
                   `}
                 >
                   <Img
+                    css={css`
+                      border-radius: 4px;
+                      margin-bottom: 0.7em;
+                    `}
                     fluid={illustration.frontmatter.cover.childImageSharp.fluid}
                   />
                   <h4
                     css={css({
-                      marginBottom: rhythm(0.3),
+                      textAlign: 'center',
                       transition: 'all 150ms ease',
                       ':hover': {
                         color: theme.colors.primary,
@@ -357,7 +373,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 2
+      limit: 1
     ) {
       edges {
         node {
