@@ -22,12 +22,22 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
           .header {
             grid-column-start: 1;
             grid-column-end: 3;
+            margin-bottom: 1em;
+            max-width: 600px;
+            h1 {
+              margin-bottom: 0.4em;
+            }
           }
           .essays {
             grid-column: 1 / 1;
           }
           .notes {
             grid-column: 2/ 2;
+            .notesGrid {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+            }
           }
         `}
       >
@@ -35,7 +45,7 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
           <h1>The Digital Garden</h1>
           <p>
             An open collection of my notes, resources, sketches, and
-            explorations. These are seedlings I'm cultivating.
+            explorations. Seedlings of ideas I'm currently cultivating.
           </p>
         </section>
 
@@ -43,66 +53,78 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
         <section className="essays">
           <h2>Essays</h2>
           {essaysQuery.edges.map(({ node: essay }) => (
-            <div
-              key={essay.id}
-              css={css`
-                margin-bottom: 1em;
-              `}
+            <Link
+              to={essay.frontmatter.slug}
+              aria-label={`View ${essay.frontmatter.title}`}
             >
-              <h4
-                css={css({
-                  marginBottom: rhythm(0.1),
-                  transition: 'all 150ms ease',
-                  ':hover': {
-                    color: theme.colors.primary,
-                  },
-                })}
+              <div
+                key={essay.id}
+                css={css`
+                  font-family: ${fonts.regularSans};
+                  margin-bottom: 1em;
+                  border-radius: 4px;
+                  margin-right: 2em;
+                  padding: 1em 1.2em 1em 0;
+                  h4 {
+                    font-size: 1.1em;
+                    margin-top: 0.2em;
+                    transition: all 150ms ease;
+                    &:hover: {
+                      color: ${theme.colors.primary};
+                    }
+                  }
+                  h5 {
+                    margin-bottom: 0;
+                  }
+                `}
               >
-                <Link
-                  css={css`
-                    font-family: ${fonts.walsheimLight};
-                  `}
-                  to={essay.frontmatter.slug}
-                  aria-label={`View ${essay.frontmatter.title}`}
-                >
-                  {essay.frontmatter.title}
-                </Link>
-              </h4>
-            </div>
+                <h4>{essay.frontmatter.title}</h4>
+                <h5>{essay.excerpt}</h5>
+              </div>
+            </Link>
           ))}
         </section>
 
         {/* ------------ Notes Section ------------ */}
         <section className="notes">
           <h2>Notes</h2>
-          {notesQuery.edges.map(({ node: note }) => (
-            <div
-              key={note.id}
-              css={css`
-                margin-bottom: 1em;
-              `}
-            >
-              <h4
-                css={css({
-                  marginBottom: rhythm(0.1),
-                  transition: 'all 150ms ease',
-                  ':hover': {
-                    color: theme.colors.primary,
-                  },
-                })}
+          <div className="notesGrid">
+            {notesQuery.edges.map(({ node: note }) => (
+              <Link
+                to={note.frontmatter.slug}
+                aria-label={`View ${note.frontmatter.title}`}
               >
-                <Link
+                <div
+                  key={note.id}
                   css={css`
                     font-family: ${fonts.walsheimLight};
+                    background: ${theme.colors.white};
+                    margin-bottom: 1em;
+                    border: 1px solid ${theme.colors.lightestGrey};
+                    border-radius: 4px;
+                    margin-right: 1em;
+                    padding: 1em 1.2em;
+                    width: 200px;
+                    max-height: 280px;
+                    overflow: hidden;
+                    h4 {
+                      margin-top: 0.2em;
+                      transition: all 150ms ease;
+                      &:hover: {
+                        color: ${theme.colors.primary};
+                      }
+                    }
+                    h5 {
+                      margin-bottom: 0;
+                    }
                   `}
-                  to={note.frontmatter.slug}
-                  aria-label={`View ${note.frontmatter.title}`}
                 >
-                  {note.frontmatter.title}
-                </Link>
-              </h4>
-            </div>
-          ))}
+                  <h4>{note.frontmatter.title}</h4>
+                  <h5>{note.excerpt}</h5>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
       </Container>
     </Layout>
