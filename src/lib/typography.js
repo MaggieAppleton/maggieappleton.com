@@ -6,12 +6,13 @@ export const fonts = {
   walsheim: 'GT Walsheim Regular',
   walsheimLight: 'GT Walsheim Light',
   walsheimBold: 'GT Walsheim Bold',
-  light: 'FreightTextProLight-Regular',
-  regular: 'FreightTextProBook-Regular',
-  regularItalic: 'FreightTextProBook-Italic',
-  bold: 'FreightTextProBlack-Regular',
-  regularSans: 'FreightSansProBook-Regular',
-  boldSans: 'FreightSansProBlack-Regular',
+  regular: 'FreightText W01 Book',
+  regularItalic: 'FreightText W01 Book Italic',
+  bold: 'FreightText W01 Bold',
+  boldItalic: 'FreightText W01 Bold Italic',
+  regularSans: 'FreightSans W03 Book',
+  regularSansItalic: 'Freight Sans W03 Book Italic',
+  boldSans: 'Freight Sans W03 Bold',
 }
 
 const typography = new Typography({

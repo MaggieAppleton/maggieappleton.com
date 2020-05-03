@@ -10,6 +10,7 @@ import Layout from '../components/Layout'
 import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
+import { useTheme } from 'components/Theming'
 import { bpMaxSM } from '../lib/breakpoints'
 import NoteSidebar from '../components/mdx/NoteSidebar'
 
@@ -19,6 +20,7 @@ export default function Note({
 }) {
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
+  const theme = useTheme()
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
@@ -46,18 +48,18 @@ export default function Note({
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            h3,
-            span {
+            h6 {
               text-align: center;
-              font-size: 0.9em;
-              opacity: 0.6;
-              font-family: ${fonts.regular}, serif;
+              opacity: 0.8;
+              font-family: ${fonts.regularSans}, sans-serif;
               font-weight: normal;
               margin: 0 5px;
+              padding-bottom: 12px;
+              border-bottom: 1px solid ${theme.colors.lightGrey};
             }
           `}
         >
-          {date && <h3>Last tended on {date}</h3>}
+          {date && <h6>Last tended on {date}</h6>}
         </div>
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
