@@ -8,8 +8,7 @@ import Container from './Container'
 const Footer = ({ author, noSubscribeForm }) => (
   <footer
     css={css`
-      background-color: #f7f9fb;
-      margin-top: 60px;
+      margin-top: 3em;
     `}
   >
     <Container>

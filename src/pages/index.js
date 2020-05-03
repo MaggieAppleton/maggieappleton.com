@@ -52,9 +52,9 @@ const Hero = () => {
         <h4
           css={css`
             margin-top: ${rhythm(1)};
-            font-family: ${fonts.walsheimLight};
+            font-family: ${fonts.regularSans};
             font-weight: 300;
-            margin-bottom: ${rhythm(1)};
+            margin-bottom: ${rhythm(1.2)};
             line-height: ${rhythm(1)};
             color: ${theme.colors.grey};
           `}
@@ -121,7 +121,7 @@ export default function Index({
             margin-top: 0;
           }
           h3 {
-            margin-bottom: 1em;
+            margin-bottom: 0.6em;
           }
           .illustration {
             display: grid;
@@ -154,12 +154,11 @@ export default function Index({
             </Link>
             <p
               css={css`
-                margin-bottom: 0.3em;
+                margin-bottom: 1em;
               `}
             >
               A collection of essays, notes, research, and sketches.
             </p>
-            <h6>Carefully tended over time.</h6>
             {notesQuery.edges.map(({ node: note }) => (
               <div
                 key={note.id}

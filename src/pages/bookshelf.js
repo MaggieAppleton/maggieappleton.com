@@ -18,6 +18,9 @@ const BookPage = ({ data: { site, bookQuery } }) => {
         css={css`
           margin-top: 1.6em;
           margin-bottom: 2em;
+          h1 {
+            margin-bottom: 1em;
+          }
           .books {
             display: flex;
             flex-direction: row;
@@ -28,7 +31,6 @@ const BookPage = ({ data: { site, bookQuery } }) => {
             img {
               border-radius: 4px;
             }
-          }
         `}
       >
         <h1>The Bookshelf</h1>
@@ -36,27 +38,26 @@ const BookPage = ({ data: { site, bookQuery } }) => {
         <section className="books">
           {bookQuery.edges.map(({ node: book }) => (
             <Link
-              css={css`
-                font-family: ${fonts.walsheimLight};
-              `}
               to={book.frontmatter.slug}
               aria-label={`View ${book.frontmatter.title}`}
             >
               <div
                 key={book.id}
                 css={css`
-                  padding: 1.4em;
-                  margin-bottom: 1em;
-                  width: 300px;
+                  padding-right: 2.2em;
+                  margin-bottom: 2em;
+                  width: 340px;
                   max-width: 240px;
                   .gatsby-image-wrapper {
-                    transition: all 700ms ease;
+                    transition: all 500ms ease;
+                    -webkit-box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
+                    box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
                   }
                   &:hover {
                     .gatsby-image-wrapper {
-                      transform: translateY(-4px);
-                      -webkit-box-shadow: 0px 5px 11px -7px rgba(115, 130, 140, 0.98);
-                      box-shadow: 0px 5px 11px -7px rgba(115, 130, 140, 0.98);
+                      transform: translateY(-4px) scale(1.02);
+                      -webkit-box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
+                      box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
                     }
                     h4 {
                       color: ${theme.colors.black};
@@ -67,10 +68,11 @@ const BookPage = ({ data: { site, bookQuery } }) => {
                 <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
                 <h4
                   css={css`
-                    color: ${theme.colors.grey};
+                    font-family: ${fonts.regularSansBold};
+                    color: ${theme.colors.darkGrey};
                     font-weight: 200;
                     margin-top: 1em;
-                    margin-bottom: ${rhythm(0.1)};
+                    margin-bottom: ${rhythm(0.2)};
                     transition: all 700ms ease;
                   `}
                 >

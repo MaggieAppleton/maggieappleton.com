@@ -38,19 +38,24 @@ const typography = new Typography({
     },
     h3: {
       color: colors.darkGrey,
-      fontFamily: fonts.walsheimLight,
-      fontSize: rhythm(0.9),
+      fontFamily: fonts.regularSans,
+      fontSize: rhythm(1),
       letterSpacing: '0.02em',
     },
-    'h1,h2,h3,h4': {
-      lineHeight: 1.25,
-      marginTop: rhythm(1),
-      marginBottom: rhythm(1 / 2),
+    h4: {
+      fontFamily: fonts.regularSansBold,
+      marginBottom: rhythm(1),
     },
     'h5, h6': {
       lineHeight: 1,
       fontWeight: '100',
       marginTop: 0,
+      fontFamily: fonts.regularSans,
+    },
+    'h1,h2,h3,h4': {
+      lineHeight: 1.25,
+      marginTop: rhythm(1),
+      marginBottom: rhythm(1 / 2),
     },
     h6: {
       color: colors.grey,

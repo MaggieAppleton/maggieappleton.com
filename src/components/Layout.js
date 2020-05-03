@@ -18,7 +18,9 @@ import Footer from '../components/Footer'
 const getGlobalStyles = theme => {
   return css`
     body {
-      background: ${theme.colors.bodyBg};
+    background-image: linear-gradient(180deg, ${theme.colors.white} 0%, ${
+    theme.colors.white
+  } 50%, ${theme.colors.offWhite} 100%);
     }
     &::selection {
       color: ${theme.colors.white};
