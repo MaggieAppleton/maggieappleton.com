@@ -20,9 +20,12 @@ const BookPage = ({ data: { site, bookQuery } }) => {
           margin-bottom: 2em;
           h1 {
             margin-bottom: 1em;
+            text-align: center;
           }
           .books {
             display: flex;
+            margin: 0 auto;
+            justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
             ${bpMaxSM} {

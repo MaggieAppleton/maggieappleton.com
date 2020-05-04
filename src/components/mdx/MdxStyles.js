@@ -10,7 +10,7 @@ export const Divider = styled.hr`
 `
 export const H3 = styled.h3`
   text-align: left;
-  max-width: 700px;
+  max-width: 660px;
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 0.4em;
@@ -18,7 +18,7 @@ export const H3 = styled.h3`
 
 export const H4 = styled.h4`
   text-align: left;
-  max-width: 700px;
+  max-width: 660px;
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 0.4em;
@@ -31,7 +31,6 @@ export const Blockquote = styled.blockquote`
     margin: 0.8em auto;
     font-size: 1.7em;
     line-height: 1.4em;
-    font-family: 'brandon-grotesque';
   }
   & ::before,
   & ::after {

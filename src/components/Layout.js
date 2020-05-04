@@ -190,7 +190,6 @@ export default ({
           <noscript>This site runs best with JavaScript enabled.</noscript>
         </Helmet>
         <Header />
-        <Sidebar />
         <MDXProvider components={mdxComponents}>
           <Fragment>{children}</Fragment>
         </MDXProvider>

@@ -28,7 +28,7 @@ export default function Note({
       <Container
         css={css`
           margin: 0 auto;
-          max-width: 1000px;
+          max-width: 880px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;
@@ -85,19 +85,16 @@ export default function Note({
               ← {prevPage.fields.title}
             </Link>
           )}
+
+          {/* Share Container */}
+          <Share
+            url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
+            title={title}
+            twitterHandle={config.twitterHandle}
+          />
         </div>
       </Container>
       {/* <SubscribeForm /> */}
-
-      {/* Share Container */}
-      <Container noVerticalPadding>
-        <Share
-          url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
-          title={title}
-          twitterHandle={config.twitterHandle}
-        />
-        <br />
-      </Container>
     </Layout>
   )
 }

@@ -26,7 +26,7 @@ export default function Essay({
       <Container
         css={css`
           margin: 0 auto;
-          max-width: 1000px;
+          max-width: 800px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;
@@ -59,21 +59,7 @@ export default function Essay({
         >
           {author} meta
         </div>
-        {cover && (
-          <div
-            css={css`
-              padding: 30px;
-              ${bpMaxSM} {
-                padding: 0;
-              }
-            `}
-          >
-            <Img
-              sizes={cover.childImageSharp.fluid}
-              alt={site.siteMetadata.keywords.join(', ')}
-            />
-          </div>
-        )}
+
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}

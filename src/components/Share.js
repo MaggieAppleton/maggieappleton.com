@@ -12,18 +12,20 @@ const Share = ({ url, title, twitterHandle }) => {
       css={css`
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         font-family: ${fonts.walsheim};
         font-size: 90%;
+        transition: all 0.5s ease-in-out;
         div {
           margin-right: 20px;
           cursor: pointer;
           :hover {
-            color: ${theme.colors.primary};
+            color: ${theme.colors.blue};
+            transition: all 0.5s ease-in-out;
           }
         }
         span {
-          margin-right: 20px;
+          margin-right: 10px;
           text-transform: uppercase;
           line-height: 2.5;
           font-size: 80%;
@@ -32,12 +34,6 @@ const Share = ({ url, title, twitterHandle }) => {
         }
       `}
     >
-      <div
-        css={css`
-          flex-grow: 1;
-          border-top: 1px solid ${theme.colors.lightGrey};
-        `}
-      />
       <span>Want to share?</span>
 
       <TwitterShareButton

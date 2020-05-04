@@ -27,22 +27,28 @@ export default function Book({
       <Container
         css={css`
           margin: 0 auto;
-          max-width: 1000px;
           margin-top: 3em;
           display: flex;
           flex-direction: column;
           .bookInfo {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
             margin-bottom: 2em;
+            width: 75%;
+            margin: 0 auto;
+            align-items: center;
+            .gatsby-image-wrapper {
+              justify-content: center;
+              width: 260px;
+              height: auto;
+              margin-right: 2em;
+            }
           }
         `}
       >
         <div className="bookInfo">
           <Img
             css={css`
-              max-width: 220px;
               border-radius: 6px;
             `}
             fluid={cover.childImageSharp.fluid}
@@ -53,17 +59,14 @@ export default function Book({
               display: flex;
               flex-direction: column;
               margin-bottom: 20px;
+              h3 {
+                margin-top: 0;
+              }
             `}
           >
-            <h1
-              css={css`
-                margin-bottom: 20px;
-              `}
-            >
-              {title}
-            </h1>
+            <h1>{title}</h1>
             <h3>{author}</h3>
-            {date && <h6>Last updated {date}</h6>}
+            {date && <h6>Last tended to {date}</h6>}
           </div>
         </div>
         <br />

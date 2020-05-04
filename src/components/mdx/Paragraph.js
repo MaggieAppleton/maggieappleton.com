@@ -3,7 +3,7 @@ import { fonts } from '../../lib/typography'
 
 export default styled.p`
   text-align: left;
-  max-width: 700px;
+  max-width: 660px;
   margin: 0 auto;
   line-height: 1.8em;
   font-size: 1em;
