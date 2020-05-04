@@ -10,6 +10,7 @@ import Layout from '../components/Layout'
 import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
+import { useTheme } from 'components/Theming'
 import { bpMaxSM } from '../lib/breakpoints'
 
 export default function Post({
@@ -19,6 +20,7 @@ export default function Post({
   const author = mdx.frontmatter.author || config.author
   const title = mdx.frontmatter.title
   const cover = mdx.frontmatter.cover
+  const theme = useTheme()
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>

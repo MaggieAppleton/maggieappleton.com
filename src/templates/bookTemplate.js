@@ -27,9 +27,15 @@ export default function Book({
       <Container
         css={css`
           margin: 0 auto;
-          margin-top: 3em;
+          margin-top: 2em;
           display: flex;
           flex-direction: column;
+          .breadcrumb {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0 auto;
+            margin-bottom: 3em;
+          }
           .bookInfo {
             display: flex;
             flex-direction: row;
@@ -46,6 +52,7 @@ export default function Book({
           }
         `}
       >
+        <h6 className="breadcrumb">Back to Bookshelf</h6>
         <div className="bookInfo">
           <Img
             css={css`
@@ -74,7 +81,7 @@ export default function Book({
         {/* Next and Previous */}
         <div
           css={css({
-            marginTop: '30px',
+            marginTop: '2em',
             display: 'grid',
             gridColumnTemplate: '1fr 1fr',
           })}

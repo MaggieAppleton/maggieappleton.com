@@ -12,10 +12,9 @@ const Sidebar = () => {
   return (
     <div
       css={css`
-        position: fixed;
         flex-shrink: 0;
-        height: 100%;
-        overflow: hidden;
+        top: 0;
+        left: 0;
         padding: 0;
         ${bpMaxMD} {
           width: 190px;
@@ -33,10 +32,7 @@ const Sidebar = () => {
       <nav
         css={css`
           position: absolute;
-          right: 10%;
-          top: 10%;
           align-items: right;
-          float: right;
           border-right: 1px solid ${theme.colors.grey};
           font-family: ${fonts.walsheim};
           padding: 0 16px;

@@ -1,5 +1,8 @@
+import React from 'react'
 import styled from '@emotion/styled'
 import colors from '../../lib/colors'
+import { css } from '@emotion/core'
+import { bpMinMD, bpMinSM } from '../../lib/breakpoints'
 
 export const Divider = styled.hr`
   text-align: center;
@@ -42,3 +45,63 @@ export const Blockquote = styled.blockquote`
   }
   padding: 0.8em 0em;
 `
+export const Center = styled.p`
+  text-align: center;
+  margin: 30px auto;
+`
+export const SmallCenter = props => {
+  return (
+    <div
+      css={css({
+        [bpMinMD]: { maxWidth: '70%' },
+        maxWidth: '100%',
+        margin: '0 auto',
+      })}
+    >
+      {props.children}
+    </div>
+  )
+}
+
+export const TwoCol = props => {
+  return (
+    <div
+      css={css({
+        [bpMinMD]: { gridTemplateColumns: '50% 50%' },
+        gridTemplateColumns: '1fr',
+        display: 'grid',
+        gridGap: '20px',
+        img: {
+          maxWidth: '100%',
+        },
+      })}
+    >
+      {props.children}
+    </div>
+  )
+}
+
+export const ThreeImageGrid = props => {
+  return (
+    <>
+      <div
+        css={css({
+          [bpMinSM]: {
+            gridTemplateColumns: 'repeat(3, 1fr)',
+          },
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          display: 'grid',
+          gridGap: '30px',
+          padding: '20px 0px',
+          img: {
+            maxWidth: '100%',
+            gridAutoFlow: 'row',
+            padding: '6px',
+          },
+        })}
+      >
+        {props.children}
+      </div>
+    </>
+  )
+}

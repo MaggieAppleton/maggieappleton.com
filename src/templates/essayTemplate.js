@@ -10,6 +10,7 @@ import Layout from '../components/Layout'
 import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
+import { useTheme } from 'components/Theming'
 import { bpMaxSM } from '../lib/breakpoints'
 
 export default function Essay({
@@ -19,6 +20,8 @@ export default function Essay({
   const author = mdx.frontmatter.author || config.author
   const title = mdx.frontmatter.title
   const cover = mdx.frontmatter.cover
+  const date = mdx.frontmatter.date
+  const theme = useTheme()
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
@@ -46,18 +49,18 @@ export default function Essay({
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            h3,
-            span {
+            h6 {
               text-align: center;
-              font-size: 15px;
-              opacity: 0.6;
-              font-family: ${fonts.regular}, serif;
+              opacity: 0.8;
+              font-family: ${fonts.regularSans}, sans-serif;
               font-weight: normal;
               margin: 0 5px;
+              padding-bottom: 12px;
+              border-bottom: 1px solid ${theme.colors.lightGrey};
             }
           `}
         >
-          {author} meta
+          {date && <h6>Published on {date}</h6>}
         </div>
 
         <br />
