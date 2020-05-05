@@ -8,6 +8,7 @@ import { fonts } from '../lib/typography'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
+import SimpleCard from '../components/SimpleCard'
 
 const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
   const theme = useTheme()
@@ -93,7 +94,7 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                 to={note.frontmatter.slug}
                 aria-label={`View ${note.frontmatter.title}`}
               >
-                <div
+                {/* <div
                   key={note.id}
                   css={css`
                     font-family: ${fonts.walsheimLight};
@@ -117,10 +118,22 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                       margin-bottom: 0;
                     }
                   `}
+                > */}
+                <SimpleCard
+                  hover
+                  key={note.id}
+                  css={css`
+                    width: 220px;
+                    padding: 0.4em 1.4em;
+                    margin-right: 1em;
+                    margin-bottom: 0;
+                    max-height: 280px;
+                    overflow: hidden;
+                  `}
                 >
                   <h4>{note.frontmatter.title}</h4>
-                  <h5>{note.excerpt}</h5>
-                </div>
+                  <h6>{note.frontmatter.keywords}</h6>
+                </SimpleCard>
               </Link>
             ))}
           </div>
@@ -167,6 +180,7 @@ export const GardenPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+            keywords
           }
         }
       }

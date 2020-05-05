@@ -83,25 +83,23 @@ export const TwoCol = props => {
 
 export const ThreeImageGrid = props => {
   return (
-    <>
-      <div
-        css={css({
-          [bpMinSM]: {
-            gridTemplateColumns: 'repeat(3, 1fr)',
-          },
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          display: 'grid',
-          gridGap: '30px',
-          padding: '20px 0px',
-          img: {
-            maxWidth: '100%',
-            gridAutoFlow: 'row',
-            padding: '6px',
-          },
-        })}
-      >
-        {props.children}
-      </div>
-    </>
+    <div
+      css={css({
+        [bpMinSM]: {
+          gridTemplateColumns: 'repeat(3, 1fr)',
+        },
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        display: 'grid',
+        gridGap: '30px',
+        padding: '20px 0px',
+        img: {
+          maxWidth: '100%',
+          gridAutoFlow: 'row',
+          padding: '6px',
+        },
+      })}
+    >
+      {props.children}
+    </div>
   )
 }

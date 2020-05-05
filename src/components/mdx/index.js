@@ -9,6 +9,7 @@ import Code from './Code'
 import Tooltip from './Tooltip'
 import TooltipLink from './TooltipLink'
 import NoteSidebar from './NoteSidebar'
+import SimpleCard from '../SimpleCard'
 import {
   Divider,
   H3,
@@ -40,4 +41,5 @@ export default {
   TwoCol: props => <TwoCol {...props} />,
   ThreeImageGrid: props => <ThreeImageGrid {...props} />,
   ReadNext: props => <ReadNext {...props} />,
+  SimpleCard: props => <SimpleCard {...props} />,
 }

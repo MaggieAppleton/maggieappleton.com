@@ -8,7 +8,7 @@ const Toggle = ({ children }) => {
   const [isToggledOn, setToggle] = useState(false)
   const toggle = () => setToggle(!isToggledOn)
   const theme = useTheme()
-  const color = theme.colors.white
+  const color = theme.colors.black
 
   return (
     <div
@@ -104,11 +104,11 @@ const Toggle = ({ children }) => {
                 padding: 10px;
                 border-radius: 5px;
                 :hover {
-                  background: rgba(0, 0, 0, 0.2);
+                  background: ${color};
                 }
               }
               .active {
-                background: rgba(0, 0, 0, 0.2);
+                background: ${color};
               }
             `}
           >
