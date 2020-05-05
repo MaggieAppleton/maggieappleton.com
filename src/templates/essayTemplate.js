@@ -60,7 +60,7 @@ export default function Essay({
             }
           `}
         >
-          {date && <h6>Published on {date}</h6>}
+          {date && <h6>Last updated on {date}</h6>}
         </div>
 
         <br />

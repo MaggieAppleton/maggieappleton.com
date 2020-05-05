@@ -99,7 +99,7 @@ const SectionLink = props => {
 // ------- // Main Section // ---------- //
 
 export default function Index({
-  data: { site, bookQuery, illustrationQuery, notesQuery },
+  data: { site, bookQuery, illustrationQuery, notesQuery, essaysQuery },
 }) {
   const theme = useTheme()
   return (
@@ -146,7 +146,7 @@ export default function Index({
         `}
       >
         <section>
-          {/* ------------ Notes Section ------------ */}
+          {/* ------------ Garden Section ------------ */}
           <section className="notes">
             {/* <button>Start Here</button> */}
             <Link to="/garden">
@@ -159,6 +159,40 @@ export default function Index({
             >
               A collection of essays, notes, research, and sketches.
             </p>
+
+            {/* Essays Section */}
+            <span>Essays</span>
+            {essaysQuery.edges.map(({ node: essay }) => (
+              <div
+                key={essay.id}
+                css={css`
+                  margin-bottom: 1em;
+                `}
+              >
+                <h4
+                  css={css({
+                    marginBottom: rhythm(0.1),
+                    transition: 'all 150ms ease',
+                    ':hover': {
+                      color: theme.colors.primary,
+                    },
+                  })}
+                >
+                  <Link
+                    css={css`
+                      font-family: ${fonts.walsheimLight};
+                    `}
+                    to={essay.frontmatter.slug}
+                    aria-label={`View ${essay.frontmatter.title}`}
+                  >
+                    {essay.frontmatter.title}
+                  </Link>
+                </h4>
+              </div>
+            ))}
+
+            {/* Notes Section */}
+            <span>Notes</span>
             {notesQuery.edges.map(({ node: note }) => (
               <div
                 key={note.id}
@@ -342,6 +376,36 @@ export const pageQuery = graphql`
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 4
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            title
+            slug
+            date
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
+            }
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            description
+            slug
+          }
+        }
+      }
+    }
+
+    essaysQuery: allMdx(
+      filter: {
+        frontmatter: { categories: { eq: "essay" }, published: { ne: false } }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 2
     ) {
       edges {
         node {

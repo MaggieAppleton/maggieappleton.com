@@ -17,9 +17,9 @@ export default function Post({
   data: { site, mdx },
   pageContext: { prevPage, nextPage },
 }) {
-  const author = mdx.frontmatter.author || config.author
   const title = mdx.frontmatter.title
   const cover = mdx.frontmatter.cover
+  const date = mdx.frontmatter.date
   const theme = useTheme()
 
   return (
@@ -48,34 +48,19 @@ export default function Post({
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            h3,
-            span {
+            h6 {
               text-align: center;
-              font-size: 15px;
-              opacity: 0.6;
-              font-family: ${fonts.regular}, serif;
+              opacity: 0.8;
+              font-family: ${fonts.regularSans}, sans-serif;
               font-weight: normal;
               margin: 0 5px;
+              padding-bottom: 12px;
+              border-bottom: 1px solid ${theme.colors.lightGrey};
             }
           `}
         >
-          {author} meta
+          {date && <h6>Project completed in {date}</h6>}
         </div>
-        {cover && (
-          <div
-            css={css`
-              padding: 30px;
-              ${bpMaxSM} {
-                padding: 0;
-              }
-            `}
-          >
-            <Img
-              sizes={cover.childImageSharp.fluid}
-              alt={site.siteMetadata.keywords.join(', ')}
-            />
-          </div>
-        )}
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
@@ -123,7 +108,7 @@ export const pageQuery = graphql`
     mdx(fields: { id: { eq: $id } }) {
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM YYYY")
         author
         cover {
           childImageSharp {
