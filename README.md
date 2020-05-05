@@ -20,3 +20,4 @@
 
 - Bi-directional linking
 - Wiki-style nested note folders
+- Webmentions
