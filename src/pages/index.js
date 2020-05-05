@@ -69,7 +69,7 @@ const Hero = () => {
   )
 }
 
-const SectionLink = props => {
+const SmallSectionLink = props => {
   const theme = useTheme()
   return (
     <Link
@@ -85,13 +85,43 @@ const SectionLink = props => {
           color: ${theme.colors.darkBlue};
           transform: translateY(2px);
           border-bottom: 2px solid ${theme.colors.blue};
-          transition: all 0.8s;
         }
       `}
       to={props.to}
       aria-label={props.aria}
     >
       {props.children}
+    </Link>
+  )
+}
+
+const TitleSectionLink = props => {
+  const theme = useTheme()
+  return (
+    <Link
+      css={css`
+        h3 {
+          max-width: 40%;
+          transition: all 0.6s;
+          background: linear-gradient(
+            ${theme.colors.red} 0%,
+            ${theme.colors.orange} 100%
+          );
+          background-position: 0 100%;
+          background-repeat: repeat-x;
+          background-size: 1px 1px;
+          color: #000;
+          text-decoration: none;
+          &:hover {
+            color: ${theme.colors.red};
+            background-size: 4px 50px;
+          }
+        }
+      `}
+      to={props.to}
+      aria-label={props.aria}
+    >
+      <h3>{props.children}</h3>
     </Link>
   )
 }
@@ -149,9 +179,7 @@ export default function Index({
           {/* ------------ Garden Section ------------ */}
           <section className="notes">
             {/* <button>Start Here</button> */}
-            <Link to="/garden">
-              <h3>The Digital Garden</h3>
-            </Link>
+            <TitleSectionLink to="/garden">The Digital Garden</TitleSectionLink>
             <p
               css={css`
                 margin-bottom: 1em;
@@ -221,9 +249,9 @@ export default function Index({
                 </h4>
               </div>
             ))}
-            <SectionLink to="/garden" aria="Visit the Garden">
+            <SmallSectionLink to="/garden" aria="Visit the Garden">
               Visit the Garden
-            </SectionLink>
+            </SmallSectionLink>
           </section>
 
           {/* ------------ Books Section ------------ */}
@@ -265,9 +293,9 @@ export default function Index({
                 <p>{book.excerpt}</p>
               </div>
             ))}
-            <SectionLink to="/bookshelf" aria="Browse the Bookshelf">
+            <SmallSectionLink to="/bookshelf" aria="Browse the Bookshelf">
               Browse the Bookshelf
-            </SectionLink>
+            </SmallSectionLink>
           </section>
         </section>
 
@@ -311,9 +339,9 @@ export default function Index({
               </Link>
             ))}
           </div>
-          <SectionLink to="/illustration" aria="See More Illustrations">
+          <SmallSectionLink to="/illustration" aria="See More Illustrations">
             See More Illustrations
-          </SectionLink>
+          </SmallSectionLink>
         </section>
       </Container>
     </Layout>

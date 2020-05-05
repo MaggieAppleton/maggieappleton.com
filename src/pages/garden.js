@@ -132,7 +132,7 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                   `}
                 >
                   <h4>{note.frontmatter.title}</h4>
-                  <h6>{note.frontmatter.keywords}</h6>
+                  <h6>{note.frontmatter.topics}</h6>
                 </SimpleCard>
               </Link>
             ))}
@@ -180,7 +180,7 @@ export const GardenPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
-            keywords
+            topics
           }
         }
       }

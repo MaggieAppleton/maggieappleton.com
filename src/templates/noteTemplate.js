@@ -110,7 +110,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         author
         slug
-        keywords
+        topics
       }
       body
     }

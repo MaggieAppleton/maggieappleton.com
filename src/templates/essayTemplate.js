@@ -120,7 +120,7 @@ export const pageQuery = graphql`
           }
         }
         slug
-        keywords
+        topics
       }
       body
     }
