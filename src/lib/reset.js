@@ -54,14 +54,7 @@ const ResetStyles = () => {
   }
 
   blockquote {
-    border-left: 5px solid ${theme.colors.link};
-    padding-left: 1rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    font-style: italic;
-    p {
-      line-height: 1.3 !important;
-    }
+  margin: 1.8em auto;
   }
   [tabindex='-1']:focus {
     outline: none !important;
