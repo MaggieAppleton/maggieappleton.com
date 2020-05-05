@@ -1,20 +1,34 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
+import { css } from '@emotion/core'
 import { useTheme } from '../Theming'
 
 export default () => {
   const theme = useTheme()
   return (
-    <React.Fragment>
-      <Link to="#" aria-label="View Notes page">
-        Start Here
+    <span>
+      <Link to="./illustration" aria-label="View illustration page">
+        Illustration
       </Link>
-      <Link to="#" aria-label="View about page">
+      <Link to="./garden" aria-label="View notes and essays page">
+        Digital Garden
+      </Link>
+      <Link to="./bookshelf" aria-label="View books page">
+        Bookshelf
+      </Link>
+      <Link to="./about" aria-label="View about page">
         About
       </Link>
-      <Link to="#" aria-label="View contact page">
-        Contact
+      <Link
+        to="./start"
+        css={css`
+          font-weight: bold;
+          color: ${theme.colors.orange} !important;
+        `}
+        aria-label="View start here page"
+      >
+        Start Here
       </Link>
-    </React.Fragment>
+    </span>
   )
 }

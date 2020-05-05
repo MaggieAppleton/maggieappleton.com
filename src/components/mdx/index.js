@@ -32,7 +32,7 @@ export default {
   hr: props => <Divider {...props} />,
   Tooltip: props => <Tooltip {...props} />,
   pre: preProps => <pre {...preProps} />,
-  TooltipLink: props => <TooltipLink {...props} />,
+  a: props => <TooltipLink {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,
   Center: props => <Center {...props} />,

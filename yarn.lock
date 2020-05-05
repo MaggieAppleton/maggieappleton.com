@@ -865,7 +865,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2", "@babel/runtime@^7.9.6":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
   integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
@@ -5388,6 +5388,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+es6-promise@^4.2.8:
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
+  integrity sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==
+
 escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
@@ -6033,6 +6038,13 @@ fd-slicer@~1.1.0:
   integrity sha1-JcfInLH5B3+IkbvmHY85Dq4lbx4=
   dependencies:
     pend "~1.2.0"
+
+fetch-retry@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/fetch-retry/-/fetch-retry-3.1.0.tgz#53a25652adf56def526f9b6f6d749a5bebffd319"
+  integrity sha512-pHCYCq7g854KkebphR3tKb4M7TJK91ZI0K2BU82cWv+vNkFQn0PZZFrQd/mL+Ra/mj2HLZNvzkTRjPEq2Dh/Bg==
+  dependencies:
+    es6-promise "^4.2.8"
 
 figgy-pudding@^3.5.1:
   version "3.5.2"
@@ -6699,12 +6711,12 @@ gatsby-plugin-sharp@^2.6.0:
     svgo "1.3.2"
     uuid "^3.4.0"
 
-gatsby-plugin-twitter@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.3.0.tgz#5786ba8807fd11992f5698e813de7eb0cb27e04d"
-  integrity sha512-uC39ZA0rnqR9DGE86k/82fnIZkIkgNRMu6Dz7a7KLwtXTNHjxAbz0dTzuB+20ObzKeAK/tfDV7Z1xhSa8rhqQw==
+gatsby-plugin-twitter@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.3.1.tgz#7ce10ae9c70dd312d87621bb82673241b508b489"
+  integrity sha512-KTcxn/7QpzkC7mvW3lmxLKrMKlMlv/zLcl4D8l4r4OQay3xZOjR7Kdj5P1UZ9bSsTPXD2L5l2ubp6gE+gIuRYQ==
   dependencies:
-    "@babel/runtime" "^7.9.2"
+    "@babel/runtime" "^7.9.6"
 
 gatsby-plugin-typography@^2.3.2:
   version "2.5.0"
@@ -6803,6 +6815,16 @@ gatsby-remark-copy-linked-files@^2.1.3:
     path-is-inside "^1.0.2"
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
+
+gatsby-remark-embedder@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-embedder/-/gatsby-remark-embedder-2.0.1.tgz#8c8e106b4c5ab9526d57454ec6221d1fbbd652bc"
+  integrity sha512-Y9y4o1hzQABZoUPSLZhzWVNjw99HAHG7FOUqrhZLH93uaUIUog5qucRrPfV1BMJc+3ptOXjswEXR5VL2EyHw5g==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    fetch-retry "^3.1.0"
+    node-fetch "^2.6.0"
+    unist-util-visit "^2.0.2"
 
 gatsby-remark-images@^3.1.7:
   version "3.3.0"

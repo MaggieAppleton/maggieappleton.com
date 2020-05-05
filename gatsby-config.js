@@ -66,6 +66,17 @@ module.exports = {
         extensions: ['.mdx', '.md', '.markdown'],
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-embedder`,
+            options: {
+              customTransformers: [
+                // Your custom transformers
+              ],
+              services: {
+                // The service-specific options by the name of the service
+              },
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1000,
@@ -77,9 +88,8 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
-    'gatsby-transformer-remark',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-twitter',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',

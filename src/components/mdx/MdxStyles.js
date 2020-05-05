@@ -6,7 +6,7 @@ import { bpMinMD, bpMinSM } from '../../lib/breakpoints'
 
 export const Divider = styled.hr`
   text-align: center;
-  max-width: 200px;
+  width: 200px;
   margin: 60px auto;
   border: 1px solid ${colors.orange};
   background-color: ${colors.orange};
