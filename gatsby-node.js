@@ -272,9 +272,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
-      name: 'keywords',
+      name: 'topics',
       node,
-      value: node.frontmatter.keywords || [],
+      value: node.frontmatter.topics || [],
     })
 
     createNodeField({
