@@ -31,10 +31,10 @@ export default function Book({
           display: flex;
           flex-direction: column;
           .breadcrumb {
+            margin: 0 auto;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin: 0 auto;
-            margin-bottom: 3em;
+            margin-bottom: 2em;
           }
           .bookInfo {
             display: flex;
@@ -43,6 +43,7 @@ export default function Book({
             width: 75%;
             margin: 0 auto;
             align-items: center;
+            margin-bottom: 2em;
             .gatsby-image-wrapper {
               justify-content: center;
               width: 260px;
@@ -52,15 +53,20 @@ export default function Book({
           }
         `}
       >
-        <h6 className="breadcrumb">Back to Bookshelf</h6>
         <div className="bookInfo">
-          <Img
-            css={css`
-              border-radius: 6px;
-            `}
-            fluid={cover.childImageSharp.fluid}
-            alt={site.siteMetadata.keywords.join(', ')}
-          />
+          <span>
+            <Link to="/bookshelf">
+              <h6 className="breadcrumb">◁ Back to Bookshelf</h6>
+            </Link>
+
+            <Img
+              css={css`
+                border-radius: 6px;
+              `}
+              fluid={cover.childImageSharp.fluid}
+              alt={site.siteMetadata.keywords.join(', ')}
+            />
+          </span>
           <div
             css={css`
               display: flex;

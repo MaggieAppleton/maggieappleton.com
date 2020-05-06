@@ -28,7 +28,7 @@ const typography = new Typography({
     h1: {
       color: colors.black,
       fontFamily: fonts.walsheim,
-      fontSize: rhythm(2),
+      fontSize: rhythm(2.2),
     },
     h2: {
       color: colors.darkGrey,
@@ -55,7 +55,7 @@ const typography = new Typography({
     'h1,h2,h3,h4': {
       lineHeight: 1.25,
       marginTop: rhythm(1),
-      marginBottom: rhythm(1 / 2),
+      marginBottom: rhythm(0.6),
     },
     h6: {
       color: colors.grey,

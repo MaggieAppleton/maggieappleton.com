@@ -8,7 +8,7 @@ import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
-import { bpMaxMD } from '../lib/breakpoints'
+import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
 import TooltipLink from '../components/mdx/TooltipLink'
 
 const Hero = () => {
@@ -149,9 +149,17 @@ export default function Index({
             grid-gap: 1em;
           }
           .books {
-            margin-top: 3em;
+            display: flex;
+            flex-direction: row;
             padding-right: 2em;
             padding-top: 0.4em;
+            grid-column: 1 / 3;
+            ${bpMaxMD} {
+              grid-column: 1 / 1;
+            }
+            ${bpMaxSM} {
+              flex-direction: column;
+            }
           }
           .notes {
             padding-right: 2em;
@@ -242,55 +250,6 @@ export default function Index({
               Visit the Garden
             </SmallSectionLink>
           </section>
-
-          {/* ------------ Books Section ------------ */}
-          <section className="books">
-            <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
-            <p>
-              A past and present reading collection complete with loose notes
-              and sketches
-            </p>
-            {bookQuery.edges.map(({ node: book }) => (
-              <div
-                key={book.id}
-                css={css`
-                  margin-bottom: 1em;
-                `}
-              >
-                <h6>Currently Reading</h6>
-                <h4
-                  css={css({
-                    marginBottom: rhythm(0.1),
-                    transition: 'all 150ms ease',
-                    ':hover': {
-                      color: theme.colors.primary,
-                    },
-                  })}
-                >
-                  <Link
-                    css={css`
-                      font-family: ${fonts.walsheimLight};
-                    `}
-                    to={book.frontmatter.slug}
-                    aria-label={`View ${book.frontmatter.title}`}
-                  >
-                    <Img
-                      css={css`
-                        border-radius: 4px;
-                        max-width: 150px;
-                      `}
-                      fluid={book.frontmatter.cover.childImageSharp.fluid}
-                    />
-                    {book.frontmatter.title}
-                  </Link>
-                </h4>
-                <p>{book.excerpt}</p>
-              </div>
-            ))}
-            <SmallSectionLink to="/bookshelf" aria="Browse the Bookshelf">
-              Browse the Bookshelf
-            </SmallSectionLink>
-          </section>
         </section>
 
         {/* ------------ Illustration Section ------------ */}
@@ -338,6 +297,57 @@ export default function Index({
           <SmallSectionLink to="/illustration" aria="See More Illustrations">
             See More Illustrations
           </SmallSectionLink>
+        </section>
+
+        {/* ------------ Books Section ------------ */}
+        <section className="books">
+          <span>
+            <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
+            <p>
+              A past and present reading collection complete with loose notes
+              and sketches
+            </p>
+
+            <SmallSectionLink to="/bookshelf" aria="Browse the Bookshelf">
+              Browse the Bookshelf
+            </SmallSectionLink>
+          </span>
+          {bookQuery.edges.map(({ node: book }) => (
+            <div
+              key={book.id}
+              css={css`
+                margin-bottom: 1em;
+              `}
+            >
+              <h4
+                css={css({
+                  marginBottom: rhythm(0.1),
+                  transition: 'all 150ms ease',
+                  ':hover': {
+                    color: theme.colors.primary,
+                  },
+                })}
+              >
+                <Link
+                  css={css`
+                    font-family: ${fonts.walsheimLight};
+                  `}
+                  to={book.frontmatter.slug}
+                  aria-label={`View ${book.frontmatter.title}`}
+                >
+                  <Img
+                    css={css`
+                      border-radius: 4px;
+                      max-width: 150px;
+                    `}
+                    fluid={book.frontmatter.cover.childImageSharp.fluid}
+                  />
+                  {book.frontmatter.title}
+                </Link>
+              </h4>
+              <p>{book.excerpt}</p>
+            </div>
+          ))}
         </section>
       </Container>
     </Layout>
@@ -460,7 +470,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 1
+      limit: 2
     ) {
       edges {
         node {

@@ -47,13 +47,11 @@ export default function Note({
           css={css`
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
             h6 {
               text-align: center;
               opacity: 0.8;
               font-family: ${fonts.regularSans}, sans-serif;
               font-weight: normal;
-              margin: 0 5px;
               padding-bottom: 12px;
               border-bottom: 1px solid ${theme.colors.lightGrey};
             }

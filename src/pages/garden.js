@@ -19,21 +19,27 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
           margin-top: 1.6em;
           margin-bottom: 2em;
           display: grid;
-          grid-template-columns: 35% 65%;
+          grid-template-columns: 30% 70%;
+          grid-column-gap: 1em;
           .header {
             grid-column-start: 1;
             grid-column-end: 3;
             margin-bottom: 1em;
-            max-width: 600px;
+            max-width: 700px;
             h1 {
               margin-bottom: 0.4em;
             }
           }
           .essays {
-            grid-column: 1 / 1;
+            grid-column: 2 / 2;
+            .essaysGrid {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+            }
           }
           .notes {
-            grid-column: 2/ 2;
+            grid-column: 1/ 1;
             .notesGrid {
               display: flex;
               flex-direction: row;
@@ -50,41 +56,6 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
           </p>
         </section>
 
-        {/* ----------- Essays Section ----------- */}
-        <section className="essays">
-          <h2>Essays</h2>
-          {essaysQuery.edges.map(({ node: essay }) => (
-            <Link
-              to={essay.frontmatter.slug}
-              aria-label={`View ${essay.frontmatter.title}`}
-            >
-              <div
-                key={essay.id}
-                css={css`
-                  font-family: ${fonts.regularSans};
-                  margin-bottom: 1em;
-                  margin-right: 2em;
-                  padding: 1em 1.2em 1em 0;
-                  h4 {
-                    font-size: 1.1em;
-                    margin-top: 0.2em;
-                    transition: all 150ms ease;
-                    &:hover: {
-                      color: ${theme.colors.primary};
-                    }
-                  }
-                  h5 {
-                    margin-bottom: 0;
-                  }
-                `}
-              >
-                <h4>➽ {essay.frontmatter.title}</h4>
-                <h5>{essay.excerpt}</h5>
-              </div>
-            </Link>
-          ))}
-        </section>
-
         {/* ------------ Notes Section ------------ */}
         <section className="notes">
           <h2>Notes</h2>
@@ -94,20 +65,50 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                 to={note.frontmatter.slug}
                 aria-label={`View ${note.frontmatter.title}`}
               >
-                {/* <div
+                <SimpleCard
+                  hover
                   key={note.id}
                   css={css`
-                    font-family: ${fonts.walsheimLight};
-                    background: ${theme.colors.white};
-                    margin-bottom: 1em;
-                    border: 1px solid ${theme.colors.lightestGrey};
-                    border-radius: 4px;
+                    width: 280px;
+                    padding: 0.2em 1.4em;
                     margin-right: 1em;
-                    padding: 1em 1.2em;
-                    width: 200px;
+                    margin-bottom: 0.4em;
                     max-height: 280px;
                     overflow: hidden;
                     h4 {
+                      margin-top: 1em;
+                    }
+                  `}
+                >
+                  <h4>{note.frontmatter.title}</h4>
+                </SimpleCard>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* ----------- Essays Section ----------- */}
+
+        <section className="essays">
+          <h2>Essays</h2>
+          <div className="essaysGrid">
+            {essaysQuery.edges.map(({ node: essay }) => (
+              <Link
+                to={essay.frontmatter.slug}
+                aria-label={`View ${essay.frontmatter.title}`}
+              >
+                <SimpleCard
+                  hover
+                  key={essay.id}
+                  css={css`
+                    font-family: ${fonts.regularSans};
+                    flex: 1 1 auto;
+                    max-width: 340px;
+                    margin-bottom: 1em;
+                    margin-right: 1em;
+                    padding: 0.6em 1.4em 1.6em 1.4em;
+                    h4 {
+                      font-size: 1.1em;
                       margin-top: 0.2em;
                       transition: all 150ms ease;
                       &:hover: {
@@ -118,21 +119,10 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                       margin-bottom: 0;
                     }
                   `}
-                > */}
-                <SimpleCard
-                  hover
-                  key={note.id}
-                  css={css`
-                    width: 220px;
-                    padding: 0.4em 1.4em;
-                    margin-right: 1em;
-                    margin-bottom: 0;
-                    max-height: 280px;
-                    overflow: hidden;
-                  `}
                 >
-                  <h4>{note.frontmatter.title}</h4>
-                  <h6>{note.frontmatter.topics}</h6>
+                  <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
+                  <h4>➽ {essay.frontmatter.title}</h4>
+                  <h5>{essay.frontmatter.description}</h5>
                 </SimpleCard>
               </Link>
             ))}
@@ -191,7 +181,7 @@ export const GardenPageQuery = graphql`
         frontmatter: { categories: { eq: "essay" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 6
+      limit: 12
     ) {
       edges {
         node {
@@ -212,6 +202,13 @@ export const GardenPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
