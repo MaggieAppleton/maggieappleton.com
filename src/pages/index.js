@@ -101,20 +101,9 @@ const TitleSectionLink = props => {
     <Link
       css={css`
         h3 {
-          max-width: 40%;
           transition: all 0.6s;
-          background: linear-gradient(
-            ${theme.colors.red} 0%,
-            ${theme.colors.orange} 100%
-          );
-          background-position: 0 100%;
-          background-repeat: repeat-x;
-          background-size: 1px 1px;
-          color: #000;
-          text-decoration: none;
           &:hover {
             color: ${theme.colors.red};
-            background-size: 4px 50px;
           }
         }
       `}
@@ -256,7 +245,11 @@ export default function Index({
 
           {/* ------------ Books Section ------------ */}
           <section className="books">
-            <h3>Currently Reading</h3>
+            <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
+            <p>
+              A past and present reading collection complete with loose notes
+              and sketches
+            </p>
             {bookQuery.edges.map(({ node: book }) => (
               <div
                 key={book.id}
@@ -264,6 +257,7 @@ export default function Index({
                   margin-bottom: 1em;
                 `}
               >
+                <h6>Currently Reading</h6>
                 <h4
                   css={css({
                     marginBottom: rhythm(0.1),
@@ -301,7 +295,9 @@ export default function Index({
 
         {/* ------------ Illustration Section ------------ */}
         <section>
-          <h3>Illustration Projects</h3>
+          <TitleSectionLink to="/illustration">
+            Illustration Projects
+          </TitleSectionLink>
           <div className="illustration">
             {illustrationQuery.edges.map(({ node: illustration }) => (
               <Link
