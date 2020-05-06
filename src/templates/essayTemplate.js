@@ -29,7 +29,7 @@ export default function Essay({
       <Container
         css={css`
           margin: 0 auto;
-          max-width: 800px;
+          max-width: 900px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;
@@ -48,19 +48,18 @@ export default function Essay({
           css={css`
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 1em;
             h6 {
               text-align: center;
               opacity: 0.8;
               font-family: ${fonts.regularSans}, sans-serif;
               font-weight: normal;
-              margin: 0 5px;
               padding-bottom: 12px;
               border-bottom: 1px solid ${theme.colors.lightGrey};
             }
           `}
         >
-          {date && <h6>Last updated on {date}</h6>}
+          {date && <h6>Last tended on {date}</h6>}
         </div>
 
         <br />

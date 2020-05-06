@@ -29,7 +29,7 @@ export const H4 = styled.h4`
 
 export const Blockquote = styled.blockquote`
   & > p {
-    max-width: 90%;
+    max-width: 620px;
     text-align: center;
     margin: 0.8em auto;
     font-size: 1.7em;

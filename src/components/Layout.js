@@ -45,7 +45,7 @@ const getGlobalStyles = theme => {
         color: ${theme.colors.text};
         &:hover,
         &:focus {
-          color: ${theme.colors.text};
+          color: ${theme.colors.blue};
         }
       }
     }

@@ -10,6 +10,7 @@ import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
 import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
 import TooltipLink from '../components/mdx/TooltipLink'
+import SimpleCard from '../components/SimpleCard'
 
 const Hero = () => {
   const theme = useTheme()
@@ -139,8 +140,13 @@ export default function Index({
           h4 {
             margin-top: 0;
           }
-          h3 {
+          h3,
+          h5 {
             margin-bottom: 0.6em;
+          }
+          h5 {
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
           }
           .illustration {
             display: grid;
@@ -161,7 +167,7 @@ export default function Index({
               flex-direction: column;
             }
           }
-          .notes {
+          .garden {
             padding-right: 2em;
             padding-bottom: 2em;
           }
@@ -174,7 +180,7 @@ export default function Index({
       >
         <section>
           {/* ------------ Garden Section ------------ */}
-          <section className="notes">
+          <section className="garden">
             {/* <button>Start Here</button> */}
             <TitleSectionLink to="/garden">The Digital Garden</TitleSectionLink>
             <p
@@ -185,52 +191,22 @@ export default function Index({
               A collection of essays, notes, research, and sketches.
             </p>
 
-            {/* Essays Section */}
-            <span>Essays</span>
-            {essaysQuery.edges.map(({ node: essay }) => (
-              <div
-                key={essay.id}
-                css={css`
-                  margin-bottom: 1em;
-                `}
-              >
-                <h4
-                  css={css({
-                    marginBottom: rhythm(0.1),
-                    transition: 'all 150ms ease',
-                    ':hover': {
-                      color: theme.colors.primary,
-                    },
-                  })}
-                >
-                  <Link
-                    css={css`
-                      font-family: ${fonts.walsheimLight};
-                    `}
-                    to={essay.frontmatter.slug}
-                    aria-label={`View ${essay.frontmatter.title}`}
-                  >
-                    {essay.frontmatter.title}
-                  </Link>
-                </h4>
-              </div>
-            ))}
-
             {/* Notes Section */}
-            <span>Notes</span>
+            <h5>Notes</h5>
             {notesQuery.edges.map(({ node: note }) => (
               <div
                 key={note.id}
                 css={css`
-                  margin-bottom: 1em;
+                  margin-bottom: 0.4em;
                 `}
               >
                 <h4
                   css={css({
                     marginBottom: rhythm(0.1),
+                    lineHeight: '1.4em',
                     transition: 'all 150ms ease',
                     ':hover': {
-                      color: theme.colors.primary,
+                      color: theme.colors.orange,
                     },
                   })}
                 >
@@ -246,6 +222,51 @@ export default function Index({
                 </h4>
               </div>
             ))}
+
+            {/* Essays Section */}
+            <h5
+              css={css`
+                margin-top: 2em;
+              `}
+            >
+              Essays
+            </h5>
+            {essaysQuery.edges.map(({ node: essay }) => (
+              <Link
+                to={essay.frontmatter.slug}
+                aria-label={`View ${essay.frontmatter.title}`}
+              >
+                <SimpleCard
+                  hover
+                  key={essay.id}
+                  css={css`
+                    font-family: ${fonts.regularSans};
+                    flex: 1 1 auto;
+                    display: flex;
+                    flex-direction: row;
+                    max-width: 100%;
+                    margin-bottom: 0.4em;
+                    margin-right: 1em;
+                    padding: 1em 1.4em;
+                    h4 {
+                      font-size: 1em;
+                      margin: 0.4em 0;
+                      transition: all 150ms ease;
+                      &:hover: {
+                        color: ${theme.colors.primary};
+                      }
+                    }
+                    h5 {
+                      margin-bottom: 0;
+                    }
+                  `}
+                >
+                  <h4>➽ {essay.frontmatter.title}</h4>
+                  <h5>{essay.frontmatter.description}</h5>
+                </SimpleCard>
+              </Link>
+            ))}
+
             <SmallSectionLink to="/garden" aria="Visit the Garden">
               Visit the Garden
             </SmallSectionLink>

@@ -8,4 +8,5 @@ export default styled.p`
   line-height: 1.8em;
   font-size: 1em;
   font-family: ${fonts.regular};
+  padding-bottom: 1em;
 `
