@@ -17,9 +17,9 @@ const SimpleCard = props => {
           ? '0px 1px 2px rgba(52, 61, 68, 0.1)'
           : '0 4px 10px -4px rgba(0,0,0,0.15)',
         ':hover': {
-          transform: 'scale(1.015)',
-          borderTop: '2px solid orange',
-          borderRadius: '0px 0px 6px 6px',
+          transform: props.hover ? 'scale(1.015)' : null,
+          borderTop: props.hover ? '2px solid orange' : null,
+          borderRadius: props.hover ? '0px 0px 6px 6px' : null,
           boxShadow: props.hover ? '0 10px 30px -10px rgba(0,0,0,0.15)' : null,
           p: {
             transition: 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;',
