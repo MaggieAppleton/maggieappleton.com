@@ -40,11 +40,6 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
           }
           .notes {
             grid-column: 1/ 1;
-            .notesGrid {
-              display: flex;
-              flex-direction: row;
-              flex-wrap: wrap;
-            }
           }
         `}
       >
@@ -65,23 +60,15 @@ const GardenPage = ({ data: { site, notesQuery, essaysQuery } }) => {
                 to={note.frontmatter.slug}
                 aria-label={`View ${note.frontmatter.title}`}
               >
-                <SimpleCard
-                  hover
-                  key={note.id}
+                <h4
                   css={css`
-                    width: 280px;
-                    padding: 0.2em 1.4em;
-                    margin-right: 1em;
-                    margin-bottom: 0.4em;
-                    max-height: 280px;
-                    overflow: hidden;
-                    h4 {
-                      margin-top: 1em;
-                    }
+                    max-width: 300px;
+                    margin-top: 0.4em;
                   `}
+                  key={note.id}
                 >
-                  <h4>{note.frontmatter.title}</h4>
-                </SimpleCard>
+                  {note.frontmatter.title}
+                </h4>
               </Link>
             ))}
           </div>
