@@ -1,7 +1,7 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
-import mainImage from './interactiveIllo/mainImage'
-import linkImage from './interactiveIllo/linkImage'
+import mainImage from './interactiveillo/mainImage'
+import linkImage from './interactiveillo/linkImage'
 
 const APIs = () => {
   const strokeAnimation = keyframes`
