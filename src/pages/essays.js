@@ -18,9 +18,6 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
         css={css`
           margin-top: 1.6em;
           margin-bottom: 2em;
-          display: grid;
-          grid-template-columns: auto-fill(4, minmax 200px, 1fr);
-          grid-column-gap: 1em;
           .header {
             grid-column-start: 1;
             grid-column-end: 3;
@@ -29,6 +26,11 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
             h1 {
               margin-bottom: 0.4em;
             }
+          }
+          .essaysGrid {
+            display: flex;
+            flex-direction: row;
+            margin-top: 3em;
           }
         `}
       >
@@ -40,8 +42,7 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
         {/* ----------- Essays Section ----------- */}
 
         <section>
-          <h2>Essays</h2>
-          <div>
+          <div className="essaysGrid">
             {essaysQuery.edges.map(({ node: essay }) => (
               <Link
                 to={essay.frontmatter.slug}

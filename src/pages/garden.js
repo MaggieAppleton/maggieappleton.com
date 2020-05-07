@@ -29,6 +29,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            margin-top: 3em;
           }
         `}
       >
@@ -42,23 +43,27 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
 
         {/* ------------ Notes Section ------------ */}
         <section className="notes">
-          <h2>Notes</h2>
           <div className="notesGrid">
             {notesQuery.edges.map(({ node: note }) => (
               <Link
                 to={note.frontmatter.slug}
                 aria-label={`View ${note.frontmatter.title}`}
               >
-                <h4
+                <SimpleCard
+                  key={note.id}
+                  hover
                   css={css`
                     width: 260px;
-                    margin-top: 0.4em;
-                    margin-right: 1.8em;
+                    margin-right: 1em;
+                    margin-bottom: 1em;
+                    padding: 1.4em;
+                    h4 {
+                      margin: 0;
+                    }
                   `}
-                  key={note.id}
                 >
-                  {note.frontmatter.title}
-                </h4>
+                  <h4>{note.frontmatter.title}</h4>
+                </SimpleCard>
               </Link>
             ))}
           </div>
