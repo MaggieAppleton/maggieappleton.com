@@ -20,6 +20,7 @@ export default function Note({
 }) {
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
+  const topics = mdx.frontmatter.topics
   const theme = useTheme()
 
   return (
@@ -28,7 +29,7 @@ export default function Note({
       <Container
         css={css`
           margin: 0 auto;
-          max-width: 880px;
+          max-width: 900px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;

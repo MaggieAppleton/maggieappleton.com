@@ -1,14 +1,11 @@
 import React from 'react'
 import Layout from 'components/Layout'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-import { rhythm } from '../lib/typography'
-import { fonts } from '../lib/typography'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import { bpMaxSM } from '../lib/breakpoints'
+import Book from '../components/Book'
 
 const BookPage = ({ data: { site, bookQuery } }) => {
   const theme = useTheme()
@@ -40,50 +37,13 @@ const BookPage = ({ data: { site, bookQuery } }) => {
         {/* ------------ Books Section ------------ */}
         <section className="books">
           {bookQuery.edges.map(({ node: book }) => (
-            <Link
-              to={book.frontmatter.slug}
-              aria-label={`View ${book.frontmatter.title}`}
-            >
-              <div
-                key={book.id}
-                css={css`
-                  padding-right: 2.2em;
-                  margin-bottom: 2em;
-                  width: 340px;
-                  max-width: 240px;
-                  .gatsby-image-wrapper {
-                    transition: all 500ms ease;
-                    -webkit-box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
-                    box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
-                  }
-                  &:hover {
-                    .gatsby-image-wrapper {
-                      transform: translateY(-4px) scale(1.02);
-                      -webkit-box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
-                      box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
-                    }
-                    h4 {
-                      color: ${theme.colors.black};
-                    }
-                  }
-                `}
-              >
-                <Img fluid={book.frontmatter.cover.childImageSharp.fluid} />
-                <h4
-                  css={css`
-                    font-family: ${fonts.regularSansBold};
-                    color: ${theme.colors.darkGrey};
-                    font-weight: 200;
-                    margin-top: 1em;
-                    margin-bottom: ${rhythm(0.2)};
-                    transition: all 700ms ease;
-                  `}
-                >
-                  {book.frontmatter.title}
-                </h4>
-                <h6>{book.frontmatter.author}</h6>
-              </div>
-            </Link>
+            <Book
+              slug={book.frontmatter.slug}
+              title={book.frontmatter.title}
+              key={book.id}
+              fluidImg={book.frontmatter.cover.childImageSharp.fluid}
+              author={book.frontmatter.author}
+            />
           ))}
         </section>
       </Container>

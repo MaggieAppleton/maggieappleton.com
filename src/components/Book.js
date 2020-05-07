@@ -1,0 +1,58 @@
+import React from 'react'
+import { fonts } from '../lib/typography'
+import { rhythm } from '../lib/typography'
+import Img from 'gatsby-image'
+import { css } from '@emotion/core'
+import { Link } from 'gatsby'
+import { useTheme } from 'components/Theming'
+
+const Book = props => {
+  const theme = useTheme()
+
+  return (
+    <Link to={props.slug} aria-label={`View ${props.title}`}>
+      <div
+        key={props.id}
+        css={css`
+          padding-right: 2.2em;
+          margin-bottom: 2em;
+          width: 340px;
+          max-width: 240px;
+          .gatsby-image-wrapper {
+            border-radius: 4px;
+            transition: all 500ms ease;
+            -webkit-box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
+            box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
+          }
+          &:hover {
+            .gatsby-image-wrapper {
+              transform: translateY(-4px) scale(1.02);
+              -webkit-box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
+              box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
+            }
+            h4 {
+              color: ${theme.colors.black};
+            }
+          }
+        `}
+      >
+        <Img fluid={props.fluidImg} />
+        <h4
+          css={css`
+            font-family: ${fonts.regularSansBold};
+            color: ${theme.colors.darkGrey};
+            font-weight: 200;
+            margin-top: 1em;
+            margin-bottom: ${rhythm(0.2)};
+            transition: all 700ms ease;
+          `}
+        >
+          {props.title}
+        </h4>
+        <h6>{props.author}</h6>
+      </div>
+    </Link>
+  )
+}
+
+export default Book
