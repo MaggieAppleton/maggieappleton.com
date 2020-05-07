@@ -20,7 +20,7 @@ const getGlobalStyles = theme => {
     body {
     background-image: linear-gradient(180deg, ${theme.colors.white} 0%, ${
     theme.colors.white
-  } 50%, ${theme.colors.offWhite} 100%);
+  } 88%, ${theme.colors.offWhite} 100%);
     }
     &::selection {
       color: ${theme.colors.white};
