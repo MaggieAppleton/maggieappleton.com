@@ -20,6 +20,7 @@ import {
   TwoCol,
   ThreeImageGrid,
 } from './MdxStyles'
+import Book from '../Book'
 
 export default {
   h1: props => <Title {...props} />,
@@ -27,7 +28,7 @@ export default {
   h3: props => <H3 {...props} />,
   h4: props => <H4 {...props} />,
   p: props => <Paragraph {...props} />,
-  img: props => <PostImage {...props} />,
+  Image: props => <PostImage {...props} />,
   code: Code,
   blockquote: props => <Blockquote {...props} />,
   hr: props => <Divider {...props} />,
@@ -42,4 +43,5 @@ export default {
   ThreeImageGrid: props => <ThreeImageGrid {...props} />,
   ReadNext: props => <ReadNext {...props} />,
   SimpleCard: props => <SimpleCard {...props} />,
+  Book: props => <Book {...props} />,
 }

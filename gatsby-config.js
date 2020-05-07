@@ -81,6 +81,8 @@ module.exports = {
             options: {
               maxWidth: 1000,
               wrapperStyle: 'border-radius: 6px;',
+              linkImagesToOriginal: false,
+              imgStyle: { maxWidth: '900px' },
             },
           },
         ],

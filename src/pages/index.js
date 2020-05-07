@@ -158,7 +158,7 @@ export default function Index({
             display: flex;
             flex-direction: row;
             padding-right: 2em;
-            padding-top: 0.4em;
+            padding-top: 2em;
             grid-column: 1 / 3;
             ${bpMaxMD} {
               grid-column: 1 / 1;
@@ -173,6 +173,11 @@ export default function Index({
           .garden {
             padding-right: 2em;
             padding-bottom: 2em;
+            .gardenGrid {
+            }
+            h4 {
+              margin-top: 0.6em;
+            }
           }
           button {
             width: 100%;
@@ -196,37 +201,41 @@ export default function Index({
 
             {/* Notes Section */}
             <h5>Notes</h5>
-            {notesQuery.edges.map(({ node: note }) => (
-              <div
-                key={note.id}
-                css={css`
-                  margin-bottom: 0.4em;
-                `}
-              >
-                <h4
-                  css={css({
-                    marginBottom: rhythm(0.1),
-                    lineHeight: '1.4em',
-                    transition: 'all 150ms ease',
-                    ':hover': {
-                      color: theme.colors.orange,
-                    },
-                  })}
+            <div className="gardenGrid">
+              {notesQuery.edges.map(({ node: note }) => (
+                <SimpleCard
+                  hover
+                  key={note.id}
+                  css={css`
+                    margin-bottom: 0.6em;
+                    padding: 0;
+                  `}
                 >
-                  <Link
-                    css={css`
-                      font-family: ${fonts.walsheimLight};
-                    `}
-                    to={note.frontmatter.slug}
-                    aria-label={`View ${note.frontmatter.title}`}
+                  <h4
+                    css={css({
+                      marginBottom: '0.4em',
+                      padding: '0.4em 1em',
+                      transition: 'all 150ms ease',
+                      ':hover': {
+                        color: theme.colors.orange,
+                      },
+                    })}
                   >
-                    {note.frontmatter.title}
-                  </Link>
-                </h4>
-              </div>
-            ))}
+                    <Link
+                      css={css`
+                        font-family: ${fonts.walsheimLight};
+                      `}
+                      to={note.frontmatter.slug}
+                      aria-label={`View ${note.frontmatter.title}`}
+                    >
+                      {note.frontmatter.title}
+                    </Link>
+                  </h4>
+                </SimpleCard>
+              ))}
+            </div>
 
-            {/* Essays Section */}
+            {/* Essays Section
             <h5
               css={css`
                 margin-top: 2em;
@@ -268,7 +277,7 @@ export default function Index({
                   <h5>{essay.frontmatter.description}</h5>
                 </SimpleCard>
               </Link>
-            ))}
+            ))} */}
 
             <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
               Visit the Garden
@@ -414,7 +423,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 4
+      limit: 6
     ) {
       edges {
         node {

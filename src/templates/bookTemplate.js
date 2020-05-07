@@ -140,12 +140,6 @@ export default function Book({
             </Link>
           )}
         </div>
-        {/* Share Container */}
-        <Share
-          url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
-          title={title}
-          twitterHandle={config.twitterHandle}
-        />
       </Container>
       {/* <SubscribeForm /> */}
 

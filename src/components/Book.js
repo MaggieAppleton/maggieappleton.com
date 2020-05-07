@@ -36,7 +36,11 @@ const Book = props => {
           }
         `}
       >
-        <Img fluid={props.fluidImg} />
+        {props.fluidImg ? (
+          <Img fluid={props.fluidImg} />
+        ) : (
+          <img src={props.src} />
+        )}
         <h4
           css={css`
             font-family: ${fonts.regularSansBold};
