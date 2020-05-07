@@ -11,6 +11,7 @@ import { fonts } from '../lib/typography'
 import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
 import TooltipLink from '../components/mdx/TooltipLink'
 import SimpleCard from '../components/SimpleCard'
+import Book from '../components/Book'
 
 const Hero = () => {
   const theme = useTheme()
@@ -77,7 +78,7 @@ const SmallSectionLink = props => {
       css={css`
         transition: all 0.8s;
         justify-self: end;
-        float: right;
+        float: ${props.float};
         font-size: 0.8em;
         font-family: ${fonts.walsheim};
         padding: 8px 0px;
@@ -136,8 +137,7 @@ export default function Index({
             grid-template-columns: 100%;
           }
           h2,
-          h3,
-          h4 {
+          h3 {
             margin-top: 0;
           }
           h3,
@@ -165,6 +165,9 @@ export default function Index({
             }
             ${bpMaxSM} {
               flex-direction: column;
+            }
+            .bookTitle {
+              padding-right: 3em;
             }
           }
           .garden {
@@ -267,7 +270,7 @@ export default function Index({
               </Link>
             ))}
 
-            <SmallSectionLink to="/garden" aria="Visit the Garden">
+            <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
               Visit the Garden
             </SmallSectionLink>
           </section>
@@ -315,59 +318,40 @@ export default function Index({
               </Link>
             ))}
           </div>
-          <SmallSectionLink to="/illustration" aria="See More Illustrations">
+          <SmallSectionLink
+            float="right"
+            to="/illustration"
+            aria="See More Illustrations"
+          >
             See More Illustrations
           </SmallSectionLink>
         </section>
 
         {/* ------------ Books Section ------------ */}
         <section className="books">
-          <span>
+          <span className="bookTitle">
             <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
             <p>
               A past and present reading collection complete with loose notes
               and sketches
             </p>
 
-            <SmallSectionLink to="/bookshelf" aria="Browse the Bookshelf">
+            <SmallSectionLink
+              float="left"
+              to="/bookshelf"
+              aria="Browse the Bookshelf"
+            >
               Browse the Bookshelf
             </SmallSectionLink>
           </span>
           {bookQuery.edges.map(({ node: book }) => (
-            <div
+            <Book
+              slug={book.frontmatter.slug}
+              title={book.frontmatter.title}
               key={book.id}
-              css={css`
-                margin-bottom: 1em;
-              `}
-            >
-              <h4
-                css={css({
-                  marginBottom: rhythm(0.1),
-                  transition: 'all 150ms ease',
-                  ':hover': {
-                    color: theme.colors.primary,
-                  },
-                })}
-              >
-                <Link
-                  css={css`
-                    font-family: ${fonts.walsheimLight};
-                  `}
-                  to={book.frontmatter.slug}
-                  aria-label={`View ${book.frontmatter.title}`}
-                >
-                  <Img
-                    css={css`
-                      border-radius: 4px;
-                      max-width: 150px;
-                    `}
-                    fluid={book.frontmatter.cover.childImageSharp.fluid}
-                  />
-                  {book.frontmatter.title}
-                </Link>
-              </h4>
-              <p>{book.excerpt}</p>
-            </div>
+              fluidImg={book.frontmatter.cover.childImageSharp.fluid}
+              author={book.frontmatter.author}
+            />
           ))}
         </section>
       </Container>
@@ -491,7 +475,7 @@ export const pageQuery = graphql`
         frontmatter: { categories: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 2
+      limit: 3
     ) {
       edges {
         node {
