@@ -10,7 +10,7 @@ import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import SimpleCard from '../components/SimpleCard'
 
-const GardenPage = ({ data: { site, notesQuery } }) => {
+const EssaysPage = ({ data: { site, essaysQuery } }) => {
   const theme = useTheme()
   return (
     <Layout site={site}>
@@ -19,50 +19,61 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           margin-top: 1.6em;
           margin-bottom: 2em;
           .header {
+            grid-column-start: 1;
+            grid-column-end: 3;
             margin-bottom: 1em;
             max-width: 700px;
             h1 {
               margin-bottom: 0.4em;
             }
           }
-          .notesGrid {
+          .essaysGrid {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
             margin-top: 3em;
           }
         `}
       >
         <section className="header">
-          <h1>The Digital Garden</h1>
-          <p>
-            An open collection of my notes, resources, sketches, and
-            explorations. Seedlings of ideas I'm currently cultivating.
-          </p>
+          <h1>Essays</h1>
+          <p>Coherent thoughts in essay format. Mostly illustrated.</p>
         </section>
 
-        {/* ------------ Notes Section ------------ */}
-        <section className="notes">
-          <div className="notesGrid">
-            {notesQuery.edges.map(({ node: note }) => (
+        {/* ----------- Essays Section ----------- */}
+
+        <section>
+          <div className="essaysGrid">
+            {essaysQuery.edges.map(({ node: essay }) => (
               <Link
-                to={note.frontmatter.slug}
-                aria-label={`View ${note.frontmatter.title}`}
+                to={essay.frontmatter.slug}
+                aria-label={`View ${essay.frontmatter.title}`}
               >
                 <SimpleCard
-                  key={note.id}
                   hover
+                  key={essay.id}
                   css={css`
-                    width: 260px;
-                    margin-right: 1em;
+                    font-family: ${fonts.regularSans};
+                    flex: 1 1 auto;
+                    max-width: 340px;
                     margin-bottom: 1em;
-                    padding: 1.4em;
+                    margin-right: 1em;
+                    padding: 0.6em 1.4em 1.6em 1.4em;
                     h4 {
-                      margin: 0;
+                      font-size: 1.1em;
+                      margin-top: 0.2em;
+                      transition: all 150ms ease;
+                      &:hover: {
+                        color: ${theme.colors.primary};
+                      }
+                    }
+                    h5 {
+                      margin-bottom: 0;
                     }
                   `}
                 >
-                  <h4>{note.frontmatter.title}</h4>
+                  <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
+                  <h4>➽ {essay.frontmatter.title}</h4>
+                  <h5>{essay.frontmatter.description}</h5>
                 </SimpleCard>
               </Link>
             ))}
@@ -73,9 +84,9 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
   )
 }
 
-export default GardenPage
+export default EssaysPage
 
-export const GardenPageQuery = graphql`
+export const EssaysPageQuery = graphql`
   query {
     site {
       ...site
@@ -84,12 +95,12 @@ export const GardenPageQuery = graphql`
       }
     }
 
-    notesQuery: allMdx(
+    essaysQuery: allMdx(
       filter: {
-        frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+        frontmatter: { categories: { eq: "essay" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 12
+      limit: 20
     ) {
       edges {
         node {
@@ -110,7 +121,13 @@ export const GardenPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
-            topics
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
