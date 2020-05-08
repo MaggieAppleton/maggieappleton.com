@@ -4,6 +4,7 @@ import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
 import PostImage from './PostImage'
 import ImageGrid from './ImageGrid'
+import ImageFrame from './ImageFrame'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
@@ -46,4 +47,5 @@ export default {
   ReadNext: props => <ReadNext {...props} />,
   SimpleCard: props => <SimpleCard {...props} />,
   Book: props => <Book {...props} />,
+  ImageFrame: props => <ImageFrame {...props} />,
 }

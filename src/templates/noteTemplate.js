@@ -49,17 +49,31 @@ export default function Note({
             justify-content: center;
             h6 {
               text-align: center;
-              opacity: 0.8;
               font-family: ${fonts.regularSans}, sans-serif;
               font-weight: normal;
               padding-bottom: 12px;
               border-bottom: 1px solid ${theme.colors.lightGrey};
+              margin-bottom: 0.8em;
             }
           `}
         >
           {date && <h6>Last tended on {date}</h6>}
         </div>
-        {growthStage ? <h3>{growthStage}</h3> : null}
+        <div
+          css={css`
+            display: flex;
+            justify-content: center;
+            h6 {
+              text-align: center;
+              opacity: 0.8;
+              font-family: ${fonts.regularSans}, sans-serif;
+              font-weight: normal;
+              letter-spacing: 0.05em;
+            }
+          `}
+        >
+          {growthStage && <h6>{growthStage}</h6>}
+        </div>
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
