@@ -62,9 +62,7 @@ const Hero = () => {
           `}
         >
           Art Director, Illustrator & Anthropological All-Rounder at{' '}
-          <TooltipLink noToolTip to="https://egghead.io">
-            Egghead.io
-          </TooltipLink>
+          <Link to="https://egghead.io">Egghead.io</Link>
         </h4>
       </Container>
     </section>

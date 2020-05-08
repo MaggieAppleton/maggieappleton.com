@@ -3,16 +3,16 @@ import { css } from '@emotion/core'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
-import './tippy-light.css'
+import 'tippy.js/themes/light.css'
 
 const Tooltip = forwardRef((props, ref) => {
   return (
     <Tippy
       duration="500"
       distance="10"
-      theme="tippylight"
+      theme="light"
+      arrow={true}
       interactive={true}
-      arrow={false}
       animation="shift-away"
       content={props.tiptext}
     >
