@@ -18,6 +18,7 @@ import {
   Center,
   SmallCenter,
   TwoCol,
+  OrderedList,
   ThreeImageGrid,
 } from './MdxStyles'
 import Book from '../Book'
@@ -30,6 +31,7 @@ export default {
   p: props => <Paragraph {...props} />,
   Image: props => <PostImage {...props} />,
   code: Code,
+  ol: props => <OrderedList {...props} />,
   blockquote: props => <Blockquote {...props} />,
   hr: props => <Divider {...props} />,
   Tooltip: props => <Tooltip {...props} />,

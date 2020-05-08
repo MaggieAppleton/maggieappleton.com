@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SEO from 'components/SEO'
@@ -18,7 +17,6 @@ export default function Post({
   pageContext: { prevPage, nextPage },
 }) {
   const title = mdx.frontmatter.title
-  const cover = mdx.frontmatter.cover
   const date = mdx.frontmatter.date
   const theme = useTheme()
 

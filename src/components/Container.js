@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinSM, bpMinXL, bpMinLG, bpMaxSM } from 'lib/breakpoints'
+import { bpMinLG } from 'lib/breakpoints'
 
 const Container = props => {
   const {

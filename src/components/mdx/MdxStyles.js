@@ -11,6 +11,12 @@ export const Divider = styled.hr`
   border: 1px solid ${colors.orange};
   background-color: ${colors.orange};
 `
+
+export const OrderedList = styled.ol`
+  max-width: 660px;
+  margin: 0 auto;
+`
+
 export const H3 = styled.h3`
   text-align: left;
   max-width: 660px;

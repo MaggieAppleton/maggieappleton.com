@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SEO from 'components/SEO'
@@ -12,7 +11,6 @@ import Share from '../components/Share'
 import config from '../../config/website'
 import { useTheme } from 'components/Theming'
 import { bpMaxSM } from '../lib/breakpoints'
-import NoteSidebar from '../components/mdx/NoteSidebar'
 
 export default function Note({
   data: { site, mdx },
@@ -20,7 +18,8 @@ export default function Note({
 }) {
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
-  const topics = mdx.frontmatter.topics
+  // const topics = mdx.frontmatter.topics
+  const growthStage = mdx.frontmatter.growthStage
   const theme = useTheme()
 
   return (
@@ -60,6 +59,7 @@ export default function Note({
         >
           {date && <h6>Last tended on {date}</h6>}
         </div>
+        {growthStage ? <h3>{growthStage}</h3> : null}
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
@@ -138,6 +138,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         topics
+        growthStage
       }
       body
     }

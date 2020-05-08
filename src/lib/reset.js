@@ -9,7 +9,7 @@ const ResetStyles = () => {
     margin: 0;
   }
   ul, ol {
-    list-style-position: inside;
+    list-style-position: initial;
     margin-left: 0;
     font-size: ${typography.baseFontSize};
   }

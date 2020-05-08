@@ -37,9 +37,9 @@ const Book = props => {
         `}
       >
         {props.fluidImg ? (
-          <Img fluid={props.fluidImg} />
+          <Img alt={props.title} fluid={props.fluidImg} />
         ) : (
-          <img src={props.src} />
+          <img alt={props.title} src={props.src} />
         )}
         <h4
           css={css`

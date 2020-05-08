@@ -379,10 +379,7 @@ export const pageQuery = graphql`
 
     illustrationQuery: allMdx(
       filter: {
-        frontmatter: {
-          categories: { eq: "illustration" }
-          published: { ne: false }
-        }
+        frontmatter: { type: { eq: "illustration" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 6
@@ -420,7 +417,7 @@ export const pageQuery = graphql`
 
     notesQuery: allMdx(
       filter: {
-        frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+        frontmatter: { type: { eq: "notes" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 6
@@ -450,7 +447,7 @@ export const pageQuery = graphql`
 
     essaysQuery: allMdx(
       filter: {
-        frontmatter: { categories: { eq: "essay" }, published: { ne: false } }
+        frontmatter: { type: { eq: "essay" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 2
@@ -481,7 +478,7 @@ export const pageQuery = graphql`
 
     bookQuery: allMdx(
       filter: {
-        frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+        frontmatter: { type: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 3

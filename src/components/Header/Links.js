@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { css } from '@emotion/core'
-import { useTheme } from '../Theming'
 
 export default () => {
-  const theme = useTheme()
   return (
     <span>
       <Link to="./illustration" aria-label="View illustration page">

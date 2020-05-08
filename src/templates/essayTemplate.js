@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SEO from 'components/SEO'
@@ -17,9 +16,7 @@ export default function Essay({
   data: { site, mdx },
   pageContext: { prevPage, nextPage },
 }) {
-  const author = mdx.frontmatter.author || config.author
   const title = mdx.frontmatter.title
-  const cover = mdx.frontmatter.cover
   const date = mdx.frontmatter.date
   const theme = useTheme()
 
