@@ -24,7 +24,7 @@ import {
   TwoCol,
   ImageGrid,
   ImageFrame,
-  FullWidthImage,
+  FullWidth,
 } from './ImageStyles'
 import Book from '../Book'
 
@@ -53,5 +53,5 @@ export default {
   SimpleCard: props => <SimpleCard {...props} />,
   Book: props => <Book {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
-  FullWidthImage: props => <FullWidthImage {...props} />,
+  FullWidth: props => <FullWidth {...props} />,
 }

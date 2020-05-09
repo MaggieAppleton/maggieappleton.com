@@ -17,6 +17,7 @@ import Footer from '../components/Footer'
 const getGlobalStyles = theme => {
   return css`
     body {
+      overflow: auto;
     background-image: linear-gradient(180deg, ${theme.colors.white} 0%, ${
     theme.colors.white
   } 88%, ${theme.colors.offWhite} 100%);

@@ -20,6 +20,7 @@ const LinkTooltip = forwardRef((props, ref) => {
         padding: 0.2em;
         font-size: 0.7em;
       `}
+      xw
     >
       <span ref={ref}>{props.children}</span>
     </Tippy>
@@ -28,7 +29,24 @@ const LinkTooltip = forwardRef((props, ref) => {
 
 const TooltipLink = ({ children, to, ...other }) => {
   return (
-    <a target="_blank" rel="noopener noreferrer" href={to} {...other}>
+    <a
+      css={css({
+        display: 'inline-block',
+        color: '#23A3FA',
+        borderRadius: '4px',
+        lineHeight: '1em',
+        transition: 'all 0.5s',
+        ':hover, :focus': {
+          background: '#31AFF6',
+          color: 'white',
+          padding: '6px',
+        },
+      })}
+      target="_blank"
+      rel="noopener noreferrer"
+      href={to}
+      {...other}
+    >
       <LinkTooltip to={to}>{children}</LinkTooltip>
     </a>
   )

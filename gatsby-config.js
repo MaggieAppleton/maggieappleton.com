@@ -40,6 +40,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/images`,
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/content/essays`,
@@ -80,7 +87,8 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
-              wrapperStyle: 'border-radius: 4px; max-width: 100%;',
+              wrapperStyle:
+                'border-radius: 4px; max-width: 100%; object-fit: contain;object-position: top center;',
               linkImagesToOriginal: false,
               quality: 80,
             },

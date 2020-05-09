@@ -85,3 +85,24 @@ export const ImageGrid = props => {
     </>
   )
 }
+
+export const FullWidth = props => {
+  return (
+    <div
+      css={css`
+        width: 500%;
+        margin-left: -200%;
+        background: ${props.bgColor};
+        height: ${props.height};
+        padding: 1em;
+        p,
+        img {
+          justify-items: center;
+          text-align: center;
+        }
+      `}
+    >
+      {props.children}
+    </div>
+  )
+}

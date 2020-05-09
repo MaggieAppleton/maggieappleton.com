@@ -15,23 +15,26 @@ const Tooltip = forwardRef((props, ref) => {
       interactive={true}
       animation="shift-away"
       content={props.tiptext}
+      css={css`
+        padding: 0.2em;
+        font-size: 0.7em;
+      `}
     >
       <div
         css={css({
           display: 'inline-block',
-          color: '#53BDC9',
-          padding: '0 4px 4px 2px',
-          marginRight: '4px',
+          color: '#EB5F19',
           borderRadius: '4px',
           lineHeight: '1em',
-          transition: 'all 0.4s',
+          transition: 'all 0.5s',
           ':hover, :focus': {
-            background: '#53BDC9',
+            background: '#FF9034',
             color: 'white',
+            padding: '6px',
           },
         })}
       >
-        <span ref={ref}>{props.children ? props.children : '*'}</span>
+        <span ref={ref}>{props.children}</span>
       </div>
     </Tippy>
   )

@@ -5,9 +5,6 @@ import typography, { fonts } from '../lib/typography'
 const ResetStyles = () => {
   const theme = useTheme()
   return css`
-  .gatsby-resp-image-wrapper {
-    max-width: 100%;
-  }
   form {
     margin: 0;
   }
@@ -27,6 +24,7 @@ const ResetStyles = () => {
     font-style: normal;
     padding: 0;
     margin: 0;
+    overflow: hidden;
   }
   html {
     text-rendering: optimizeLegibility;
