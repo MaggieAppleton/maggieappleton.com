@@ -6,7 +6,7 @@ export default styled.p`
   max-width: 660px;
   margin: 0 auto;
   line-height: 1.8em;
-  font-size: 1em;
+  font-size: 1.04em;
   font-family: ${fonts.regular};
   margin-top: 1em;
 `
