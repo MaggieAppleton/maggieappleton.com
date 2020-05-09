@@ -32,6 +32,7 @@ const APIs = () => {
         <a
           href="https://developers.google.com/youtube/v3/"
           target="_blank"
+          rel="noopener noreferrer"
           css={css`
             rect {
               transition: all 250ms ease;
@@ -59,6 +60,7 @@ const APIs = () => {
             rx="4.007"
           />
           <image
+            alt="An interactive image of an API"
             width="101.5"
             height="77"
             x="373.026"

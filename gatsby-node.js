@@ -8,7 +8,7 @@ exports.createPages = ({ actions, graphql }) => {
     query {
       notesQuery: allMdx(
         filter: {
-          frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+          frontmatter: { type: { eq: "notes" }, published: { ne: false } }
         }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
@@ -33,7 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       essaysQuery: allMdx(
         filter: {
-          frontmatter: { categories: { eq: "essay" }, published: { ne: false } }
+          frontmatter: { type: { eq: "essay" }, published: { ne: false } }
         }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
@@ -59,7 +59,7 @@ exports.createPages = ({ actions, graphql }) => {
       illustrationQuery: allMdx(
         filter: {
           frontmatter: {
-            categories: { eq: "illustration" }
+            type: { eq: "illustration" }
             published: { ne: false }
           }
         }
@@ -86,7 +86,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       bookQuery: allMdx(
         filter: {
-          frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+          frontmatter: { type: { eq: "book" }, published: { ne: false } }
         }
         sort: { order: DESC, fields: frontmatter___date }
       ) {
@@ -266,9 +266,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
-      name: 'categories',
+      name: 'type',
       node,
-      value: node.frontmatter.categories || [],
+      value: node.frontmatter.type || [],
     })
 
     createNodeField({
@@ -281,6 +281,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'redirects',
       node,
       value: node.frontmatter.redirects,
+    })
+
+    createNodeField({
+      name: 'growthStage',
+      node,
+      value: node.frontmatter.growthStage,
     })
 
     createNodeField({

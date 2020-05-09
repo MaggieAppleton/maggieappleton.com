@@ -1,10 +1,10 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinSM, bpMinXL, bpMinLG, bpMaxSM } from 'lib/breakpoints'
+import { bpMinLG } from 'lib/breakpoints'
 
 const Container = props => {
   const {
-    maxWidth = 1100,
+    maxWidth = 1200,
     // marginLeft = 210,
     noHorizontalPadding = false,
     noVerticalPadding = false,

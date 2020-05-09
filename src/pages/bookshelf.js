@@ -1,14 +1,12 @@
 import React from 'react'
 import Layout from 'components/Layout'
 import { css } from '@emotion/core'
-import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import { bpMaxSM } from '../lib/breakpoints'
 import Book from '../components/Book'
 
 const BookPage = ({ data: { site, bookQuery } }) => {
-  const theme = useTheme()
   return (
     <Layout site={site}>
       <Container
@@ -21,10 +19,11 @@ const BookPage = ({ data: { site, bookQuery } }) => {
           }
           .books {
             display: flex;
-            margin: 0 auto;
-            justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: 3em;
             ${bpMaxSM} {
               flex-direction: column;
             }
@@ -63,7 +62,7 @@ export const bookPageQuery = graphql`
     }
     bookQuery: allMdx(
       filter: {
-        frontmatter: { categories: { eq: "book" }, published: { ne: false } }
+        frontmatter: { type: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 18

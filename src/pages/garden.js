@@ -1,17 +1,12 @@
 import React from 'react'
 import Layout from 'components/Layout'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-import { rhythm } from '../lib/typography'
-import { fonts } from '../lib/typography'
-import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import SimpleCard from '../components/SimpleCard'
 
 const GardenPage = ({ data: { site, notesQuery } }) => {
-  const theme = useTheme()
   return (
     <Layout site={site}>
       <Container
@@ -29,6 +24,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
             margin-top: 3em;
           }
         `}
@@ -36,8 +32,9 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
         <section className="header">
           <h1>The Digital Garden</h1>
           <p>
-            An open collection of my notes, resources, sketches, and
-            explorations. Seedlings of ideas I'm currently cultivating.
+            An open collection of notes, resources, sketches, and explorations
+            I'm currently cultivating. Some notes are seedlings, some are
+            budding, and some have ripened.
           </p>
         </section>
 
@@ -86,7 +83,7 @@ export const GardenPageQuery = graphql`
 
     notesQuery: allMdx(
       filter: {
-        frontmatter: { categories: { eq: "notes" }, published: { ne: false } }
+        frontmatter: { type: { eq: "notes" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 24

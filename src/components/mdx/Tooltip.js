@@ -3,16 +3,16 @@ import { css } from '@emotion/core'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
-import './tippy-light.css'
+import 'tippy.js/themes/light.css'
 
 const Tooltip = forwardRef((props, ref) => {
   return (
     <Tippy
       duration="500"
       distance="10"
-      theme="tippylight"
+      theme="light"
+      arrow={true}
       interactive={true}
-      arrow={false}
       animation="shift-away"
       content={props.tiptext}
     >
@@ -20,11 +20,10 @@ const Tooltip = forwardRef((props, ref) => {
         css={css({
           display: 'inline-block',
           color: '#53BDC9',
-          border: '1px solid #53BDC9',
-          padding: '0 8px 7px 7px',
-          marginRight: '10px',
+          padding: '0 4px 4px 2px',
+          marginRight: '4px',
+          borderRadius: '4px',
           lineHeight: '1em',
-          borderRadius: '2px',
           transition: 'all 0.4s',
           ':hover, :focus': {
             background: '#53BDC9',
@@ -32,7 +31,7 @@ const Tooltip = forwardRef((props, ref) => {
           },
         })}
       >
-        <span ref={ref}>{props.children}</span>
+        <span ref={ref}>{props.children ? props.children : '*'}</span>
       </div>
     </Tippy>
   )

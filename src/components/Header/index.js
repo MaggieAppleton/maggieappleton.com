@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { useTheme } from '../Theming'
 import { bpMaxSM } from '../../lib/breakpoints'

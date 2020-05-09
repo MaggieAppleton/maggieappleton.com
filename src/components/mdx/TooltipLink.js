@@ -1,63 +1,35 @@
-import { Link } from 'gatsby-link'
 import React, { forwardRef } from 'react'
-import { css } from '@emotion/core'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
-import './link-tooltip-theme.css'
+import 'tippy.js/themes/light.css'
+import { css } from '@emotion/core'
 
 const LinkTooltip = forwardRef((props, ref) => {
-  const noToolTip = props.noToolTip
-  if (noToolTip === true) {
-    return (
-      <div
-        css={css({
-          display: 'inline-block',
-          transition: 'all 0.4s',
-        })}
-      >
-        <span ref={ref}>{props.children}</span>
-      </div>
-    )
-  }
   return (
     <Tippy
       duration="600"
       distance="2"
-      theme="linktooltip"
+      theme="light"
+      arrow={true}
       interactive={true}
-      arrow={false}
       animation="shift-away"
-      content={props.link}
+      content={props.to}
+      ref={ref}
+      css={css`
+        padding: 0.2em;
+        font-size: 0.7em;
+      `}
     >
-      <span
-        css={css({
-          display: 'inline',
-          transition: 'all 0.4s',
-        })}
-      >
-        <span ref={ref}>{props.children}</span>
-      </span>
+      <span ref={ref}>{props.children}</span>
     </Tippy>
   )
 })
 
-const TooltipLink = ({ noToolTip, children, to, ...other }) => {
-  const internal = /^\/(?!\/)/.test(to)
-
-  if (internal) {
-    return (
-      <Link to={to} {...other}>
-        {children}
-      </Link>
-    )
-  }
-
+const TooltipLink = ({ children, to, ...other }) => {
   return (
     <a target="_blank" rel="noopener noreferrer" href={to} {...other}>
-      <LinkTooltip noToolTip={noToolTip} link={to}>
-        {children}
-      </LinkTooltip>
+      <LinkTooltip to={to}>{children}</LinkTooltip>
     </a>
   )
 }

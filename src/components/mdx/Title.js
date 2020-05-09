@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import { fonts } from '../../lib/typography'
 
 export default styled.h1`
   font-size: 2.4em;

@@ -5,11 +5,14 @@ import typography, { fonts } from '../lib/typography'
 const ResetStyles = () => {
   const theme = useTheme()
   return css`
+  .gatsby-resp-image-wrapper {
+    max-width: 100%;
+  }
   form {
     margin: 0;
   }
   ul, ol {
-    list-style-position: inside;
+    list-style-position: initial;
     margin-left: 0;
     font-size: ${typography.baseFontSize};
   }
