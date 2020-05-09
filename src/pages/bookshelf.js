@@ -19,10 +19,11 @@ const BookPage = ({ data: { site, bookQuery } }) => {
           }
           .books {
             display: flex;
-            margin: 0 auto;
-            justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: 3em;
             ${bpMaxSM} {
               flex-direction: column;
             }

@@ -29,6 +29,8 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
           .essaysGrid {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 3em;
           }
         `}
@@ -52,8 +54,7 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
                   key={essay.id}
                   css={css`
                     font-family: ${fonts.regularSans};
-                    flex: 1 1 auto;
-                    max-width: 340px;
+                    max-width: 350px;
                     margin-bottom: 1em;
                     margin-right: 1em;
                     padding: 0.6em 1.4em 1.6em 1.4em;
