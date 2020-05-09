@@ -3,8 +3,6 @@ import Title from './Title'
 import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
 import PostImage from './PostImage'
-import ImageGrid from './ImageGrid'
-import ImageFrame from './ImageFrame'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
@@ -18,11 +16,16 @@ import {
   Blockquote,
   Center,
   SmallCenter,
-  TwoCol,
   OrderedList,
   UnorderedList,
+} from './TextStyles'
+import {
   ThreeImageGrid,
-} from './MdxStyles'
+  TwoCol,
+  ImageGrid,
+  ImageFrame,
+  FullWidthImage,
+} from './ImageStyles'
 import Book from '../Book'
 
 export default {
@@ -50,4 +53,5 @@ export default {
   SimpleCard: props => <SimpleCard {...props} />,
   Book: props => <Book {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
+  FullWidthImage: props => <FullWidthImage {...props} />,
 }

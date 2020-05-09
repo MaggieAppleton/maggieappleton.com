@@ -3,6 +3,7 @@ import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
+import { css } from '@emotion/core'
 
 const LinkTooltip = forwardRef((props, ref) => {
   return (
@@ -13,10 +14,14 @@ const LinkTooltip = forwardRef((props, ref) => {
       arrow={true}
       interactive={true}
       animation="shift-away"
-      content={props.link}
+      content={props.to}
       ref={ref}
+      css={css`
+        padding: 0.2em;
+        font-size: 0.7em;
+      `}
     >
-      <span>{props.children}</span>
+      <span ref={ref}>{props.children}</span>
     </Tippy>
   )
 })
@@ -24,7 +29,7 @@ const LinkTooltip = forwardRef((props, ref) => {
 const TooltipLink = ({ children, to, ...other }) => {
   return (
     <a target="_blank" rel="noopener noreferrer" href={to} {...other}>
-      <LinkTooltip link={to}>{children}</LinkTooltip>
+      <LinkTooltip to={to}>{children}</LinkTooltip>
     </a>
   )
 }

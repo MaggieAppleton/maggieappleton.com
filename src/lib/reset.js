@@ -5,6 +5,9 @@ import typography, { fonts } from '../lib/typography'
 const ResetStyles = () => {
   const theme = useTheme()
   return css`
+  .gatsby-resp-image-wrapper {
+    max-width: 100%;
+  }
   form {
     margin: 0;
   }
