@@ -37,7 +37,7 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
       >
         <section className="header">
           <h1>Essays</h1>
-          <p>Coherent thoughts in essay format. Mostly illustrated.</p>
+          <p>Coherent thoughts in essay format, almost always illustrated.</p>
         </section>
 
         {/* ----------- Essays Section ----------- */}
@@ -61,6 +61,7 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
                     h4 {
                       font-size: 1.1em;
                       margin-top: 0.2em;
+                      margin-bottom: 0.4em;
                       transition: all 150ms ease;
                       &:hover: {
                         color: ${theme.colors.primary};
@@ -68,11 +69,12 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
                     }
                     h5 {
                       margin-bottom: 0;
+                      line-height: 1.3em;
                     }
                   `}
                 >
                   <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
-                  <h4>➽ {essay.frontmatter.title}</h4>
+                  <h4>{essay.frontmatter.title}</h4>
                   <h5>{essay.frontmatter.description}</h5>
                 </SimpleCard>
               </Link>

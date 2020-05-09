@@ -17,6 +17,11 @@ export const OrderedList = styled.ol`
   margin: 0 auto;
 `
 
+export const UnorderedList = styled.ul`
+  max-width: 660px;
+  margin: 0 auto;
+`
+
 export const H3 = styled.h3`
   text-align: left;
   max-width: 660px;

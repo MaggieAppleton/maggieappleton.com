@@ -4,7 +4,7 @@ import { bpMinLG } from 'lib/breakpoints'
 
 const Container = props => {
   const {
-    maxWidth = 1100,
+    maxWidth = 1200,
     // marginLeft = 210,
     noHorizontalPadding = false,
     noVerticalPadding = false,

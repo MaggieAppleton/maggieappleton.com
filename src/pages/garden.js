@@ -24,6 +24,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
             margin-top: 3em;
           }
         `}
