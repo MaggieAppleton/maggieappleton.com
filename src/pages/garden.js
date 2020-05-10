@@ -83,7 +83,7 @@ export const GardenPageQuery = graphql`
 
     notesQuery: allMdx(
       filter: {
-        frontmatter: { type: { eq: "notes" }, published: { ne: false } }
+        frontmatter: { type: { eq: "note" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 24
