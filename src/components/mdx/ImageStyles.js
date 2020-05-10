@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
-import { bpMinMD, bpMinSM } from '../../lib/breakpoints'
+import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 
 export const TwoCol = props => {
   return (
@@ -87,19 +87,30 @@ export const FullWidth = props => {
   return (
     <div
       css={css`
-        width: 500%;
-        margin-left: -200%;
+        width: 200%;
+        margin: 4em 0;
+        margin-left: -50%;
+        padding: 2em 0;
         background: ${props.bgColor};
         height: ${props.height};
-        padding: 1em;
-        p,
-        img {
-          justify-items: center;
-          text-align: center;
+        .innerDiv {
+          max-width: 60%;
+          margin: 0 auto;
+          display: grid;
+          grid-gap: 1em;
+          grid-template-columns: 2fr 1fr;
+          $bpMaxSM {
+            grid-template-columns: 1fr;
+          }
+          p {
+            padding: 1em;
+            color: white;
+            line-height: 1.6em;
+          }
         }
       `}
     >
-      {props.children}
+      <div className="innerDiv">{props.children}</div>
     </div>
   )
 }

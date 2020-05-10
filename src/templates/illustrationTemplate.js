@@ -37,7 +37,7 @@ export default function Post({
         <h1
           css={css`
             text-align: center;
-            margin: 1.2em 0 0.6em;
+            margin: 0.6em 0;
           `}
         >
           {title}
