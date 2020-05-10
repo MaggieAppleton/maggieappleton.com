@@ -7,7 +7,7 @@ import PostImage from './PostImage'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
-import TooltipLink from './TooltipLink'
+import TipLink from './TipLink'
 import NoteSidebar from './NoteSidebar'
 import SimpleCard from '../SimpleCard'
 import {
@@ -43,7 +43,7 @@ export default {
   hr: props => <Divider {...props} />,
   Tooltip: props => <Tooltip {...props} />,
   pre: preProps => <pre {...preProps} />,
-  a: props => <TooltipLink {...props} />,
+  a: props => <TipLink {...props} />,
   Link: props => <Link {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,

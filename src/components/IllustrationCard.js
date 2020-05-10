@@ -22,15 +22,35 @@ const IllustrationCard = props => {
         css={css`
           margin-bottom: 40px;
           max-width: 450px;
+          transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+          .imgWrap {
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
+          }
+          &:hover {
+            transform: scale(1.015);
+            h4 {
+              color: ${theme.colors.orange};
+            }
+            .imgWrap {
+              box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+            }
+          }
         `}
       >
-        <Img fluid={props.fluid} />
+        <div className="imgWrap">
+          <Img
+            style={{
+              borderRadius: '4px',
+            }}
+            fluid={props.fluid}
+          />
+        </div>
         <h4
           css={css`
             margin-top: 0.8em;
             margin-bottom: ${rhythm(0.3)};
-            transition: all 150ms ease;
             text-align: center;
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
           `}
         >
           {props.title}
