@@ -290,12 +290,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
-      name: 'growthStage',
-      node,
-      value: node.frontmatter.growthStage,
-    })
-
-    createNodeField({
       name: 'isPost',
       node,
       value: true,
