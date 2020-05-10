@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from 'components/Layout'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
@@ -11,6 +10,7 @@ import { fonts } from '../lib/typography'
 import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
 import SimpleCard from '../components/SimpleCard'
 import Book from '../components/Book'
+import IllustrationCard from '../components/IllustrationCard'
 
 const Hero = () => {
   const theme = useTheme()
@@ -100,7 +100,8 @@ const TitleSectionLink = props => {
     <Link
       css={css`
         h3 {
-          transition: all 0.6s;
+          margin-bottom: 1em;
+          transition: all 0.6s ease;
           &:hover {
             color: ${theme.colors.red};
           }
@@ -149,7 +150,7 @@ export default function Index({
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
-            grid-gap: 1em;
+            grid-gap: 1.2em;
           }
           .books {
             display: flex;
@@ -290,39 +291,12 @@ export default function Index({
           </TitleSectionLink>
           <div className="illustration">
             {illustrationQuery.edges.map(({ node: illustration }) => (
-              <Link
-                css={css`
-                  font-family: ${fonts.walsheimLight};
-                `}
-                to={illustration.frontmatter.slug}
-                aria-label={`View ${illustration.frontmatter.title}`}
-              >
-                <div
-                  key={illustration.id}
-                  css={css`
-                    margin-bottom: 1em;
-                  `}
-                >
-                  <Img
-                    css={css`
-                      border-radius: 4px;
-                      margin-bottom: 0.7em;
-                    `}
-                    fluid={illustration.frontmatter.cover.childImageSharp.fluid}
-                  />
-                  <h4
-                    css={css({
-                      textAlign: 'center',
-                      transition: 'all 150ms ease',
-                      ':hover': {
-                        color: theme.colors.primary,
-                      },
-                    })}
-                  >
-                    {illustration.frontmatter.title}
-                  </h4>
-                </div>
-              </Link>
+              <IllustrationCard
+                slug={illustration.frontmatter.slug}
+                title={illustration.frontmatter.title}
+                id={illustration.id}
+                fluid={illustration.frontmatter.cover.childImageSharp.fluid}
+              />
             ))}
           </div>
           <SmallSectionLink

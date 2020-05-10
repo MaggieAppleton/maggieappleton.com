@@ -19,6 +19,7 @@ const LinkTooltip = forwardRef((props, ref) => {
       css={css`
         padding: 0.2em;
         font-size: 0.7em;
+        display: inline-block;
       `}
       xw
     >
@@ -27,7 +28,41 @@ const LinkTooltip = forwardRef((props, ref) => {
   )
 })
 
-const TooltipLink = ({ children, to, ...other }) => {
+const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
+  if (noStyle) {
+    return (
+      <a target="_blank" rel="noopener noreferrer" href={to} {...other}>
+        {children}
+      </a>
+    )
+  }
+
+  if (noTip) {
+    return (
+      <a
+        css={css({
+          display: 'inline-block',
+          color: '#23A3FA',
+          lineHeight: '1em',
+          borderRadius: '4px',
+          transition: 'all 0.6s ease',
+          ':hover, :focus': {
+            border: '1px solid #B5E2FF',
+            padding: '6px',
+            color: '#23A3FA',
+            transition: 'all 0.6s ease',
+          },
+        })}
+        target="_blank"
+        rel="noopener noreferrer"
+        href={to}
+        {...other}
+      >
+        {children}
+      </a>
+    )
+  }
+
   return (
     <a
       css={css({
@@ -35,7 +70,7 @@ const TooltipLink = ({ children, to, ...other }) => {
         color: '#23A3FA',
         borderRadius: '4px',
         lineHeight: '1em',
-        transition: 'all 0.5s',
+        transition: 'all 0.6s ease',
         ':hover, :focus': {
           background: '#31AFF6',
           color: 'white',
@@ -52,4 +87,4 @@ const TooltipLink = ({ children, to, ...other }) => {
   )
 }
 
-export default TooltipLink
+export default TipLink
