@@ -19,7 +19,7 @@ export default function Note({
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
   // const topics = mdx.frontmatter.topics
-  const growthStage = mdx.frontmatter.growthStage
+  // const growthStage = mdx.frontmatter.growthStage
   const theme = useTheme()
 
   return (
@@ -59,7 +59,7 @@ export default function Note({
         >
           {date && <h6>Last tended on {date}</h6>}
         </div>
-        <div
+        {/* <div
           css={css`
             display: flex;
             justify-content: center;
@@ -73,7 +73,7 @@ export default function Note({
           `}
         >
           {growthStage && <h6>{growthStage}</h6>}
-        </div>
+        </div> */}
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
@@ -106,7 +106,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         topics
-        growthStage
       }
       body
     }
