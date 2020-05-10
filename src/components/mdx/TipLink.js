@@ -18,8 +18,7 @@ const LinkTooltip = forwardRef((props, ref) => {
       ref={ref}
       css={css`
         padding: 0.2em;
-        font-size: 0.7em;
-        display: inline-block;
+        font-size: 0.66em;
       `}
       xw
     >
@@ -31,7 +30,20 @@ const LinkTooltip = forwardRef((props, ref) => {
 const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
   if (noStyle) {
     return (
-      <a target="_blank" rel="noopener noreferrer" href={to} {...other}>
+      <a
+        css={css({
+          color: '#23A3FA',
+          transition: 'all 0.6s ease',
+          ':hover, :focus': {
+            color: '#FD934B',
+            transition: 'all 0.6s ease',
+          },
+        })}
+        target="_blank"
+        rel="noopener noreferrer"
+        href={to}
+        {...other}
+      >
         {children}
       </a>
     )

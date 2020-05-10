@@ -13,17 +13,24 @@ export const Divider = styled.hr`
 `
 
 export const OrderedList = styled.ol`
-  list-style: decimal-leading-zero;
+  list-style: decimal-leading-zero inside;
   line-height: 1.8em;
   max-width: 660px;
   margin: 0 auto;
+  li {
+    margin-bottom: 1em;
+  }
 `
 
 export const UnorderedList = styled.ul`
-  list-style: square;
+  list-style: inside;
+  list-style-image: url(icons/radiobtn.svg);
   line-height: 1.8em;
   max-width: 660px;
-  margin: 0 auto;
+  margin: 1em auto;
+  li {
+    margin-bottom: 0.4em;
+  }
 `
 
 export const H3 = styled.h3`
@@ -49,6 +56,7 @@ export const Blockquote = styled.blockquote`
     margin: 0.8em auto;
     font-size: 1.7em;
     line-height: 1.4em;
+    display: inline-block;
   }
   & ::before,
   & ::after {
