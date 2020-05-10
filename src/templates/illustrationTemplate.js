@@ -1,4 +1,5 @@
 import React from 'react'
+import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SEO from 'components/SEO'
@@ -36,7 +37,7 @@ export default function Post({
         <h1
           css={css`
             text-align: center;
-            margin-bottom: 40px;
+            margin: 1.2em 0 0.6em;
           `}
         >
           {title}
@@ -45,7 +46,6 @@ export default function Post({
           css={css`
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
             h6 {
               text-align: center;
               opacity: 0.8;
@@ -57,7 +57,7 @@ export default function Post({
             }
           `}
         >
-          {date && <h6>Project completed in {date}</h6>}
+          {date && <h6>{date}</h6>}
         </div>
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -90,13 +90,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM YYYY")
         author
-        cover {
-          childImageSharp {
-            fluid(maxWidth: 900) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
         slug
         topics
       }

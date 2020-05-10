@@ -89,7 +89,7 @@ module.exports = {
               maxWidth: 1200,
               wrapperStyle: 'border-radius: 4px; max-width: 100%; ',
               linkImagesToOriginal: false,
-              quality: 80,
+              quality: 100,
             },
           },
         ],

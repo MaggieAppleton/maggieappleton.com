@@ -9,7 +9,6 @@ import Container from 'components/Container'
 import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
 import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
-import TooltipLink from '../components/mdx/TooltipLink'
 import SimpleCard from '../components/SimpleCard'
 import Book from '../components/Book'
 

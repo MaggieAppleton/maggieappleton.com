@@ -24,7 +24,6 @@ const ResetStyles = () => {
     font-style: normal;
     padding: 0;
     margin: 0;
-    overflow: hidden;
   }
   html {
     text-rendering: optimizeLegibility;
