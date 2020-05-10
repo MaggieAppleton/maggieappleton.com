@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import Title from './Title'
 import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
@@ -24,7 +25,7 @@ import {
   TwoCol,
   ImageGrid,
   ImageFrame,
-  FullWidthImage,
+  FullWidth,
 } from './ImageStyles'
 import Book from '../Book'
 
@@ -43,6 +44,7 @@ export default {
   Tooltip: props => <Tooltip {...props} />,
   pre: preProps => <pre {...preProps} />,
   a: props => <TooltipLink {...props} />,
+  Link: props => <Link {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,
   Center: props => <Center {...props} />,
@@ -53,5 +55,5 @@ export default {
   SimpleCard: props => <SimpleCard {...props} />,
   Book: props => <Book {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
-  FullWidthImage: props => <FullWidthImage {...props} />,
+  FullWidth: props => <FullWidth {...props} />,
 }

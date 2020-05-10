@@ -13,11 +13,15 @@ export const Divider = styled.hr`
 `
 
 export const OrderedList = styled.ol`
+  list-style: decimal-leading-zero;
+  line-height: 1.8em;
   max-width: 660px;
   margin: 0 auto;
 `
 
 export const UnorderedList = styled.ul`
+  list-style: square;
+  line-height: 1.8em;
   max-width: 660px;
   margin: 0 auto;
 `

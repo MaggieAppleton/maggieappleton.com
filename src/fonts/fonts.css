@@ -1,3 +1,4 @@
+/* Walsheim */
 @font-face {
   font-family: 'GT Walsheim Regular';
   font-style: normal;
@@ -18,6 +19,13 @@
   font-weight: 200;
   src: url('GT-Walsheim-Pro-Light.woff') format('woff');
   font-display: fallback;
+}
+
+/* Freight Text */
+@font-face {
+  font-family: 'Freight Sans W03 Light';
+  src: url('207add5d-09f8-4df9-a0aa-e5f02f8bcb52.woff2') format('woff2'),
+    url('57b64ccd-ce33-4c5a-b6ba-0fcf5232aec9.woff') format('woff');
 }
 @font-face {
   font-family: 'FreightSans W03 Book';
@@ -54,32 +62,3 @@
   src: url('12c4a9a8-1d86-4d72-a699-83c0e393f136.woff2') format('woff2'),
     url('60a3f9e0-bfb2-48f8-81ec-aa5ffd3f93ef.woff') format('woff');
 }
-
-/* @font-face {
-  font-family: 'FreightTextProLight-Regular';
-  font-style: normal;
-  font-weight: 100;
-  src: url('FreightTextProLight-Regular.woff') format('woff');
-  font-display: fallback;
-}
-@font-face {
-  font-family: 'FreightTextProBook-Regular';
-  font-style: normal;
-  font-weight: 400;
-  src: url('FreightTextProBook-Regular.woff') format('woff');
-  font-display: fallback;
-}
-@font-face {
-  font-family: 'FreightTextProBook-Italic';
-  font-style: italic;
-  font-weight: 400;
-  src: url('FreightTextProBook-Italic.woff') format('woff');
-  font-display: fallback;
-}
-@font-face {
-  font-family: 'FreightTextProBlack-Regular';
-  font-style: normal;
-  font-weight: 700;
-  src: url('FreightTextProBlack-Regular.woff') format('woff');
-  font-display: fallback;
-} */

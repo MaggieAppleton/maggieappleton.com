@@ -12,6 +12,7 @@ export const fonts = {
   boldItalic: 'FreightText W01 Bold Italic',
   regularSans: 'FreightSans W03 Book',
   regularSansItalic: 'Freight Sans W03 Book Italic',
+  lightSans: 'Freight Sans W03 Light',
   boldSans: 'Freight Sans W03 Bold',
 }
 
@@ -38,7 +39,7 @@ const typography = new Typography({
     },
     h3: {
       color: colors.darkGrey,
-      fontFamily: fonts.regularSans,
+      fontFamily: fonts.lightSans,
       fontSize: rhythm(1),
       letterSpacing: '0.02em',
     },

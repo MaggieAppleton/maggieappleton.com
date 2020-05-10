@@ -7,13 +7,10 @@ export const TwoCol = props => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: '50% 50%' },
+        [bpMinMD]: { gridTemplateColumns: '1fr 1fr' },
         gridTemplateColumns: '1fr',
         display: 'grid',
         gridGap: '20px',
-        img: {
-          maxWidth: '100%',
-        },
       })}
     >
       {props.children}
@@ -83,5 +80,26 @@ export const ImageGrid = props => {
         {props.children}
       </div>
     </>
+  )
+}
+
+export const FullWidth = props => {
+  return (
+    <div
+      css={css`
+        width: 500%;
+        margin-left: -200%;
+        background: ${props.bgColor};
+        height: ${props.height};
+        padding: 1em;
+        p,
+        img {
+          justify-items: center;
+          text-align: center;
+        }
+      `}
+    >
+      {props.children}
+    </div>
   )
 }

@@ -19,6 +19,7 @@ export default function Book({
   const author = mdx.frontmatter.author || config.author
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
+  const subtitle = mdx.frontmatter.subtitle
   const cover = mdx.frontmatter.cover
   const theme = useTheme()
 
@@ -61,9 +62,7 @@ export default function Book({
             </Link>
 
             <Img
-              css={css`
-                border-radius: 6px;
-              `}
+              style={{ borderRadius: '6px' }}
               fluid={cover.childImageSharp.fluid}
               alt={site.siteMetadata.keywords.join(', ')}
             />
@@ -79,7 +78,8 @@ export default function Book({
             `}
           >
             <h1>{title}</h1>
-            <h3>{author}</h3>
+            <h2>{subtitle}</h2>
+            <h3>by {author}</h3>
             {date && <h6>Last tended to {date}</h6>}
           </div>
         </div>
@@ -115,6 +115,7 @@ export const pageQuery = graphql`
     mdx(fields: { id: { eq: $id } }) {
       frontmatter {
         title
+        subtitle
         date(formatString: "MMMM DD, YYYY")
         author
         cover {
