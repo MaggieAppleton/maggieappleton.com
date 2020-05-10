@@ -242,6 +242,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
+      name: 'subtitle',
+      node,
+      value: node.frontmatter.subtitle,
+    })
+
+    createNodeField({
       name: 'description',
       node,
       value: node.frontmatter.description,
