@@ -194,11 +194,12 @@ export default function Index({
                 margin-bottom: 1em;
               `}
             >
-              A collection of essays, notes, research, and sketches.
+              A consistently tended collection of half-baked notes, research,
+              and sketches.
             </p>
 
             {/* Notes Section */}
-            <h5>Notes</h5>
+
             <div className="gardenGrid">
               {notesQuery.edges.map(({ node: note }) => (
                 <SimpleCard
@@ -339,8 +340,8 @@ export default function Index({
           <span className="bookTitle">
             <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
             <p>
-              A past and present reading collection complete with loose notes
-              and sketches
+              A past and present reading collection. Complete with very loose
+              and opinionated notes.
             </p>
 
             <SmallSectionLink

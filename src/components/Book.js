@@ -15,7 +15,7 @@ const Book = props => {
         key={props.id}
         css={css`
           padding: 0.8em;
-          margin: 0.1em;
+          margin: 0em 0.6em;
           width: 240px;
           .gatsby-image-wrapper {
             border-radius: 4px;
