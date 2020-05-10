@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { useTheme } from 'components/Theming'
+import { fonts } from '../lib/typography'
 
 const PreviousNext = props => {
+  const theme = useTheme()
   return (
     <div
       css={css`
@@ -13,15 +16,24 @@ const PreviousNext = props => {
         margin-top: 4em;
         max-width: 660px;
         h4 {
+          font-family: ${fonts.walsheimLight};
+          transition: 600ms ease;
         }
         .left {
-          color: red;
           max-width: 200px;
+          transition: 600ms ease;
+          &:hover {
+            color: ${theme.colors.orange};
+          }
         }
         .right {
           text-align: right;
+          transition: 600ms ease;
           justify-self: flex-end;
           max-width: 200px;
+          &:hover {
+            color: ${theme.colors.orange};
+          }
         }
       `}
     >
