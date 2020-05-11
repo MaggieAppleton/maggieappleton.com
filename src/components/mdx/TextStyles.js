@@ -92,3 +92,22 @@ export const SmallCenter = props => {
     </div>
   )
 }
+
+export const TwoParagraph = props => {
+  return (
+    <div
+      css={css({
+        display: 'grid',
+        gridGap: '2em',
+        margin: '0 auto',
+        gridTemplateColumns: '1fr',
+        [bpMinSM]: { gridTemplateColumns: '1fr 1fr' },
+        marginTop: '2em',
+        marginBottom: '4em',
+        maxWidth: '80%',
+      })}
+    >
+      {props.children}
+    </div>
+  )
+}

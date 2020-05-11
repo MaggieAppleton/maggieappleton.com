@@ -19,6 +19,7 @@ import {
   SmallCenter,
   OrderedList,
   UnorderedList,
+  TwoParagraph,
 } from './TextStyles'
 import {
   ThreeImageGrid,
@@ -60,4 +61,5 @@ export default {
   FullWidth: props => <FullWidth {...props} />,
   FullWidth2Col: props => <FullWidth2Col {...props} />,
   FullWidthImage: props => <FullWidthImage {...props} />,
+  TwoParagraph: props => <TwoParagraph {...props} />,
 }
