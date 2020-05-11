@@ -7,10 +7,12 @@ export const TwoCol = props => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: '1fr 1fr' },
+        [bpMinMD]: { gridTemplateColumns: props.GridColCount || '1fr 1fr' },
         gridTemplateColumns: '1fr',
         display: 'grid',
         gridGap: '20px',
+        alignItems: 'center',
+        justifyItems: 'center',
       })}
     >
       {props.children}
