@@ -26,6 +26,7 @@ import {
   ImageGrid,
   ImageFrame,
   FullWidth,
+  FullWidthImage,
 } from './ImageStyles'
 import Book from '../Book'
 
@@ -56,4 +57,5 @@ export default {
   Book: props => <Book {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
   FullWidth: props => <FullWidth {...props} />,
+  FullWidthImage: props => <FullWidthImage {...props} />,
 }

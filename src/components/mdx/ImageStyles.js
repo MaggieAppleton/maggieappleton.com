@@ -87,23 +87,33 @@ export const FullWidth = props => {
   return (
     <div
       css={css`
-        width: 200%;
-        margin: 4em 0;
-        margin-left: -50%;
+        left: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: 100vw;
+        position: relative;
+        right: 50%;
+        width: 100vw;
         padding: 2em 0;
         background: ${props.bgColor};
-        height: ${props.height};
+        height: (100vw * 1.2);
         .innerDiv {
-          max-width: 60%;
+          max-width: 80%;
           margin: 0 auto;
           display: grid;
           grid-gap: 1em;
           grid-template-columns: 2fr 1fr;
-          $bpMaxSM {
+          ${bpMaxSM} {
             grid-template-columns: 1fr;
+            p {
+              margin-top: 0;
+            }
+            img {
+              margin: 0;
+            }
           }
           p {
-            padding: 1em;
+            padding-top: 2em;
             color: white;
             line-height: 1.6em;
           }
@@ -112,5 +122,23 @@ export const FullWidth = props => {
     >
       <div className="innerDiv">{props.children}</div>
     </div>
+  )
+}
+
+export const FullWidthImage = props => {
+  return (
+    <img
+      css={css`
+        left: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: 100vw;
+        position: relative;
+        right: 50%;
+        width: 100vw;
+      `}
+      alt={props.alt}
+      src={props.src}
+    />
   )
 }
