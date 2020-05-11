@@ -71,6 +71,13 @@ export const Blockquote = styled.blockquote`
 export const Center = styled.p`
   text-align: center;
   margin: 30px auto;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-align: center;
+  }
 `
 export const SmallCenter = props => {
   return (

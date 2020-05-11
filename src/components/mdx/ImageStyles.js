@@ -98,6 +98,36 @@ export const FullWidth = props => {
         background: ${props.bgColor};
         height: (100vw * 1.2);
         .innerDiv {
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          padding: 1.4em 0 0.4em;
+          img {
+            padding: 1em;
+          }
+        }
+      `}
+    >
+      <div className="innerDiv">{props.children}</div>
+    </div>
+  )
+}
+
+export const FullWidth2Col = props => {
+  return (
+    <div
+      css={css`
+        left: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: 100vw;
+        position: relative;
+        right: 50%;
+        width: 100vw;
+        padding: 2em 0;
+        background: ${props.bgColor};
+        height: (100vw * 1.2);
+        .innerDiv {
           max-width: 80%;
           margin: 0 auto;
           display: grid;
