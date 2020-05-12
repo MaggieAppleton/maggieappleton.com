@@ -8,8 +8,7 @@ export const Twitter = ({ url = `${config.twitter}` }) => {
   return (
     <a
       target="_blank"
-      rel="noopener"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       href={url}
       css={css`
         color: ${theme.colors.text};
@@ -41,8 +40,7 @@ export const Dribbble = ({ url = `${config.dribbble}` }) => {
   return (
     <a
       target="_blank"
-      rel="noopener"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       href={url}
       css={css`
         color: ${theme.colors.text};
@@ -74,8 +72,7 @@ export const Instagram = ({ url = `${config.instagram}` }) => {
   return (
     <a
       target="_blank"
-      rel="noopener"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       href={url}
       css={css`
         color: ${theme.colors.text};
@@ -108,8 +105,7 @@ export const GitHub = ({ url = `${config.github}` }) => {
   return (
     <a
       target="_blank"
-      rel="noopener"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       href={url}
       css={css`
         margin-left: 10px;

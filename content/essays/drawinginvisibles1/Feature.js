@@ -1,6 +1,5 @@
 import React from 'react'
 import { bpMinMD } from '../../../src/lib/breakpoints'
-import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
 const Feature = props => {
@@ -28,9 +27,9 @@ const Feature = props => {
     >
       <div>
         <h5>{props.illustrator}</h5>
-        <Link to={props.sourceURL}>
+        <a href={props.sourceURL}>
           <h4>{props.sourceTitle}</h4>
-        </Link>
+        </a>
         <p>{props.children}</p>
       </div>
       <img alt={props.sourceTitle} src={props.imageURL} />
