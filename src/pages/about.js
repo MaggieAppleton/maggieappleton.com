@@ -95,9 +95,17 @@ const AboutPage = () => {
               challenge.
             </p>
             <p>
-              My work at <a href="https://egghead.io/">egghead</a> involves
-              designing visual metaphors for invisible, complicated software
-              concepts.
+              My work at{' '}
+              <a
+                href="https://egghead.io/"
+                target="_blank"
+                rel="noopener"
+                rel="noreferrer"
+              >
+                egghead
+              </a>
+              involves designing visual metaphors for invisible, complicated
+              software concepts.
             </p>
             <p>
               On the side I'm always working on{' '}
