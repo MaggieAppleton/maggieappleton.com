@@ -50,6 +50,7 @@ export const H4 = styled.h4`
 `
 
 export const Blockquote = styled.blockquote`
+  text-align: center;
   & > p {
     max-width: 620px;
     text-align: center;
