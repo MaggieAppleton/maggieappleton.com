@@ -1,6 +1,6 @@
 # Maggie's Internet Space
 
-[maggieappleton.com](https://maggieappleton.com)
+### [maggieappleton.com](https://maggieappleton.com)
 
 ## Tech Stack
 
