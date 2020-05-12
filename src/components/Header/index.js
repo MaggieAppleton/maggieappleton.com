@@ -47,7 +47,7 @@ const Header = () => {
           </Link>
           <div
             css={css`
-              font-size: 16px;
+              font-size: 0.8em;
               line-height: 1.25;
               display: flex;
               align-items: center;
@@ -74,7 +74,6 @@ const Header = () => {
             >
               <Links />
             </div>
-
             <MobileMenu>
               <Links />
             </MobileMenu>

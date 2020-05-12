@@ -11,8 +11,11 @@ export const TwoCol = props => {
         gridTemplateColumns: '1fr',
         display: 'grid',
         gridGap: '20px',
-        alignItems: 'center',
+        alignItems: props.alignItems || 'center',
         justifyItems: 'center',
+        img: {
+          padding: props.imgPadding,
+        },
       })}
     >
       {props.children}

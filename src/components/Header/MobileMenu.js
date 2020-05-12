@@ -8,7 +8,7 @@ const Toggle = ({ children }) => {
   const [isToggledOn, setToggle] = useState(false)
   const toggle = () => setToggle(!isToggledOn)
   const theme = useTheme()
-  const color = theme.colors.black
+  const color = theme.colors.darkGrey
 
   return (
     <div
@@ -43,7 +43,7 @@ const Toggle = ({ children }) => {
           css={css`
             width: 24px;
             height: 2px;
-            background: ${color};
+            background: ${theme.colors.darkGrey};
             position: absolute;
             left: 0;
             ${isToggledOn ? 'background: transparent' : `background: ${color}`};
@@ -89,26 +89,34 @@ const Toggle = ({ children }) => {
             display: flex;
             align-items: center;
             background: ${theme.colors.headerBg};
+            align-items: start;
           `}
         >
           <Container
             css={css`
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: space-evenly;
+              align-items: start;
+              margin: 0;
               a {
-                color: white;
-                font-size: 22px;
-                margin: 10px 0;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                color: ${theme.colors.darkGrey};
+                font-size: 2em;
+                margin: 0.2em;
                 padding: 10px;
                 border-radius: 5px;
+                transition: all 600ms ease;
                 :hover {
-                  background: ${color};
+                  background: ${theme.colors.orange};
+                  color: white;
+                  transition: all 600ms ease;
                 }
-              }
-              .active {
-                background: ${color};
+                .active {
+                  background: ${theme.colors.orange};
+                  color: white;
+                  transition: all 600ms ease;
+                }
               }
             `}
           >

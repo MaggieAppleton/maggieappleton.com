@@ -4,7 +4,6 @@ date: 2019-01-01
 title: 'this post is a ghost'
 subtitle: 'this isnt a subtitle'
 cover: null
- 
 description: 'this post has all of the right fields'
 type: ['test']
 topics: ['test']

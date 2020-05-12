@@ -1,8 +1,19 @@
 const path = require('path')
 const _ = require('lodash')
 
+// const REDIRECT_SLUGS = ['slugs', 'in', 'here']
+
 exports.createPages = ({ actions, graphql }) => {
   const { createRedirect, createPage } = actions
+
+  // REDIRECT_SLUGS.forEach(slug => {
+  //   createRedirect({
+  //     fromPath: `/${slug}`,
+  //     toPath: `https://maggieappleton.com/${slug}`,
+  //     redirectInBrowser: true,
+  //     isPermanent: true,
+  //   })
+  // })
 
   return graphql(`
     query {
