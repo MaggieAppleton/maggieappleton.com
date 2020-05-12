@@ -76,6 +76,7 @@ export const ImageGrid = props => {
           img: {
             maxWidth: '100%',
             gridAutoFlow: 'row',
+            justifySelf: 'center',
           },
         })}
       >
@@ -103,7 +104,7 @@ export const FullWidth = props => {
           display: flex;
           align-content: center;
           justify-content: center;
-          padding: 1.4em 0 0.4em;
+          padding: 1em 0 0em;
           img {
             padding: 1em;
           }
@@ -130,6 +131,7 @@ export const FullWidth2Col = props => {
         background: ${props.bgColor};
         height: (100vw * 1.2);
         .innerDiv {
+          padding: 2em 0 1em;
           max-width: 80%;
           margin: 0 auto;
           display: grid;
