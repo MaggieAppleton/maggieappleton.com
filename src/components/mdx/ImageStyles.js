@@ -1,5 +1,4 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 

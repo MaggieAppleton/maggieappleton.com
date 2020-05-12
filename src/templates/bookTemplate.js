@@ -9,7 +9,6 @@ import Container from 'components/Container'
 import Layout from '../components/Layout'
 import Share from '../components/Share'
 import config from '../../config/website'
-import { useTheme } from 'components/Theming'
 import PreviousNext from '../components/PreviousNext'
 
 export default function Book({
@@ -21,7 +20,6 @@ export default function Book({
   const title = mdx.frontmatter.title
   const subtitle = mdx.frontmatter.subtitle
   const cover = mdx.frontmatter.cover
-  const theme = useTheme()
 
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>

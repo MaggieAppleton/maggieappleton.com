@@ -1,5 +1,4 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SEO from 'components/SEO'

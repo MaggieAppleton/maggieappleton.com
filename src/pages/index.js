@@ -64,8 +64,7 @@ const Hero = () => {
           <a
             href="https://egghead.io"
             target="_blank"
-            rel="noopener"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             egghead.io
           </a>

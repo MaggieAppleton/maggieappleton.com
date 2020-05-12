@@ -1,13 +1,11 @@
 import React from 'react'
 import Layout from 'components/Layout'
 import { css } from '@emotion/core'
-import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import IllustrationCard from '../components/IllustrationCard'
 
 const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
-  const theme = useTheme()
   return (
     <Layout site={site}>
       <Container
