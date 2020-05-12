@@ -19,12 +19,15 @@ import {
   SmallCenter,
   OrderedList,
   UnorderedList,
+  TwoParagraph,
 } from './TextStyles'
 import {
   ThreeImageGrid,
   TwoCol,
   ImageGrid,
   ImageFrame,
+  FullWidth2Col,
+  FullWidthImage,
   FullWidth,
 } from './ImageStyles'
 import Book from '../Book'
@@ -56,4 +59,7 @@ export default {
   Book: props => <Book {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
   FullWidth: props => <FullWidth {...props} />,
+  FullWidth2Col: props => <FullWidth2Col {...props} />,
+  FullWidthImage: props => <FullWidthImage {...props} />,
+  TwoParagraph: props => <TwoParagraph {...props} />,
 }

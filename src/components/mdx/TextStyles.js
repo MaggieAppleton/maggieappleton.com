@@ -50,6 +50,7 @@ export const H4 = styled.h4`
 `
 
 export const Blockquote = styled.blockquote`
+  text-align: center;
   & > p {
     max-width: 620px;
     text-align: center;
@@ -71,6 +72,13 @@ export const Blockquote = styled.blockquote`
 export const Center = styled.p`
   text-align: center;
   margin: 30px auto;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-align: center;
+  }
 `
 export const SmallCenter = props => {
   return (
@@ -79,6 +87,25 @@ export const SmallCenter = props => {
         [bpMinMD]: { maxWidth: '70%' },
         maxWidth: '100%',
         margin: '0 auto',
+      })}
+    >
+      {props.children}
+    </div>
+  )
+}
+
+export const TwoParagraph = props => {
+  return (
+    <div
+      css={css({
+        display: 'grid',
+        gridGap: '2em',
+        margin: '0 auto',
+        gridTemplateColumns: '1fr',
+        [bpMinSM]: { gridTemplateColumns: '1fr 1fr' },
+        marginTop: '2em',
+        marginBottom: '4em',
+        maxWidth: '80%',
       })}
     >
       {props.children}

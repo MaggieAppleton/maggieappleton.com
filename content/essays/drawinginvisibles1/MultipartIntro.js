@@ -35,8 +35,9 @@ const MultipartIntro = () => {
         gridGap: '10px',
         alignItems: 'start',
         textAlign: 'center',
-        padding: '10px 0',
+        padding: '0.8em 0',
         transition: '0.6s',
+        marginBottom: '4em',
         '.focus': {
           padding: '14px',
           alignItems: 'center',
