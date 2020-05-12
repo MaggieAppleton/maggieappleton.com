@@ -61,7 +61,14 @@ const Hero = () => {
           `}
         >
           Art Director, Illustrator & Anthropological All-Rounder at{' '}
-          <Link to="https://egghead.io">egghead.io</Link>
+          <a
+            href="https://egghead.io"
+            target="_blank"
+            rel="noopener"
+            rel="noreferrer"
+          >
+            egghead.io
+          </a>
         </h4>
       </Container>
     </section>
