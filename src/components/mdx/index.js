@@ -31,6 +31,7 @@ import {
   FullWidth,
 } from './ImageStyles'
 import Book from '../Book'
+import ResourceBook from './ResourceBook'
 
 export default {
   h1: props => <Title {...props} />,
@@ -57,6 +58,7 @@ export default {
   ReadNext: props => <ReadNext {...props} />,
   SimpleCard: props => <SimpleCard {...props} />,
   Book: props => <Book {...props} />,
+  ResourceBook: props => <ResourceBook {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
   FullWidth: props => <FullWidth {...props} />,
   FullWidth2Col: props => <FullWidth2Col {...props} />,

@@ -47,8 +47,11 @@ const typography = new Typography({
       fontFamily: fonts.regularSansBold,
       marginBottom: rhythm(1),
     },
+    h5: {
+      fontSize: rhythm(0.6),
+      lineHeight: rhythm(0.8),
+    },
     'h5, h6': {
-      lineHeight: 1,
       fontWeight: '100',
       marginTop: 0,
       fontFamily: fonts.regularSans,
