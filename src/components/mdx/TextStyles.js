@@ -14,20 +14,25 @@ export const Divider = styled.hr`
 `
 
 export const OrderedList = styled.ol`
-  list-style: decimal-leading-zero inside;
+  list-style: inside;
+  list-style-type: decimal-leading-zero;
   line-height: 1.8em;
   max-width: 660px;
   margin: 0 auto;
   li {
-    margin-bottom: 1em;
+    margin: 0.6em;
+    margin-left: 1em;
   }
 `
 
 export const UnorderedList = styled.ul`
+  display: grid;
+  grid-gap: 0.6em;
   list-style: inside;
   list-style-image: url(icons/radiobtn.svg);
-  line-height: 1.8em;
+  line-height: 1.6em;
   max-width: 660px;
+  padding-left: 1em;
   margin: 1em auto;
   li {
     margin-bottom: 0.4em;
