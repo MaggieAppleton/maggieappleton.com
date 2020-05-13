@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import colors from '../../lib/colors'
 import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM } from '../../lib/breakpoints'
+import { rhythm } from '../../lib/typography'
 
 export const Divider = styled.hr`
   text-align: center;
@@ -39,6 +40,7 @@ export const H3 = styled.h3`
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 0.4em;
+  line-height: ${rhythm(1.4)};
 `
 
 export const H4 = styled.h4`
@@ -47,6 +49,8 @@ export const H4 = styled.h4`
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 0.4em;
+  line-height: ${rhythm(1.2)};
+  font-size: ${rhythm(0.8)};
 `
 
 export const Blockquote = styled.blockquote`
@@ -76,7 +80,8 @@ export const Center = styled.p`
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  p {
     text-align: center;
   }
 `
@@ -87,6 +92,9 @@ export const SmallCenter = props => {
         [bpMinMD]: { maxWidth: '70%' },
         maxWidth: '100%',
         margin: '0 auto',
+        'h1, h2, h3, h4, p': {
+          textAlign: 'center',
+        },
       })}
     >
       {props.children}
