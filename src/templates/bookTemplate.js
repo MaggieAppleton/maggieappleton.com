@@ -39,6 +39,7 @@ export default function Book({
           .bookInfo {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             margin-bottom: 2em;
             width: 75%;
             margin: 0 auto;
