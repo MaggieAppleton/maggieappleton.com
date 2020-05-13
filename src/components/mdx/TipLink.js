@@ -18,7 +18,7 @@ const LinkTooltip = forwardRef((props, ref) => {
       ref={ref}
       css={css`
         padding: 0.2em;
-        font-size: 0.66em;
+        font-size: 0.75em;
       `}
       xw
     >

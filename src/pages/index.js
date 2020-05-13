@@ -19,6 +19,10 @@ const Hero = () => {
       css={css`
         margin-top: 1.6em;
         margin-bottom: 2em;
+        ${bpMaxSM} {
+          margin-top: 0.6em;
+          margin-bottom: 0.8em;
+        }
       `}
     >
       <Container>
@@ -33,6 +37,10 @@ const Hero = () => {
             line-height: ${rhythm(2.4)};
             margin-top: 3vw;
             max-width: ${rhythm(22)};
+            ${bpMaxSM} {
+              font-size: ${rhythm(1.8)};
+              line-height: ${rhythm(2.1)};
+            }
           `}
         >
           Maggie Appleton
@@ -45,6 +53,9 @@ const Hero = () => {
             font-size: ${rhythm(1.3)};
             line-height: ${rhythm(1.7)};
             max-width: ${rhythm(26)};
+            ${bpMaxSM} {
+              font-size: ${rhythm(0.9)};
+              line-height: ${rhythm(1.1)};
           `}
         >
           Helps explain web technology, anthropology, and programming through
@@ -58,6 +69,9 @@ const Hero = () => {
             margin-bottom: ${rhythm(1.2)};
             line-height: ${rhythm(1)};
             color: ${theme.colors.grey};
+            ${bpMaxSM} {
+              margin-bottom: ${rhythm(0.4)};
+            }
           `}
         >
           Art Director, Illustrator & Anthropological All-Rounder at{' '}
@@ -157,6 +171,9 @@ export default function Index({
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             grid-gap: 1.2em;
+            ${bpMaxSM} {
+              grid-gap: 0.6em;
+            }
           }
           .books {
             display: flex;
@@ -169,6 +186,7 @@ export default function Index({
             }
             ${bpMaxSM} {
               flex-direction: column;
+              align-items: center;
             }
             .bookTitle {
               padding-right: 3em;

@@ -9,7 +9,7 @@ import { bpMaxSM } from '../lib/breakpoints'
 import mdxComponents from './mdx'
 import Header from './Header/'
 import ResetStyles from '../lib/reset'
-import { fonts } from '../lib/typography'
+import { fonts, rhythm } from '../lib/typography'
 import config from '../../config/website'
 import Footer from '../components/Footer'
 
@@ -17,7 +17,7 @@ import Footer from '../components/Footer'
 const getGlobalStyles = theme => {
   return css`
     body {
-      padding: 0.4em;
+    padding: 0.4em;
     background-image: linear-gradient(180deg, ${theme.colors.white} 0%, ${
     theme.colors.white
   } 88%, ${theme.colors.offWhite} 100%);
@@ -56,10 +56,13 @@ const getGlobalStyles = theme => {
         font-size: 90%;
       }
       h1 {
-        font-size: 30px;
+        font-size: ${rhythm(1.6)};
       }
       h2 {
-        font-size: 24px;
+        font-size: ${rhythm(1)};
+      }
+      h3 {
+        font-size: ${rhythm(1)};
       }
     }
     hr {

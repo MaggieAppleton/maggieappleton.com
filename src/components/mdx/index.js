@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Title from './Title'
 import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
-import PostImage from './PostImage'
+import Image from './PostImage'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
@@ -38,7 +38,7 @@ export default {
   h3: props => <H3 {...props} />,
   h4: props => <H4 {...props} />,
   p: props => <Paragraph {...props} />,
-  Image: props => <PostImage {...props} />,
+  Image: props => <Image {...props} />,
   code: Code,
   ol: props => <OrderedList {...props} />,
   ul: props => <UnorderedList {...props} />,

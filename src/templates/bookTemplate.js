@@ -10,6 +10,7 @@ import Layout from '../components/Layout'
 import Share from '../components/Share'
 import config from '../../config/website'
 import PreviousNext from '../components/PreviousNext'
+import { bpMaxSM } from '../lib/breakpoints'
 
 export default function Book({
   data: { site, mdx },
@@ -39,6 +40,9 @@ export default function Book({
           .bookInfo {
             display: flex;
             flex-direction: row;
+            ${bpMaxSM} {
+              flex-wrap: wrap;
+            }
             margin-bottom: 2em;
             width: 75%;
             margin: 0 auto;

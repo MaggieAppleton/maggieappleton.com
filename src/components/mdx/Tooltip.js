@@ -17,7 +17,7 @@ const Tooltip = forwardRef((props, ref) => {
       content={props.tiptext}
       css={css`
         padding: 0.2em;
-        font-size: 0.7em;
+        font-size: 0.75em;
       `}
     >
       <div
