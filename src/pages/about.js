@@ -103,7 +103,7 @@ const AboutPage = () => {
               >
                 egghead
               </a>
-              involves designing visual metaphors for invisible, complicated
+              {' '}involves designing visual metaphors for invisible, complicated
               software concepts.
             </p>
             <p>
