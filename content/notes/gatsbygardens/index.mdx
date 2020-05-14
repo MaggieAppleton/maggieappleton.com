@@ -1,7 +1,7 @@
 ---
 slug: bidirectional-gardens
 date: 2020-05-14
-title: 'Bringing Bi-Directional Links to Digital Gardens'
+title: 'Bringing Bi-Directional Links to Gatsby Gardens'
 description: null
 cover: null
 published: true
@@ -36,15 +36,13 @@ With the recent rise of <a to ="https://roamresearch.com/">Roam Research</a>, th
 
 We've suddenly come to in our mono-linked environment, and begun to ask why it's so hard to find and keep track of relevant, contextual relationships in our information systems.
 
-Where is the <a to="">Memex</a> of "xxx" I was promised?
-
 ---
 
 It turns out this fabled bi-directional link is not new. 
 
-The concept goes all the way back to 1945 in Bush Vannevar's infamous <a to="">Memex</a> machine, described in the essay <a to="">As We May Think</a>.
+The concept goes all the way back to 1945 in Bush Vannevar's infamous <a to="https://en.wikipedia.org/wiki/Memex">Memex</a> machine, described in the essay <a to="https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/">As We May Think</a> as '....'
 
-As personal computing, the concept emerged again in 1965 with <a to="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a>, who was inspired by Vannevar, and coined the term *hypertext* to describe his vision.
+As personal computing began blooming in the early sixties, the concept emerged again with <a to="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a>. Inspired by Vannevar's ideas, Ted coined the term *hypertext* to describe his vision for interlinking text.
 
 Nelson planned to implement these hypertextual dreams in his perpetually-imminent <Tooltip tiptext={<span>If you have some time, this is quite the <a to="https://en.wikipedia.org/wiki/Project_Xanadu">internet history rabbit hole</a> to run down. <a to="https://www.youtube.com/watch?v=F0NgV3yNd2o">Ted Nelson is on another level</a></span>}>Project Xanadu</Tooltip>. The Xanadu system imagined that every sentence, block, and page would be part of a vast bi-directionally linked network:
 
@@ -57,11 +55,11 @@ Nelson planned to implement these hypertextual dreams in his perpetually-imminen
 
 <Center>
 
-<img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flushed-face_1f633.png" />
+<img style="margin: 3em auto;"src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flushed-face_1f633.png" />
 
 </Center>
 
-Xanadu didn't pan out. And our current implementation of the World Wide Web does not support this on an infrastructre level.
+Xanadu didn't pan out. Instead we got the less fancy, but far more real and useable World Wide Web that currently does not support bi-directional on an infrastructre level.
 
 While Sir Tim Berner's Lee <a to="https://www.w3.org/DesignIssues/Topology.html">wrote himself a note</a> debating their pros and cons back in 1999, there is an obvious design issue with letting two-way connections flow freely around the web.  
 
@@ -69,7 +67,7 @@ If _every_ site that linked to yours was visible on your page, and you had no co
 
 Figuring out how we might filter, moderate, and set permissions around link visibility turned into <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74236">quite the challenge</a>. The <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74229">design details</a> <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74245">grew complex</a>.
 
-It became clear implementing simpler mono-directional links in favour of a wider universal adoption of the web was the right thing to do.  Lots of people are still mad about this, so let's not venture too far down the historical wormhole.
+It became clear implementing the Web with simpler mono-directional links was the right thing to do, given that its creators wanted universal adoption.  Lots of people are still mad about it, but let's not venture too far down the historical wormhole.
 
 > **The TLDR is technology is hard**.
 
@@ -84,10 +82,6 @@ There's been a flurry of interest around bi-directionals among my fellow digital
 
 <a noStyle to ="https://notes.andymatuschak.org/"><h3 style="text-align: center;">Go have a good browse through these</h3>
 
-<!-- 
-<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589377187/maggieappleton.com/notes/andy_notes.gif" /> -->
-
-
 <ImageFrame>
 
 <Image src="./andy-note-links.png" />
@@ -101,6 +95,9 @@ There's been a flurry of interest around bi-directionals among my fellow digital
 But the key part of this system that creates interlinked context is the <b>"Links to this Note"</b> section at the bottom of each post. </p>
 
 Anytime Andy links to another one of their notes on the site, it'll pop up as a related note here.  This is the bi-directional dream.  
+
+<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589483829/maggieappleton.com/notes/Hyperlinks_3.png" />
+
 It gives us a way to navigate through these ideas in exploratory mode, rather than navigating a hierarchy of categories on a main index page.
 
 Since it's all contained within a single-author site, our Troll-risk factor is at a comfortable zero.
