@@ -11,15 +11,29 @@ topics: ['Gatsby', 'Digital Gardening', 'Web Development']
 
 Setting up this <a to="https://tomcritchlow.com/2019/02/17/building-digital-garden/">Digital Garden</a> has been quite the pet project.
 
-I built this site in <a to="https://www.gatsbyjs.org/">Gatsby</a> - a static site generator that gives you a decent balance between convenience and control. But it's currently missing one killer feature
+I built this site in <a to="https://www.gatsbyjs.org/">Gatsby</a> - a static site generator that gives you a decent balance between convenience and control. But it's currently missing one killer feature...
 
-> The Bi-Directional Link
+> ✳ The Bi-Directional Link ✳
 
-This is simply a link with **social awareness** - it knows about other pages or 'nodes' that point to it.
+
+We're all very used to the mono-directional link the Web is built around. You can link to a site, but it hasn't a clue you've done so.
+They act as one-way pointers.  
+
+We set up all these single direction paths, trying to signal relevance and context, only to have the other side completely ignore our efforts. Our monolinks feel like they're trying to establish relationships in vain. 
+
+
+<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589455927/maggieappleton.com/notes/Hyperlinks.png" />
+
+
+But a _bi-directional_ link has **social awareness** - it knows about other pages or 'nodes' that point to it. This means we get a two-way conversation flowing between our web locations.
+
+
+<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589455927/maggieappleton.com/notes/Hyperlinks_2.png" />
+
 
 With the recent rise of <a to ="https://roamresearch.com/">Roam Research</a>, the idea of bi-directional linking is having a bit of a moment. 
 
-It's certainly not new though.  The concept goes all the way back to <a to="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a> and the perpetually-imminent <Tooltip tiptext={<span>If you have some time, this is quite the <a to="https://en.wikipedia.org/wiki/Project_Xanadu">internet history rabbit hole</a> to run down. <a to="https://www.youtube.com/watch?v=F0NgV3yNd2o">Ted Nelson is on another level</a></span>}>Project Xanadu</Tooltip> that imagined every sentence, block, and page would be part of a vast bi-directionally linked network:
+However, it is certainly not new.  The concept goes all the way back to <a to="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a> who originally coined the term *hypertext* and planned to implement them in his perpetually-imminent <Tooltip tiptext={<span>If you have some time, this is quite the <a to="https://en.wikipedia.org/wiki/Project_Xanadu">internet history rabbit hole</a> to run down. <a to="https://www.youtube.com/watch?v=F0NgV3yNd2o">Ted Nelson is on another level</a></span>}>Project Xanadu</Tooltip>. The Xanadu system imagined that every sentence, block, and page would be part of a vast bi-directionally linked network:
 
 <ImageFrame>
 
@@ -34,35 +48,41 @@ It's certainly not new though.  The concept goes all the way back to <a to="http
 
 </Center>
 
-Obviously, the current infrastructure of the World Wide Web only supports unidirectional links. You can link to a site, but it hasn't a clue you've done so.
+Obviously, our current implementation of World Wide Web does not support this on an infrastructre level.
 
 The history of why this is the case is complex and lots of people are mad so let's not get into it. The **TLDR is technology is hard**, and implementing simpler features for in favour of wider adoption was the right thing to do. 
 
-Until <a to="https://www.wired.com/1995/06/xanadu/">Xanadu ships</a> and we're all immersed in the universe of multi-linked, version-controlled nodes of remixable micro-content, we have a few other options...
+There is also an obvious design issue with letting two-way connections flow freely around the web.  
+We have all experienced enough of 
+
+Until <a to="https://www.wired.com/1995/06/xanadu/">Xanadu ships</a> and we're all immersed in the universe of multi-linked, version-controlled nodes of remixable micro-content (that somehow solves the problems of permissions and moderation) we have a few other options...
 
 We at least have control over our own websites, if not the whole web.
 
 There's been a flurry of interest around building them into our personal spaces among fellow <a to="https://github.com/MaggieAppleton/digital-gardeners">digital gardeners</a>, originally sparked by <a to ="https://notes.andymatuschak.org/">Andy Matuschuk's notes</a>
 
-<ImageFrame>
 
 <Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589377187/maggieappleton.com/notes/andy_notes.gif" />
 
-</ImageFrame>
 
 <ImageFrame>
 
 <Image src="./andy-note-links.png" />
 
 </ImageFrame>
+  
 
-The key part of this system is the _"Links to this Note"_ section at the bottom of each post.
+__Go have a good browse through those notes.__  
 
-Anytime Andy links to another one of their notes on the site, it'll pop up as a related note here.
+<p><Tooltip tiptext="It should be noted Andy is an experienced developer and interaction designer, and these notes should not be taken as the standard expectation for the rest of us normal plebby internet citizens.">There's plenty to admire</Tooltip>. But the key part of this system that creates interlinked context is the <b>"Links to this Note"</b> section at the bottom of each post. </p>
+
+Anytime Andy links to another one of their notes on the site, it'll pop up as a related note here.  
+
+It gives us a way to navigate through these ideas in exploratory mode, rather than navigating a hierarchy of categories on a main index page.
 
 ---
 
-## So how do we build it?
+## That's all very cool, but how do we build it?
 
 Many people are <a to="https://nesslabs.com/tiddlywiki-beginner-tutorial">using TiddlyWiki</a> which looks like a fantastic option for non-developers.
 
