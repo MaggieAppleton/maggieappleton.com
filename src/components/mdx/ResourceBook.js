@@ -5,7 +5,7 @@ import { bpMinSM } from '../../lib/breakpoints'
 export default function ResourceBook(props) {
   return (
     <>
-      <a to={props.url}>
+      <a href={props.url}>
         <div
           css={css({
             '.gatsby-image-wrapper': {

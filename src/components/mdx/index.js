@@ -41,6 +41,7 @@ export default {
   p: props => <Paragraph {...props} />,
   Image: props => <Image {...props} />,
   code: Code,
+  img: props => <Image {...props} />,
   ol: props => <OrderedList {...props} />,
   ul: props => <UnorderedList {...props} />,
   blockquote: props => <Blockquote {...props} />,
