@@ -1,5 +1,5 @@
 ---
-slug: bidirectional-gardens
+slug: gatsby-gardens
 date: 2020-05-14
 title: 'Bringing Bi-Directional Links to Gatsby Gardens'
 description: null
@@ -9,134 +9,29 @@ type: ['note']
 topics: ['Gatsby', 'Digital Gardening', 'Web Development']
 ---
 
-Setting up this <a to="https://tomcritchlow.com/2019/02/17/building-digital-garden/">digital garden</a> has been quite the pet project. 
+Building this  <a to="https://tomcritchlow.com/2019/02/17/building-digital-garden/">digital garden</a> has been quite the pet project. I crafted it using <a to="https://www.gatsbyjs.org/">Gatsby.js</a> - a <a to="https://www.reactjs.com">React-based</a> static site generator that gives you a decent balance between convenience and control.
 
-I built it in <a to="https://www.gatsbyjs.org/">Gatsby</a> - a static site generator that gives you a decent balance between convenience and control. But it's currently missing one killer feature...
+But it's currently missing one killer feature...
 
 > ✳ The Bi-Directional Link ✳
 
-We're all very used to the mono-directional link the Web is built around. You can link to a site, but it hasn't a clue you've done so.
-They act as one-way pointers.  
+I wrote up <Link to="bidirectionals">A Brief History of the Bi-Directional Link</Link> if you need a bit of background context on the idea.
 
-We set up all these single direction paths, trying to signal relevance and context, only to have the other side completely ignore our efforts.
-
-Our monolinks feel like they're trying to establish relationships in vain. 
-
-
-<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589455927/maggieappleton.com/notes/Hyperlinks.png" />
-
-
-But a _bi-directional_ link has **social awareness** - it knows about other pages or 'nodes' that point to it. This means we get a two-way conversation flowing between our web locations.
-
-
-<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589455927/maggieappleton.com/notes/Hyperlinks_2.png" />
-
-
-With the recent rise of <a to ="https://roamresearch.com/">Roam Research</a>, the idea of bi-directional linking is having a bit of a moment. 
-
-We've suddenly come to in our mono-linked environment, and begun to ask why it's so hard to find and keep track of relevant, contextual relationships in our information systems.
-
----
-
-It turns out this fabled bi-directional link is not new. 
-
-The concept goes all the way back to 1945 in Bush Vannevar's infamous <a to="https://en.wikipedia.org/wiki/Memex">Memex</a> machine, described in the essay <a to="https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/">As We May Think</a> as '....'
-
-As personal computing began blooming in the early sixties, the concept emerged again with <a to="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a>. Inspired by Vannevar's ideas, Ted coined the term *hypertext* to describe his vision for interlinking text.
-
-Nelson planned to implement these hypertextual dreams in his perpetually-imminent <Tooltip tiptext={<span>If you have some time, this is quite the <a to="https://en.wikipedia.org/wiki/Project_Xanadu">internet history rabbit hole</a> to run down. <a to="https://www.youtube.com/watch?v=F0NgV3yNd2o">Ted Nelson is on another level</a></span>}>Project Xanadu</Tooltip>. The Xanadu system imagined that every sentence, block, and page would be part of a vast bi-directionally linked network:
-
-<ImageFrame>
-
-<Image src="./xanadu.jpeg" />
-
-</ImageFrame>
-
-
-<Center>
-
-<img style="margin: 3em auto;"src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flushed-face_1f633.png" />
-
-</Center>
-
-Xanadu didn't pan out. Instead we got the less fancy, but far more real and useable World Wide Web that currently does not support bi-directional on an infrastructre level.
-
-While Sir Tim Berner's Lee <a to="https://www.w3.org/DesignIssues/Topology.html">wrote himself a note</a> debating their pros and cons back in 1999, there is an obvious design issue with letting two-way connections flow freely around the web.  
-
-If _every_ site that linked to yours was visible on your page, and you had no control over who could and couldn't link to you, it is not hard to imagine the Trollish implications...
-
-Figuring out how we might filter, moderate, and set permissions around link visibility turned into <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74236">quite the challenge</a>. The <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74229">design details</a> <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74245">grew complex</a>.
-
-It became clear implementing the Web with simpler mono-directional links was the right thing to do, given that its creators wanted universal adoption.  Lots of people are still mad about it, but let's not venture too far down the historical wormhole.
-
-> **The TLDR is technology is hard**.
-
-Until <a to="https://www.wired.com/1995/06/xanadu/">Xanadu ships</a> and we're all immersed in the universe of multi-linked, version-controlled nodes of remixable micro-content (that somehow solves the problems of permissions and moderation), there are still plenty of ways we can resurrect the possibility of bi-directional links on the web...
-
----
-
-A good starting place is our personal internet homes. Specifically, internet homes with <a to="https://github.com/MaggieAppleton/digital-gardeners">digital gardens</a>.
-
-There's been a flurry of interest around bi-directionals among my fellow digital gardeners, originally sparked by <a to ="https://andymatuschak.org/">Andy Matuschuk's</a> notes
-
-
-<a noStyle to ="https://notes.andymatuschak.org/"><h3 style="text-align: center;">Go have a good browse through these</h3>
-
-<ImageFrame>
-
-<Image src="./andy-note-links.png" />
-
-</ImageFrame></a>
-  
-
-
-<p><Tooltip tiptext="It should be noted Andy is an experienced developer and interaction designer, and these notes should not be taken as the standard expectation for the rest of us normal plebby internet citizens.">There's plenty to admire here</Tooltip>.
-
-But the key part of this system that creates interlinked context is the <b>"Links to this Note"</b> section at the bottom of each post. </p>
-
-Anytime Andy links to another one of their notes on the site, it'll pop up as a related note here.  This is the bi-directional dream.  
-
-<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589483829/maggieappleton.com/notes/Hyperlinks_3.png" />
-
-It gives us a way to navigate through these ideas in exploratory mode, rather than navigating a hierarchy of categories on a main index page.
-
-Since it's all contained within a single-author site, our Troll-risk factor is at a comfortable zero.
-
-
----
-
-## That's all very cool, but how do we build it?
-
-Many people are <a to="https://nesslabs.com/tiddlywiki-beginner-tutorial">using TiddlyWiki</a> which looks like a fantastic option for non-developers.
-
-However, given my desire to turn everything I touch into an over-engineering visual interactive playground, TiddlyWiki wasn't going to cut it. I needed the Gatsby version.
-
-Luckily, <a to="https://aengusmcmillin.com/">Aengus McMillin</a> built <a to="https://github.com/aengusmcmillin/gatsby-theme-brain">gatsby-theme-brain</a> which, much like it sounds, is a Gatsby theme that will make the magic happen.
-
-My colleague and digital gardening co-conspirator Ian Jones <a to="https://www.ianjones.us/notes">implemented the system on his site</a>.
-
-<ImageFrame>
-
-<Image src="./ian-notes.png" />
-
-</ImageFrame>
-
-And then for extra jazz, Ian added in preview pop-overs of note links using <a to="https://aravindballa.com/">Aravind Balla</a>'s <a to="https://github.com/aravindballa/gatsby-theme-andy">gatsby-theme-andy</a> system which expands off gatsby-theme-brain.
-
----
-
-Aengus, Aravind, Ian and I will be hanging out on a livestream on **May 19th** and showing how to set this whole thing up -- with this site as the guinea pig.
+On **May 19th** I'll be hanging out with <a to="https://aengusmcmillin.com/">Aengus McMillin</a>, <a to="https://aravindballa.com/">Aravind Balla</a>, and <a to="https://www.ianjones.us/notes">Ian Jones</a> (my digital gardening co-conspirator) on a livestream and showing how to set up a bi-directional linking system in Gatsby -- with this site as the guinea pig.
 
 <Center>
 
 <h2>If you'd like to join, <a noTip to="https://zoom.us/webinar/register/WN_hDAaKyTPTE2h4lPtzvssMQ">you can register here</a></h2>
 </Center>
 
-<br/>
+We'll be implementing Aengus's <a to="https://github.com/aengusmcmillin/gatsby-theme-brain">gatsby-theme-brain</a> which, much like it sounds, is a Gatsby theme that will help us build that brain-like system of interlinking nodes.
 
-If you can't make it, I'll post the recording here afterwards as well as notes on the process.
+<p>We'll then add Aravind's <a to="https://github.com/aravindballa/gatsby-theme-andy">gatsby-theme-andy</a> which gives us preview pop-overs when you hover on page links.</p>
+
+<h5 style="opacity: 80%; margin: 0 auto; margin-top: 2em; line-height: 1.5em; padding-top: 1em; max-width: 660px; border-top: 1px solid lightgrey;">Don't worry if you can't make it. I'll post the recording here afterwards, as well as notes on the process.</h5>
 
 ---
+
 <!-- 
 In preparation, I started planning out the UX design considerations of this feature.
 
@@ -152,7 +47,3 @@ We'll need to consider a number of design issues:
     - Even with the colour distinction, there's now going to be two kinds of internal links - ones to "normal" pages, and ones to linked notes
 3. How much content should we show in hover previews for internal page links?
 4. How do we visually display page references? -->
-
-
-This is mildly tangential, but I love how the topic of bi-directional links makes fully visible our "websites are locations" and "websites are containers" conceptual metaphors.  
-There are *"inside"* and *"outside"* links.  

@@ -151,13 +151,13 @@ export const FullWidth2Col = props => {
               margin-top: 0;
             }
             img {
-              margin: 0;
             }
           }
           p {
             padding-top: 2em;
             color: white;
             line-height: 1.6em;
+            padding-left: 2em;
           }
         }
       `}
