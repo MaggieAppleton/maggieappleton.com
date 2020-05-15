@@ -6,5 +6,5 @@ export default styled.img`
   margin-bottom: 0;
   margin-left: -5%;
   margin-top: 1em;
-  z-index: -1;
+  z-index: 1;
 `
