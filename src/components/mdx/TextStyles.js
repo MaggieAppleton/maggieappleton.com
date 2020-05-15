@@ -58,6 +58,24 @@ export const H4 = styled.h4`
   font-size: ${rhythm(0.8)};
 `
 
+export const H5 = styled.h5`
+  text-align: left;
+  max-width: 660px;
+  margin: 0 auto;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  line-height: ${rhythm(1)};
+`
+
+export const H6 = styled.h6`
+  text-align: left;
+  max-width: 660px;
+  margin: 0 auto;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
+  line-height: ${rhythm(0.9)};
+`
+
 export const Blockquote = styled.blockquote`
   text-align: center;
   & > p {
