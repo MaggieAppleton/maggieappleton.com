@@ -68,6 +68,7 @@ const ResetStyles = () => {
     margin: 0 0 1rem 0;
   img {
     vertical-align: middle;
+    margin-bottom: 0;
   }
   [role='button'] {
     cursor: pointer;

@@ -1,0 +1,143 @@
+---
+slug: bidirectionals
+date: 2020-05-14
+title: 'A Short History of Bi-Directional Links'
+description: null
+cover: null
+published: true
+type: ['note']
+topics: ['Digital Gardening', 'Web Development']
+---
+
+import { css } from '@emotion/core'
+
+
+With the recent rise of <a to ="https://roamresearch.com/">Roam Research</a>, the idea of bi-directional linking is having a bit of a moment. 
+
+We're all very used to the _mono-directional_ link the World Wide Web is built around. They act as one-way pointers we follow in a linear sequence.
+
+While we can link to any site, the destination page hasn't a clue we've done so.
+
+We set up all these single direction paths, trying to signal relevance and context, only to have the other side completely ignore our efforts.
+
+Our monolinks are trying to establish relationships in vain. 
+
+
+<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589455927/maggieappleton.com/notes/Hyperlinks.png" />
+
+
+We're starting to look around our mono-linked environment, and wonder why it's so hard to surface relevant, contextual relationships.
+
+Manually interlinking content takes an awful lot of human curation and effort. Effort we should probably slog off onto our systems.
+
+> ✳ Enter the Bi-Directional Link ✳
+
+A _bi-directional_ link has **social awareness** - it knows about other pages or 'nodes' that point to it, and can make them visible to people. This means we get a two-way conversation flowing between our web locations.
+
+
+<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589455927/maggieappleton.com/notes/Hyperlinks_2.png" />
+
+
+
+---
+
+### Our fabled **bi-directional link** is not new.
+
+This concept goes all the way back to 1945, when **Vannevar Bush** dreamed up the <a to="https://en.wikipedia.org/wiki/Memex">Memex</a> machine.
+
+ Vannevar outlined this hypothetical gadget in the essay <a to="https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/">As We May Think</a> – a system capable of "associative indexing... whereby any item may be caused at will to select immediately and automatically another... [so that] numerous items have been thus joined together to form a trail."
+
+<br />
+
+ <Image src="./memex.jpg" />
+
+ <h5 style="text-align: center; margin-top: 1em; ">Vannevar even created a small informative diagram of this desk-bound vision. Marketing chops 101.</h5>
+
+ <br />
+
+Vannevar had a fairly impressive imagination, especially given that digital computers had only come into existence 5 years earlier. Most were still the domain of large military operations like Bletchley Park, and seen as inconveniently large calculators.
+
+Implementing a wildly interactive computational personal knowledge base wasn't much of an option.
+
+So the idea went into hiberation, and didn't resurface until personal computing began blooming in the early sixties. <a to="https://en.wikipedia.org/wiki/Ted_Nelson">Ted Nelson</a> took inspiration from Vannevar's ideas and coined the term *hypertext* to describe his vision for a sprawling network of interlinking text.
+
+Nelson planned to implement these hypertextual dreams in his perpetually-imminent <Tooltip tiptext={<span>If you have some time, this is quite the <a to="https://en.wikipedia.org/wiki/Project_Xanadu">internet history rabbit hole</a> to run down. <a to="https://www.youtube.com/watch?v=F0NgV3yNd2o">Ted Nelson is on another level</a></span>}>Project Xanadu</Tooltip>.
+
+The Xanadu system imagined that every sentence, block, and page would be part of a vast bi-directionally linked network:
+
+<ImageFrame>
+
+<Image src="./xanadu.jpeg" />
+
+</ImageFrame>
+
+
+<Center>
+
+<img style="margin: 3em auto;"src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/flushed-face_1f633.png" />
+
+</Center>
+
+Suffice to day, Xanadu didn't pan out.
+
+Instead we got the less fancy, but far more real and useable World Wide Web that currently does not support bi-directionals on an infrastructre level.
+
+While Sir Tim Berner's Lee <a to="https://www.w3.org/DesignIssues/Topology.html">wrote himself a note</a> debating their pros and cons back in 1999, there is an obvious design issue with letting two-way connections flow freely around the web.  
+
+If _every_ site that linked to yours was visible on your page, and you had no control over who could and couldn't link to you, it is not hard to imagine the Trollish implications...
+
+Figuring out how we might filter, moderate, and set permissions around link visibility turned into <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74236">quite the challenge</a>. The <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74229">design details</a> <a to="https://dl.acm.org/doi/epdf/10.1145/74224.74245">grew complex</a>.
+
+It became clear implementing the Web with simpler mono-directional links was the right thing to do, given that its creators wanted universal adoption.  Lots of people are still mad about it. Let's not venture too far down that historical wormhole.
+
+> **The TLDR is technology is hard**.
+
+Until <a to="https://www.wired.com/1995/06/xanadu/">Xanadu ships</a> and we're all immersed in the universe of multi-linked, version-controlled nodes of remixable micro-content (that somehow solves the problems of permissions and moderation), there are still plenty of ways we can resurrect the possibility of bi-directional links on the web...
+
+---
+
+A good starting place is our personal internet homes. Specifically, internet homes with experimental <a to="https://github.com/MaggieAppleton/digital-gardeners">digital gardens</a> attached
+
+There's been a flurry of interest around bi-directionals among my fellow digital gardeners, originally sparked by <a to ="https://andymatuschak.org/">Andy Matuschak's</a> notes
+
+
+<a noStyle to ="https://notes.andymatuschak.org/"><h3 css={css`transition: all 500ms ease; text-align: center; &:hover { transform: translateY(-3px); color: #EB5F19; &:after, &:before {
+    content: ' ✳ '
+} }`}>Go have a good browse through these</h3>
+
+<ImageFrame>
+
+<Image src="./andy-note-links.png" />
+
+</ImageFrame></a>
+  
+<br />
+
+<p><Tooltip tiptext="It should be noted Andy is an experienced developer and interaction designer, and these notes should not be taken as the standard expectation for the rest of us normal plebby internet citizens.">There's plenty to admire here</Tooltip>. But the key part of this system that creates interlinked context is the <b>"Links to this Note"</b> section at the bottom of each post. </p>
+
+Anytime Andy links to another one of their notes on the site, it'll pop up as a related note here.  This is the bi-directional dream.  
+
+<Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1589483829/maggieappleton.com/notes/Hyperlinks_3.png" />
+
+It gives us a way to navigate through these ideas in exploratory mode, rather than navigating a hierarchy of categories on a main index page.
+
+Since it's all contained within a single-author site, our Spammish-Troll-risk factor is at a comfortable zero.
+
+
+---
+
+## That's all very cool, but how am I supposed to build this?
+
+
+Thankfully, setting up your own public gardening bi-directional Memex doesn't involve Xanadu.
+
+One fantastic option for non-developers is based around a personal wiki system called <a to="https://tiddlywiki.com/">TiddlyWiki</a>.  Anne-Laure Le Cunff wrote up an easy-to-follow guide to getting <a to="https://nesslabs.com/tiddlywiki-beginner-tutorial"> your own up and running</a>.
+
+For those of us here for the hyper-customised, over-engineered Javascript solution (that would be me 🙌), the <a to="https://www.gatsbyjs.org/">Gatsby.js</a> community has a number of active gardening enthusiasts building themes and plugins.
+
+I'll personally be implementing it using Aengus McMillin's <a to="https://github.com/aengusmcmillin/gatsby-theme-brain">gatsby-theme-brain</a> and be livestreaming the process on **May 19th**.
+
+You can read more details about that on <Link to ="gatsby-gardens">Bringing Bi-Directional Links to Gatsby Gardens</Link>
+
+
+<h5 style="opacity: 80%; margin: 0 auto; margin-top: 3em; line-height: 1.5em; padding-top: 1em; max-width: 660px; border-top: 1px solid lightgrey;">This is mildly tangential, but I love how the topic of bi-directional links makes fully visible our "websites are locations" and "websites are containers" conceptual metaphors with <b>"inside"</b> and <b>"outside"</b> links. </h5>
