@@ -27,7 +27,7 @@ const Footnote = ({ count, children }) => {
           box-sizing: content-box;
           opacity: 75%;
           max-width: 260px;
-          font-size: 75%;
+          font-size: 72%;
           padding: 0.6em 1em 1.4em;
           right: -33%;
           margin-left: -30%;
