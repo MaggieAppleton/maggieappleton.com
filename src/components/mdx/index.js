@@ -34,6 +34,11 @@ import {
 } from './ImageStyles'
 import Book from '../Book'
 import ResourceBook from './ResourceBook'
+import Footnote from './Footnote'
+import {
+  ReferenceItem,
+  ReferenceBlock,
+} from '../../../src/components/mdx/References.js'
 
 export default {
   h1: props => <Title {...props} />,
@@ -69,4 +74,7 @@ export default {
   FullWidth2Col: props => <FullWidth2Col {...props} />,
   FullWidthImage: props => <FullWidthImage {...props} />,
   TwoParagraph: props => <TwoParagraph {...props} />,
+  ReferenceItem: props => <ReferenceItem {...props} />,
+  ReferenceBlock: props => <ReferenceBlock {...props} />,
+  Footnote: props => <Footnote {...props} />,
 }

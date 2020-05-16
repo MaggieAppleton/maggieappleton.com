@@ -29,7 +29,6 @@ const Hero = () => {
         <h1
           css={css`
             color: ${theme.colors.black};
-            position: relative;
             z-index: 5;
             font-family: ${fonts.walsheimBold};
             font-weight: 100;
@@ -69,6 +68,7 @@ const Hero = () => {
             margin-bottom: ${rhythm(1.2)};
             line-height: ${rhythm(1)};
             color: ${theme.colors.grey};
+            letter-spacing: 0em;
             ${bpMaxSM} {
               margin-bottom: ${rhythm(0.4)};
             }

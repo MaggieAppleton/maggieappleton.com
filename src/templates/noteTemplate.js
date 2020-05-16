@@ -73,8 +73,8 @@ export default function Note({
           `}
         >
           {growthStage && <h6>{growthStage}</h6>}
-        </div> */}
-        <br />
+        </div>
+        <br /> */}
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
         <PreviousNext
