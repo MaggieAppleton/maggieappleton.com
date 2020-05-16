@@ -7,16 +7,15 @@ const Footnote = ({ count, children }) => {
     <>
       <span
         css={css`
-          counter-increment: MarginNote;
-          content: counter(MarginNote);
           vertical-align: super;
           line-height: 0;
           font-size: 80%;
+          padding-right: 0.2em;
         `}
       >
         {count}
       </span>
-      <span
+      <aside
         css={css`
           position: relative;
           float: right;
@@ -27,10 +26,10 @@ const Footnote = ({ count, children }) => {
           max-width: 240px;
           font-size: 75%;
           padding: 1.4em 1em;
-          right: -28%;
-          margin-left: -22%;
+          right: -30%;
+          margin-left: -26%;
           &::before {
-            content: counter(MarginNote);
+            content: '${count}';
             width: 15px;
             height: 20px;
             position: absolute;
@@ -51,7 +50,7 @@ const Footnote = ({ count, children }) => {
         `}
       >
         {children}
-      </span>
+      </aside>
     </>
   )
 }
