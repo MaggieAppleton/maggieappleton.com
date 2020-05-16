@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMaxSM } from '../../lib/breakpoints'
+import { bpMaxMD } from '../../lib/breakpoints'
 
 const Footnote = ({ count, children }) => {
   return (
@@ -11,7 +11,7 @@ const Footnote = ({ count, children }) => {
           content: counter(MarginNote);
           vertical-align: super;
           line-height: 0;
-          font-size: 70%;
+          font-size: 80%;
         `}
       >
         {count}
@@ -23,11 +23,12 @@ const Footnote = ({ count, children }) => {
           line-height: 1.4em;
           overflow: hidden;
           box-sizing: content-box;
+          opacity: 75%;
           max-width: 240px;
           font-size: 75%;
-          padding: 1em;
-          right: -25%;
-          margin-left: -20%;
+          padding: 1.4em 1em;
+          right: -28%;
+          margin-left: -22%;
           &::before {
             content: counter(MarginNote);
             width: 15px;
@@ -35,7 +36,7 @@ const Footnote = ({ count, children }) => {
             position: absolute;
             left: -0.5em;
             text-align: right;
-            top: 0.6rem;
+            top: 0.8rem;
           }
           &::after {
             clear: both;
@@ -44,7 +45,7 @@ const Footnote = ({ count, children }) => {
             content: '';
             display: block;
           }
-          ${bpMaxSM} {
+          ${bpMaxMD} {
             display: none;
           }
         `}
