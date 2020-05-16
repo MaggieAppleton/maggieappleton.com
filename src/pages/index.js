@@ -69,6 +69,7 @@ const Hero = () => {
             margin-bottom: ${rhythm(1.2)};
             line-height: ${rhythm(1)};
             color: ${theme.colors.grey};
+            letter-spacing: 0em;
             ${bpMaxSM} {
               margin-bottom: ${rhythm(0.4)};
             }
