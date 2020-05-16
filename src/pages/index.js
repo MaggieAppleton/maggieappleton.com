@@ -29,7 +29,6 @@ const Hero = () => {
         <h1
           css={css`
             color: ${theme.colors.black};
-            position: relative;
             z-index: 5;
             font-family: ${fonts.walsheimBold};
             font-weight: 100;

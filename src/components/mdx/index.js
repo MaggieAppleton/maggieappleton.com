@@ -34,6 +34,7 @@ import {
 } from './ImageStyles'
 import Book from '../Book'
 import ResourceBook from './ResourceBook'
+import Footnote from './Footnote'
 import {
   ReferenceItem,
   ReferenceBlock,
@@ -75,4 +76,5 @@ export default {
   TwoParagraph: props => <TwoParagraph {...props} />,
   ReferenceItem: props => <ReferenceItem {...props} />,
   ReferenceBlock: props => <ReferenceBlock {...props} />,
+  Footnote: props => <Footnote {...props} />,
 }

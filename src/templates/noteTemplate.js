@@ -27,6 +27,7 @@ export default function Note({
       <SEO frontmatter={mdx.frontmatter} isNotePost />
       <Container
         css={css`
+          position: relative;
           margin: 0 auto;
           max-width: 900px;
           margin-top: 3em;
@@ -73,8 +74,8 @@ export default function Note({
           `}
         >
           {growthStage && <h6>{growthStage}</h6>}
-        </div> */}
-        <br />
+        </div>
+        <br /> */}
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
         <PreviousNext

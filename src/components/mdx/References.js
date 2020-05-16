@@ -7,6 +7,13 @@ export const ReferenceBlock = ({ children }) => {
       css={css`
         margin: 0 auto;
         max-width: 660px;
+        opacity: 80%;
+        margin-top: 3em;
+        line-height: 1.5em;
+        border-top: 1px solid lightgrey;
+        h4 {
+          font-size: 110%;
+        }
       `}
     >
       <h4>References & Research</h4>
