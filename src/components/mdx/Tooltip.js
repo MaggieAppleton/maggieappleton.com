@@ -22,7 +22,7 @@ const Tooltip = forwardRef((props, ref) => {
     >
       <div
         css={css({
-          display: 'inline-block',
+          display: 'inline',
           color: '#EB5F19',
           borderRadius: '4px',
           lineHeight: '1em',
