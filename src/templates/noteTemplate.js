@@ -27,9 +27,8 @@ export default function Note({
       <SEO frontmatter={mdx.frontmatter} isNotePost />
       <Container
         css={css`
-          position: relative;
           margin: 0 auto;
-          max-width: 900px;
+          max-width: 960px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;

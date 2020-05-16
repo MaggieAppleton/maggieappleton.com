@@ -3,20 +3,28 @@ import { css } from '@emotion/core'
 
 const Footnote = ({ children }) => {
   return (
-    <p
+    <span
       css={css`
         position: relative;
-        max-width: 240px;
-        font-size: 80%;
-        padding: 0.6em 0;
         float: right;
-        top: 0;
-        right: -2em;
-        z-index: 1;
+        overflow: hidden;
+        box-sizing: content-box;
+        max-width: 240px;
+        font-size: 75%;
+        padding: 0.6em;
+        right: -10%;
+        margin-left: -10%;
+        &::after {
+          clear: both;
+          height: 0;
+          width: 100%;
+          content: '';
+          display: block;
+        }
       `}
     >
       {children}
-    </p>
+    </span>
   )
 }
 
