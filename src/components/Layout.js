@@ -191,6 +191,7 @@ export default ({
         >
           <html lang="en" />
           <noscript>This site runs best with JavaScript enabled.</noscript>
+          {/* <script src="https://hypothes.is/embed.js" async></script> */}
         </Helmet>
         <Header />
         <MDXProvider components={mdxComponents}>
