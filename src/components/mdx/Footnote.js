@@ -4,22 +4,20 @@ import { bpMaxMD } from '../../lib/breakpoints'
 import Tooltip from './Tooltip'
 
 const Footnote = ({ count, children }) => {
-  console.log(window.innerWidth)
-  if (window.innerWidth > 900) {
-    return (
-      <>
-        <span
-          css={css`
-            vertical-align: super;
-            line-height: 0;
-            font-size: 80%;
-            padding-right: 0.2em;
-          `}
-        >
-          {count}
-        </span>
-        <aside
-          css={css`
+  return (
+    <>
+      <span
+        css={css`
+          vertical-align: super;
+          line-height: 0;
+          font-size: 80%;
+          padding-right: 0.2em;
+        `}
+      >
+        {count}
+      </span>
+      <aside
+        css={css`
           position: relative;
           float: right;
           line-height: 1.4em;
@@ -51,14 +49,12 @@ const Footnote = ({ count, children }) => {
             display: none;
           }
         `}
-        >
-          {children}
-        </aside>
-      </>
-    )
-  }
-
-  return <Tooltip tiptext={children}> {count} </Tooltip>
+      >
+        {children}
+      </aside>
+      {/* <Tooltip tiptext={children}> {count} </Tooltip> */}
+    </>
+  )
 }
 
 export default Footnote
