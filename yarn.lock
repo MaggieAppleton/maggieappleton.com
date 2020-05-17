@@ -12981,11 +12981,6 @@ responselike@1.0.2, responselike@^1.0.2:
   dependencies:
     lowercase-keys "^1.0.0"
 
-responsive-react@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/responsive-react/-/responsive-react-3.0.2.tgz#8a3cc15a7b2bf548c7e3c95d173ae7c49a16f51e"
-  integrity sha512-Q8cngyNSZgzhsecW/iBiDKU4ldu7Puy8GQe6TZdqDF9groNMzedoYTY9ugsMi5JBPjhSY+yCcYIAgJcsE3SviQ==
-
 restore-cursor@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-2.0.0.tgz#9f7ee287f82fd326d4fd162923d62129eee0dfaf"

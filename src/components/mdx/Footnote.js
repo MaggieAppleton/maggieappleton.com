@@ -2,24 +2,22 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMaxMD } from '../../lib/breakpoints'
 import Tooltip from './Tooltip'
-import { Responsive } from 'responsive-react'
 
 const Footnote = ({ count, children }) => {
   return (
     <>
-      <Responsive displayIn={['Laptop']}>
-        <span
-          css={css`
-            vertical-align: super;
-            line-height: 0;
-            font-size: 80%;
-            padding-right: 0.2em;
-          `}
-        >
-          {count}
-        </span>
-        <aside
-          css={css`
+      <span
+        css={css`
+          vertical-align: super;
+          line-height: 0;
+          font-size: 80%;
+          padding-right: 0.2em;
+        `}
+      >
+        {count}
+      </span>
+      <aside
+        css={css`
           position: relative;
           float: right;
           line-height: 1.4em;
@@ -51,13 +49,10 @@ const Footnote = ({ count, children }) => {
             display: none;
           }
         `}
-        >
-          {children}
-        </aside>
-      </Responsive>
-      <Responsive displayIn={['Mobile', 'Tablet']}>
-        <Tooltip tiptext={children}> {count} </Tooltip>
-      </Responsive>
+      >
+        {children}
+      </aside>
+      {/* <Tooltip tiptext={children}> {count} </Tooltip> */}
     </>
   )
 }
