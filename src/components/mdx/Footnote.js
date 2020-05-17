@@ -6,7 +6,7 @@ import Tooltip from './Tooltip'
 const Footnote = ({ count, children }) => {
   return (
     <>
-      <span
+      {/* <span
         css={css`
           vertical-align: super;
           line-height: 0;
@@ -47,12 +47,13 @@ const Footnote = ({ count, children }) => {
           }
           ${bpMaxMD} {
             display: none;
+
           }
         `}
       >
         {children}
-      </aside>
-      {/* <Tooltip tiptext={children}> {count} </Tooltip> */}
+      </aside> */}
+      <Tooltip tiptext={children}> {count} </Tooltip>
     </>
   )
 }
