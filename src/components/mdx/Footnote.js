@@ -46,14 +46,27 @@ const Footnote = ({ count, children }) => {
             display: block;
           }
           ${bpMaxMD} {
-            display: none;
-
+            float: none;
+              left: 0;
+              margin-left: 2em;
+              padding-bottom: 0;
           }
         `}
       >
         {children}
       </aside> */}
-      <Tooltip tiptext={children}> {count} </Tooltip>
+      <Tooltip tiptext={children}>
+        <span
+          css={css`
+            padding: 0 0.2em;
+            top: -0.2em;
+            position: relative;
+            font-size: 1.1em;
+          `}
+        >
+          {count}
+        </span>
+      </Tooltip>
     </>
   )
 }
