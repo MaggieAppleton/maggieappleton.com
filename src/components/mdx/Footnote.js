@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/core'
 import { bpMaxMD } from '../../lib/breakpoints'
 import Tooltip from './Tooltip'
 
 const Footnote = ({ count, children }) => {
-  console.log(window.innerWidth)
-  if (window.innerWidth > 900) {
+  const [width, setWidth] = useState(600)
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleWindowResize)
+
+    return () => window.removeEventListener('resize', handleWindowResize)
+  }, [])
+
+  if (width > 900) {
     return (
       <>
         <span
