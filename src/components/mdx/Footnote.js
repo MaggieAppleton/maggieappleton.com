@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { css } from '@emotion/core'
 import { bpMaxMD } from '../../lib/breakpoints'
 import Tooltip from './Tooltip'
+import { Responsive } from 'responsive-react'
 
 const Footnote = ({ count, children }) => {
-  const [width, setWidth] = useState(600)
-
-  useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
-
-    return () => window.removeEventListener('resize', handleWindowResize)
-  }, [])
-
-  if (width > 900) {
-    return (
-      <>
+  return (
+    <>
+      <Responsive displayIn={['Laptop']}>
         <span
           css={css`
             vertical-align: super;
@@ -62,11 +54,12 @@ const Footnote = ({ count, children }) => {
         >
           {children}
         </aside>
-      </>
-    )
-  }
-
-  return <Tooltip tiptext={children}> {count} </Tooltip>
+      </Responsive>
+      <Responsive displayIn={['Mobile', 'Tablet']}>
+        <Tooltip tiptext={children}> {count} </Tooltip>
+      </Responsive>
+    </>
+  )
 }
 
 export default Footnote

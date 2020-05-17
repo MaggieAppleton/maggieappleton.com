@@ -58,6 +58,7 @@
     "react-share": "^3.0.0",
     "react-transition-group": "^4.3.0",
     "react-typography": "^0.16.19",
+    "responsive-react": "^3.0.2",
     "serve": "^11.1.0",
     "typescript": "^3.5.3",
     "typography": "^0.16.19",
