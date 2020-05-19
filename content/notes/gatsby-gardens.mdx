@@ -1,0 +1,56 @@
+---
+slug: gatsby-gardens
+date: 2020-05-14
+title: 'Bringing Bi-Directional Links to Gatsby Gardens'
+description: null
+cover: null
+published: true
+type: ['note']
+topics: ['Gatsby', 'Digital Gardening', 'Web Development']
+
+---
+
+Building this  <a to="https://tomcritchlow.com/2019/02/17/building-digital-garden/">digital garden</a> has been quite the pet project. I crafted it using <a to="https://www.gatsbyjs.org/">Gatsby.js</a> - a <a to="https://www.reactjs.com">React-based</a> static site generator that gives you a decent balance between convenience and control.
+
+But it's currently missing one killer feature...
+
+> ✶ The Bi-Directional Link ✶
+
+I wrote up [[A Short History of Bi-Directional Links]] if you need a bit of background context on the idea.
+
+On **May 19th** I'll be hanging out with <a to="https://aengusmcmillin.com/">Aengus McMillin</a>, <a to="https://aravindballa.com/">Aravind Balla</a>, and <a to="https://www.ianjones.us/notes">Ian Jones</a> (my digital gardening co-conspirator) on a livestream and showing how to set up a bi-directional linking system in Gatsby -- with this site as the guinea pig.
+
+<Center>
+
+<h2>If you'd like to join, <a noTip to="https://zoom.us/webinar/register/WN_hDAaKyTPTE2h4lPtzvssMQ">you can register here</a></h2>
+</Center>
+
+We'll be implementing Aengus's <a to="https://github.com/aengusmcmillin/gatsby-theme-brain">gatsby-theme-brain</a> which, much like it sounds, is a Gatsby theme that will help us build that brain-like system of interlinking nodes.
+
+<p>We'll then add Aravind's <a to="https://github.com/aravindballa/gatsby-theme-andy">gatsby-theme-andy</a> which gives us preview pop-overs when you hover on page links.</p>
+
+<h5 style="opacity: 80%; margin: 0 auto; margin-top: 2em; line-height: 1.5em; padding-top: 1em; max-width: 660px; border-top: 1px solid lightgrey;">Don't worry if you can't make it. I'll post the recording here afterwards, as well as notes on the process.</h5>
+
+---
+
+<!-- 
+In preparation, I started planning out the UX design considerations of this feature.
+
+### What exactly does this look like in action?
+
+We'll need to consider a number of design issues:
+
+1. How will users know if a link is internal or external?
+    - On most sites these all look the same, and you find out where you're headed once you've clicked. Making users randomly guess where a link is headed isn't a great UX experience.
+    - I like solving this with URL preview tooltips for externals (implemented with Tippy.js)
+    - And I also distinguish them with colour - blue leads to the outside web, orange stays inside.
+2. How can we visually distinguish between internal links that lead to pages like 'Home' or 'About' vs. links that lead to other notes?
+    - Even with the colour distinction, there's now going to be two kinds of internal links - ones to "normal" pages, and ones to linked notes
+3. How much content should we show in hover previews for internal page links?
+4. How do we visually display page references? -->
+<!-- 
+### Page References
+
+![](./andy-backlink.png)
+
+![](./anne-backlink.png) -->

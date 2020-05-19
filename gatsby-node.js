@@ -141,21 +141,21 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
 
-    data.notesQuery.edges.forEach(({ node }, i) => {
-      const { edges } = data.notesQuery
-      const prevPage = i === 0 ? null : edges[i - 1].node
-      const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
-      pageRedirects(node)
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve('./src/templates/noteTemplate.js'),
-        context: {
-          id: node.id,
-          prevPage,
-          nextPage,
-        },
-      })
-    })
+    // data.notesQuery.edges.forEach(({ node }, i) => {
+    //   const { edges } = data.notesQuery
+    //   const prevPage = i === 0 ? null : edges[i - 1].node
+    //   const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+    //   pageRedirects(node)
+    //   createPage({
+    //     path: node.fields.slug,
+    //     component: path.resolve('./src/templates/noteTemplate.js'),
+    //     context: {
+    //       id: node.id,
+    //       prevPage,
+    //       nextPage,
+    //     },
+    //   })
+    // })
 
     data.essaysQuery.edges.forEach(({ node }, i) => {
       const { edges } = data.essaysQuery
@@ -223,10 +223,15 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `Mdx`) {
+  if (
+    node.internal.type === `Mdx` &&
+    !_.get(node, 'frontmatter.type', []).includes('note')
+  ) {
     const parent = getNode(node.parent)
+    if (_.isUndefined(parent.name)) {
+      return
+    }
     const titleSlugged = _.join(_.drop(parent.name.split('-'), 3), '-')
-
     const slug =
       parent.sourceInstanceName === 'legacy'
         ? `notes/${node.frontmatter.date

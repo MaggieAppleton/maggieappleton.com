@@ -196,5 +196,18 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
+    {
+      resolve: `@aengusm/gatsby-theme-brain`,
+      options: {
+        mdxOtherwiseConfigured: true,
+        notesDirectory: `content/notes/`,
+        rootPath: `/`,
+        // rootNote: `bidirections`,
+        hideDoubleBrackets: true,
+        rootPath: `/`,
+        // rootNote: `bidirections`,
+        hideDoubleBrackets: true,
+      },
+    },
   ],
 }
