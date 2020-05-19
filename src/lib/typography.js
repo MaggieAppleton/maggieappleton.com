@@ -45,7 +45,7 @@ const typography = new Typography({
       letterSpacing: '0em',
     },
     h4: {
-      fontFamily: fonts.regularSansBold,
+      fontFamily: fonts.walsheimLight,
       marginBottom: rhythm(1),
       letterSpacing: '-0.04em',
     },

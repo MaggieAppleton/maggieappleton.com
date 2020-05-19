@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 
+
 export const TwoCol = props => {
   return (
     <div
@@ -31,7 +32,7 @@ export const ThreeImageGrid = props => {
         },
         gridTemplateColumns: 'repeat(2, 1fr)',
         display: 'grid',
-        gridGap: '30px',
+        gridGap: props.gridGap || '30px',
         padding: '20px 0px',
         img: {
           maxWidth: '100%',

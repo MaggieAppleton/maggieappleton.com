@@ -74,13 +74,20 @@ export default function Book({
               display: flex;
               flex-direction: column;
               margin-bottom: 20px;
+              h1 {
+                line-height: 1.2em;
+              }
+              h2 {
+                margin: 0.2em 0 0.6em;
+              }
               h3 {
                 margin-top: 0;
+                font-size: 1.3em;
               }
             `}
           >
             <h1>{title}</h1>
-            <h2>{subtitle}</h2>
+            {subtitle && <h2>{subtitle}</h2>}
             <h3>by {author}</h3>
             {date && <h6>Last tended to {date}</h6>}
           </div>

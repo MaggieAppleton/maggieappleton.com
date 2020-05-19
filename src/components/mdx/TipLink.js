@@ -4,6 +4,7 @@ import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
 import { css } from '@emotion/core'
+import { useTheme } from '../Theming'
 
 const LinkTooltip = forwardRef((props, ref) => {
   return (
@@ -28,14 +29,16 @@ const LinkTooltip = forwardRef((props, ref) => {
 })
 
 const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
+  const theme = useTheme()
+
   if (noStyle) {
     return (
       <a
         css={css({
-          color: '#23A3FA',
+          color: `${theme.colors.blue}`,
           transition: 'all 0.6s ease',
           ':hover, :focus': {
-            color: '#FD934B',
+            color: `${theme.colors.orange}`,
             transition: 'all 0.6s ease',
           },
         })}
@@ -54,14 +57,14 @@ const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
       <a
         css={css({
           display: 'inline-block',
-          color: '#23A3FA',
+          color: `${theme.colors.blue}`,
           lineHeight: '1em',
           borderRadius: '4px',
           transition: 'all 0.6s ease',
           ':hover, :focus': {
             border: '1px solid #B5E2FF',
             padding: '6px',
-            color: '#23A3FA',
+            color: `${theme.colors.blue}`,
             transition: 'all 0.6s ease',
           },
         })}
@@ -79,12 +82,12 @@ const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
     <a
       css={css({
         display: 'inline-block',
-        color: '#23A3FA',
+        color: `${theme.colors.blue}`,
         borderRadius: '4px',
         lineHeight: '1em',
         transition: 'all 0.6s ease',
         ':hover, :focus': {
-          background: '#31AFF6',
+          background: `${theme.colors.lightBlue}`,
           color: 'white',
           padding: '6px',
         },
