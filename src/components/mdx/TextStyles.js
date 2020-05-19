@@ -9,8 +9,8 @@ export const Divider = styled.hr`
   text-align: center;
   width: 200px;
   margin: 60px auto;
-  border: 1px solid ${colors.orange};
-  background-color: ${colors.orange};
+  border: 1px solid ${colors.lightOrange};
+  background-color: ${colors.lightOrange};
 `
 
 export const OrderedList = styled.ol`
