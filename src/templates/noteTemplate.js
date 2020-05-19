@@ -78,34 +78,34 @@ export default function Note({
         <br /> */}
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
-        {/* <PreviousNext
+        <PreviousNext
           prevSlug={prevPage && prevPage.fields.slug}
           prevTitle={prevPage && prevPage.fields.title}
           nextSlug={nextPage && nextPage.fields.slug}
           nextTitle={nextPage && nextPage.fields.title}
-        /> */}
-        <BacklinksSection>
+        />
+        {/* <BacklinksSection>
           <BacklinkItem
             pageTitle="Title"
             pageLink="Link"
-            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution (that would be me 🙌), the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
+            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
           />
           <BacklinkItem
             pageTitle="Title"
             pageLink="Link"
-            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution (that would be me 🙌), the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
+            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
           />
           <BacklinkItem
             pageTitle="Title"
             pageLink="Link"
-            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution (that would be me 🙌), the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
+            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
           />
           <BacklinkItem
             pageTitle="Title"
             pageLink="Link"
-            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution (that would be me 🙌), the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
+            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
           />
-        </BacklinksSection>
+        </BacklinksSection> */}
         {/* Share Container */}
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
