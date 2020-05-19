@@ -378,7 +378,7 @@ export const pageQuery = graphql`
         frontmatter: { type: { eq: "illustration" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 6
+      limit: 4
     ) {
       edges {
         node {
