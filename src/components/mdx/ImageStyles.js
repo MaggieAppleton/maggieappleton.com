@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 
+
 export const TwoCol = props => {
   return (
     <div
