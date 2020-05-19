@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import InnerLink from './InnerLink'
 import Title from './Title'
 import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
@@ -58,7 +58,7 @@ export default {
   Tooltip: props => <Tooltip {...props} />,
   pre: preProps => <pre {...preProps} />,
   a: props => <TipLink {...props} />,
-  Link: props => <Link {...props} />,
+  Link: props => <InnerLink {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,
   Center: props => <Center {...props} />,
