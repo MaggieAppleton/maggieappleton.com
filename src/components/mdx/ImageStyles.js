@@ -31,7 +31,7 @@ export const ThreeImageGrid = props => {
         },
         gridTemplateColumns: 'repeat(2, 1fr)',
         display: 'grid',
-        gridGap: '30px',
+        gridGap: props.gridGap || '30px',
         padding: '20px 0px',
         img: {
           maxWidth: '100%',
