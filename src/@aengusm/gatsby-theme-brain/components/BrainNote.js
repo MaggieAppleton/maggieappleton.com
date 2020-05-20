@@ -6,9 +6,6 @@ import Tippy from '@tippyjs/react'
 import 'tippy.js/animations/shift-away.css'
 
 const AnchorTag = ({ href, popups = {}, ...restProps }) => {
-  if (!href) {
-    return null
-  }
   if (!href.match(/^http/))
     return (
       <Tippy
@@ -24,7 +21,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
       placement="top"
       animation="shift-away"
       maxWidth="none"
-      content={<div>{href}</div>}
+      content={<span>{href}</span>}
     >
       <a {...restProps} href={href} />
     </Tippy>
@@ -69,6 +66,7 @@ const BrainNote = ({ note }) => {
 
   const AnchorTagWithPopups = props => <AnchorTag {...props} popups={popups} />
 
+  console.log(note.childMdx.body)
   return (
     <MDXProvider components={{ a: AnchorTagWithPopups }}>
       <div id="brainNote">
