@@ -1,5 +1,5 @@
 import React from 'react'
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import { Link } from 'gatsby'
 import Tippy from '@tippyjs/react'
@@ -66,7 +66,6 @@ const BrainNote = ({ note }) => {
 
   const AnchorTagWithPopups = props => <AnchorTag {...props} popups={popups} />
 
-  console.log(note.childMdx.body)
   return (
     <MDXProvider components={{ a: AnchorTagWithPopups }}>
       <div id="brainNote">
