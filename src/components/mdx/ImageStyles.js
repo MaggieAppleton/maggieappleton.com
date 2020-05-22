@@ -2,7 +2,6 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 
-
 export const TwoCol = props => {
   return (
     <div
@@ -50,12 +49,11 @@ export const ImageFrame = props => {
   return (
     <div
       css={css({
-        maxWidth: '110%',
+        maxWidth: '100%',
         margin: '0 auto',
         marginBottom: '1.6em',
         marginTop: '1.6em',
-        boxShadow: '0px 2px 3px rgba(152, 151, 158, 0.1)',
-        marginLeft: '-3%',
+        padding: '0',
         img: {
           maxWidth: '100%',
           margin: '0 auto',
@@ -63,6 +61,7 @@ export const ImageFrame = props => {
           borderRadius: '4px',
           marginBottom: '0px',
           padding: '0',
+          boxShadow: '0px 2px 3px rgba(152, 151, 158, 0.2)',
         },
       })}
     >
