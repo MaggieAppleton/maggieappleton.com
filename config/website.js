@@ -2,14 +2,14 @@ module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/blog your pathPrefix should be "blog"
   siteTitle: 'Maggie Appleton', // Navigation and Site Title
   siteTitleAlt:
-    'Maggie Appleton makes illustrations that help explain the world of technology and programming', // Alternative Site title for SEO
+    'Maggie Appleton makes visual explanations about technology, culture, and programming', // Alternative Site title for SEO
   siteTitleShort: 'Maggie_Appleton', // short_name for manifest
   siteUrl: 'https://maggieappleton.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
   siteDescription:
-    'Maggie Appleton is an illustrator & art director who creates ELI5 visual essays about tech',
-  author: 'Maggie', // Author for schemaORGJSONLD
+    'Maggie Appleton is an art director, illustrator, &  digital anthropologist. I make visual explanations about technology, culture, and programming',
+  author: 'Maggie Appleton', // Author for schemaORGJSONLD
   organization: 'Mappleton LLC',
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional

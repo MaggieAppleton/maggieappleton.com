@@ -15,7 +15,7 @@ const LinkTooltip = forwardRef((props, ref) => {
       arrow={true}
       interactive={true}
       animation="shift-away"
-      content={props.to}
+      content={props.href}
       ref={ref}
       css={css`
         padding: 0.2em;
@@ -28,7 +28,7 @@ const LinkTooltip = forwardRef((props, ref) => {
   )
 })
 
-const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
+const TipLink = ({ noStyle, noTip, children, href, ...other }) => {
   const theme = useTheme()
 
   if (noStyle) {
@@ -44,7 +44,7 @@ const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
         })}
         target="_blank"
         rel="noopener noreferrer"
-        href={to}
+        href={href}
         {...other}
       >
         {children}
@@ -70,7 +70,7 @@ const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
         })}
         target="_blank"
         rel="noopener noreferrer"
-        href={to}
+        href={href}
         {...other}
       >
         {children}
@@ -94,10 +94,10 @@ const TipLink = ({ noStyle, noTip, children, to, ...other }) => {
       })}
       target="_blank"
       rel="noopener noreferrer"
-      href={to}
+      href={href}
       {...other}
     >
-      <LinkTooltip to={to}>{children}</LinkTooltip>
+      <LinkTooltip href={href}>{children}</LinkTooltip>
     </a>
   )
 }
