@@ -9,7 +9,7 @@ type: ['note']
 topics: ['Roam', 'Web Development']
 ---
 
-My <a href="#">Roam Garden</a> is a place I spend between 2-4 hours puttering around in every day according to my <a href="https://www.rescuetime.com/">RescueTime</a> stats <Footnote count={1}>RescueTime only tracks the time you're actively focused on a single window, so this measurement has some limitations but sets a nice baseline</Footnote>
+My <a href="https://roamresearch.com/">Roam Garden</a> is a place I spend between 2-4 hours puttering around in every day according to my <a href="https://www.rescuetime.com/">RescueTime</a> stats <Footnote count={1}>RescueTime only tracks the time you're actively focused on a single window, so this measurement has some limitations but sets a nice baseline</Footnote>
 
 <Image alt="A bar graph of the hours I've spent in Roam this week" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_660/v1590188743/maggieappleton.com/notes/roamhours.png" />
 
@@ -47,27 +47,32 @@ Once you've got Stylus working, you can grab my whole Roam theme <a href="https:
 
 There's also a dark version on <a href="https://github.com/theianjones/roam-research-themes">that same repo</a> built by my gardening buddy <a href="https://www.ianjones.us/">Ian Jones</a> (who has since jumped ship on Roam for Doom Emacs <span>😜</span>)
 
-For a whole variety of Roam themes, check out <a href=""></a>
 
 ---
+
 
 ## Create Custom Styles for Specific Roam Tags and Page Links
 
 Another neat trick I love with CSS and Roam is creating specific styles for different page tags.
 
-I have a little workflow taxonomy going that covers different kinds of output like and the stages they flow through
+I have a little workflow taxonomy going that covers different kinds of output and the stages they flow through
 
-<Image src="" />
+<Image alt="A screencapture of my Roam database with various coloured tags" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1590193543/maggieappleton.com/notes/Screenshot_2020-05-23_at_01.24.49.png" />
+
 
 We're able to do this because when we use a # to create a page tage, Roam adds a 'data-tag' element to the HTML markup.
 
-```
-<span tabindex="-1" data-tag="Ideas" class="rm-page-ref rm-page-ref-tag">What if I learned how to chuck wood like a woodchuck could?#Ideas</span>
+```html
+<span data-tag="Ideas"
+    class="rm-page-ref rm-page-ref-tag">
+        #Ideas What if I learned how to chuck wood
+        like a Chuck Norris woodchuck could? 
+</span>
 ```
 
 We can then target this element with a CSS selector that looks like this:
 
-```
+```css
 span.rm-page-ref[data-tag="Ideas"] {
     color: #FCB815;
     padding: 3px 4px;
@@ -76,8 +81,10 @@ span.rm-page-ref[data-tag="Ideas"] {
 }
 ```
 
-It makes an enormous difference in your user experience to be able to quickly identify different block and note types through colour association.
+It makes an enormous difference in your user experience to be able to quickly identify different block and note types through visual colour association.
 
-I made a short, rough tutorial video showing exactly how I do this:
+If you just want to grab the data-tag components from my theme , scroll down to the bottom of my <a href="https://github.com/theianjones/roam-research-themes/blob/master/mappletons.css">CSS theme file</a> to find them.
+
+I also made a short, rough demo video showing exactly how I do this:
 
 https://www.youtube.com/watch?v=DevXi-h0SPY
