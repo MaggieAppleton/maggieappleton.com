@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
+import Image from './PostImage'
 
 export const TwoCol = props => {
   return (
@@ -65,7 +66,7 @@ export const ImageFrame = props => {
         },
       })}
     >
-      {props.children}
+      <Image alt={props.alt} src={props.src} />
     </div>
   )
 }
