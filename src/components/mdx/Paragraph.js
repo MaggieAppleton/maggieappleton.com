@@ -9,4 +9,5 @@ export default styled.p`
   font-size: 1.04em;
   font-family: ${fonts.regular};
   margin-top: 1em;
+  align-items: flex-start;
 `

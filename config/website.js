@@ -8,7 +8,7 @@ module.exports = {
   siteLanguage: 'en', // Language Tag on <html> element
   siteLogo: 'images/logo.png', // Used for SEO and manifest, path to your image you placed in the 'static' folder
   siteDescription:
-    'Maggie Appleton is an art director, illustrator, &  digital anthropologist. I make visual explanations about technology, culture, and programming',
+    'Maggie Appleton is an art director, anthropologist, and metaphor-making illustrator. This is her digital garden for growing visual explanations about technology, culture, and programming',
   author: 'Maggie Appleton', // Author for schemaORGJSONLD
   organization: 'Mappleton LLC',
 

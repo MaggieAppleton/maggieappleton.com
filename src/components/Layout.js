@@ -111,11 +111,10 @@ const getGlobalStyles = theme => {
       }
     }
     pre {
-      background-color: #061526 !important;
-      border-radius: 4px;
-      font-size: 16px;
-      padding: 10px;
+      max-width: 660px;
+      margin: 0.6em auto;
       overflow-x: auto;
+      border-radius: 4px;
       /* Track */
       ::-webkit-scrollbar {
         width: 100%;
@@ -123,13 +122,13 @@ const getGlobalStyles = theme => {
         border-radius: 0 0 5px 5px;
       }
       ::-webkit-scrollbar-track {
-        background: #061526;
+        background: ${theme.colors.offWhite};
         border-radius: 0 0 4px 4px;
-        border: 1px solid rgba(0, 0, 0, 0.2);
+        border: 1px solid ${theme.colors.offWhite};
       }
       /* Handle */
       ::-webkit-scrollbar-thumb {
-        background: #888;
+        background: ${theme.colors.lightestGrey};
         border-radius: 5px;
       }
     }
