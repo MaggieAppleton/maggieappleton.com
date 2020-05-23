@@ -3,7 +3,6 @@ import InnerLink from './InnerLink'
 import Title from './Title'
 import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
-import Image from './PostImage'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
@@ -24,6 +23,7 @@ import {
   TwoParagraph,
 } from './TextStyles'
 import {
+  Image,
   ThreeImageGrid,
   TwoCol,
   ImageGrid,
@@ -48,9 +48,8 @@ export default {
   h5: props => <H5 {...props} />,
   h6: props => <H6 {...props} />,
   p: props => <Paragraph {...props} />,
-  Image: props => <Image {...props} />,
-  code: Code,
   img: props => <Image {...props} />,
+  code: Code,
   ol: props => <OrderedList {...props} />,
   ul: props => <UnorderedList {...props} />,
   blockquote: props => <Blockquote {...props} />,
