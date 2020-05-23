@@ -7,9 +7,9 @@ import { rhythm } from '../../lib/typography'
 
 export const Divider = styled.hr`
   text-align: center;
-  width: 200px;
-  margin: 60px auto;
-  border: 1px solid ${colors.lightOrange};
+  width: 240px;
+  margin: 4em auto;
+  border: 0px solid ${colors.lightOrange};
   background-color: ${colors.lightOrange};
 `
 
