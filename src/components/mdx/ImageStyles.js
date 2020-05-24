@@ -20,7 +20,7 @@ export const TwoCol = props => {
         [bpMinMD]: { gridTemplateColumns: props.GridColCount || '1fr 1fr' },
         gridTemplateColumns: '1fr',
         display: 'grid',
-        gridGap: '20px',
+        gridGap: props.gridGap || '20px',
         alignItems: props.alignItems || 'center',
         justifyItems: 'center',
         img: {
@@ -47,7 +47,7 @@ export const ThreeImageGrid = props => {
         img: {
           maxWidth: '100%',
           gridAutoFlow: 'row',
-          padding: '6px',
+          padding: props.imgPadding || '6px',
         },
       })}
     >

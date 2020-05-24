@@ -117,7 +117,6 @@ export const Subtext = styled.p`
   font-size: 0.8em;
   margin-top: 0.8em;
   align-items: flex-start;
-  opacity: 80%;
 `
 
 export const SmallCenter = props => {
