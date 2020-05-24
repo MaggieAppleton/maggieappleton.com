@@ -2,7 +2,7 @@
 title: 'Paint Your Roam with Custom CSS'
 description: null
 slug: paintingroam
-date: 2020-05-23
+date: 2020-05-25
 published: true
 cover: null
 type: ['note']
@@ -54,13 +54,13 @@ I have a little workflow taxonomy going that covers different kinds of output an
 <Image alt="A screencapture of my Roam database with various coloured tags" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_1457/v1590193543/maggieappleton.com/notes/datatags.png" />
 
 
-We're able to do this because when we use a # to create a page tage, Roam adds a 'data-tag' element to the HTML markup.
+<p>We're able to do this because when we use a # to create a page tage, Roam adds a 'data-tag' element to the HTML markup.</p>
+<Subtext>Shoutout to fellow Roam user <a href="https://malcolmocean.com/">Malcolm Ocean</a> who lobbied for this as an official feature of the Roam interface. I found out how to do it digging around in their impressively <a href="https://gist.github.com/malcolmocean/03d777a1c8f89be8c98e3d89d6821607">comprehensive CSS files</a>.</Subtext>
 
 ```html
-<span data-tag="Ideas"
-    class="rm-page-ref rm-page-ref-tag">
-        #Ideas What if I learned how to chuck wood
-        like a Chuck Norris woodchuck could? 
+<span data-tag="Ideas" class="rm-page-ref rm-page-ref-tag">  
+    #Ideas What if I learned how to chuck wood
+    like a Chuck Norris woodchuck could? 
 </span>
 ```
 
