@@ -21,6 +21,7 @@ import {
   OrderedList,
   UnorderedList,
   TwoParagraph,
+  Subtext,
 } from './TextStyles'
 import {
   Image,
@@ -60,6 +61,7 @@ export default {
   Link: props => <InnerLink {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,
+  Subtext: props => <Subtext {...props} />,
   Center: props => <Center {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
   TwoCol: props => <TwoCol {...props} />,
