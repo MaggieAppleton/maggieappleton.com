@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { Image } from './ImageStyles'
 import { bpMaxSM } from '../../lib/breakpoints'
 
 const EggheadCourseCard = props => {
@@ -41,7 +42,7 @@ const EggheadCourseCard = props => {
           },
         })}
       >
-        <img alt={props.title} src={props.image} />
+        <Image alt={props.title} src={props.image} />
         <p>{props.title}</p>
       </div>
     </a>
