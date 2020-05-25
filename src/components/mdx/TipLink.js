@@ -97,7 +97,9 @@ const TipLink = ({ noStyle, noTip, children, href, ...other }) => {
       href={href}
       {...other}
     >
-      <LinkTooltip href={href}>{children}</LinkTooltip>
+      <LinkTooltip href={href} {...other}>
+        {children}
+      </LinkTooltip>
     </a>
   )
 }

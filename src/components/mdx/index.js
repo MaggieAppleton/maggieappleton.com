@@ -9,6 +9,7 @@ import Tooltip from './Tooltip'
 import TipLink from './TipLink'
 import NoteSidebar from './NoteSidebar'
 import SimpleCard from '../SimpleCard'
+import { ComingSoon } from './ComingSoon'
 import {
   Divider,
   H3,
@@ -78,4 +79,5 @@ export default {
   ReferenceItem: props => <ReferenceItem {...props} />,
   ReferenceBlock: props => <ReferenceBlock {...props} />,
   Footnote: props => <Footnote {...props} />,
+  ComingSoon: props => <ComingSoon {...props} />,
 }
