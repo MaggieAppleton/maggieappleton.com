@@ -8,6 +8,17 @@ export default props => {
 
 export const query = graphql`
   query BrainNoteWithRefsBySlug($slug: String!) {
+    site {
+      ...site
+    }
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        slug
+        topics
+      }
+    }
     brainNote(slug: { eq: $slug }) {
       slug
       title

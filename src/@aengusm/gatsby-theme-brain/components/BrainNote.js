@@ -4,7 +4,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { Link } from 'gatsby'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/animations/shift-away.css'
-
+import Note from '../../../components/Note'
 const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   if (!href.match(/^http/))
     return (
@@ -28,7 +28,7 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   )
 }
 
-const BrainNote = ({ note }) => {
+const BrainNote = ({ note, site }) => {
   let references = []
   let referenceBlock
   if (note.inboundReferencePreviews != null) {
@@ -65,7 +65,7 @@ const BrainNote = ({ note }) => {
   }
 
   const AnchorTagWithPopups = props => <AnchorTag {...props} popups={popups} />
-
+  return <Note note={note} site={site} />
   return (
     <MDXProvider components={{ a: AnchorTagWithPopups }}>
       <div id="brainNote">
