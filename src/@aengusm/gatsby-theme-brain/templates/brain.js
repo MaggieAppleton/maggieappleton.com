@@ -19,6 +19,7 @@ export const query = graphql`
         source
         previewHtml
       }
+
       outboundReferenceNotes {
         title
         slug
