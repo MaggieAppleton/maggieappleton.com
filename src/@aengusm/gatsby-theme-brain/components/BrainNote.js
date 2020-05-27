@@ -5,7 +5,8 @@ import { Link } from 'gatsby'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/animations/shift-away.css'
 import Note from '../../../components/Note'
-const AnchorTag = ({ href, popups = {}, ...restProps }) => {
+
+const TooltipLink = ({ href, popups = {}, ...restProps }) => {
   if (!href.match(/^http/))
     return (
       <Tippy
@@ -64,10 +65,12 @@ const BrainNote = ({ note, site }) => {
       })
   }
 
-  const AnchorTagWithPopups = props => <AnchorTag {...props} popups={popups} />
+  const TooltipLinkWithPreviews = props => (
+    <TooltipLink {...props} popups={popups} />
+  )
   return <Note note={note} site={site} />
   return (
-    <MDXProvider components={{ a: AnchorTagWithPopups }}>
+    <MDXProvider components={{ a: TooltipLinkWithPreviews }}>
       <div id="brainNote">
         <h1>{note.title}</h1>
         <MDXRenderer>{note.childMdx.body}</MDXRenderer>
