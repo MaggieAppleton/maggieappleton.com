@@ -110,6 +110,10 @@ const getGlobalStyles = theme => {
         border: 1px solid ${lighten(0.05, theme.colors.primary)};
       }
     }
+    .twitter-tweet {
+      margin: 1.2em auto;
+      align-content: center;
+    }
     pre {
       max-width: 660px;
       margin: 0.6em auto;
