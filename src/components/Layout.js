@@ -110,8 +110,8 @@ const getGlobalStyles = theme => {
         border: 1px solid ${lighten(0.05, theme.colors.primary)};
       }
     }
-    .twitter-tweet {
-      margin: 1.2em auto;
+    .twitter-tweet, .twitter-tweet-rendered {
+      margin: 40px auto;
       align-content: center;
     }
     pre {
