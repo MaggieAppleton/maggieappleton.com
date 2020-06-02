@@ -7,6 +7,29 @@ import { css } from '@emotion/core'
 import { useTheme } from '../Theming'
 
 const LinkTooltip = forwardRef((props, ref) => {
+  const previewKey = props.href.replace(/^\//, '')
+  if (props.bidirectionalLinkPreviews[previewKey]) {
+    return (
+      <Tippy
+        duration="600"
+        distance="2"
+        theme="light"
+        arrow={true}
+        interactive={true}
+        animation="shift-away"
+        content={props.bidirectionalLinkPreviews[previewKey]}
+        ref={ref}
+        css={css`
+          padding: 0.2em;
+          font-size: 0.75em;
+        `}
+        xw
+      >
+        <span ref={ref}>{props.children}</span>
+      </Tippy>
+    )
+  }
+
   return (
     <Tippy
       duration="600"
