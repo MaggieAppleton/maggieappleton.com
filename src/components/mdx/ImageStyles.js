@@ -1,7 +1,17 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
+import styled from '@emotion/styled'
 
+export const Image = styled.img`
+  max-width: 100%;
+  display: flex;
+  align-self: center;
+  margin: 0 auto;
+  border-radius: 6px;
+  margin-bottom: 1.2em;
+  margin-top: 1.2em;
+`
 
 export const TwoCol = props => {
   return (
@@ -10,7 +20,7 @@ export const TwoCol = props => {
         [bpMinMD]: { gridTemplateColumns: props.GridColCount || '1fr 1fr' },
         gridTemplateColumns: '1fr',
         display: 'grid',
-        gridGap: '20px',
+        gridGap: props.gridGap || '20px',
         alignItems: props.alignItems || 'center',
         justifyItems: 'center',
         img: {
@@ -37,7 +47,7 @@ export const ThreeImageGrid = props => {
         img: {
           maxWidth: '100%',
           gridAutoFlow: 'row',
-          padding: '6px',
+          padding: props.imgPadding || '6px',
         },
       })}
     >
@@ -50,23 +60,17 @@ export const ImageFrame = props => {
   return (
     <div
       css={css({
-        maxWidth: '110%',
-        margin: '0 auto',
-        marginBottom: '1.6em',
-        marginTop: '1.6em',
-        boxShadow: '0px 2px 3px rgba(152, 151, 158, 0.1)',
-        marginLeft: '-3%',
         img: {
-          maxWidth: '100%',
-          margin: '0 auto',
+          marginBottom: '1.6em',
+          marginTop: '1.6em',
           border: '1px solid #e7eef3',
           borderRadius: '4px',
-          marginBottom: '0px',
           padding: '0',
+          boxShadow: '0px 2px 3px rgba(152, 151, 158, 0.2)',
         },
       })}
     >
-      {props.children}
+      <Image alt={props.alt} src={props.src} />
     </div>
   )
 }

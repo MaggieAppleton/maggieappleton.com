@@ -7,9 +7,9 @@ import { rhythm } from '../../lib/typography'
 
 export const Divider = styled.hr`
   text-align: center;
-  width: 200px;
-  margin: 60px auto;
-  border: 1px solid ${colors.lightOrange};
+  width: 240px;
+  margin: 4em auto;
+  border: 0px solid ${colors.lightOrange};
   background-color: ${colors.lightOrange};
 `
 
@@ -98,6 +98,7 @@ export const Blockquote = styled.blockquote`
 `
 export const Center = styled.p`
   text-align: center;
+  max-width: 660px;
   margin: 30px auto;
   h1,
   h2,
@@ -108,6 +109,16 @@ export const Center = styled.p`
     text-align: center;
   }
 `
+export const Subtext = styled.p`
+  text-align: left;
+  max-width: 660px;
+  margin: 0 auto;
+  line-height: 1.6em;
+  font-size: 0.8em;
+  margin-top: 0.8em;
+  align-items: flex-start;
+`
+
 export const SmallCenter = props => {
   return (
     <div

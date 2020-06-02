@@ -15,7 +15,7 @@ const LinkTooltip = forwardRef((props, ref) => {
       arrow={true}
       interactive={true}
       animation="shift-away"
-      content={props.to}
+      content={props.href}
       ref={ref}
       css={css`
         padding: 0.2em;
@@ -97,7 +97,9 @@ const TipLink = ({ noStyle, noTip, children, href, ...other }) => {
       href={href}
       {...other}
     >
-      <LinkTooltip href={href}>{children}</LinkTooltip>
+      <LinkTooltip href={href} {...other}>
+        {children}
+      </LinkTooltip>
     </a>
   )
 }

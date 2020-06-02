@@ -54,7 +54,7 @@ export default function Note({
               font-weight: normal;
               padding-bottom: 12px;
               border-bottom: 1px solid ${theme.colors.lightGrey};
-              margin-bottom: 0.8em;
+              margin-bottom: 3em;
             }
           `}
         >

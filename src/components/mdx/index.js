@@ -3,13 +3,13 @@ import InnerLink from './InnerLink'
 import Title from './Title'
 import Subtitle from './Subtitle'
 import Paragraph from './Paragraph'
-import Image from './PostImage'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
 import TipLink from './TipLink'
 import NoteSidebar from './NoteSidebar'
 import SimpleCard from '../SimpleCard'
+import { ComingSoon } from './ComingSoon'
 import {
   Divider,
   H3,
@@ -22,8 +22,10 @@ import {
   OrderedList,
   UnorderedList,
   TwoParagraph,
+  Subtext,
 } from './TextStyles'
 import {
+  Image,
   ThreeImageGrid,
   TwoCol,
   ImageGrid,
@@ -48,9 +50,8 @@ export default {
   h5: props => <H5 {...props} />,
   h6: props => <H6 {...props} />,
   p: props => <Paragraph {...props} />,
-  Image: props => <Image {...props} />,
-  code: Code,
   img: props => <Image {...props} />,
+  code: Code,
   ol: props => <OrderedList {...props} />,
   ul: props => <UnorderedList {...props} />,
   blockquote: props => <Blockquote {...props} />,
@@ -61,6 +62,7 @@ export default {
   Link: props => <InnerLink {...props} />,
   NoteSidebar: props => <NoteSidebar {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,
+  Subtext: props => <Subtext {...props} />,
   Center: props => <Center {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
   TwoCol: props => <TwoCol {...props} />,
@@ -77,4 +79,5 @@ export default {
   ReferenceItem: props => <ReferenceItem {...props} />,
   ReferenceBlock: props => <ReferenceBlock {...props} />,
   Footnote: props => <Footnote {...props} />,
+  ComingSoon: props => <ComingSoon {...props} />,
 }

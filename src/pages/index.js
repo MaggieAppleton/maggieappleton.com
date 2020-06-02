@@ -74,7 +74,7 @@ const Hero = () => {
             }
           `}
         >
-          Art Director, Illustrator & Anthropological All-Rounder at{' '}
+          Art Director, Metaphor Designer & Anthropological All-Rounder at{' '}
           <a
             href="https://egghead.io"
             target="_blank"

@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
-import { lighten } from 'polished'
+import { lighten, darken } from 'polished'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider, themes } from './Theming'
 import { bpMaxSM } from '../lib/breakpoints'
@@ -97,25 +97,27 @@ const getGlobalStyles = theme => {
     }
     button {
       border-radius: 4px;
-      background-color: ${theme.colors.primary};
+      background-color: ${theme.colors.lightOrange};
       border: none;
       color: ${theme.colors.white};
       font-family: ${fonts.walsheim};
-      padding: 5px 10px;
+      padding: 5px 16px;
       cursor: pointer;
       border: 1px solid ${theme.colors.primary};
-      transition: all 150ms;
+      transition: all 400ms;
       :hover {
-        background: ${lighten(0.05, theme.colors.primary)};
-        border: 1px solid ${lighten(0.05, theme.colors.primary)};
+        background: ${darken(0.08, theme.colors.lightOrange)};
+        border: 1px solid ${darken(0.05, theme.colors.lightOrange)};
+        
+        transform: translateY(-1px) scale(1.008);
+        transition: all 400ms;
       }
     }
     pre {
-      background-color: #061526 !important;
-      border-radius: 4px;
-      font-size: 16px;
-      padding: 10px;
+      max-width: 660px;
+      margin: 0.6em auto;
       overflow-x: auto;
+      border-radius: 4px;
       /* Track */
       ::-webkit-scrollbar {
         width: 100%;
@@ -123,13 +125,13 @@ const getGlobalStyles = theme => {
         border-radius: 0 0 5px 5px;
       }
       ::-webkit-scrollbar-track {
-        background: #061526;
+        background: ${theme.colors.offWhite};
         border-radius: 0 0 4px 4px;
-        border: 1px solid rgba(0, 0, 0, 0.2);
+        border: 1px solid ${theme.colors.offWhite};
       }
       /* Handle */
       ::-webkit-scrollbar-thumb {
-        background: #888;
+        background: ${theme.colors.lightestGrey};
         border-radius: 5px;
       }
     }
