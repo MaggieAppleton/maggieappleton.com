@@ -5,6 +5,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/animations/shift-away.css'
 import Note from '../../../components/Note'
+
 import components from '../../../components/mdx'
 const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   if (!href.match(/^http/))
@@ -79,6 +80,7 @@ const BrainNote = ({ note }) => {
       })
   }
 
+
   const AnchorTagWithPreviews = props => (
     <components.a
       {...props}
@@ -88,6 +90,7 @@ const BrainNote = ({ note }) => {
   return (
     <MDXProvider components={{ ...components, a: AnchorTagWithPreviews }}>
       <Note note={note} site={site} />
+
     </MDXProvider>
   )
 }
