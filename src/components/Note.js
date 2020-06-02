@@ -14,7 +14,7 @@ import get from 'lodash/get'
 
 export default function Note({ site, note }) {
   const mdx = get(note, 'childMdx')
-  const title = get(mdx, 'frontmatter.title')
+  const title = get(note, 'title')
   const date = get(mdx, 'frontmatter.date')
   const topics = get(mdx, 'frontmatter.topics')
   const theme = useTheme()
