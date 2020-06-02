@@ -2,14 +2,15 @@
 # yarn lockfile v1
 
 
-"@aengusm/gatsby-theme-brain@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@aengusm/gatsby-theme-brain/-/gatsby-theme-brain-1.0.11.tgz#115bf9032aaac0a0abd30f3a779d20778c460c65"
-  integrity sha512-ba3Op44mdEJDcyrh+snQxeQ9jEQpmLL2kcdLb5MgIb8qWGwvxGpxAMA9U/m6YfaUhdot62cTW1sYAIAmW3RdfA==
+"@aengusm/gatsby-theme-brain@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@aengusm/gatsby-theme-brain/-/gatsby-theme-brain-1.0.12.tgz#a244c5969532f69aa17394128fce661d08c5d99d"
+  integrity sha512-xHL9h53mOrzbE67+hdPuhFbmP3h+rhjYbihuxE4xwXYX4J+fGFr94AnDVmySaN7pzONK4h61Xc/kQCqx/gX9cw==
   dependencies:
     "@mdx-js/mdx" "^1.5.8"
     "@mdx-js/react" "^1.5.8"
     chokidar "^3.4.0"
+    gatsby-plugin-feed "^2.5.2"
     gatsby-plugin-mdx "^1.1.8"
     gatsby-transformer-remark "^2.7.2"
     react-cytoscapejs "^1.2.1"
@@ -885,6 +886,13 @@
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
   integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.10.2":
+  version "7.10.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.2.tgz#d103f21f2602497d38348a32e008637d506db839"
+  integrity sha512-6sF3uQw2ivImfVIl62RZ7MXhO2tap69WeWK57vAaimT6AZbE4FbqjdEJIN1UqoD6wI6B+1n9UiagafH1sxjOtg==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -6619,6 +6627,17 @@ gatsby-plugin-feed@^2.3.6:
   integrity sha512-cdZq/u49f3RAH8iaZoUSV4W/naYFAWQETjnQmaEQUPzZoChUFV4gaFgoJlR7LypmFyOlU15RAapcNW5lGZ910A==
   dependencies:
     "@babel/runtime" "^7.9.2"
+    "@hapi/joi" "^15.1.1"
+    fs-extra "^8.1.0"
+    lodash.merge "^4.6.2"
+    rss "^1.2.2"
+
+gatsby-plugin-feed@^2.5.2:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.5.4.tgz#5d94956137496b31d8d0b4b2ff702a8da8694783"
+  integrity sha512-/0kZZ2tp89kqkm0QGbvRgqq6IKgYLnfmjiM8exrWu++JJeIALynvks0PMLuj4L7vD4mxfDztC7JwRDhcvGlwMw==
+  dependencies:
+    "@babel/runtime" "^7.10.2"
     "@hapi/joi" "^15.1.1"
     fs-extra "^8.1.0"
     lodash.merge "^4.6.2"
