@@ -5,6 +5,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/animations/shift-away.css'
 import Note from '../../../components/Note'
+import components from '../../../components/mdx'
 const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   if (!href.match(/^http/))
     return (
@@ -64,12 +65,12 @@ const BrainNote = ({ note }) => {
     }
   }
 
-  const popups = {}
+  const bidirectionalLinkPreviews = {}
   if (note.outboundReferenceNotes) {
     note.outboundReferenceNotes
       .filter(reference => !!reference.childMdx.excerpt)
       .forEach((ln, i) => {
-        popups[ln.slug] = (
+        bidirectionalLinkPreviews[ln.slug] = (
           <div id={ln.slug}>
             <h5>{ln.title}</h5>
             <p>{ln.childMdx.excerpt}</p>
@@ -78,15 +79,15 @@ const BrainNote = ({ note }) => {
       })
   }
 
-  const AnchorTagWithPopups = props => <AnchorTag {...props} popups={popups} />
-  return <Note note={note} site={site} />
+  const AnchorTagWithPreviews = props => (
+    <components.a
+      {...props}
+      bidirectionalLinkPreviews={bidirectionalLinkPreviews}
+    />
+  )
   return (
-    <MDXProvider components={{ a: AnchorTagWithPopups }}>
-      <div id="brainNote">
-        <h1>{note.title}</h1>
-        <MDXRenderer>{note.childMdx.body}</MDXRenderer>
-        {referenceBlock}
-      </div>
+    <MDXProvider components={{ ...components, a: AnchorTagWithPreviews }}>
+      <Note note={note} site={site} />
     </MDXProvider>
   )
 }

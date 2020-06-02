@@ -11,6 +11,7 @@ import config from '../../config/website'
 import { useTheme } from 'components/Theming'
 import { bpMaxSM } from '../lib/breakpoints'
 import PreviousNext from '../components/PreviousNext'
+import DefaultMdxComponentsProvider from '../components/mdx/DefaultProvider'
 
 export default function Essay({
   data: { site, mdx },
@@ -60,7 +61,9 @@ export default function Essay({
         </div>
 
         <br />
-        <MDXRenderer>{mdx.body}</MDXRenderer>
+        <DefaultMdxComponentsProvider>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </DefaultMdxComponentsProvider>
         {/* Next and Previous */}
         <PreviousNext
           prevSlug={prevPage && prevPage.fields.slug}
