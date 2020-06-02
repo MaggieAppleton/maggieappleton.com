@@ -11,19 +11,17 @@ export const query = graphql`
     site {
       ...site
     }
-    mdx(frontmatter: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        slug
-        topics
-      }
-    }
     brainNote(slug: { eq: $slug }) {
       slug
       title
       childMdx {
         body
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+          slug
+          topics
+        }
       }
       inboundReferences
       inboundReferencePreviews {

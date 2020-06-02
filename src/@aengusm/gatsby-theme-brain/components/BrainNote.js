@@ -1,7 +1,7 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Tippy from '@tippyjs/react'
 import 'tippy.js/animations/shift-away.css'
 import Note from '../../../components/Note'
@@ -28,7 +28,21 @@ const AnchorTag = ({ href, popups = {}, ...restProps }) => {
   )
 }
 
-const BrainNote = ({ note, site }) => {
+const BrainNote = ({ note }) => {
+  const { site } = useStaticQuery(graphql`
+    query BrainNoteStaticQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          author {
+            name
+          }
+          keywords
+        }
+      }
+    }
+  `)
   let references = []
   let referenceBlock
   if (note.inboundReferencePreviews != null) {
