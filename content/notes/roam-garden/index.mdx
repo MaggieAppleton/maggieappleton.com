@@ -3,7 +3,7 @@ title: 'Tending the Roam Garden'
 description: null
 cover: null
 slug: roam-garden
-date: 2020-05-28
+date: 2020-05-31
 published: true
 type: ['note']
 topics: ['Digital Gardening', 'Roam']
@@ -33,25 +33,23 @@ Seeing the wide diversity of systems Roamers build is the whole point. It's a gr
 
 <p><a href="https://www.influenceinsights.io/">Robert Haisfield</a> has started hosting a series of <a href="https://www.youtube.com/channel/UCWA6aNcUjK2w0Z_-0UURq_g/videos">Roam video tours</a> where Roamers walk through their databases showing all the ways they've adapted the system to their particular needs.</p>
 
-This is essentially a COVID-friendly version of MTV Cribs for personal knowledge management nerds. Conspicuous consumption in the age of sense-making knowledge work.
+<p>This is essentially a COVID-friendly version of MTV Cribs for personal knowledge management nerds. Conspicuous consumption in the age of sense-making knowledge work.</p>
 
 <Center>
 
 <Subtext>
+
 HT <a href="https://twitter.com/TheAnnaGat">Anna Gat</a> for the insightful comparison
+
 </Subtext>
 
 https://twitter.com/TheAnnaGat/status/1264172874304290816
 
 </Center>
 
-<p>
-After posting too much on Twitter about my extensive <Link to="/painting-roam">Roam CSS styling system</Link>, I got chatting to Rob and ended up doing one of these digital-hipster crib tours.
-</p>
+<p>After posting too much on Twitter about my extensive <Link to="/paintingroam">Roam CSS styling system</Link>, I got chatting to Rob and ended up doing one of these digital-hipster crib tours.</p>
 
-<p>We had a wonderfully wide-ranging chat on note taxonomies, spaced repetition, the limitations of text-based thought.</p>
-
-<p>Enjoy, and forgive the mess in the kitchen...</p>
+<p>We had a wonderfully wide-ranging chat on note taxonomies, spaced repetition, the limitations of text-based thought. Enjoy, and forgive the mess in the kitchen...</p>
 
 <br />
 
@@ -63,13 +61,14 @@ https://www.youtube.com/watch?v=RXXXHN516qc
 
 ---
 
-# Patterns of Roam
-
+<h1>Patterns of Roam</h1>
 
 <p>The workflows and techniques I covered with Rob are essentially an adapted collection of <a href="https://en.wikipedia.org/wiki/Design_pattern">Design Patterns</a> for personal knowledge management.</p>
 
 <p>They're not "mine," but instead a remixed mashup influenced by <a href="https://andymatuschak.com">Andy Matuschak</a>, <a href="https://malcolmocean.com/">Malcolm Ocean</a>, <a href="https://fortelabs.co/">Tiago Forte</a><Footnote count={2}>See my illustrated <Link to="/basb">Building a Second Brain Notes</Link> for more on Tiago's system in particular</Footnote>, <a href="https://learn.nateliason.com/">Nat Eliason</a>, <a href="http://joelchan.me/">Joel Chan</a>, and many other Roam-esque-thinkers  
 (not all of whom even use Roam).</p>
+
+---
 
 ## Page Prefixes
 
@@ -77,31 +76,79 @@ I have a handful of page prefixes that help me distinguish between page types.
 
 <ul>
     <li><b>B: Books</b></li>
+    <li><b>C: Courses</b></li>
     <li><b>P: Projects</b> –– Collections of tasks that have a specific end date and clear success criteria.</li>
     <li><b>E: Evergreens</b> –– Evergreen notes modelled off <a href="https://notes.andymatuschak.org/Evergreen_notes">Andy's System</a> (similar to Zettles to the Zettlekasten system)</li>
     <li><b>➽ Original Creations</b> –– Things I'm creating that are/will be public at some point. Essays, <Link to="/garden">digital garden notes</Link>, conference talks, video tutorials, and livestream/podcast outlines all fall under this umbrella</li>
-    <li><b>✲ Research Collections</b> –– Large collections of real-world examples and evidence for key concepts. For example, I collect instances of really great visual metaphors under <b>✲ Visual Metaphors</b>.</li>
 </ul>
 
 These are handy for quickly searching for a certain type of note - the prefix lets you quickly scan through all your books/projects/evergreens from just the inline search system
 
 <Image src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1590796137/maggieappleton.com/notes/roam-garden/inlinesearch.png" />
 
-It also means you can create multiple pages with the same title, but of different types.
+<p>It also means you can create multiple pages with the same title, but of different types.</p>
 
-For example, **B: Meat Planet** and **➽ Meat Planet** are two different pages in my database. One is my notes on the book <a href="https://www.ucpress.edu/book/9780520295537/meat-planet">Meat Planet</a>, and the second is a planning and draft-writing space for an <Link to="/meat-planet">illustrated essay I made</Link> that took what I learned from the book and expanded it into an original creation.
+
+<p>
+For example, <b>B: Meat Planet</b> and <b>➽ Meat Planet</b> are two different pages in my database. One is my notes on the book <a href="https://www.ucpress.edu/book/9780520295537/meat-planet">Meat Planet</a>, and the second is a planning and draft-writing space for an <Link to="/meat-planet">illustrated essay I made</Link> that took what I learned from the book and expanded it into an original creation.
+</p>
+
+---
+
+## Keyboard Maestro
+
+<p><a href="https://www.keyboardmaestro.com/main/">Keyboard Maestro</a> is the salt to my digital kitchen. Combining it with anything makes the original better.  This holds true for Roam.  
+
+It's an app that helps you write <b>macros</b> - tiny automated sequences of events on your machine – within a pleasantly visual interface.</p>
+
+<ImageFrame src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1590954520/maggieappleton.com/notes/roam-garden/keyboardmaestro.png" />
+
+This includes opening applications, typing text, clicking buttons, rearranging windows, etc.
+
+Within the context of Roam, I find it handy for three things:
+
+### 1. Capturing Links
+
+Whenever I find an article, academic paper, podcast, or video I want to save, I'm able to hit a specific hotkey that snaps up the page title and URL, then formats it into Roam-friendly markdown link.
+
+<ImageFrame src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1590959288/maggieappleton.com/notes/roam-garden/linkcapture.gif" />
+
+I also have it set to auto-magically add specific tags to the end based on the type of link. So **Ctrl + A** tags it with **#Article**, and **Ctrl + V** tags it with **#Video**, etc.
+
+<br />
+
+### 2. Auto-Opening Windows
+
+I have two hotkeys setup that make opening Roam frictionless. One opens it as a new window, and another opens it as a new tab to the right.
+
+<ImageFrame src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1590958542/maggieappleton.com/notes/roam-garden/quickopen.gif" />
+
+<br />
+
+### 3. Templating
+
+To help keep my data base consistent, I have a set of pre-written templates I can pop into different kinds of pages - daily notes, books, projects, evergreen notes, etc.
+
+These add sets of metadata into the front that make it easy for me to query pages later on.
+
+<ImageFrame src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1590959251/maggieappleton.com/notes/roam-garden/templates.gif" />
+
+You can use any snippet-expander app for this, such as Alfred, or TextExpander.
+
+<Center style={{marginTop: '3em'}}>
+
+### Feel free to grab these macros for yourself:
+
+<p><a noStyle href="https://www.dropbox.com/s/iyx4jhs7vtdlt40/Maggie%27s%20Roam%20Macros.kmmacros?dl=0"><button style={{marginTop: '1em'}}>Download my Roam Macros</button> </a></p>
+
+</Center>
+
+---
 
 <!-- 
 ## Note Taxonomy
 
 Here's a big picture map of my taxonomical landscape.
-
-
-## Keyboard Maestro
-
-Roam is obviously part of my larger digital ecosystem. And <a href="">Keyboard Maestro</a> is a seasoning that goes well with anything.
-
-<p><a noStyle href="https://www.dropbox.com/s/iyx4jhs7vtdlt40/Maggie%27s%20Roam%20Macros.kmmacros?dl=0"><button>Download my Roam Macros</button> </a></p>
  -->
 
 ## Open Note Streams
@@ -150,10 +197,6 @@ The idea is that by the time I finish reading a book, I've already done the majo
 
 ### Writing Inboxes from Twitter to Talks
  -->
-
-
-<ComingSoon />
-
 
 
 <!-- 

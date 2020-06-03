@@ -1,7 +1,10 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { useTheme } from 'components/Theming'
 
 const SimpleCard = props => {
+  const theme = useTheme()
+
   return (
     <div
       css={css({
@@ -19,7 +22,9 @@ const SimpleCard = props => {
           : '0 4px 10px -4px rgba(0,0,0,0.15)',
         ':hover': {
           transform: props.hover ? 'scale(1.015)' : null,
-          borderTop: props.hover ? '2px solid orange' : null,
+          borderTop: props.hover
+            ? `2px solid ${theme.colors.lightOrange}`
+            : null,
           borderRadius: props.hover ? '0px 0px 6px 6px' : null,
           boxShadow: props.hover ? '0 10px 30px -10px rgba(0,0,0,0.15)' : null,
           p: {
