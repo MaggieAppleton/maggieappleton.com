@@ -113,6 +113,10 @@ const getGlobalStyles = theme => {
         transition: all 400ms;
       }
     }
+    .twitter-tweet, .twitter-tweet-rendered {
+      margin: 40px auto;
+      align-content: center;
+    }
     pre {
       max-width: 660px;
       margin: 0.6em auto;

@@ -14,7 +14,7 @@ const SimpleCard = props => {
           : null,
         margin: '0 auto',
         marginBottom: '2em',
-        padding: '1.4em 1em 2.4em',
+        padding: '1.4em 1.6em 2.4em',
         width: props.width ? props.width : '100%',
         borderRadius: '6px',
         boxShadow: props.hover
