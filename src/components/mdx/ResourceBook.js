@@ -20,6 +20,7 @@ export default function ResourceBook(props) {
             },
             transition: 'all 350ms ease',
           })}
+          {...props}
         >
           <div
             css={css({
@@ -35,6 +36,7 @@ export default function ResourceBook(props) {
                 fontSize: '1.5em',
                 marginBottom: '16px',
                 lineHeight: '1.2em',
+                marginTop: '0.4em',
               },
               h5: {
                 fontSize: '0.9em',
@@ -48,7 +50,7 @@ export default function ResourceBook(props) {
               },
               '.dataBlock': {
                 paddingLeft: '20px',
-                alignSelf: 'center',
+                alignSelf: 'top',
               },
               '.description': {
                 lineHeight: '1.4em',
