@@ -20,6 +20,7 @@ export default function ResourceBook(props) {
             },
             transition: 'all 350ms ease',
           })}
+          {...props}
         >
           <div
             css={css({
