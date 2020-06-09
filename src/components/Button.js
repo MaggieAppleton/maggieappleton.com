@@ -15,7 +15,7 @@ const Button = ({ to, children, secondary, ...restProps }) => {
     transition: 'all 150ms ease',
   })
   return to ? (
-    <Link to={to} css={styles} {...restProps}>
+    <Link to={`/${props.to}`} css={styles} {...restProps}>
       {children}
     </Link>
   ) : (

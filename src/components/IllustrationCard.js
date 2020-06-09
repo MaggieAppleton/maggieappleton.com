@@ -14,7 +14,7 @@ const IllustrationCard = props => {
       css={css`
         font-family: ${fonts.walsheimLight};
       `}
-      to={props.slug}
+      to={`/${props.slug}`}
       aria-label={`View ${props.title}`}
     >
       <div
