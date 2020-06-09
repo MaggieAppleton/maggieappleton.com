@@ -46,7 +46,7 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
           <div className="essaysGrid">
             {essaysQuery.edges.map(({ node: essay }) => (
               <Link
-                to={essay.frontmatter.slug}
+                to={`/${essay.frontmatter.slug}`}
                 aria-label={`View ${essay.frontmatter.title}`}
               >
                 <SimpleCard

@@ -43,7 +43,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           <div className="notesGrid">
             {notesQuery.edges.map(({ node: note }) => (
               <Link
-                to={note.frontmatter.slug}
+                to={`/${note.frontmatter.slug}`}
                 aria-label={`View ${note.frontmatter.title}`}
               >
                 <SimpleCard
