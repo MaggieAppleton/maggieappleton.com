@@ -126,7 +126,7 @@ export const SmallCenter = props => {
         [bpMinMD]: { maxWidth: '70%' },
         maxWidth: '100%',
         margin: '0 auto',
-        'h1, h2, h3, h4, p': {
+        'h1, h2, h3, h4, h5, h6, p': {
           textAlign: 'center',
         },
       })}
