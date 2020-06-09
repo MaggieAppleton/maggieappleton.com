@@ -19,7 +19,7 @@ const ReadNext = props => {
         },
       })}
     >
-      <Link to="drawinginvisibles1">
+      <Link to="/drawinginvisibles1">
         <h2>{props.title}</h2>
       </Link>
       <p>{props.subtitle}</p>
