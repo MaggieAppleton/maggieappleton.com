@@ -16,7 +16,7 @@ module.exports = {
   userTwitter: '@mappletons', // Twitter Username
   ogSiteName: 'Maggie Appleton', // Facebook Site Name
   ogLanguage: 'en_US',
-  googleAnalyticsID: '',
+  googleAnalyticsID: 'UA-45097160-1',
 
   // Manifest and Progress color
   themeColor: '#FD9C4B',
