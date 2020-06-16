@@ -86,7 +86,7 @@ export const GardenPageQuery = graphql`
         frontmatter: { type: { eq: "note" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 24
+      limit: 32
     ) {
       edges {
         node {
