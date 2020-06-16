@@ -110,7 +110,7 @@ export const Center = styled.p`
   }
 `
 export const Subtext = styled.p`
-  text-align: left;
+  text-align: ${props => props.center ? 'center' : 'left'};
   max-width: 660px;
   margin: 0 auto;
   line-height: 1.6em;
