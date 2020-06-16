@@ -2,15 +2,17 @@
 title: 'The Pattern Language of Project Xanadu'
 description: ""
 slug: xanadu-patterns
-date: 2020-06-09
-published: false
+date: 2020-06-16
+published: true
 cover: null
 type: ['note']
 ---
 
+import Video from '../../../src/components/Video.js'
+
 I've mentioned <a href="https://en.wikipedia.org/wiki/Project_Xanadu">Project Xanadu</a> before in my note on the <a noTip noStyle href="/bidirectionals">History of Bi-Directional Links</a>.
 
-It's infamous in the technology community as a sixty-year project that <a href="">never quite launched</a>.  An infinite tale of unfulfilled promises and dashed dreams. <Footnote count={1}>There is however a working demo with a few of its features <a href="http://xanadu.com/xanademos/MoeJusteOrigins.html">here</a> (takes a minute to load).</Footnote>
+It's infamous in the technology community as a sixty-year project that <a href="https://www.wired.com/1995/06/xanadu/">never quite launched</a>.  An infinite tale of unfulfilled promises and dashed dreams. <Footnote count={1}>There is however a working demo with a few of its features <a href="http://xanadu.com/xanademos/MoeJusteOrigins.html">here</a> (takes a minute to load).</Footnote>
 
 But Xanadu's failure to mature into a widespread, useable commercial product is perhaps the least interesting thing about it.
 
@@ -39,40 +41,80 @@ They're deeply relevant to problems we're wrestling with today.
 
 Curiously enough, many of these patterns are showing up in modern manifestations. 
 
-Blog themes built with Gatsby, TiddlyWiki, and Jekyll are beginning to look an awful lot like those original Xanadu demos and prototypes. Indie projects like <a href="">Roam</a>, <a href="">OneGraph</a>, and <a href="">Hypothes.is</a> make some of its core features possible for the first time.
+Blog themes built with <a href="https://github.com/aengusmcmillin/gatsby-theme-brain">Gatsby</a>, <a href="https://giffmex.org/stroll/stroll.html">TiddlyWiki</a>, and <a href="https://simply-jekyll.netlify.app/index.html">Jekyll</a> are beginning to look an awful lot like those original Xanadu demos and prototypes.
+
+Indie projects like <a href="https://roamresearch.com/">Roam</a>, <a href="https://www.onegraph.com/">OneGraph</a>, and <a href="https://web.hypothes.is/">Hypothes.is</a> make some of its core features possible for the first time.
 
 We're finding ways to backwards engineer the original spirit of Xanadu into the existing structures of the World Wide Web. 
 
-
 # The Patterns
-
 
 ## 1. Visible Links
 
-Ted Nelson, the creator of Xanadu, has many gripes.
+Ted Nelson, the inventor of Xanadu, has many gripes.
 One in particular is what he calls "jump links" - the very kind we all use around the web today.
 
 Clicking a hyperlink is a bit of a gamble.  It _jumps_ you somewhere unknown. You find out when you get there.
 
 Nelson wasn't keen on this surprise version of linking.  _Visibility_ of where the link connected to was essential in Xanadu.
 
-{xanadu link system}
+<Subtext>
 
-Link previews that contain excerpts of the destination are becoming increasingly popular. You get to see where you're headed to before you decide to jump.
+One of the original UI mockups for a "Xanadoc" with visible links between text blocks
 
-Wikipedia added them in 2018 <Footnote count={3}>[Wikipedia page previews announcement](https://blog.wikimedia.org/2018/04/18/how-we-designed-page-previews-for-wikipedia/)</Footnote>
+</Subtext>
 
-{wikipedia screenshot}
+<ImageFrame src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_960/v1589545780/maggieappleton.com/notes/xanadu.png" />
 
-Josh Comeau
+<br />
 
-<p>One recent example is the newly launched <a href="https://www.connectedpapers.com/">Connected Papers</a> - a visual graph builder for academic paper citations and references</p>
+Link previews that contain excerpts of the destination page hint at this solution. You get to see where you're headed to before you decide to jump.
 
-To see it in action, you can take a look at this graph for one of Nelson's 2007 papers on hypertext - <a href="https://www.connectedpapers.com/main/5712330a600c8ca2bd2e3d24a6c6ddd651c2f1b9/Back-to-the-future-hypertext-the-way-it-used-to-be/graph">Back to the Future</a>.
+They're fairly common at this point. The <a href="https://ogp.me/">Open Graph Protocol</a> helped fuel this pattern by making it easy to generate preview cards in social media feeds.
 
-Being able to form different views of data and browse connections in various forms
+Wikipedia added hover previews in 2018 <Footnote count={3}><a href="https://blog.wikimedia.org/2018/04/18/how-we-designed-page-previews-for-wikipedia/">Wikipedia page previews announcement</a></Footnote>
 
-## 2. Bi-Directional Links 
+<ImageFrame width="90%" src="https:///res-console.cloudinary.com/dg3gyk0gu/thumbnails/transform/v1/image/upload//v1592343673/bWFnZ2llYXBwbGV0b24uY29tL25vdGVzL1NjcmVlbnNob3RfLV8yMDIwLTA2LTE2XzIwLjQ5LjQ0/drilldown" />
+
+<br />
+
+<p>Among the <a href="https://github.com/MaggieAppleton/digital-gardeners">digital gardening</a> community, creators like <a href="https://notes.andymatuschak.org/">Andy Matuschak</a> have popularised the pattern on personal websites and blogs.</p>
+
+<ImageFrame src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1592343501/maggieappleton.com/notes/Screenshot_2020-06-16_at_22.38.06.png" />
+
+<Subtext center> Andy's notes system featuring link previews </Subtext>
+
+<br />
+
+<p>Previews aren't quite the same as physical links between parts of a page though. You lose the fine-grained associations between specific paragraphs and lines.</p>
+
+<p>A few members of <a href="https://twitter.com/hashtag/roamcult">#roamcult</a> have been leaning into this association with Xanadu, and taking it to the next level. <a href="https://azlen.me/">Azlen Elza</a> recently managed to craft up this crazy demo inside of their Roam Research database:</p>
+
+<Video videoSrcURL="https://res.cloudinary.com/dg3gyk0gu/video/upload/v1592342310/maggieappleton.com/notes/rHvmA3mqgnnw38qA.mp4" />
+
+https://twitter.com/azlenelza/status/1272600877493137408?s=20
+
+
+---
+
+## 2. Parallel Documents
+
+Azlen's Zenith theme
+Screenshot of your setup
+
+Simply arranging your browser windows side by side is a crude form of this. But you still can't drag elements between them, or have them cross over.
+
+
+
+## 3. Transclusion
+
+Closely related to Visible links is Transclusion - 
+
+Quotebacks
+
+
+
+## 4. Bi-directonal Links
 
 In addition to being visible pathways, Nelson imagined a system where links would work *bi-directionally*. If you linked to a piece of text, it would know. Ideally, that connection would also be visible to the reader.
 
@@ -91,21 +133,6 @@ Numerous Gatsby, Tiddly Wiki, and Jekyll themes make this possible on personal b
 WebMentions
 
 {web mentions screenshots}
-
-## 3. Transclusion
-
-Closely related to Visible links is Transclusion - 
-
-Quotebacks
-
-
-
-## 4. Parallel Documents
-
-Azlen's Zenith theme
-Screenshot of your setup
-
-Simply arranging your browser windows side by side is a crude form of this. But you still can't drag elements between them, or have them cross over.
 
 ## 5. Transclusion
 
@@ -138,24 +165,42 @@ Coil
 
 
 
-The original Xanadu vision was ambitious.  Unreasonably ambitious.  
-The above feature list is a small selection.  
-Perhaps you sense the problem.
+The original Xanadu vision was ambitious.  Unreasonably ambitious. The above feature list is a small selection.  
 
-Instead, what we're seeing is the ad-hoc, decentralised manifestation of Xanadu in bits and pieces.
+Perhaps you sense the problem.  
+Solving all the things all at once gets tricky.
+
+Instead, what we're now seeing is the ad-hoc, decentralised manifestation of Xanadu in bits and pieces.
 
 People are building Xanadu without knowing what Xanadu is.  
 Which is the essence of a good pattern language; true patterns evolve naturally within systems, and are found rather than crafted. <Footnote count={4}>Christopher Alexander's <a href="">The Nature of Order</a> goes deep on this principle</Footnote>
 
-One of the largest efforts is led by our Web OG Tim Berners-Lee himself with <a href="">Linked Data</a> and the <a href="">Semantic Web</a>.  
+In the grand scheme of things, 60 years isn't an extraordinary amount of time to spend solving a problem. It's about 0.09% of history since humans first started creating symbolic cultural artefacts <Footnote count={5}>Using <a href="https://en.wikipedia.org/wiki/Cave_of_La_Pasiega">La Pasiega Cave</a> in Spain as a relative marker - 65,000 y.a.</Footnote>
+
+Who knows, maybe Xanadu can still happen (if you clap for it) ✨
+
+<br />
+
+<Image width="70%" src="https://3.bp.blogspot.com/-s2BU-a7w2bc/VuNwBkwNSSI/AAAAAAAARDg/P_UuFud4PmIfKQoJLq4EHYxVL6YL8TQsw/s1600/XANADU.jpg" />
+
+<!-- One of the largest efforts is led by our Web OG Tim Berners-Lee himself with <a href="">Linked Data</a> and the <a href="">Semantic Web</a>.  
 While Tim and Ted have historically <a href="">had a few disagreements</a>, much of Tim's recent work would make the original Xanadu ideals possible at scale.
-It's fitting that our original Web creator Tim is the one working on making these design real and usable.
+It's fitting that our original Web creator Tim is the one working on making these design real and usable. -->
+<!-- 
+
 
 ---
+
 
 #### References & Further Reading
 
 
+<p>One recent example is the newly launched <a href="https://www.connectedpapers.com/">Connected Papers</a> - a visual graph builder for academic paper citations and references</p>
+
+To see it in action, you can take a look at this graph for one of Nelson's 2007 papers on hypertext - <a href="https://www.connectedpapers.com/main/5712330a600c8ca2bd2e3d24a6c6ddd651c2f1b9/Back-to-the-future-hypertext-the-way-it-used-to-be/graph">Back to the Future</a>.
+
+Being able to form different views of data and browse connections in various forms
 
 
 
+ -->
