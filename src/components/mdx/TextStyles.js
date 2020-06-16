@@ -116,7 +116,6 @@ export const Subtext = styled.p`
   line-height: 1.6em;
   font-size: 0.8em;
   margin-top: 0.8em;
-  align-items: flex-start;
 `
 
 export const SmallCenter = props => {
