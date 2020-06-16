@@ -4,7 +4,7 @@ import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
 export const Image = styled.img`
-  max-width: 100%;
+  max-width: ${props => props.width ? props.width : '100%'};
   display: flex;
   align-self: center;
   margin: 0 auto;
@@ -61,6 +61,7 @@ export const ImageFrame = props => {
     <div
       css={css({
         img: {
+          width: props.width || '100%',
           marginBottom: '1.6em',
           marginTop: '1.6em',
           border: '1px solid #e7eef3',
