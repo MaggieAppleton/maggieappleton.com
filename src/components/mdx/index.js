@@ -9,6 +9,7 @@ import Tooltip from './Tooltip'
 import TipLink from './TipLink'
 import NoteSidebar from './NoteSidebar'
 import SimpleCard from '../SimpleCard'
+import LinkCard from './LinkCard'
 import { ComingSoon } from './ComingSoon'
 import {
   Divider,
@@ -80,4 +81,5 @@ export default {
   ReferenceBlock: props => <ReferenceBlock {...props} />,
   Footnote: props => <Footnote {...props} />,
   ComingSoon: props => <ComingSoon {...props} />,
+  LinkCard: props => <LinkCard {...props} />
 }
