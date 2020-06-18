@@ -98,6 +98,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
+    'gatsby-plugin-instagram-embed',
     'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
