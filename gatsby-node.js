@@ -37,6 +37,7 @@ exports.createPages = ({ actions, graphql }) => {
               title
               slug
               date
+              growthStage
             }
           }
         }
@@ -304,6 +305,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'isPost',
       node,
       value: true,
+    })
+
+    createNodeField({
+      name: 'growthStage',
+      node,
+      value: node.frontmatter.growthStage,
     })
   }
 }

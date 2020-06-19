@@ -9,7 +9,7 @@ import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
 import { useTheme } from 'components/Theming'
-import { bpMaxSM } from '../lib/breakpoints'
+import { bpMaxSM, bpMinSM } from '../lib/breakpoints'
 import PreviousNext from '../components/PreviousNext'
 import { BacklinkItem, BacklinksSection } from '../components/BacklinksSection'
 
@@ -20,7 +20,7 @@ export default function Note({
   const date = mdx.frontmatter.date
   const title = mdx.frontmatter.title
   // const topics = mdx.frontmatter.topics
-  // const growthStage = mdx.frontmatter.growthStage
+  const growthStage = mdx.frontmatter.growthStage
   const theme = useTheme()
 
   return (
@@ -28,54 +28,66 @@ export default function Note({
       <SEO frontmatter={mdx.frontmatter} isNotePost />
       <Container
         css={css`
-          margin: 0 auto;
-          max-width: 900px;
+          max-width: 940px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;
           }
         `}
       >
+        <div
+          className="headerBlock"
+          css={css`
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: 840px;
+            margin: 0 auto;
+        `}>
         <h1
           css={css`
-            text-align: center;
-            margin-bottom: 0.6em;
+            text-align: left;
+            font-size: 3em;
+            padding: 0 0 0.4em 0;
           `}
         >
           {title}
         </h1>
         <div
           css={css`
-            display: flex;
-            justify-content: center;
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 1em;
             h6 {
+              margin: 0;
+              border: 1px solid ${theme.colors.lightestGrey};
               text-align: center;
-              font-family: ${fonts.regularSans}, sans-serif;
-              font-weight: normal;
-              padding-bottom: 12px;
-              border-bottom: 1px solid ${theme.colors.lightGrey};
-              margin-bottom: 3em;
+              align-self: center;
+              font-family: ${fonts.regularSans}, 
+              sans-serif;
+              text-transform: capitalize;
+              flex-grow: 1;
+              padding: 0.4em 0.8em;
+            }
+            hr {
+              margin: 0;
+              background: ${theme.colors.lightestGrey};
+              align-self: center;
+              border: none;
+              flex-grow: 50;
+              ${bpMaxSM} {
+              display: none;
+              }
             }
           `}
         >
           {date && <h6>Last tended on {date}</h6>}
+          {growthStage && <h6><span>🌱</span> {growthStage}</h6>}
+
+        <hr />
         </div>
-        {/* <div
-          css={css`
-            display: flex;
-            justify-content: center;
-            h6 {
-              text-align: center;
-              opacity: 0.8;
-              font-family: ${fonts.regularSans}, sans-serif;
-              font-weight: normal;
-              letter-spacing: 0.05em;
-            }
-          `}
-        >
-          {growthStage && <h6>{growthStage}</h6>}
         </div>
-        <br /> */}
+        <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {/* Next and Previous */}
         <PreviousNext
@@ -129,6 +141,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         topics
+        growthStage
       }
       body
     }
