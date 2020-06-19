@@ -41,7 +41,7 @@ export default function Note({
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            max-width: 880px;
+            max-width: 840px;
             margin: 0 auto;
         `}>
         <h1
@@ -56,22 +56,34 @@ export default function Note({
         <div
           css={css`
           display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 1em;
             h6 {
-              border: 1px solid;
-              text-align: left;
-              font-family: ${fonts.regularSans}, sans-serif;
-              font-weight: normal;
-              padding-bottom: 12px;
+              margin: 0;
+              border-left: 1px solid ${theme.colors.lightGrey};
+              text-align: center;
+              align-self: center;
+              font-family: ${fonts.regularSans}, 
+              sans-serif;
+              text-transform: capitalize;
+              flex-grow: 1;
+              padding: 0.4em 0.8em;
             }
             hr {
-              background: black;
-              min-width: 60%;
+              margin: 0;
+              background: ${theme.colors.lightGrey};
+              align-self: center;
+              border: none;
+              flex-grow: 50;
+              ${bpMaxSM} {
+              display: none;
+              }
             }
           `}
         >
+        <hr />
           {date && <h6>Last tended on {date}</h6>}
-          {growthStage && <h6>{growthStage}</h6>}
-          <hr />
+          {growthStage && <h6><span>🌱</span> {growthStage}</h6>}
         </div>
         </div>
         <br />
