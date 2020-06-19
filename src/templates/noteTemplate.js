@@ -9,7 +9,7 @@ import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
 import { useTheme } from 'components/Theming'
-import { bpMaxSM } from '../lib/breakpoints'
+import { bpMaxSM, bpMinSM } from '../lib/breakpoints'
 import PreviousNext from '../components/PreviousNext'
 import { BacklinkItem, BacklinksSection } from '../components/BacklinksSection'
 
@@ -60,7 +60,7 @@ export default function Note({
           margin-bottom: 1em;
             h6 {
               margin: 0;
-              border-left: 1px solid ${theme.colors.lightGrey};
+              border: 1px solid ${theme.colors.lightestGrey};
               text-align: center;
               align-self: center;
               font-family: ${fonts.regularSans}, 
@@ -71,7 +71,7 @@ export default function Note({
             }
             hr {
               margin: 0;
-              background: ${theme.colors.lightGrey};
+              background: ${theme.colors.lightestGrey};
               align-self: center;
               border: none;
               flex-grow: 50;
@@ -81,9 +81,10 @@ export default function Note({
             }
           `}
         >
-        <hr />
           {date && <h6>Last tended on {date}</h6>}
           {growthStage && <h6><span>🌱</span> {growthStage}</h6>}
+
+        <hr />
         </div>
         </div>
         <br />
