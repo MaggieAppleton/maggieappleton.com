@@ -30,6 +30,7 @@ export default function Book({
           margin: 0 auto;
           margin-top: 2em;
           display: flex;
+          max-width: 880px;
           flex-direction: column;
           .breadcrumb {
             margin: 0 auto;
@@ -44,7 +45,6 @@ export default function Book({
               flex-wrap: wrap;
             }
             margin-bottom: 2em;
-            width: 75%;
             margin: 0 auto;
             align-items: center;
             margin-bottom: 2em;
