@@ -47,7 +47,7 @@ export default function Note({
         <h1
           css={css`
             text-align: left;
-            font-size: 2.8em;
+            font-size: 3em;
             padding: 0 0 0.4em 0;
           `}
         >
