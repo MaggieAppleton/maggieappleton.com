@@ -9,9 +9,9 @@ import { fonts } from '../lib/typography'
 import Share from '../components/Share'
 import config from '../../config/website'
 import { useTheme } from 'components/Theming'
-import { bpMaxSM, bpMinSM } from '../lib/breakpoints'
+import { bpMaxSM } from '../lib/breakpoints'
 import PreviousNext from '../components/PreviousNext'
-import { BacklinkItem, BacklinksSection } from '../components/BacklinksSection'
+// import { BacklinkItem, BacklinksSection } from '../components/BacklinksSection'
 
 export default function Note({
   data: { site, mdx },
@@ -82,7 +82,7 @@ export default function Note({
           `}
         >
           {date && <h6>Last tended on {date}</h6>}
-          {growthStage && <h6><span>🌱</span> {growthStage}</h6>}
+          {growthStage && <h6><span role="img" aria-label="a small seedling">🌱</span> {growthStage}</h6>}
 
         <hr />
         </div>
