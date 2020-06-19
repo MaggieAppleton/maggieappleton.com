@@ -28,52 +28,51 @@ export default function Note({
       <SEO frontmatter={mdx.frontmatter} isNotePost />
       <Container
         css={css`
-          margin: 0 auto;
-          max-width: 900px;
+          max-width: 940px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;
           }
         `}
       >
+        <div
+          className="headerBlock"
+          css={css`
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            max-width: 880px;
+            margin: 0 auto;
+        `}>
         <h1
           css={css`
-            text-align: center;
-            margin-bottom: 0.6em;
+            text-align: left;
+            font-size: 2.8em;
+            padding: 0 0 0.4em 0;
           `}
         >
           {title}
         </h1>
         <div
           css={css`
-            display: flex;
-            justify-content: center;
+          display: flex;
             h6 {
-              text-align: center;
+              border: 1px solid;
+              text-align: left;
               font-family: ${fonts.regularSans}, sans-serif;
               font-weight: normal;
               padding-bottom: 12px;
-              border-bottom: 1px solid ${theme.colors.lightGrey};
-              margin-bottom: 3em;
+            }
+            hr {
+              background: black;
+              min-width: 60%;
             }
           `}
         >
           {date && <h6>Last tended on {date}</h6>}
-        </div>
-        <div
-          css={css`
-            display: flex;
-            justify-content: center;
-            h6 {
-              text-align: center;
-              opacity: 0.8;
-              font-family: ${fonts.regularSans}, sans-serif;
-              font-weight: normal;
-              letter-spacing: 0.05em;
-            }
-          `}
-        >
           {growthStage && <h6>{growthStage}</h6>}
+          <hr />
+        </div>
         </div>
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
