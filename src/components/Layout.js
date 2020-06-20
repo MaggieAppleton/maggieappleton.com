@@ -1,12 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import { MDXProvider } from '@mdx-js/react'
 import { lighten, darken } from 'polished'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider, themes } from './Theming'
 import { bpMaxSM } from '../lib/breakpoints'
-import mdxComponents from './mdx'
 import Header from './Header/'
 import ResetStyles from '../lib/reset'
 import { fonts, rhythm } from '../lib/typography'
@@ -200,9 +198,7 @@ export default ({
           {/* <script src="https://hypothes.is/embed.js" async></script> */}
         </Helmet>
         <Header />
-        <MDXProvider components={mdxComponents}>
-          <Fragment>{children}</Fragment>
-        </MDXProvider>
+        <Fragment>{children}</Fragment>
         {!noFooter && (
           <Footer
             author={site.siteMetadata.author.name}
