@@ -16,6 +16,7 @@ const Share = ({ url, title, twitterHandle }) => {
         font-family: ${fonts.walsheim};
         font-size: 90%;
         transition: all 0.5s ease-in-out;
+        margin-top: 2em;
         div {
           margin-right: 20px;
           cursor: pointer;

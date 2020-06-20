@@ -248,10 +248,10 @@ export default function Index({
                       css={css`
                         font-family: ${fonts.walsheimLight};
                       `}
-                      to={note.frontmatter.slug}
-                      aria-label={`View ${note.frontmatter.title}`}
+                      to={note.childMarkdownRemark.frontmatter.slug}
+                      aria-label={`View ${note.title}`}
                     >
-                      {note.frontmatter.title}
+                      {note.title}
                     </Link>
                   </h4>
                 </SimpleCard>
@@ -411,31 +411,15 @@ export const pageQuery = graphql`
       }
     }
 
-    notesQuery: allMdx(
-      filter: {
-        frontmatter: { type: { eq: "note" }, published: { ne: false } }
-      }
-      sort: { order: DESC, fields: frontmatter___date }
-      limit: 6
-    ) {
+    notesQuery: allBrainNote(sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date} limit: 5) {
       edges {
         node {
           id
-          fields {
-            title
-            slug
-            date
-          }
-          parent {
-            ... on File {
-              sourceInstanceName
+          title
+          childMarkdownRemark {
+            frontmatter {
+              slug
             }
-          }
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            description
-            slug
           }
         }
       }
