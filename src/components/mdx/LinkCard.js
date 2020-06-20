@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 
 const LinkCard = ({ title, link, author, ...props }) => {
   return (
-    <a noStyle href={link}>
+    <a noTip href={link}>
       <div
         css={css({
           border: '1px solid rgba(52, 61, 68, 0.05)',
