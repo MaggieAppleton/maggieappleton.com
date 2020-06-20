@@ -43,7 +43,6 @@ const LinkTooltip = forwardRef((props, ref) => {
         padding: 0.2em;
         font-size: 0.75em;
       `}
-      xw
     >
       <span ref={ref}>{props.children}</span>
     </Tippy>
@@ -75,7 +74,7 @@ const TipLink = ({ noTip, children, href, ...other }) => {
         {children}
       </a>
     )
-  }
+      }
 
   return (
     <a
