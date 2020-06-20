@@ -43,8 +43,8 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           <div className="notesGrid">
             {notesQuery.edges.map(({ node: note }) => (
               <Link
-                to={`/${note.frontmatter.slug}`}
-                aria-label={`View ${note.frontmatter.title}`}
+                to={`/${note.childMarkdownRemark.frontmatter.slug}`}
+                aria-label={`View ${note.title}`}
               >
                 <SimpleCard
                   key={note.id}
@@ -59,7 +59,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     }
                   `}
                 >
-                  <h4>{note.frontmatter.title}</h4>
+                  <h4>{note.title}</h4>
                 </SimpleCard>
               </Link>
             ))}
@@ -81,33 +81,17 @@ export const GardenPageQuery = graphql`
       }
     }
 
-    notesQuery: allMdx(
-      filter: {
-        frontmatter: { type: { eq: "note" }, published: { ne: false } }
-      }
-      sort: { order: DESC, fields: frontmatter___date }
-      limit: 32
-    ) {
+    notesQuery: allBrainNote(sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}) {
       edges {
         node {
-          excerpt(pruneLength: 120)
           id
-          fields {
-            title
-            slug
-            date
-          }
-          parent {
-            ... on File {
-              sourceInstanceName
+          title
+          childMarkdownRemark {
+            frontmatter {
+              growthStage
+              topics
+              slug
             }
-          }
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            description
-            slug
-            topics
           }
         }
       }
