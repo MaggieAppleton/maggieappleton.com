@@ -1,3 +1,4 @@
+// ------------- General Components--------------- //
 import React from 'react'
 import InnerLink from './InnerLink'
 import Title from './Title'
@@ -41,9 +42,17 @@ import Footnote from './Footnote'
 import {
   ReferenceItem,
   ReferenceBlock,
-} from '../../../src/components/mdx/References.js'
+} from './References'
+import { Arrow } from './Arrow'
+// ------------- Single Use Components--------------- //
+import { Tools, Hardware } from './SingleUse/Tools'
 
+
+
+// ------------- Exports--------------- //
 export default {
+  // ------------- General Components--------------- //
+
   h1: props => <Title {...props} />,
   h2: props => <Subtitle {...props} />,
   h3: props => <H3 {...props} />,
@@ -81,5 +90,9 @@ export default {
   ReferenceBlock: props => <ReferenceBlock {...props} />,
   Footnote: props => <Footnote {...props} />,
   ComingSoon: props => <ComingSoon {...props} />,
-  LinkCard: props => <LinkCard {...props} />
+  LinkCard: props => <LinkCard {...props} />,
+  Arrow: Arrow,
+  // ------------- Single Use Components--------------- //
+  Tools: Tools,
+  Hardware: Hardware,
 }
