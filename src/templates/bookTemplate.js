@@ -11,6 +11,7 @@ import Share from '../components/Share'
 import config from '../../config/website'
 import PreviousNext from '../components/PreviousNext'
 import { bpMaxSM } from '../lib/breakpoints'
+import DefaultMdxComponentsProvider from '../components/mdx/DefaultProvider'
 
 export default function Book({
   data: { site, mdx },
@@ -93,7 +94,9 @@ export default function Book({
           </div>
         </div>
         <br />
-        <MDXRenderer>{mdx.body}</MDXRenderer>
+        <DefaultMdxComponentsProvider>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </DefaultMdxComponentsProvider>
       </Container>
       {/* Next and Previous */}
       <PreviousNext
