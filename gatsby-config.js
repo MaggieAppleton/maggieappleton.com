@@ -98,7 +98,6 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
-    'gatsby-plugin-instagram-embed',
     'gatsby-plugin-twitter',
     'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
@@ -197,5 +196,14 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
+    {
+      resolve: `@aengusm/gatsby-theme-brain`,
+      options: {
+        mdxOtherwiseConfigured: true,
+        notesDirectory: `content/notes/`,
+        rootPath: `/`,
+        hideDoubleBrackets: true,
+      },
+    },
   ],
 }
