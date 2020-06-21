@@ -2,7 +2,6 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from 'components/Theming'
 import { fonts } from '../lib/typography'
-// import { rhythm } from '../lib/typography'
 
 export const ReferenceItem = ({ pageTitle, pageLink, excerpt }) => {
   const theme = useTheme()
@@ -12,7 +11,7 @@ export const ReferenceItem = ({ pageTitle, pageLink, excerpt }) => {
         css={css({
           color: theme.colors.black,
           padding: '1em 1.4em',
-          fontSize: '75%',
+          fontSize: '78%',
           opacity: '80%',
           border: `1px solid ${theme.colors.lightestGrey}`,
           borderRadius: '6px',
@@ -39,10 +38,13 @@ export const ReferenceItem = ({ pageTitle, pageLink, excerpt }) => {
 }
 
 export const ReferenceBlock = ({ references }) => {
+  const theme = useTheme()
   return (
     <>
     <div
       css={css({
+        borderTop: `1px solid ${theme.colors.lightestGrey}`,
+        paddingTop: '3em',
         margin: '4em auto 3em',
         maxWidth: '800px',
         h5: {
