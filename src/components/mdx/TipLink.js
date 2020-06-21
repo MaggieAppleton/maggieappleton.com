@@ -11,6 +11,7 @@ const LinkTooltip = forwardRef((props, ref) => {
   if (props.bidirectionalLinkPreviews[previewKey]) {
     return (
       <Tippy
+      inlinePositioning={true}
         duration="600"
         distance="2"
         theme="light"
@@ -24,13 +25,19 @@ const LinkTooltip = forwardRef((props, ref) => {
           font-size: 0.75em;
         `}
       >
-        <span ref={ref}>{props.children}</span>
+        <span css={css`
+          word-break: break-all;
+          word-wrap: break-word;
+          overflow: visible;
+          white-space: pre;
+        `} ref={ref}>{props.children}</span>
       </Tippy>
     )
   }
 
   return (
     <Tippy
+      inlinePositioning={true}
       duration="600"
       distance="2"
       theme="light"
@@ -44,7 +51,12 @@ const LinkTooltip = forwardRef((props, ref) => {
         font-size: 0.75em;
       `}
     >
-      <span ref={ref}>{props.children}</span>
+      <span css={css`
+          word-break: break-all;
+          word-wrap: break-word;
+          overflow: visible;
+          white-space: pre;
+        `} ref={ref}>{props.children}</span>
     </Tippy>
   )
 })
@@ -84,10 +96,10 @@ const TipLink = ({ noTip, children, href, ...other }) => {
         borderRadius: '4px',
         lineHeight: '1em',
         transition: 'all 0.6s ease',
+        padding: '5px',
         ':hover, :focus': {
           background: `${theme.colors.lightBlue}`,
           color: 'white',
-          padding: '6px',
         },
       })}
       target="_blank"
