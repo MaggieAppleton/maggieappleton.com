@@ -35,7 +35,7 @@ export const query = graphql`
         title
         slug
         childMdx {
-          excerpt(pruneLength: 350)
+          excerpt(pruneLength: 280)
         }
       }
     }
