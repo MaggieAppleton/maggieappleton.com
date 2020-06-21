@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-export const ReferenceBlock = ({ children }) => {
+export const ResearchBlock = ({ children }) => {
   return (
     <div
       css={css`
@@ -30,7 +30,7 @@ export const ReferenceBlock = ({ children }) => {
   )
 }
 
-export const ReferenceItem = ({ title, link, author }) => {
+export const ResearchItem = ({ title, link, author }) => {
   return (
     <div>
       <a href={link}>

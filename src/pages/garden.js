@@ -53,7 +53,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     width: 260px;
                     margin-right: 1em;
                     margin-bottom: 1em;
-                    padding: 1.4em;
+                    padding: 1em 1.2em;
                     h4 {
                       margin: 0;
                     }

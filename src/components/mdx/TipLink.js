@@ -13,7 +13,6 @@ const LinkTooltip = forwardRef((props, ref) => {
       <Tippy
       inlinePositioning={true}
         duration="600"
-        distance="2"
         theme="light"
         arrow={true}
         interactive={true}
@@ -39,7 +38,6 @@ const LinkTooltip = forwardRef((props, ref) => {
     <Tippy
       inlinePositioning={true}
       duration="600"
-      distance="2"
       theme="light"
       arrow={true}
       interactive={true}

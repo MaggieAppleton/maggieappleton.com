@@ -1,10 +1,11 @@
 import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Tippy from '@tippyjs/react'
 import 'tippy.js/animations/shift-away.css'
 import Note from '../../../components/Note'
 import components from '../../../components/mdx'
+import { ReferenceBlock, ReferenceItem } from '../../../components/ReferenceBlock'
+
 
 const BrainNote = ({ note }) => {
 
@@ -31,24 +32,13 @@ const BrainNote = ({ note }) => {
   // If the inbound note (eg. notes that point TO this note) is NOT null, map each inbound note's contents to a list item that links to the source and shows a preview of the HTML. This list item is assigned to the variable "references"
   //These are the notes that will show up in the references block
       // Turn this into a component
-  if (note.inboundReferencePreviews != null) {
-    references = note.inboundReferencePreviews.map(ref => (
-      <li>
-        <a href={ref.source}>{ref.source}</a>
-        <br />
-        <div dangerouslySetInnerHTML={{ __html: ref.previewHtml }} />
-      </li>
-    ))
+  if (note.inboundReferenceNotes != null) {
+    references = note.inboundReferenceNotes.map(ref => (<ReferenceItem pageLink={ref.slug} pageTitle={ref.title} excerpt={ref.childMdx.excerpt} />))
 
     // If the number of inbound reference notes is longer than 0 list items, render a Reference Block.
     // Turn this into a component
     if (references.length > 0) {
-      referenceBlock = (
-        <>
-          <h2>Linked References</h2>
-          <ul>{references}</ul>
-        </>
-      )
+      referenceBlock = <ReferenceBlock references={references} />
     }
   }
 
