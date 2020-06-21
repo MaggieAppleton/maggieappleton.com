@@ -18,7 +18,7 @@ export default function Note({ site, note, referenceBlock }) {
   const topics = get(mdx, 'frontmatter.topics')
   const growthStage = get(mdx, 'frontmatter.growthStage')
   const theme = useTheme()
-  // console.log(referenceBlock)
+  console.log(referenceBlock)
   
   return (
     <Layout site={site} frontmatter={mdx.frontmatter}>
@@ -87,6 +87,7 @@ export default function Note({ site, note, referenceBlock }) {
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
 
+<div>{referenceBlock}</div>
         {/* <BacklinksSection>
           <BacklinkItem
             pageTitle="Title"

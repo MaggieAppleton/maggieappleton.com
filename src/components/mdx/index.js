@@ -40,9 +40,9 @@ import Book from '../Book'
 import ResourceBook from './ResourceBook'
 import Footnote from './Footnote'
 import {
-  ReferenceItem,
-  ReferenceBlock,
-} from './References'
+  ResearchItem,
+  ResearchBlock,
+} from './ResearchBlock'
 import { Arrow } from './Arrow'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
@@ -86,8 +86,8 @@ export default {
   FullWidth2Col: props => <FullWidth2Col {...props} />,
   FullWidthImage: props => <FullWidthImage {...props} />,
   TwoParagraph: props => <TwoParagraph {...props} />,
-  ReferenceItem: props => <ReferenceItem {...props} />,
-  ReferenceBlock: props => <ReferenceBlock {...props} />,
+  ResearchItem: props => <ResearchItem {...props} />,
+  ResearchBlock: props => <ResearchBlock {...props} />,
   Footnote: props => <Footnote {...props} />,
   ComingSoon: props => <ComingSoon {...props} />,
   LinkCard: props => <LinkCard {...props} />,

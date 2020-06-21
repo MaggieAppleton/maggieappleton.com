@@ -9,7 +9,6 @@ const Tooltip = forwardRef((props, ref) => {
   return (
     <Tippy
       duration="500"
-      distance="10"
       theme="light"
       arrow={true}
       interactive={true}

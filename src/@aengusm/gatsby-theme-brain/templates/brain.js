@@ -24,10 +24,12 @@ export const query = graphql`
           growthStage
         }
       }
-      inboundReferences
-      inboundReferencePreviews {
-        source
-        previewHtml
+      inboundReferenceNotes {
+        title
+        slug
+        childMdx {
+          excerpt(pruneLength: 200)
+        } 
       }
       outboundReferenceNotes {
         title
