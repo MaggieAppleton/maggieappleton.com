@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import Tippy from '@tippyjs/react'
+import { Link as GatsbyLink } from "gatsby"
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
 import 'tippy.js/themes/light.css'
@@ -24,12 +25,7 @@ const LinkTooltip = forwardRef((props, ref) => {
           font-size: 0.75em;
         `}
       >
-        <span css={css`
-          word-break: break-all;
-          word-wrap: break-word;
-          overflow: visible;
-          white-space: pre;
-        `} ref={ref}>{props.children}</span>
+        <span ref={ref}>{props.children}</span>
       </Tippy>
     )
   }
@@ -61,6 +57,47 @@ const LinkTooltip = forwardRef((props, ref) => {
 
 const TipLink = ({ noTip, children, href, ...other }) => {
   const theme = useTheme()
+  const internal = /^\/(?!\/)/.test(href)
+
+  if(internal){
+    return (
+      <GatsbyLink
+      to={href}{...other}>
+        <LinkTooltip internal href={href}{...other}>
+        <span css={css`
+          text-decoration: none;
+          line-height: 1;
+          position: relative;
+          z-index: 0;
+          display: inline-block;
+          padding: 3px 0 10px 3px;
+          top: 0px;
+          overflow: hidden;
+          color: ${theme.colors.orange};
+          vertical-align: bottom;
+          transition: color .3s ease-out;
+        ::before {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 0;
+          transform: translateY(calc(100% - 2px));
+          width: 30px;
+          height: 100%;
+          background: ${theme.colors.lightestGrey};
+          transition: all 500ms ease-in-out;
+        }
+        :hover::before, :focus::before {
+          width: 99%;
+          transition: all 500ms ease-in-out;
+          background: ${theme.colors.lightOrange};
+        }
+        `}>{children}</span>
+      </LinkTooltip>
+      </GatsbyLink>
+    )
+  }
 
   if (noTip) {
     return (
