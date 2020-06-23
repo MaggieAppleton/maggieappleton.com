@@ -20,7 +20,7 @@ module.exports = {
 
   // Manifest and Progress color
   themeColor: '#FD9C4B',
-  backgroundColor: '#0B182B',
+  backgroundColor: '#FFFDFD',
 
   // Social component
   twitter: 'https://twitter.com/mappletons/',
