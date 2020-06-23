@@ -61,7 +61,8 @@ const TipLink = ({ noTip, children, href, ...other }) => {
 
   if(internal){
     return (
-      <GatsbyLink
+      <GatsbyLink css={css`
+      display: inline-block;`}
       to={href}{...other}>
         <LinkTooltip internal href={href}{...other}>
         <span css={css`
@@ -70,20 +71,21 @@ const TipLink = ({ noTip, children, href, ...other }) => {
           position: relative;
           z-index: 0;
           display: inline-block;
-          padding: 3px 0 10px 3px;
-          top: 0px;
+          padding: 3px 0 8px 3px;
+          top: -2px;
           overflow: hidden;
           color: ${theme.colors.orange};
           vertical-align: bottom;
           transition: color .3s ease-out;
         ::before {
+          display: inline-block;
           content: "";
           position: absolute;
           z-index: -1;
           top: 0;
           left: 0;
           transform: translateY(calc(100% - 2px));
-          width: 30px;
+          width: 0px;
           height: 100%;
           background: ${theme.colors.lightestGrey};
           transition: all 500ms ease-in-out;
