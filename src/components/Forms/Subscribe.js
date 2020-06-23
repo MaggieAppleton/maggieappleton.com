@@ -90,8 +90,7 @@ class SignUp extends React.Component {
                 Join the newsletter
               </h3>
               <p>
-                For weekly notes on visual thinking, cultural anthropology, and
-                web development
+                For weekly notes on visual thinking, ethical technology, and cultural anthropology.
               </p>
             </>
           )}

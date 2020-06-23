@@ -15,7 +15,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           margin-bottom: 2em;
           .header {
             margin-bottom: 1em;
-            max-width: 700px;
+            max-width: 660px;
             h1 {
               margin-bottom: 0.4em;
             }
@@ -34,7 +34,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           <p>
             An open collection of notes, resources, sketches, and explorations
             I'm currently cultivating. Some notes are seedlings, some are
-            budding, and some have ripened.
+            budding, and some are fully grown evergreens.
           </p>
         </section>
 
