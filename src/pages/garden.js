@@ -33,8 +33,8 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           <h1>The Digital Garden</h1>
           <p>
             An open collection of notes, resources, sketches, and explorations
-            I'm currently cultivating. Some notes are seedlings, some are
-            budding, and some are fully grown evergreens.
+            I'm currently cultivating. Some notes are Seedlings, some are
+            budding, and some are fully grown Evergreen.
           </p>
         </section>
 
@@ -50,16 +50,23 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                   key={note.id}
                   hover
                   css={css`
-                    width: 260px;
+                    width: 270px;
                     margin-right: 1em;
                     margin-bottom: 1em;
                     padding: 1em 1.2em;
                     h4 {
                       margin: 0;
                     }
+                    h6 {
+                      margin: 0;
+                      padding-top: 1em;
+                      font-size: 0.8em;
+                      opacity: 60%;
+                    }
                   `}
                 >
                   <h4>{note.title}</h4>
+                  <h6>{note.childMarkdownRemark.frontmatter.growthStage}</h6>
                 </SimpleCard>
               </Link>
             ))}
