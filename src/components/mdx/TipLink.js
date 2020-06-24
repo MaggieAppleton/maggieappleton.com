@@ -77,24 +77,24 @@ const TipLink = ({ noTip, children, href, ...other }) => {
           color: ${theme.colors.orange};
           vertical-align: bottom;
           transition: color .3s ease-out;
-        ::before {
-          display: inline-block;
-          content: "";
-          position: absolute;
-          z-index: -1;
-          top: 0;
-          left: 0;
-          transform: translateY(calc(100% - 2px));
-          width: 0px;
-          height: 100%;
-          background: ${theme.colors.lightestGrey};
-          transition: all 500ms ease-in-out;
-        }
-        :hover::before, :focus::before {
-          width: 99%;
-          transition: all 500ms ease-in-out;
-          background: ${theme.colors.lightOrange};
-        }
+          ::before {
+              display: inline-block;
+              content: "";
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 0;
+              transform: translateY(calc(100% - 2px));
+              width: 0px;
+              height: 100%;
+              background: ${theme.colors.lightestGrey};
+              transition: all 500ms ease-in-out;
+          }
+          :hover::before, :focus::before {
+              width: 99%;
+              transition: all 500ms ease-in-out;
+              background: ${theme.colors.lightOrange};
+          }
         `}>{children}</span>
       </LinkTooltip>
       </GatsbyLink>
