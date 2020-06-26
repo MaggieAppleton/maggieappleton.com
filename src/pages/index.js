@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from 'components/Layout'
+import { lighten, darken } from 'polished'
 import { Link } from 'gatsby'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
@@ -226,7 +227,13 @@ export default function Index({
 
             <div className="gardenGrid">
               {notesQuery.edges.map(({ node: note }) => (
-                <SimpleCard
+                <Link
+                css={css`
+                  font-family: ${fonts.walsheimLight};
+                `}
+                to={note.childMarkdownRemark.frontmatter.slug}
+                aria-label={`View ${note.title}`}
+              ><SimpleCard
                   hover
                   key={note.id}
                   css={css`
@@ -240,21 +247,13 @@ export default function Index({
                       padding: '0.4em 1em',
                       transition: 'all 150ms ease',
                       ':hover': {
-                        color: theme.colors.orange,
+                        color: theme.colors.darkGrey,
                       },
                     })}
                   >
-                    <Link
-                      css={css`
-                        font-family: ${fonts.walsheimLight};
-                      `}
-                      to={note.childMarkdownRemark.frontmatter.slug}
-                      aria-label={`View ${note.title}`}
-                    >
                       {note.title}
-                    </Link>
                   </h4>
-                </SimpleCard>
+                </SimpleCard></Link>
               ))}
             </div>
 

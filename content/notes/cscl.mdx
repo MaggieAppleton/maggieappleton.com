@@ -1,5 +1,5 @@
 ---
-title: 'A Naïve Exploration of Computer-Supported Collaborative Learning'
+title: 'A Naive Exploration of Computer-Supported Collaborative Learning'
 aliases: ['Computer-Supported Collaborative Learning']
 slug: cscl
 date: 2020-06-26
@@ -17,6 +17,8 @@ Much like the name suggests, it's an academic discipline exploring the possibili
 
 Rather than treating digital mediums as a supportive system or extra add-on in a normal classroom environment, they're **The Main Thing**. And rather than focusing on how _individuals_ learn and understand, knowledge building as a _group_ is prioritised.
 
+It's a reaction against what's known as the _"direct transmission"_ model – the view that learning is an individual experience of **passively receiving content** from someone lecturing at you.
+
 TLDR; it's an entire academic discipline studying how we can build digitally-mediated [Communities of Practice](http://edutechwiki.unige.ch/en/Community_of_practice) for learning <Footnote count={2}>Or, in their own words... "CSCL is a field of study centrally concerned with meaning and the practices of meaning-making in the context of joint activity, and the ways in which these practices are mediated through designed artifacts." <br/>  <a href="http://www.gerrystahl.net/hci/cscl2002intro.pdf">Stahl, G. (2002) Computer Support For<br/>Collaborative Learning</a></Footnote>.
 
 Stian warned me that, like almost all academic disciplines, they haven't mastered the art of [Learning in Public](https://www.swyx.io/writing/learn-in-public/). Some cursory research made it clear the main medium of communication for these folks is obscure academic conference papers and £200 scholarly publications.
@@ -29,22 +31,24 @@ This page is a record of my research as I wander into the world of CSCL – wide
 
 ---
 
-<h2 style={{marginBottom: '1em'}}>Essential Questions and Key Concepts</h2>
+<h2 style={{marginBottom: '1em'}}>Key Concepts and Essential Questions</h2>
 
 #### Collaborative Learning Not Guaranteed
 
 CSCL does not claim collaboration is a silver bullet solution to effective learning. Quite the opposite.
 
-All the papers makes clear that collaboration in and of itself doesn't magically produce understanding. Instead, it needs to be designed, structured, and well-facilitated to lead to learning.
-
-Most of the research is focused on designing these intentional collaborative experiences. As well as the systems that make them possible (aka. apps, tools, platforms, all that jazz).
+All the papers makes clear that collaboration in and of itself doesn't magically produce understanding. **Instead, it needs to be designed, structured, and carefully facilitated to lead to learning.**
 
 The most effective techniques are not surprising...
 - Meaningful discussion, debate, and negotiation that forces us to question our assumptions and revise our conclusions. 
 - Explaining your thinking to another human, out loud or in writing, quickly shows how well you know the material.
 - Solving a problem, then comparing your solution to someone elses, and mutually agreeing upon the strengths and weaknesses of each.
 
-These are not new pedagogical findings, but CSCL is exploring how digital mediums are particularly well-suited to enabling them. Not just within small groups, but at scale. Perhaps across the entire of Twitter.
+Most of the research focuses on designing these intentional collaborative experiences. As well as the systems that make them possible (aka. apps, tools, platforms, all that jazz).
+
+These are not new pedagogical findings, but CSCL is exploring how digital mediums are particularly well-suited to enabling them. Not just within small groups, but at scale.
+
+Computer magic means we can have multiple, intertwining discussions all going on simultaneously. With a far wider range of expertise, experiences, and perspectives. Hence, Twitter.
 
 <br/>
 
@@ -76,15 +80,23 @@ given: such <mark>interactions do not necessarily emerge spontaneously"</mark> (
 
 #### Creating Structure with Macro-scripts
 
-It quickly became clear **macro-scripts** are the bread and butter of CSCL systems. These are the [[Pattern Languages]] of the field. 
+It quickly became clear that **macro-scripts** are the bread and butter of CSCL systems. These are the [[Pattern Languages]] of the field that create structured collaboration.
 
-CSCL Macro-scripts describe how the learning experience will play out. It includes tasks, subtasks, roles for learners, the constraints and rules for interaction, and the digital tools to use. Essentially, it sets up the whole dinner party for you, so participants can just show up and know all the logistics are taken care of.
+CSCL Macro-scripts describe how a learning experience will play out.
+On a general level, they define **a sequence of activities** focused around **a learning goal.** The learners all have assigned **roles** and follow a set of **constraints and rules for interaction.**
 
-Scripts make it much more likely learners will develop a thorough understanding of the material, and come away with original perspectives on it.
+It sets up the whole dinner party for you, so participants can just show up and know all the learning logistics are taken care of.
+
+That might sound a bit prescriptive. Until you realise every social interaction you engage in works this way. But most of the time our scripts and roles are so internalised they become invisible.
+
+When we walk into a grocery store we play the role of shopper and follow the put-stuff-in-basket script. It would be disastrously off-script to begin eating a fresh croissant while standing in the bakery aisle, or to walk behind a checkout counter and begin scanning our own groceries. We have all been <Tooltip tiptext={<span>"The process by which people learn the dynamics of their surrounding culture and acquire values and norms appropriate or necessary in that culture and worldviews" - <a href="https://en.wikipedia.org/wiki/Enculturation">Enculturation on Wikipedia</a></span>}><i>enculturated</i></Tooltip> to follow the script. <Footnote count={3}>What I'm describing is a well-established social theory developed by many people, but my favourite is <a href="https://en.wikipedia.org/wiki/Erving_Goffman">Erving Goffman</a>'s account that he presented in the classic  book <a href="https://en.wikipedia.org/wiki/Frame_analysis">Frame Analysis</a>. Goffman refers to the social setting that scripts play out in as a "Frame"</Footnote>
+
+Scripts make it much more likely learners will **develop a thorough understanding of the material**, and come away with **original perspectives on it.**
 
 There's also a need for a fine balance of structure and improvisation. If scripts are too weak the learning experience falls apart. If they're too rigid or irrelevant, interactions become boring, sterile, and rote.
 
 <br/>
+
 
 <TwoCol alignItems="flex-start">
 
@@ -107,11 +119,22 @@ There's also a need for a fine balance of structure and improvisation. If script
 
 #### Playing the Role
 
-One of my favourite elements of macro-scripts are that they define clear **roles** for each participant.
+One of the most intruiging elements of macro-scripts is that they define **clear roles** for each participant.
 
-Most of us have been in events with  _facilitators_ and _scribes_ but we rarely expand on these.
+Most of us have been in meetings with assigned  _facilitators_ and _scribes_, but we rarely expand beyond these.
 
-The [Group Work Roles](http://edutechwiki.unige.ch/en/Group_work_roles) page on EduTech Wiki (an overall great place) has an enourmous collection of role "recipes" depending on the size of the group, context, and goals.
+Why stop there? What if we add in...
+
+- A  _Research-Runner_ who is in charge of fetching up links and references mentioned in the discussion.
+- A _Sceptic_ or _Devil's Advocate_ who (constructively) raises objections and counter-opinions
+- A _Timekeeper_ who moves us through the learning plan on schedule
+- A _Summariser_ who captures the group's conclusions in succinct statements
+- A _Reflector_ who mirrors people's points back to them in their own words
+- An _Explorer_ responsible for gathering wildly off-beat references outside the traditional domain
+
+There's a huge range of role options that you can pick and choose from depending on the size, synchronicity, and goals of the group.
+
+The [Group Work Roles](http://edutechwiki.unige.ch/en/Group_work_roles) page on EduTech Wiki (an overall great place) elaborates on this list.
 
 
 ---

@@ -73,7 +73,7 @@ const getGlobalStyles = theme => {
       font-family: ${fonts.regularItalic};
     }
     mark {
-      background-color: ${lighten(0.09,theme.colors.lightOrange)};
+      background-color: ${lighten(0.15,theme.colors.lightOrange)};
       padding: 1px 8px;
       border-radius: 4px;
     }
