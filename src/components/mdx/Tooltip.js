@@ -15,8 +15,8 @@ const Tooltip = forwardRef((props, ref) => {
       animation="shift-away"
       content={props.tiptext}
       css={css`
-        padding: 0.2em;
-        font-size: 0.75em;
+        padding: 0.4em;
+        font-size: 0.8em;
       `}
     >
       <div

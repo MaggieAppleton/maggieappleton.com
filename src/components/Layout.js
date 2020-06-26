@@ -40,10 +40,10 @@ const getGlobalStyles = theme => {
     h5,
     h6 {
       a {
-        color: ${theme.colors.text};
+        color: ${theme.colors.blue};
         &:hover,
         &:focus {
-          color: ${theme.colors.blue};
+          color: ${theme.colors.orange};
         }
       }
     }
@@ -71,6 +71,11 @@ const getGlobalStyles = theme => {
     }
     em {
       font-family: ${fonts.regularItalic};
+    }
+    mark {
+      background-color: ${lighten(0.09,theme.colors.lightOrange)};
+      padding: 1px 8px;
+      border-radius: 4px;
     }
     strong {
       em {

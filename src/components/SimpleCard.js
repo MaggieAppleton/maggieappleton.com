@@ -13,9 +13,11 @@ const SimpleCard = props => {
           ? 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;'
           : null,
         margin: '0 auto',
-        marginBottom: '2em',
-        padding: '1.4em 1.6em 2.4em',
+        marginBottom: props.marginBottom ? props.marginBottom : '2em',
+        marginTop: props.marginTop ? props.marginTop : null,
+        padding: props.padding ? props.padding : '1.4em 1.6em 2.4em',
         width: props.width ? props.width : '100%',
+        maxWidth: props.maxWidth ? props.maxWidth : '100%',
         borderRadius: '6px',
         boxShadow: props.hover
           ? '0px 1px 2px rgba(52, 61, 68, 0.1)'

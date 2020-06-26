@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import SimpleCard from '../SimpleCard'
 
 export const ResearchBlock = ({ children }) => {
   return (
@@ -30,13 +31,27 @@ export const ResearchBlock = ({ children }) => {
   )
 }
 
-export const ResearchItem = ({ title, link, author }) => {
+export const ResearchItem = ({ children, title, link, author }) => {
   return (
-    <div>
-      <a href={link}>
-        <p>{title}</p>
-      </a>
-      <h5>{author}</h5>
-    </div>
+    <SimpleCard maxWidth="760px" marginTop="0em" marginBottom="0em" padding="0.4em 1.6em 1.4em"
+      css={css`
+          font-size: 90%;
+          p {
+            line-height: 1.5em;
+          }
+          h6 {
+            padding: 0;
+            margin: 0;
+            margin-left: 1.2em;
+            max-width: 450px;
+            a {
+              
+            }
+          }
+        `}
+    >
+      <p>{children}</p>
+      <h6><a href={link}>{title}</a>  –  {author}</h6>
+    </SimpleCard>
   )
 }
