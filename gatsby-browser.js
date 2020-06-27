@@ -5,4 +5,4 @@ export const wrapPageElement = ({ element, props }) => {
   return <SimpleTransition props={props}>{element}</SimpleTransition>
 }
 
-  return <script src="https://hypothes.is/embed.js" async></script>
+  // return <script src="https://hypothes.is/embed.js" async></script>
