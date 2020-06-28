@@ -15,6 +15,7 @@ import Footer from '../components/Footer'
 const getGlobalStyles = theme => {
   return css`
     body {
+    counter-reset: sidenote-counter;
     padding: 0.4em;
     background-image: linear-gradient(180deg, ${theme.colors.white} 0%, ${
     theme.colors.white
@@ -46,6 +47,11 @@ const getGlobalStyles = theme => {
           color: ${theme.colors.orange};
         }
       }
+    }
+    span {
+      word-wrap: break-word;
+      white-space: pre-line;
+      overflow-wrap: break-word;
     }
     ${bpMaxSM} {
       p,
