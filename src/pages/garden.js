@@ -5,8 +5,12 @@ import { css } from '@emotion/core'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import SimpleCard from '../components/SimpleCard'
+import { useTheme } from 'components/Theming'
+
 
 const GardenPage = ({ data: { site, notesQuery } }) => {
+  const theme = useTheme()
+
   return (
     <Layout site={site}>
       <Container
@@ -54,8 +58,13 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     margin-right: 1em;
                     margin-bottom: 1em;
                     padding: 1em 1.2em;
+                    transition: all 400ms ease-in-out;
                     h4 {
+                      color: ${theme.colors.darkGrey};
                       margin: 0;
+                      &:hover {
+                        color: ${theme.colors.black};
+                      },
                     }
                   `}
                 >
