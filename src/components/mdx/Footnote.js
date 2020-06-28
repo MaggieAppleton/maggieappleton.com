@@ -1,74 +1,111 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMaxMD } from '../../lib/breakpoints'
-import Tooltip from './Tooltip'
+import { bpMaxLG } from '../../lib/breakpoints'
+import { useTheme } from 'components/Theming'
 
-const Footnote = ({ count, children }) => {
-  return (
-    <>
-      {/* <span
-        css={css`
-          vertical-align: super;
-          line-height: 0;
-          font-size: 80%;
-          padding-right: 0.2em;
-        `}
-      >
-        {count}
-      </span>
-      <aside
-        css={css`
-          position: relative;
-          float: right;
-          line-height: 1.4em;
-          overflow: hidden;
-          box-sizing: content-box;
-          opacity: 75%;
-          max-width: 260px;
-          font-size: 72%;
-          padding: 0.6em 1em 1.4em;
-          right: -33%;
-          margin-left: -30%;
-          &::before {
-            content: '${count}';
-            width: 15px;
-            height: 20px;
-            position: absolute;
-            left: -0.5em;
-            text-align: right;
-            top: 0.4em;
-          }
-          &::after {
-            clear: both;
-            height: 0;
-            width: 100%;
-            content: '';
+const Footnote = ({ idName, children }) => {
+    const theme = useTheme()
+
+    const footnoteStyles = css`
+    .sidenote,
+    .marginnote {
+        float: right;
+        clear: right;
+        margin-right: -48%;
+        width: 40%;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 0.82em;
+        opacity: 85%;
+        line-height: 1.3;
+        vertical-align: baseline;
+        position: relative; 
+        border-left: 2px solid ${theme.colors.lightestGrey};
+        padding-left: 1em;
+    }
+
+    label {
+        cursor: pointer; 
+    }
+    
+    .sidenote-number {
+        counter-increment: sidenote-counter; 
+    }
+    
+    .sidenote-number:after,
+    .sidenote:before {
+        position: relative;
+        vertical-align: baseline; 
+    }
+    
+    .sidenote-number:after {
+        content: counter(sidenote-counter);
+        font-size: 0.9em;
+        top: -0.5rem;
+        left: 0em; 
+        padding-right: 3px;
+        color: ${theme.colors.grey}
+    }
+    
+    .sidenote:before {
+        content: counter(sidenote-counter) " ";
+        font-size: 0.9em;
+        top: -0.3rem; 
+        padding-right: 8px;
+    }
+    
+    blockquote .sidenote,
+    blockquote .marginnote {
+        margin-right: -82%;
+        min-width: 59%;
+        text-align: left; 
+    }
+    
+    label.sidenote-number {
+        display: inline; 
+    }
+    
+    label.margin-toggle:not(.sidenote-number) {
+        display: none; 
+    }
+
+    input.margin-toggle {
+        display: none; 
+    }
+
+    ${bpMaxLG} {
+        label.margin-toggle:not(.sidenote-number) {
+            display: inline; 
+        }
+    
+        .sidenote,
+        .marginnote {
+            display: none; 
+        }
+        
+        .margin-toggle:checked + .sidenote,
+        .margin-toggle:checked + .marginnote {
             display: block;
-          }
-          ${bpMaxMD} {
-            float: none;
-              left: 0;
-              margin-left: 2em;
-              padding-bottom: 0;
-          }
-        `}
-      >
-        {children}
-      </aside> */}
-      <Tooltip tiptext={children}>
-        <span
-          css={css`
-            padding: 0 0.2em;
-            top: -0.2em;
-            position: relative;
-            font-size: 1.1em;
-          `}
-        >
-          {count}
+            float: left;
+            left: 1rem;
+            clear: both;
+            width: 95%;
+            margin: 1rem 2.5%;
+            vertical-align: baseline;
+            position: relative; 
+        }
+    }
+    `
+
+    return(
+        <span css={footnoteStyles}>
+            <label for={idName} className="margin-toggle sidenote-number"></label>
+            <input type="checkbox" id={idName} className="margin-toggle" />
+            <span className="sidenote">
+                {children}
+            </span>
         </span>
-      </Tooltip>
-    </>
-  )
+    )
 }
 
 export default Footnote
