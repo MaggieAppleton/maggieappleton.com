@@ -69,7 +69,7 @@ const BrainNote = ({ note }) => {
   )
 
   return (
-    <MDXProvider components={{ ...components, a: TippyLinkWithPreviews }}>
+    <MDXProvider components={{...components, a: TippyLinkWithPreviews }}>
       <Note referenceBlock={referenceBlock} note={note} site={site} />
     </MDXProvider>
   )
