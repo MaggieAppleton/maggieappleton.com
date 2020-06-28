@@ -11,7 +11,7 @@ const Footnote = ({ idName, children }) => {
     .marginnote {
         float: right;
         clear: right;
-        margin-right: -48%;
+        margin-right: -45%;
         width: 40%;
         margin-top: 0;
         margin-bottom: 0;
