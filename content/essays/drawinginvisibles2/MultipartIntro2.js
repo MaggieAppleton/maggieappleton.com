@@ -42,7 +42,6 @@ const MultipartIntro2 = () => {
           alignItems: 'center',
           transition: '0.6s',
           borderTop: '2px solid #7B44BC',
-          transition: '0.6s',
           p: {
             color: 'black',
             transition: '0.6s',

@@ -12,7 +12,7 @@ export const ComingSoon = () => {
         padding: '2em',
       }}
     >
-      <span>🌱</span>
+      <span role="img" aria-label="seedling">🌱</span>
       <h1 style={{ fontSize: '2.8em', marginTop: '0' }}>Coming Soon</h1>
       <h5 style={{ marginBottom: '0.6em' }}>
         Feel free to bug me on twitter to finish writing this.
