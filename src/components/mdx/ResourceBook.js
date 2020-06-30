@@ -1,8 +1,12 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinSM } from '../../lib/breakpoints'
+import { useTheme } from '../Theming'
+
 
 export default function ResourceBook(props) {
+const theme = useTheme()
+
   return (
     <>
       <a href={props.url}>
@@ -32,6 +36,7 @@ export default function ResourceBook(props) {
               display: 'grid',
               gridTemplateColumns: '1fr 2fr',
               alignSelf: 'start',
+              opacity: '90%',
               h1: {
                 fontSize: '1.5em',
                 marginBottom: '16px',
@@ -58,9 +63,10 @@ export default function ResourceBook(props) {
                 maxWidth: '450px',
               },
               ':hover': {
-                transition: 'all 1s ease-in',
+                transition: 'all 0.4s ease-in-out',
+                opacity: '100%',
                 cursor: 'pointer',
-                h1: { color: '#24A3FA' },
+                h1: { color: `${theme.colors.orange}`, transition: 'all 0.4s ease-in-out', },
               },
             })}
           >
