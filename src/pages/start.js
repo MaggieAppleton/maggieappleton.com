@@ -1,14 +1,24 @@
 import React from 'react'
 import Layout from 'components/Layout'
 import { graphql } from 'gatsby'
+import { css } from '@emotion/core'
+import { bpMaxSM } from '../lib/breakpoints'
 import Container from 'components/Container'
 
 const StartPage = ({ data: { site } }) => {
   return (
     <Layout site={site}>
-      <Container>
-        <h1>Start Here</h1>
-        <p>You just hit a route that doesn't exist</p>
+      <Container
+        css={css`
+          
+        `}
+      >
+        <div className="headerText">
+            <h1>Start Here</h1>
+            <h2>
+              Things
+            </h2>
+            </div>
       </Container>
     </Layout>
   )
