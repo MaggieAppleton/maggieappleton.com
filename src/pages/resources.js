@@ -28,7 +28,10 @@ const ResourcesPage = () => {
     <Layout site={data.site}>
       <Container
         css={css`
-        display: grid;
+        button {
+          border: none;
+          padding: 3px;
+        }
           .header {
             text-align: center;
             margin-bottom: 40px;
@@ -37,9 +40,18 @@ const ResourcesPage = () => {
             text-align: center;
           }
           .mainGrid {
+            text-align: left;
             display: grid;
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
             align-items: center;
+            h1 {
+              margin-top: 0;
+            }
+          }
+          .courseGrid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          }
+          .bookGrid {
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
           }
         `}
       >
@@ -50,7 +62,7 @@ const ResourcesPage = () => {
 This is a collection of my personal recommendations for online courses and books.
             </p>
             <h3>Learning Platforms & Courses</h3>
-            <div className="mainGrid">
+            <div className="mainGrid courseGrid">
             {resourceCourses.map((d, i) => {
             console.log(d.recCourses)
             return (
@@ -68,7 +80,7 @@ This is a collection of my personal recommendations for online courses and books
             </div>
 
             <h3>Books</h3>
-            <div className="mainGrid">
+            <div className="mainGrid bookGrid">
             {resourceBooks.map((d, i) => {
             return (
               <ResourceBook

@@ -7,7 +7,7 @@ import { bpMinSM } from '../lib/breakpoints'
 export default function ResourceBook(props) {
   return (
     <>
-      <a href={props.url}>
+      <a target="_blank" rel="noopener noreferrer"  href={props.url}>
         <div
           css={css({
             // justifyContent: 'space-between',

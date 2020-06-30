@@ -34,8 +34,8 @@ export default function ResourceCard(props) {
             color: '#464E55',
             transition: 'all 1s ease',
             '.dataBlock': {
-              [bpMinSM]: { padding: '25px' },
-              padding: '10px',
+              [bpMinSM]: { padding: '20px 24px' },
+              padding: '10px 15px',
             },
             h1: {
               fontSize: '1.6em',
@@ -43,13 +43,15 @@ export default function ResourceCard(props) {
             h5: {
               textAlign: 'right',
               fontSize: '0.9em',
-              letterSpacing: '0.1em',
+              letterSpacing: '0.02em',
               lineHeight: '1.3em',
+              marginBottom: 0
             },
             img: {
               height: 'auto',
               maxWidth: '100%',
               borderRadius: '6px 6px 0 0 ',
+              marginBottom: '0.2em'
               // [bpMinMD]: { width: '200%' },
             },
             '.description': {
@@ -62,22 +64,19 @@ export default function ResourceCard(props) {
               },
             },
           })}>
-          <a href={props.url}>
+          <a rel="noopener noreferrer" target="_blank" href={props.url}>
             <img alt={props.title} src={props.img} />
           </a>
 
           <div class='dataBlock'>
-            <a href={props.url}>
-              <h1>{props.title}</h1>
-            </a>
-
+          <a rel="noopener noreferrer" target="_blank" href={props.url}><h1>{props.title}</h1></a>
             <p class='description'>{props.description}</p>
             <h5>{props.cost}</h5>
 
             {props.recCourses && <RecCourses props={props.recCourses} />}
           </div>
         </div>
-      </div>
+        </div>
     </>
   )
 }

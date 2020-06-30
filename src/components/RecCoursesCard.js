@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import downArrow from './downArrow.svg'
-// import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 function RecCourses(props) {
   const [isDowndownOpen, setDropdown] = useState(false)
@@ -18,14 +17,22 @@ function RecCourses(props) {
         hr: {
           margin: '18px 0 10px',
           maxWidth: '100%',
-          border: '0.5px solid #BECCD6',
+          border: 'none',
+          background: '#BECCD6'
         },
         button: {
           margin: '0',
+          padding: 0,
           display: 'inline-block',
           background: 'none',
           paddingRight: '10px',
+          ':focus' : {
+            outline: 'none'
+          }
         },
+        img: {
+          marginBottom: 0
+        }
       })}>
       <hr />
       <button
@@ -37,7 +44,7 @@ function RecCourses(props) {
             display: 'inline-block',
             fontSize: '0.9em',
             margin: '0',
-            paddingLeft: '6px',
+            paddingLeft: '10px',
           })}>
           Recommended Courses
         </h5>
