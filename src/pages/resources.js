@@ -3,8 +3,6 @@ import Layout from 'components/Layout'
 import Container from 'components/Container'
 import { useStaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { bpMaxSM } from '../lib/breakpoints'
-import { Link } from 'gatsby'
 import ResourceCard from '../components/ResourceCard'
 import ResourceBook from '../components/ResourceBook'
 import {
@@ -34,13 +32,26 @@ const ResourcesPage = () => {
         }
           .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin: 3em auto 2em;
+            max-width: 700px;
+            h1 {
+              margin-bottom: 0.5em;
+            }
+            p {
+              font-size: 1.1em;
+              line-height: 1.6em;
+            }
           }
-          .h3 {
+          h3 {
             text-align: center;
+            font-size: 1.7em;
+            margin-bottom: 1em;
+            margin-top: 1.6em;
+            letter-spacing: 0.02em;
           }
           .mainGrid {
             text-align: left;
+            margin-bottom: 4em;
             display: grid;
             align-items: center;
             h1 {
@@ -58,10 +69,13 @@ const ResourcesPage = () => {
         <div className="header">
             <h1>Resources</h1>
             <p>
-            Want to improve your drawing and visual thinking skills?
-This is a collection of my personal recommendations for online courses and books.
+            Want to improve your drawing and visual thinking skills?<br />
+These are all my personal recommendations for courses and books.
             </p>
-            <h3>Learning Platforms & Courses</h3>
+
+        </div>
+
+        <h3>Learning Platforms & Courses</h3>
             <div className="mainGrid courseGrid">
             {resourceCourses.map((d, i) => {
             console.log(d.recCourses)
@@ -94,7 +108,6 @@ This is a collection of my personal recommendations for online courses and books
             )
           })}
             </div>
-        </div>
       </Container>
     </Layout>
   )
