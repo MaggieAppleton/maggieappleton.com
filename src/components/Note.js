@@ -15,7 +15,7 @@ export default function Note({ site, note, referenceBlock }) {
   const mdx = get(note, 'childMdx')
   const title = get(note, 'title')
   const date = get(mdx, 'frontmatter.date')
-  const topics = get(mdx, 'frontmatter.topics')
+  // const topics = get(mdx, 'frontmatter.topics')
   const growthStage = get(mdx, 'frontmatter.growthStage')
   const theme = useTheme()
   

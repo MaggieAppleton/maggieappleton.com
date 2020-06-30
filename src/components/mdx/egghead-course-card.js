@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { Image } from './ImageStyles'
-import { bpMaxSM } from '../../lib/breakpoints'
+// import { bpMaxSM } from '../../lib/breakpoints'
 
 const EggheadCourseCard = props => {
   return (
