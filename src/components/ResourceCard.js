@@ -2,9 +2,11 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinSM } from '../lib/breakpoints'
 import RecCourses from './RecCoursesCard'
+import { useTheme } from 'components/Theming'
 
 export default function ResourceCard(props) {
-  // console.log('props', props)
+const theme = useTheme()
+  
   return (
     <>
       <div
@@ -21,24 +23,25 @@ export default function ResourceCard(props) {
             height: '100%',
           },
           ':hover': {
-            boxShadow: '0px 2px 2px 0 rgba(190,198,206,0.9)',
+            boxShadow: '0px 2px 2px 0 rgba(190,198,206,0.8)',
             transition: 'all 0.4s ease',
             transform: 'scale(0.99)',
             border: '1px solid rgba(218,224,228,1)',
           },
-          transition: 'all 0.4s ease',
+          transition: 'all 0.6s ease-in-out',
         })}>
         <div
           css={css({
             justifyContent: 'space-between',
-            color: '#464E55',
-            transition: 'all 1s ease',
+            color: `${theme.colors.darkGrey}`,
+            transition: 'all 0.6s ease',
             '.dataBlock': {
               [bpMinSM]: { padding: '20px 24px' },
               padding: '10px 15px',
             },
             h1: {
               fontSize: '1.6em',
+              transition: 'all 0.4s ease-in-out'
             },
             h5: {
               textAlign: 'right',
@@ -52,15 +55,17 @@ export default function ResourceCard(props) {
               maxWidth: '100%',
               borderRadius: '6px 6px 0 0 ',
               marginBottom: '0.2em'
-              // [bpMinMD]: { width: '200%' },
             },
             '.description': {
               lineHeight: '1.3em',
               fontSize: '1em',
             },
             ':hover': {
+
+              transition: 'all 0.4s ease-in-out',
               h1: {
-                color: '#8748C7',
+                color: `${theme.colors.orange}`,
+                transition: 'all 0.4s ease-in-out'
               },
             },
           })}>

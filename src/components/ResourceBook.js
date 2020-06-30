@@ -1,10 +1,10 @@
 import React from 'react'
 import { css } from '@emotion/core'
-// import Img from 'gatsby-image'
-// import { StaticQuery, graphql } from 'gatsby'
+import { useTheme } from 'components/Theming'
 import { bpMinSM } from '../lib/breakpoints'
 
 export default function ResourceBook(props) {
+  const theme = useTheme()
   return (
     <>
       <a target="_blank" rel="noopener noreferrer"  href={props.url}>
@@ -59,8 +59,9 @@ export default function ResourceBook(props) {
                 maxWidth: '450px',
               },
               ':hover': {
-                transition: 'all 1s ease-in',
-                h1: { color: '#8748C7' },
+                transition: 'all 0.6s ease-in-out',
+                h1: { color: `${theme.colors.orange}`, 
+                transition: 'all 0.4s ease-in-out',}, 
               },
             })}>
             <img
