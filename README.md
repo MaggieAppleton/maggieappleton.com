@@ -20,6 +20,6 @@
 
 ## Work in Progress
 
-- Bi-directional linking
+- Search functionality
 - Wiki-style nested note folders
 - Webmentions
