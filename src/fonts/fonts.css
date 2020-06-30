@@ -1,21 +1,18 @@
 /* Walsheim */
 @font-face {
   font-family: 'GT Walsheim Regular';
-  font-style: normal;
   font-weight: 400;
   src: url('GT-Walsheim-Pro-Regular.woff') format('woff');
   font-display: auto;
 }
 @font-face {
   font-family: 'GT Walsheim Bold';
-  font-style: bold;
   font-weight: 700;
   src: url('GT-Walsheim-Pro-Bold.woff') format('woff');
   font-display: auto;
 }
 @font-face {
   font-family: 'GT Walsheim Light';
-  font-style: normal;
   font-weight: 200;
   src: url('GT-Walsheim-Pro-Light.woff') format('woff');
   font-display: auto;
