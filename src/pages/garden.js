@@ -2,6 +2,8 @@ import React from 'react'
 import Layout from 'components/Layout'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { useTheme } from 'components/Theming'
+import { fonts } from '../lib/typography'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import SimpleCard from '../components/SimpleCard'
@@ -27,13 +29,14 @@ const getTopicsFromNotes = (noteNodes) =>
 
 
 const GardenPage = ({ data: { site, notesQuery } }) => {
-  const filters = getTopicsFromNotes(notesQuery.edges)
 
+  const theme = useTheme()
+  
+  const filters = getTopicsFromNotes(notesQuery.edges)
   const [activeFilters, setActiveFilters] = React.useState([])
   const handleFilterClick = (filter, options) => {
     const clearFilters = get(options, 'clearFilters', [])
     let newActiveFilters
-
     
     if(includes(activeFilters, filter)){
       newActiveFilters = activeFilters.filter((f) => f !== filter)
@@ -69,8 +72,6 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
     return isEmpty(activeFilters) || matchesTopic || matchesGrowth
   })
 
-  console.log({displayedNotes})
-
   return (
     <Layout site={site}>
       <Container
@@ -83,6 +84,22 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
             h1 {
               margin-bottom: 0.4em;
             }
+          }
+          .filterSection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            font-size: 0.8em;
+            font-family: ${fonts.regularSans};
+          }
+          .growthFilter {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+          .topicFilter {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
           }
           .notesGrid {
             display: flex;
@@ -102,26 +119,35 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           </p>
         </section>
 
+
         {/*------------  Filtering Feature ------------ */}
 
-          <div css={css({ padding: '1em', flexWrap: 'wrap', display: 'flex', flexDirection: 'column', justifyContent: 'space-around'})}>
-            <div css={css({padding: '1em', flexWrap: 'wrap', marginBottom: '1em', display: 'flex', flexDirection: 'row'})}>
+          <div className="filterSection">
+
+            <div className="growthFilter">
+
               {filters.growthFilters.map((filter)=> {
                 return <div onClick={() => handleFilterClick(filter, {clearFilters: filters.growthFilters.filter(f => f !== filter)})} css={css({
-                  padding: '1em', background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
+                  padding: '0.2em 0.8em', borderRadius: '20px', background: includes(activeFilters, filter) ? theme.colors.blue : 'inherit'
                 })}>{filter}</div>
               })}
+
             </div>
-            <div css={css({display: 'flex', flexDirection: 'row', flexWrap: 'wrap',})}>
+
+            <div className="topicFilter">
+
               {filters.topicFilters.map((filter)=> {
                 return <div onClick={() => handleFilterClick(filter)} css={css({
-                  padding: '1em',  background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
+                  padding: '0.2em 0.6em', margin: '2px', borderRadius: '20px', background: includes(activeFilters, filter) ? theme.colors.lightOrange : 'inherit'
                 })}>{filter}</div>
               })}
+
             </div>
           </div>
 
-        {/* ------------ Notes Section ------------ */}
+
+        {/* ------------ Notes Section ------------------ */}
+
         <section className="notes">
           <div className="notesGrid">
             {displayedNotes.map(({ node: note }) => (
@@ -142,14 +168,24 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     }
                     h6 {
                       margin: 0;
+                      text-align: right;
                       padding-top: 1em;
-                      font-size: 0.8em;
-                      opacity: 60%;
+                      font-size: 1em;
                     }
                   `}
                 >
                   <h4>{note.title}</h4>
-                  <h6>{note.childMarkdownRemark.frontmatter.growthStage} 🌿🌲</h6>
+                  <span>
+                    {note.childMarkdownRemark.frontmatter.growthStage === 'Seedling' ?
+                      (<h6><span role="img" aria-label="seedling">🌱 </span></h6>) : null
+                    }
+                    {note.childMarkdownRemark.frontmatter.growthStage === 'Budding' ? 
+                      (<h6><span role="img" aria-label="seedling">🌿</span> </h6>) : null
+                    }
+                    {note.childMarkdownRemark.frontmatter.growthStage === 'Evergreen' ? 
+                       (<h6><span role="img" aria-label="seedling">🌳</span> </h6>) : null
+                    }
+                  </span>
                 </SimpleCard>
               </Link>
             ))}
