@@ -5,8 +5,83 @@ import { css } from '@emotion/core'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import SimpleCard from '../components/SimpleCard'
+import get from 'lodash/get'
+import isArray from 'lodash/isArray'
+import uniq from 'lodash/uniq'
+import includes from 'lodash/includes'
+import isEmpty from 'lodash/isEmpty'
+import some from 'lodash/some'
+// id
+// title
+// childMarkdownRemark {
+//   frontmatter {
+//     growthStage
+//     topics
+//     slug
+//   }
+// }
+
+const getTopicsFromNotes = (noteNodes) => 
+  noteNodes.reduce((topics, {node: note}) => {
+    const newGrowth = get(note, 'childMarkdownRemark.frontmatter.growthStage', 'Seedling')
+    let newTopics = get(note, 'childMarkdownRemark.frontmatter.topics', [])
+    if(!newTopics || !isArray(newTopics)){
+      newTopics = []
+    }
+    return {
+      growthFilters: uniq([...topics.growthFilters, newGrowth]),
+      topicFilters: uniq([...topics.topicFilters, ...newTopics])
+    }
+    }, {growthFilters: [], topicFilters: []})
+
+
+
 
 const GardenPage = ({ data: { site, notesQuery } }) => {
+  const filters = getTopicsFromNotes(notesQuery.edges)
+
+  const [activeFilters, setActiveFilters] = React.useState([])
+  const handleFilterClick = (filter, options) => {
+    const clearFilters = get(options, 'clearFilters', [])
+    let newActiveFilters
+
+    
+    if(includes(activeFilters, filter)){
+      newActiveFilters = activeFilters.filter((f) => f !== filter)
+    } else {
+      newActiveFilters = activeFilters.concat(filter)
+    }
+    
+    if(!isEmpty(clearFilters)){
+      clearFilters.forEach((f) => {
+        newActiveFilters = newActiveFilters.filter((activeFilter) => f !== activeFilter) 
+      })
+    }
+
+    setActiveFilters(newActiveFilters)
+  }
+
+  const displayedNotes = notesQuery.edges.filter(({node: note}) => {
+    const matchesBoth = activeFilters.reduce((acc, current) => {
+      return {
+        growth: acc.growth || includes(filters.growthFilters, current) ,
+        topics: acc.topics || includes(filters.topicFilters, current)
+      }
+    }, {growth: false, topics: false})
+
+    
+    const matchesGrowth = includes(activeFilters, note.childMarkdownRemark.frontmatter.growthStage)
+    const matchesTopic = some(note.childMarkdownRemark.frontmatter.topics, (t) =>  includes(activeFilters, t))
+  
+    if(matchesBoth.growth && matchesBoth.topics){
+      return matchesGrowth && matchesTopic
+    }
+
+    return isEmpty(activeFilters) || matchesTopic || matchesGrowth
+  })
+
+  console.log({displayedNotes})
+
   return (
     <Layout site={site}>
       <Container
@@ -38,10 +113,29 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           </p>
         </section>
 
+        {/*------------  Filtering Feature ------------ */}
+
+          <div css={css({display: 'flex', justifyContent: 'space-around'})}>
+            <div >
+              {filters.growthFilters.map((filter)=> {
+                return <div onClick={() => handleFilterClick(filter, {clearFilters: filters.growthFilters.filter(f => f !== filter)})} css={css({
+                  background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
+                })}>{filter}</div>
+              })}
+            </div>
+            <div>
+              {filters.topicFilters.map((filter)=> {
+                return <div onClick={() => handleFilterClick(filter)} css={css({
+                  background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
+                })}>{filter}</div>
+              })}
+            </div>
+          </div>
+
         {/* ------------ Notes Section ------------ */}
         <section className="notes">
           <div className="notesGrid">
-            {notesQuery.edges.map(({ node: note }) => (
+            {displayedNotes.map(({ node: note }) => (
               <Link
                 to={`/${note.childMarkdownRemark.frontmatter.slug}`}
                 aria-label={`View ${note.title}`}
@@ -66,7 +160,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                   `}
                 >
                   <h4>{note.title}</h4>
-                  <h6>{note.childMarkdownRemark.frontmatter.growthStage}</h6>
+                  <h6>{note.childMarkdownRemark.frontmatter.growthStage} 🌿🌲</h6>
                 </SimpleCard>
               </Link>
             ))}
