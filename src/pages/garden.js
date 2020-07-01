@@ -11,15 +11,6 @@ import uniq from 'lodash/uniq'
 import includes from 'lodash/includes'
 import isEmpty from 'lodash/isEmpty'
 import some from 'lodash/some'
-// id
-// title
-// childMarkdownRemark {
-//   frontmatter {
-//     growthStage
-//     topics
-//     slug
-//   }
-// }
 
 const getTopicsFromNotes = (noteNodes) => 
   noteNodes.reduce((topics, {node: note}) => {
@@ -33,8 +24,6 @@ const getTopicsFromNotes = (noteNodes) =>
       topicFilters: uniq([...topics.topicFilters, ...newTopics])
     }
     }, {growthFilters: [], topicFilters: []})
-
-
 
 
 const GardenPage = ({ data: { site, notesQuery } }) => {
