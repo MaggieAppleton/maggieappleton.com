@@ -104,18 +104,18 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
 
         {/*------------  Filtering Feature ------------ */}
 
-          <div css={css({display: 'flex', justifyContent: 'space-around'})}>
-            <div >
+          <div css={css({ padding: '1em', flexWrap: 'wrap', display: 'flex', flexDirection: 'column', justifyContent: 'space-around'})}>
+            <div css={css({padding: '1em', flexWrap: 'wrap', marginBottom: '1em', display: 'flex', flexDirection: 'row'})}>
               {filters.growthFilters.map((filter)=> {
                 return <div onClick={() => handleFilterClick(filter, {clearFilters: filters.growthFilters.filter(f => f !== filter)})} css={css({
-                  background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
+                  padding: '1em', background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
                 })}>{filter}</div>
               })}
             </div>
-            <div>
+            <div css={css({display: 'flex', flexDirection: 'row', flexWrap: 'wrap',})}>
               {filters.topicFilters.map((filter)=> {
                 return <div onClick={() => handleFilterClick(filter)} css={css({
-                  background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
+                  padding: '1em',  background: includes(activeFilters, filter) ? 'tomato' : 'inherit'
                 })}>{filter}</div>
               })}
             </div>
