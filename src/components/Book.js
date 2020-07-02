@@ -4,6 +4,7 @@ import { rhythm } from '../lib/typography'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
+import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
 import { useTheme } from 'components/Theming'
 
 const Book = props => {
@@ -13,14 +14,22 @@ const Book = props => {
       <div
         key={props.id}
         css={css`
-          padding: 0.8em;
-          margin: 0em 0.6em;
-          width: 240px;
+          padding: 0;
+          margin-left: 1.6em;
+          width: 260px;
           .gatsby-image-wrapper {
             border-radius: 4px;
             transition: all 500ms ease;
             -webkit-box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
             box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
+          }
+          ${bpMaxMD} {
+            padding: 0.4em;
+            width: 200px;
+            margin: 0em 0.3em;
+          }
+          ${bpMaxSM} {
+            width: 360px;
           }
           &:hover {
             .gatsby-image-wrapper {

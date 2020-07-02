@@ -154,7 +154,8 @@ export default function Index({
           grid-gap: 2.2em;
           grid-template-columns: 3fr 5fr;
           ${bpMaxMD} {
-            grid-template-columns: 100%;
+            display: flex;
+            flex-direction: column;
           }
           h2,
           h3 {
@@ -169,6 +170,7 @@ export default function Index({
             text-transform: uppercase;
           }
           .essays {
+            margin-bottom: 1.8em;
             justify-self: end;
             .essaysGrid {
               display: grid;
@@ -176,30 +178,40 @@ export default function Index({
               grid-template-rows: 1fr 1fr;
               grid-gap: 0.8em;
               margin-bottom: 1em;
+              ${bpMaxSM} {
+                grid-template-columns: 1fr;
+              }
             }
-
             ${bpMaxSM} {
               grid-gap: 0.6em;
+              margin-bottom: 3em;
             }
           }
           .illustration {
+            margin-bottom: 1.8em;
             grid-column: 1 / 3;
             display: column;
             flex-direction: row;
+            ${bpMaxSM} {
+              margin-bottom: 3em;
+            }
             .illustrationGrid {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
               grid-gap: 1em;
+              ${bpMaxSM} {
+                grid-template-columns: 1fr;
+              }
             }
           }
           .books {
             display: flex;
             flex-direction: row;
-            padding-right: 2em;
             padding-top: 2em;
             grid-column: 1 / 3;
             ${bpMaxMD} {
               grid-column: 1 / 1;
+              flex-wrap: wrap;
             }
             ${bpMaxSM} {
               flex-direction: column;
@@ -207,17 +219,24 @@ export default function Index({
             }
             .bookTitle {
               padding-right: 3em;
+              margin-bottom: 2em;
             }
           }
           .garden {
             padding-right: 2em;
             padding-bottom: 2em;
+            ${bpMaxSM} {
+              margin-bottom: 3em;
+            }
             .gardenGrid {
               display: grid;
               grid-template-columns: 1fr;
               ${bpMaxMD} {
                 grid-template-columns: 1fr 1fr;
                 grid-column-gap: 0.6em;
+              }
+              ${bpMaxSM} {
+                grid-template-columns: 1fr;
               }
             }
             h4 {
@@ -280,19 +299,23 @@ export default function Index({
                   </SimpleCard>
                 </Link>
               ))}
-
-          <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
-            Visit the Garden
-          </SmallSectionLink>
             </div>
+
+            <SmallSectionLink
+              float="right"
+              to="/garden"
+              aria="Visit the Garden"
+            >
+              Visit the Garden
+            </SmallSectionLink>
           </section>
         </section>
 
         {/* ------------------ Essays Section-----------------  */}
         <section className="essays">
-        <TitleSectionLink to="/essays">Illustrated Essays</TitleSectionLink>
+          <TitleSectionLink to="/essays">Illustrated Essays</TitleSectionLink>
           <div className="essaysGrid">
-          {essaysQuery.edges.map(({ node: essay }) => (
+            {essaysQuery.edges.map(({ node: essay }) => (
               <Link
                 to={`/${essay.frontmatter.slug}`}
                 aria-label={`View ${essay.frontmatter.title}`}
@@ -303,7 +326,7 @@ export default function Index({
                   css={css`
                     font-family: ${fonts.regularSans};
                     max-width: 350px;
-                    margin: 0;
+                    margin: 0 auto;
                     padding: 0.4em 1.2em 0.8em 1.2em;
                     h4 {
                       font-size: 1.1em;
@@ -326,7 +349,6 @@ export default function Index({
                 </SimpleCard>
               </Link>
             ))}
-
           </div>
 
           <SmallSectionLink float="right" to="/essays" aria="Read More Essays">
@@ -340,7 +362,7 @@ export default function Index({
             Illustration Projects
           </TitleSectionLink>
           <div className="illustrationGrid">
-          {illustrationQuery.edges.map(({ node: illustration }) => (
+            {illustrationQuery.edges.map(({ node: illustration }) => (
               <IllustrationCard
                 slug={illustration.frontmatter.slug}
                 title={illustration.frontmatter.title}

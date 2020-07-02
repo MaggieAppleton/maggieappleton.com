@@ -20,7 +20,8 @@ const IllustrationCard = props => {
       <div
         key={props.id}
         css={css`
-          margin-bottom: 40px;
+        margin: 0 auto;
+          margin-bottom: 1em;
           max-width: 450px;
           transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;
           .imgWrap {
