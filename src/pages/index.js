@@ -152,7 +152,7 @@ export default function Index({
           padding-top: 0;
           display: grid;
           grid-gap: 2.2em;
-          grid-template-columns: 2fr 4fr;
+          grid-template-columns: 3fr 5fr;
           ${bpMaxMD} {
             grid-template-columns: 100%;
           }
@@ -162,19 +162,22 @@ export default function Index({
           }
           h3,
           h5 {
-            margin-bottom: 0.6em;
+            margin-bottom: 0.8em;
           }
           h5 {
             letter-spacing: 0.1em;
             text-transform: uppercase;
           }
           .essays {
+            justify-self: end;
             .essaysGrid {
               display: grid;
               grid-template-columns: 1fr 1fr;
               grid-template-rows: 1fr 1fr;
               grid-gap: 0.4em;
+            margin-bottom: 1em;
             }
+
             ${bpMaxSM} {
               grid-gap: 0.6em;
             }
@@ -186,6 +189,7 @@ export default function Index({
             .illustrationGrid {
               display: grid;
               grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 1em;
             }
           }
           .books {
@@ -275,6 +279,10 @@ export default function Index({
                   </SimpleCard>
                 </Link>
               ))}
+
+          <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
+            Visit the Garden
+          </SmallSectionLink>
             </div>
           </section>
         </section>
@@ -319,10 +327,11 @@ export default function Index({
                 </SimpleCard>
               </Link>
             ))}
+
           </div>
 
-          <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
-            Visit the Garden
+          <SmallSectionLink float="right" to="/essays" aria="Read More Essays">
+            Read More Essays
           </SmallSectionLink>
         </section>
 
