@@ -170,7 +170,7 @@ export default function Index({
             text-transform: uppercase;
           }
           .essays {
-            margin-bottom: 1.8em;
+            margin-bottom: 1.2em;
             justify-self: end;
             .essaysGrid {
               display: grid;
@@ -188,7 +188,7 @@ export default function Index({
             }
           }
           .illustration {
-            margin-bottom: 1.8em;
+            margin-bottom: 1.2em;
             grid-column: 1 / 3;
             display: column;
             flex-direction: row;

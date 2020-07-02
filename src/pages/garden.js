@@ -9,6 +9,7 @@ import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import { getTopicsFromNotes } from 'components/TopicFilters'
 import SimpleCard from '../components/SimpleCard'
+import { bpMaxSM } from '../lib/breakpoints'
 import get from 'lodash/get'
 import includes from 'lodash/includes'
 import isEmpty from 'lodash/isEmpty'
@@ -89,6 +90,9 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
             grid-template-columns: 70% 27%;
             font-size: 0.85em;
             font-family: ${fonts.regularSans};
+            ${bpMaxSM} {
+              grid-template-columns: 100%;
+            }
           }
           .growthFilter {
             display: flex;
@@ -96,12 +100,19 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
             flex-wrap: wrap;
             justify-content: flex-end;
             align-content: flex-start;
+            ${bpMaxSM} {
+              justify-content: center;
+              margin-top: 1em;
+            }
           }
           .topicFilter {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: flex-start;
+            ${bpMaxSM} {
+              justify-content: center;
+            }
           }
           .notesGrid {
             display: flex;
