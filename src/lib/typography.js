@@ -30,7 +30,7 @@ const typography = new Typography({
       color: colors.black,
       fontFamily: fonts.walsheim,
       fontSize: rhythm(2.2),
-      letterSpacing: '0em',
+      letterSpacing: 'normal',
     },
     h2: {
       color: colors.darkGrey,
@@ -42,12 +42,12 @@ const typography = new Typography({
       color: colors.darkGrey,
       fontFamily: fonts.lightSans,
       fontSize: rhythm(1),
-      letterSpacing: '0em',
+      letterSpacing: 'normal',
     },
     h4: {
       fontFamily: fonts.walsheimLight,
       marginBottom: rhythm(1),
-      letterSpacing: '0em',
+      letterSpacing: 'normal',
     },
     h5: {
       fontSize: rhythm(0.6),
@@ -57,17 +57,23 @@ const typography = new Typography({
       fontWeight: '100',
       marginTop: 0,
       fontFamily: fonts.regularSans,
+      WebkitFontSmoothing: 'antialiased',
+      textRendering: 'optimizeLegibility',
     },
     'h1,h2,h3,h4': {
       lineHeight: 1.25,
       marginTop: rhythm(1),
       marginBottom: rhythm(0.6),
+      WebkitFontSmoothing: 'antialiased',
+      textRendering: 'optimizeLegibility',
     },
     h6: {
       color: colors.grey,
     },
     p: {
       marginBottom: rhythm(1 / 2),
+      WebkitFontSmoothing: 'antialiased',
+      textRendering: 'optimizeLegibility',
     },
   }),
 })

@@ -9,7 +9,10 @@
 - Prism.js: Syntax Highlighting
 - Emotion
 - Typography.js
-- Self-hosted fonts ([Inter UI](https://rsms.me/inter/))
+- Self-hosted fonts
+  - GT Walsheim
+  - Freight Sans Pro
+  - Freight Serif
 - Social media share buttons
 - Site & Theme config files
 - ConvertKit subscribe form (Formik and Yup)
@@ -20,6 +23,6 @@
 
 ## Work in Progress
 
-- Bi-directional linking
+- Search functionality
 - Wiki-style nested note folders
 - Webmentions

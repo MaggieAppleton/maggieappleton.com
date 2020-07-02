@@ -100,7 +100,6 @@ const MultipartIntro = () => {
       <div class="outer linked">
         <span>Part 2</span>
         <PartName
-          to="./drawinginvisibles2"
           partName="Cultural and Linguistic Research"
         />
       </div>

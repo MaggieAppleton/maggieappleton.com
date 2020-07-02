@@ -15,7 +15,7 @@ export default function Note({ site, note, referenceBlock }) {
   const mdx = get(note, 'childMdx')
   const title = get(note, 'title')
   const date = get(mdx, 'frontmatter.date')
-  const topics = get(mdx, 'frontmatter.topics')
+  // const topics = get(mdx, 'frontmatter.topics')
   const growthStage = get(mdx, 'frontmatter.growthStage')
   const theme = useTheme()
   
@@ -78,7 +78,7 @@ export default function Note({ site, note, referenceBlock }) {
           `}
         >
           {date && <h6>Last tended on {date}</h6>}
-          {growthStage && <h6><span role="img" aria-label="a small seedling">🌱</span> {growthStage}</h6>}
+          {growthStage && <h6><span role="img" aria-label="a small Seedling">🌱</span> {growthStage}</h6>}
 
         <hr />
         </div>

@@ -21,7 +21,6 @@ const ResetStyles = () => {
   html,
   body {
     font-family: ${fonts.regular}, sans-serif;
-    font-style: normal;
     padding: 0;
     margin: 0;
   }
@@ -34,7 +33,6 @@ const ResetStyles = () => {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
   }
   a {
     text-decoration: none;
@@ -120,6 +118,12 @@ const ResetStyles = () => {
   }
   textarea {
     resize: vertical;
+  }
+  b {
+
+  }
+  i {
+    
   }
   fieldset {
     min-width: 0;

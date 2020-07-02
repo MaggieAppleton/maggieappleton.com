@@ -82,7 +82,7 @@ export default function Note({
           `}
         >
           {date && <h6>Last tended on {date}</h6>}
-          {growthStage && <h6><span role="img" aria-label="a small seedling">🌱</span> {growthStage}</h6>}
+          {growthStage && <h6><span role="img" aria-label="a small Seedling">🌱</span> {growthStage}</h6>}
 
         <hr />
         </div>

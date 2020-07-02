@@ -46,6 +46,7 @@ export const H3 = styled.h3`
   margin-top: 1em;
   margin-bottom: 0.4em;
   line-height: ${rhythm(1.4)};
+  letter-spacing: normal;
 `
 
 export const H4 = styled.h4`
@@ -56,6 +57,7 @@ export const H4 = styled.h4`
   margin-bottom: 0.4em;
   line-height: ${rhythm(1.2)};
   font-size: ${rhythm(0.8)};
+  letter-spacing: normal;
 `
 
 export const H5 = styled.h5`
@@ -65,6 +67,7 @@ export const H5 = styled.h5`
   margin-top: 0.8em;
   margin-bottom: 0.4em;
   line-height: ${rhythm(1)};
+  letter-spacing: normal;
 `
 
 export const H6 = styled.h6`
