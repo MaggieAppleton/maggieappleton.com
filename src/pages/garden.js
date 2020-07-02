@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from 'components/Layout'
 import { Link } from 'gatsby'
+import { lighten, darken } from 'polished'
 import { css } from '@emotion/core'
 import { useTheme } from 'components/Theming'
 import { fonts } from '../lib/typography'
@@ -69,6 +70,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
     return isEmpty(activeFilters) || matchesTopic || matchesGrowth
   })
 
+  // Beginning of return statement
   return (
     <Layout site={site}>
       <Container
@@ -76,7 +78,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           margin-top: 1.6em;
           margin-bottom: 2em;
           .header {
-            margin-bottom: 1em;
+            margin-bottom: 2em;
             max-width: 660px;
             h1 {
               margin-bottom: 0.4em;
@@ -84,26 +86,29 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           }
           .filterSection {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            font-size: 0.8em;
+            grid-template-columns: 70% 27%;
+            font-size: 0.85em;
             font-family: ${fonts.regularSans};
           }
           .growthFilter {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: flex-end;
+            align-content: flex-start;
           }
           .topicFilter {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: flex-start;
           }
           .notesGrid {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 3em;
+            margin-top: 2em;
           }
         `}
       >
@@ -119,6 +124,42 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
         {/*------------  Filtering Feature ------------ */}
 
         <div className="filterSection">
+          
+          {/* <svg width="200px" height="30px" css={css`margin: 0 auto;`}><rect fill={theme.colors.lightOrange} width="200px" height="1px" /></svg> */}
+          <div className="topicFilter">
+            {filters.topicFilters.map(filter => {
+              return (
+                <div
+                  onClick={() => handleFilterClick(filter)}
+                  css={css({
+                    padding: '0.2em 0.5em',
+                    margin: '2px',
+                    borderRadius: '6px',
+                    color: includes(activeFilters, filter)
+                    ? theme.colors.white
+                    : theme.colors.grey,
+                    transition: 'all 200ms ease-in-out',
+                    ':hover': {
+                      border: `1px solid ${lighten(0.1,theme.colors.darkGrey)}`,
+                      color: includes(activeFilters, filter)
+                      ? theme.colors.white
+                      : theme.colors.darkGrey,
+                      cursor: 'pointer'
+                    },
+                    border: includes(activeFilters, filter)
+                    ? `1px solid ${lighten(0.1,theme.colors.grey)}`
+                    : `1px solid ${lighten(0.4,theme.colors.grey)}`,
+                    
+                    background: includes(activeFilters, filter)
+                      ? lighten(0.2, theme.colors.darkGrey)
+                      : 'inherit',
+                  })}
+                >
+                  {filter}
+                </div>
+              )
+            })}
+          </div>
           <div className="growthFilter">
             {filters.growthFilters.map(filter => {
               return (
@@ -131,30 +172,25 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     })
                   }
                   css={css({
-                    padding: '0.2em 0.8em',
-                    borderRadius: '20px',
-                    background: includes(activeFilters, filter)
-                      ? theme.colors.blue
-                      : 'inherit',
-                  })}
-                >
-                  {filter}
-                </div>
-              )
-            })}
-          </div>
-
-          <div className="topicFilter">
-            {filters.topicFilters.map(filter => {
-              return (
-                <div
-                  onClick={() => handleFilterClick(filter)}
-                  css={css({
-                    padding: '0.2em 0.6em',
+                    padding: '0.2em 0.5em',
                     margin: '2px',
-                    borderRadius: '20px',
+                    borderRadius: '6px',
+                    color: includes(activeFilters, filter)
+                    ? theme.colors.white
+                    : darken(0.15, theme.colors.lightGreen),
+                    transition: 'all 200ms ease-in-out',
+                    ':hover': {
+                      border: `1px solid ${lighten(0.1,theme.colors.lightGreen)}`,
+                      color: includes(activeFilters, filter)
+                      ? theme.colors.white
+                      : darken(0.1, theme.colors.lightGreen),
+                      cursor: 'pointer'
+                    },
+                    border: includes(activeFilters, filter)
+                    ? `1px solid ${theme.colors.lightGreen}`
+                    : `1px solid ${lighten(0.32,theme.colors.lightGreen)}`,
                     background: includes(activeFilters, filter)
-                      ? theme.colors.lightOrange
+                      ? theme.colors.lightGreen
                       : 'inherit',
                   })}
                 >
@@ -255,7 +291,7 @@ export const GardenPageQuery = graphql`
           title
           childMarkdownRemark {
             frontmatter {
-              growthStage
+              growthStage 
               topics
               slug
             }
