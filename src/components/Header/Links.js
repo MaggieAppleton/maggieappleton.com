@@ -4,14 +4,14 @@ import { Link } from 'gatsby'
 export default () => {
   return (
     <span>
-      <Link to="/illustration" aria-label="View illustration page">
-        Illustration
+      <Link to="/garden" aria-label="View notes and essays page">
+        Digital Garden
       </Link>
       <Link to="/essays" aria-label="View essays page">
         Essays
       </Link>
-      <Link to="/garden" aria-label="View notes and essays page">
-        Digital Garden
+      <Link to="/illustration" aria-label="View illustration page">
+        Illustration
       </Link>
       <Link to="/bookshelf" aria-label="View books page">
         Bookshelf

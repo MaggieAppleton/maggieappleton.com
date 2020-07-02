@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from 'components/Layout'
 // import { lighten, darken } from 'polished'
+import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
@@ -139,7 +140,7 @@ const TitleSectionLink = props => {
 // ------- // Main Section // ---------- //
 
 export default function Index({
-  data: { site, bookQuery, illustrationQuery, notesQuery },
+  data: { site, bookQuery, illustrationQuery, essaysQuery, notesQuery },
 }) {
   const theme = useTheme()
   return (
@@ -151,9 +152,10 @@ export default function Index({
           padding-top: 0;
           display: grid;
           grid-gap: 2.2em;
-          grid-template-columns: 2fr 4fr;
+          grid-template-columns: 3fr 5fr;
           ${bpMaxMD} {
-            grid-template-columns: 100%;
+            display: flex;
+            flex-direction: column;
           }
           h2,
           h3 {
@@ -161,29 +163,55 @@ export default function Index({
           }
           h3,
           h5 {
-            margin-bottom: 0.6em;
+            margin-bottom: 0.8em;
           }
           h5 {
             letter-spacing: 0.1em;
             text-transform: uppercase;
           }
-          .illustration {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-gap: 1.2em;
+          .essays {
+            margin-bottom: 1.8em;
+            justify-self: end;
+            .essaysGrid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              grid-gap: 0.8em;
+              margin-bottom: 1em;
+              ${bpMaxSM} {
+                grid-template-columns: 1fr;
+              }
+            }
             ${bpMaxSM} {
               grid-gap: 0.6em;
+              margin-bottom: 3em;
+            }
+          }
+          .illustration {
+            margin-bottom: 1.8em;
+            grid-column: 1 / 3;
+            display: column;
+            flex-direction: row;
+            ${bpMaxSM} {
+              margin-bottom: 3em;
+            }
+            .illustrationGrid {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 1em;
+              ${bpMaxSM} {
+                grid-template-columns: 1fr;
+              }
             }
           }
           .books {
             display: flex;
             flex-direction: row;
-            padding-right: 2em;
             padding-top: 2em;
             grid-column: 1 / 3;
             ${bpMaxMD} {
               grid-column: 1 / 1;
+              flex-wrap: wrap;
             }
             ${bpMaxSM} {
               flex-direction: column;
@@ -191,12 +219,25 @@ export default function Index({
             }
             .bookTitle {
               padding-right: 3em;
+              margin-bottom: 2em;
             }
           }
           .garden {
             padding-right: 2em;
             padding-bottom: 2em;
+            ${bpMaxSM} {
+              margin-bottom: 3em;
+            }
             .gardenGrid {
+              display: grid;
+              grid-template-columns: 1fr;
+              ${bpMaxMD} {
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 0.6em;
+              }
+              ${bpMaxSM} {
+                grid-template-columns: 1fr;
+              }
             }
             h4 {
               margin-top: 0.6em;
@@ -228,46 +269,55 @@ export default function Index({
             <div className="gardenGrid">
               {notesQuery.edges.map(({ node: note }) => (
                 <Link
-                css={css`
-                  font-family: ${fonts.walsheimLight};
-                `}
-                to={note.childMarkdownRemark.frontmatter.slug}
-                aria-label={`View ${note.title}`}
-              ><SimpleCard
-                  hover
-                  key={note.id}
                   css={css`
-                    margin-bottom: 0.6em;
-                    padding: 0;
+                    font-family: ${fonts.walsheimLight};
                   `}
+                  to={note.childMarkdownRemark.frontmatter.slug}
+                  aria-label={`View ${note.title}`}
                 >
-                  <h4
-                    css={css({
-                      marginBottom: '0.4em',
-                      padding: '0.4em 1em',
-                      transition: 'all 150ms ease',
-                      ':hover': {
-                        color: theme.colors.darkGrey,
-                      },
-                    })}
+                  <SimpleCard
+                    hover
+                    key={note.id}
+                    css={css`
+                      margin-bottom: 0.6em;
+                      padding: 0;
+                    `}
                   >
+                    <h4
+                      css={css({
+                        color: theme.colors.darkGrey,
+                        marginBottom: '0.4em',
+                        padding: '0.4em 1em',
+                        transition: 'all 150ms ease',
+                        ':hover': {
+                          color: theme.colors.black,
+                        },
+                      })}
+                    >
                       {note.title}
-                  </h4>
-                </SimpleCard></Link>
+                    </h4>
+                  </SimpleCard>
+                </Link>
               ))}
             </div>
 
-            {/* Essays Section
-            <h5
-              css={css`
-                margin-top: 2em;
-              `}
+            <SmallSectionLink
+              float="right"
+              to="/garden"
+              aria="Visit the Garden"
             >
-              Essays
-            </h5>
+              Visit the Garden
+            </SmallSectionLink>
+          </section>
+        </section>
+
+        {/* ------------------ Essays Section-----------------  */}
+        <section className="essays">
+          <TitleSectionLink to="/essays">Illustrated Essays</TitleSectionLink>
+          <div className="essaysGrid">
             {essaysQuery.edges.map(({ node: essay }) => (
               <Link
-                to={essay.frontmatter.slug}
+                to={`/${essay.frontmatter.slug}`}
                 aria-label={`View ${essay.frontmatter.title}`}
               >
                 <SimpleCard
@@ -275,44 +325,43 @@ export default function Index({
                   key={essay.id}
                   css={css`
                     font-family: ${fonts.regularSans};
-                    flex: 1 1 auto;
-                    display: flex;
-                    flex-direction: row;
-                    max-width: 100%;
-                    margin-bottom: 0.4em;
-                    margin-right: 1em;
-                    padding: 1em 1.4em;
+                    max-width: 350px;
+                    margin: 0 auto;
+                    padding: 0.4em 1.2em 0.8em 1.2em;
                     h4 {
-                      font-size: 1em;
-                      margin: 0.4em 0;
+                      font-size: 1.1em;
+                      margin-top: 0.2em;
+                      margin-bottom: 0.4em;
                       transition: all 150ms ease;
                       &:hover: {
                         color: ${theme.colors.primary};
                       }
                     }
-                    h5 {
+                    h6 {
                       margin-bottom: 0;
+                      line-height: 1.3em;
                     }
                   `}
                 >
-                  <h4>➽ {essay.frontmatter.title}</h4>
-                  <h5>{essay.frontmatter.description}</h5>
+                  <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
+                  <h4>{essay.frontmatter.title}</h4>
+                  <h6>{essay.frontmatter.description}</h6>
                 </SimpleCard>
               </Link>
-            ))} */}
+            ))}
+          </div>
 
-            <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
-              Visit the Garden
-            </SmallSectionLink>
-          </section>
+          <SmallSectionLink float="right" to="/essays" aria="Read More Essays">
+            Read More Essays
+          </SmallSectionLink>
         </section>
 
         {/* ------------ Illustration Section ------------ */}
-        <section>
+        <section className="illustration">
           <TitleSectionLink to="/illustration">
             Illustration Projects
           </TitleSectionLink>
-          <div className="illustration">
+          <div className="illustrationGrid">
             {illustrationQuery.edges.map(({ node: illustration }) => (
               <IllustrationCard
                 slug={illustration.frontmatter.slug}
@@ -377,7 +426,7 @@ export const pageQuery = graphql`
         frontmatter: { type: { eq: "illustration" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 4
+      limit: 3
     ) {
       edges {
         node {
@@ -410,7 +459,10 @@ export const pageQuery = graphql`
       }
     }
 
-    notesQuery: allBrainNote(sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date} limit: 5) {
+    notesQuery: allBrainNote(
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
+      limit: 6
+    ) {
       edges {
         node {
           id
@@ -429,7 +481,7 @@ export const pageQuery = graphql`
         frontmatter: { type: { eq: "essay" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 2
+      limit: 4
     ) {
       edges {
         node {
@@ -450,6 +502,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
