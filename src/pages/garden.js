@@ -6,66 +6,63 @@ import { useTheme } from 'components/Theming'
 import { fonts } from '../lib/typography'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
+import { getTopicsFromNotes } from 'components/TopicFilters'
 import SimpleCard from '../components/SimpleCard'
 import get from 'lodash/get'
-import isArray from 'lodash/isArray'
-import uniq from 'lodash/uniq'
 import includes from 'lodash/includes'
 import isEmpty from 'lodash/isEmpty'
 import some from 'lodash/some'
 
-const getTopicsFromNotes = (noteNodes) => 
-  noteNodes.reduce((topics, {node: note}) => {
-    const newGrowth = get(note, 'childMarkdownRemark.frontmatter.growthStage', 'Seedling')
-    let newTopics = get(note, 'childMarkdownRemark.frontmatter.topics', [])
-    if(!newTopics || !isArray(newTopics)){
-      newTopics = []
-    }
-    return {
-      growthFilters: uniq([...topics.growthFilters, newGrowth]),
-      topicFilters: uniq([...topics.topicFilters, ...newTopics])
-    }
-    }, {growthFilters: [], topicFilters: []})
-
-
 const GardenPage = ({ data: { site, notesQuery } }) => {
-
+  // Set theme
   const theme = useTheme()
-  
+
+  // Set up topic and growthStage filters
   const filters = getTopicsFromNotes(notesQuery.edges)
   const [activeFilters, setActiveFilters] = React.useState([])
+
+  // Handle filter
   const handleFilterClick = (filter, options) => {
     const clearFilters = get(options, 'clearFilters', [])
     let newActiveFilters
-    
-    if(includes(activeFilters, filter)){
-      newActiveFilters = activeFilters.filter((f) => f !== filter)
+
+    if (includes(activeFilters, filter)) {
+      newActiveFilters = activeFilters.filter(f => f !== filter)
     } else {
       newActiveFilters = activeFilters.concat(filter)
     }
-    
-    if(!isEmpty(clearFilters)){
-      clearFilters.forEach((f) => {
-        newActiveFilters = newActiveFilters.filter((activeFilter) => f !== activeFilter) 
+
+    if (!isEmpty(clearFilters)) {
+      clearFilters.forEach(f => {
+        newActiveFilters = newActiveFilters.filter(
+          activeFilter => f !== activeFilter,
+        )
       })
     }
 
     setActiveFilters(newActiveFilters)
   }
 
-  const displayedNotes = notesQuery.edges.filter(({node: note}) => {
-    const matchesBoth = activeFilters.reduce((acc, current) => {
-      return {
-        growth: acc.growth || includes(filters.growthFilters, current) ,
-        topics: acc.topics || includes(filters.topicFilters, current)
-      }
-    }, {growth: false, topics: false})
+  const displayedNotes = notesQuery.edges.filter(({ node: note }) => {
+    const matchesBoth = activeFilters.reduce(
+      (acc, current) => {
+        return {
+          growth: acc.growth || includes(filters.growthFilters, current),
+          topics: acc.topics || includes(filters.topicFilters, current),
+        }
+      },
+      { growth: false, topics: false },
+    )
 
-    
-    const matchesGrowth = includes(activeFilters, note.childMarkdownRemark.frontmatter.growthStage)
-    const matchesTopic = some(note.childMarkdownRemark.frontmatter.topics, (t) =>  includes(activeFilters, t))
-  
-    if(matchesBoth.growth && matchesBoth.topics){
+    const matchesGrowth = includes(
+      activeFilters,
+      note.childMarkdownRemark.frontmatter.growthStage,
+    )
+    const matchesTopic = some(note.childMarkdownRemark.frontmatter.topics, t =>
+      includes(activeFilters, t),
+    )
+
+    if (matchesBoth.growth && matchesBoth.topics) {
       return matchesGrowth && matchesTopic
     }
 
@@ -119,32 +116,54 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           </p>
         </section>
 
-
         {/*------------  Filtering Feature ------------ */}
 
-          <div className="filterSection">
-
-            <div className="growthFilter">
-
-              {filters.growthFilters.map((filter)=> {
-                return <div onClick={() => handleFilterClick(filter, {clearFilters: filters.growthFilters.filter(f => f !== filter)})} css={css({
-                  padding: '0.2em 0.8em', borderRadius: '20px', background: includes(activeFilters, filter) ? theme.colors.blue : 'inherit'
-                })}>{filter}</div>
-              })}
-
-            </div>
-
-            <div className="topicFilter">
-
-              {filters.topicFilters.map((filter)=> {
-                return <div onClick={() => handleFilterClick(filter)} css={css({
-                  padding: '0.2em 0.6em', margin: '2px', borderRadius: '20px', background: includes(activeFilters, filter) ? theme.colors.lightOrange : 'inherit'
-                })}>{filter}</div>
-              })}
-
-            </div>
+        <div className="filterSection">
+          <div className="growthFilter">
+            {filters.growthFilters.map(filter => {
+              return (
+                <div
+                  onClick={() =>
+                    handleFilterClick(filter, {
+                      clearFilters: filters.growthFilters.filter(
+                        f => f !== filter,
+                      ),
+                    })
+                  }
+                  css={css({
+                    padding: '0.2em 0.8em',
+                    borderRadius: '20px',
+                    background: includes(activeFilters, filter)
+                      ? theme.colors.blue
+                      : 'inherit',
+                  })}
+                >
+                  {filter}
+                </div>
+              )
+            })}
           </div>
 
+          <div className="topicFilter">
+            {filters.topicFilters.map(filter => {
+              return (
+                <div
+                  onClick={() => handleFilterClick(filter)}
+                  css={css({
+                    padding: '0.2em 0.6em',
+                    margin: '2px',
+                    borderRadius: '20px',
+                    background: includes(activeFilters, filter)
+                      ? theme.colors.lightOrange
+                      : 'inherit',
+                  })}
+                >
+                  {filter}
+                </div>
+              )
+            })}
+          </div>
+        </div>
 
         {/* ------------ Notes Section ------------------ */}
 
@@ -181,15 +200,30 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                 >
                   <h4>{note.title}</h4>
                   <span>
-                    {note.childMarkdownRemark.frontmatter.growthStage === 'Seedling' ?
-                      (<h6><span role="img" aria-label="seedling">🌱 </span></h6>) : null
-                    }
-                    {note.childMarkdownRemark.frontmatter.growthStage === 'Budding' ? 
-                      (<h6><span role="img" aria-label="seedling">🌿</span> </h6>) : null
-                    }
-                    {note.childMarkdownRemark.frontmatter.growthStage === 'Evergreen' ? 
-                       (<h6><span role="img" aria-label="seedling">🌳</span> </h6>) : null
-                    }
+                    {note.childMarkdownRemark.frontmatter.growthStage ===
+                    'Seedling' ? (
+                      <h6>
+                        <span role="img" aria-label="seedling">
+                          🌱{' '}
+                        </span>
+                      </h6>
+                    ) : null}
+                    {note.childMarkdownRemark.frontmatter.growthStage ===
+                    'Budding' ? (
+                      <h6>
+                        <span role="img" aria-label="seedling">
+                          🌿
+                        </span>{' '}
+                      </h6>
+                    ) : null}
+                    {note.childMarkdownRemark.frontmatter.growthStage ===
+                    'Evergreen' ? (
+                      <h6>
+                        <span role="img" aria-label="seedling">
+                          🌳
+                        </span>{' '}
+                      </h6>
+                    ) : null}
                   </span>
                 </SimpleCard>
               </Link>
@@ -212,7 +246,9 @@ export const GardenPageQuery = graphql`
       }
     }
 
-    notesQuery: allBrainNote(sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date}) {
+    notesQuery: allBrainNote(
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
+    ) {
       edges {
         node {
           id
