@@ -174,8 +174,8 @@ export default function Index({
               display: grid;
               grid-template-columns: 1fr 1fr;
               grid-template-rows: 1fr 1fr;
-              grid-gap: 0.4em;
-            margin-bottom: 1em;
+              grid-gap: 0.8em;
+              margin-bottom: 1em;
             }
 
             ${bpMaxSM} {
@@ -266,11 +266,12 @@ export default function Index({
                   >
                     <h4
                       css={css({
+                        color: theme.colors.darkGrey,
                         marginBottom: '0.4em',
                         padding: '0.4em 1em',
                         transition: 'all 150ms ease',
                         ':hover': {
-                          color: theme.colors.darkGrey,
+                          color: theme.colors.black,
                         },
                       })}
                     >
@@ -289,9 +290,7 @@ export default function Index({
 
         {/* ------------------ Essays Section-----------------  */}
         <section className="essays">
-          <h3>
-            Illustrated Essays
-          </h3>
+        <TitleSectionLink to="/essays">Illustrated Essays</TitleSectionLink>
           <div className="essaysGrid">
           {essaysQuery.edges.map(({ node: essay }) => (
               <Link
