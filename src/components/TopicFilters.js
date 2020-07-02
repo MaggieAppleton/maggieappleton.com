@@ -1,22 +1,16 @@
-import React from 'react'
+import isArray from 'lodash/isArray'
+import uniq from 'lodash/uniq'
+import get from 'lodash/get'
 
-const ALL_TOPICS = 'all'
-
-const topicOrder = {
- // topic1: 1,
- // topic2: 2
-}
-
-const TopicFilters = ({ notes }) {
-    const topics = notes.reduce((currentTopic, nextNote) => {
-        const newTopic = get(nextNote, 'node.frontmatter.topics')
-    })
-
-    return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default TopicFilters
+export const getTopicsFromNotes = (noteNodes) => 
+  noteNodes.reduce((topics, {node: note}) => {
+    const newGrowth = get(note, 'childMarkdownRemark.frontmatter.growthStage', 'Seedling')
+    let newTopics = get(note, 'childMarkdownRemark.frontmatter.topics', [])
+    if(!newTopics || !isArray(newTopics)){
+      newTopics = []
+    }
+    return {
+      growthFilters: uniq([...topics.growthFilters, newGrowth]),
+      topicFilters: uniq([...topics.topicFilters, ...newTopics])
+    }
+  }, {growthFilters: [], topicFilters: []})
