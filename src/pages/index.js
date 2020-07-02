@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from 'components/Layout'
 // import { lighten, darken } from 'polished'
+import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { useTheme } from 'components/Theming'
 import Container from 'components/Container'
@@ -139,7 +140,7 @@ const TitleSectionLink = props => {
 // ------- // Main Section // ---------- //
 
 export default function Index({
-  data: { site, bookQuery, illustrationQuery, notesQuery },
+  data: { site, bookQuery, illustrationQuery, essaysQuery, notesQuery },
 }) {
   const theme = useTheme()
   return (
@@ -167,13 +168,24 @@ export default function Index({
             letter-spacing: 0.1em;
             text-transform: uppercase;
           }
-          .illustration {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-gap: 1.2em;
+          .essays {
+            .essaysGrid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              grid-gap: 0.4em;
+            }
             ${bpMaxSM} {
               grid-gap: 0.6em;
+            }
+          }
+          .illustration {
+            grid-column: 1 / 3;
+            display: column;
+            flex-direction: row;
+            .illustrationGrid {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
             }
           }
           .books {
@@ -197,6 +209,12 @@ export default function Index({
             padding-right: 2em;
             padding-bottom: 2em;
             .gardenGrid {
+              display: grid;
+              grid-template-columns: 1fr;
+              ${bpMaxMD} {
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 0.6em;
+              }
             }
             h4 {
               margin-top: 0.6em;
@@ -228,46 +246,48 @@ export default function Index({
             <div className="gardenGrid">
               {notesQuery.edges.map(({ node: note }) => (
                 <Link
-                css={css`
-                  font-family: ${fonts.walsheimLight};
-                `}
-                to={note.childMarkdownRemark.frontmatter.slug}
-                aria-label={`View ${note.title}`}
-              ><SimpleCard
-                  hover
-                  key={note.id}
                   css={css`
-                    margin-bottom: 0.6em;
-                    padding: 0;
+                    font-family: ${fonts.walsheimLight};
                   `}
+                  to={note.childMarkdownRemark.frontmatter.slug}
+                  aria-label={`View ${note.title}`}
                 >
-                  <h4
-                    css={css({
-                      marginBottom: '0.4em',
-                      padding: '0.4em 1em',
-                      transition: 'all 150ms ease',
-                      ':hover': {
-                        color: theme.colors.darkGrey,
-                      },
-                    })}
+                  <SimpleCard
+                    hover
+                    key={note.id}
+                    css={css`
+                      margin-bottom: 0.6em;
+                      padding: 0;
+                    `}
                   >
+                    <h4
+                      css={css({
+                        marginBottom: '0.4em',
+                        padding: '0.4em 1em',
+                        transition: 'all 150ms ease',
+                        ':hover': {
+                          color: theme.colors.darkGrey,
+                        },
+                      })}
+                    >
                       {note.title}
-                  </h4>
-                </SimpleCard></Link>
+                    </h4>
+                  </SimpleCard>
+                </Link>
               ))}
             </div>
+          </section>
+        </section>
 
-            {/* Essays Section
-            <h5
-              css={css`
-                margin-top: 2em;
-              `}
-            >
-              Essays
-            </h5>
-            {essaysQuery.edges.map(({ node: essay }) => (
+        {/* ------------------ Essays Section-----------------  */}
+        <section className="essays">
+          <h3>
+            Illustrated Essays
+          </h3>
+          <div className="essaysGrid">
+          {essaysQuery.edges.map(({ node: essay }) => (
               <Link
-                to={essay.frontmatter.slug}
+                to={`/${essay.frontmatter.slug}`}
                 aria-label={`View ${essay.frontmatter.title}`}
               >
                 <SimpleCard
@@ -275,45 +295,44 @@ export default function Index({
                   key={essay.id}
                   css={css`
                     font-family: ${fonts.regularSans};
-                    flex: 1 1 auto;
-                    display: flex;
-                    flex-direction: row;
-                    max-width: 100%;
-                    margin-bottom: 0.4em;
-                    margin-right: 1em;
-                    padding: 1em 1.4em;
+                    max-width: 350px;
+                    margin: 0;
+                    padding: 0.4em 1.2em 0.8em 1.2em;
                     h4 {
-                      font-size: 1em;
-                      margin: 0.4em 0;
+                      font-size: 1.1em;
+                      margin-top: 0.2em;
+                      margin-bottom: 0.4em;
                       transition: all 150ms ease;
                       &:hover: {
                         color: ${theme.colors.primary};
                       }
                     }
-                    h5 {
+                    h6 {
                       margin-bottom: 0;
+                      line-height: 1.3em;
                     }
                   `}
                 >
-                  <h4>➽ {essay.frontmatter.title}</h4>
-                  <h5>{essay.frontmatter.description}</h5>
+                  <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
+                  <h4>{essay.frontmatter.title}</h4>
+                  <h6>{essay.frontmatter.description}</h6>
                 </SimpleCard>
               </Link>
-            ))} */}
+            ))}
+          </div>
 
-            <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
-              Visit the Garden
-            </SmallSectionLink>
-          </section>
+          <SmallSectionLink float="left" to="/garden" aria="Visit the Garden">
+            Visit the Garden
+          </SmallSectionLink>
         </section>
 
         {/* ------------ Illustration Section ------------ */}
-        <section>
+        <section className="illustration">
           <TitleSectionLink to="/illustration">
             Illustration Projects
           </TitleSectionLink>
-          <div className="illustration">
-            {illustrationQuery.edges.map(({ node: illustration }) => (
+          <div className="illustrationGrid">
+          {illustrationQuery.edges.map(({ node: illustration }) => (
               <IllustrationCard
                 slug={illustration.frontmatter.slug}
                 title={illustration.frontmatter.title}
@@ -377,7 +396,7 @@ export const pageQuery = graphql`
         frontmatter: { type: { eq: "illustration" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 4
+      limit: 3
     ) {
       edges {
         node {
@@ -410,7 +429,10 @@ export const pageQuery = graphql`
       }
     }
 
-    notesQuery: allBrainNote(sort: {order: DESC, fields: childMarkdownRemark___frontmatter___date} limit: 5) {
+    notesQuery: allBrainNote(
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
+      limit: 6
+    ) {
       edges {
         node {
           id
@@ -429,7 +451,7 @@ export const pageQuery = graphql`
         frontmatter: { type: { eq: "essay" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 2
+      limit: 4
     ) {
       edges {
         node {
@@ -450,6 +472,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
