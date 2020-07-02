@@ -174,21 +174,23 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                   css={css({
                     padding: '0.2em 0.5em',
                     margin: '2px',
-                    borderRadius: '6px',
+                    borderRadius: includes(activeFilters, filter)
+                    ? '6px' : '0px',
                     color: includes(activeFilters, filter)
                     ? theme.colors.white
                     : darken(0.15, theme.colors.lightGreen),
-                    transition: 'all 200ms ease-in-out',
+                    transition: 'all 300ms ease-in-out',
                     ':hover': {
-                      border: `1px solid ${lighten(0.1,theme.colors.lightGreen)}`,
+                      transition: 'all 300ms ease-in-out',
+                      borderBottom: `2px solid ${lighten(0.1,theme.colors.lightGreen)}`,
                       color: includes(activeFilters, filter)
                       ? theme.colors.white
                       : darken(0.1, theme.colors.lightGreen),
                       cursor: 'pointer'
                     },
-                    border: includes(activeFilters, filter)
-                    ? `1px solid ${theme.colors.lightGreen}`
-                    : `1px solid ${lighten(0.32,theme.colors.lightGreen)}`,
+                    borderBottom: includes(activeFilters, filter)
+                    ? `2px solid ${theme.colors.lightGreen}`
+                    : `2px solid ${lighten(0.32,theme.colors.lightGreen)}`,
                     background: includes(activeFilters, filter)
                       ? theme.colors.lightGreen
                       : 'inherit',

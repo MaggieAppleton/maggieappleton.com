@@ -11,7 +11,7 @@ const colors = {
   blue: '#00AFF0',
   lightBlue: '#22BEF7',
   darkBlue: '#2F73E6',
-  lightGreen: '#3CC296',
+  lightGreen: '#AAC339',
   navy: '#192C4C',
   red: '#FD5351',
 }
