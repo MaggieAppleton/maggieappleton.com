@@ -59,7 +59,7 @@ const PreviousNext = props => {
     >
       {props.prevSlug && (
         <Link to={`/${props.prevSlug}`} aria-label="View previous page">
-          <div className="left" className="linkContainer">
+          <div className="left linkContainer">
             <i className="arrow">
               <svg
                 width="30"
@@ -77,7 +77,7 @@ const PreviousNext = props => {
       )}
       {props.nextSlug && (
         <Link to={`/${props.nextSlug}`} aria-label="View next page">
-          <div className="right" className="linkContainer">
+          <div className="right linkContainer">
             <h4>{props.nextTitle}</h4>
             <i className="arrow">
               <svg
