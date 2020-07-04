@@ -86,15 +86,7 @@ export default function Note({ site, note, referenceBlock }) {
         <br />
         <MDXRenderer>{mdx.body}</MDXRenderer>
 
-<div>{referenceBlock}</div>
-        {/* <BacklinksSection>
-          <BacklinkItem
-            pageTitle="Title"
-            pageLink="Link"
-            excerpt="For those of us here for the hyper-customised, over-engineered Javascript solution the Gatsby.js community has a number of active gardening enthusiasts building themes and plugins."
-          />
-        </BacklinksSection> */}
-        {/* Share Container */}
+        <div>{referenceBlock}</div>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
           title={title}

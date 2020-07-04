@@ -133,61 +133,6 @@ module.exports = {
         trackingId: `UA-45097160-1`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {
-    //     query: `
-    //       {
-    //         site {
-    //           siteMetadata {
-    //             title
-    //             description
-    //             siteUrl
-    //             site_url: siteUrl
-    //           }
-    //         }
-    //       }
-    //     `,
-    //     feeds: [
-    //       {
-    //         serialize: ({ query: { site, allMdx } }) => {
-    //           return allMdx.edges.map(edge => {
-    //             return Object.assign({}, edge.node.frontmatter, {
-    //               description: edge.node.excerpt,
-    //               date: edge.node.fields.date,
-    //               url: site.siteMetadata.siteUrl + '/' + edge.node.fields.slug,
-    //               guid: site.siteMetadata.siteUrl + '/' + edge.node.fields.slug,
-    //             })
-    //           })
-    //         },
-    //         query: `
-    //           {
-    //             allMdx(
-    //               limit: 1000,
-    //               filter: { frontmatter: { published: { ne: false } } }
-    //               sort: { order: DESC, fields: [frontmatter___date] }
-    //             ) {
-    //               edges {
-    //                 node {
-    //                   excerpt(pruneLength: 250)
-    //                   fields { 
-    //                   }
-    //                   frontmatter {
-    //                     title
-    //                     slug
-    //                     date
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         `,
-    //         output: '/rss.xml',
-    //         title: 'Essays RSS Feed',
-    //       },
-    //     ],
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -203,6 +148,7 @@ module.exports = {
         notesDirectory: `content/notes/`,
         rootPath: `/`,
         hideDoubleBrackets: true,
+        
       },
     },
   ],
