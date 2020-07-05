@@ -12,6 +12,7 @@ import NoteSidebar from './NoteSidebar'
 import SimpleCard from '../SimpleCard'
 import LinkCard from './LinkCard'
 import { ComingSoon } from './ComingSoon'
+import { Draft } from './Draft'
 import {
   Divider,
   H3,
@@ -90,6 +91,7 @@ export default {
   ResearchBlock: props => <ResearchBlock {...props} />,
   Footnote: props => <Footnote {...props} />,
   ComingSoon: props => <ComingSoon {...props} />,
+  Draft: props => <Draft {...props} />,
   LinkCard: props => <LinkCard {...props} />,
   Arrow: Arrow,
   // ------------- Single Use Components--------------- //
