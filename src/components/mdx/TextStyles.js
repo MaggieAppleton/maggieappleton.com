@@ -18,10 +18,10 @@ export const OrderedList = styled.ol`
   list-style-type: decimal-leading-zero;
   line-height: 1.8em;
   max-width: 660px;
-  margin: 0 auto;
+  padding-left: 1em;
+  margin: 0.8em auto;
   li {
-    margin: 0.6em;
-    margin-left: 1em;
+    margin-bottom: 0.25em;
   }
 `
 
@@ -30,12 +30,12 @@ export const UnorderedList = styled.ul`
   grid-gap: 0.6em;
   list-style: inside;
   list-style-image: url(icons/radiobtn.svg);
-  line-height: 1.6em;
+  line-height: 1.8em;
   max-width: 660px;
   padding-left: 1em;
-  margin: 1em auto;
+  margin: 0.8em auto;
   li {
-    margin-bottom: 0.4em;
+    margin-bottom: 0.25em;
   }
 `
 
