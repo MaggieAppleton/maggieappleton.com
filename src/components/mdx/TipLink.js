@@ -130,10 +130,10 @@ const TipLink = ({ noTip, children, href, ...other }) => {
       css={css({
         display: 'inline-block',
         color: `${theme.colors.blue}`,
-        borderRadius: '4px',
+        borderRadius: '3px',
         lineHeight: '1em',
         transition: 'all 0.6s ease',
-        padding: '5px',
+        padding: '4px 2px',
         ':hover, :focus': {
           background: `${theme.colors.lightBlue}`,
           color: 'white',
