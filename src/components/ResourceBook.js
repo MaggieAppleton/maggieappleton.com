@@ -1,16 +1,15 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from 'components/Theming'
-import { bpMinSM } from '../lib/breakpoints'
+import { bpMaxSM } from '../lib/breakpoints'
 
 export default function ResourceBook(props) {
   const theme = useTheme()
   return (
     <>
-      <a target="_blank" rel="noopener noreferrer"  href={props.url}>
+      <a href={props.url}>
         <div
           css={css({
-            // justifyContent: 'space-between',
             '.gatsby-image-wrapper': {
               width: '100%',
               height: '100%',
@@ -22,22 +21,27 @@ export default function ResourceBook(props) {
               },
             },
             transition: 'all 350ms ease',
-          })}>
+          })}
+          {...props}
+        >
           <div
             css={css({
-              [bpMinSM]: {
+              [bpMaxSM]: {
                 padding: '20px',
+                gridTemplateColumns: '1fr',
               },
               padding: '8px',
               color: '#464E55',
-              // justifyContent: 'space-between',
               display: 'grid',
               gridTemplateColumns: '1fr 2fr',
               alignSelf: 'start',
+              opacity: '90%',
               h1: {
                 fontSize: '1.5em',
+                maxWidth: '450px',
                 marginBottom: '16px',
                 lineHeight: '1.2em',
+                marginTop: '0.4em',
               },
               h5: {
                 fontSize: '0.9em',
@@ -51,7 +55,7 @@ export default function ResourceBook(props) {
               },
               '.dataBlock': {
                 paddingLeft: '20px',
-                alignSelf: 'center',
+                alignSelf: 'top',
               },
               '.description': {
                 lineHeight: '1.4em',
@@ -59,11 +63,13 @@ export default function ResourceBook(props) {
                 maxWidth: '450px',
               },
               ':hover': {
-                transition: 'all 0.6s ease-in-out',
-                h1: { color: `${theme.colors.orange}`, 
-                transition: 'all 0.4s ease-in-out',}, 
+                transition: 'all 0.4s ease-in-out',
+                opacity: '100%',
+                cursor: 'pointer',
+                h1: { color: `${theme.colors.orange}`, transition: 'all 0.4s ease-in-out', },
               },
-            })}>
+            })}
+          >
             <img
               css={css({
                 padding: '10px',
@@ -76,13 +82,13 @@ export default function ResourceBook(props) {
                 background: 'white',
                 boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.2)',
               })}
-              alt='book cover'
+              alt="book cover"
               src={props.img}
             />
-            <div class='dataBlock'>
+            <div class="dataBlock">
               <h1>{props.title}</h1>
               <h5>{props.author}</h5>
-              <p class='description'>{props.description}</p>
+              <p class="description">{props.description}</p>
             </div>
           </div>
         </div>
