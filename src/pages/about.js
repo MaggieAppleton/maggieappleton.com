@@ -40,6 +40,7 @@ const theme = useTheme()
     <Layout site={data.site}>
       <Container
         css={css`
+        padding: 0;
           justify-items: center;
           margin-top: 4em;
           max-width: 80%;
@@ -50,13 +51,13 @@ const theme = useTheme()
             border-radius: 5px;
             margin: 1.6em auto 0em;
             padding: 1em;
-          transition: all 0.3s ease-in-out;
-            h1 {
+            transition: all 0.3s ease-in-out;
+            h2 {
               transition: all 0.3s ease-in-out;
               color: ${theme.colors.darkGrey};
-              margin: 0;
+              margin-top: 0.2em;
               font-size: 1.8em;
-              line-height: 1.4em;
+              line-height: 1.2em;
             }
             h4 {
               transition: all 0.3s ease-in-out;
@@ -65,15 +66,17 @@ const theme = useTheme()
             }
             :hover {
               border: 1px solid ${theme.colors.orange};
-              h1, h4 {
+              h2, h4 {
               color: ${theme.colors.black};
               }
             }
           }
           .header {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 50% 50%;
-            grid-gap: 3em;
+            grid-gap: 2em;
             ${bpMaxSM} {
               grid-template-columns: 1fr;
             }
@@ -149,8 +152,8 @@ const theme = useTheme()
             }}
             fluid={data.profilePic.childImageSharp.fluid}
           />
-          <a href='/faq'><div className="faqBlock"><h1>Have questions?<br />I have an FAQ</h1></div></a>
-          <a href='/resources'><div className="faqBlock"><h1>Want to improve your illustration skills?</h1><h4>I have a recommended resources page</h4></div></a>
+          <a href='/faq'><div className="faqBlock"><h2>Have questions?<br />I have an FAQ</h2></div></a>
+          <a href='/resources'><div className="faqBlock"><h2>Want to improve your illustration skills?</h2><h4>I have a recommended resources page</h4></div></a>
           </div>
           
         </div>
