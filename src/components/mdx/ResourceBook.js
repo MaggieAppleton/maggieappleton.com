@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinSM } from '../../lib/breakpoints'
+import { bpMaxSM } from '../../lib/breakpoints'
 import { useTheme } from '../Theming'
 
 
@@ -28,8 +28,9 @@ const theme = useTheme()
         >
           <div
             css={css({
-              [bpMinSM]: {
+              [bpMaxSM]: {
                 padding: '20px',
+                gridTemplateColumns: '1fr',
               },
               padding: '8px',
               color: '#464E55',
@@ -39,6 +40,7 @@ const theme = useTheme()
               opacity: '90%',
               h1: {
                 fontSize: '1.5em',
+                maxWidth: '450px',
                 marginBottom: '16px',
                 lineHeight: '1.2em',
                 marginTop: '0.4em',
