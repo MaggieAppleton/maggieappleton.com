@@ -122,30 +122,30 @@ export const resourceCourses = [
         },
       ],
     },
-    {
-      title: 'Will Weston',
-      description:
-        "Will is one of the instagram stars of the art education world. His profile is a treasure trove of lecture notes teaching fundamental drawing skills. He's also  started offering online video courses, and runs in-person workshops in Paris, LA, and NYC.",
-      url: 'http://bit.ly/30hixMS',
-      img: 'https://illustrated.dev/images/resources/willweston.png',
-      cost: '$65-95 videos / $600-800 In-Person',
-      category: 'website',
-      recommended: true,
-      recCourses: [
-        {
-          title: 'Figure Drawing & Anatomy',
-          instructor: 'Will Weston',
-          url:
-            'https://drawingamerica.com/courses/will-weston-figure-drawing-lecture/',
-        },
-        {
-          title: 'Composition & Layout',
-          instructor: 'Will Weston',
-          url:
-            'https://drawingamerica.com/courses/will-weston-composition-lecture/',
-        },
-      ],
-    },
+    // {
+    //   title: 'Will Weston',
+    //   description:
+    //     "Will is one of the instagram stars of the art education world. His profile is a treasure trove of lecture notes teaching fundamental drawing skills. He's also  started offering online video courses, and runs in-person workshops in Paris, LA, and NYC.",
+    //   url: 'http://bit.ly/30hixMS',
+    //   img: 'https://illustrated.dev/images/resources/willweston.png',
+    //   cost: '$65-95 videos / $600-800 In-Person',
+    //   category: 'website',
+    //   recommended: true,
+    //   recCourses: [
+    //     {
+    //       title: 'Figure Drawing & Anatomy',
+    //       instructor: 'Will Weston',
+    //       url:
+    //         'https://drawingamerica.com/courses/will-weston-figure-drawing-lecture/',
+    //     },
+    //     {
+    //       title: 'Composition & Layout',
+    //       instructor: 'Will Weston',
+    //       url:
+    //         'https://drawingamerica.com/courses/will-weston-composition-lecture/',
+    //     },
+    //   ],
+    // },
     {
       title: 'Peter Han',
       description:
