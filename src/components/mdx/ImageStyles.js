@@ -25,6 +25,7 @@ export const TwoCol = props => {
         justifyItems: 'center',
         img: {
           padding: props.imgPadding,
+          margin: props.imgMargin || '0px',
         },
       })}
     >

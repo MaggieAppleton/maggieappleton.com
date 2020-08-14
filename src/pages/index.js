@@ -59,7 +59,7 @@ const Hero = () => {
               line-height: ${rhythm(1.1)};
           `}
         >
-          Helps explain web technology, anthropology, and programming through
+          Helps explain technology, anthropology, and programming through
           illustration.
         </h2>
         <h4
