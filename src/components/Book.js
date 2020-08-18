@@ -10,7 +10,7 @@ import { useTheme } from 'components/Theming'
 const Book = props => {
   const theme = useTheme()
   return (
-    <Link to={`/${props.slug}`} aria-label={`View ${props.title}`}>
+      <Link to={ props.redirectTo ? `/${props.redirectTo}` : `/${props.slug}`}  aria-label={`View ${props.title}`}>
       <div
         key={props.id}
         css={css`

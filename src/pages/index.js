@@ -399,6 +399,7 @@ export default function Index({
           </span>
           {bookQuery.edges.map(({ node: book }) => (
             <Book
+              redirectTo={book.frontmatter.redirectTo}
               slug={book.frontmatter.slug}
               title={book.frontmatter.title}
               key={book.id}
@@ -540,6 +541,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             description
             slug
+            redirectTo
             cover {
               childImageSharp {
                 fluid(maxWidth: 300) {

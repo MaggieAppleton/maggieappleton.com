@@ -288,6 +288,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
+      name: 'redirectTo',
+      node,
+      value: node.frontmatter.redirectTo,
+    })
+
+    createNodeField({
       name: 'isPost',
       node,
       value: true,
