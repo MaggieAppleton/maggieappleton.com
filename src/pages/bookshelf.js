@@ -37,6 +37,7 @@ const BookPage = ({ data: { site, bookQuery } }) => {
         <section className="books">
           {bookQuery.edges.map(({ node: book }) => (
             <Book
+              redirectTo={book.frontmatter.redirectTo}
               slug={book.frontmatter.slug}
               title={book.frontmatter.title}
               key={book.id}
@@ -87,6 +88,7 @@ export const bookPageQuery = graphql`
             description
             slug
             author
+            redirectTo
             cover {
               childImageSharp {
                 fluid(maxWidth: 300) {
