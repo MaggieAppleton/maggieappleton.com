@@ -10,6 +10,7 @@ type: ['test']
 topics: ['test']
 published: false
 author: 'author'
+redirectTo: '/redirect-link'
 redirects:
   - '/invisible-post-423123'
 ---
