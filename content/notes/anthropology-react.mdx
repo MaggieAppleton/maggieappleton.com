@@ -1,78 +1,134 @@
 ---
-title: 'A Talk on the Cultural Anthropology of React'
+title: 'The Cultural Anthropology of React'
 slug: anthropology-react
 date: 2020-08-14
 published: true
 type: ['note']
 topics: ['Talks & Podcasts', 'React', 'Anthropology']
-growthStage: 'Seedling'
+growthStage: 'Budding'
 ---
 
 # On Magic, Kinship, and Ritual Among Developers
 
-<h2 style="font-size:1.3em;"> A summary and selection of slides for a talk I'm giving at <a href="http://reactrally.com">React Rally 2020</a> on August 14th</h2>
+<h2 style="font-size:1.3em;"> A summary of a talk I gave at <a href="http://reactrally.com">React Rally 2020</a></h2>
+
+The recorded video version will be available here in September 2020
+
+<Image width="80%" alt="The cultural anthropology of react title slide" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334915/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.001.png" />
 
 ---
 
-<Image alt="The cultural anthropology of react title slide" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334915/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.001.png" />
+## Links, References, & Further Reading
 
-<TwoCol>
+- "Anthropology is Philosophy with the people in it" - [Tim Ingold](https://en.wikipedia.org/wiki/Tim_Ingold) from [Anthropology: Why it Matters](/anthropology-matters) (An excellent brief introduction to Anthropology).
+- "Deep Hanging Out" coined by [Clifford Geertz](https://en.wikipedia.org/wiki/Clifford_Geertz) in a [1998 New York Review of Books essay](http://hypergeertz.jku.at/GeertzTexts/Deep_Hanging.htm)
+- [Imagined Communities](/imagined-communities) theory from [Benedict Anderson](https://en.wikipedia.org/wiki/Benedict_Anderson)
+- Social interaction is a performance by [Erving Goffman](https://en.wikipedia.org/wiki/Erving_Goffman). Proposed in the book [The Presentation of Self in Everyday Life](https://www.librarything.com/work/5484)
+- [Cultural Capital](https://en.wikipedia.org/wiki/Cultural_capital) - The theory cultural knowledge and information you hold within a community works in much the same way as financial and material capital. From [Pierre Bourdieu's](https://en.wikipedia.org/wiki/Pierre_Bourdieu) essay one [Cultural Reproduction and Social Reproduction](http://piggottsclass.weebly.com/uploads/2/3/1/7/23179512/bourdieup_cultural_and_social_reproduction.pdf)
+- [Alfred Gell](https://en.wikipedia.org/wiki/Alfred_Gell) on the connections between technology, enchantment, and magic in [his essay on](https://www.brown.edu/Departments/Joukowsky_Institute/courses/materialworlds/files/1108595.pdf) **The Technology of Enchantment and the Enchantment of Technology**
+- "Technology is society made durable" from [Bruno Latour](https://en.wikipedia.org/wiki/Bruno_Latour)
+- All the [Slides on Github](https://github.com/MaggieAppleton/react-anthropology-slides)
 
-<Image alt="Cultural anthropology is philosophy with the people in it" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334937/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.012.png" />
+---
 
-<Image alt="The react logo inside a strict technical box" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334929/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.008.png" />
+## The Abridged Essay Version
+
+I've been immersed in the world of React developers since 2016. As a cultural anthropologist, the beliefs, norms, and social dynamics of Reactland have always been more intriguing to me than the useEffect hook or concurrent mode.
 
 
-<Image alt="The React docs define JavaScript as a library for building user interfaces" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597398094/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.005.png" />
+### What is cultural anthropology?
 
-<Image alt="An expanded circle of all the people of react" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334932/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.010.png" />
+If you have never head of "**cultural anthropology**," don't worry. That's expected. It doesn’t often overlap with the world of web development and as a discipline it's not great at self-promotion.
 
-<Image alt="Hwo do we define the react community?" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334943/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.014.png" />
+It's essentially the study of human cultures and trying to understand how they work.
+
+Or as one of my favourite anthropologists [Tim Ingold](https://en.wikipedia.org/wiki/Tim_Ingold) puts it:
+
+<Image width="80%" alt="Cultural anthropology is philosophy with the people in it" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334937/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.012.png" />
+
+<Subtext center>
+
+From [Anthropology: Why it Matters](/anthropology-matters)
+
+</Subtext>
+
+Anthropology tries to answer many of the same questions philosophers concern themselves with;
+
+_Why do we have language?
+How should we organise our societies and institutions?
+How do we deal with birth, death, morality, and conflict?_
+
+Philosophers turn inwards to find these answers. They go into a small quiet room alone, think a lot, and read books by mostly old dead white men to find answers.
+
+In contrast, Anthropology turns outwards - **it looks for the answers in people.** By living among them, learning from them, and taking part in their lives. A process known as [Participant Observation](https://en.wikipedia.org/wiki/Participant_observation).
+
+It isn't searching for one universal truth of all humanity, but rather **particular truths for particular people**, at particular points in time.
+
+---
+
+### Why care about the anthropology of React?
+
+Looking at React through a cultural lens helps us understand it as more than simply **"a JavaScript library for building user interfaces"**.
+
+Technical definitions can be reductive - they draw a technological box around our concepts that hide the historical and cultural context.
+
+<Image width="80%" alt="The react logo inside a strict technical box" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334929/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.008.png" />
+
+What happens if we expand our understanding to include all the people who surround this React, and how they might __affect__ and __be affected by__ what's inside it?
+
+<Image width="80%" alt="An expanded circle of all the people of react" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334932/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.010.png" />
+
+What if we entertain the idea that humans and the culture of React are an essential part of what defines React? What if we consider it a cultural ecosystem we're _active participants_ in, rather than simply a package we `npm install`
+
+Cultural anthropology is perfectly placed to help us find answers to these questions. 
+
+---
+
+### Understanding the "The React Community"
+
+We should establish who we’re talking about when we say “the react community” - where do we think the boundaries of the React community are, and who do we think is part of it?
+
+<Image width="80%" alt="How do we define the React community?" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334943/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.014.png" />
+
+I drew a very incomplete and fuzzy map of the React world here. It’s definitely not comprehensive or to scale.
 
 <Image alt="A hand drawn map of the react community" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334948/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.015.png" />
 
-<Image alt="React is a community collectively imaged through shared images and rituals" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334973/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.019.png" />
+I drew this to point out two key things.
+First, being a React person isn’t a mutually exclusive identity - you can be other things too.
 
-<Image alt="Performative kinship and belonging" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334980/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.024.png" />
+We have many overlapping and neighbouring communities we all belong to. You might also be part of the Data Viz world, or hang out within a sub niche like React Native.
 
-<Image alt="Erving goffman said that the self is a performed character" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334988/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.025.png" />
+Second, our community has very fluid boundaries. People flow in and out quite easily – anyone who finds it can join. To become a member you didn’t need to fill out a form and send it to a committee, or go through an initiation ceremony.
 
-<Image alt="A series of people weaing React shirts" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335018/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.031.png" />
+You also have the freedom to leave whenever you like.
 
-</TwoCol>
+These fuzzy boundaries sometimes make us a little bit anxious - it's hard to know who's part of the group, and weakens our sense of being a cohesive whole.
 
----
+Another way to try and understand the React community is to look at some rough numbers.
 
-<TwoCol>
+<Image width="80%" alt="Stats on how many React developers participate in Github, Reddit, and Dsicord groups" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597334954/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.016.png" />
 
-<Image alt="Magical powers and enchantment" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335048/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.038.png" />
-
-<Image alt="Magic is calling upon powers we don't fully understand to schieve specific goals" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335045/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.040.png" />
-
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335050/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.042.png" />
-
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335057/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.043.png" />
-
-</TwoCol>
+These are interesting indicators, but they're necessarily helpful if we want to dig into how React works as a cultural system.
 
 ---
 
-<TwoCol>
+### React is an Imagined Community
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335069/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.047.png" />
+Rather than talking about stats and numbers, it’s much more meaningful for us to talk about React an an imagined community.
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335099/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.064.png" />
+This was a concept developed by a political scientist called Benedict Anderson in the 1980’s.
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335095/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.065.png" />
+Anderson was writing about how nations imagine themselves as collective wholes, but his theory maps very well to how online communities like React work.
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335086/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.063.png" />
+This idea of an imagined community says that we all each individually imagine the React community in our heads.
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597401419/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.057.png" />
+It has nothing to do with it being imaginary in the sense of being fake, but simply that it’s something we have to mentally construct across thousands of individual minds. It gets built through shared images and rituals.
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335102/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.066.png" />
+Anderson specifically uses the idea of a national daily newspaper.
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335107/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.068.png" />
+The act of sitting down and reading the daily news, and imagining a whole nation of other people, similar like you, sitting and reading those exact same words at roughly the same time, creates a sense of collective belonging
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1597335105/maggieappleton.com/notes/anthropology-react-slides/ReactRally2020-Draft1.067.png" />
+It’s a daily ritual that reaffirms your membership, and sense of unity with a greater whole.
 
-</TwoCol>
+<ComingSoon />
