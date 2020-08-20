@@ -66,7 +66,7 @@ export const bookPageQuery = graphql`
         frontmatter: { type: { eq: "book" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 18
+      limit: 45
     ) {
       edges {
         node {
