@@ -15558,6 +15558,11 @@ react-remove-scroll@^2.3.0:
     use-callback-ref "^1.2.3"
     use-sidecar "^1.0.1"
 
+react-scrollama@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/react-scrollama/-/react-scrollama-2.2.12.tgz#67b75a7f36d01768e2cf6d6c726a060006045757"
+  integrity sha512-IyjfuLaemXwJF8hdzWvf9HtusjUgGunidRpS6hWMuRC6RG1tDe+xPJ5W9LVo3Ag+6OSbGc84rr0bOeA9jZI2CQ==
+
 react-scrollmagic@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.2.0.tgz#6e5ca428411221605ce4edb667819394c6a4e6c0"

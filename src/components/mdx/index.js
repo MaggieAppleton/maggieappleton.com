@@ -40,12 +40,14 @@ import {
 import Book from '../Book'
 import ResourceBook from './ResourceBook'
 import Footnote from './Footnote'
+import { ScrollSticky, ScrollController } from './ScrollMagic'
 import {
   ResearchItem,
   ResearchBlock,
 } from './ResearchBlock'
 import { ReplyOnTwitter } from './ReplyOnTwitter'
 import { Arrow } from './Arrow'
+import ScrollamaDemo from './Scrollama'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
 
@@ -94,6 +96,9 @@ export default {
   ComingSoon: props => <ComingSoon {...props} />,
   Draft: props => <Draft {...props} />,
   LinkCard: props => <LinkCard {...props} />,
+  ScrollController: props => <ScrollController {...props} />,
+  ScrollSticky: props => <ScrollSticky {...props} />,
+  ScrollamaDemo: props => <ScrollamaDemo {...props} />,
   Arrow: Arrow,
   // ------------- Single Use Components--------------- //
   Tools: Tools,
