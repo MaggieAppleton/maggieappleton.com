@@ -19,14 +19,14 @@ height: 900px;
     position: sticky;
     top: 0;
     height: 50%;
-    margin: 2em auto 0;
-    padding-top: 3em;
+    margin: 0 auto;
+    padding: 2em 0;
     justify-content: center;
     align-content: center;
     display: inline-block;
     h1 {
         text-align: center;
-        margin: 0.4em auto;
+        margin: 0.8em auto 0.3em;
     }
     p {
         max-width: 540px;
