@@ -11,14 +11,11 @@ max-width: 100vw;
 position: relative;
 right: 50%;
 width: 100vw;
-height: 900px;
+height: 100%;
   background: offwhite;
   display: flex;
   z-index: -1;
   .innerLayout {
-    position: sticky;
-    top: 0;
-    height: 50%;
     margin: 0 auto;
     padding: 2em 0;
     justify-content: center;
@@ -26,7 +23,7 @@ height: 900px;
     display: inline-block;
     h1 {
         text-align: center;
-        margin: 0.8em auto 0.3em;
+        margin: 0.6em auto 0.4em;
     }
     p {
         max-width: 540px;
@@ -36,12 +33,12 @@ height: 900px;
   }
 `
 
-export const MMMSection = ({ sectionTitle, description, imageSrc, imageAlt }) => {
+export const MMMSection = ({ sectionTitle, description }) => {
   return (
   <div css={mainLayout}>
       <div className='innerLayout'>
           <h1>{sectionTitle}</h1>
-          <p>{description}</p>
+          <div>{description}</div>
         </div>
     </div>
   )
