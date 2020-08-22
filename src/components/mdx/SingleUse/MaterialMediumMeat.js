@@ -21,22 +21,22 @@ const narration = [
 ]
 
 export const MaterialMediumMeat = () => {
-    const [currentStepIndex, setCurrentStepIndex] = useState(null)
+    const [currentContent, setCurrentContent] = useState(null)
 
-    const onStepEnter = ({ data }) => {
-        setCurrentStepIndex(data)
+    const onStepEnter = ({ data, direction }) => {
+        setCurrentContent(data)
     }
 
     return (
         <div style={{ margin: '10vh 0', border: '2px dashed skyblue', height: '300vh' }}>
-        <div style={{ position: 'sticky', top: '10vh', border: '1px solid orchid', height: '30vh' }}><h2>The {currentStepIndex}</h2></div>
+        <div style={{ position: 'sticky', top: '10vh', border: '1px solid orchid', height: '30vh' }}><h2>The {currentContent}</h2></div>
         <Scrollama onStepEnter={onStepEnter} offset={0.6}>
             {narration.map(narration => (
                 <Step data={narration.key} key={narration.key}>
                     <div style={{
                 margin: '50vh 0',
                 border: '1px solid gray',
-                opacity: currentStepIndex === narration.key ? 1 : 0.1,
+                opacity: setCurrentContent === narration.key ? 1 : 0.1,
               }}>
                         <h2>{narration.title}</h2>
                         <p>{narration.text}</p>
