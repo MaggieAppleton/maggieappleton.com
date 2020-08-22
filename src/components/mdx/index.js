@@ -11,6 +11,7 @@ import TipLink from './TipLink'
 import NoteSidebar from './NoteSidebar'
 import SimpleCard from '../SimpleCard'
 import LinkCard from './LinkCard'
+import { Spacer } from './Spacer'
 import { ComingSoon } from './ComingSoon'
 import { Draft } from './Draft'
 import {
@@ -50,6 +51,7 @@ import { ScrollController, ScrollStep } from './Scrollama'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
 import { MaterialMediumMeat } from './SingleUse/MaterialMediumMeat'
+import { MMMSection } from './SingleUse/MMMSection'
 
 
 
@@ -79,6 +81,7 @@ export default {
   Subtext: props => <Subtext {...props} />,
   Center: props => <Center {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
+  Spacer: props => <Spacer {...props} />,
   TwoCol: props => <TwoCol {...props} />,
   ThreeImageGrid: props => <ThreeImageGrid {...props} />,
   ReadNext: props => <ReadNext {...props} />,
@@ -98,6 +101,7 @@ export default {
   LinkCard: props => <LinkCard {...props} />,
   ScrollController: props => <ScrollController {...props} />,
   ScrollStep: props => <ScrollStep {...props} />,
+  MMMSection: props => <MMMSection {...props} />,
   Arrow: Arrow,
   // ------------- Single Use Components--------------- //
   Tools: Tools,
