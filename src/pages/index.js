@@ -149,9 +149,10 @@ export default function Index({
   const theme = useTheme()
   return (
     <Layout site={site}>
-      <Hero />
-      <Container
-        css={css`
+      <main>
+        <Hero />
+        <Container
+          css={css`
           padding-bottom: 0;
           padding-top: 0;
           display: grid;
@@ -162,9 +163,6 @@ export default function Index({
             flex-direction: column;
           }
           h2,
-          h3 {
-            margin-top: 0;
-          }
           h3,
           h5 {
             margin-bottom: 0.8em;
@@ -253,86 +251,86 @@ export default function Index({
             margin-bottom: 20px;
           }
         `}
-      >
-        <section>
-          {/* ------------ Garden Section ------------ */}
-          <section className="garden">
-            {/* <button>Start Here</button> */}
-            <TitleSectionLink to="/garden">The Digital Garden</TitleSectionLink>
-            <p
-              css={css`
+        >
+          <section>
+            {/* ------------ Garden Section ------------ */}
+            <section className="garden">
+              {/* <button>Start Here</button> */}
+              <TitleSectionLink to="/garden">The Digital Garden</TitleSectionLink>
+              <p
+                css={css`
                 margin-bottom: 1em;
               `}
-            >
-              A consistently tended collection of half-baked notes, research,
-              and sketches.
+              >
+                A consistently tended collection of half-baked notes, research,
+                and sketches.
             </p>
 
-            {/* Notes Section */}
+              {/* Notes Section */}
 
-            <div className="gardenGrid">
-              {notesQuery.edges.map(({ node: note }) => (
-                <Link
-                  css={css`
+              <div className="gardenGrid">
+                {notesQuery.edges.map(({ node: note }) => (
+                  <Link
+                    css={css`
                     font-family: ${fonts.walsheimLight};
                   `}
-                  to={note.childMarkdownRemark.frontmatter.slug}
-                  aria-label={`View ${note.title}`}
-                >
-                  <SimpleCard
-                    hover
-                    key={note.id}
-                    css={css`
+                    to={note.childMarkdownRemark.frontmatter.slug}
+                    aria-label={`View ${note.title}`}
+                  >
+                    <SimpleCard
+                      hover
+                      key={note.id}
+                      css={css`
                       margin-bottom: 0.6em;
                       padding: 0;
                     `}
-                  >
-                    <h3
-                      css={css({
-                        color: theme.colors.darkGrey,
-                        fontFamily: fonts.walsheimLight,
-                        fontSize: rhythm(.7),
-                        "&&": {
-                          marginBottom: '0.4em',
-                          marginTop: '0.6em',
-                        },
-                        padding: '0.4em 1em',
-                        transition: 'all 150ms ease',
-                        ':hover': {
-                          color: theme.colors.black,
-                        },
-                      })}
                     >
-                      {note.title}
-                    </h3>
-                  </SimpleCard>
-                </Link>
-              ))}
-            </div>
+                      <h3
+                        css={css({
+                          color: theme.colors.darkGrey,
+                          fontFamily: fonts.walsheimLight,
+                          fontSize: rhythm(.7),
+                          "&&": {
+                            marginBottom: '0.4em',
+                            marginTop: '0.6em',
+                          },
+                          padding: '0.4em 1em',
+                          transition: 'all 150ms ease',
+                          ':hover': {
+                            color: theme.colors.black,
+                          },
+                        })}
+                      >
+                        {note.title}
+                      </h3>
+                    </SimpleCard>
+                  </Link>
+                ))}
+              </div>
 
-            <SmallSectionLink
-              float="right"
-              to="/garden"
-              aria="Visit the Garden"
-            >
-              Visit the Garden
-            </SmallSectionLink>
-          </section>
-        </section>
-
-        {/* ------------------ Essays Section-----------------  */}
-        <section className="essays">
-          <TitleSectionLink to="/essays">Illustrated Essays</TitleSectionLink>
-          <div className="essaysGrid">
-            {essaysQuery.edges.map(({ node: essay }) => (
-              <Link
-                to={`/${essay.frontmatter.slug}`}
-                aria-label={`View ${essay.frontmatter.title}`}
+              <SmallSectionLink
+                float="right"
+                to="/garden"
+                aria="Visit the Garden"
               >
-                <SimpleCard
-                  hover
-                  key={essay.id}
-                  css={css`
+                Visit the Garden
+            </SmallSectionLink>
+            </section>
+          </section>
+
+          {/* ------------------ Essays Section-----------------  */}
+          <section className="essays">
+            <TitleSectionLink to="/essays">Illustrated Essays</TitleSectionLink>
+            <div className="essaysGrid">
+              {essaysQuery.edges.map(({ node: essay }) => (
+                <Link
+                  to={`/${essay.frontmatter.slug}`}
+                  aria-label={`View ${essay.frontmatter.title}`}
+                >
+                  <SimpleCard
+                    hover
+                    key={essay.id}
+                    css={css`
                     max-width: 350px;
                     margin: 0 auto;
                     padding: 0.4em 1.2em 0.8em 1.2em;
@@ -358,73 +356,74 @@ export default function Index({
                       font-weight: 100;
                     }
                   `}
-                >
-                  <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
-                  <h3>{essay.frontmatter.title}</h3>
-                  <p>{essay.frontmatter.description}</p>
-                </SimpleCard>
-              </Link>
-            ))}
-          </div>
+                  >
+                    <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
+                    <h3>{essay.frontmatter.title}</h3>
+                    <p>{essay.frontmatter.description}</p>
+                  </SimpleCard>
+                </Link>
+              ))}
+            </div>
 
-          <SmallSectionLink float="right" to="/essays" aria="Read More Essays">
-            Read More Essays
+            <SmallSectionLink float="right" to="/essays" aria="Read More Essays">
+              Read More Essays
           </SmallSectionLink>
-        </section>
+          </section>
 
-        {/* ------------ Illustration Section ------------ */}
-        <section className="illustration">
-          <TitleSectionLink to="/illustration">
-            Illustration Projects
+          {/* ------------ Illustration Section ------------ */}
+          <section className="illustration">
+            <TitleSectionLink to="/illustration">
+              Illustration Projects
           </TitleSectionLink>
-          <div className="illustrationGrid">
-            {illustrationQuery.edges.map(({ node: illustration }) => (
-              <IllustrationCard
-                slug={illustration.frontmatter.slug}
-                title={illustration.frontmatter.title}
-                id={illustration.id}
-                fluid={illustration.frontmatter.cover.childImageSharp.fluid}
-              />
-            ))}
-          </div>
-          <SmallSectionLink
-            float="right"
-            to="/illustration"
-            aria="See More Illustrations"
-          >
-            See More Illustrations
+            <div className="illustrationGrid">
+              {illustrationQuery.edges.map(({ node: illustration }) => (
+                <IllustrationCard
+                  slug={illustration.frontmatter.slug}
+                  title={illustration.frontmatter.title}
+                  id={illustration.id}
+                  fluid={illustration.frontmatter.cover.childImageSharp.fluid}
+                />
+              ))}
+            </div>
+            <SmallSectionLink
+              float="right"
+              to="/illustration"
+              aria="See More Illustrations"
+            >
+              See More Illustrations
           </SmallSectionLink>
-        </section>
+          </section>
 
-        {/* ------------ Books Section ------------ */}
-        <section className="books">
-          <span className="bookTitle">
-            <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
-            <p>
-              A past and present reading collection. Complete with very loose
-              and opinionated notes.
+          {/* ------------ Books Section ------------ */}
+          <section className="books">
+            <span className="bookTitle">
+              <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
+              <p>
+                A past and present reading collection. Complete with very loose
+                and opinionated notes.
             </p>
 
-            <SmallSectionLink
-              float="left"
-              to="/bookshelf"
-              aria="Browse the Bookshelf"
-            >
-              Browse the Bookshelf
+              <SmallSectionLink
+                float="left"
+                to="/bookshelf"
+                aria="Browse the Bookshelf"
+              >
+                Browse the Bookshelf
             </SmallSectionLink>
-          </span>
-          {bookQuery.edges.map(({ node: book }) => (
-            <Book
-              redirectTo={book.frontmatter.redirectTo}
-              slug={book.frontmatter.slug}
-              title={book.frontmatter.title}
-              key={book.id}
-              fluidImg={book.frontmatter.cover.childImageSharp.fluid}
-              author={book.frontmatter.author}
-            />
-          ))}
-        </section>
-      </Container>
+            </span>
+            {bookQuery.edges.map(({ node: book }) => (
+              <Book
+                redirectTo={book.frontmatter.redirectTo}
+                slug={book.frontmatter.slug}
+                title={book.frontmatter.title}
+                key={book.id}
+                fluidImg={book.frontmatter.cover.childImageSharp.fluid}
+                author={book.frontmatter.author}
+              />
+            ))}
+          </section>
+        </Container>
+      </main>
     </Layout>
   )
 }
