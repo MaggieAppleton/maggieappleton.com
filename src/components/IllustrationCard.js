@@ -29,7 +29,7 @@ const IllustrationCard = props => {
           }
           &:hover {
             transform: scale(1.015);
-            h4 {
+            h3 {
               color: ${theme.colors.orange};
             }
             .imgWrap {
@@ -46,8 +46,10 @@ const IllustrationCard = props => {
             fluid={props.fluid}
           />
         </div>
-        <h4
+        <h3
           css={css`
+            font-family: ${fonts.walsheimLight};
+            font-size: ${rhythm(.7)};
             margin-top: 0.8em;
             margin-bottom: ${rhythm(0.3)};
             text-align: center;
@@ -55,7 +57,7 @@ const IllustrationCard = props => {
           `}
         >
           {props.title}
-        </h4>
+        </h3>
       </div>
     </Link>
   )

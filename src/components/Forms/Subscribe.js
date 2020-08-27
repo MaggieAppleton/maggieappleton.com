@@ -82,13 +82,16 @@ class SignUp extends React.Component {
         <div className="formHeader">
           {!successful && (
             <>
-              <h3
+              <h2
                 css={css`
+                  font-family: ${fonts.lightSans};
+                  font-size: ${rhythm(1)};
+                  font-weight: bold;
                   margin-top: ${rhythm(1)};
                 `}
               >
                 Join the newsletter
-              </h3>
+              </h2>
               <p>
                 For weekly notes on visual thinking, ethical technology, and cultural anthropology.
               </p>

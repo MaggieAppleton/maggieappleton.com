@@ -62,10 +62,11 @@ const Hero = () => {
           Helps explain technology, anthropology, and programming through
           illustration.
         </h2>
-        <h4
+        <h3
           css={css`
             margin-top: ${rhythm(1)};
             font-family: ${fonts.regularSans};
+            font-size: 1rem;
             font-weight: 300;
             margin-bottom: ${rhythm(1.2)};
             line-height: ${rhythm(1)};
@@ -84,7 +85,7 @@ const Hero = () => {
           >
             egghead.io
           </a>
-        </h4>
+        </h3>
       </Container>
     </section>
   )
@@ -121,18 +122,21 @@ const TitleSectionLink = props => {
   return (
     <Link
       css={css`
-        h3 {
+        h2 {
+          font-family: ${fonts.lightSans};
+          font-size: ${rhythm(1)};
+          font-weight: bold;
           margin-bottom: 1em;
           transition: all 0.6s ease;
           &:hover {
-            color: ${theme.colors.orange};
+            color: ${theme.colors.darkOrange};
           }
         }
       `}
       to={props.to}
       aria-label={props.aria}
     >
-      <h3>{props.children}</h3>
+      <h2>{props.children}</h2>
     </Link>
   )
 }
@@ -283,10 +287,15 @@ export default function Index({
                       padding: 0;
                     `}
                   >
-                    <h4
+                    <h3
                       css={css({
                         color: theme.colors.darkGrey,
-                        marginBottom: '0.4em',
+                        fontFamily: fonts.walsheimLight,
+                        fontSize: rhythm(.7),
+                        "&&": {
+                          marginBottom: '0.4em',
+                          marginTop: '0.6em',
+                        },
                         padding: '0.4em 1em',
                         transition: 'all 150ms ease',
                         ':hover': {
@@ -295,7 +304,7 @@ export default function Index({
                       })}
                     >
                       {note.title}
-                    </h4>
+                    </h3>
                   </SimpleCard>
                 </Link>
               ))}
@@ -324,12 +333,14 @@ export default function Index({
                   hover
                   key={essay.id}
                   css={css`
-                    font-family: ${fonts.regularSans};
                     max-width: 350px;
                     margin: 0 auto;
                     padding: 0.4em 1.2em 0.8em 1.2em;
-                    h4 {
+                    h3 {
+                      color: #121F35;
+                      font-family: ${fonts.walsheimLight};
                       font-size: 1.1em;
+                      font-weight: bold;
                       margin-top: 0.2em;
                       margin-bottom: 0.4em;
                       transition: all 150ms ease;
@@ -337,15 +348,20 @@ export default function Index({
                         color: ${theme.colors.primary};
                       }
                     }
-                    h6 {
+                    p {
+                      color: ${theme.colors.grey};
+                      margin-top: 0;
                       margin-bottom: 0;
                       line-height: 1.3em;
+                      font-family: ${fonts.regularSans};
+                      font-size: ${rhythm(.6)};
+                      font-weight: 100;
                     }
                   `}
                 >
                   <Img fluid={essay.frontmatter.cover.childImageSharp.fluid} />
-                  <h4>{essay.frontmatter.title}</h4>
-                  <h6>{essay.frontmatter.description}</h6>
+                  <h3>{essay.frontmatter.title}</h3>
+                  <p>{essay.frontmatter.description}</p>
                 </SimpleCard>
               </Link>
             ))}
@@ -538,6 +554,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            author
             date(formatString: "MMMM DD, YYYY")
             description
             slug
