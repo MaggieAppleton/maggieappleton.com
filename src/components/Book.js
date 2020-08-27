@@ -9,7 +9,6 @@ import { useTheme } from 'components/Theming'
 
 const Book = props => {
   const theme = useTheme()
-  console.log(`author`, props.author)
   return (
     <Link to={props.redirectTo ? `/${props.redirectTo}` : `/${props.slug}`} aria-label={`View ${props.title}`}>
       <div
