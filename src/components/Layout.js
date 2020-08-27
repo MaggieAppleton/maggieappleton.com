@@ -17,21 +17,19 @@ const getGlobalStyles = theme => {
     body {
     counter-reset: sidenote-counter;
     padding: 0.4em;
-    background-image: linear-gradient(180deg, ${theme.colors.white} 0%, ${
-    theme.colors.white
-  } 88%, ${theme.colors.offWhite} 100%);
+    background-image: ${theme.colors.offWhite};
     }
     &::selection {
       color: ${theme.colors.white};
       background-color: ${theme.colors.primary};
     }
     a {
-      color: ${theme.colors.blue};
+      color: ${theme.colors.darkBlue};
       transition: 0.4s;
       text-decoration: none;
       &:hover,
       &:focus {
-        color: ${theme.colors.orange};
+        color: ${theme.colors.darkOrange};
       }
     }
     h1,
@@ -41,10 +39,10 @@ const getGlobalStyles = theme => {
     h5,
     h6 {
       a {
-        color: ${theme.colors.blue};
+        color: ${theme.colors.darkBlue};
         &:hover,
         &:focus {
-          color: ${theme.colors.orange};
+          color: ${theme.colors.darkOrange};
         }
       }
     }
@@ -79,7 +77,7 @@ const getGlobalStyles = theme => {
       font-family: ${fonts.regularItalic};
     }
     mark {
-      background-color: ${lighten(0.15,theme.colors.lightOrange)};
+      background-color: ${lighten(0.15, theme.colors.lightOrange)};
       padding: 1px 8px;
       border-radius: 4px;
     }
@@ -106,7 +104,7 @@ const getGlobalStyles = theme => {
     }
     button {
       border-radius: 4px;
-      background-color: ${theme.colors.lightOrange};
+      background-color: ${theme.colors.darkOrange};
       border: none;
       color: ${theme.colors.white};
       font-family: ${fonts.walsheim};
@@ -115,8 +113,8 @@ const getGlobalStyles = theme => {
       border: 1px solid ${theme.colors.primary};
       transition: all 400ms;
       :hover {
-        background: ${darken(0.08, theme.colors.lightOrange)};
-        border: 1px solid ${darken(0.05, theme.colors.lightOrange)};
+        background: ${darken(0.08, theme.colors.darkOrange)};
+        border: 1px solid ${darken(0.05, theme.colors.darkOrange)};
         
         transform: translateY(-1px) scale(1.008);
         transition: all 400ms;
