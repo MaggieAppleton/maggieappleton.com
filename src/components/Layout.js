@@ -15,9 +15,9 @@ import Footer from '../components/Footer'
 const getGlobalStyles = theme => {
   return css`
     body {
-    counter-reset: sidenote-counter;
-    padding: 0.4em;
-    background-image: ${theme.colors.offWhite};
+      counter-reset: sidenote-counter;
+      padding: 0.4em;
+      background-image: linear-gradient(180deg, ${theme.colors.white} 0%, ${theme.colors.white} 88%, ${theme.colors.offWhite} 100%);
     }
     &::selection {
       color: ${theme.colors.white};
@@ -94,9 +94,25 @@ const getGlobalStyles = theme => {
       font-family: ${fonts.regular};
       margin-top: 5px;
       ::placeholder {
-        opacity: 0.4;
+        opacity: 0.8;
       }
     }
+    ::-webkit-input-placeholder {
+      color: ${theme.colors.gray};
+      font-family: ${fonts.regular};
+     }
+     ::-moz-placeholder {
+      color: ${theme.colors.gray};
+      font-family: ${fonts.regular};
+     }
+     :-ms-input-placeholder {
+      color: ${theme.colors.gray};
+      font-family: ${fonts.regular};
+     }
+     :-moz-placeholder {
+      color: ${theme.colors.gray};
+      font-family: ${fonts.regular};
+     }
     .gatsby-resp-image-image {
       background: none !important;
       box-shadow: 0;
