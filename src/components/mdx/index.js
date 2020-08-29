@@ -50,7 +50,7 @@ import { Arrow } from './Arrow'
 import { ScrollController, ScrollStep } from './Scrollama'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
-import { MaterialMediumMeat } from './SingleUse/MaterialMediumMeat'
+import { ScrollyTest } from './SingleUse/ScrollyTest'
 import { MMMSection } from './SingleUse/MMMSection'
 
 
@@ -106,5 +106,5 @@ export default {
   // ------------- Single Use Components--------------- //
   Tools: Tools,
   Hardware: Hardware,
-  MaterialMediumMeat: MaterialMediumMeat,
+  ScrollyTest: ScrollyTest,
 }
