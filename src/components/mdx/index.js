@@ -3,7 +3,7 @@ import React from 'react'
 import InnerLink from './InnerLink'
 import Title from './Title'
 import Subtitle from './Subtitle'
-import Paragraph from './Paragraph'
+import { Paragraph, IntroParagraph } from './Paragraph'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
@@ -52,6 +52,7 @@ import { ScrollController, ScrollStep } from './Scrollama'
 import { Tools, Hardware } from './SingleUse/Tools'
 import { ScrollyTest } from './SingleUse/ScrollyTest'
 import { MMMSection } from './SingleUse/MMMSection'
+import { GsapTest } from './SingleUse/GsapTest'
 
 
 
@@ -66,6 +67,7 @@ export default {
   h5: props => <H5 {...props} />,
   h6: props => <H6 {...props} />,
   p: props => <Paragraph {...props} />,
+  IntroParagraph: props => <IntroParagraph {...props} />,
   img: props => <Image {...props} />,
   code: Code,
   ol: props => <OrderedList {...props} />,
@@ -107,4 +109,5 @@ export default {
   Tools: Tools,
   Hardware: Hardware,
   ScrollyTest: ScrollyTest,
+  GsapTest: GsapTest
 }
