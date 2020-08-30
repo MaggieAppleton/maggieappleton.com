@@ -33,7 +33,7 @@ height: 100%;
   }
 `
 
-export const MMMSection = ({ sectionTitle, description }) => {
+export const MediumMaterialsMeatSection = ({ sectionTitle, description }) => {
   return (
   <div css={mainLayout}>
       <div className='innerLayout'>

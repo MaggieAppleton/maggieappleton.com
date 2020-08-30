@@ -47,11 +47,9 @@ import {
 } from './ResearchBlock'
 // import { ReplyOnTwitter } from './ReplyOnTwitter'
 import { Arrow } from './Arrow'
-import { ScrollController, ScrollStep } from './Scrollama'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
-import { ScrollyTest } from './SingleUse/ScrollyTest'
-import { MMMSection } from './SingleUse/MMMSection'
+import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
 import { GsapTest } from './SingleUse/GsapTest'
 
 
@@ -101,13 +99,9 @@ export default {
   ComingSoon: props => <ComingSoon {...props} />,
   Draft: props => <Draft {...props} />,
   LinkCard: props => <LinkCard {...props} />,
-  ScrollController: props => <ScrollController {...props} />,
-  ScrollStep: props => <ScrollStep {...props} />,
-  MMMSection: props => <MMMSection {...props} />,
+  MediumMaterialsMeatSection: props => <MediumMaterialsMeatSection {...props} />,
   Arrow: Arrow,
   // ------------- Single Use Components--------------- //
   Tools: Tools,
   Hardware: Hardware,
-  ScrollyTest: ScrollyTest,
-  GsapTest: GsapTest
 }
