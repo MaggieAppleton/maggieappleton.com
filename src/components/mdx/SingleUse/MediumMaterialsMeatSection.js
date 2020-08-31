@@ -23,7 +23,7 @@ const mainLayout = css`
   }
 `
 
-export const MMMSection = ({ sectionTitle, children }) => {
+export const MediumMaterialsMeatSection = ({ sectionTitle, description }) => {
   return (
   <div css={mainLayout}>
       <div className='innerLayout'>

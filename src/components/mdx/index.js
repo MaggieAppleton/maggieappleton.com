@@ -3,7 +3,7 @@ import React from 'react'
 import InnerLink from './InnerLink'
 import Title from './Title'
 import Subtitle from './Subtitle'
-import Paragraph from './Paragraph'
+import { Paragraph, IntroParagraph } from './Paragraph'
 import ReadNext from './ReadNext'
 import Code from './Code'
 import Tooltip from './Tooltip'
@@ -47,11 +47,10 @@ import {
 } from './ResearchBlock'
 // import { ReplyOnTwitter } from './ReplyOnTwitter'
 import { Arrow } from './Arrow'
-import { ScrollController, ScrollStep } from './Scrollama'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
-import { MaterialMediumMeat } from './SingleUse/MaterialMediumMeat'
-import { MMMSection } from './SingleUse/MMMSection'
+import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
+import { GsapTest } from './SingleUse/GsapTest'
 
 
 
@@ -66,6 +65,7 @@ export default {
   h5: props => <H5 {...props} />,
   h6: props => <H6 {...props} />,
   p: props => <Paragraph {...props} />,
+  IntroParagraph: props => <IntroParagraph {...props} />,
   img: props => <Image {...props} />,
   code: Code,
   ol: props => <OrderedList {...props} />,
@@ -99,12 +99,9 @@ export default {
   ComingSoon: props => <ComingSoon {...props} />,
   Draft: props => <Draft {...props} />,
   LinkCard: props => <LinkCard {...props} />,
-  ScrollController: props => <ScrollController {...props} />,
-  ScrollStep: props => <ScrollStep {...props} />,
-  MMMSection: props => <MMMSection {...props} />,
+  MediumMaterialsMeatSection: props => <MediumMaterialsMeatSection {...props} />,
   Arrow: Arrow,
   // ------------- Single Use Components--------------- //
   Tools: Tools,
   Hardware: Hardware,
-  MaterialMediumMeat: MaterialMediumMeat,
 }

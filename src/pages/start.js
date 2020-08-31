@@ -4,20 +4,14 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { bpMaxSM } from '../lib/breakpoints'
 import Container from 'components/Container'
+import { GsapTest } from '../components/mdx/SingleUse/GsapTest'
 
 const StartPage = ({ data: { site } }) => {
   return (
     <Layout site={site}>
-      <Container
-        css={css`
-          
-        `}
-      >
+      <Container>
         <div className="headerText">
             <h1>Start Here</h1>
-            <h2>
-              Things
-            </h2>
             </div>
       </Container>
     </Layout>

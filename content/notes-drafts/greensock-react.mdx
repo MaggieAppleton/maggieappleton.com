@@ -1,0 +1,32 @@
+---
+title: "Greensock with React Hooks"
+slug: greensock-react
+date: 2020-10-01
+published: true
+type: ['note']
+topics: ['The Web', 'Design', 'JavaScript', 'Web Development']
+growthStage: 'Seedling'
+---
+
+<IntroParagraph>
+
+When it comes to web animation libraries, [Greensock](https://greensock.com/) is the Rolls Royce of options. It's a powerhouse tool and yet surprisingly easy to use. The programmers who designed it put exceptional effort making the API readable and intuitive.
+
+Suffice to say, I'm a shameless fangirl.
+
+</IntroParagraph>
+
+I'd gotten comfortable in the vanilla JavaScript version, but I ran into some finicky issues getting it to play nicely with React. The issue is that React acts as an interloper that sits between the code we write and the DOM<Footnote idName={1}>The [Document Object Model]()</Footnote>
+
+Since the Greensock library needs access to the DOM elements in order to animate them, we need to tell React about our Greensock animations.
+
+There's two essential React hooks we'll need to do this: **useRef** and **useEffect**
+
+### useRef does xxx
+
+### useEffect does xxx
+
+
+
+[John Lindquist](https://johnlindquist.com/use-greensock-with-react-hooks/) created a simple React hook called **use-gsap** that hides away the useRef and useEffect setup, making animations slightly more convenient to configure.
+
