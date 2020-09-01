@@ -50,7 +50,6 @@ import { Arrow } from './Arrow'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
-import { GsapTest } from './SingleUse/GsapTest'
 
 
 
