@@ -1,0 +1,77 @@
+---
+title: "The Bare Essentials of Greensock"
+slug: greensock-essentials
+date: 2020-10-03
+published: true
+type: ['note']
+topics: ['The Web', 'Design', 'JavaScript', 'Web Development', 'Greensock']
+growthStage: 'Seedling'
+---
+
+<IntroParagraph>
+
+G[reensock](https://greensock.com/) has been on my learning wish list for too long.
+When it comes to web animation libraries,  it's the Rolls Royce of options.
+
+</IntroParagraph>
+
+For a long time I assumed it would be too complex to learn. Everyone talks about how powerful the library is.
+
+It's usually safe to assume powerful === complex.
+
+But once I started digging in I realised the core of the library was actually quite easy to get the hang of. There's plenty of advanced mechanisms and complexity to get wrapped up in if you want to. But they're entirely optional.
+
+This is a one-scoop-plain-vanilla introduction to Greensock.  
+Without any sprinkles, nuts, or advanced functionality.   
+
+## Greensock in Plain English
+
+Greensock is a JavaScript library that manipulates DOM nodes directly. Once the the HTML of a website has been transformed into a set of DOM nodes by the browser, Greensock changes those nodes to create our animations.
+
+### Tweens
+A tween is a single transition – an element changing from state A to state B.
+
+To create a tween, we target an element and pass in properties.
+Properties define how the element should change over the course of the animation - whether it should move, change opacity or colour, grow big or small – you get it.
+
+```js
+gsap.to('.flyingBox', 4, { x: 100, scale: 1.5, colour: 'red' })
+```
+
+There's three types of tweens:
+- to
+- from
+- fromTo
+
+In *to* we define the final state of the animation. 
+
+```js
+
+```
+
+In *from* we define the original state of the animation.
+
+```js
+
+```
+
+In *fromTo* we declare two states we want the animation to move between.
+
+```js
+
+```
+
+### Timelines
+Timelines are made up of tweens.
+They group them together into a sequence.
+
+Once we declare a timeline, we can chain sets of tweens onto it.
+
+```js
+const boxTimeline = gsap.timeline()
+
+boxTimeline
+.to('.flyingBox', 2, { x: 100, scale: 1.5 })
+.to('.floatingBox', 3, { x: 10 })
+.to('.flippingBox', 1, { rotation: 360 })
+```
