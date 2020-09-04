@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import { bpMaxSM } from '../lib/breakpoints'
 import Container from 'components/Container'
-import { GsapTest } from '../components/mdx/SingleUse/GsapTest'
 
 const StartPage = ({ data: { site } }) => {
   return (

@@ -50,7 +50,11 @@ import { Arrow } from './Arrow'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
+import { Tween, Timeline, PlayState, Controls } from 'react-gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import gsap from 'gsap'
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 // ------------- Exports--------------- //
@@ -99,6 +103,10 @@ export default {
   Draft: props => <Draft {...props} />,
   LinkCard: props => <LinkCard {...props} />,
   MediumMaterialsMeatSection: props => <MediumMaterialsMeatSection {...props} />,
+  Tween: props => <Tween {...props} />,
+  Timeline: props => <Timeline {...props} />,
+  PlayState: props => <PlayState {...props} />,
+  Controls: props => <Controls {...props} />,
   Arrow: Arrow,
   // ------------- Single Use Components--------------- //
   Tools: Tools,
