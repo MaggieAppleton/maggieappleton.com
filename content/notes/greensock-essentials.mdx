@@ -15,18 +15,18 @@ When it comes to web animation libraries,  it's the Rolls Royce of options.
 
 </IntroParagraph>
 
-For a long time I assumed it would be too complex to learn. Everyone talks about how powerful the library is.
+<p>For a long time I assumed it would be too complex to learn. Everyone talks about how powerful the library is.
 
 It's usually safe to assume powerful === complex.
 
 But once I started digging in I realised the core of the library was actually quite easy to get the hang of. There's plenty of advanced mechanisms and complexity to get wrapped up in if you want to. But they're entirely optional.
 
 This is a **one-scoop-plain-vanilla introduction to Greensock**.  
-Without any sprinkles, nuts, or advanced functionality.   
+Without any sprinkles, nuts, or advanced functionality.</p>
 
 ## Greensock in Plain English
 
-Greensock is a JavaScript library that changes DOM nodes directly. Once the the HTML of a website has been transformed into a set of DOM nodes by the browser, Greensock manipulates those nodes to create our animations.
+<p>Greensock is a JavaScript library that changes DOM nodes directly. Once the the HTML of a website has been transformed into a set of DOM nodes by the browser, Greensock manipulates those nodes to create our animations.</p>
 
 ### Tweens
 A tween is a single transition – an element changing from state A to state B.
@@ -63,9 +63,11 @@ We also pass in a _duration_ that defines how long it should take the animation 
 ### Types of Tweens
 
 There's three types of tweens:
-- to
-- from
-- fromTo
+<ul>
+<li>to</li>
+<li>from</li>
+<li>fromTo</li>
+</ul>
 
 In *to* we define the final state of the animation – what it looks like by the end.
 It begins in the position defined in our HTML & CSS, and moves _to_ the state we define inside our greensock tween.
@@ -153,9 +155,5 @@ boxTimeline
 
 ---
 
-<Subtext>
-
 You may see references around to multiple varieties of tweening and timelines called `TweenMax`, `TweenLite`, `TimelineMax`, and `TimelineLite`.  
 In late 2019 GSAP [updated to version 3](https://greensock.com/3-release-notes) and got rid of the all lite / max varieties so feel free to ignore that distinction in older code examples or.
-
-</Subtext>
