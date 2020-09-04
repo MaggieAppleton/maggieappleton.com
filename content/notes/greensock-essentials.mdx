@@ -1,0 +1,161 @@
+---
+title: "The Bare Essentials of Greensock"
+slug: greensock-essentials
+date: 2020-10-03
+published: true
+type: ['note']
+topics: ['The Web', 'Design', 'JavaScript', 'Web Development', 'Greensock']
+growthStage: 'Seedling'
+---
+
+<IntroParagraph>
+
+G[reensock](https://greensock.com/) has been on my learning wish list for too long.
+When it comes to web animation libraries,  it's the Rolls Royce of options.
+
+</IntroParagraph>
+
+For a long time I assumed it would be too complex to learn. Everyone talks about how powerful the library is.
+
+It's usually safe to assume powerful === complex.
+
+But once I started digging in I realised the core of the library was actually quite easy to get the hang of. There's plenty of advanced mechanisms and complexity to get wrapped up in if you want to. But they're entirely optional.
+
+This is a **one-scoop-plain-vanilla introduction to Greensock**.  
+Without any sprinkles, nuts, or advanced functionality.   
+
+## Greensock in Plain English
+
+Greensock is a JavaScript library that changes DOM nodes directly. Once the the HTML of a website has been transformed into a set of DOM nodes by the browser, Greensock manipulates those nodes to create our animations.
+
+### Tweens
+A tween is a single transition – an element changing from state A to state B.
+
+To create a tween, we target an _element_ (this can be any HTML element like a `<div>, <p>, or <svg>`) and pass in _properties_.
+Properties define how the element should change over the course of the animation - whether it should move, change opacity or colour, grow big or small – you get it.
+
+```js
+<div class="giantRedBox" background="navyblue" width="100px" height="100px" />
+
+gsap.to('.giantRedBox', 2, { x: 400, scale: 1.2, background: 'red' })
+```
+<Center>
+
+<Tween to={{
+    scrollTrigger: {
+        trigger: '#redbox',
+        start: 'top 65%',
+        toggleActions: 'play pause reset reset'
+    },
+        x: '45vw',
+        scale: 1.2,
+        background: '#E73C67'
+    }} duration={2} ease="back.out(1.2)">
+    <div id="redbox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+</Tween>
+
+</Center>
+
+We also pass in a _duration_ that defines how long it should take the animation to move from state A to state B.
+
+---
+
+### Types of Tweens
+
+There's three types of tweens:
+- to
+- from
+- fromTo
+
+In *to* we define the final state of the animation – what it looks like by the end.
+It begins in the position defined in our HTML & CSS, and moves _to_ the state we define inside our greensock tween.
+
+```js
+<div class="spinningBox" background="navyblue" width="100px" height="100px" />
+
+gsap.to('.spinningBox', 3, { x: 400, rotation: 360 })
+```
+<Center>
+
+<Tween to={{
+    scrollTrigger: {
+        trigger: '#spinBox',
+        start: 'top 65%',
+        toggleActions: 'play pause reset reset'
+    },
+        x: '45vw',
+        rotation: 360
+    }} duration={2} ease="back.out(1.2)">
+    <div id="spinBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+</Tween>
+
+</Center>
+
+In *from* we define the beginning state of the animation, and it moves back to it's state defined in the HTML & CSS
+
+```js
+gsap.from('.reverseSpinningBox', 3, { x: 400, rotation: 360 })
+```
+
+<Center>
+
+<Tween from={{
+    scrollTrigger: {
+        trigger: '#reverseBox',
+        start: 'top 65%',
+        toggleActions: 'play pause reset reset'
+    },
+        x: '45vw',
+        rotation: 360
+    }} duration={2} ease="back.out(1.2)">
+    <div id="reverseBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+</Tween>
+
+</Center>
+
+In *fromTo* we declare two states we want the animation to move between.
+
+```js
+gsap.fromTo('.hotBox', 3, { background: '#93D0D9' }, { background: '#D93654' })
+```
+
+<Center>
+
+<Tween from={{ background: '#93D0D9' }} to={{
+    scrollTrigger: {
+        trigger: '#fromToBox',
+        start: 'top 65%',
+        toggleActions: 'play pause reset reset'
+    },
+        background: '#D93654'
+    }} duration={2} ease="back.out(1.2)">
+    <div id="fromToBox" style={{ width: '100px', height: '100px', margin: '0 auto', borderRadius: '4px' }} />
+</Tween>
+
+</Center>
+
+---
+
+### Timelines
+Timelines are made up of tweens.
+They group them together into a sequence.
+
+Once we declare a timeline, we can chain sets of tweens onto it.
+
+```js
+const boxTimeline = gsap.timeline()
+
+boxTimeline
+.to('.flyingBox', 2, { x: 100, scale: 1.5 })
+.to('.floatingBox', 3, { x: 10 })
+.to('.flippingBox', 1, { rotation: 360 })
+```
+
+---
+
+<Subtext>
+
+You may see references around to multiple varieties of tweening and timelines called `TweenMax`, `TweenLite`, `TimelineMax`, and `TimelineLite`.  
+In late 2019 GSAP [updated to version 3](https://greensock.com/3-release-notes) and got rid of the all lite / max varieties so feel free to ignore that distinction in older code examples or.
+
+</Subtext>
