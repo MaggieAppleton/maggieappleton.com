@@ -6,28 +6,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Data
-
-// const steps = [
-//     {
-//         headline: 'Things',
-//         bodyText: 'In “Bullshit Jobs: A Theory” (2018), he wondered what happened to the 15-hour week that the economist John Maynard Keynes',
-//         imgSrc: 'https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/354/full/VueRouter.png'
-//     },
-//     {
-//         headline: 'More Things',
-//         bodyText: 'In 1930, had predicted would be possible by the end of the 20th century.',
-//         imgSrc: 'https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/354/full/VueRouter.png'
-//     }
-// ]
-
-// Styling
-
-
 export const GsapScroller = () => {
     const imageRef = useRef(null)
-
-    // const [currentStep, setCurrentStep] = useState(null)
 
     // const [images, setImages] = useState([])
     // const [loading, setLoading] = useState(false)
@@ -38,12 +18,6 @@ export const GsapScroller = () => {
         // setImages(images)
         // setLoading(false)
     }, [])
-
-    useEffect(() => {
-        // const updateStep = () => {
-            // set current step to current steps.bodyText index + 1
-        }
-    )
 
     useEffect(() => {
         const timeline = gsap.timeline()
