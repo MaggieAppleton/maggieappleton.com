@@ -48,7 +48,7 @@ import {
 import { Tween, Timeline, PlayState, Controls } from 'react-gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
-import { ScrollyComponent } from './ScrollyComponent'
+// import { ScrollyComponent } from './ScrollyComponent'
 // import { ReplyOnTwitter } from './ReplyOnTwitter'
 import { Arrow } from './Arrow'
 // ------------- Single Use Components--------------- //
