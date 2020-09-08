@@ -1,21 +1,20 @@
 ---
 title: "The Bare Essentials of Greensock"
 slug: greensock-essentials
-date: 2020-09-04
+date: 2020-09-08
 published: true
 type: ['note']
 topics: ['The Web', 'Scrollytelling', 'Design', 'JavaScript', 'Web Development', 'Greensock']
-growthStage: 'Seedling'
+growthStage: 'Budding'
 ---
 
 <IntroParagraph>
 
-G[reensock](https://greensock.com/) has been on my learning wish list for too long.
-When it comes to web animation libraries,  it's the Rolls Royce of options.
+When it comes to web animation libraries,  [Greensock](https://greensock.com/) is the Rolls Royce of options. It's what powers most of those ridiculously fancy [Awwwards](https://www.awwwards.com/) websites.
 
 </IntroParagraph>
 
-<p>For a long time I assumed it would be too complex to learn. Everyone talks about how powerful the library is.
+<p>It's also been on my learning wish list for too long. I assumed it would be too complex. Everyone talks about how powerful the library is.
 
 It's usually safe to assume powerful === complex.
 
@@ -29,16 +28,14 @@ Without any sprinkles, nuts, or advanced functionality.</p>
 <p>Greensock is a JavaScript library that changes DOM nodes directly. Once the the HTML of a website has been transformed into a set of DOM nodes by the browser, Greensock manipulates those nodes to create our animations.</p>
 
 ### Tweens
-A tween is a single transition – an element changing from state A to state B.
 
-To create a tween, we target an _element_ (this can be any HTML element like a `<div>, <p>, or <svg>`) and pass in _properties_.
-Properties define how the element should change over the course of the animation - whether it should move, change opacity or colour, grow big or small – you get it.
+Tweens are the basic building blocks of a Greensock animation. A tween is a single transition – an element changing from state A to state B.
 
-```js
-<div class="giantRedBox" background="navyblue" width="100px" height="100px" />
+To create a tween, we target an _element_ (this can be any HTML element like a `<div>, <p>, or <svg>`) and pass in _variables_.
+Variables define how the element should change over the course of the animation - whether it should move, change opacity or colour, grow big or small – you get it.
 
-gsap.to('.giantRedBox', 2, { x: 400, scale: 1.2, background: 'red' })
-```
+Let's say we want to make a box go from navy blue to red, move 400 pixels on the X axis (horizontal), and grow in scale by 1.4 times the original:
+
 <Center>
 
 <Tween to={{
@@ -48,15 +45,26 @@ gsap.to('.giantRedBox', 2, { x: 400, scale: 1.2, background: 'red' })
         toggleActions: 'play pause reset reset'
     },
         x: '45vw',
-        scale: 1.2,
-        background: '#E73C67'
-    }} duration={2} ease="back.out(1.2)">
-    <div id="redbox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+        scale: 1.4,
+        background: '#E73C67',
+    }} duration={2} ease="back.out(1.3)">
+    <div id="redbox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px', margin: '2em' }} />
 </Tween>
 
 </Center>
 
-We also pass in a _duration_ that defines how long it should take the animation to move from state A to state B.
+```js
+<div class="giantRedBox" background="navyblue" width="100px" height="100px" />
+
+gsap.to('.giantRedBox', 2, { x: 400, scale: 1.4, background: 'red' })
+```
+
+Here's the code to do that in Greensock. 
+
+First we target the element using it's classname: `giantRedBox`.  
+We then pass in a _duration_ that defines how long it should take the animation to move from state A to state B – here it's 2 seconds.  
+Finally we pass in an object that contains our animation _variables_:  
+`{ x: 400, scale: 1.4, background: 'red' }`
 
 ---
 
