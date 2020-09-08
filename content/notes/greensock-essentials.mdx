@@ -23,12 +23,11 @@ But once I started digging in I realised the core of the library was actually qu
 This is a **one-scoop-plain-vanilla introduction to Greensock**.  
 Without any sprinkles, nuts, or advanced functionality.</p>
 
-<h2>Greensock in Plain English</h2>
+## Greensock in Plain English
 
-<p>Greensock is a JavaScript library that changes DOM nodes directly. Once the the HTML of a website has been transformed into a set of DOM nodes by the browser, Greensock manipulates those nodes to create our animations.</p>
+Greensock is a JavaScript library that changes DOM nodes directly. Once the the HTML of a website has been transformed into a set of DOM nodes by the browser, Greensock manipulates those nodes to create our animations.
 
 <GsapScroller />
-
 
 ### Tweens
 
@@ -62,12 +61,20 @@ Let's say we want to make a box go from navy blue to red, move 400 pixels on the
 gsap.to('.giantRedBox', 2, { x: 400, scale: 1.4, background: 'red' })
 ```
 
-Here's the code to do that in Greensock. 
+<p>
+
+Here's the code to do that in Greensock.
+
+</p>
+
+<p>
 
 First we target the element using it's classname: `giantRedBox`.  
 We then pass in a _duration_ that defines how long it should take the animation to move from state A to state B – here it's 2 seconds.  
 Finally we pass in an object that contains our animation _variables_:  
 `{ x: 400, scale: 1.4, background: 'red' }`
+
+</p>
 
 ---
 
@@ -167,4 +174,5 @@ boxTimeline
 ---
 
 You may see references around to multiple varieties of tweening and timelines called `TweenMax`, `TweenLite`, `TimelineMax`, and `TimelineLite`.  
+
 In late 2019 GSAP [updated to version 3](https://greensock.com/3-release-notes) and got rid of the all lite / max varieties so feel free to ignore that distinction in older code examples or.
