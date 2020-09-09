@@ -19,7 +19,7 @@ const PostSubmissionMessage = ({ response }) => {
   return (
     <div css={css({})}>
       <h3>Thanks for joining!</h3>
-      <p>
+      <p style={{ maxWidth: '800px', margin: '0.2em 0 1em' }}>
         I just sent you an email with the confirmation link – please check your
         inbox.
       </p>
@@ -89,7 +89,7 @@ class SignUp extends React.Component {
               >
                 Join the newsletter
               </h3>
-              <p>
+              <p style={{ maxWidth: '800px', margin: '0.2em 0 1em' }}>
                 For weekly notes on visual thinking, ethical technology, and cultural anthropology.
               </p>
             </>

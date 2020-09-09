@@ -71,6 +71,9 @@ const typography = new Typography({
       color: colors.grey,
     },
     p: {
+      maxWidth: '660px',
+      margin: '0 auto',
+      lineHeight: '1.8em',
       marginBottom: rhythm(1 / 2),
       WebkitFontSmoothing: 'antialiased',
       textRendering: 'optimizeLegibility',
