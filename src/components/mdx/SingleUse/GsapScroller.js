@@ -46,27 +46,27 @@ export const GsapScroller = () => {
     }, [])
 
     useEffect(() => {
-        const timeline = gsap.timeline()
+        const timeline = gsap.timeline({})
 
         timeline.to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: 'top -50px',
-            toggleActions: 'play none reverse reset'
+            start: 'top -100px',
+            toggleActions: 'play pause reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-2.jpg' }
         }).to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: '+=200',
-            toggleActions: 'play none reverse reset'
+            start: '+=350',
+            toggleActions: 'play pause reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-3.jpg' }
         }).to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: '+=300',
-            toggleActions: 'play none reverse reset'
+            start: '+=500',
+            toggleActions: 'play pause reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599595798/maggieappleton.com/notes/gsap/GSAP-DOM-4.jpg' }
         })
@@ -84,7 +84,7 @@ export const GsapScroller = () => {
      `
 
      const Container = styled.div`
-     height: 1400px;
+     height: 1700px;
     margin: 1em 0 3em;
     position: relative;
     ${bpMaxSM} {
