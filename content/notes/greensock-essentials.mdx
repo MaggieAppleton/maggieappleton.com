@@ -40,7 +40,7 @@ Let's say we want to make a box go from navy blue to red, move 400 pixels on the
 
 <Tween to={{
     scrollTrigger: {
-        trigger: '#redbox',
+        trigger: '#spinbox',
         start: 'top 65%',
         toggleActions: 'play pause reset reset'
     },
@@ -48,7 +48,7 @@ Let's say we want to make a box go from navy blue to red, move 400 pixels on the
         scale: 1.4,
         background: '#E73C67',
     }} duration={2} ease="back.out(1.3)">
-    <div id="redbox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px', margin: '2em' }} />
+    <div id="spinbox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px', margin: '2em' }} />
 </Tween>
 
 </Center>
@@ -97,14 +97,14 @@ gsap.to('.spinningBox', 3, { x: 400, rotation: 360 })
 
 <Tween to={{
     scrollTrigger: {
-        trigger: '#spinBox',
+        trigger: '#toBox',
         start: 'top 65%',
         toggleActions: 'play pause reset reset'
     },
         x: '45vw',
         rotation: 360
     }} duration={2} ease="back.out(1.2)">
-    <div id="spinBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+    <div id="toBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
 </Tween>
 
 </Center>
@@ -119,14 +119,14 @@ gsap.from('.reverseSpinningBox', 3, { x: 400, rotation: 360 })
 
 <Tween from={{
     scrollTrigger: {
-        trigger: '#reverseBox',
+        trigger: '#fromBox',
         start: 'top 65%',
         toggleActions: 'play pause reset reset'
     },
         x: '45vw',
         rotation: 360
     }} duration={2} ease="back.out(1.2)">
-    <div id="reverseBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+    <div id="fromBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
 </Tween>
 
 </Center>
@@ -174,3 +174,5 @@ boxTimeline
 You may see references around to multiple varieties of tweening and timelines called `TweenMax`, `TweenLite`, `TimelineMax`, and `TimelineLite`.  
 
 In late 2019 GSAP [updated to version 3](https://greensock.com/3-release-notes) and got rid of the all lite / max varieties so feel free to ignore that distinction in older code examples or.
+
+<br />
