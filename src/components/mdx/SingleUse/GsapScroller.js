@@ -58,14 +58,14 @@ export const GsapScroller = () => {
         }).to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: '+=150',
+            start: '+=200',
             toggleActions: 'play none reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-3.jpg' }
         }).to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: '+=250',
+            start: '+=300',
             toggleActions: 'play none reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599595798/maggieappleton.com/notes/gsap/GSAP-DOM-4.jpg' }
