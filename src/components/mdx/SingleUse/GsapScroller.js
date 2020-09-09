@@ -51,21 +51,21 @@ export const GsapScroller = () => {
         timeline.to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: 'top top',
+            start: 'top -50px',
             toggleActions: 'play none reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-2.jpg' }
         }).to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: '+=200',
+            start: '+=150',
             toggleActions: 'play none reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM-3.jpg' }
         }).to([imageRef.current], {
             scrollTrigger: {
             trigger: '#triggerDiv',
-            start: '+=400',
+            start: '+=250',
             toggleActions: 'play none reverse reset'
            },
            attr: {src: 'https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599595798/maggieappleton.com/notes/gsap/GSAP-DOM-4.jpg' }
@@ -84,7 +84,7 @@ export const GsapScroller = () => {
      `
 
      const Container = styled.div`
-     height: 1700px;
+     height: 1400px;
     margin: 1em 0 3em;
     position: relative;
     ${bpMaxSM} {
