@@ -76,7 +76,7 @@ export const GsapScroller = () => {
                 <div id="triggerDiv" style={{ position: 'sticky', top: '0', paddingTop: '0.2em' }}>
                 <Subtitle>Greensock in Plain English</Subtitle>
                 <Paragraph>Greensock is a JavaScript library that changes DOM nodes directly. Once our browser has read the HTML document of a website, it transforms it into a set of DOM nodes - all our usual div's, paragraphs, and images. Greensock then manipulates those nodes to create our animations.</Paragraph>
-                <img style={{ width: '100%', maxWidth: '550px', display: 'block', margin: '0.2em auto' }} ref={imageRef} alt="Greensock animation changes DOM nodes" src='https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM.jpg' />
+                <img style={{ width: '100%', maxWidth: '550px', display: 'block', margin: '0.4em auto' }} ref={imageRef} alt="Greensock animation changes DOM nodes" src='https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM.jpg' />
                 </div>
             </div>
         )
