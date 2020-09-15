@@ -142,9 +142,9 @@ export const FullWidth2Col = props => {
         position: relative;
         right: 50%;
         width: 100vw;
+        height: (100vw * 1.2);
         padding: 2em 0;
         background: ${props.bgColor};
-        height: (100vw * 1.2);
         .innerDiv {
           padding: 2em 0 1em;
           max-width: 80%;
