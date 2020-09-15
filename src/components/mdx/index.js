@@ -54,6 +54,7 @@ import { Arrow } from './Arrow'
 import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
 import { GsapScroller } from './SingleUse/GsapScroller'
+import { BlenderScroller } from './SingleUse/BlenderScroller'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,4 +114,5 @@ export default {
   Tools: Tools,
   Hardware: Hardware,
   GsapScroller: GsapScroller,
+  BlenderScroller: BlenderScroller
 }
