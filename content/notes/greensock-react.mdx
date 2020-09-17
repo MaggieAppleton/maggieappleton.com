@@ -4,46 +4,80 @@ slug: greensock-react
 date: 2020-09-17
 published: true
 type: ['note']
-topics: ['Scrollytelling', 'Design', 'JavaScript', 'Web Development', 'Greensock']
-growthStage: 'Seedling'
+topics: ['React', 'Scrollytelling', 'Design', 'JavaScript', 'Web Development', 'Greensock']
+growthStage: 'Budding'
 ---
 
 <IntroParagraph>
 
-When it comes to the field of web animation libraries, [GreenSock](https://greensock.com/) is the cream of the crop. I've published notes on it previously in my post covering [[The Bare Essentials of Greensock.]]
-
-I'd gotten comfortable in the vanilla JavaScript version, but then ran into some finicky issues getting it to play nicely with React.
+Using the [GreenSock](https://greensock.com/) web animation library in vanilla JavaScript isn't too complex. But when we want it to play nicely with a frontend framework like React, we run into some finicky issues.
 
 </IntroParagraph>
 
-The issue is that React acts as an interloper that sits between the code we write and the DOM. It manages the DOM for us, using it's own internal "tree" of components and updating the DOM as needed (a concept previously known as the [[React Virtual DOM]]) <Footnote idName={1}>For more on the virtual DOM, you can read my [illustrated guide](/react-vdom).<br/>If you have never heard of the <b>Document Object Model</b> before, this is probably all very confusing. [Here's](https://bitsofco.de/what-exactly-is-the-dom/) a good introduction.</Footnote>
+This guide is specifically about using React Hooks with Greensock, as many of the [existing guides](https://greensock.com/react/) only explain how to set it up with legacy class components.
+
+This isn't an introduction to the Greensock library itself – head over to my post on [[The Bare Essentials of Greensock]] for that.
+
+<br />
+
+## React, Meet Greensock
+
+The issue with combining these two libraries is that React acts as a DOM interloper – it sits between the code we write and the DOM, managing it for us.
+
+React builds it's own internal "tree" of DOM nodes based off our code, and only updates the actual DOM as needed (a concept previously known as the [[React Virtual DOM]]) <Footnote idName={1}><span>The React team has gone off the term of the _virtual DOM_ and prefer to talk about the _render tree_. Potatoes, potataos. For more on how the virtual DOM works, I have an [illustrated guide](/react-vdom).</span><br /><br /><span>If you have never heard of the <b>Document Object Model</b> before, this post might be a bit over your head, but [here's](https://bitsofco.de/what-exactly-is-the-dom/) a good starting point to get caught up.</span></Footnote>
 
 <Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1593532728/maggieappleton.com/notes/react-potato-slides/react-metaphors12.png" />
 
 Since the Greensock library needs direct access to DOM elements in order to animate them, we need to tell React about our Greensock animations. Otherwise the two end up in a messy war.
 
+<br />
+
 ### Bring in the Hooks
 
-I specifically wanted to figure out how to use React hooks with Greensock, as many of the [existing guides](https://greensock.com/react/) only deal with class components.
+There's two essential React hooks we'll use to connect our React code to our  Greensock code: **useRef** and **useEffect**
 
-There's two essential React hooks we'll need to do this: **useRef** and **useEffect**
+<br />
 
-### useRef gives us direct access to DOM nodes
+<SimpleCard width="800px">
 
-### useEffect lets us to perform side effects – any functions or data requests that we want to run _after_ rendering the component to the DOM
+#### **useRef** lets us access and directly target our DOM nodes
 
-If you're not completely caught up on [React hooks](https://www.freecodecamp.org/news/beginners-guide-to-using-react-hooks/) yet and those explanations mean nothing to you, don't worry we're going to slowly walk through this.  With illustrations. Because  who the fork properly understands _"side effects"_?
+</SimpleCard>
+
+<SimpleCard width="800px">
+
+#### **useEffect** lets us to perform side effects – any functions or data requests that we want to run _after_ rendering the component to the DOM
+
+</SimpleCard>
+
+If you're not completely comfortable with [React Hooks](https://www.freecodecamp.org/news/beginners-guide-to-using-react-hooks/) yet and those technical explanations mean nothing to you, don't worry we're going to slowly walk through this.  With illustrations. Because  who the fork properly understands _"side effects"_?
 
 ---
 
+### Getting Setup
+
+We first need to run `yarn install gsap` or `npm install gsap` into our React project repo <Footnote idName={2}>**gsap** is short for _GreenSock Animation Platform_ and it's the way we reference the Greensock library in all our code sytax</Footnote>
+
+<br />
+
+<SimpleCard width="760px" center>
+
+Feel free to open up a Codesandbox project to work through the steps while you read. I've set one up for you with React and Greensock already installed:
+
+<p><a noTip href="https://codesandbox.io/s/reacthooks-greensock-demo-xjoti?file=/src/AnimatedBox.js"><button style={{marginTop: '0.2em'}}>Jump into CodeSandbox</button> </a></p>
+
+</SimpleCard>
+
+<br />
+
 ### Building our Animation Component
 
-Let's start by creating a React component called `<Animation/>` that is going to hold all our Greensock code. We'll build a simple  `<div>`  element and have it perform a small jump animation.
+Let's start by creating a React component called `<AnimatedBox/>` that is going to hold all our Greensock code. We're going to build a simple  `<div>`  element and have it animate across the page (exciting!).
 
-We first need to `yarn install gsap` and then import the Greensock library into our component with `import gsap from 'gsap'` <Footnote idName={2}>**gsap** is short for _GreenSock Animation Platform_ and is the library name we use in our code files</Footnote>
+We'll need to import the Greensock library into our component with `import gsap from 'gsap'`, as well as React and our two hooks with `import React, { useRef, useEffect } from 'react'`
 
 ```js
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 
 const Animation = () => {
@@ -58,26 +92,105 @@ const Animation = () => {
 
 ```
 
-I've also set some basic width, height, and colour CSS styles on our div to make it visible on the page.
+I've set some basic width, height, and colour CSS styles on our div to make it visible on the page.
 
 <div style={{ margin: '2em auto', width: '160px', height: '160px', background: 'salmon', borderRadius: '4px' }} />
 
 <Center>
 
-Good looking div, right?
+Good looking div, right?  
+Salmon is always the right colour choice.
 
 </Center>
 
-<SimpleCard>
 
-Feel free to jump into a quick Codesandbox project to try this out. [Here's one]() with React and Greensock already installed, and our beautiful div ready to jump around.
 
-<p><a noTip href="https://twitter.com/mappletons"><button style={{marginTop: '0.2em'}}>CodeSandbox Project</button> </a></p>
-
-</SimpleCard>
 
 ---
 
+## Using References
+
+We're now going to add our **useRef** hook.
+
+We create a new reference by adding `const boxRef = useRef()` anywhere outside of our return statement. Call it anything you like, but _boxRef_ is a good enough name for this example.
+
+We then add a `ref={boxRef}` attribute on our `<div>` element.
+
+```js
+const Animation = () => {
+    const boxRef = useRef()
+
+    return (
+        <div ref={boxRef} style={{
+            width: '160px',
+            height: '160px',
+            background: 'salmon'
+        }} />
+    )
+}
+```
+
+This tells React we want to be able to control our `<div>` element with the `boxRef` reference once our component is mounted onto the DOM.
+
+---
+
+## Using Effects
+
+Next we're going to add our **useEffect** hook, and write our Greensock animation inside of it.
+
+{ explain useEffect code in here }
+
+```js
+const Animation = () => {
+    const boxRef = useRef()
+
+    useEffect(() => {
+        gsap.to([boxRef.current], 0.5, {
+            x: 400
+        })
+    })
+
+    return (
+        <div ref={boxRef} style={{
+            width: '160px',
+            height: '160px',
+            background: 'salmon'
+        }} />
+    )
+}
+```
+<p>
+
+<Tween to={{
+    scrollTrigger: {
+        trigger: '#boxRef',
+        start: 'top 65%',
+        toggleActions: 'play pause reset reset'
+    },
+        x: '400px'
+    }} duration={2} ease="back.out(1.3)">
+    <div id="boxRef" style={{ margin: '2em', width: '160px', height: '160px', background: 'salmon', borderRadius: '4px' }} />
+</Tween>
+
+</p>
+
+<Center>
+
+# Tada <span>🎉</span>
+
+</Center>
+
+So by this point, you hopefully have a working animation in that [Codesandbox project](https://codesandbox.io/s/reacthooks-greensock-demo-xjoti?file=/src/AnimatedBox.js) or a local repo.
+
+But there's also a chance you don't 100% understand what these two React Hooks are doing, or how they interact with Greensock.
+
+Which is going to land you in debugging hell the minute you want to go off-script from this dull demo, and try to animate some elaborate interactive timeline.
+
+Let's unpack some of the dark magic so it's less mysterious.
+
+---
+
+## A Tale of Multiple Trees
 
 <Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_4.png" />
 
