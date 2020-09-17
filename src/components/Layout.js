@@ -106,20 +106,20 @@ const getGlobalStyles = theme => {
     }
     button {
       border-radius: 4px;
-      background-color: ${theme.colors.lightOrange};
+      background-color: ${darken(0.04, theme.colors.lightOrange)};
       border: none;
       color: ${theme.colors.white};
       font-family: ${fonts.walsheim};
-      padding: 5px 16px;
+      padding: 14px 16px;
       cursor: pointer;
       border: 1px solid ${theme.colors.primary};
       transition: all 400ms;
       :hover {
-        background: ${darken(0.08, theme.colors.lightOrange)};
+        background: ${theme.colors.lightOrange};
         border: 1px solid ${darken(0.05, theme.colors.lightOrange)};
-        
-        transform: translateY(-1px) scale(1.008);
+        transform: translateY(-2px) scale(1.01);
         transition: all 400ms;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
       }
     }
     .twitter-tweet, .twitter-tweet-rendered {
@@ -131,6 +131,7 @@ const getGlobalStyles = theme => {
       margin: 0.6em auto;
       overflow-x: auto;
       border-radius: 4px;
+      clear: both;
       /* Track */
       ::-webkit-scrollbar {
         width: 100%;
