@@ -4,12 +4,12 @@ import { bpMaxSM } from '../../lib/breakpoints'
 import { useTheme } from '../Theming'
 
 
-export default function ResourceBook(props) {
+export default function ResourceBook({ url, large, title, img, author, description, ...props }) {
 const theme = useTheme()
 
   return (
     <>
-      <a href={props.url}>
+      <a href={url} target="_blank" rel="noopener noreferrer">
         <div
           css={css({
             '.gatsby-image-wrapper': {
@@ -56,13 +56,12 @@ const theme = useTheme()
                 borderRadius: '4px',
               },
               '.dataBlock': {
-                paddingLeft: '20px',
+                paddingLeft: '10px',
                 alignSelf: 'top',
               },
               '.description': {
                 lineHeight: '1.4em',
                 fontSize: '1em',
-                maxWidth: '450px',
               },
               ':hover': {
                 transition: 'all 0.4s ease-in-out',
@@ -75,8 +74,8 @@ const theme = useTheme()
             <img
               css={css({
                 padding: '10px',
-                maxWidth: props.large ? '250px' : '150px',
-                maxHeight: props.large ? '300px' : '200px',
+                maxWidth: large ? '250px' : '150px',
+                maxHeight: large ? '300px' : '200px',
                 alignSelf: 'center',
                 justifySelf: 'center',
                 borderRadius: '3px',
@@ -85,12 +84,12 @@ const theme = useTheme()
                 boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.2)',
               })}
               alt="book cover"
-              src={props.img}
+              src={img}
             />
             <div class="dataBlock">
-              <h1>{props.title}</h1>
-              <h5>{props.author}</h5>
-              <p class="description">{props.description}</p>
+              <h1>{title}</h1>
+              <h5>{author}</h5>
+              <p class="description">{description}</p>
             </div>
           </div>
         </div>
