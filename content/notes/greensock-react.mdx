@@ -1,0 +1,95 @@
+---
+title: "Greensock Animations with React Hooks"
+slug: greensock-react
+date: 2020-09-17
+published: true
+type: ['note']
+topics: ['Scrollytelling', 'Design', 'JavaScript', 'Web Development', 'Greensock']
+growthStage: 'Seedling'
+---
+
+<IntroParagraph>
+
+When it comes to the field of web animation libraries, [GreenSock](https://greensock.com/) is the cream of the crop. I've published notes on it previously in my post covering [[The Bare Essentials of Greensock.]]
+
+I'd gotten comfortable in the vanilla JavaScript version, but then ran into some finicky issues getting it to play nicely with React.
+
+</IntroParagraph>
+
+The issue is that React acts as an interloper that sits between the code we write and the DOM. It manages the DOM for us, using it's own internal "tree" of components and updating the DOM as needed (a concept previously known as the [[React Virtual DOM]]) <Footnote idName={1}>For more on the virtual DOM, you can read my [illustrated guide](/react-vdom).<br/>If you have never heard of the <b>Document Object Model</b> before, this is probably all very confusing. [Here's](https://bitsofco.de/what-exactly-is-the-dom/) a good introduction.</Footnote>
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1593532728/maggieappleton.com/notes/react-potato-slides/react-metaphors12.png" />
+
+Since the Greensock library needs direct access to DOM elements in order to animate them, we need to tell React about our Greensock animations. Otherwise the two end up in a messy war.
+
+### Bring in the Hooks
+
+I specifically wanted to figure out how to use React hooks with Greensock, as many of the [existing guides](https://greensock.com/react/) only deal with class components.
+
+There's two essential React hooks we'll need to do this: **useRef** and **useEffect**
+
+### useRef gives us direct access to DOM nodes
+
+### useEffect lets us to perform side effects – any functions or data requests that we want to run _after_ rendering the component to the DOM
+
+If you're not completely caught up on [React hooks](https://www.freecodecamp.org/news/beginners-guide-to-using-react-hooks/) yet and those explanations mean nothing to you, don't worry we're going to slowly walk through this.  With illustrations. Because  who the fork properly understands _"side effects"_?
+
+---
+
+### Building our Animation Component
+
+Let's start by creating a React component called `<Animation/>` that is going to hold all our Greensock code. We'll build a simple  `<div>`  element and have it perform a small jump animation.
+
+We first need to `yarn install gsap` and then import the Greensock library into our component with `import gsap from 'gsap'` <Footnote idName={2}>**gsap** is short for _GreenSock Animation Platform_ and is the library name we use in our code files</Footnote>
+
+```js
+import React from 'react'
+import gsap from 'gsap'
+
+const Animation = () => {
+    return (
+        <div style={{
+            width: '160px',
+            height: '160px',
+            background: 'salmon'
+        }} />
+    )
+}
+
+```
+
+I've also set some basic width, height, and colour CSS styles on our div to make it visible on the page.
+
+<div style={{ margin: '2em auto', width: '160px', height: '160px', background: 'salmon', borderRadius: '4px' }} />
+
+<Center>
+
+Good looking div, right?
+
+</Center>
+
+<SimpleCard>
+
+Feel free to jump into a quick Codesandbox project to try this out. [Here's one]() with React and Greensock already installed, and our beautiful div ready to jump around.
+
+<p><a noTip href="https://twitter.com/mappletons"><button style={{marginTop: '0.2em'}}>CodeSandbox Project</button> </a></p>
+
+</SimpleCard>
+
+---
+
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_4.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_5.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_6.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_7.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257939/maggieappleton.com/notes/gsap/Layer_3.png" />
+
+---
+
+If you don't feel like mucking around with **useRef** and **useEffect**, [John Lindquist](https://johnlindquist.com/use-greensock-with-react-hooks/) created a simple React hook called **use-gsap** that hides them away.
+
