@@ -24,9 +24,9 @@ This isn't an introduction to the Greensock library itself – head over to my p
 
 The issue with combining these two libraries is that React acts as a DOM interloper – it sits between the code we write and the DOM, managing it for us.
 
-React builds it's own internal "tree" of DOM nodes based off our code, and only updates the actual DOM as needed (a concept previously known as the [[React Virtual DOM]]) <Footnote idName={1}><span>The React team has gone off the term of the _virtual DOM_ and prefer to talk about the _render tree_. Potatoes, potataos. For more on how the virtual DOM works, I have an [illustrated guide](/react-vdom).</span><br /><br /><span>If you have never heard of the <b>Document Object Model</b> before, this post might be a bit over your head, but [here's](https://bitsofco.de/what-exactly-is-the-dom/) a good starting point to get caught up.</span></Footnote>
+<Image alt="A diagram of React generating all the DOM nodes for us based on our component tree" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1600366606/maggieappleton.com/notes/gsap/react-greensock-2.png" />
 
-<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1593532728/maggieappleton.com/notes/react-potato-slides/react-metaphors12.png" />
+React builds it's own internal "tree" of DOM nodes based off our code, and only updates the actual DOM as needed (a concept previously known as the [[React Virtual DOM]]) <Footnote idName={1}>The React team has gone off the term of the _virtual DOM_ and prefer to talk about the _render tree_. Potatoes, potataos. For more on how the virtual DOM works, I have an [illustrated guide](/react-vdom)</Footnote>
 
 Since the Greensock library needs direct access to DOM elements in order to animate them, we need to tell React about our Greensock animations. Otherwise the two end up in a messy war.
 
