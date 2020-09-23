@@ -20,7 +20,7 @@ export const GsapScroller = () => {
           scrollTrigger: {
               trigger: [pinDiv.current],
               start: 'top -5%',
-              end: '+=400px',
+              end: '+=420px',
               scrub: 1,
           },
       })
@@ -54,9 +54,6 @@ export const GsapScroller = () => {
     margin: 0 auto;
     top: 0;
     height: 100vh;
-    ${bpMaxSM} {
-        position: relative;
-      }
   `
 
   return (
@@ -76,12 +73,14 @@ export const GsapScroller = () => {
           style={{
             width: '100%',
             maxWidth: '580px',
+            maxHeight: '80vh',
             margin: '0.4em auto',
             position: 'absolute',
             left: 0,
             right: 0,
             top: '320px',
             zIndex: 1,
+            
           }}
           alt="Greensock animation changes DOM nodes"
           src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM.jpg"
@@ -91,6 +90,7 @@ export const GsapScroller = () => {
           style={{
             width: '100%',
             maxWidth: '580px',
+            maxHeight: '80vh',
             margin: '0.4em auto',
             position: 'absolute',
             left: 0,

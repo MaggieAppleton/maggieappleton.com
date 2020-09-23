@@ -41,10 +41,11 @@ Let's say we want to make a box go from navy blue to red, move 400 pixels on the
 <Tween to={{
     scrollTrigger: {
         trigger: '#spinbox',
-        start: 'top 65%',
-        toggleActions: 'play pause reset reset'
+        start: 'top 70%',
+        end: 'bottom 15%',
+        scrub: true
     },
-        x: '45vw',
+        x: '+=400',
         scale: 1.4,
         background: '#E73C67',
     }} duration={2} ease="back.out(1.3)">
@@ -98,16 +99,19 @@ gsap.to('.spinningBox', 3, { x: 400, rotation: 360 })
 <Tween to={{
     scrollTrigger: {
         trigger: '#toBox',
-        start: 'top 65%',
-        toggleActions: 'play pause reset reset'
+        start: 'top 70%',
+        end: 'bottom 15%',
+        scrub: true
     },
-        x: '45vw',
+        x: "+=400",
         rotation: 360
     }} duration={2} ease="back.out(1.2)">
-    <div id="toBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+    <div id="toBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px', margin: '2em' }} />
 </Tween>
 
 </Center>
+
+<Spacer />
 
 In *from* we define the beginning state of the animation, and it moves back to it's state defined in the HTML & CSS
 
@@ -120,16 +124,19 @@ gsap.from('.reverseSpinningBox', 3, { x: 400, rotation: 360 })
 <Tween from={{
     scrollTrigger: {
         trigger: '#fromBox',
-        start: 'top 65%',
-        toggleActions: 'play pause reset reset'
+        start: 'top 70%',
+        end: 'bottom 20%',
+        scrub: true
     },
-        x: '45vw',
+        x: '+=400',
         rotation: 360
     }} duration={2} ease="back.out(1.2)">
-    <div id="fromBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px' }} />
+    <div id="fromBox" style={{ width: '100px', height: '100px', background: '#2D2A55', borderRadius: '4px', margin: '2em' }} />
 </Tween>
 
 </Center>
+
+<Spacer />
 
 In *fromTo* we declare two states we want the animation to move between.
 
@@ -142,8 +149,9 @@ gsap.fromTo('.hotBox', 3, { background: '#93D0D9' }, { background: '#D93654' })
 <Tween from={{ background: '#93D0D9' }} to={{
     scrollTrigger: {
         trigger: '#fromToBox',
-        start: 'top 65%',
-        toggleActions: 'play pause reset reset'
+        start: 'top 70%',
+        end: 'bottom 15%',
+        scrub: true
     },
         background: '#D93654'
     }} duration={2} ease="back.out(1.2)">
