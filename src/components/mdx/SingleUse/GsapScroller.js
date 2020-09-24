@@ -38,7 +38,7 @@ export const GsapScroller = () => {
   }, [])
 
   const Container = styled.div`
-    height: 1500px;
+    height: 180vh;
     margin: 1em 0 3em;
     position: relative;
     ${bpMaxSM} {
