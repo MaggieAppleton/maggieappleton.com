@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 // import { css } from '@emotion/core'
 import styled from '@emotion/styled'
 import gsap from 'gsap'
@@ -20,7 +20,7 @@ export const GsapScroller = () => {
           scrollTrigger: {
               trigger: [pinDiv.current],
               start: 'top -5%',
-              end: '+=400px',
+              end: '+=420px',
               scrub: 1,
           },
       })
@@ -78,6 +78,7 @@ export const GsapScroller = () => {
           style={{
             width: '100%',
             maxWidth: '580px',
+            maxHeight: '80vh',
             margin: '0.4em auto',
             position: 'absolute',
             display: 'inline-block',
@@ -99,6 +100,7 @@ export const GsapScroller = () => {
           style={{
             width: '100%',
             maxWidth: '580px',
+            maxHeight: '80vh',
             margin: '0.4em auto',
             position: 'absolute',
             left: 0,
