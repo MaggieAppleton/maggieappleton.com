@@ -4,7 +4,8 @@ import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
 export const Image = styled.img`
-  max-width: ${props => props.width ? props.width : '100%'};
+  width: ${props => props.width ? props.width : '100%'};
+  max-width: 100%;
   display: flex;
   align-self: center;
   margin: 0 auto;
@@ -112,14 +113,14 @@ export const FullWidth = props => {
         position: relative;
         right: 50%;
         width: 100vw;
-        padding: 2em 0;
+        padding: ${props.padding ? props.padding : '2em'};
         background: ${props.bgColor};
         height: (100vw * 1.2);
         .innerDiv {
           display: flex;
           align-content: center;
           justify-content: center;
-          padding: 1em 0 0em;
+          padding: ${props.padding ? props.padding : '1em 0 0em'};
           img {
             padding: 1em;
           }
