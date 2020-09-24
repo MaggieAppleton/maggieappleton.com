@@ -17,6 +17,9 @@ const preStyles = css`
   overflow: initial;
   padding: 1.4em 1.8em;
   border-radius: 0.3em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  font-family: 'IBM Plex Mono';
 `
 
 function calculateLinesToHighlight(meta) {

@@ -14,6 +14,7 @@ export const fonts = {
   regularSansItalic: 'Freight Sans W03 Book Italic',
   lightSans: 'Freight Sans W03 Light',
   boldSans: 'Freight Sans W03 Bold',
+  monoRegular: 'IBM Plex'
 }
 
 const typography = new Typography({

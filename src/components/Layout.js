@@ -126,6 +126,26 @@ const getGlobalStyles = theme => {
       margin: 40px auto;
       align-content: center;
     }
+    code {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      position: relative;
+      display: inline-block;
+      padding: 2px 8px;
+      margin: 0 4px;
+      ::after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: -1px;
+        right: -1px;
+        border-radius: 4px;
+        bottom: 0px;
+        opacity: 0.12;
+        background: gray;
+      }
+      }
+    }
     pre {
       max-width: 660px;
       margin: 0.6em auto;
