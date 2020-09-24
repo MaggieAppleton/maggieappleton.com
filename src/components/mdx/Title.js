@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 
 export default styled.h1`
-  font-size: 2.4em;
   font-weight: 400;
   text-align: left;
   max-width: 660px;

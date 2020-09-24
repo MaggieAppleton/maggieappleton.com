@@ -1,7 +1,7 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { css } from '@emotion/core'
-import { fonts } from '../lib/typography'
+import { rhythm, fonts } from '../lib/typography'
 import { bpMaxSM } from '../lib/breakpoints'
 import config from '../../config/website'
 import SEO from './SEO'
@@ -43,7 +43,6 @@ export default function Note({ site, note, referenceBlock }) {
         <h1
           css={css`
             text-align: left;
-            font-size: 3em;
             padding: 0 0 0.4em 0;
           `}
         >

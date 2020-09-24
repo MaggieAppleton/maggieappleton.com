@@ -56,17 +56,17 @@ const getGlobalStyles = theme => {
     ${bpMaxSM} {
       p,
       em,
-      strong {
+      strong, code {
         font-size: 90%;
       }
       h1 {
-        font-size: ${rhythm(1.6)};
+        font-size: ${rhythm(1.7)};
       }
       h2 {
         font-size: ${rhythm(1)};
       }
       h3 {
-        font-size: ${rhythm(1)};
+        font-size: ${rhythm(0.8)};
       }
     }
     hr {
