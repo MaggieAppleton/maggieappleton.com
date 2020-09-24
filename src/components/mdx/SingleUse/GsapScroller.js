@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import Subtitle from '../Subtitle'
 import { Paragraph } from '../Paragraph'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { bpMinMD, bpMinSM, bpMaxSM } from '../../../lib/breakpoints'
+import { bpMinMD, bpMinSM, bpMaxMD } from '../../../lib/breakpoints'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,11 +38,13 @@ export const GsapScroller = () => {
   }, [])
 
   const Container = styled.div`
-    height: 1500px;
+    height: 180vh;
     margin: 1em 0 3em;
     position: relative;
-    ${bpMaxSM} {
-      height: 100vh;
+    clear: both;
+    ${bpMaxMD} {
+      height: 100%;
+      margin-bottom: 40px;
     }
   `
 
@@ -54,9 +56,9 @@ export const GsapScroller = () => {
     margin: 0 auto;
     top: 0;
     height: 100vh;
-    ${bpMaxSM} {
-        position: relative;
-      }
+    ${bpMaxMD} {
+      position: relative;
+    }
   `
 
   return (
@@ -78,10 +80,16 @@ export const GsapScroller = () => {
             maxWidth: '580px',
             margin: '0.4em auto',
             position: 'absolute',
+            display: 'inline-block',
             left: 0,
             right: 0,
             top: '320px',
             zIndex: 1,
+            'bpMaxMD': {
+              position: 'relative',
+              top: 0,
+              margin: '1em'
+            }
           }}
           alt="Greensock animation changes DOM nodes"
           src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1599594005/maggieappleton.com/notes/gsap/GSAP-DOM.jpg"
