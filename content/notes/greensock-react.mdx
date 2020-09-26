@@ -208,6 +208,28 @@ And thus, our div animates...
 So by this point, you hopefully have a working animation in that [Codesandbox project](https://codesandbox.io/s/reacthooks-greensock-demo-xjoti?file=/src/AnimatedBox.js) or a local repo.
 
 
+But there's also a chance you don't 100% understand what these two React Hooks are doing, or how they interact with Greensock.
+
+Which is going to land you in debugging hell the minute you want to go off-script from this dull demo, and try to animate some elaborate interactive timeline.
+
+So let's unpack some of the dark magic and make it less mysterious.
+
+<Center> 
+
+## A Tale of Multiple Trees
+
+</Center>
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_4.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_5.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_6.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257938/maggieappleton.com/notes/gsap/Layer_7.png" />
+
+<Image alt="" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1600257939/maggieappleton.com/notes/gsap/Layer_3.png" />
+
 ---
 
 If you don't feel like mucking around with **useRef** and **useEffect**, [John Lindquist](https://johnlindquist.com/use-greensock-with-react-hooks/) created a simple React hook called **use-gsap** that hides them away.
