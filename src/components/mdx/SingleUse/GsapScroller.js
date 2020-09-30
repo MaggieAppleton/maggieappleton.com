@@ -6,7 +6,7 @@ import Subtitle from '../Subtitle'
 import { Paragraph } from '../Paragraph'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { bpMinMD, bpMinSM, bpMaxMD } from '../../../lib/breakpoints'
-import useWindowSize from '../../useWindowSize'
+// import useWindowSize from '../../useWindowSize'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,7 +16,7 @@ export const GsapScroller = () => {
   const img3 = useRef(null)
   const img4 = useRef(null)
 
-  const { height, width } = useWindowSize()
+  // const { height, width } = useWindowSize()
 
   console.log(height, width)
 
@@ -43,7 +43,7 @@ export const GsapScroller = () => {
   }, [])
 
   const Container = styled.div`
-    height: ${height * 2}px;
+    height: 200vh;
     margin: 1em 0;
     position: static;
     ${bpMaxMD} {
@@ -59,7 +59,7 @@ export const GsapScroller = () => {
     flex-direction: column;
     margin: 0 auto;
     top: 0;
-    height: ${height};
+    height: 100vh;
     margin-bottom: 600px;
     ${bpMaxMD} {
       position: relative;
