@@ -19,7 +19,7 @@
 - Programmatically generates multi-category MDX pages, each with different templates
 - Local pagination for each category type
 - Tippy.js Tooltip Popovers
-- React Scrollmagic scrollytelling
+- Greensock ScrollTrigger scrollytelling
 
 ## Work in Progress
 
