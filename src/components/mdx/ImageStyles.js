@@ -91,6 +91,7 @@ export const ImageGrid = props => {
           gridGap: '20px',
           img: {
             maxWidth: '100%',
+            height: 'auto',
             gridAutoFlow: 'row',
             justifySelf: 'center',
           },
