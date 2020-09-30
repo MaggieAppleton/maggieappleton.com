@@ -6,7 +6,7 @@ import Subtitle from '../Subtitle'
 import { Paragraph } from '../Paragraph'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { bpMinMD, bpMinSM, bpMaxMD } from '../../../lib/breakpoints'
-// import useWindowSize from '../../useWindowSize'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,15 +16,13 @@ export const GsapScroller = () => {
   const img3 = useRef(null)
   const img4 = useRef(null)
 
-  // const { height, width } = useWindowSize()
-
 
   useEffect(() => {
       const timeline = gsap.timeline({
           scrollTrigger: {
               trigger: [pinDiv.current],
               start: 'top -5%',
-              end: '+=420px',
+              end: '+=150vh',
               scrub: 1,
           },
       })
@@ -42,12 +40,13 @@ export const GsapScroller = () => {
   }, [])
 
   const Container = styled.div`
-    height: 140vh;
+    height: 150vh;
     margin: 1em 0;
     position: static;
+    display: block;
     ${bpMaxMD} {
       height: auto;
-      margin: 1em 0;
+      margin: 1em 0 3em;
     }
   `
 
@@ -58,7 +57,7 @@ export const GsapScroller = () => {
     flex-direction: column;
     margin: 0 auto;
     top: 0;
-    height: 100vh;
+    height: auto;
     margin-bottom: 600px;
     ${bpMaxMD} {
       position: relative;
