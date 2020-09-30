@@ -18,7 +18,6 @@ export const GsapScroller = () => {
 
   // const { height, width } = useWindowSize()
 
-  console.log(height, width)
 
   useEffect(() => {
       const timeline = gsap.timeline({
