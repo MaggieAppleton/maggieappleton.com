@@ -10,6 +10,7 @@ import Layout from './Layout'
 import Share from './Share'
 import { useTheme } from './Theming'
 import get from 'lodash/get'
+// import HasMounted from './HasMounted'
 
 export default function Note({ site, note, referenceBlock }) {
   const mdx = get(note, 'childMdx')
@@ -83,8 +84,9 @@ export default function Note({ site, note, referenceBlock }) {
         </div>
         </div>
         <br />
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-
+        <HasMounted>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+          </HasMounted>
         <div>{referenceBlock}</div>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}
