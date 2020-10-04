@@ -10,7 +10,7 @@ import Layout from './Layout'
 import Share from './Share'
 import { useTheme } from './Theming'
 import get from 'lodash/get'
-// import HasMounted from './HasMounted'
+import HasMounted from './HasMounted'
 
 export default function Note({ site, note, referenceBlock }) {
   const mdx = get(note, 'childMdx')
