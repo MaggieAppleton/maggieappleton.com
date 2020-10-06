@@ -3,16 +3,19 @@ import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
-export const Image = styled.img`
-  width: ${props => props.width ? props.width : '100%'};
-  max-width: 100%;
-  display: flex;
-  align-self: center;
-  margin: 0 auto;
-  border-radius: 6px;
-  margin-bottom: 1.2em;
-  margin-top: 1.2em;
-`
+export const Image = props => {
+  return (
+    <img
+      css={css({
+        width: props.width || '100%',
+        maxWidth: props.maxWidth || '880px',
+        gridColumn: '1/4',
+        margin: '1.2em auto',
+        borderRadius: '6px',
+      })} src={props.src} alt={props.alt} />
+      )
+}
+
 
 export const TwoCol = props => {
   return (
@@ -107,13 +110,8 @@ export const FullWidth = props => {
   return (
     <div
       css={css`
-        left: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        max-width: 100vw;
-        position: relative;
-        right: 50%;
-        width: 100vw;
+        width: 100%;
+        grid-column: 1 / 4;
         padding: ${props.padding ? props.padding : '2em'};
         background: ${props.bgColor};
         height: (100vw * 1.2);

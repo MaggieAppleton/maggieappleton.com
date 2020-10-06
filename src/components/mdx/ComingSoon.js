@@ -8,7 +8,6 @@ export const ComingSoon = () => {
       style={{
         textAlign: 'center',
         marginTop: '2em',
-        maxWidth: '660px',
         padding: '2em',
       }}
     >

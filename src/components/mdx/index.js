@@ -86,6 +86,7 @@ export default {
   ImageFrame: props => <ImageFrame {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
   img: props => <Image {...props} />,
+  Image: props => <Image {...props} />,
   IntroParagraph: props => <IntroParagraph {...props} />,
   Link: props => <InnerLink {...props} />,
   LinkCard: props => <LinkCard {...props} />,

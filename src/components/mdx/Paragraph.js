@@ -3,8 +3,6 @@ import { fonts } from '../../lib/typography'
 
 export const Paragraph = styled.p`
   text-align: left;
-  max-width: 660px;
-  margin: 0 auto;
   line-height: 1.8em;
   font-family: ${fonts.regular};
   margin-top: 1em;

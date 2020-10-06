@@ -147,7 +147,6 @@ const getGlobalStyles = theme => {
       }
     }
     pre {
-      max-width: 660px;
       margin: 0.6em auto;
       overflow-x: auto;
       border-radius: 4px;
