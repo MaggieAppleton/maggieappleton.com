@@ -56,8 +56,8 @@ const theme = useTheme()
                 borderRadius: '4px',
               },
               '.dataBlock': {
-                paddingLeft: '10px',
-                alignSelf: 'top',
+                paddingLeft: '30px',
+                alignSelf: 'center',
               },
               '.description': {
                 lineHeight: '1.4em',
@@ -73,6 +73,7 @@ const theme = useTheme()
           >
             <img
               css={css({
+                marginTop: '30px',
                 padding: '10px',
                 maxWidth: large ? '250px' : '150px',
                 maxHeight: large ? '300px' : '200px',
