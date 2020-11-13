@@ -27,6 +27,8 @@ export const TwoCol = props => {
         gridGap: props.gridGap || '20px',
         alignItems: props.alignItems || 'center',
         justifyItems: 'center',
+        width: props.width || '100%',
+        gridColumn: '1/4',
         img: {
           padding: props.imgPadding,
           margin: props.imgMargin || '0px',
@@ -49,6 +51,8 @@ export const ThreeImageGrid = props => {
         display: 'grid',
         gridGap: props.gridGap || '30px',
         padding: '20px 0px',
+        width: props.width || '100%',
+        gridColumn: '1/4',
         img: {
           maxWidth: '100%',
           gridAutoFlow: 'row',
@@ -67,6 +71,7 @@ export const ImageFrame = props => {
       css={css({
         img: {
           width: props.width || '100%',
+          gridColumn: '1/4',
           marginBottom: '1.6em',
           marginTop: '1.6em',
           border: '1px solid #e7eef3',
@@ -91,6 +96,8 @@ export const ImageGrid = props => {
           },
           gridTemplateColumns: 'repeat(1, 1fr)',
           display: 'grid',
+          width: '100%',
+          gridColumn: '1/4',
           gridGap: '20px',
           img: {
             maxWidth: '100%',
@@ -177,15 +184,9 @@ export const FullWidth2Col = props => {
 export const FullWidthImage = props => {
   return (
     <img
-      css={css`
-        left: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        max-width: 100vw;
-        position: relative;
-        right: 50%;
-        width: 100vw;
-      `}
+    css={css({
+        width: props.width || '100%',
+        gridColumn: '1/4',})}
       alt={props.alt}
       src={props.src}
     />
