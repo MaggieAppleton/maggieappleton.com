@@ -257,7 +257,7 @@ export default function Index({
             <TitleSectionLink to="/garden">The Digital Garden</TitleSectionLink>
             <p
               css={css`
-                margin-bottom: 1em;
+                margin-bottom: 1em; line-height: 1.4em;
               `}
             >
               A consistently tended collection of half-baked notes, research,
@@ -384,7 +384,9 @@ export default function Index({
         <section className="books">
           <span className="bookTitle">
             <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
-            <p>
+            <p css={css`
+                margin-bottom: 1em; line-height: 1.4em;
+              `}>
               A past and present reading collection. Complete with very loose
               and opinionated notes.
             </p>

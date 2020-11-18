@@ -1,15 +1,17 @@
 import styled from '@emotion/styled'
-import { fonts } from '../../lib/typography'
+import { fonts, rhythm } from '../../lib/typography'
 
 export const Paragraph = styled.p`
   text-align: left;
   max-width: 660px;
   margin: 0 auto;
   line-height: 1.8em;
+  fontSize: ${rhythm(0.8)},
   font-family: ${fonts.regular};
   margin-top: 1em;
   align-items: flex-start;
 `
+
 
 export const IntroParagraph = styled.p`
   :first-letter {

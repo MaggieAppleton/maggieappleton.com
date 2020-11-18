@@ -30,7 +30,7 @@ const typography = new Typography({
     h1: {
       color: colors.black,
       fontFamily: fonts.walsheim,
-      fontSize: rhythm(2.2),
+      fontSize: rhythm(2.1),
       letterSpacing: 'normal',
     },
     h2: {
@@ -74,8 +74,6 @@ const typography = new Typography({
     p: {
       maxWidth: '660px',
       margin: '0 auto',
-      lineHeight: '1.8em',
-      fontSize: rhythm(0.7),
       marginBottom: rhythm(1 / 2),
       WebkitFontSmoothing: 'antialiased',
       textRendering: 'optimizeLegibility',
