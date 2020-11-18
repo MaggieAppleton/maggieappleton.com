@@ -1,33 +1,40 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { useTheme } from '../Theming'
+import { fonts } from '../../lib/typography'
 
-const LinkCard = ({ title, link, author, ...props }) => {
+const LinkCard = ({ title, link, author, children, ...props }) => {
+  const theme = useTheme()
+
   return (
-    <a noTip href={link}>
       <div
         css={css({
           border: '1px solid rgba(52, 61, 68, 0.05)',
           transition: 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;',
           margin: '0.4em',
           padding: '0 1em',
-          width: '250px',
+          width: '100%',
           borderRadius: '6px',
           boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
+          p: {
+            fontSize: '90%'
+          },
           ':hover': {
-            transform: 'scale(1.015)',
+            transform: 'scale(1.012)',
             borderRadius: '0px 0px 6px 6px',
             boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
-            p: {
+            h4: {
               transition: 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;',
+              color: `${theme.colors.orange}`
             },
           },
         })}
         {...props}
       >
-        <h4>{title}</h4>
-        <p>{author}</p>
+        <a noTip href={link}><h4>{title}</h4>
+        <h5>{author}</h5></a>
+        <p>{children}</p>
       </div>
-    </a>
   )
 }
 
