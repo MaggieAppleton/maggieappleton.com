@@ -35,7 +35,7 @@ export const UnorderedList = styled.ul`
   padding-left: 1em;
   margin: 0.8em auto;
   li {
-    margin-bottom: 0.25em;
+    margin: 0em;
   }
 `
 
