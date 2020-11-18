@@ -2,9 +2,10 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMaxSM } from '../../lib/breakpoints'
 import { useTheme } from '../Theming'
+import { fonts } from '../../lib/typography'
 
 
-export default function ResourceBook({ url, large, title, img, author, description, ...props }) {
+export default function ResourceBook({ url, large, title, img, author, notesUrl, description, ...props }) {
 const theme = useTheme()
 
   return (
@@ -89,7 +90,18 @@ const theme = useTheme()
             />
             <div class="dataBlock">
               <h1>{title}</h1>
-              <h5>{author}</h5>
+              <div css={css({
+                display: 'flex',
+                justifyContent: 'space-between',
+                a: {
+                  fontSize: '80%',
+                  color: `${theme.colors.orange}`,
+                  fontFamily: `${fonts.walsheim}`,
+                }
+              })}>
+                <h5>{author}</h5>
+                {notesUrl ? <a href={notesUrl}>➽ Book Notes</a> : null}
+              </div>
               <p class="description">{description}</p>
             </div>
           </div>
