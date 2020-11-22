@@ -15,6 +15,7 @@
     "@mdx-js/react": "^1.1.1",
     "@tippyjs/react": "^4.0.2",
     "core-js": "^3.1.4",
+    "d3": "^6.2.0",
     "dotenv": "^8.0.0",
     "dotenv-parse-variables": "^0.2.2",
     "emotion": "^10.0.14",

@@ -51,10 +51,11 @@ import gsap from 'gsap'
 // import { ReplyOnTwitter } from './ReplyOnTwitter'
 import { Arrow } from './Arrow'
 // ------------- Single Use Components--------------- //
-import { Tools, Hardware } from './SingleUse/Tools'
-import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
-import { GsapScroller } from './SingleUse/GsapScroller'
-import { BlenderScroller } from './SingleUse/BlenderScroller'
+import { Tools, Hardware } from './GardenNotes/Tools'
+import { MediumMaterialsMeatSection } from './GardenNotes/MediumMaterialsMeatSection'
+import { GsapScroller } from './GardenNotes/GsapScroller'
+import D3Experiments from './GardenNotes/D3Experiments'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,5 +115,5 @@ export default {
   Tools: Tools,
   Hardware: Hardware,
   GsapScroller: GsapScroller,
-  BlenderScroller: BlenderScroller
+  D3Experiments: D3Experiments
 }
