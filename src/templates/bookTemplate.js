@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import SEO from 'components/SEO'
 import { css } from '@emotion/core'
+import colors from '../lib/colors'
 import Container from 'components/Container'
 import Layout from '../components/Layout'
 import Share from '../components/Share'
@@ -35,9 +36,38 @@ export default function Book({
           flex-direction: column;
           .breadcrumb {
             margin: 0 auto;
+            text-align: center;
+            justify-content: center;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 2em;
+            background: none;
+            border: none;
+            font-size: 65%;
+            color: ${colors.grey};
+            padding: 0.2em;
+            svg {
+              margin-right: 0.8em;
+              top: 2px;
+              position: relative;
+              fill: ${colors.grey};
+            }
+            span {
+              top: -10px;
+            }
+            :hover {
+              box-shadow: none;
+              transform: none;
+              color: ${colors.orange};
+              svg {
+              fill: ${colors.orange};
+              transition: all 0.3s;
+              }
+            }
+            :focus {
+              border: none;
+              outline: none;
+            }
           }
           .bookInfo {
             display: flex;
@@ -45,25 +75,44 @@ export default function Book({
             ${bpMaxSM} {
               flex-wrap: wrap;
             }
-            margin-bottom: 2em;
+            h1 {
+              margin-top: 0;
+              ${bpMaxSM} {
+                margin-top: 0.8em;
+              }
+            }
             margin: 0 auto;
-            align-items: center;
-            margin-bottom: 2em;
+            align-items: flex-start;
+            justify-content: center;
             .gatsby-image-wrapper {
               justify-content: center;
               width: 260px;
               height: auto;
-              margin-right: 2em;
+              margin-right: 2.6em;
             }
           }
         `}
       >
+        <Link to="/bookshelf">
+          <button className="breadcrumb">
+            <svg
+              width="8"
+              height="14"
+              viewBox="0 0 10 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8 0L10 2L4 8L10 14L8 16L0 8L8 0Z"
+              />
+            </svg>
+            <span>Back to Bookshelf</span>
+          </button>
+        </Link>
         <div className="bookInfo">
           <span>
-            <Link to="/bookshelf">
-              <h6 className="breadcrumb">◁ Back to Bookshelf</h6>
-            </Link>
-
             <Img
               style={{ borderRadius: '6px' }}
               fluid={cover.childImageSharp.fluid}
