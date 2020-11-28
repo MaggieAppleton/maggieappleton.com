@@ -63,6 +63,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        path: `${__dirname}/content/antibooks`,
+        name: 'AntiBooks',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         path: `${__dirname}/content/illustration`,
         name: 'Illustration',
       },

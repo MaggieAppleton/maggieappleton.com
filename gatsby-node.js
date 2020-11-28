@@ -120,6 +120,7 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+
     }
   `).then(({ data, errors }) => {
     if (errors) {
@@ -255,6 +256,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'slug',
       node,
       value: slug,
+    })
+
+    createNodeField({
+      name: 'url',
+      node,
+      value: node.frontmatter.url,
     })
 
     createNodeField({

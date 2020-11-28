@@ -4,17 +4,18 @@ import { css } from '@emotion/core'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import { bpMaxSM } from '../lib/breakpoints'
-import { Book } from '../components/Book'
+import { AntiBook } from '../components/Book'
 
-const BookPage = ({ data: { site, bookQuery } }) => {
+const AntiLibraryPage = ({ data: { site, antibookQuery } }) => {
+    console.log(antibookQuery)
   return (
     <Layout site={site}>
       <Container
         css={css`
           margin-top: 1.6em;
           margin-bottom: 2em;
-          h1 {
-            margin-bottom: 1em;
+          h1, p {
+            margin-bottom: 0.45em;
             text-align: center;
           }
           .books {
@@ -32,12 +33,12 @@ const BookPage = ({ data: { site, bookQuery } }) => {
             }
         `}
       >
-        <h1>The Bookshelf</h1>
-        {/* ------------ Books Section ------------ */}
+        <h1>The Anti Library</h1>
+        <p>Books I haven't read, but like the idea of having read.</p>
         <section className="books">
-          {bookQuery.edges.map(({ node: book }) => (
-            <Book
-              redirectTo={book.frontmatter.redirectTo}
+          {antibookQuery.edges.map(({ node: book }) => (
+            <AntiBook
+              url={book.frontmatter.url}
               slug={book.frontmatter.slug}
               title={book.frontmatter.title}
               key={book.id}
@@ -51,9 +52,9 @@ const BookPage = ({ data: { site, bookQuery } }) => {
   )
 }
 
-export default BookPage
+export default AntiLibraryPage
 
-export const bookPageQuery = graphql`
+export const antibookQuery = graphql`
   query {
     site {
       ...site
@@ -61,16 +62,15 @@ export const bookPageQuery = graphql`
         title
       }
     }
-    bookQuery: allMdx(
+    antibookQuery: allMdx(
       filter: {
-        frontmatter: { type: { eq: "book" }, published: { ne: false } }
+        frontmatter: { type: { eq: "antibook" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___date }
       limit: 45
     ) {
       edges {
         node {
-          excerpt(pruneLength: 120)
           id
           fields {
             title
@@ -86,9 +86,8 @@ export const bookPageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             description
-            slug
             author
-            redirectTo
+            url
             cover {
               childImageSharp {
                 fluid(maxWidth: 300) {
