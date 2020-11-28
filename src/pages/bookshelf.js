@@ -4,7 +4,7 @@ import { css } from '@emotion/core'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import { bpMaxSM } from '../lib/breakpoints'
-import Book from '../components/Book'
+import { Book } from '../components/Book'
 
 const BookPage = ({ data: { site, bookQuery } }) => {
   return (
