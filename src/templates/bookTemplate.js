@@ -93,7 +93,7 @@ export default function Book({
           }
         `}
       >
-        <Link to="/bookshelf">
+        <Link to="/library">
           <button className="breadcrumb">
             <svg
               width="8"
@@ -108,7 +108,7 @@ export default function Book({
                 d="M8 0L10 2L4 8L10 14L8 16L0 8L8 0Z"
               />
             </svg>
-            <span>Back to Bookshelf</span>
+            <span>Back to Library</span>
           </button>
         </Link>
         <div className="bookInfo">

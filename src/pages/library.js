@@ -5,6 +5,7 @@ import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import { bpMaxSM } from '../lib/breakpoints'
 import { Book } from '../components/Book'
+import { Link } from 'gatsby'
 
 const BookPage = ({ data: { site, bookQuery } }) => {
   return (
@@ -14,7 +15,11 @@ const BookPage = ({ data: { site, bookQuery } }) => {
           margin-top: 1.6em;
           margin-bottom: 2em;
           h1 {
-            margin-bottom: 1em;
+            margin-bottom: 0.4em;
+            text-align: center;
+          }
+          p {
+            margin-bottom: 0.8em;
             text-align: center;
           }
           .books {
@@ -32,7 +37,8 @@ const BookPage = ({ data: { site, bookQuery } }) => {
             }
         `}
       >
-        <h1>The Bookshelf</h1>
+        <h1>The Library</h1>
+        <p>Books I've read. Accompanied by loose and opinionated notes.<br />To see books I haven't read, browse the <Link to='/antilibrary'>Anti Library</Link></p>
         {/* ------------ Books Section ------------ */}
         <section className="books">
           {bookQuery.edges.map(({ node: book }) => (

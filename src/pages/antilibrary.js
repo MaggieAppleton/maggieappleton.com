@@ -13,8 +13,12 @@ const AntiLibraryPage = ({ data: { site, antibookQuery } }) => {
         css={css`
           margin-top: 1.6em;
           margin-bottom: 2em;
-          h1, p {
-            margin-bottom: 0.45em;
+          h1 {
+            margin-bottom: 0.4em;
+            text-align: center;
+          }
+          p {
+            margin-bottom: 0.8em;
             text-align: center;
           }
           .books {
@@ -37,6 +41,7 @@ const AntiLibraryPage = ({ data: { site, antibookQuery } }) => {
         <section className="books">
           {antibookQuery.edges.map(({ node: book }) => (
             <AntiBook
+              url={book.frontmatter.url}
               title={book.frontmatter.title}
               key={book.id}
               fluidImg={book.frontmatter.cover.childImageSharp.fluid}
@@ -82,6 +87,7 @@ export const antibookQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             author
+            url
             cover {
               childImageSharp {
                 fluid(maxWidth: 300) {

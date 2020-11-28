@@ -16,7 +16,7 @@ export const Book = props => {
         css={css`
           padding: 0;
           margin-left: 1.6em;
-          width: 260px;
+          width: 240px;
           .gatsby-image-wrapper {
             border-radius: 4px;
             transition: all 500ms ease;
@@ -75,7 +75,7 @@ export const AntiBook = props => {
         css={css`
           padding: 0;
           margin-left: 1.6em;
-          width: 260px;
+          width: 240px;
           .gatsby-image-wrapper {
             border-radius: 4px;
             transition: all 500ms ease;

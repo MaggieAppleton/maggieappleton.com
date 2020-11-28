@@ -383,7 +383,7 @@ export default function Index({
         {/* ------------ Books Section ------------ */}
         <section className="books">
           <span className="bookTitle">
-            <TitleSectionLink to="/bookshelf">Bookshelf Notes</TitleSectionLink>
+            <TitleSectionLink to="/library">Library Notes</TitleSectionLink>
             <p css={css`
                 margin-bottom: 1em; line-height: 1.4em;
               `}>
@@ -393,10 +393,10 @@ export default function Index({
 
             <SmallSectionLink
               float="left"
-              to="/bookshelf"
-              aria="Browse the Bookshelf"
+              to="/library"
+              aria="Browse the Library"
             >
-              Browse the Bookshelf
+              Browse the Library
             </SmallSectionLink>
           </span>
           {bookQuery.edges.map(({ node: book }) => (
