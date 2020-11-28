@@ -78,7 +78,6 @@ These are all my personal recommendations for courses and books.
         <h3>Learning Platforms & Courses</h3>
             <div className="mainGrid courseGrid">
             {resourceCourses.map((d, i) => {
-            console.log(d.recCourses)
             return (
               <ResourceCard
                 key={i}

@@ -7,7 +7,6 @@ import { bpMaxSM } from '../lib/breakpoints'
 import { AntiBook } from '../components/Book'
 
 const AntiLibraryPage = ({ data: { site, antibookQuery } }) => {
-    console.log(antibookQuery)
   return (
     <Layout site={site}>
       <Container
@@ -38,8 +37,6 @@ const AntiLibraryPage = ({ data: { site, antibookQuery } }) => {
         <section className="books">
           {antibookQuery.edges.map(({ node: book }) => (
             <AntiBook
-              url={book.frontmatter.url}
-              slug={book.frontmatter.slug}
               title={book.frontmatter.title}
               key={book.id}
               fluidImg={book.frontmatter.cover.childImageSharp.fluid}
@@ -74,7 +71,6 @@ export const antibookQuery = graphql`
           id
           fields {
             title
-            slug
             date
           }
           parent {
@@ -85,9 +81,7 @@ export const antibookQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
-            description
             author
-            url
             cover {
               childImageSharp {
                 fluid(maxWidth: 300) {
