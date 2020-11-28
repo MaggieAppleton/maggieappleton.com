@@ -9,8 +9,6 @@ function RecCourses(props) {
     isDowndownOpen ? setDropdown(false) : setDropdown(true)
   }
 
-  console.log(isDowndownOpen)
-
   return (
     <div
       css={css({

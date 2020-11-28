@@ -11,7 +11,7 @@ import { rhythm } from '../lib/typography'
 import { fonts } from '../lib/typography'
 import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
 import SimpleCard from '../components/SimpleCard'
-import Book from '../components/Book'
+import { Book } from '../components/Book'
 import IllustrationCard from '../components/IllustrationCard'
 
 const Hero = () => {
