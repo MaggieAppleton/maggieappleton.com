@@ -64,6 +64,10 @@ export const ImageFrame = props => {
       css={css({
         img: {
           width: props.width || '100%',
+          maxWidth: '100%',
+          display: 'flex',
+          alignSelf: 'center',
+          margin: '0 auto',
           marginBottom: '1.6em',
           marginTop: '1.6em',
           border: '1px solid #e7eef3',
