@@ -1,11 +1,11 @@
 ---
 title: 'Painting Roam with Custom CSS'
 slug: paintingroam
-date: 2020-05-25
+date: 2020-12-05
 published: true
 type: ['note']
 topics: ['Roam', 'Web Development']
-growthStage: 'Budding'
+growthStage: 'Evergreen'
 ---
 
 My [[Roam Garden]] is a place I spend between 2-4 hours puttering around in every day according to my <a href="https://www.rescuetime.com/">RescueTime</a> stats <Footnote idName={1}>RescueTime only tracks the time you're actively focused on a single window, so this measurement has some limitations but sets a nice baseline</Footnote>
@@ -28,24 +28,27 @@ I've used colours and font weight to distinguished internal from external links,
 
 <p>Luckily, this is all fairly easy to do. Roam has a built-in system for customising how your database looks.</p>
 
-You first need to create a new page called `[[roam/css]]`.
+You first need to create a new page called `roam/css`.
 
-<Image alt="The roam search bar with roam/css entered" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1607173029/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.47.43.png" />
+<ImageFrame alt="The roam search bar with roam/css entered" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1607173029/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.47.43.png" />
 
 Once there, create a new code block by typing `/code` and selecting the block option.
 
-<Image alt="Entering /code into the empty page" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1607173035/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.48.46.png" />
+<ImageFrame alt="Entering /code into the empty page" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1607173035/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.48.46.png" />
 
 Once the code block appears, set the language to `css` from the right-hand drop down menu.
 
-<Image alt="Selecting the code option from the code block dropdown menu" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1607173038/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.48.56.png" />
+<ImageFrame alt="Selecting the code option from the code block dropdown menu" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1607173038/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_12.48.56.png" />
 
 You're now ready to start customising the CSS of your Roam. Any CSS you enter into this new code block will be applied across your whole database.
 
 To test if it's working, type `h1.rm-title-display span { color: salmon;}` into the box.  
 The title of your new page should change to a lovely shade of salmon.
 
-<Image alt="The page title changing to the colour salmon" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1607173750/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_13.09.01.png" />
+<ImageFrame alt="The page title changing to the colour salmon" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1200/v1607173750/maggieappleton.com/notes/roam-garden/Screenshot_2020-12-05_at_13.09.01.png" />
+
+
+---
 
 <SimpleCard style={{marginTop: '2em'}}>
 
@@ -63,12 +66,12 @@ The title of your new page should change to a lovely shade of salmon.
 
 </SimpleCard>
 
----
 
 For those of you entirely uninterested in learning CSS who just want to pop a pre-made theme in, Roam has a whole collection of [pre-made themes](https://roamresearch.com/#/app/help/page/fJRcVITNY) you can pick from.
 
-It includes my theme **Leyendecker**, although it's not always the most up-to-date version.
-To make sure you have the latest one, get the code from [my Github repo](https://github.com/theianjones/roam-research-themes/blob/master/leyendecker.css)
+Copy and paste any of them into your new `roam/css` page and the styles will be applied across your whole database
+
+If you want to use my theme **Leyendecker**, there's a old version listed on the [Roam database](https://roamresearch.com/#/app/help/page/fJRcVITNY). But the the most up-to-date version is avaliable on [my Github repo](https://github.com/theianjones/roam-research-themes/blob/master/leyendecker.css)
 
 <br />
 
