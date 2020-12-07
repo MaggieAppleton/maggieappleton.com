@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Layout from 'components/Layout'
 import { css } from '@emotion/core'
 import Container from 'components/Container'
@@ -6,9 +6,19 @@ import { graphql } from 'gatsby'
 import { bpMaxSM } from '../lib/breakpoints'
 import { Book } from '../components/Book'
 import { Link } from 'gatsby'
+import { Tabs, Tab, TabContent } from '../components/Tabs'
 
 const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
   console.log(paperQuery.edges)
+
+  const [activeTab, setActiveTab] = useState(0)
+
+  const handleTabSwitch = e => {
+    const index = parseInt(e.target.id, 0)
+    if (index !== activeTab) {
+      setActiveTab(index)
+    }
+  }
 
   return (
     <Layout site={site}>
@@ -41,8 +51,20 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
       >
         <h1>The Library</h1>
         <p>Books I've read. Accompanied by loose and opinionated notes.<br />To see books I haven't read, browse the <Link to='/antilibrary'>Anti Library</Link></p>
+
+            <Tabs>
+
+              <Tab onClick={handleTabSwitch} activeTab={activeTab === 0} id={0}>Books</Tab>
+
+              <Tab onClick={handleTabSwitch} activeTab={activeTab === 1} id={1}>Papers</Tab>
+
+              <Tab onClick={handleTabSwitch} activeTab={activeTab === 2} id={2}>Talks</Tab>
+
+            </Tabs>
+
         {/* ------------ Books Section ------------ */}
         <section className="books">
+          <TabContent activeTab={activeTab === 0}>
           {bookQuery.edges.map(({ node: book }) => (
             <Book
               redirectTo={book.frontmatter.redirectTo}
@@ -53,6 +75,18 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
               author={book.frontmatter.author}
             />
           ))}
+          </TabContent>
+          <TabContent activeTab={activeTab === 1}>
+          {paperQuery.edges.map(({ node: paper }) => (
+            <Book
+              redirectTo={paper.frontmatter.redirectTo}
+              slug={paper.frontmatter.slug}
+              title={paper.frontmatter.title}
+              key={paper.id}
+              author={paper.frontmatter.author}
+            />
+          ))}
+          </TabContent>
         </section>
       </Container>
     </Layout>
