@@ -7,7 +7,9 @@ import { bpMaxSM } from '../lib/breakpoints'
 import { Book } from '../components/Book'
 import { Link } from 'gatsby'
 
-const BookPage = ({ data: { site, bookQuery } }) => {
+const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
+  console.log(paperQuery.edges)
+
   return (
     <Layout site={site}>
       <Container
@@ -57,9 +59,9 @@ const BookPage = ({ data: { site, bookQuery } }) => {
   )
 }
 
-export default BookPage
+export default LibraryPage
 
-export const bookPageQuery = graphql`
+export const libraryPageQuery = graphql`
   query {
     site {
       ...site
@@ -76,7 +78,6 @@ export const bookPageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 120)
           id
           fields {
             title
@@ -91,7 +92,6 @@ export const bookPageQuery = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
-            description
             slug
             author
             redirectTo
@@ -102,6 +102,99 @@ export const bookPageQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    paperQuery: allMdx(
+      filter: {
+        frontmatter: { type: { eq: "paper" }, published: { ne: false } }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 45
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            title
+            slug
+            date
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
+            }
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            author
+            redirectTo
+          }
+        }
+      }
+    }
+
+    talkQuery: allMdx(
+      filter: {
+        frontmatter: { type: { eq: "talk" }, published: { ne: false } }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 45
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            title
+            slug
+            date
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
+            }
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            author
+            redirectTo
+          }
+        }
+      }
+    }
+
+    podcastQuery: allMdx(
+      filter: {
+        frontmatter: { type: { eq: "podcast" }, published: { ne: false } }
+      }
+      sort: { order: DESC, fields: frontmatter___date }
+      limit: 45
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            title
+            slug
+            date
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
+            }
+          }
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            author
+            redirectTo
           }
         }
       }
