@@ -8,8 +8,7 @@ import { Book } from '../components/Book'
 import { Link } from 'gatsby'
 import { Tabs, Tab, TabContent } from '../components/Tabs'
 
-const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
-  console.log(paperQuery.edges)
+const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQuery } }) => {
 
   const [activeTab, setActiveTab] = useState(0)
 
@@ -50,7 +49,7 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
         `}
       >
         <h1>The Library</h1>
-        <p>Books I've read. Accompanied by loose and opinionated notes.<br />To see books I haven't read, browse the <Link to='/antilibrary'>Anti Library</Link></p>
+        <p>Books, papers, talks and podcasts I think are worth paying attention to.<br />Accompanied by loose and opinionated notes.</p><p>To see things I haven't read browse the <Link to='/antilibrary'>Anti Library</Link></p>
 
             <Tabs>
 
@@ -60,11 +59,13 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
 
               <Tab onClick={handleTabSwitch} activeTab={activeTab === 2} id={2}>Talks</Tab>
 
+              <Tab onClick={handleTabSwitch} activeTab={activeTab === 3} id={3}>Podcasts</Tab>
+
             </Tabs>
 
         {/* ------------ Books Section ------------ */}
-        <section className="books">
           <TabContent activeTab={activeTab === 0}>
+          <section className="books">
           {bookQuery.edges.map(({ node: book }) => (
             <Book
               redirectTo={book.frontmatter.redirectTo}
@@ -75,8 +76,12 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
               author={book.frontmatter.author}
             />
           ))}
+          </section>
           </TabContent>
+
+          {/* Papers Section */}
           <TabContent activeTab={activeTab === 1}>
+          <section className="books">
           {paperQuery.edges.map(({ node: paper }) => (
             <Book
               redirectTo={paper.frontmatter.redirectTo}
@@ -86,8 +91,39 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery } }) => {
               author={paper.frontmatter.author}
             />
           ))}
+          </section>
           </TabContent>
-        </section>
+
+          {/* Talks Section */}
+          <TabContent activeTab={activeTab === 2}>
+          <section className="books">
+          {talkQuery.edges.map(({ node: talk }) => (
+            <Book
+              redirectTo={talk.frontmatter.redirectTo}
+              slug={talk.frontmatter.slug}
+              title={talk.frontmatter.title}
+              key={talk.id}
+              author={talk.frontmatter.author}
+            />
+          ))}
+          </section>
+          </TabContent>
+
+            {/* Podcasts Section */}
+            <TabContent activeTab={activeTab === 3}>
+          <section className="books">
+          {podcastQuery.edges.map(({ node: podcast }) => (
+            <Book
+              redirectTo={podcast.frontmatter.redirectTo}
+              slug={podcast.frontmatter.slug}
+              title={podcast.frontmatter.title}
+              key={podcast.id}
+              author={podcast.frontmatter.author}
+            />
+          ))}
+          </section>
+          </TabContent>
+
       </Container>
     </Layout>
   )
