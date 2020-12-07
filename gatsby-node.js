@@ -121,6 +121,31 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
 
+      paperQuery: allMdx(
+        filter: {
+          frontmatter: { type: { eq: "paper" }, published: { ne: false } }
+        }
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        edges {
+          node {
+            id
+            parent {
+              ... on File {
+                name
+                sourceInstanceName
+              }
+            }
+            excerpt(pruneLength: 250)
+            fields {
+              title
+              slug
+              date
+            }
+          }
+        }
+      }
+
     }
   `).then(({ data, errors }) => {
     if (errors) {
@@ -188,6 +213,24 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
+
+    data.paperQuery.edges.forEach(({ node }, i) => {
+      const { edges } = data.paperQuery
+      const prevPage = i === 0 ? null : edges[i - 1].node
+      const nextPage = i === edges.length - 1 ? null : edges[i + 1].node
+      pageRedirects(node)
+      createPage({
+        path: node.fields.slug,
+        component: path.resolve('./src/templates/bookTemplate.js'),
+        context: {
+          id: node.id,
+          prevPage,
+          nextPage,
+        },
+      })
+    })
+
+
   })
 }
 
