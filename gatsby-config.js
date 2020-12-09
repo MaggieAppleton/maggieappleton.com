@@ -70,6 +70,27 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        path: `${__dirname}/content/papers`,
+        name: 'Papers',
+      },
+    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/content/podcasts`,
+    //     name: 'Podcasts',
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     path: `${__dirname}/content/talks`,
+    //     name: 'Talks',
+    //   },
+    // },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         path: `${__dirname}/content/illustration`,
         name: 'Illustration',
       },
