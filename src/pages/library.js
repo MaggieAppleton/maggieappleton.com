@@ -11,8 +11,6 @@ import { Tabs, Tab, TabContent } from '../components/Tabs'
 
 const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQuery } }) => {
 
-  console.log(paperQuery.edges)
-
   const [activeTab, setActiveTab] = useState(0)
 
   const handleTabSwitch = e => {
