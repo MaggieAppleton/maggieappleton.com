@@ -5,10 +5,13 @@ import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import { bpMaxSM } from '../lib/breakpoints'
 import { Book } from '../components/Book'
+import {PaperCard} from '../components/PaperCard'
 import { Link } from 'gatsby'
 import { Tabs, Tab, TabContent } from '../components/Tabs'
 
 const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQuery } }) => {
+
+  console.log(paperQuery.edges)
 
   const [activeTab, setActiveTab] = useState(0)
 
@@ -41,11 +44,27 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQu
             margin: 0 auto;
             margin-top: 3em;
             ${bpMaxSM} {
-              flex-direction: column;
+              justify-content: center;
+              margin: 3em auto;
             }
             img {
               border-radius: 4px;
             }
+          }
+
+          .papers {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: 3em;
+            ${bpMaxSM} {
+              justify-content: center;
+              margin: 3em auto;
+            }
+          }
+
         `}
       >
         <h1>The Library</h1>
@@ -81,9 +100,9 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQu
 
           {/* Papers Section */}
           <TabContent activeTab={activeTab === 1}>
-          <section className="books">
+          <section className="papers">
           {paperQuery.edges.map(({ node: paper }) => (
-            <Book
+            <PaperCard
               redirectTo={paper.frontmatter.redirectTo}
               slug={paper.frontmatter.slug}
               title={paper.frontmatter.title}
