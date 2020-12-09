@@ -221,7 +221,7 @@ exports.createPages = ({ actions, graphql }) => {
       pageRedirects(node)
       createPage({
         path: node.fields.slug,
-        component: path.resolve('./src/templates/bookTemplate.js'),
+        component: path.resolve('./src/templates/paperTemplate.js'),
         context: {
           id: node.id,
           prevPage,
