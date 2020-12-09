@@ -18,6 +18,7 @@ export const OrderedList = styled.ol`
   list-style-type: decimal-leading-zero;
   line-height: 1.8em;
   max-width: 660px;
+  min-width: 660px;
   padding-left: 1em;
   margin: 0.8em auto;
   li {
@@ -32,6 +33,7 @@ export const UnorderedList = styled.ul`
   list-style-image: url(icons/radiobtn.svg);
   line-height: 1.8em;
   max-width: 660px;
+  min-width: 660px;
   padding-left: 1em;
   margin: 0.8em auto;
   li {
@@ -42,6 +44,7 @@ export const UnorderedList = styled.ul`
 export const H3 = styled.h3`
   text-align: left;
   max-width: 660px;
+  min-width: 660px;
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 0.4em;
@@ -52,6 +55,7 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
   text-align: left;
   max-width: 660px;
+  min-width: 660px;
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 0.4em;
@@ -63,6 +67,7 @@ export const H4 = styled.h4`
 export const H5 = styled.h5`
   text-align: left;
   max-width: 660px;
+  min-width: 660px;
   margin: 0 auto;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
@@ -73,6 +78,7 @@ export const H5 = styled.h5`
 export const H6 = styled.h6`
   text-align: left;
   max-width: 660px;
+  min-width: 660px;
   margin: 0 auto;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
@@ -102,6 +108,7 @@ export const Blockquote = styled.blockquote`
 export const Center = styled.p`
   text-align: center;
   max-width: 660px;
+  min-width: 660px;
   margin: 30px auto;
   h1,
   h2,
@@ -115,6 +122,7 @@ export const Center = styled.p`
 export const Subtext = styled.p`
   text-align: ${props => props.center ? 'center' : 'left'};
   max-width: 660px;
+  min-width: 660px;
   margin: 0 auto;
   line-height: 1.6em;
   font-size: 0.8em;
