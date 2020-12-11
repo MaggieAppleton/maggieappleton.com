@@ -143,26 +143,25 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                 <div
                   onClick={() => handleFilterClick(filter)}
                   css={css({
-                    padding: '0.2em 0.5em',
+                    fontSize: '92%',
+                    padding: '0.1em 0.4em',
                     margin: '2px',
-                    borderRadius: '6px',
+                    borderRadius: '4px',
                     color: includes(activeFilters, filter)
-                    ? theme.colors.white
-                    : theme.colors.grey,
-                    transition: 'all 200ms ease-in-out',
+                    ? darken(0.2, theme.colors.lightGreen)
+                    : lighten(0.2, theme.colors.darkGrey),
+                    transition: 'all 400ms ease-in-out',
                     ':hover': {
-                      border: `1px solid ${lighten(0.1,theme.colors.darkGrey)}`,
                       color: includes(activeFilters, filter)
                       ? theme.colors.white
                       : theme.colors.darkGrey,
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      background: lighten(0.3, theme.colors.lightGreen),
+                      color: darken(0.2, theme.colors.lightGreen)
                     },
-                    border: includes(activeFilters, filter)
-                    ? `1px solid ${lighten(0.1,theme.colors.grey)}`
-                    : `1px solid ${lighten(0.4,theme.colors.grey)}`,
                     
                     background: includes(activeFilters, filter)
-                      ? lighten(0.2, theme.colors.darkGrey)
+                      ? lighten(0.3, theme.colors.lightGreen)
                       : 'inherit',
                   })}
                 >
@@ -184,9 +183,10 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                   }
                   css={css({
                     padding: '0.2em 0.5em',
+                    fontSize: '92%',
                     margin: '2px',
                     borderRadius: includes(activeFilters, filter)
-                    ? '6px' : '0px',
+                    ? '4px' : '0px',
                     color: includes(activeFilters, filter)
                     ? theme.colors.white
                     : darken(0.15, theme.colors.lightGreen),
