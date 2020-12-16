@@ -1,7 +1,7 @@
 ---
 title: 'Painting Roam with Custom CSS'
 slug: paintingroam
-date: 2020-12-05
+date: 2020-12-15
 published: true
 type: ['note']
 topics: ['Roam', 'Web Development']
@@ -66,6 +66,7 @@ The title of your new page should change to a lovely shade of salmon.
 
 </SimpleCard>
 
+## Pre-made Roam Themes
 
 For those of you entirely uninterested in learning CSS who just want to pop a pre-made theme in, Roam has a whole collection of [pre-made themes](https://roamresearch.com/#/app/help/page/fJRcVITNY) you can pick from.
 
@@ -76,16 +77,16 @@ If you want to use my theme **Leyendecker**, the most up-to-date version is aval
 
 ---
 
-## Create Custom Styles for Specific Roam Tags and Page Links
+## Custom Styling Tags and Page Links
 
-Another neat trick I love with CSS and Roam is creating specific styles for different page tags. <Footnote idName={3}>Shoutout to fellow Roam user <a href="https://malcolmocean.com/">Malcolm Ocean</a> who lobbied for this as an official feature of the Roam interface. I found out how to do it digging around in their impressively <a href="https://gist.github.com/malcolmocean/03d777a1c8f89be8c98e3d89d6821607">comprehensive CSS files</a></Footnote>
+Another neat trick I love with CSS and Roam is creating specific styles for different page title and tags. <Footnote idName={3}>Shoutout to fellow Roam user <a href="https://malcolmocean.com/">Malcolm Ocean</a> who lobbied for this as an official feature of the Roam interface. I found out how to do it digging around in their impressively <a href="https://gist.github.com/malcolmocean/03d777a1c8f89be8c98e3d89d6821607">comprehensive CSS files</a></Footnote>
 
 I have a little workflow taxonomy going that covers different kinds of output and the stages they flow through
 
 <Image alt="A screencapture of my Roam database with various coloured tags" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_1457/v1590193543/maggieappleton.com/notes/datatags.png" />
 
 
-<p>We're able to do this because when we use a # to create a page tage, Roam adds a 'data-tag' element to the HTML markup.</p>
+We're able to do this because when we use the double bracket or add a # to create a page tag, Roam adds a new attribute to the HTML markup. If the page is made with a #, it adds a `data-tag` attribute. If it's made with double brackets Roam adds a `data-link-title` attribute
 
 
 ```html
@@ -93,12 +94,17 @@ I have a little workflow taxonomy going that covers different kinds of output an
     #Ideas What if I learned how to chuck wood
     like a Chuck Norris woodchuck could? 
 </span>
+
+<span data-link-title="Ideas" class="rm-page-ref">  
+    [ [Ideas] ] What if I learned how to chuck wood like a Chuck Norris woodchuck could? 
+</span>
 ```
 
-We can then target this element with a CSS selector that looks like this:
+We can then target both of those attributes  with a CSS selector that looks like this:
 
 ```css
-span.rm-page-ref[data-tag="Ideas"] {
+span.rm-page-ref[data-tag="Ideas"],
+span[data-link-title^="Tweet"] .rm-page-ref {
     color: #FCB815;
     padding: 3px 4px;
     font-weight: 700;
@@ -106,15 +112,48 @@ span.rm-page-ref[data-tag="Ideas"] {
 }
 ```
 
+The first selector, `span.rm-page-ref[data-tag="Ideas"]` changes any # link, and the second `span[data-link-title^="Tweet"] .rm-page-ref` selector changes any link made with [ [ brackets]]
+
 It makes an enormous difference in your user experience to be able to quickly identify different block and note types through visual colour association.
 
-If you just want to grab the data-tag components from my theme , scroll down to the bottom of my <a href="https://github.com/theianjones/roam-research-themes/blob/master/leyendecker.css">CSS theme file</a> to find them.
+If you just want to grab the tag and page styles from my theme , scroll down to the bottom of my <a href="https://github.com/theianjones/roam-research-themes/blob/master/leyendecker.css">CSS theme file</a> to find them.
 
 ---
 
-<br />
+## Block Level Styling
 
-### Alternate styling with browser plugins
+Roam also allows you to style whole blocks based on tags. <Footnote idName={4}>[Cato Minor](https://twitter.com/catominor3?lang=en) originally wrote a script for doing this in JavaScript, but now it's native to Roam's CSS.</Footnote>
+
+In my database I use this heavily when taking book notes to visually distinguish between claims, responses, questions, and evidence.
+
+To style an entire block, and all its child elements, we use:
+
+```css
+.roam-block-container[data-page-links*='Comment'] {
+    // styles in here
+}
+```
+
+To style only the child elements but not the parent, add `.rm-block-children` to the end use:
+
+```css
+.roam-block-container[data-page-links*='Comment'] .rm-block-children {
+    // styles in here
+}
+```
+
+To style just the block itself but none of the child elements, add `> div.rm-block-main` on:
+
+```css
+.roam-block-container[data-page-links*='Comment'] > div.rm-block-main {
+    // styles in here
+}
+```
+
+---
+
+
+## Alternate Styling with Browser Plugins
 
 If you don't want to use the native Roam CSS functionality, there's a way to apply custom CSS styles to any website using a browser plugin.
 
@@ -127,5 +166,3 @@ This is especially useful if you're part of a **multi-player** Roam where everyo
 They also have <a href="https://github.com/openstyles/stylus/wiki/Editor">good documentation</a> that will walk you through how to use it.
 
 It's good to note that this is not a Roam-specific hack.  You can re-paint any webpage you like with a custom CSS styler (go to town on Craigslist!)
-
----
