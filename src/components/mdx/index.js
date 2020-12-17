@@ -53,8 +53,7 @@ import { Arrow } from './Arrow'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
-import { GsapScroller } from './SingleUse/GsapScroller'
-import { BlenderScroller } from './SingleUse/BlenderScroller'
+import { GsapScroller, TweenRedBigBox, TweenSpinningBox, TweenReverseSpinningBox, TweenBlueRedBox } from './SingleUse/GreensockBasics'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,5 +113,9 @@ export default {
   Tools: Tools,
   Hardware: Hardware,
   GsapScroller: GsapScroller,
-  BlenderScroller: BlenderScroller
+  TweenRedBigBox: TweenRedBigBox,
+  TweenSpinningBox: TweenSpinningBox,
+  TweenReverseSpinningBox: TweenReverseSpinningBox,
+  TweenBlueRedBox: TweenBlueRedBox,
+
 }
