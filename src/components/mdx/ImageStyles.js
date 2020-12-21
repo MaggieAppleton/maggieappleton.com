@@ -8,7 +8,7 @@ export const Image = props => {
     <img
       css={css({
         width: props.width || '100%',
-        maxWidth: props.maxWidth || '880px',
+        maxWidth: props.maxwidth || '880px',
         gridColumn: '1/4',
         margin: '1.2em auto',
         borderRadius: '6px',
@@ -120,7 +120,7 @@ export const FullWidth = props => {
         width: 100%;
         grid-column: 1 / 4;
         padding: ${props.padding ? props.padding : '2em'};
-        background: ${props.bgColor};
+        background: ${props.bgcolour};
         height: (100vw * 1.2);
         .innerDiv {
           display: flex;
@@ -128,7 +128,7 @@ export const FullWidth = props => {
           justify-content: center;
           padding: ${props.padding ? props.padding : '1em 0 0em'};
           img {
-            padding: 1em;
+            padding: ${props.imgpadding ? props.imgpadding : '1em'};
           }
         }
       `}
