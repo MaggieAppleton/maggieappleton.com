@@ -69,11 +69,10 @@ export const ImageFrame = props => {
   return (
     <div
       css={css({
+        gridColumn: '1/4',
+        margin: '0 auto',
         img: {
-          width: props.width || '100%',
           gridColumn: '1/4',
-          marginBottom: '1.6em',
-          marginTop: '1.6em',
           border: '1px solid #e7eef3',
           borderRadius: '4px',
           padding: '0',
@@ -81,7 +80,7 @@ export const ImageFrame = props => {
         },
       })}
     >
-      <Image alt={props.alt} src={props.src} />
+      <Image width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
     </div>
   )
 }
