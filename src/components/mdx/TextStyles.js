@@ -92,6 +92,7 @@ export const Blockquote = styled.blockquote`
 export const Center = styled.p`
   text-align: center;
   margin: 30px auto;
+  max-width: 100%;
   h1,
   h2,
   h3,

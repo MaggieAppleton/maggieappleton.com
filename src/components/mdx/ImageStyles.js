@@ -32,7 +32,17 @@ export const TwoCol = props => {
         img: {
           padding: props.imgPadding,
           margin: props.imgMargin || '0px',
+          gridColumn: 'auto'
         },
+        div: {
+          gridColumn: 'auto'
+        },
+        a: {
+          gridColumn: 'auto'
+        },
+        p: {
+          gridColumn: 'auto'
+        }
       })}
     >
       {props.children}
@@ -57,7 +67,11 @@ export const ThreeImageGrid = props => {
           maxWidth: '100%',
           gridAutoFlow: 'row',
           padding: props.imgPadding || '6px',
+          gridColumn: 'auto'
         },
+        a: {
+          gridColumn: 'auto'
+        }
       })}
     >
       {props.children}
@@ -96,6 +110,8 @@ export const ImageGrid = props => {
           gridTemplateColumns: 'repeat(1, 1fr)',
           display: 'grid',
           width: '100%',
+          margin: '0 auto',
+          maxWidth: '880px',
           gridColumn: '1/4',
           gridGap: '20px',
           img: {
@@ -103,7 +119,11 @@ export const ImageGrid = props => {
             height: 'auto',
             gridAutoFlow: 'row',
             justifySelf: 'center',
+            gridColumn: 'auto'
           },
+          a: {
+            gridColumn: 'auto'
+          }
         })}
       >
         {props.children}

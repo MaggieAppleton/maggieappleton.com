@@ -85,7 +85,6 @@ export default {
   hr: props => <Divider {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
-  img: props => <Image {...props} />,
   Image: props => <Image {...props} />,
   IntroParagraph: props => <IntroParagraph {...props} />,
   Link: props => <InnerLink {...props} />,
