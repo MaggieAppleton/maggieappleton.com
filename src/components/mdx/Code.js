@@ -13,13 +13,16 @@ const wrapperStyles = css`
 
 const preStyles = css`
   float: left;
-  min-width: 100%;
+  width: 660px;
   overflow: initial;
   padding: 1.4em 1.8em;
   border-radius: 0.3em;
   font-weight: 400;
   letter-spacing: 0.05em;
   font-family: 'IBM Plex Mono';
+  ${bpMaxSM} {
+    width: 100%;
+  }
 `
 
 function calculateLinesToHighlight(meta) {
