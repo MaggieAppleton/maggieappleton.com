@@ -8,9 +8,9 @@ topics: ['The Web', 'CSS', 'Web Development']
 growthStage: 'Seedling'
 ---
 
-Notes (mostly to myself) on how the CSS `position` property works because I _constantly_ forget.
+<Subtext>Notes (mostly to myself) on how the CSS `position` property works because I _constantly_ forget.</Subtext>
 
-Having control over where elements are positioned on a document is essential for building [scrollytelling](https://medium.com/nightingale/from-storytelling-to-scrollytelling-a-short-introduction-and-beyond-fbda32066964) stories. We have to understand exactly how elements will behave within the layout, especially in relation to the scrollbar and viewport.
+Having control over where elements are positioned on a webpage is essential for building [scrollytelling](https://medium.com/nightingale/from-storytelling-to-scrollytelling-a-short-introduction-and-beyond-fbda32066964) stories. We have to understand exactly how elements will behave within the layout, especially in relation to the scrollbar and viewport.
 
 The `position` property determines where an element appears on the page. Sounds simple. But it also includes how an element relates to its parent element, the browser window, how it behaves on scroll, and whether placement properties like `top`, `right`, `bottom`, `left` and `z-index` will have any effect.
 
@@ -75,6 +75,10 @@ This is useful for creating overlapping elements.
 `fixed` is similar to absolute, but sticks itself to the viewport rather than the document. Fixed elements don't move when you scroll down the page - they are always visible.
 
 Fixed is useful for persistent elements like navigation bars or menus.
+
+#### **Annoying Transform Quirk**
+
+If any parent element has a `transform: translate()` property declared on it, `fixed` won't work. Slightly annoying.
 
 <Spacer />
 
