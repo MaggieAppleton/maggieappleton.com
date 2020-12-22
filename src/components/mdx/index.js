@@ -49,7 +49,7 @@ import { Tween, Timeline, PlayState, Controls } from 'react-gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import gsap from 'gsap'
 // import { ReplyOnTwitter } from './ReplyOnTwitter'
-import { Arrow } from './Arrow'
+import Arrow from './Arrow'
 // ------------- Single Use Components--------------- //
 import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
