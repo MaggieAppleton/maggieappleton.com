@@ -15,7 +15,7 @@ import HasMounted from './HasMounted'
 export default function Note({ site, note, referenceBlock }) {
   const mdx = get(note, 'childMdx')
   const title = get(note, 'title')
-  const date = get(mdx, 'frontmatter.date')
+  const lastupdated = get(mdx, 'frontmatter.lastupdated')
   // const topics = get(mdx, 'frontmatter.topics')
   const growthStage = get(mdx, 'frontmatter.growthStage')
   const theme = useTheme()
@@ -77,7 +77,7 @@ export default function Note({ site, note, referenceBlock }) {
             }
           `}
         >
-          {date && <h6>Last tended on {date}</h6>}
+          {lastupdated && <h6>Last tended on {lastupdated}</h6>}
           {growthStage && <h6><span role="img" aria-label="a small Seedling">🌱</span> {growthStage}</h6>}
 
         <hr />

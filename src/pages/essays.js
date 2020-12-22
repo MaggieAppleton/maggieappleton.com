@@ -101,7 +101,7 @@ export const EssaysPageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "essay" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___lastupdated }
       limit: 20
     ) {
       edges {
@@ -111,7 +111,7 @@ export const EssaysPageQuery = graphql`
           fields {
             title
             slug
-            date
+            lastupdated
           }
           parent {
             ... on File {
@@ -120,7 +120,7 @@ export const EssaysPageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            lastupdated(formatString: "MMMM DD, YYYY")
             description
             slug
             cover {

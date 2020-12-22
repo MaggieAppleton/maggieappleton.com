@@ -1,6 +1,6 @@
 ---
 slug: invisible-post
-date: 2019-01-01
+lastupdated:  2019-01-01
 title: 'this post is a ghost'
 subtitle: 'this isnt a subtitle'
 cover: null

@@ -160,7 +160,7 @@ export const libraryPageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "book" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___lastupdated }
       limit: 45
     ) {
       edges {
@@ -169,7 +169,7 @@ export const libraryPageQuery = graphql`
           fields {
             title
             slug
-            date
+            lastupdated
           }
           parent {
             ... on File {
@@ -178,7 +178,7 @@ export const libraryPageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            lastupdated(formatString: "MMMM DD, YYYY")
             slug
             author
             redirectTo
@@ -198,7 +198,7 @@ export const libraryPageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "paper" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___lastupdated }
       limit: 45
     ) {
       edges {
@@ -207,7 +207,7 @@ export const libraryPageQuery = graphql`
           fields {
             title
             slug
-            date
+            lastupdated
           }
           parent {
             ... on File {
@@ -216,7 +216,7 @@ export const libraryPageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            lastupdated(formatString: "MMMM DD, YYYY")
             slug
             author
             redirectTo
@@ -229,7 +229,7 @@ export const libraryPageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "talk" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___lastupdated }
       limit: 45
     ) {
       edges {
@@ -238,7 +238,7 @@ export const libraryPageQuery = graphql`
           fields {
             title
             slug
-            date
+            lastupdated
           }
           parent {
             ... on File {
@@ -247,7 +247,7 @@ export const libraryPageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            lastupdated(formatString: "MMMM DD, YYYY")
             slug
             author
             redirectTo
@@ -260,7 +260,7 @@ export const libraryPageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "podcast" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___lastupdated }
       limit: 45
     ) {
       edges {
@@ -269,7 +269,7 @@ export const libraryPageQuery = graphql`
           fields {
             title
             slug
-            date
+            lastupdated
           }
           parent {
             ... on File {
@@ -278,7 +278,7 @@ export const libraryPageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            lastupdated(formatString: "MMMM DD, YYYY")
             slug
             author
             redirectTo

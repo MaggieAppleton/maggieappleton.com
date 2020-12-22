@@ -296,7 +296,7 @@ export const GardenPageQuery = graphql`
     }
 
     notesQuery: allBrainNote(
-      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___lastupdated }
     ) {
       edges {
         node {

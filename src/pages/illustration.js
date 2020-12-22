@@ -62,7 +62,7 @@ export const illustrationPageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "illustration" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___lastupdated }
       limit: 6
     ) {
       edges {
@@ -72,7 +72,7 @@ export const illustrationPageQuery = graphql`
           fields {
             title
             slug
-            date
+            lastupdated
           }
           parent {
             ... on File {
@@ -81,7 +81,7 @@ export const illustrationPageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            lastupdated(formatString: "MMMM DD, YYYY")
             description
             slug
             cover {

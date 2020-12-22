@@ -56,7 +56,7 @@ export const latestArticle = graphql`
     }
     latestArticle: allMdx(
       limit: 1
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___lastupdated], order: DESC }
       filter: { frontmatter: { published: { ne: false } } }
     ) {
       totalCount
@@ -74,7 +74,7 @@ export const latestArticle = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            lastupdated(formatString: "MMMM DD, YYYY")
 
             slug
           }

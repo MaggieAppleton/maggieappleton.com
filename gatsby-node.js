@@ -21,7 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "note" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___date }
+        sort: { order: DESC, fields: frontmatter___lastupdated }
       ) {
         edges {
           node {
@@ -36,7 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              date
+              lastupdated
               growthStage
             }
           }
@@ -47,7 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "essay" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___date }
+        sort: { order: DESC, fields: frontmatter___lastupdated }
       ) {
         edges {
           node {
@@ -62,7 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              date
+              lastupdated
             }
           }
         }
@@ -75,7 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
             published: { ne: false }
           }
         }
-        sort: { order: DESC, fields: frontmatter___date }
+        sort: { order: DESC, fields: frontmatter___lastupdated }
       ) {
         edges {
           node {
@@ -90,7 +90,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              date
+              lastupdated
             }
           }
         }
@@ -100,7 +100,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "book" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___date }
+        sort: { order: DESC, fields: frontmatter___lastupdated }
       ) {
         edges {
           node {
@@ -115,7 +115,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              date
+              lastupdated
             }
           }
         }
@@ -125,7 +125,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "paper" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___date }
+        sort: { order: DESC, fields: frontmatter___lastupdated }
       ) {
         edges {
           node {
@@ -140,7 +140,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              date
+              lastupdated
             }
           }
         }
@@ -260,7 +260,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const titleSlugged = _.join(_.drop(parent.name.split('-'), 3), '-')
     const slug =
       parent.sourceInstanceName === 'legacy'
-        ? `notes/${node.frontmatter.date
+        ? `notes/${node.frontmatter.lastupdated
             .split('T')[0]
             .replace(/-/g, '/')}/${titleSlugged}`
         : node.frontmatter.slug || titleSlugged
@@ -308,9 +308,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
-      name: 'date',
+      name: 'lastupdated',
       node,
-      value: node.frontmatter.date ? node.frontmatter.date.split(' ')[0] : '',
+      value: node.frontmatter.lastupdated ? node.frontmatter.lastupdated.split(' ')[0] : '',
     })
 
     createNodeField({
@@ -347,6 +347,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'isPost',
       node,
       value: true,
+    })
+
+    createNodeField({
+      name: 'growthStage',
+      node,
+      value: node.frontmatter.growthStage,
     })
 
     createNodeField({
