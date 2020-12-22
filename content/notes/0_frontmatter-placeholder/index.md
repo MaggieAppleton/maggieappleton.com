@@ -7,7 +7,6 @@ subtitle: 'this isnt a subtitle'
 cover: null
 description: 'this post has all of the right fields'
 growthStage: seeding
-epistemicStatus: 'Came up with this in the shower'
 type: ['test']
 topics: ['test']
 published: false
