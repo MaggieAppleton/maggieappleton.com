@@ -18,7 +18,7 @@ export default function Post({
   pageContext: { prevPage, nextPage },
 }) {
   const title = mdx.frontmatter.title
-  const lastupdated = mdx.frontmatter.lastupdated
+  const lastUpdated = mdx.frontmatter.lastUpdated
   const theme = useTheme()
 
   return (
@@ -57,7 +57,7 @@ export default function Post({
             }
           `}
         >
-          {lastupdated && <h6>{lastupdated}</h6>}
+          {lastUpdated && <h6>{lastUpdated}</h6>}
         </div>
         <br />
         <DefaultMdxComponentsProvider>
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
     mdx(fields: { id: { eq: $id } }) {
       frontmatter {
         title
-        lastupdated(formatString: "MMMM YYYY")
+        lastUpdated(formatString: "MMMM YYYY")
         author
         slug
         topics

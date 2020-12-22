@@ -19,7 +19,7 @@ export default function Book({
   pageContext: { prevPage, nextPage },
 }) {
   const author = mdx.frontmatter.author || config.author
-  const lastupdated = mdx.frontmatter.lastupdated
+  const lastUpdated = mdx.frontmatter.lastUpdated
   const title = mdx.frontmatter.title
   const subtitle = mdx.frontmatter.subtitle
   const cover = mdx.frontmatter.cover
@@ -139,7 +139,7 @@ export default function Book({
             <h1>{title}</h1>
             {subtitle && <h2>{subtitle}</h2>}
             <h3>by {author}</h3>
-            {lastupdated && <h6>Last tended to {lastupdated}</h6>}
+            {lastUpdated && <h6>Last tended to {lastUpdated}</h6>}
           </div>
         </div>
         <br />
@@ -177,7 +177,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
-        lastupdated(formatString: "MMMM DD, YYYY")
+        lastUpdated(formatString: "MMMM DD, YYYY")
         author
         cover {
           childImageSharp {

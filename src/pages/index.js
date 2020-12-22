@@ -428,7 +428,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "illustration" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___lastupdated }
+      sort: { order: DESC, fields: frontmatter___lastUpdated }
       limit: 3
     ) {
       edges {
@@ -438,7 +438,7 @@ export const pageQuery = graphql`
           fields {
             title
             slug
-            lastupdated
+            lastUpdated
           }
           parent {
             ... on File {
@@ -447,7 +447,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            lastupdated(formatString: "MMMM DD, YYYY")
+            lastUpdated(formatString: "MMMM DD, YYYY")
             description
             slug
             cover {
@@ -463,7 +463,7 @@ export const pageQuery = graphql`
     }
 
     notesQuery: allBrainNote(
-      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___lastupdated }
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___lastUpdated }
       limit: 6
     ) {
       edges {
@@ -483,7 +483,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "essay" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___lastupdated }
+      sort: { order: DESC, fields: frontmatter___lastUpdated }
       limit: 4
     ) {
       edges {
@@ -493,7 +493,7 @@ export const pageQuery = graphql`
           fields {
             title
             slug
-            lastupdated
+            lastUpdated
           }
           parent {
             ... on File {
@@ -502,7 +502,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            lastupdated(formatString: "MMMM DD, YYYY")
+            lastUpdated(formatString: "MMMM DD, YYYY")
             description
             slug
             cover {
@@ -521,7 +521,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "book" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___lastupdated }
+      sort: { order: DESC, fields: frontmatter___lastUpdated }
       limit: 3
     ) {
       edges {
@@ -531,7 +531,7 @@ export const pageQuery = graphql`
           fields {
             title
             slug
-            lastupdated
+            lastUpdated
           }
           parent {
             ... on File {
@@ -540,7 +540,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            lastupdated(formatString: "MMMM DD, YYYY")
+            lastUpdated(formatString: "MMMM DD, YYYY")
             description
             slug
             redirectTo

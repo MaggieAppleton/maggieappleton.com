@@ -1,6 +1,6 @@
 ---
 slug: invisible-post
-lastupdated:  2019-01-01
+lastUpdated:  2019-01-01
 title: 'this post is a ghost'
 description: 'this post has all of the right fields'
 type: ['test']

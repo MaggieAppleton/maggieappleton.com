@@ -18,7 +18,7 @@ export default function Essay({
   pageContext: { prevPage, nextPage },
 }) {
   const title = mdx.frontmatter.title
-  const lastupdated = mdx.frontmatter.lastupdated
+  const lastUpdated = mdx.frontmatter.lastUpdated
   const theme = useTheme()
 
   return (
@@ -57,7 +57,7 @@ export default function Essay({
             }
           `}
         >
-          {lastupdated && <h6>Last tended on {lastupdated}</h6>}
+          {lastUpdated && <h6>Last tended on {lastUpdated}</h6>}
         </div>
 
         <br />
@@ -94,7 +94,7 @@ export const pageQuery = graphql`
     mdx(fields: { id: { eq: $id } }) {
       frontmatter {
         title
-        lastupdated(formatString: "MMMM DD, YYYY")
+        lastUpdated(formatString: "MMMM DD, YYYY")
         author
         cover {
           childImageSharp {

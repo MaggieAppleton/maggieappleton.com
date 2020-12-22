@@ -17,7 +17,7 @@ export default function Note({
   data: { site, mdx },
   pageContext: { prevPage, nextPage },
 }) {
-  const lastupdated = mdx.frontmatter.lastupdated
+  const lastUpdated = mdx.frontmatter.lastUpdated
   const title = mdx.frontmatter.title
   // const topics = mdx.frontmatter.topics
   const growthStage = mdx.frontmatter.growthStage
@@ -81,7 +81,7 @@ export default function Note({
             }
           `}
         >
-          {lastupdated && <h6>Last tended on {lastupdated}</h6>}
+          {lastUpdated && <h6>Last tended on {lastUpdated}</h6>}
           {growthStage && <h6><span role="img" aria-label="a small Seedling">🌱</span> {growthStage}</h6>}
 
         <hr />
@@ -138,7 +138,7 @@ export const pageQuery = graphql`
     mdx(fields: { id: { eq: $id } }) {
       frontmatter {
         title
-        lastupdated(formatString: "MMMM DD, YYYY")
+        lastUpdated(formatString: "MMMM DD, YYYY")
         slug
         topics
         growthStage

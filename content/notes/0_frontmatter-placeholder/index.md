@@ -1,11 +1,13 @@
 ---
 slug: invisible-post
-lastupdated:  2019-01-01
+lastUpdated:  2019-01-01
+creationDate: 2019-01-01
 title: 'this post is a ghost'
 subtitle: 'this isnt a subtitle'
 cover: null
 description: 'this post has all of the right fields'
 growthStage: seeding
+epistemicStatus: 'Came up with this in the shower'
 type: ['test']
 topics: ['test']
 published: false

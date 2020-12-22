@@ -21,7 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "note" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___lastupdated }
+        sort: { order: DESC, fields: frontmatter___lastUpdated }
       ) {
         edges {
           node {
@@ -36,7 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              lastupdated
+              lastUpdated
               growthStage
             }
           }
@@ -47,7 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "essay" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___lastupdated }
+        sort: { order: DESC, fields: frontmatter___lastUpdated }
       ) {
         edges {
           node {
@@ -62,7 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              lastupdated
+              lastUpdated
             }
           }
         }
@@ -75,7 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
             published: { ne: false }
           }
         }
-        sort: { order: DESC, fields: frontmatter___lastupdated }
+        sort: { order: DESC, fields: frontmatter___lastUpdated }
       ) {
         edges {
           node {
@@ -90,7 +90,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              lastupdated
+              lastUpdated
             }
           }
         }
@@ -100,7 +100,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "book" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___lastupdated }
+        sort: { order: DESC, fields: frontmatter___lastUpdated }
       ) {
         edges {
           node {
@@ -115,7 +115,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              lastupdated
+              lastUpdated
             }
           }
         }
@@ -125,7 +125,7 @@ exports.createPages = ({ actions, graphql }) => {
         filter: {
           frontmatter: { type: { eq: "paper" }, published: { ne: false } }
         }
-        sort: { order: DESC, fields: frontmatter___lastupdated }
+        sort: { order: DESC, fields: frontmatter___lastUpdated }
       ) {
         edges {
           node {
@@ -140,7 +140,7 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               title
               slug
-              lastupdated
+              lastUpdated
             }
           }
         }
@@ -260,7 +260,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const titleSlugged = _.join(_.drop(parent.name.split('-'), 3), '-')
     const slug =
       parent.sourceInstanceName === 'legacy'
-        ? `notes/${node.frontmatter.lastupdated
+        ? `notes/${node.frontmatter.lastUpdated
             .split('T')[0]
             .replace(/-/g, '/')}/${titleSlugged}`
         : node.frontmatter.slug || titleSlugged
@@ -308,9 +308,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
-      name: 'lastupdated',
+      name: 'lastUpdated',
       node,
-      value: node.frontmatter.lastupdated ? node.frontmatter.lastupdated.split(' ')[0] : '',
+      value: node.frontmatter.lastUpdated ? node.frontmatter.lastUpdated.split(' ')[0] : '',
     })
 
     createNodeField({
@@ -356,9 +356,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
 
     createNodeField({
-      name: 'growthStage',
+      name: 'creationDate',
       node,
-      value: node.frontmatter.growthStage,
+      value: node.frontmatter.creationDate ? node.frontmatter.creationDate.split(' ')[0] : '',
+    })
+
+    createNodeField({
+      name: 'epistemicStatus',
+      node,
+      value: node.frontmatter.epistemicStatus,
     })
   }
 }
