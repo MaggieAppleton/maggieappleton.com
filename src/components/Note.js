@@ -16,6 +16,7 @@ export default function Note({ site, note, referenceBlock }) {
   const mdx = get(note, 'childMdx')
   const title = get(note, 'title')
   const lastUpdated = get(mdx, 'frontmatter.lastUpdated')
+  const creationDate = get(mdx, 'frontmatter.creationDate')
   // const topics = get(mdx, 'frontmatter.topics')
   const growthStage = get(mdx, 'frontmatter.growthStage')
   const theme = useTheme()
@@ -56,14 +57,13 @@ export default function Note({ site, note, referenceBlock }) {
           margin-bottom: 1em;
             h6 {
               margin: 0;
-              border: 1px solid ${theme.colors.lightestGrey};
               text-align: center;
               align-self: center;
               font-family: ${fonts.regularSans}, 
               sans-serif;
               text-transform: capitalize;
               flex-grow: 1;
-              padding: 0.4em 0.8em;
+              padding: 0.2em;
             }
             hr {
               margin: 0;
@@ -77,7 +77,8 @@ export default function Note({ site, note, referenceBlock }) {
             }
           `}
         >
-          {lastUpdated && <h6>Last tended on {lastUpdated}</h6>}
+          {creationDate && (<><h6>Started  {creationDate}</h6><h6>✤</h6></>)}
+          {lastUpdated && <h6>Last tended {lastUpdated}</h6>}<h6>✤</h6>
           {growthStage && <h6><span role="img" aria-label="a small Seedling">🌱</span> {growthStage}</h6>}
 
         <hr />
