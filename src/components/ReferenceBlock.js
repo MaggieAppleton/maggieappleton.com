@@ -9,10 +9,12 @@ export const ReferenceItem = ({ pageTitle, pageLink, excerpt }) => {
     <a href={`/${pageLink}`}>
       <div
         css={css({
+          width: '320px',
           color: theme.colors.black,
           padding: '1em 1.4em',
-          fontSize: '78%',
+          fontSize: '75%',
           opacity: '80%',
+          margin: '0.4em',
           border: `1px solid ${theme.colors.lightestGrey}`,
           borderRadius: '6px',
           boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
@@ -23,11 +25,15 @@ export const ReferenceItem = ({ pageTitle, pageLink, excerpt }) => {
           boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)'
         },
           h4: {
-            margin: '0.4em 0',
+            margin: '0.4em 0 0.8em',
             fontFamily: fonts.walsheimLight,
             letterSpacing: '0',
-            fontSize: '1.2em',
+            fontSize: '1.1em',
           },
+          p: {
+            lineHeight: '1.3em',
+            fontSize: '1.05em'
+          }
         })}
       >
         <h4>{pageTitle}</h4>
@@ -46,7 +52,8 @@ export const ReferenceBlock = ({ references }) => {
         borderTop: `1px solid ${theme.colors.lightestGrey}`,
         paddingTop: '3em',
         margin: '4em auto 3em',
-        maxWidth: '800px',
+        maxWidth: '880px',
+        gridColumn: '1/4',
         h5: {
           textAlign: 'center',
           textTransform: 'uppercase',
@@ -55,9 +62,10 @@ export const ReferenceBlock = ({ references }) => {
           fontWeight: 'bold'
         },
         '.innerBlock': {
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gridGap: '1em',
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
         }
       })}
     >
