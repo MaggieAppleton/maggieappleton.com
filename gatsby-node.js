@@ -360,11 +360,5 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       value: node.frontmatter.creationDate ? node.frontmatter.creationDate.split(' ')[0] : '',
     })
-
-    createNodeField({
-      name: 'epistemicStatus',
-      node,
-      value: node.frontmatter.epistemicStatus,
-    })
   }
 }
