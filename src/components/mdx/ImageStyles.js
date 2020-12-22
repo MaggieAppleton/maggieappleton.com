@@ -21,28 +21,19 @@ export const TwoCol = props => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: props.GridColCount || '1fr 1fr' },
-        gridTemplateColumns: '1fr',
-        display: 'grid',
-        gridGap: props.gridGap || '20px',
-        alignItems: props.alignItems || 'center',
-        justifyItems: 'center',
-        width: props.width || '100%',
+        [bpMinMD]: {  },
         gridColumn: '1/4',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: props.alignItems || 'center',
+        justifyContent: 'center',
+        maxWidth: props.maxwidth || '100vw',
+        margin: '0 auto',
         img: {
           padding: props.imgPadding,
           margin: props.imgMargin || '0px',
-          gridColumn: 'auto'
         },
-        div: {
-          gridColumn: 'auto'
-        },
-        a: {
-          gridColumn: 'auto'
-        },
-        p: {
-          gridColumn: 'auto'
-        }
       })}
     >
       {props.children}
@@ -54,24 +45,20 @@ export const ThreeImageGrid = props => {
   return (
     <div
       css={css({
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        margin: '0 auto',
         [bpMinSM]: {
-          gridTemplateColumns: 'repeat(3, 1fr)',
         },
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        display: 'grid',
-        gridGap: props.gridGap || '30px',
         padding: '20px 0px',
-        width: props.width || '100%',
+        maxWidth: props.maxwidth || '100vw',
         gridColumn: '1/4',
+        justifyContent: 'center',
         img: {
-          maxWidth: '100%',
-          gridAutoFlow: 'row',
+          maxWidth: props.imgWidth ||'100%',
           padding: props.imgPadding || '6px',
-          gridColumn: 'auto'
         },
-        a: {
-          gridColumn: 'auto'
-        }
       })}
     >
       {props.children}
@@ -205,7 +192,7 @@ export const FullWidthImage = props => {
     <img
     css={css({
         width: props.width || '100%',
-        gridColumn: '1/4',})}
+        gridColumn: '1/4', justifyContent: 'center', margin: '1em auto'})}
       alt={props.alt}
       src={props.src}
     />

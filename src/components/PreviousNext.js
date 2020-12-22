@@ -11,7 +11,6 @@ const PreviousNext = props => {
       css={css`
         display: flex;
         justify-content: space-between;
-        margin: 0 auto;
         margin-bottom: 2em;
         margin-top: 4em;
         max-width: 660px;
