@@ -104,6 +104,10 @@ const getGlobalStyles = theme => {
       box-shadow: 0;
       padding: 1em; !important;
     }
+    iframe {
+      width: 700px;
+      max-width: 100%;
+    }
     button {
       border-radius: 4px;
       background-color: ${darken(0.04, theme.colors.lightOrange)};

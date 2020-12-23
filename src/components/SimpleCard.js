@@ -8,15 +8,16 @@ const SimpleCard = props => {
   return (
     <div
       css={css({
+        gridColumn: '1/4',
         border: '1px solid rgba(52, 61, 68, 0.05)',
         transition: props.hover
           ? 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;'
           : null,
-        margin: '0 auto',
+        margin: '0.4em auto 0.6em',
         clear: 'both',
         marginBottom: props.marginBottom ? props.marginBottom : '2em',
         marginTop: props.marginTop ? props.marginTop : null,
-        padding: props.padding ? props.padding : '1.4em 1.6em 2.4em',
+        padding: props.padding ? props.padding : '0.6em 2em 1.6em',
         width: props.width ? props.width : '100%',
         maxWidth: props.maxWidth ? props.maxWidth : '100%',
         borderRadius: '6px',

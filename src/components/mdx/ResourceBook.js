@@ -30,6 +30,10 @@ const theme = useTheme()
         >
           <div
             css={css({
+              [bpMaxSM]: {
+                flexDirection: 'column',
+                justifyContent: 'center',
+              },
               padding: '8px',
               color: '#464E55',
               display: 'flex',
@@ -53,11 +57,19 @@ const theme = useTheme()
               img: {
                 maxWidth: '35%',
                 borderRadius: '4px',
+                [bpMaxSM]: {
+                  maxWidth: '100%',
+                  borderRadius: '4px',
+                }
               },
               '.dataBlock': {
                 paddingLeft: '2em',
                 alignSelf: 'center',
-                maxWidth: '70%'
+                maxWidth: '70%',
+                [bpMaxSM]: {
+                  alignSelf: 'center',
+                  maxWidth: '100%'
+                }
               },
               '.description': {
                 lineHeight: '1.4em',
