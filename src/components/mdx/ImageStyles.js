@@ -3,27 +3,33 @@ import { css } from '@emotion/core'
 import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
-export const Image = styled.img`
-  width: ${props => props.width ? props.width : '100%'};
-  max-width: 100%;
-  display: flex;
-  align-self: center;
-  margin: 0 auto;
-  border-radius: 6px;
-  margin-bottom: 1.2em;
-  margin-top: 1.2em;
-`
+export const Image = props => {
+  return (
+    <img
+      css={css({
+        width: props.width || '100%',
+        maxWidth: props.maxwidth || '880px',
+        gridColumn: '1/4',
+        margin: '1.2em auto',
+        borderRadius: '6px',
+      })} src={props.src} alt={props.alt} />
+      )
+}
+
 
 export const TwoCol = props => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: props.GridColCount || '1fr 1fr' },
-        gridTemplateColumns: '1fr',
-        display: 'grid',
-        gridGap: props.gridGap || '20px',
+        [bpMinMD]: {  },
+        gridColumn: '1/4',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         alignItems: props.alignItems || 'center',
-        justifyItems: 'center',
+        justifyContent: 'center',
+        maxWidth: props.maxwidth || '100vw',
+        margin: '0 auto',
         img: {
           padding: props.imgPadding,
           margin: props.imgMargin || '0px',
@@ -39,16 +45,18 @@ export const ThreeImageGrid = props => {
   return (
     <div
       css={css({
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        margin: '0 auto',
         [bpMinSM]: {
-          gridTemplateColumns: 'repeat(3, 1fr)',
         },
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        display: 'grid',
-        gridGap: props.gridGap || '30px',
         padding: '20px 0px',
+        maxWidth: props.maxwidth || '100vw',
+        gridColumn: '1/4',
+        justifyContent: 'center',
         img: {
-          maxWidth: '100%',
-          gridAutoFlow: 'row',
+          maxWidth: props.imgWidth ||'100%',
           padding: props.imgPadding || '6px',
         },
       })}
@@ -62,6 +70,8 @@ export const ImageFrame = props => {
   return (
     <div
       css={css({
+        gridColumn: '1/4',
+        margin: '0 auto',
         img: {
           width: props.width || '100%',
           maxWidth: '100%',
@@ -70,6 +80,7 @@ export const ImageFrame = props => {
           margin: '0 auto',
           marginBottom: '1.6em',
           marginTop: '1.6em',
+          gridColumn: '1/4',
           border: '1px solid #e7eef3',
           borderRadius: '4px',
           padding: '0',
@@ -77,7 +88,7 @@ export const ImageFrame = props => {
         },
       })}
     >
-      <Image alt={props.alt} src={props.src} />
+      <Image width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
     </div>
   )
 }
@@ -92,13 +103,21 @@ export const ImageGrid = props => {
           },
           gridTemplateColumns: 'repeat(1, 1fr)',
           display: 'grid',
+          width: '100%',
+          margin: '0 auto',
+          maxWidth: '880px',
+          gridColumn: '1/4',
           gridGap: '20px',
           img: {
             maxWidth: '100%',
             height: 'auto',
             gridAutoFlow: 'row',
             justifySelf: 'center',
+            gridColumn: 'auto'
           },
+          a: {
+            gridColumn: 'auto'
+          }
         })}
       >
         {props.children}
@@ -111,15 +130,10 @@ export const FullWidth = props => {
   return (
     <div
       css={css`
-        left: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        max-width: 100vw;
-        position: relative;
-        right: 50%;
-        width: 100vw;
+        width: 100%;
+        grid-column: 1 / 4;
         padding: ${props.padding ? props.padding : '2em'};
-        background: ${props.bgColor};
+        background: ${props.bgcolour};
         height: (100vw * 1.2);
         .innerDiv {
           display: flex;
@@ -127,7 +141,7 @@ export const FullWidth = props => {
           justify-content: center;
           padding: ${props.padding ? props.padding : '1em 0 0em'};
           img {
-            padding: 1em;
+            padding: ${props.imgpadding ? props.imgpadding : '1em'};
           }
         }
       `}
@@ -183,15 +197,9 @@ export const FullWidth2Col = props => {
 export const FullWidthImage = props => {
   return (
     <img
-      css={css`
-        left: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-        max-width: 100vw;
-        position: relative;
-        right: 50%;
-        width: 100vw;
-      `}
+    css={css({
+        width: props.width || '100%',
+        gridColumn: '1/4', justifyContent: 'center', margin: '1em auto'})}
       alt={props.alt}
       src={props.src}
     />

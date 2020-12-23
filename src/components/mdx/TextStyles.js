@@ -20,7 +20,7 @@ export const OrderedList = styled.ol`
   max-width: 660px;
   min-width: 660px;
   padding-left: 1em;
-  margin: 0.8em auto;
+  margin: 0.8em 0;
   li {
     margin-bottom: 0.25em;
   }
@@ -35,7 +35,7 @@ export const UnorderedList = styled.ul`
   max-width: 660px;
   min-width: 660px;
   padding-left: 1em;
-  margin: 0.8em auto;
+  margin: 0.8em 0;
   li {
     margin-bottom: 0.25em;
   }
@@ -110,6 +110,7 @@ export const Center = styled.p`
   max-width: 660px;
   min-width: 660px;
   margin: 30px auto;
+  max-width: 100%;
   h1,
   h2,
   h3,

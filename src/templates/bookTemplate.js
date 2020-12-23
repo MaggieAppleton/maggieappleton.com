@@ -31,8 +31,14 @@ export default function Book({
         css={css`
           margin: 0 auto;
           margin-top: 2em;
-          display: flex;
-          max-width: 880px;
+          display: grid;
+          grid-template-columns:
+            1fr
+            min(55ch, 100%)
+            1fr;
+          * {
+            grid-column: 2;
+          }
           flex-direction: column;
           .breadcrumb {
             margin: 0 auto;
@@ -71,6 +77,8 @@ export default function Book({
           }
           .bookInfo {
             display: flex;
+            grid-column: 1 / 4;
+            max-width: 840px;
             flex-direction: row;
             ${bpMaxSM} {
               flex-wrap: wrap;

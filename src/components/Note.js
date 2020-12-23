@@ -25,10 +25,17 @@ export default function Note({ site, note, referenceBlock }) {
       <SEO frontmatter={mdx.frontmatter} isNotePost />
       <Container
         css={css`
-        max-width: 940px;
         margin-top: 3em;
         ${bpMaxSM} {
           margin-top: 0.8em;
+        }
+        display: grid;
+        grid-template-columns:
+          1fr
+          min(55ch, 100%)
+          1fr;
+        * {
+          grid-column: 2;
         }
         `}
       >
@@ -38,6 +45,7 @@ export default function Note({ site, note, referenceBlock }) {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            grid-column: 1/4;
             max-width: 840px;
             margin: 0 auto;
         `}>
@@ -53,7 +61,7 @@ export default function Note({ site, note, referenceBlock }) {
           css={css`
           display: flex;
           flex-wrap: wrap;
-          margin-bottom: 1em;
+          margin-bottom: 2.6em;
             h6 {
               margin: 0;
               border: 1px solid ${theme.colors.lightestGrey};
@@ -84,9 +92,7 @@ export default function Note({ site, note, referenceBlock }) {
         </div>
         </div>
         <br />
-        <HasMounted>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-          </HasMounted>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
         <div>{referenceBlock}</div>
         <Share
           url={`${config.siteUrl}/${mdx.frontmatter.slug}/`}

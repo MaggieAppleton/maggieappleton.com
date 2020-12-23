@@ -6,23 +6,30 @@ const Feature = props => {
   return (
     <span
       css={css({
+        gridColumn: '1/4',
         [bpMinMD]: {
-          gridTemplateColumns: '40% 60%',
         },
         marginTop: '60px',
-        display: 'grid',
-        gridTemplateColumns: '1fr',
-        gridGap: '30px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'center',
         img: {
-          maxWidth: '100%',
+          maxWidth: '500px',
           borderRadius: '5px',
         },
         h5: {
           fontWeight: 'bold',
+          maxWidth: '400px',
         },
         h4: {
           fontSize: '1.4em',
+          maxWidth: '400px',
         },
+        p: {
+          maxWidth: '400px',
+          paddingRight: '1.8em'
+        }
       })}
     >
       <div>

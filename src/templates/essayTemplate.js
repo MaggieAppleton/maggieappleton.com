@@ -26,11 +26,17 @@ export default function Essay({
       <SEO frontmatter={mdx.frontmatter} isNotePost />
       <Container
         css={css`
-          margin: 0 auto;
-          max-width: 900px;
           margin-top: 3em;
           ${bpMaxSM} {
             margin-top: 0.8em;
+          }
+          display: grid;
+          grid-template-columns:
+            1fr
+            min(55ch, 100%)
+            1fr;
+          * {
+            grid-column: 2;
           }
         `}
       >

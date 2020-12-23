@@ -74,6 +74,8 @@ const typography = new Typography({
     p: {
       maxWidth: '660px',
       margin: '0 auto',
+      lineHeight: '1.8em',
+      fontSize: rhythm(0.7),
       marginBottom: rhythm(1 / 2),
       WebkitFontSmoothing: 'antialiased',
       textRendering: 'optimizeLegibility',

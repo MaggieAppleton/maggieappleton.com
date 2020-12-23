@@ -29,14 +29,16 @@ const MultipartIntro = () => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: 'repeat(4, 1fr)' },
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        display: 'grid',
-        gridGap: '10px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: '100%',
+        gridColumn: '1/4',
+        justifyContent: 'center',
         alignItems: 'start',
         textAlign: 'center',
         padding: '0.8em 0',
         transition: '0.6s',
+        margin: '0 auto',
         marginBottom: '4em',
         '.focus': {
           padding: '14px',
@@ -75,8 +77,10 @@ const MultipartIntro = () => {
         },
         div: {
           height: '140px',
-          display: 'grid',
+          maxWidth: '190px',
+          display: 'block',
           transition: '0.6s',
+          margin: '0 6px'
         },
         p: {
           color: '#718597',
@@ -87,7 +91,7 @@ const MultipartIntro = () => {
           color: '#718597',
           alignSelf: 'start',
           fontFamily: 'sans-serif',
-          fontSize: '0.9em',
+          fontSize: '0.8em',
           display: 'block',
           transition: '0.6s',
         },
