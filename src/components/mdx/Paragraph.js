@@ -4,7 +4,7 @@ import { fonts, rhythm } from '../../lib/typography'
 export const Paragraph = styled.p`
   text-align: left;
   max-width: 660px;
-  min-width: 660px;
+  min-width: 360px;
   margin: 0 auto;
   line-height: 1.8em;
   fontSize: ${rhythm(0.8)},
@@ -12,7 +12,6 @@ export const Paragraph = styled.p`
   margin-top: 1em;
   align-items: flex-start;
 `
-
 
 export const IntroParagraph = styled.p`
   :first-letter {

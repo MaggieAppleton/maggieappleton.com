@@ -21,7 +21,6 @@ export const TwoCol = props => {
   return (
     <div
       css={css({
-        [bpMinMD]: {  },
         gridColumn: '1/4',
         display: 'flex',
         flexDirection: 'row',
@@ -30,6 +29,11 @@ export const TwoCol = props => {
         justifyContent: 'center',
         maxWidth: props.maxwidth || '100vw',
         margin: '0 auto',
+        p: {
+          maxWidth: '500px',
+          minWidth: '30%',
+          padding: '0 1em'
+        },
         img: {
           padding: props.imgPadding,
           margin: props.imgMargin || '0px',
