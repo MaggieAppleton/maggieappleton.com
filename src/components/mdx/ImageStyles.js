@@ -28,11 +28,16 @@ export const TwoCol = props => {
         alignItems: props.alignItems || 'center',
         justifyContent: 'center',
         maxWidth: props.maxwidth || '100vw',
-        margin: '0 auto',
+        margin: '1em auto',
         p: {
           maxWidth: '500px',
           minWidth: '30%',
           padding: '0 1em'
+        },
+        div: {
+          maxWidth: '500px',
+          minWidth: '30%',
+          padding: '0 0.2em'
         },
         img: {
           padding: props.imgPadding,

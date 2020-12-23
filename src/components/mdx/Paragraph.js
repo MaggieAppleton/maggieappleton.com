@@ -5,7 +5,7 @@ export const Paragraph = styled.p`
   text-align: left;
   max-width: 660px;
   min-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   line-height: 1.8em;
   fontSize: ${rhythm(0.8)},
   font-family: ${fonts.regular};

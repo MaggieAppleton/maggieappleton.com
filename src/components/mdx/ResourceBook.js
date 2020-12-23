@@ -10,7 +10,8 @@ const theme = useTheme()
 
   return (
     <>
-      <a href={url} target="_blank" rel="noopener noreferrer">
+      <a style={{
+            gridColumn: '1/4', margin: '0 auto', maxWidth: '840px'}} href={url} target="_blank" rel="noopener noreferrer">
         <div
           css={css({
             '.gatsby-image-wrapper': {
@@ -29,14 +30,11 @@ const theme = useTheme()
         >
           <div
             css={css({
-              [bpMaxSM]: {
-                padding: '20px',
-                gridTemplateColumns: '1fr',
-              },
               padding: '8px',
               color: '#464E55',
-              display: 'grid',
-              gridTemplateColumns: '1fr 2fr',
+              display: 'flex',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
               alignSelf: 'start',
               opacity: '90%',
               h1: {
@@ -53,12 +51,13 @@ const theme = useTheme()
                 lineHeight: '1.3em',
               },
               img: {
-                maxWidth: '100%',
+                maxWidth: '35%',
                 borderRadius: '4px',
               },
               '.dataBlock': {
-                paddingLeft: '30px',
+                paddingLeft: '2em',
                 alignSelf: 'center',
+                maxWidth: '70%'
               },
               '.description': {
                 lineHeight: '1.4em',

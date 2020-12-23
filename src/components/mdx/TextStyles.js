@@ -45,7 +45,7 @@ export const H3 = styled.h3`
   text-align: left;
   max-width: 660px;
   min-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   margin-top: 1em;
   margin-bottom: 0.4em;
   line-height: ${rhythm(1.4)};
@@ -56,7 +56,7 @@ export const H4 = styled.h4`
   text-align: left;
   max-width: 660px;
   min-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   margin-top: 1em;
   margin-bottom: 0.4em;
   line-height: ${rhythm(1.2)};
@@ -68,7 +68,7 @@ export const H5 = styled.h5`
   text-align: left;
   max-width: 660px;
   min-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
   line-height: ${rhythm(1)};
@@ -79,7 +79,7 @@ export const H6 = styled.h6`
   text-align: left;
   max-width: 660px;
   min-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
   line-height: ${rhythm(0.9)};
@@ -124,7 +124,7 @@ export const Subtext = styled.p`
   text-align: ${props => props.center ? 'center' : 'left'};
   max-width: 660px;
   min-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   line-height: 1.6em;
   font-size: 0.8em;
   margin-top: 0.8em;
