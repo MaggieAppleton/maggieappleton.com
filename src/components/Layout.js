@@ -110,7 +110,7 @@ const getGlobalStyles = theme => {
       border: none;
       color: ${theme.colors.white};
       font-family: ${fonts.walsheim};
-      padding: 14px 16px;
+      padding: 8px 16px;
       cursor: pointer;
       border: 1px solid ${theme.colors.primary};
       transition: all 400ms;

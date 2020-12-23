@@ -46,7 +46,8 @@ export default function Note({ site, note, referenceBlock }) {
             flex-direction: column;
             justify-content: flex-start;
             grid-column: 1/4;
-            max-width: 840px;
+            width: 840px;
+            max-width: 100%;
             margin: 0 auto;
         `}>
         <h1
