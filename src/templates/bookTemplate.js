@@ -131,7 +131,7 @@ export default function Book({
             css={css`
               display: flex;
               flex-direction: column;
-              margin-bottom: 20px;
+              margin-bottom: 2em;
               h1 {
                 line-height: 1.2em;
               }
