@@ -130,7 +130,7 @@ export default function Paper({
         <DefaultMdxComponentsProvider>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </DefaultMdxComponentsProvider>
-      </Container>
+      
       {/* Next and Previous */}
       <PreviousNext
         prevSlug={prevPage && prevPage.fields.slug}
@@ -139,6 +139,7 @@ export default function Paper({
         nextTitle={nextPage && nextPage.fields.title}
       />
       {/* <SubscribeForm /> */}
+      </Container>
 
       <Container noVerticalPadding>
         <Share
