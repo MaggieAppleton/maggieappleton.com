@@ -154,7 +154,7 @@ export default function Book({
         <DefaultMdxComponentsProvider>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </DefaultMdxComponentsProvider>
-      </Container>
+     
       {/* Next and Previous */}
       <PreviousNext
         prevSlug={prevPage && prevPage.fields.slug}
@@ -162,6 +162,7 @@ export default function Book({
         nextSlug={nextPage && nextPage.fields.slug}
         nextTitle={nextPage && nextPage.fields.title}
       />
+       </Container>
       {/* <SubscribeForm /> */}
 
       <Container noVerticalPadding>
