@@ -21,8 +21,14 @@ const LinkTooltip = forwardRef((props, ref) => {
         content={props.bidirectionalLinkPreviews[previewKey]}
         ref={ref}
         css={css`
+        h2 {
+          padding: 0 0.2em;
+        }
+          p {
+            line-height: 1.4em;
           padding: 0.2em;
-          font-size: 0.75em;
+          font-size: 1.3em;
+          }
         `}
       >
         <span ref={ref}>{props.children}</span>
