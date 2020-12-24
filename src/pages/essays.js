@@ -49,7 +49,7 @@ const EssaysPage = ({ data: { site, essaysQuery } }) => {
                 to={`/${essay.frontmatter.slug}`}
                 aria-label={`View ${essay.frontmatter.title}`}
               >
-                <SimpleCard
+                <SimpleCard margintop="0em" marginbottom="0em"
                   hover
                   key={essay.id}
                   css={css`

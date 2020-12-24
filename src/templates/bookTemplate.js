@@ -89,7 +89,7 @@ export default function Book({
                 margin-top: 0.8em;
               }
             }
-            margin: 0 auto;
+            margin: 0 auto 2em;
             align-items: flex-start;
             justify-content: center;
             .gatsby-image-wrapper {
@@ -131,7 +131,6 @@ export default function Book({
             css={css`
               display: flex;
               flex-direction: column;
-              margin-bottom: 2em;
               h1 {
                 line-height: 1.2em;
               }

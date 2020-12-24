@@ -275,7 +275,7 @@ export default function Index({
                   to={note.childMarkdownRemark.frontmatter.slug}
                   aria-label={`View ${note.title}`}
                 >
-                  <SimpleCard
+                  <SimpleCard margintop="0.01em" marginbottom="0em"
                     hover
                     key={note.id}
                     css={css`
@@ -320,7 +320,7 @@ export default function Index({
                 to={`/${essay.frontmatter.slug}`}
                 aria-label={`View ${essay.frontmatter.title}`}
               >
-                <SimpleCard
+                <SimpleCard margintop="0em" marginbottom="0em"
                   hover
                   key={essay.id}
                   css={css`

@@ -223,13 +223,13 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                 to={`/${note.childMarkdownRemark.frontmatter.slug}`}
                 aria-label={`View ${note.title}`}
               >
-                <SimpleCard
+                <SimpleCard margintop="0em" marginbottom="0em"
                   key={note.id}
                   hover
                   css={css`
                     width: 270px;
-                    margin-right: 1em;
-                    margin-bottom: 1em;
+                    margin-right: 0.6em;
+                    margin-bottom: 0.6em;
                     padding: 1em 1.2em;
                     transition: all 400ms ease-in-out;
                     h4 {

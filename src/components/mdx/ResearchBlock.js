@@ -33,7 +33,7 @@ export const ResearchBlock = ({ children }) => {
 
 export const ResearchItem = ({ children, title, link, author }) => {
   return (
-    <SimpleCard maxWidth="760px" marginTop="0em" marginBottom="0em"
+    <SimpleCard maxWidth="760px" margintop="0em" marginbottom="0em"
       css={css`
           font-size: 90%;
           margin: 0.4em;
