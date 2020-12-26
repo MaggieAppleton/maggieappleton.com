@@ -22,28 +22,34 @@ The `position` property determines where an element appears on the page. Sounds 
 ### 1. Static
  `static` is the default value for elements. They stick to the normal page flow and placement properties (top, left, z-index, etc.) don't have any effect.
 
- <p>
+ <Center>
 
- <div style={{width: '100px', height: '100px', background: '#575EBF', margin: '0 auto', borderRadius: '4px'}} />
+<StaticCSSPosition />
 
- </p>
+ </Center>
 
  <Spacer />
 
 ### 2. Relative
-`relative` keeps the element in the normal document flow, but allows us to use placement properties.
+`relative` keeps the element in the normal document flow, but allows us to use placement properties. This means we can move the element up, down, left or right, relative to where it would have been in the normal document flow.
 
-It will nudge the element relative to it's original position.
+For example, if we nudge this box `-10px` up, and `-10px` to the left, it moves to here:
 
- <p>
+ <Center>
 
- <div style={{position: 'relative', width: '100px', height: '100px', border: '2px dotted #575EBF', margin: '0 auto', borderRadius: '4px', mixBlendMode: 'multiply', opacity:'80%'}}>
+<RelativeCSSPosition />
 
-  <div style={{position: 'absolute', top: '10px', left: '10px', width: '100px', height: '100px', background: '#575EBF', margin: '0 auto', borderRadius: '4px', mixBlendMode: 'multiply'}} />
+ </Center>
 
-  </div>
+ In our CSS we would just need to declare a `relative` property on our box, then add `top` and `left` properties:
 
- </p>
+ ```css
+.redBox {
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+```
 
  <Spacer />
 
@@ -52,17 +58,13 @@ It will nudge the element relative to it's original position.
 
 The position of the parent has no influence on where the child shows up. Placement values like `top` and `left` are calculated relative to the document.
 
-<p>
+Declaring `position: absolute`, `left: 10px` and `bottom: 20px` on this `.redBox` element would position it 10 pixels from the left and 10px from the bottom of the document.
 
-<h5 style={{marginBottom: '10px', color: '#9EA0B7', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Document</h5>
+<Center>
 
-<div style={{position: 'relative', width: '400px', height: '250px', border: '2px solid #CECFE1', margin: '0 auto', borderRadius: '6px'}} >
+<AbsoluteCSSPosition />
 
-<div style={{position: 'absolute', top: 0, left: 0, width: '100px', height: '100px', background: '#575EBF', margin: '0 auto', borderRadius: '4px'}} />
-
-</div>
-
-</p>
+</Center>
 
 <br />
 
@@ -79,18 +81,13 @@ This is useful for creating overlapping elements.
 
 Fixed is useful for persistent elements like navigation bars or menus.
 
-<p>
+Declaring `position: fixed;`, `top: 10px;` and `right: 10px` on an element will position it 10 px from the top and right-hand side of the browser viewport. The rest of the document scrolls behind it.
 
-<h5 style={{marginBottom: '10px', color: '#9EA0B7', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px'}}>Browser</h5>
+<Center>
 
-<div style={{position: 'relative', width: '400px', height: '250px', border: '2px solid #CECFE1', margin: '1em auto 3em', borderRadius: '6px'}}>
+<FixedCSSPosition />
 
-
-<div style={{position: 'absolute', top: 0, left: 0, width: '100px', height: '100px', background: '#575EBF', margin: '0 auto', borderRadius: '4px'}} />
-
-</div>
-
-</p>
+</Center>
 
 #### **Annoying Transform Quirk**
 

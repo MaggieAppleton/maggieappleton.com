@@ -54,6 +54,7 @@ import { Arrow } from './Arrow'
 import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
 import { GsapScroller, TweenRedBigBox, TweenSpinningBox, TweenReverseSpinningBox, TweenBlueRedBox } from './SingleUse/GreensockBasics'
+import { StaticCSSPosition, RelativeCSSPosition, AbsoluteCSSPosition, FixedCSSPosition } from './SingleUse/CSSPositions'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -117,5 +118,8 @@ export default {
   TweenSpinningBox: TweenSpinningBox,
   TweenReverseSpinningBox: TweenReverseSpinningBox,
   TweenBlueRedBox: TweenBlueRedBox,
-
+  StaticCSSPosition: StaticCSSPosition,
+  RelativeCSSPosition: RelativeCSSPosition,
+  AbsoluteCSSPosition: AbsoluteCSSPosition,
+  FixedCSSPosition: FixedCSSPosition
 }
