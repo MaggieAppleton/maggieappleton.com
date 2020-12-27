@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from 'components/Layout'
-// import { lighten, darken } from 'polished'
+import { lighten, darken } from 'polished'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { useTheme } from 'components/Theming'
@@ -239,9 +239,6 @@ export default function Index({
                 grid-template-columns: 1fr;
               }
             }
-            h4 {
-              margin-top: 0.6em;
-            }
           }
           button {
             width: 100%;
@@ -257,7 +254,8 @@ export default function Index({
             <TitleSectionLink to="/garden">The Digital Garden</TitleSectionLink>
             <p
               css={css`
-                margin-bottom: 1em; line-height: 1.4em;
+                margin-bottom: 1em;
+                line-height: 1.4em;
               `}
             >
               A consistently tended collection of half-baked notes, research,
@@ -275,27 +273,91 @@ export default function Index({
                   to={note.childMarkdownRemark.frontmatter.slug}
                   aria-label={`View ${note.title}`}
                 >
-                  <SimpleCard margintop="0.01em" marginbottom="0em"
-                    hover
+                  <SimpleCard
+                    margintop="0em"
+                    marginbottom="0em"
                     key={note.id}
+                    hover
                     css={css`
                       margin-bottom: 0.6em;
-                      padding: 0;
+                      padding: 0.8em 1em;
+                      transition: all 400ms ease-in-out;
+                      display: flex;
+                      flex-direction: row;
+                      align-items: flex-start;
+                      justify-content: space-between;
+                      h4 {
+                        color: ${theme.colors.darkGrey};
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        &:hover {
+                          color: ${theme.colors.black};
+                        };
+                      }
+                      div.metadata {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        h6 {
+                          margin: 0;
+                          text-align: right;
+                          min-width: 100px;
+                          padding-bottom: 0.2em;
+                        }
+                      }
+                      h6.growthStage {
+                        font-size: 0.6em;
+                        color: ${darken(0.05, theme.colors.lightGreen)};
+                        text-transform: uppercase;
+                        letter-spacing: 0.6px;
+                        span {
+                          padding-left: 0.5em;
+                          font-size: 1em;
+                        }
+                      }
+                      h6.date {
+                        font-size: 0.65em;
+                      }
                     `}
                   >
-                    <h4
-                      css={css({
-                        color: theme.colors.darkGrey,
-                        marginBottom: '0.4em',
-                        padding: '0.4em 1em',
-                        transition: 'all 150ms ease',
-                        ':hover': {
-                          color: theme.colors.black,
-                        },
-                      })}
-                    >
-                      {note.title}
-                    </h4>
+                    <h4>{note.title}</h4>
+                    <div class="metadata">
+                      <h6 class="date">
+                        {note.childMarkdownRemark.frontmatter.date}
+                      </h6>
+                      <span>
+                        {note.childMarkdownRemark.frontmatter.growthStage ===
+                        'Seedling' ? (
+                          <h6 class="growthStage">
+                            {' '}
+                            seedling
+                            <span role="img" aria-label="seedling">
+                              🌱{' '}
+                            </span>
+                          </h6>
+                        ) : null}
+                        {note.childMarkdownRemark.frontmatter.growthStage ===
+                        'Budding' ? (
+                          <h6 class="growthStage">
+                            {' '}
+                            budding
+                            <span role="img" aria-label="seedling">
+                              🌿
+                            </span>{' '}
+                          </h6>
+                        ) : null}
+                        {note.childMarkdownRemark.frontmatter.growthStage ===
+                        'Evergreen' ? (
+                          <h6 class="growthStage">
+                            {' '}
+                            evergreen
+                            <span role="img" aria-label="seedling">
+                              🌳
+                            </span>{' '}
+                          </h6>
+                        ) : null}
+                      </span>
+                    </div>
                   </SimpleCard>
                 </Link>
               ))}
@@ -320,7 +382,9 @@ export default function Index({
                 to={`/${essay.frontmatter.slug}`}
                 aria-label={`View ${essay.frontmatter.title}`}
               >
-                <SimpleCard margintop="0em" marginbottom="0em"
+                <SimpleCard
+                  margintop="0em"
+                  marginbottom="0em"
                   hover
                   key={essay.id}
                   css={css`
@@ -384,9 +448,12 @@ export default function Index({
         <section className="books">
           <span className="bookTitle">
             <TitleSectionLink to="/library">Library Notes</TitleSectionLink>
-            <p css={css`
-                margin-bottom: 1em; line-height: 1.4em;
-              `}>
+            <p
+              css={css`
+                margin-bottom: 1em;
+                line-height: 1.4em;
+              `}
+            >
               A past and present reading collection. Complete with very loose
               and opinionated notes.
             </p>
@@ -473,6 +540,8 @@ export const pageQuery = graphql`
           childMarkdownRemark {
             frontmatter {
               slug
+              growthStage
+              date(formatString: "MMM DD, YYYY")
             }
           }
         }
