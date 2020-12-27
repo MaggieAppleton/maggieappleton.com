@@ -135,7 +135,6 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
         {/*------------  Filtering Feature ------------ */}
 
         <div className="filterSection">
-          
           {/* <svg width="200px" height="30px" css={css`margin: 0 auto;`}><rect fill={theme.colors.lightOrange} width="200px" height="1px" /></svg> */}
           <div className="topicFilter">
             {filters.topicFilters.map(filter => {
@@ -148,18 +147,18 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     margin: '2px',
                     borderRadius: '4px',
                     color: includes(activeFilters, filter)
-                    ? darken(0.2, theme.colors.lightGreen)
-                    : lighten(0.2, theme.colors.darkGrey),
+                      ? darken(0.2, theme.colors.lightGreen)
+                      : lighten(0.2, theme.colors.darkGrey),
                     transition: 'all 400ms ease-in-out',
                     ':hover': {
                       color: includes(activeFilters, filter)
-                      ? theme.colors.white
-                      : theme.colors.darkGrey,
+                        ? theme.colors.white
+                        : theme.colors.darkGrey,
                       cursor: 'pointer',
                       background: lighten(0.3, theme.colors.lightGreen),
-                      color: darken(0.2, theme.colors.lightGreen)
+                      color: darken(0.2, theme.colors.lightGreen),
                     },
-                    
+
                     background: includes(activeFilters, filter)
                       ? lighten(0.3, theme.colors.lightGreen)
                       : 'inherit',
@@ -186,22 +185,26 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     fontSize: '92%',
                     margin: '2px',
                     borderRadius: includes(activeFilters, filter)
-                    ? '4px' : '0px',
+                      ? '4px'
+                      : '0px',
                     color: includes(activeFilters, filter)
-                    ? theme.colors.white
-                    : darken(0.15, theme.colors.lightGreen),
+                      ? theme.colors.white
+                      : darken(0.15, theme.colors.lightGreen),
                     transition: 'all 300ms ease-in-out',
                     ':hover': {
                       transition: 'all 300ms ease-in-out',
-                      borderBottom: `2px solid ${lighten(0.1,theme.colors.lightGreen)}`,
+                      borderBottom: `2px solid ${lighten(
+                        0.1,
+                        theme.colors.lightGreen,
+                      )}`,
                       color: includes(activeFilters, filter)
-                      ? theme.colors.white
-                      : darken(0.1, theme.colors.lightGreen),
-                      cursor: 'pointer'
+                        ? theme.colors.white
+                        : darken(0.1, theme.colors.lightGreen),
+                      cursor: 'pointer',
                     },
                     borderBottom: includes(activeFilters, filter)
-                    ? `2px solid ${theme.colors.lightGreen}`
-                    : `2px solid ${lighten(0.32,theme.colors.lightGreen)}`,
+                      ? `2px solid ${theme.colors.lightGreen}`
+                      : `2px solid ${lighten(0.32, theme.colors.lightGreen)}`,
                     background: includes(activeFilters, filter)
                       ? theme.colors.lightGreen
                       : 'inherit',
@@ -223,14 +226,16 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                 to={`/${note.childMarkdownRemark.frontmatter.slug}`}
                 aria-label={`View ${note.title}`}
               >
-                <SimpleCard margintop="0em" marginbottom="0em"
+                <SimpleCard
+                  margintop="0em"
+                  marginbottom="0em"
                   key={note.id}
                   hover
                   css={css`
                     width: 270px;
-                    margin-right: 0.6em;
-                    margin-bottom: 0.6em;
-                    padding: 1em 1.2em;
+                    margin-right: 0.8em;
+                    margin-bottom: 0.8em;
+                    padding: 0.8em 1em;
                     transition: all 400ms ease-in-out;
                     h4 {
                       color: ${theme.colors.darkGrey};
@@ -239,41 +244,73 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                         color: ${theme.colors.black};
                       },
                     }
-                    h6 {
-                      margin: 0;
+                    div.metadata {
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: space-between;
+                      padding-top: 0.4em;
+                      margin-top: 1.24em;
+                      border-top: 1px solid ${lighten(0.12, theme.colors.lightGrey)};
+                      h6 {
+                        margin: 0;
+                      }
+                    }
+                    h6.growthStage {
+                      
                       text-align: right;
-                      padding-top: 1em;
-                      font-size: 1em;
+                      
+                      font-size: 0.6em;
+                      color: ${darken(0.05, theme.colors.lightGreen)};
+                      text-transform: uppercase;
+                      letter-spacing: 0.6px;
+                      span {
+                        padding-left: 0.5em;
+                        font-size: 1em;
+                      }
+                    }
+                    h6.date {
+                      font-size: 0.65em;
                     }
                   `}
                 >
                   <h4>{note.title}</h4>
-                  <span>
-                    {note.childMarkdownRemark.frontmatter.growthStage ===
-                    'Seedling' ? (
-                      <h6>
-                        <span role="img" aria-label="seedling">
-                          🌱{' '}
-                        </span>
-                      </h6>
-                    ) : null}
-                    {note.childMarkdownRemark.frontmatter.growthStage ===
-                    'Budding' ? (
-                      <h6>
-                        <span role="img" aria-label="seedling">
-                          🌿
-                        </span>{' '}
-                      </h6>
-                    ) : null}
-                    {note.childMarkdownRemark.frontmatter.growthStage ===
-                    'Evergreen' ? (
-                      <h6>
-                        <span role="img" aria-label="seedling">
-                          🌳
-                        </span>{' '}
-                      </h6>
-                    ) : null}
-                  </span>
+                  <div class="metadata">
+                    <h6 class="date">
+                       {note.childMarkdownRemark.frontmatter.date}
+                    </h6>
+                    <span>
+                      {note.childMarkdownRemark.frontmatter.growthStage ===
+                      'Seedling' ? (
+                        <h6 class="growthStage">
+                          {' '}
+                          seedling
+                          <span role="img" aria-label="seedling">
+                            🌱{' '}
+                          </span>
+                        </h6>
+                      ) : null}
+                      {note.childMarkdownRemark.frontmatter.growthStage ===
+                      'Budding' ? (
+                        <h6 class="growthStage">
+                          {' '}
+                          budding
+                          <span role="img" aria-label="seedling">
+                            🌿
+                          </span>{' '}
+                        </h6>
+                      ) : null}
+                      {note.childMarkdownRemark.frontmatter.growthStage ===
+                      'Evergreen' ? (
+                        <h6 class="growthStage">
+                          {' '}
+                          evergreen
+                          <span role="img" aria-label="seedling">
+                            🌳
+                          </span>{' '}
+                        </h6>
+                      ) : null}
+                    </span>
+                  </div>
                 </SimpleCard>
               </Link>
             ))}
@@ -304,9 +341,10 @@ export const GardenPageQuery = graphql`
           title
           childMarkdownRemark {
             frontmatter {
-              growthStage 
+              growthStage
               topics
               slug
+              date(formatString: "MMM DD, YYYY")
             }
           }
         }
