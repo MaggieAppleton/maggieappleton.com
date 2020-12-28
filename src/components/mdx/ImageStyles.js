@@ -37,7 +37,7 @@ export const TwoCol = props => {
         div: {
           maxWidth: '500px',
           minWidth: '30%',
-          padding: '0 0.2em'
+          padding: props.divpadding || '0 0.2em'
         },
         img: {
           padding: props.imgPadding,
@@ -80,15 +80,13 @@ export const ImageFrame = props => {
     <div
       css={css({
         gridColumn: '1/4',
-        margin: '0 auto',
+        margin: props.margin || '1.6em auto',
         img: {
           width: props.width || '100%',
           maxWidth: '100%',
           display: 'flex',
           alignSelf: 'center',
           margin: '0 auto',
-          marginBottom: '1.6em',
-          marginTop: '1.6em',
           gridColumn: '1/4',
           border: '1px solid #e7eef3',
           borderRadius: '4px',

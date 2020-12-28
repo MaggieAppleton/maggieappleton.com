@@ -12,8 +12,8 @@ const LinkCard = ({ title, link, author, children, ...props }) => {
           border: '1px solid rgba(52, 61, 68, 0.05)',
           transition: 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;',
           margin: '0.4em',
-          padding: '0 1em',
-          width: '100%',
+          padding: '2em',
+          width: '400px',
           borderRadius: '6px',
           boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
           p: {
