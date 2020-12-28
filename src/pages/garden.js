@@ -256,20 +256,20 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                       }
                     }
                     h6.growthStage {
-                      
                       text-align: right;
-                      
+                      opacity: 90%;
                       font-size: 0.6em;
                       color: ${darken(0.05, theme.colors.lightGreen)};
-                      text-transform: uppercase;
-                      letter-spacing: 0.6px;
+                      text-transform: capitalize;
+                      letter-spacing: 0.3px;
                       span {
                         padding-left: 0.5em;
                         font-size: 1em;
                       }
                     }
                     h6.date {
-                      font-size: 0.65em;
+                      font-size: 0.6em;
+                      opacity: 80%;
                     }
                   `}
                 >
