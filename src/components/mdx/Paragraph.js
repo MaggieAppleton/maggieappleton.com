@@ -11,6 +11,7 @@ export const Paragraph = styled.p`
   font-family: ${fonts.regular};
   margin-top: 1em;
   align-items: flex-start;
+  position: relative;
 `
 
 export const IntroParagraph = styled.p`

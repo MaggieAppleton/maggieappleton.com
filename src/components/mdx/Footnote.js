@@ -7,19 +7,20 @@ const Footnote = ({ idName, children }) => {
     const theme = useTheme()
 
     const footnoteStyles = css`
+
     .sidenote,
     .marginnote {
         float: right;
         clear: right;
-        margin-right: -45%;
-        width: 40%;
+        right: -50%;
+        width: 280px;
         margin-top: 0;
         margin-bottom: 0;
         font-size: 0.82em;
         opacity: 85%;
         line-height: 1.3;
         vertical-align: baseline;
-        position: relative; 
+        position: absolute;
         border-left: 2px solid ${theme.colors.lightestGrey};
         padding-left: 1em;
     }
