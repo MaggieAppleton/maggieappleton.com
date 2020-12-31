@@ -102,7 +102,7 @@ const getGlobalStyles = theme => {
     .gatsby-resp-image-image {
       background: none !important;
       box-shadow: 0;
-      padding: 1em; !important;
+      padding: 1em;
     }
     iframe {
       width: 700px;
