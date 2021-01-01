@@ -18,7 +18,7 @@ export const StreamAnimation = () => {
         scrollTrigger: {
             trigger: [triggerDiv.current],
             markers: true,
-            start: '-220% 50%',
+            start: '-240% 50%',
             end: '-140% 30%',
             scrub: true
         },
@@ -29,11 +29,11 @@ export const StreamAnimation = () => {
     .set([box1.current], {yPercent: -10} )
     .set([box2.current], {yPercent: -200} )
     .set([box3.current], {yPercent: -300} )
-    .set([box4.current], {yPercent: -400} )
+    .set([box4.current], {yPercent: -420} )
     .to([box1.current], {
         'fill-opacity': 1,
         yPercent: 0, scaleY: '1.1', ease: "sine.inOut", duration: '0.6'
-    })
+    }, 0.2)
     .to([box1.current], {
         yPercent: 120, scaleY: '1.1', ease: "sine.inOut"
     }, 1)
@@ -50,20 +50,20 @@ export const StreamAnimation = () => {
     .to([box3.current], {
         'fill-opacity': 1,
         yPercent: -220, scaleY: '1.1', ease: "sine.inOut", duration: '0.6'
-    }, 2)
+    }, 1.5)
     .to([box1.current], {
         yPercent: 360, scaleY: '1.1', ease: "sine.inOut", duration: '0.6'
-    }, 2.5)
+    }, 2)
     .to([box2.current], {
         yPercent: 130, scaleY: '1.1', ease: "sine.inOut", duration: '0.6'
-    }, 2.5)
+    }, 2)
     .to([box3.current], {
         yPercent: -100, scaleY: '1.1', ease: "sine.inOut", duration: '0.6'
-    }, 2.5)
+    }, 2)
     .to([box4.current], {
         'fill-opacity': 1,
         yPercent: -385, scaleY: '1.1', ease: "sine.inOut", duration: '0.6'
-    }, 2.5)
+    }, 2)
 }, [])
 
   return (

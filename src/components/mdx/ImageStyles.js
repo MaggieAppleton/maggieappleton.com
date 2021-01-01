@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
+import { bpMinMD, bpMinLG, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
 export const Image = props => {
@@ -30,12 +30,14 @@ export const TwoCol = props => {
         maxWidth: props.maxwidth || '100vw',
         margin: props.margin || '1em auto',
         p: {
-          maxWidth: '500px',
           minWidth: '30%',
-          padding: '0 1em'
+          [bpMinLG]: {
+              maxWidth: '500px',
+              padding: '0 1em',
+          },
         },
         div: {
-          maxWidth: '500px',
+          maxWidth: props.divwidth || '500px',
           minWidth: '30%',
           padding: props.divpadding || '0 0.2em'
         },
@@ -58,8 +60,6 @@ export const ThreeImageGrid = props => {
         flexDirection: 'row',
         flexWrap: 'wrap',
         margin: '0 auto',
-        [bpMinSM]: {
-        },
         padding: '20px 0px',
         maxWidth: props.maxwidth || '100vw',
         gridColumn: '1/4',
