@@ -55,6 +55,7 @@ import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
 import { GsapScroller, TweenRedBigBox, TweenSpinningBox, TweenReverseSpinningBox, TweenBlueRedBox } from './SingleUse/GreensockBasics'
 import { StaticCSSPosition, RelativeCSSPosition, AbsoluteCSSPosition, FixedCSSPosition } from './SingleUse/CSSPositions'
+import {StreamAnimation } from './SingleUse/StreamAnimation'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -121,5 +122,6 @@ export default {
   StaticCSSPosition: StaticCSSPosition,
   RelativeCSSPosition: RelativeCSSPosition,
   AbsoluteCSSPosition: AbsoluteCSSPosition,
-  FixedCSSPosition: FixedCSSPosition
+  FixedCSSPosition: FixedCSSPosition,
+  StreamAnimation: StreamAnimation
 }
