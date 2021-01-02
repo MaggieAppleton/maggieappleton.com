@@ -29,7 +29,7 @@ import {
   Subtext,
 } from './TextStyles'
 import {
-  Image,
+  BasicImage,
   ThreeImageGrid,
   TwoCol,
   ImageGrid,
@@ -55,6 +55,7 @@ import { Tools, Hardware } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
 import { GsapScroller, TweenRedBigBox, TweenSpinningBox, TweenReverseSpinningBox, TweenBlueRedBox } from './SingleUse/GreensockBasics'
 import { StaticCSSPosition, RelativeCSSPosition, AbsoluteCSSPosition, FixedCSSPosition } from './SingleUse/CSSPositions'
+import {StreamAnimation } from './SingleUse/StreamAnimation'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,7 +86,7 @@ export default {
   hr: props => <Divider {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
-  Image: props => <Image {...props} />,
+  BasicImage: props => <BasicImage {...props} />,
   IntroParagraph: props => <IntroParagraph {...props} />,
   Link: props => <InnerLink {...props} />,
   LinkCard: props => <LinkCard {...props} />,
@@ -121,5 +122,6 @@ export default {
   StaticCSSPosition: StaticCSSPosition,
   RelativeCSSPosition: RelativeCSSPosition,
   AbsoluteCSSPosition: AbsoluteCSSPosition,
-  FixedCSSPosition: FixedCSSPosition
+  FixedCSSPosition: FixedCSSPosition,
+  StreamAnimation: StreamAnimation
 }

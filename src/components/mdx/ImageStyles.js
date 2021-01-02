@@ -1,16 +1,19 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinMD, bpMinSM, bpMaxSM } from '../../lib/breakpoints'
+import { bpMinMD, bpMinLG, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
-export const Image = props => {
+export const BasicImage = props => {
   return (
     <img
       css={css({
         width: props.width || '100%',
         maxWidth: props.maxwidth || '880px',
+        [bpMaxSM]: {
+          maxWidth: '100%'
+        },
         gridColumn: '1/4',
-        margin: '1.2em auto',
+        margin: props.margin || '1.2em auto',
         borderRadius: '6px',
       })} src={props.src} alt={props.alt} />
       )
@@ -28,14 +31,16 @@ export const TwoCol = props => {
         alignItems: props.alignItems || 'center',
         justifyContent: 'center',
         maxWidth: props.maxwidth || '100vw',
-        margin: '1em auto',
+        margin: props.margin || '1em auto',
         p: {
-          maxWidth: '500px',
           minWidth: '30%',
-          padding: '0 1em'
+          [bpMinLG]: {
+              maxWidth: '500px',
+              padding: '0 1em',
+          },
         },
         div: {
-          maxWidth: '500px',
+          maxWidth: props.divwidth || '500px',
           minWidth: '30%',
           padding: props.divpadding || '0 0.2em'
         },
@@ -58,8 +63,6 @@ export const ThreeImageGrid = props => {
         flexDirection: 'row',
         flexWrap: 'wrap',
         margin: '0 auto',
-        [bpMinSM]: {
-        },
         padding: '20px 0px',
         maxWidth: props.maxwidth || '100vw',
         gridColumn: '1/4',
@@ -95,7 +98,7 @@ export const ImageFrame = props => {
         },
       })}
     >
-      <Image width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
+      <BasicImage width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
     </div>
   )
 }

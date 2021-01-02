@@ -9,6 +9,7 @@ export const ComingSoon = () => {
         textAlign: 'center',
         marginTop: '2em',
         padding: '2em',
+        width: '720px'
       }}
     >
       <span role="img" aria-label="seedling">🌱</span>
