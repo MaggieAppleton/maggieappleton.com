@@ -3,14 +3,17 @@ import { css } from '@emotion/core'
 import { bpMinMD, bpMinLG, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
-export const Image = props => {
+export const BasicImage = props => {
   return (
     <img
       css={css({
         width: props.width || '100%',
         maxWidth: props.maxwidth || '880px',
+        [bpMaxSM]: {
+          maxWidth: '100%'
+        },
         gridColumn: '1/4',
-        margin: '1.2em auto',
+        margin: props.margin || '1.2em auto',
         borderRadius: '6px',
       })} src={props.src} alt={props.alt} />
       )
@@ -95,7 +98,7 @@ export const ImageFrame = props => {
         },
       })}
     >
-      <Image width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
+      <BasicImage width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
     </div>
   )
 }
