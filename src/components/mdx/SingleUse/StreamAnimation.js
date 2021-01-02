@@ -17,8 +17,8 @@ export const StreamAnimation = () => {
     const timeline = gsap.timeline({
         scrollTrigger: {
             trigger: [triggerDiv.current],
-            start: '-160% 50%',
-            end: '-120% 30%',
+            start: '-100% 50%',
+            end: '-40% 30%',
             scrub: true
         },
         
