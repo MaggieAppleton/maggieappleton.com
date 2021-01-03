@@ -4,7 +4,10 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // import { bpMaxLG, bpMaxMD } from '../../../lib/breakpoints'
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== `undefined`) {
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.core.globals("ScrollTrigger", ScrollTrigger)
+  }
 
 export const StreamAnimation = () => {
  const triggerDiv = useRef(null)
@@ -17,9 +20,10 @@ export const StreamAnimation = () => {
     const timeline = gsap.timeline({
         scrollTrigger: {
             trigger: [triggerDiv.current],
-            start: '-100% 50%',
-            end: '-40% 30%',
-            scrub: true
+            start: '-100px 50%',
+            end: '40px 30%',
+            scrub: true,
+            markers:true
         },
         
     })
@@ -66,12 +70,11 @@ export const StreamAnimation = () => {
 }, [])
 
   return (
-    <div style={{ width: '50%', marginTop: '2em' }} ref={triggerDiv}>
+    <div style={{ width: '50%', marginTop: '1em' }} ref={triggerDiv}>
         <img ref={box1} style={{ width: '380px', opacity: 0, marginLeft: '1.6em' }} src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1609617065/maggieappleton.com/notes/garden-history/stream-2_shrink.png" /> 
         <img ref={box2} style={{ width: '380px', opacity: 0, marginLeft: '1.6em' }} src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1609617065/maggieappleton.com/notes/garden-history/stream-3_shrink.png" />
         <img ref={box3} style={{ width: '380px', opacity: 0, marginLeft: '1.6em' }} src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1609617065/maggieappleton.com/notes/garden-history/stream-4_shrink.png" />
         <img ref={box4} style={{ width: '380px', opacity: 0, marginLeft: '1.6em' }} src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1609617065/maggieappleton.com/notes/garden-history/stream-1_shrink.png" />
-
     </div>
   )
 }

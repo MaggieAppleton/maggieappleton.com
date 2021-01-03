@@ -7,7 +7,10 @@ import { Paragraph } from '../Paragraph'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { bpMinMD, bpMinSM, bpMaxMD } from '../../../lib/breakpoints'
 
-gsap.registerPlugin(ScrollTrigger)
+if (typeof window !== `undefined`) {
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.core.globals("ScrollTrigger", ScrollTrigger)
+}
 
 export const GsapScroller = () => {
   const pinDiv = useRef(null)

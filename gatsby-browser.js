@@ -5,6 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.core.globals("ScrollTrigger", ScrollTrigger);
 }
 
 export const wrapPageElement = ({ element, props }) => {
