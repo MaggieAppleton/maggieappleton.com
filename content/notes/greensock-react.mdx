@@ -76,11 +76,11 @@ Feel free to open up a Codesandbox project to work through the steps while you r
 
 Let's start by creating a React component called `<AnimatedBox/>` that is going to hold all our Greensock code. We're going to build a simple  `<div>`  element and have it animate across the page (exciting!).
 
-We'll need to import the Greensock library into our component with `import gsap from 'gsap'`, as well as React and our two hooks with `import React, { useRef, useEffect } from 'react'`
+We'll need to import the Greensock library into our component with `import { gsap }from 'gsap'`, as well as React and our two hooks with `import React, { useRef, useEffect } from 'react'`
 
 ```js
 import React, { useRef, useEffect } from 'react'
-import gsap from 'gsap'
+import { gsap }from 'gsap'
 
 const Animation = () => {
     return (

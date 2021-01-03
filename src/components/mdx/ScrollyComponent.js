@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 // import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
 import { bpMaxSM } from '../../lib/breakpoints'

@@ -1,7 +1,7 @@
 import React from 'react'
 import SimpleTransition from './src/components/Transition'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);

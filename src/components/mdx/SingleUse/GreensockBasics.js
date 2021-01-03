@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 // import { css } from '@emotion/core'
 import styled from '@emotion/styled'
-import gsap from 'gsap'
+import { gsap }from 'gsap'
 import Subtitle from '../Subtitle'
 import { Paragraph } from '../Paragraph'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'

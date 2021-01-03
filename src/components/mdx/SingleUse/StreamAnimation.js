@@ -1,6 +1,6 @@
 import React, { useRef, useEffect }  from 'react'
 import { css } from '@emotion/core'
-import gsap from 'gsap'
+import { gsap }from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 // import { bpMaxLG, bpMaxMD } from '../../../lib/breakpoints'
 
@@ -22,8 +22,6 @@ export const StreamAnimation = () => {
             trigger: [triggerDiv.current],
             start: '-100px 50%',
             end: '40px 30%',
-            scrub: true,
-            markers:true
         },
         
     })
