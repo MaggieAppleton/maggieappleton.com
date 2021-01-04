@@ -3,6 +3,10 @@ import { css } from '@emotion/core'
 import { bpMinMD, bpMinLG, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
+export const Img = styled.img`
+  max-width: 100%
+`
+
 export const BasicImage = props => {
   return (
     <img
@@ -32,6 +36,9 @@ export const TwoCol = props => {
         justifyContent: 'center',
         maxWidth: props.maxwidth || '100vw',
         margin: props.margin || '1em auto',
+        [bpMaxSM]: {
+          flexDirection: 'column'
+        },
         p: {
           minWidth: '30%',
           [bpMinLG]: {
@@ -42,11 +49,18 @@ export const TwoCol = props => {
         div: {
           maxWidth: props.divwidth || '500px',
           minWidth: '30%',
-          padding: props.divpadding || '0 0.2em'
+          padding: props.divpadding || '0 0.2em',
+          margin: props.divmargin || '0 auto',
+          display: 'flex',
+          flexDirection: 'column',
+          [bpMaxSM]: {
+            display: 'block'
+          }
         },
         img: {
-          padding: props.imgPadding,
-          margin: props.imgMargin || '0px',
+          padding: props.imgpadding,
+          margin: props.imgmargin || '0 auto',
+          maxWidth: props.imgwidth,
         },
       })}
     >

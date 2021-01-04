@@ -29,6 +29,7 @@ import {
   Subtext,
 } from './TextStyles'
 import {
+  Img,
   BasicImage,
   ThreeImageGrid,
   TwoCol,
@@ -84,6 +85,7 @@ export default {
   h5: props => <H5 {...props} />,
   h6: props => <H6 {...props} />,
   hr: props => <Divider {...props} />,
+  img: props => <Img {...props} />,
   ImageFrame: props => <ImageFrame {...props} />,
   ImageGrid: props => <ImageGrid {...props} />,
   BasicImage: props => <BasicImage {...props} />,
