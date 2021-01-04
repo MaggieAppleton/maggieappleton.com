@@ -50,12 +50,6 @@ export const TwoCol = props => {
           maxWidth: props.divwidth || '500px',
           minWidth: '30%',
           padding: props.divpadding || '0 0.2em',
-          margin: props.divmargin || '0 auto',
-          display: 'flex',
-          flexDirection: 'column',
-          [bpMaxSM]: {
-            display: 'block'
-          }
         },
         img: {
           padding: props.imgpadding,
