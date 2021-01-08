@@ -27,7 +27,7 @@
     "gatsby-link": "^2.2.4",
     "gatsby-plugin-catch-links": "^2.1.2",
     "gatsby-plugin-emotion": "^4.1.2",
-    "gatsby-plugin-feed": "^2.3.6",
+    "gatsby-plugin-feed-mdx": "^1.0.1",
     "gatsby-plugin-google-analytics": "^2.1.5",
     "gatsby-plugin-instagram-embed": "^2.0.1",
     "gatsby-plugin-manifest": "^2.4.1",
