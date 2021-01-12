@@ -10,7 +10,7 @@ module.exports = {
   siteDescription:
     'Maggie Appleton is an art director, anthropologist, and metaphor-making illustrator. This is her digital garden for growing visual explanations about technology, culture, and programming',
   author: 'Maggie Appleton', // Author for schemaORGJSONLD
-  organization: 'Mappleton LLC',
+  organization: 'Maggie Appleton',
 
   // siteFBAppID: '123456789', // Facebook App ID - Optional
   userTwitter: '@mappletons', // Twitter Username
