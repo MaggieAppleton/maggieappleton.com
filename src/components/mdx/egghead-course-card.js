@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { BasicImage } from './ImageStyles'
-// import { bpMaxSM } from '../../lib/breakpoints'
+import { bpMaxMD } from '../../lib/breakpoints'
 
 const EggheadCourseCard = props => {
   return (
@@ -10,9 +10,13 @@ const EggheadCourseCard = props => {
         css={css({
           display: 'flex',
           justifySelf: 'center',
-          maxWidth: '440px',
+          maxWidth: '100%',
+          width: '420px',
           flexDirection: 'column',
-          margin: '0 auto',
+          margin: '0.3em',
+          [bpMaxMD]: {
+            margin: '0.3em auto',
+          },
           padding: '30px 20px',
           maxHeight: '520px',
           border: '1px solid #E7EEF3',

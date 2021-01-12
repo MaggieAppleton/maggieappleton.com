@@ -116,18 +116,18 @@ export const ImageGrid = props => {
     <>
       <div
         css={css({
-          [bpMinMD]: {
-            gridTemplateColumns: 'repeat(2, 1fr)',
-          },
-          gridTemplateColumns: 'repeat(1, 1fr)',
-          display: 'grid',
+          display: 'flex',
+          flexWrap: 'wrap',
           width: '100%',
-          margin: '0 auto',
+          margin: '1.6em auto 1em',
           maxWidth: '880px',
           gridColumn: '1/4',
-          gridGap: '20px',
+          [bpMaxSM]: {
+            flexDirection: 'column'
+          },
           img: {
-            maxWidth: '100%',
+            maxWidth: '48%',
+            margin: '1% auto',
             height: 'auto',
             gridAutoFlow: 'row',
             justifySelf: 'center',
@@ -135,6 +135,9 @@ export const ImageGrid = props => {
           },
           a: {
             gridColumn: 'auto'
+          },
+          p: {
+            margin: '0 auto',
           }
         })}
       >
