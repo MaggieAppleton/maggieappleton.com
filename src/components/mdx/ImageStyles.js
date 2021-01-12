@@ -113,21 +113,24 @@ export const ImageFrame = props => {
 
 export const ImageGrid = props => {
   return (
-    <>
       <div
         css={css({
+          gridColumn: '1/4',
           display: 'flex',
           flexWrap: 'wrap',
           width: '100%',
           margin: '1.6em auto 1em',
           maxWidth: '880px',
-          gridColumn: '1/4',
+          flexDirection: 'row',
           [bpMaxSM]: {
-            flexDirection: 'column'
+            flexDirection: 'column',
+            img: {
+              margin: '1% auto',
+            }
           },
           img: {
             maxWidth: '48%',
-            margin: '1% auto',
+            margin: '1%',
             height: 'auto',
             gridAutoFlow: 'row',
             justifySelf: 'center',
@@ -143,7 +146,6 @@ export const ImageGrid = props => {
       >
         {props.children}
       </div>
-    </>
   )
 }
 
