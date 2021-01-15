@@ -316,7 +316,7 @@ export default function Index({
                           font-size: 1em;
                         }
                       }
-                      h6.date {
+                      h6.updated {
                         font-size: 0.6em;
                         opacity: 80%;
                       }
@@ -324,8 +324,8 @@ export default function Index({
                   >
                     <h4>{note.title}</h4>
                     <div class="metadata">
-                      <h6 class="date">
-                        {note.childMarkdownRemark.frontmatter.date}
+                      <h6 class="updated">
+                        {note.childMarkdownRemark.frontmatter.updated}
                       </h6>
                       <span>
                         {note.childMarkdownRemark.frontmatter.growthStage ===
@@ -497,7 +497,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "illustration" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___updated }
       limit: 3
     ) {
       edges {
@@ -507,7 +507,7 @@ export const pageQuery = graphql`
           fields {
             title
             slug
-            date
+            updated
           }
           parent {
             ... on File {
@@ -516,7 +516,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            updated(formatString: "MMMM DD, YYYY")
             description
             slug
             cover {
@@ -532,7 +532,7 @@ export const pageQuery = graphql`
     }
 
     notesQuery: allBrainNote(
-      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___updated }
       limit: 6
     ) {
       edges {
@@ -543,7 +543,7 @@ export const pageQuery = graphql`
             frontmatter {
               slug
               growthStage
-              date(formatString: "MMM DD, YYYY")
+              updated(formatString: "MMM DD, YYYY")
             }
           }
         }
@@ -554,7 +554,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "essay" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___updated }
       limit: 4
     ) {
       edges {
@@ -564,7 +564,7 @@ export const pageQuery = graphql`
           fields {
             title
             slug
-            date
+            updated
           }
           parent {
             ... on File {
@@ -573,7 +573,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            updated(formatString: "MMMM DD, YYYY")
             description
             slug
             cover {
@@ -592,7 +592,7 @@ export const pageQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "book" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___updated }
       limit: 3
     ) {
       edges {
@@ -602,7 +602,7 @@ export const pageQuery = graphql`
           fields {
             title
             slug
-            date
+            updated
           }
           parent {
             ... on File {
@@ -611,7 +611,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            updated(formatString: "MMMM DD, YYYY")
             description
             slug
             redirectTo

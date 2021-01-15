@@ -18,7 +18,8 @@ export const query = graphql`
         body
         frontmatter {
           title
-          date(formatString: "MMMM DD, YYYY")
+          updated(formatString: "MMM DD, YYYY")
+          startDate(formatString: "MMM DD, YYYY")
           slug
           topics
           growthStage

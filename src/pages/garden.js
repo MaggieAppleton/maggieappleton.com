@@ -267,7 +267,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                         font-size: 1em;
                       }
                     }
-                    h6.date {
+                    h6.updated {
                       font-size: 0.6em;
                       opacity: 80%;
                     }
@@ -275,8 +275,8 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                 >
                   <h4>{note.title}</h4>
                   <div class="metadata">
-                    <h6 class="date">
-                       {note.childMarkdownRemark.frontmatter.date}
+                    <h6 class="updated">
+                       {note.childMarkdownRemark.frontmatter.updated}
                     </h6>
                     <span>
                       {note.childMarkdownRemark.frontmatter.growthStage ===
@@ -333,7 +333,7 @@ export const GardenPageQuery = graphql`
     }
 
     notesQuery: allBrainNote(
-      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___date }
+      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___updated }
     ) {
       edges {
         node {
@@ -344,7 +344,7 @@ export const GardenPageQuery = graphql`
               growthStage
               topics
               slug
-              date(formatString: "MMM DD, YYYY")
+              updated(formatString: "MMM DD, YYYY")
             }
           }
         }

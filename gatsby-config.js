@@ -167,7 +167,7 @@ module.exports = {
               return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
+                  updated: edge.node.frontmatter.updated,
                   url: site.siteMetadata.siteUrl + '/' + edge.node.frontmatter.slug,
                   guid: site.siteMetadata.siteUrl + '/' + edge.node.frontmatter.slug
                 });
@@ -176,14 +176,14 @@ module.exports = {
             query: `
               {
                 allMdx(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [frontmatter___updated] },
                 ) {
                   edges {
                     node {
                       excerpt(pruneLength: 120)
                       frontmatter {
                         title
-                        date
+                        updated
                         slug
                       }
                     }

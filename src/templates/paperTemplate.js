@@ -18,7 +18,7 @@ export default function Paper({
   pageContext: { prevPage, nextPage },
 }) {
   const author = mdx.frontmatter.author || config.author
-  const date = mdx.frontmatter.date
+  const updated = mdx.frontmatter.updated
   const title = mdx.frontmatter.title
   const subtitle = mdx.frontmatter.subtitle
 
@@ -123,7 +123,7 @@ export default function Paper({
             <h1>{title}</h1>
             {subtitle && <h2>{subtitle}</h2>}
             <h3>by {author}</h3>
-            {date && <h6>Last tended to {date}</h6>}
+            {updated && <h6>Last tended to {updated}</h6>}
           </div>
         </div>
         <br />
@@ -162,7 +162,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
-        date(formatString: "MMMM DD, YYYY")
+        updated(formatString: "MMMM DD, YYYY")
         author
         slug
         topics

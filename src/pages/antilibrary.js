@@ -68,7 +68,7 @@ export const antibookQuery = graphql`
       filter: {
         frontmatter: { type: { eq: "antibook" }, published: { ne: false } }
       }
-      sort: { order: DESC, fields: frontmatter___date }
+      sort: { order: DESC, fields: frontmatter___updated }
       limit: 45
     ) {
       edges {
@@ -76,7 +76,7 @@ export const antibookQuery = graphql`
           id
           fields {
             title
-            date
+            updated
           }
           parent {
             ... on File {
@@ -85,7 +85,7 @@ export const antibookQuery = graphql`
           }
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            updated(formatString: "MMMM DD, YYYY")
             author
             url
             cover {
