@@ -105,7 +105,6 @@ const getGlobalStyles = theme => {
       padding: 1em;
     }
     iframe {
-      width: 700px;
       max-width: 100%;
     }
     button {
