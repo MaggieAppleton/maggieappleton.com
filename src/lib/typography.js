@@ -55,7 +55,7 @@ const typography = new Typography({
       lineHeight: rhythm(0.8),
     },
     'h5, h6': {
-      fontWeight: '100',
+      fontWeight: '300',
       marginTop: 0,
       fontFamily: fonts.regularSans,
       WebkitFontSmoothing: 'antialiased',
