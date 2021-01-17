@@ -1,8 +1,8 @@
 ---
-title: 'Transcopyright Dreams'
+title: 'Transclusion and Transcopyright Dreams'
 slug: transcopyright-dreams
 startDate: 2021-01-02
-updated: 2021-01-14
+updated: 2021-01-18
 published: true
 type: ['note']
 topics: ['The Web', 'Digital Gardening', 'Design']
@@ -11,11 +11,13 @@ growthStage: 'Seedling'
 
 <IntroParagraph>
 
-In 1965, [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson) imagined a system of interactive, extendable text where words would be freed from the constraints of paper documents. This _hypertext_ would make documents linkable. Twenty years later, Tim Berners Lee would take inspiration from Nelson's vision, as well as other narratives like Vannevar Bush's [Memex](https://en.wikipedia.org/wiki/Memex), to create the world wide web. Hypertext came to life.
+In 1965, [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson) imagined a system of interactive, extendable text where words would be freed from the constraints of paper documents. This _hypertext_ would make documents linkable.
+
+Twenty years later, Tim Berners Lee took  inspiration from Nelson's vision, as well as other narratives like Vannevar Bush's [Memex](https://en.wikipedia.org/wiki/Memex), to create the world wide web. Hypertext came to life.
 
 </IntroParagraph>
 
-But hypertext was only one small concept amidst a sea of ideas Nelson spent his life developing. Most were entwined in his grand vision of [[Project Xanadu]] – a piece of software intended to transform the way we connect documents and knowledge. Much like the web ending up being. Xanadu is often framed as an alternative to the web – "the web that could have been" – if it had ever shipped. Unfortunately [it didn't](https://www.wired.com/1995/06/xanadu/).
+But hypertext was only one small concept amidst a sea of ideas Nelson spent his life developing. Most were entwined in his grand vision of [[Project Xanadu]] – a piece of software intended to transform the way we read, write, and connect pieces of knowledge. Xanadu is often framed as an alternative to The Web – "the web that could have been" – if it had ever shipped. Unfortunately [it didn't](https://www.wired.com/1995/06/xanadu/), and Berners-Lee's version of hypertext won out.
 
 Despite the fact we're not currently browsing the Xanadu web, Nelson is still full of provocative, insightful ideas that never quite came to life – some that speak to many of the issues currently plaguing the modern web.
 
@@ -25,11 +27,15 @@ Two of the most intruiging are **Transclusion** and **Transcopyright**, a pair o
 
 Transclusion is embedding one part of a document into another, and maintaing a link between the two. This is different to copying. A copy isn't inherently linked to it's original, and can be changed in the duplicate version.
 
-A transclusion is the exact same content as the original. If it changes on the original source, it also changes anywhere that transclusion is embedded. There's a single source of truth for that element, and a [[Bi-Directional Link]] so you can navigate between the source and the embed.
+A transclusion is the exact same content as the original. If it changes on the original source, it also changes anywhere that transclusion is embedded. Think of the way `<img>` tags currently work. The `src` URL you pass in points to the original image. If someone changes the source image, it also changes on your website. `<iframe>` embeds work the same way – they pull in content from elsewhere.
 
-This idea is powerful in both the possibilities and horrors it might open up.  It would allow us to always know where content came from, and see it in its original context. A capitvating promise in the age of post-truth informational relativism. 
+Transclusions create a single source of truth for that element, and a [[Bi-Directional Link]] so you can navigate between the original source and the embed.
 
-It would create a more layered and nuanced form of hypertext – something we're exploring in the [[Digital Gardening]] movement. Authors could easily fix typos and have it propogate across the web, or write revisions and push version updates the same way we do with software. On the flip side, we can also imagine paragaph tags that once held bible quotes suddenly being updated to hold fiery smut.
+This idea is powerful in both the possibilities and horrors it could open up.  It would allow us to always know where content came from, and see it in its original context. This is a capitvating promise in the age of post-truth informational relativism. We are constantly presented with isolated soundbites, quotes, and tweets that are divorced from the context they were created within.
+
+It would create a more layered and nuanced form of hypertext – something we're exploring in the [[Digital Gardening]] movement. Authors could easily fix typos and have it propogate across the web, or write revisions and push version updates the same way we do with software.
+
+On the flip side, we can also imagine paragaph tags that once held bible quotes suddenly being updated to hold fiery smut. This sort of bad behaviour is inevitable to some degree, but could be minimised through thoughtful design patterns. Cultivating strong social norms, making social reputation visible, and enabling community moderation are all potential tools for it.
 
 ## Transcopyright
 
@@ -37,19 +43,25 @@ Transcopyright is an extension of transclusion that begins to make this very int
 
 If text is able to be endlessly embedded across the web in a way that leads back to a single source and a single publisher, you can theoretically pay that person for every instance of their content showing up on the web.
 
-In this alternate web utopia, readers would pay microscopic amounts for reading content on the web (we're talking fractions of a cent for an article, not the $5-10 a month level most Patreons and subscription services run at), and some portion of that would flow back to the original author.
+In this alternate web utopia, readers would pay small amounts for reading content on the web. These _micropayments_ need to be truly micro for this to work. We're talking fractions of a cent for an article, not the chunky level of $5-10 a month most Patreons and subscription services run at. The majority of that payment would then flow back to the original author.
 
-There are a thousand open questions here about the logistics of how that would work, but it's not outside the realm of human imagination. We now have the [Web Monetization API](https://webmonetization.org/) up and running, and inevitably the words "blockchain" and "cryptocurrency" might have to be involved here. I'm not brave enough to speculate beyond that.
+In this utopia, I'm presuming we want to place value on sharing and curation as well as creation, which means giving some small fraction of the payment to the re-publisher as well.
+
+There are a thousand open questions here about the logistics of how this would work. But I find it sad to conclude it's completely outside the realm of human imagination.
+
+We now have the [Web Monetization API](https://webmonetization.org/) up and running, and inevitably the words "blockchain" and "cryptocurrency" might have to be involved here. I'm not brave enough to speculate beyond that.
 
 ## Designing Speculative Interfaces
 
-My immediate reaction to this conceptual pair was to try and grasp onto a more grounded version of it. What would this look like in a real interface? What kind of visual representations and interactions would make this possible? How would I create a transclusion, or pay someone through transcopyright?
+My immediate reaction to this conceptual pair was to try and grasp onto a more grounded version of it.
 
-#### Let's play a design game and think this through.
+**What would this look like in a real interface?** What kind of visual representations and interactions would make this possible? How would I create a transclusion, or pay someone through transcopyright?
+
+Let's play a design game and think this through.
 
 Here's a snippet of text I lifted from a recent Wired article, [To Mend a Broken Internet, Create Online Parks](https://www.wired.com/story/to-mend-a-broken-internet-create-online-parks/) by Eli Parser:
 
-<SimpleCard width="780px">
+<SimpleCard width="800px">
 
 "There’s a problem of public imagination. Fixing our ability to connect and build healthy communities at scale is arguably an Apollo mission for this generation—a decisive challenge that will determine whether our society progresses or falls back into conspiracy-driven tribalism. We need to summon the creative will worthy of a problem of this urgency and consequence."
 
