@@ -27,8 +27,6 @@ export const OrderedList = styled.ol`
 `
 
 export const UnorderedList = styled.ul`
-  display: grid;
-  grid-gap: 0.6em;
   list-style: inside;
   list-style-image: url(icons/radiobtn.svg);
   line-height: 1.8em;
