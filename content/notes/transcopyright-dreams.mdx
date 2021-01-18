@@ -11,9 +11,9 @@ growthStage: 'Seedling'
 
 <IntroParagraph>
 
-In 1965, [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson) imagined a system of interactive, extendable text where words would be freed from the constraints of paper documents. This _hypertext_ would make documents linkable.
+In 1965 [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson) imagined a system of interactive, extendable text where words would be freed from the constraints of paper documents. This _hypertext_ would make documents linkable.
 
-Twenty years later, Tim Berners Lee took  inspiration from Nelson's vision, as well as other narratives like Vannevar Bush's [Memex](https://en.wikipedia.org/wiki/Memex), to create the world wide web. Hypertext came to life.
+Twenty years later, Tim Berners Lee took  inspiration from Nelson's vision, as well as other narratives like Vannevar Bush's [Memex](https://en.wikipedia.org/wiki/Memex), to create the World Wide Web. Hypertext came to life.
 
 </IntroParagraph>
 
@@ -25,7 +25,7 @@ Two of the most intruiging are **Transclusion** and **Transcopyright**, a pair o
 
 ## Transclusion
 
-Transclusion is embedding one part of a document into another, and maintaing a link between the two. This is different to copying. A copy isn't inherently linked to it's original, and can be changed in the duplicate version.
+Transclusion is embedding one part of a document into another, and maintaing a link between the two. **This is different to copying.** A copy isn't inherently linked to it's original, and can be changed in the duplicate version.
 
 A transclusion is the exact same content as the original. If it changes on the original source, it also changes anywhere that transclusion is embedded. Think of the way `<img>` tags currently work. The `src` URL you pass in points to the original image. If someone changes the source image, it also changes on your website. `<iframe>` embeds work the same way – they pull in content from elsewhere.
 
@@ -51,9 +51,11 @@ There are a thousand open questions here about the logistics of how this would w
 
 We now have the [Web Monetization API](https://webmonetization.org/) up and running, and inevitably the words "blockchain" and "cryptocurrency" might have to be involved here. I'm not brave enough to speculate beyond that.
 
+---
+
 ## Designing Speculative Interfaces
 
-My immediate reaction to this conceptual pair was to try and grasp onto a more grounded version of it.
+What I am comfortable speculating about is how this might look and feel as a user experience. My immediate reaction to this conceptual pair was to try and grasp onto a more grounded version of it.
 
 **What would this look like in a real interface?** What kind of visual representations and interactions would make this possible? How would I create a transclusion, or pay someone through transcopyright?
 
@@ -79,7 +81,9 @@ Which means we have absolutely no visiblity into who else on the web is respondi
 
 ---
 
-As I'm reading this article on Wired, perhaps small indicators show up next to each paragraph showing the number of times each it's been cited somewhere else on the web. Try hovering over the number 4 here and clicking:
+As I'm reading this article on Wired, perhaps small indicators show up next to each paragraph showing the number of times each it's been cited somewhere else on the web.
+
+Below is a simple Figma mockup to demonstrate the idea. Try hovering over the number 8 here and clicking:
 
 <FullWidth>
 
@@ -87,6 +91,31 @@ As I'm reading this article on Wired, perhaps small indicators show up next to e
 
 </FullWidth>
 
-This is just a simple Figma mockup to demonstrate the idea. An overlay might appear with links to those other transclusion instances.
+An overlay appears with links to those other transclusion instances. If we click on one of those links, we clearly want to see how this snippet of text fits into other contexts. Ideally, they would be {x links} that highlight the relevant text on the destination page and scroll you to the right position.
+
+If we want to offer a more modular browsing experience, we could also have this link modal expand into the page itself. This allows us to stay within the current article, but also quickly check what discussions and narratives are happening around it – a feature that would _certainly_ help pop a few filter bubbles.
+
+## Content Moderation and the Tradgedy of the Comments Section
+
+Many people will react to this prototype with a justified sense of horror.
+
+"If _anyone_ can link to _anything_ on the web and have it show up on the original, everything will devolve into anarchy!"
+
+We can easily imagine transclusions going the way of the public comments section. The 14-year-olds of 4chan might mass-tranclude the introductory paragraph of a New York Times lead story, surrounded by the incendiary lyrics of South Park's '_Uncle Fucka_'. In fact that would definitely happen. 
+
+This system opens up all the gnarly philosophical questions around control, censorship, community moderation, and "_free speech_" that the web constantly makes tangible and visceral.
+
+What we're after is a low-friction way for website owners to let other people link to their ideas and creations, offering a rich contextual reading experience for audiences, without letting bad actors monopolise the system.
+
+**It goes without saying transclusions need to come with a permissions system.** Website owners should be able to include a single flag in their metadata that turns transclusions off. Something to the effect of:  
+`<meta name="transclusions" content="disable" />`
+
+Simply reducing it to an on/off switch is a bit of a ham-fisted solution though. It leaves no room for nuance or spectrums of permissioning. Luckily, Ted Nelson baked this consideration into the original idea from the sytem.
+
+Transcopyright is of course a **copyright** system, which means there's a variety of restrictions and rules about who can use a piece of content across different contexts. <Footnote idName={2}>As always, IANAL and actual lawyers should feel free to expand on this point and add informed nuance to the argument. I wish you could use transclusions to do so, but <a href="https://twitter.com/mappletons">Twitter</a> is sadly our best option at the moment.</Footnote>
+
+
+
+
 
 <ComingSoon />
