@@ -222,7 +222,8 @@ export const FullWidthImage = props => {
     <img
     css={css({
         width: props.width || '100%',
-        gridColumn: '1/4', justifyContent: 'center', margin: '1em auto'})}
+        gridColumn: '1/4', justifyContent: 'center',
+        margin: props.margin || '1em auto'})}
       alt={props.alt}
       src={props.src}
     />

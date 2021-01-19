@@ -25,17 +25,23 @@ Two of the most intruiging are **Transclusion** and **Transcopyright**, a pair o
 
 ## Transclusion
 
-Transclusion is embedding one part of a document into another, and maintaing a link between the two. **This is different to copying.** A copy isn't inherently linked to it's original, and can be changed in the duplicate version.
+Transclusion is including one part of a document into another, and maintaing a link between the two. **This is different to copying.** A copy isn't inherently linked to it's original, and can be changed in the duplicate version.
 
-A transclusion is the exact same content as the original. If it changes on the original source, it also changes anywhere that transclusion is embedded. Think of the way `<img>` tags currently work. The `src` URL you pass in points to the original image. If someone changes the source image, it also changes on your website. `<iframe>` embeds work the same way – they pull in content from elsewhere.
+A transclusion is linked to the original, and contains the exact same contents. Someone viewing the transclusion can easily open and view the original document. By doing this, transclusions create a single source of truth for that element, and a [[Bi-Directional Link]] so you can navigate between the original source and its instances across the web.
 
-Transclusions create a single source of truth for that element, and a [[Bi-Directional Link]] so you can navigate between the original source and the embed.
+Now, what happens if the original source changes?
+
+The transclusion doesn't automatically  change along with it. If transclusions were direct embeds of the original content, we'd end up with a huge pile of dead links and missing words all over the place. That's what currently happens with `<img>` tags where the `src` element points to an original source URL. If the original publisher deletes the photo, your image embed breaks along with it.
+
+<BasicImage margin="1.6em auto 1.2em" width="620px" alt="Two documents connected by a transclusion. Transclusions are the same content displayed in more than one location, visibly linked." src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611093848/maggieappleton.com/notes/xanadu/transclusion_5_shrink.png" />
+
+Instead, the transclusion is more like a saved version of the original – a _cached_ snapshot of it at a moment in time. You can update that snapshot to a newer version if you want to, but it's not automatic. Even if the original author deletes it, your transcluded version stays visible.
 
 This idea is powerful in both the possibilities and horrors it could open up.  It would allow us to always know where content came from, and see it in its original context. This is a capitvating promise in the age of post-truth informational relativism. We are constantly presented with isolated soundbites, quotes, and tweets that are divorced from the context they were created within.
 
 It would create a more layered and nuanced form of hypertext – something we're exploring in the [[Digital Gardening]] movement. Authors could easily fix typos and have it propogate across the web, or write revisions and push version updates the same way we do with software.
 
-On the flip side, we can also imagine paragaph tags that once held bible quotes suddenly being updated to hold fiery smut. This sort of bad behaviour is inevitable to some degree, but could be minimised through thoughtful design patterns. Cultivating strong social norms, making social reputation visible, and enabling community moderation are all potential tools for it.
+On the flip side, we can also imagine transclusions that once held bible quotes linking back to pages that are now filled with fiery smut. This sort of bad behaviour is inevitable to some degree, but could be minimised through thoughtful design patterns. Cultivating strong social norms, making social reputation visible, and enabling community moderation are all potential tools for it.
 
 ## Transcopyright
 
@@ -45,7 +51,11 @@ If text is able to be endlessly embedded across the web in a way that leads back
 
 In this alternate web utopia, readers would pay small amounts for reading content on the web. These _micropayments_ need to be truly micro for this to work. We're talking fractions of a cent for an article, not the chunky level of $5-10 a month most Patreons and subscription services run at. The majority of that payment would then flow back to the original author.
 
-In this utopia, I'm presuming we want to place value on sharing and curation as well as creation, which means giving some small fraction of the payment to the re-publisher as well.
+<FullWidthImage margin="2em auto 1.2em" width="1100px" alt="Two documents connected by a transclusion. Transclusions are the same content displayed in more than one location, visibly linked." src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611093847/maggieappleton.com/notes/xanadu/transclusion_4_shrink.png" />
+
+In this idealised utopia, we also want to place value on sharing and curation as well as original creation, which means giving a small fraction of the payment to the re-publisher as well.
+
+We should note monetisation of all this content is optional. Some websites would allow their content to be transcluded for free, while others might charge hefty fees for a few sentences. If all goes well, we'd expect the majority of content on the web to be either free or priced at very small amounts.
 
 There are a thousand open questions here about the logistics of how this would work. But I find it sad to conclude it's completely outside the realm of human imagination.
 
@@ -87,7 +97,7 @@ Below is a simple Figma mockup to demonstrate the idea. Try hovering over the nu
 
 <FullWidth>
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="880" height="750" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FoRs8JnNMxNI3AZQhZslzlL%2FTranscopyright%3Fnode-id%3D1%253A6%26viewport%3D805%252C1447%252C1.084823489189148%26scaling%3Dmin-zoom" allowfullscreen></iframe>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="880" height="760" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FoRs8JnNMxNI3AZQhZslzlL%2FTranscopyright%3Fnode-id%3D1%253A6%26viewport%3D805%252C1447%252C1.084823489189148%26scaling%3Dmin-zoom" allowfullscreen></iframe>
 
 </FullWidth>
 
@@ -98,7 +108,7 @@ Try clicking on the first link in the transclusion list here:
 
 <FullWidth>
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="880" height="750" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FoRs8JnNMxNI3AZQhZslzlL%2FTranscopyright%3Fnode-id%3D358%253A3%26viewport%3D319%252C700%252C0.5028579831123352%26scaling%3Dmin-zoom" allowfullscreen></iframe>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="880" height="760" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FoRs8JnNMxNI3AZQhZslzlL%2FTranscopyright%3Fnode-id%3D358%253A3%26viewport%3D319%252C700%252C0.5028579831123352%26scaling%3Dmin-zoom" allowfullscreen></iframe>
 
 </FullWidth>
 
@@ -118,8 +128,10 @@ This system opens up all the gnarly philosophical questions around control, cens
 
 What we're after is a low-friction way for website owners to let other people link to their ideas and creations, offering a rich contextual reading experience for audiences, without letting bad actors monopolise the system.
 
-**It goes without saying transclusions need to come with a permissions system.** Website owners should be able to include a single flag in their metadata that turns transclusions off. Something to the effect of:  
+**It goes without saying transclusions need to come with a permissions system.** Website owners might be able to include a single flag in their metadata that turns transclusions off. Something to the effect of:  
 `<meta name="transclusions" content="disable" />`
+
+A subtler approach would be to simply choose not to display transclusion links on their webpage. The equivalent of `transclusions { display: none; }`. In this scenario they would still exist, but wouldn't be as easy to access and read.
 
 Simply reducing it to an on/off switch is a bit of a ham-fisted solution though. It leaves no room for nuance or spectrums of permissioning. Luckily, Ted Nelson baked this consideration into the original idea from the sytem.
 
