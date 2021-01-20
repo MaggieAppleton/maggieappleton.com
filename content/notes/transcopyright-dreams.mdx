@@ -2,7 +2,7 @@
 title: 'Transclusion and Transcopyright Dreams'
 slug: transcopyright-dreams
 startDate: 2021-01-02
-updated: 2021-01-18
+updated: 2021-01-20
 published: true
 type: ['note']
 topics: ['The Web', 'Digital Gardening', 'Design']
@@ -17,9 +17,13 @@ Twenty years later, Tim Berners Lee took  inspiration from Nelson's vision, as w
 
 </IntroParagraph>
 
-But hypertext was only one small concept amidst a sea of ideas Nelson spent his life developing. Most were entwined in his grand vision of [[Project Xanadu]] – a piece of software intended to transform the way we read, write, and connect pieces of knowledge. Xanadu is often framed as an alternative to The Web – "the web that could have been" – if it had ever shipped. Unfortunately [it didn't](https://www.wired.com/1995/06/xanadu/), and Berners-Lee's version of hypertext won out.
+But hypertext was only one small concept amidst a sea of ideas Nelson spent his life developing. Most were entwined in his grand vision of [[Project Xanadu]], a piece of software that at first glance looks similar to The Web we're currently on – a way to access and connect shared human knowledge. But Xanadu was more complex and nuanced. It centered around the principle of **"Parallel Documents, Visibly Linked"** – the proposed interface presented documents side-by-side, and included features like version control and [[Bi-Directional Links]].
 
-Despite the fact we're not currently browsing the Xanadu web, Nelson is still full of provocative, insightful ideas that never quite came to life – some that speak to many of the issues currently plaguing the modern web.
+<BasicImage margin="1.6em auto 1.2em" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611093846/maggieappleton.com/notes/xanadu/transclusion_6_shrink.png" alt="Three pages of documents presented side-by-side, with colourful visible links between them" />
+
+ In the historical record, Xanadu is often framed as an alternative to The Web – "the web that could have been" – if it had ever shipped. Unfortunately its [complexity led to troubles](https://www.wired.com/1995/06/xanadu/), and Berners-Lee's version of hypertext won out.
+
+Despite the fact we're not currently browsing the Xanadu web, Nelson is still full of provocative, insightful ideas that never quite came to life – some that speak to many of the issues currently plaguing the modern web and are worth revisiting.
 
 Two of the most intruiging are **Transclusion** and **Transcopyright**, a pair of concepts that reimagine the way authorship, attribution, copyright, and content monetization might work online.
 
@@ -27,25 +31,31 @@ Two of the most intruiging are **Transclusion** and **Transcopyright**, a pair o
 
 Transclusion is including one part of a document into another, and maintaing a link between the two. **This is different to copying.** A copy isn't inherently linked to it's original, and can be changed in the duplicate version.
 
-A transclusion is linked to the original, and contains the exact same contents. Someone viewing the transclusion can easily open and view the original document. By doing this, transclusions create a single source of truth for that element, and a [[Bi-Directional Link]] so you can navigate between the original source and its instances across the web.
+A transclusion is directly linked to the original, and contains the exact same contents. Someone viewing the transclusion can easily open and view the original document. By doing this, transclusions create a single source of truth for that element, and a [[Bi-Directional Link]] so you can navigate between the original source and its instances across the web.
 
 Now, what happens if the original source changes?
 
-The transclusion doesn't automatically  change along with it. If transclusions were direct embeds of the original content, we'd end up with a huge pile of dead links and missing words all over the place. That's what currently happens with `<img>` tags where the `src` element points to an original source URL. If the original publisher deletes the photo, your image embed breaks along with it.
+The transclusion doesn't automatically  change along with it. If transclusions were direct embeds of the original content, we'd end up with [link rot](https://en.wikipedia.org/wiki/Link_rot) on a whole new scale. Every document would be a sad compilation of 404's.
+
+You've probably' seen this happen with images – `<img>` tags where the `src` element points to an original source URL are essentially embeds. If the original publisher deletes the photo, your image dissappears along with it.
+
+Instead, a transclusion is more like a saved version of the original – a _cached_ snapshot of it at a moment in time. You can update that snapshot to a newer version if you want to, but it's not automatic. Even if the original author deletes it, your transcluded version stays visible.
+
+It works the same way [Git](https://en.wikipedia.org/wiki/Git) does – it's a version control system that stores the state of a file at a particular point in time.
 
 <BasicImage margin="1.6em auto 1.2em" width="620px" alt="Two documents connected by a transclusion. Transclusions are the same content displayed in more than one location, visibly linked." src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611093848/maggieappleton.com/notes/xanadu/transclusion_5_shrink.png" />
 
-Instead, the transclusion is more like a saved version of the original – a _cached_ snapshot of it at a moment in time. You can update that snapshot to a newer version if you want to, but it's not automatic. Even if the original author deletes it, your transcluded version stays visible.
+
 
 This idea is powerful in both the possibilities and horrors it could open up.  It would allow us to always know where content came from, and see it in its original context. This is a capitvating promise in the age of post-truth informational relativism. We are constantly presented with isolated soundbites, quotes, and tweets that are divorced from the context they were created within.
 
-It would create a more layered and nuanced form of hypertext – something we're exploring in the [[Digital Gardening]] movement. Authors could easily fix typos and have it propogate across the web, or write revisions and push version updates the same way we do with software.
+It would create a more layered and nuanced form of hypertext – something we're exploring in the [[Digital Gardening]] movement. We could build accumulative, conversational exchanges with people on the level of the word, sentence, and paragraph, not the entire document. Authors could fix typos, write revisions, and push version updates that propogate across the web the same way we do with software.
 
-On the flip side, we can also imagine transclusions that once held bible quotes linking back to pages that are now filled with fiery smut. This sort of bad behaviour is inevitable to some degree, but could be minimised through thoughtful design patterns. Cultivating strong social norms, making social reputation visible, and enabling community moderation are all potential tools for it.
+On the flip side, we can also imagine transclusions that once held bible quotes linking back to pages that are now filled with fiery smut. This sort of bad behaviour is inevitable to some degree, but could be minimised through thoughtful design patterns that I'll touch on later. Cultivating strong social norms, making social reputation visible, and enabling community moderation are all potential tools for it.
 
 ## Transcopyright
 
-Transcopyright is an extension of transclusion that begins to make this very interesting for attribution, copyright, and monetization.
+Transcopyright is an extension of transclusion that begins to make this very interesting for attribution, copyright, and monetisation – we begin to see how this might evolve into a sustainable economic system.
 
 If text is able to be endlessly embedded across the web in a way that leads back to a single source and a single publisher, you can theoretically pay that person for every instance of their content showing up on the web.
 
@@ -53,9 +63,9 @@ In this alternate web utopia, readers would pay small amounts for reading conten
 
 <FullWidthImage margin="2em auto 1.2em" width="1100px" alt="Two documents connected by a transclusion. Transclusions are the same content displayed in more than one location, visibly linked." src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611093847/maggieappleton.com/notes/xanadu/transclusion_4_shrink.png" />
 
-In this idealised utopia, we also want to place value on sharing and curation as well as original creation, which means giving a small fraction of the payment to the re-publisher as well.
+In this idealised utopia we obviously want to place value on sharing and curation as well as original creation, which means giving a small fraction of the payment to the re-publisher as well.
 
-We should note monetisation of all this content is optional. Some websites would allow their content to be transcluded for free, while others might charge hefty fees for a few sentences. If all goes well, we'd expect the majority of content on the web to be either free or priced at very small amounts.
+We should note monetisation of all this content is optional. Some websites would allow their content to be transcluded for free, while others might charge hefty fees for a few sentences. If all goes well, we'd expect the majority of content on the web to be either free or priced at reasonable micro-amounts.
 
 There are a thousand open questions here about the logistics of how this would work. But I find it sad to conclude it's completely outside the realm of human imagination.
 
@@ -133,7 +143,7 @@ What we're after is a low-friction way for website owners to let other people li
 
 A subtler approach would be to simply choose not to display transclusion links on their webpage. The equivalent of `transclusions { display: none; }` in a css file. In this scenario the transclusions would still exist, but wouldn't be as easy to access and read.
 
-Simply reducing it to an on/off switch is a bit of a ham-fisted solution though. It leaves no room for nuance or spectrums of permissioning. Luckily, Ted Nelson baked this consideration into the original idea from the sytem.
+Simply reducing it to an on/off switch is a bit of a ham-fisted solution though. It leaves no room for nuance or spectrums of permissioning. Luckily, Ted Nelson baked this consideration into his original ideas.
 
 Transcopyright is of course a **copyright** system, which means there's a variety of restrictions and rules about who can use a piece of content across different contexts. <Footnote idName={2}>As always, IANAL and actual lawyers should feel free to expand on this point and add informed nuance to the argument. I wish you could use transclusions to do so, but <a href="https://twitter.com/mappletons">Twitter</a> is sadly our best option at the moment.</Footnote>
 
