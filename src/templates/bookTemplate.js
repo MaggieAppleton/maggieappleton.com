@@ -40,9 +40,13 @@ export default function Book({
             grid-column: 2;
           }
           flex-direction: column;
-          .breadcrumb {
+          .breadcrumblink {
+            grid-column: 1 / 4;
+            width: 840px;
+            max-width: 100%;
             margin: 0 auto;
-            text-align: center;
+          }
+          .breadcrumb {
             justify-content: center;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -101,7 +105,7 @@ export default function Book({
           }
         `}
       >
-        <Link to="/library">
+        <Link className="breadcrumblink" to="/library">
           <button className="breadcrumb">
             <svg
               width="8"
