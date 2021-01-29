@@ -55,6 +55,9 @@ export const TwoCol = props => {
           padding: props.imgpadding,
           margin: props.imgmargin || '0 auto',
           maxWidth: props.imgwidth,
+          [bpMaxSM]: {
+            maxWidth: '100%'
+          }
         },
       })}
     >
