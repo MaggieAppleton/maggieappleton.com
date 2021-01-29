@@ -9,6 +9,7 @@ export const Img = styled.img`
 
 export const BasicImage = props => {
   return (
+    <>
     <img
       css={css({
         width: props.width || '100%',
@@ -20,6 +21,15 @@ export const BasicImage = props => {
         margin: props.margin || '1.2em auto',
         borderRadius: '6px',
       })} src={props.src} alt={props.alt} />
+      {props.showalt && <p css={css({
+        fontSize: '0.8em',
+        textAlign: 'center',
+        maxWidth: '660px',
+        opacity: '85%',
+        lineHeight: '1.4em',
+        marginBottom: '1em'
+      })}>{props.alt}</p>}
+      </>
       )
 }
 

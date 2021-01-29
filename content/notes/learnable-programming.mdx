@@ -1,16 +1,20 @@
 ---
 title: 'Learnable Programming Patterns'
 slug: learnable-programming
-updated: 2021-01-28
+updated: 2021-01-29
 published: true
 type: ['note']
 topics: ['Visual Explanation', 'Web Development', 'JavaScript']
 growthStage: 'Seedling'
 ---
 
-Bret Victor coined the term **Learnable Programming** in his [canonical essay](http://worrydream.com/LearnableProgramming/) on the matter.  Bret has a few concerns with the way most of us learn programming at the moment. Mainly that it's woefully inadequate and poorly designed.
+<IntroParagraph>
+    
+Bret Victor coined the term <b>Learnable Programming</b> in his <a href="http://worrydream.com/LearnableProgramming">canonical essay</a> lamenting the current state of programming education.  
 
-His main gripe is that the standard "live coding" environment we see everywhere in programming education tries to train humans to think more like machines. Rather than designing educational interfaces that are more intuitively understandable to humans.
+</IntroParagraph>
+
+Bret has a few concerns with the way most of us learn to code. Mainly that the learning environments we drop people into are poorly designed.
 
 These environments tend to look something like this:
 
@@ -23,102 +27,25 @@ These environments tend to look something like this:
 
 </TwoCol>
 
-They're your standard column-based interface where you write syntax into one section and hopefully get the output you expected in another.
+They're your standard column-based "live coding" interfaces popular across the industry. You write code into one section and hopefully get the output you expected in another. Synatx is abstracted away from the elements it affects. The structures and properties of the language itself are no where to be seen. State is invisible. 
 
-It's easy to see why these linear, text-based interfaces feel like the best approach. They look identical to the standard interfaces the whole development industry uses to programme.
+---
 
-<BasicImage width="880px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611863938/maggieappleton.com/notes/learnable-programming/learnprog_2.png" alt="" />
+It's easy to see why these linear, text-based interfaces _seem_ like the best approach. They look identical to the standard interfaces the whole development industry uses to programme.
+
+<BasicImage width="880px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611863938/maggieappleton.com/notes/learnable-programming/learnprog_2.png" alt="The interface of VS Code – one of the most popular environments for professional programming" showalt />
 
 We're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach.
 
-But Victor isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces.
+But Victor isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
 
-Mainly that the standard text-based, disembodied, non-graphical interfaces we all put up with are unintuitive to humans who live in a highly visual, spatial, embodied world.
+He's pointing out that the standard text-based, disembodied, non-graphical interfaces we all put up with are unintuitive to humans who live in a highly visual, spatial, embodied world.
 
-While most of our modern user interfaces have graduated to a graphical, 3D space-based system, programming is staunchly attached to the linear text paradigm.
+While most of our modern user interfaces have graduated to a graphical, 3D space-based system, programming is staunchly attached to the linear text paradigm. 
 
-[Visual programming languages](https://en.wikipedia.org/wiki/Visual_programming_language) have failed to gain traction. There's lots of [well-reasoned](https://www.outsystems.com/blog/posts/visual-programming-language/) [arguments](https://dzone.com/articles/visual-programming-why-its-a-bad-idea) [explaining](https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html) why it's so difficult to design visual systems complex and extensible enough to programme in. Maybe we'll get there someday, but the current visual languages just can't do what we need them to.
+There's good reason for this. While many people have tried to develop [visual programming languages](https://en.wikipedia.org/wiki/Visual_programming_language), they've largely failed to gain traction. There's lots of [well-reasoned](https://www.outsystems.com/blog/posts/visual-programming-language/) [arguments](https://dzone.com/articles/visual-programming-why-its-a-bad-idea) [explaining](https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html) why it's so difficult to design visual systems complex and extensible enough to programme in. We might get there someday, but our current visual languages just aren't sophisticated enough to do the job.
 
-While visual programming isn't great for the scale of complexity professional programmers deal with, it's still very well suited to the needs of educational programming.
-
----
-
-
-
-I keep a hefty collection of interactive experiences focused around programming education in particular.
-And began to notice some trends – an emerging [[Pattern Languages]] between these sites.
-
-This is an incomplete and ongoing observational list.
-
-1. Location and Destination
-
-Showing the learner where they are now, and where they're headed.
-
-[Flexbox Froggy](https://flexboxfroggy.com/)
-
-2. Brownie Points
-
-
-
-3. Compare and Contrast
-
-[Can't Unsee](https://cantunsee.space/)
-
-4. Immersive Focused
-
-5. Invitations to Explore / You Figure it Out
-
-No obvious instructions and fully exploratory. You figure out what you're supposed to do as the game unfolds.
-
-[Vim Adventures](https://vim-adventures.com/)
-
-[The Bezier Game](https://bezier.method.ac/)
-
-[Kerntype](https://type.method.ac/)
-
-[Method of Action](https://method.ac/)
-
-6. The Invisible Narrator
-
-7. What You See is What You Get
-
-We may not have achieved the code-less dream for web design yet, but at least we have it in our educational games.
-
-At the moment it's mostly CSS-focused games that can easily take advantage of this pattern, since it's inherently visual.
-
-[Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](https://cssgridgarden.com/)
-Both by [Codepip](https://codepip.com/) who make a number of these style of educational games
-
-8. Explain in Context
-
-[Explain Shell](https://explainshell.com/explain)
-
-9. Cry for Help
-
-[CSS Diner](https://flukeout.github.io/#)
-
-10. Revisit the Past
-
-Spaced repetition
-
-11. Flow over time
-
-[Loupe](http://latentflip.com/loupe/)
-
-12. Embodied Space over Symbolic text
-
-13. Unpack the Black Box
-
-[AST Explorer](https://astexplorer.net/)
-
-[Explain Shell](https://explainshell.com/explain)
+While visual programming isn't great for the scale of complexity professional programmers deal with, it's _ideal_ for people who are learning to code.
 
 ---
 
-
-
-<SimpleCard width="740px">
-
-[Rob Cobb's Interactive Learning Examples Newsletter](https://csed.substack.com/p/the-best-online-interactive-learning)
-
-</SimpleCard>
