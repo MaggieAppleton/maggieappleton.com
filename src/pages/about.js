@@ -101,7 +101,7 @@ const theme = useTheme()
         <div className="headerText">
             <h1>Maggie Appleton</h1>
             <h2>
-              Anthropologist, art director, illustrator, metaphor designer, and
+              Art director, designer, anthropologist, and
               mediocre developer
             </h2>
             <Img
