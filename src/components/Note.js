@@ -98,7 +98,7 @@ export default function Note({ site, note, referenceBlock }) {
           h6 {
           color: ${darken(0.2, theme.colors.grey)};
           }
-          h6:first-child {
+          h6:first-of-type {
             padding-right: 12px;
             color: ${darken(0.1, theme.colors.lightGreen)}
           }

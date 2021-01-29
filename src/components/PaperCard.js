@@ -45,7 +45,7 @@ export const PaperCard = props => {
         `}
       >
         {Math.floor(Math.random() * Math.floor(10))%2 == 0 ? <img alt='paper icon' src={paperOne} /> : <img alt='paper icon' src={paperTwo} /> }
-        <div class="details">
+        <div className="details">
         <h4
           css={css`
             font-family: ${fonts.regularSansBold};

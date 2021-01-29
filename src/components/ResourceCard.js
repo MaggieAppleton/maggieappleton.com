@@ -73,9 +73,9 @@ const theme = useTheme()
             <img alt={props.title} src={props.img} />
           </a>
 
-          <div class='dataBlock'>
+          <div className='dataBlock'>
           <a rel="noopener noreferrer" target="_blank" href={props.url}><h1>{props.title}</h1></a>
-            <p class='description'>{props.description}</p>
+            <p className='description'>{props.description}</p>
             <h5>{props.cost}</h5>
 
             {props.recCourses && <RecCourses props={props.recCourses} />}

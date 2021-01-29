@@ -99,7 +99,7 @@ const theme = useTheme()
               alt="book cover"
               src={img}
             />
-            <div class="dataBlock">
+            <div className="dataBlock">
               <h1>{title}</h1>
               <div css={css({
                 display: 'flex',
@@ -113,7 +113,7 @@ const theme = useTheme()
                 <h5>{author}</h5>
                 {notesUrl ? <a href={notesUrl}>➽ Book Notes</a> : null}
               </div>
-              <p class="description">{description}</p>
+              <p className="description">{description}</p>
             </div>
           </div>
         </div>

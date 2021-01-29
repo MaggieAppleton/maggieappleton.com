@@ -71,8 +71,8 @@ const PreviousNext = props => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M8 0L10 2L4 8L10 14L8 16L0 8L8 0Z"
                 />
               </svg>
@@ -94,8 +94,8 @@ const PreviousNext = props => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M2 16L1.74846e-07 14L6 8L1.22392e-06 2L2 -6.99382e-07L10 8L2 16Z"
                 />
               </svg>

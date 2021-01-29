@@ -18,7 +18,7 @@ const SidebarContainer = styled.div`
 const NoteSidebar = props => {
   return (
     <SidebarContainer>
-      <div class="sidebarContent">{props.children}</div>
+      <div className="sidebarContent">{props.children}</div>
     </SidebarContainer>
   )
 }

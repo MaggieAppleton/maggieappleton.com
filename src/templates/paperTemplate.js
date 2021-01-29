@@ -94,8 +94,8 @@ export default function Paper({
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M8 0L10 2L4 8L10 14L8 16L0 8L8 0Z"
               />
             </svg>

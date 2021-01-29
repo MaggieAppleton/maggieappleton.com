@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import Tippy from '@tippyjs/react'
+import {inlinePositioning} from 'tippy.js'
 import { Link as GatsbyLink } from "gatsby"
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/animations/shift-away.css'
@@ -9,16 +10,17 @@ import { useTheme } from '../Theming'
 
 const LinkTooltip = forwardRef((props, ref) => {
   const previewKey = props.href.replace(/^\//, '')
-  if (props.bidirectionalLinkPreviews[previewKey]) {
+  if (props.bidirectionallinkpreviews[previewKey]) {
     return (
       <Tippy
-      inlinePositioning={true}
+        inlinePositioning={true}
+        plugins={[inlinePositioning]}
         duration="600"
         theme="light"
         arrow={true}
         interactive={true}
         animation="shift-away"
-        content={props.bidirectionalLinkPreviews[previewKey]}
+        content={props.bidirectionallinkpreviews[previewKey]}
         ref={ref}
         css={css`
         h2 {
@@ -39,6 +41,7 @@ const LinkTooltip = forwardRef((props, ref) => {
   return (
     <Tippy
       inlinePositioning={true}
+      plugins={[inlinePositioning]}
       duration="600"
       theme="light"
       arrow={true}

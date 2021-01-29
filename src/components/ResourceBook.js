@@ -85,10 +85,10 @@ export default function ResourceBook(props) {
               alt="book cover"
               src={props.img}
             />
-            <div class="dataBlock">
+            <div className="dataBlock">
               <h1>{props.title}</h1>
               <h5>{props.author}</h5>
-              <p class="description">{props.description}</p>
+              <p className="description">{props.description}</p>
             </div>
           </div>
         </div>

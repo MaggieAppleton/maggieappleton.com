@@ -43,7 +43,7 @@ const BrainNote = ({ note }) => {
   }
 
   // Declare a variable for Bidirectional Link Previews
-  const bidirectionalLinkPreviews = {}
+  const bidirectionallinkpreviews = {}
 
   // If there are outbound reference notes (notes this note it pointing to), filter each note. Find the title, slug, and excerpt and map it to a preview component
    // Turn this into a component
@@ -51,7 +51,7 @@ const BrainNote = ({ note }) => {
     note.outboundReferenceNotes
       .filter(reference => !!reference.childMdx.excerpt)
       .forEach((ln, i) => {
-        bidirectionalLinkPreviews[ln.slug] = (
+        bidirectionallinkpreviews[ln.slug] = (
           <div style={{ padding: '1em 0.6em' }} id={ln.slug}>
             <h2 style={{ margin: '0 0 0.4em 0', fontSize: '1.66em' }}>{ln.title}</h2>
             <p>{ln.childMdx.excerpt}</p>
@@ -60,11 +60,11 @@ const BrainNote = ({ note }) => {
       })
   }
 
-  // Decalre a variable called 'Tippy Link with Previews' and assign it to a function component. The function takes in props, and returns a standard MDX link component. It assigned the bidirectionalLinkPreviews variable to a new bidirectionalLinkPreviews props
+  // Decalre a variable called 'Tippy Link with Previews' and assign it to a function component. The function takes in props, and returns a standard MDX link component. It assigned the bidirectionallinkpreviews variable to a new bidirectionallinkpreviews props
   const TippyLinkWithPreviews = props => (
     <components.a
       {...props}
-      bidirectionalLinkPreviews={bidirectionalLinkPreviews}
+      bidirectionallinkpreviews={bidirectionallinkpreviews}
     />
   )
 

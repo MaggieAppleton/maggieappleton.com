@@ -323,14 +323,14 @@ export default function Index({
                     `}
                   >
                     <h4>{note.title}</h4>
-                    <div class="metadata">
-                      <h6 class="updated">
+                    <div className="metadata">
+                      <h6 className="updated">
                         {note.childMarkdownRemark.frontmatter.updated}
                       </h6>
                       <span>
                         {note.childMarkdownRemark.frontmatter.growthStage ===
                         'Seedling' ? (
-                          <h6 class="growthStage">
+                          <h6 className="growthStage">
                             {' '}
                             seedling
                             <span role="img" aria-label="seedling">
@@ -340,7 +340,7 @@ export default function Index({
                         ) : null}
                         {note.childMarkdownRemark.frontmatter.growthStage ===
                         'Budding' ? (
-                          <h6 class="growthStage">
+                          <h6 className="growthStage">
                             {' '}
                             budding
                             <span role="img" aria-label="seedling">
@@ -350,7 +350,7 @@ export default function Index({
                         ) : null}
                         {note.childMarkdownRemark.frontmatter.growthStage ===
                         'Evergreen' ? (
-                          <h6 class="growthStage">
+                          <h6 className="growthStage">
                             {' '}
                             evergreen
                             <span role="img" aria-label="seedling">

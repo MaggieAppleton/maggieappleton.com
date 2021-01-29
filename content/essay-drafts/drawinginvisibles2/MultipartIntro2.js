@@ -92,22 +92,22 @@ const MultipartIntro2 = () => {
         },
       })}
     >
-      <div class="outer linked">
+      <div className="outer linked">
         <span>Part 1</span>
         <PartName
           to="/drawinginvisibles1"
           partName="A Metaphorical Introduction"
         />
       </div>
-      <div class="focus">
+      <div className="focus">
         <span>Part 2</span>
         <PartName focus partName="Cultural and Linguistic Research" />
       </div>
-      <div class="outer">
+      <div className="outer">
         <span>Part 3</span>
         <PartName partName="Lateral Thinking and Creative Play" />
       </div>
-      <div class="outer">
+      <div className="outer">
         <span>Part 4</span>
         <PartName partName="Composition, Colour, and Completion" />
       </div>

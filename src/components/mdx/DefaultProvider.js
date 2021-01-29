@@ -2,12 +2,12 @@ import React from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import components from './'
 
-const bidirectionalLinkPreviews = {}
+const bidirectionallinkpreviews = {}
 
 const Links = props => (
   <components.a
     {...props}
-    bidirectionalLinkPreviews={bidirectionalLinkPreviews}
+    bidirectionallinkpreviews={bidirectionallinkpreviews}
   />
 )
 
