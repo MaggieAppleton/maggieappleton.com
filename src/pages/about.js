@@ -113,7 +113,7 @@ const theme = useTheme()
               fluid={data.venn.childImageSharp.fluid}
             />
             <p>
-              I sit in the middle of a few odd venn diagrams – illustration,
+              I sit in the middle of a few odd venn diagrams – design,
               anthropology, and technology are at the core of everything I make.{' '}
             </p>
             <p>
