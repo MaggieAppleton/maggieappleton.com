@@ -200,7 +200,7 @@ export const FullWidth2Col = props => {
         width: 100vw;
         height: (100vw * 1.2);
         padding: 2em 0;
-        background: ${props.bgColor};
+        background: ${props.bgcolour};
         .innerDiv {
           padding: 2em 0 1em;
           max-width: 80%;
