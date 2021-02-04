@@ -166,7 +166,13 @@ export const FullWidth = props => {
   return (
     <div
       css={css`
-        width: 100%;
+        left: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        max-width: 100vw;
+        position: relative;
+        right: 50%;
+        width: 100vw;
         grid-column: 1 / 4;
         padding: ${props.padding ? props.padding : '2em'};
         background: ${props.bgcolour};
