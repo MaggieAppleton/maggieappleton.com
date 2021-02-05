@@ -17,6 +17,7 @@ export const BasicImage = props => {
         [bpMaxSM]: {
           maxWidth: '100%'
         },
+        display: 'block',
         gridColumn: '1/4',
         margin: props.margin || '1.2em auto',
         borderRadius: '6px',

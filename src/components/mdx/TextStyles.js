@@ -116,6 +116,7 @@ export const Center = styled.p`
   h5,
   p {
     text-align: center;
+    margin: 30px auto;
   }
 `
 export const Subtext = styled.p`
