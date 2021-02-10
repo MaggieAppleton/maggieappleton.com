@@ -475,6 +475,7 @@ export default function Index({
               key={book.id}
               fluidImg={book.frontmatter.cover.childImageSharp.fluid}
               author={book.frontmatter.author}
+              lastTended={book.frontmatter.updated}
             />
           ))}
         </section>
@@ -610,9 +611,10 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            updated(formatString: "MMMM DD, YYYY")
+            updated(formatString: "MMM DD, YYYY")
             description
             slug
+            author
             redirectTo
             cover {
               childImageSharp {

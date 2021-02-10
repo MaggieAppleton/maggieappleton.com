@@ -16,6 +16,7 @@ export const Book = props => {
         css={css`
           padding: 0;
           margin: 0.2em 1em;
+          margin-bottom: 2em;
           width: 240px;
           .gatsby-image-wrapper {
             border-radius: 4px;
@@ -60,7 +61,8 @@ export const Book = props => {
         >
           {props.title}
         </h4>
-        <h6>{props.author}</h6>
+        <h6 css={css`margin: 0;`}>{props.author}</h6>
+        <h6 css={css`margin: 0; padding: 0; font-size: 70%;`}>{props.lastTended}</h6>
       </div>
     </Link>
   )
