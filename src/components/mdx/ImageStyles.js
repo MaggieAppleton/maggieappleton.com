@@ -19,7 +19,7 @@ export const BasicImage = props => {
         },
         display: 'block',
         gridColumn: '1/4',
-        margin: props.margin || '1.2em auto',
+        margin: props.margin || '2em auto 1.2em',
         borderRadius: '6px',
       })} src={props.src} alt={props.alt} />
       {props.showalt && <p css={css({
