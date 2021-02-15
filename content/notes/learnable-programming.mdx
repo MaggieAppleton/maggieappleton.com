@@ -1,11 +1,12 @@
 ---
 title: 'Learnable Programming Patterns'
 slug: learnable-programming
-updated: 2021-01-29
+startDate: 2021-01-12
+updated: 2021-02-15
 published: true
 type: ['note']
 topics: ['Visual Explanation', 'Web Development', 'JavaScript']
-growthStage: 'Seedling'
+growthStage: 'Budding'
 ---
 
 <IntroParagraph>
@@ -45,5 +46,51 @@ While most of our modern user interfaces have graduated to a graphical, 3D space
 
 There's good reason for this. While many people have tried to develop [visual programming languages](https://en.wikipedia.org/wiki/Visual_programming_language), they've largely failed to gain traction. There's lots of [well-reasoned](https://www.outsystems.com/blog/posts/visual-programming-language/) [arguments](https://dzone.com/articles/visual-programming-why-its-a-bad-idea) [explaining](https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html) why it's so difficult to design visual systems complex and extensible enough to programme in. We might get there someday, but our current visual languages just aren't sophisticated enough to do the job.
 
-While visual programming isn't great for the scale of complexity professional programmers deal with, it's _ideal_ for people who are learning to code.
+While visual programming isn't great for the scale of complexity professional programmers deal with, it's _ideal_ for people who are learning to code. When the goal is simply to explain what's happening under the hood, creating graphical representations is the best way to help people build clear mental models.
 
+---
+
+## The Principles of Learnable Programming 
+
+Bret Victor outlined a set of principles he believed all learnable programming environments should follow. He argues any good educational platform should allow learners to...
+1. **Read the vocabulary** of a language by making clear what each keyword and function does
+2. **Follow the flow** of what happens at each stage in executing a programme 
+3. **See the state** as the programme changes variables over time
+4. **Create by reacting** to how the programme behaves
+5. **Create by abstracting** from the simple to the complex
+
+I won't expand on these too much as Bret elaborates on them in the [original piece](http://worrydream.com/#!/LearnableProgramming) and provides plenty of tangible examples of how we might implement them in an interface.
+
+Since Bret wrote his piece in 2012, the world of programming education has stepped up its visual game. It's no longer just two column, text-based execution contexts. We're now swimming in interactive environments and gamified educational platforms. I can't say any of them meet _all_ of Bret's principles. Most only nail two or three of them. But they're all taking steps in the right direction.
+
+---
+
+## A Brief Survey of the Visual Education Landscape
+
+I've collected up all the examples I could find of visual approaches to teaching programming. These range from full-on illustrated games to lightly animated sequences of text. The unifiying principle of all these examples isn't having cartoon characters or Nintendo-esque interactions. What makes them work is they all **map concepts to space.** Syntax moves from 1D linear lines into 2D or 3D space.
+
+[Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](https://cssgridgarden.com/) teach CSS layout techniques through live reactive demos.
+
+<TwoCol imgwidth="48%" imgmargin="1em auto">
+
+<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1593449199/maggieappleton.com/notes/learnable-programming/Grid_Garden_-_A_game_for_learning_CSS_grid.png" />
+
+<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1613429903/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_22.58.17.png" />
+
+</TwoCol>
+
+[CSS Diner](https://flukeout.github.io/) takes the same approach to teach CSS selectors.
+
+<BasicImage width="800px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1613430827/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_23.13.38.png" />
+
+[Vim Adventures](https://vim-adventures.com/) uses the style of a platform game to help learners get comfortable with the essential commands of Vim
+
+<BasicImage width="800px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1613431202/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_23.19.44.png" />
+
+---
+
+## Picking Up Patterns
+
+As I began collecting these, I started noticing repeating patterns across the platforms. There's a certain interactive language being developed here.
+
+<ComingSoon />
