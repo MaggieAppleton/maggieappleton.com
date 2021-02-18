@@ -13,6 +13,7 @@ import SimpleCard from '../SimpleCard'
 import LinkCard from './LinkCard'
 import { Spacer } from './Spacer'
 import { ComingSoon } from './ComingSoon'
+import { ReadingContext } from './ReadingContext'
 import { Draft } from './Draft'
 import {
   Divider,
@@ -72,6 +73,7 @@ export default {
   Center: props => <Center {...props} />,
   code: Code,
   ComingSoon: props => <ComingSoon {...props} />,
+  ReadingContext: props => <ReadingContext {...props} />,
   Controls: props => <Controls {...props} />,
   Draft: props => <Draft {...props} />,
   Footnote: props => <Footnote {...props} />,
