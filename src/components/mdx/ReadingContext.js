@@ -16,7 +16,7 @@ export const ReadingContext = ({ children, url }) => {
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <h5 style={{margin: '0', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: `${fonts.walsheim}`, color: `${colors.blue}`, fontWeight: 'black', fontSize: '80%'}}>Why I Read This</h5>
+        <h5 style={{margin: '0', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: `${fonts.walsheim}`, color: `${colors.blue}`, fontWeight: 'black', fontSize: '80%'}}>Why I'm Reading This</h5>
         <a
           target="_blank"
           rel="noopener noreferrer"
