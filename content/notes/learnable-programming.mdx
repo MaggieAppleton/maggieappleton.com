@@ -2,7 +2,7 @@
 title: 'Learnable Programming Patterns'
 slug: learnable-programming
 startDate: 2021-01-12
-updated: 2021-02-15
+updated: 2021-02-24
 published: true
 type: ['note']
 topics: ['Visual Explanation', 'Web Development', 'JavaScript']
@@ -21,10 +21,10 @@ These environments tend to look something like this:
 
 <TwoCol imgwidth="48%" imgmargin="1em auto">
 
-<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611863937/maggieappleton.com/notes/learnable-programming/learnprog_1.png" alt="" />
-<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611863937/maggieappleton.com/notes/learnable-programming/learnprog_4.png" alt="" />
-<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611863937/maggieappleton.com/notes/learnable-programming/learnprog_5.png" alt="" />
-<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611863938/maggieappleton.com/notes/learnable-programming/learnprog_3.png" alt="" />
+<BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174726/maggieappleton.com/notes/learnable-programming/learnprog_1_nsfflv.png" alt="repl.it slpit screen interface" />
+<BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_4_dk82q8.png" alt="codesandbox split screen interface" />
+<BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_5_tlycev.png" alt="free code camp split screen interface" />
+<BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174726/maggieappleton.com/notes/learnable-programming/learnprog_3_bkslg8.png" alt="khan academy split screen interface" />
 
 </TwoCol>
 
@@ -34,13 +34,15 @@ They're your standard column-based "live coding" interfaces popular across the i
 
 It's easy to see why these linear, text-based interfaces _seem_ like the best approach. They look identical to the standard interfaces the whole development industry uses to programme.
 
-<BasicImage width="880px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1611863938/maggieappleton.com/notes/learnable-programming/learnprog_2.png" alt="The interface of VS Code – one of the most popular environments for professional programming" showalt />
+<BasicImage width="880px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_2_ieudi6.png" alt="The interface of VS Code – one of the most popular environments for professional programming" showalt />
 
 We're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach.
 
 But Victor isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
 
 He's pointing out that the standard text-based, disembodied, non-graphical interfaces we all put up with are unintuitive to humans who live in a highly visual, spatial, embodied world.
+
+
 
 While most of our modern user interfaces have graduated to a graphical, 3D space-based system, programming is staunchly attached to the linear text paradigm. 
 
@@ -50,47 +52,94 @@ While visual programming isn't great for the scale of complexity professional pr
 
 ---
 
-## The Principles of Learnable Programming 
+## Principles of Learnable Programming 
 
-Bret Victor outlined a set of principles he believed all learnable programming environments should follow. He argues any good educational platform should allow learners to...
+Victor outlined a set of principles he believed all learnable programming environments should follow. He argues any good educational platform should allow learners to...
 1. **Read the vocabulary** of a language by making clear what each keyword and function does
 2. **Follow the flow** of what happens at each stage in executing a programme 
 3. **See the state** as the programme changes variables over time
 4. **Create by reacting** to how the programme behaves
 5. **Create by abstracting** from the simple to the complex
 
-I won't expand on these too much as Bret elaborates on them in the [original piece](http://worrydream.com/#!/LearnableProgramming) and provides plenty of tangible examples of how we might implement them in an interface.
+I won't expand on these too much as Bret elaborates on them in the [original piece](http://worrydream.com/#!/LearnableProgramming) and provides plenty of tangible examples of how they might look in an interface. 
 
-Since Bret wrote his piece in 2012, the world of programming education has stepped up its visual game. It's no longer just two column, text-based execution contexts. We're now swimming in interactive environments and gamified educational platforms. I can't say any of them meet _all_ of Bret's principles. Most only nail two or three of them. But they're all taking steps in the right direction.
+Victor's principles amount to a kind of [[Pattern Language]] - they're a set of design rules that deal with the way a system works, rather than worrying about the implementation details.
 
----
+Since Bret wrote his piece in 2012, the world of programming education has stepped up its visual game. It's no longer just two column, text-based execution contexts. We're now swimming in interactive visual environments and gamified educational platforms.
 
-## A Brief Survey of the Visual Education Landscape
-
-I've collected up all the examples I could find of visual approaches to teaching programming. These range from full-on illustrated games to lightly animated sequences of text. The unifiying principle of all these examples isn't having cartoon characters or Nintendo-esque interactions. What makes them work is they all **map concepts to space.** Syntax moves from 1D linear lines into 2D or 3D space.
-
-[Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](https://cssgridgarden.com/) teach CSS layout techniques through live reactive demos.
-
-<TwoCol imgwidth="48%" imgmargin="1em auto">
-
-<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1593449199/maggieappleton.com/notes/learnable-programming/Grid_Garden_-_A_game_for_learning_CSS_grid.png" />
-
-<BasicImage src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1613429903/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_22.58.17.png" />
-
-</TwoCol>
-
-[CSS Diner](https://flukeout.github.io/) takes the same approach to teach CSS selectors.
-
-<BasicImage width="800px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1613430827/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_23.13.38.png" />
-
-[Vim Adventures](https://vim-adventures.com/) uses the style of a platform game to help learners get comfortable with the essential commands of Vim
-
-<BasicImage width="800px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1613431202/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_23.19.44.png" />
+I began researching the field to see how many of them were putting Victor's principles into practice. The examples I looked at ranged from full-on illustrated games to lightly animated sequences of text. While none of them fulfill  _all_ of Bret's programmable dreams, there are plenty headed in the right direction.
 
 ---
 
-## Picking Up Patterns
+## A Pattern Language for Visual Programming
 
-As I began collecting these, I started noticing repeating patterns across the platforms. There's a certain interactive language being developed here.
+As I began exploring thse visual programming platforms, I started to notice patterns of my own. While Victor defined a set of idealised principles for a non-existent system, I became more interested in finding emergent patterns in systems that already exist.
 
-<ComingSoon />
+Here is my working collection of design patterns I've noticed across the space, with specific examples of each one:
+
+
+#### 1. Location and Destination
+The learner should always know where they are on the learning path, and what their destination is.
+
+This one isn't specific to visual programming – it's a well-established principle of UX design that people need to know where in the interface they are right now, and where they're headed.
+
+Making this clear with a visual progress bar is common on learning platforms when we're trying to coax people through the long, hard journey of learning a new programming language or framework. It helps keep them motivated and feel a sense of regular progress. 
+
+<Draft />
+
+---
+
+#### 2. Embodied Space over Symbols
+
+Instead of one-dimentional abstract symbols and signs, use our embodied understanding of up, down, left, right, front, and back to map concepts to two-dimentional space.
+
+
+#### 3. Immersive Focus
+
+#### 4. Invitation to Explore
+
+#### 5. Direction Connections
+
+Create a direct, instant association between syntax commands and their effects
+
+This is very similar to Victor's 'Read the Vocabulary'
+
+In traditional programming interfaces there's a significant lag between writing syntax, waiting for code to compile, and seeing the change in a browser or printed logs. It's often unclear what _exactly_ changed, and what part of the code changed it.
+
+#### 6. Keep It In Context
+
+#### 7. Cry for Help
+
+#### 8. Revisit the Past
+
+#### 9. Put it in Your Pocket
+
+#### 10. Flow Over Time
+
+#### 11. Compare and Contrast
+
+#### 12. Brownie Points
+
+---
+
+#### Flexbox Froggy and Grid Garden
+[Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](https://cssgridgarden.com/) are built by [Codepip]() and both teach CSS layout techniques through live reactive demos. Every character you type into the code editor has an immediate reaction in the illustrated demo.  
+This shortens the lag between action and reaction we usually have to deal with when waiting for code to compile, and makes it easier to figure out what each command does.
+
+<BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174728/maggieappleton.com/notes/learnable-programming/Grid_Garden_-_A_game_for_learning_CSS_grid_a6ba49.png" />
+
+<BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174725/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_22.58.17_jx3h6w.png" />
+
+The same company made [CSS Diner](https://flukeout.github.io/) which takes a similar approach to teach CSS selectors. Every command you type instantly highlights what's being selected on the illustration.
+
+<BasicImage width="800px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/Screenshot_-_2020-06-29_13.47.26_iyq9a2.png" />
+
+#### Vim Adventures
+
+[Vim Adventures](https://vim-adventures.com/) uses the style of a platform game to help learners get comfortable with the essential commands of Vim. Making the metaphor of physical space more obvious by adding pathways and directions helps you think about Vim's interface as a spatial area instead of a regular linear text editor.
+
+<BasicImage width="800px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174728/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_23.19.44_cez50t.png" />
+
+#### Method of Action
+
+While not strictly programming-related, the Bezier Game, the Boolean Game, and the Kerning Game...
