@@ -104,14 +104,6 @@ const theme = useTheme()
               Art director, designer, anthropologist, and
               mediocre developer
             </h2>
-            <Img
-              style={{
-                maxWidth: '420px',
-                margin: '0 auto',
-                marginBottom: '1em',
-              }}
-              fluid={data.venn.childImageSharp.fluid}
-            />
             <p>
               I sit in the middle of a few odd venn diagrams – design,
               anthropology, and technology are at the core of everything I make.{' '}
