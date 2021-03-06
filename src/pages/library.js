@@ -34,6 +34,9 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQu
             margin-bottom: 0.8em;
             text-align: center;
           }
+          .header-text {
+              line-height: 1.5em;
+          }
           .books {
             display: flex;
             flex-direction: row;
@@ -66,7 +69,7 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQu
         `}
       >
         <h1>The Library</h1>
-        <p>Books, papers, talks and podcasts I think are worth paying attention to.<br />Accompanied by loose and opinionated notes.</p><p>To see things I haven't read browse the <Link to='/antilibrary'>Anti Library</Link></p>
+        <p class="header-text">Books, papers, talks and podcasts I think are worth paying attention to.<br />Accompanied by loose and opinionated notes.</p><p>To see things I haven't read browse the <Link to='/antilibrary'>Anti Library</Link></p>
 
             <Tabs>
 

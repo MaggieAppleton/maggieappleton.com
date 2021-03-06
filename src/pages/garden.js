@@ -84,6 +84,9 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
             h1 {
               margin-bottom: 0.4em;
             }
+            p {
+              line-height: 1.5em;
+            }
           }
           .filterSection {
             display: grid;
