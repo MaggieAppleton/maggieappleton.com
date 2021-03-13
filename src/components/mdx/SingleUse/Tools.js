@@ -3,6 +3,8 @@ import { css } from '@emotion/core'
 import { bpMaxLG, bpMaxMD } from '../../../lib/breakpoints'
 
 const mainLayout = css`
+  grid-column: 1/4;
+  max-width: 800px;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -12,9 +14,7 @@ const mainLayout = css`
   margin: 1.4em auto;
   img {
     transition: all 400ms ease;
-    margin: 0.4em 0.6em;
-    padding: 0.4em;
-    max-width: 200px;
+    max-width: 120px;
     &:hover {
       transition: all 400ms ease;
       transform: translateY(-6px);
