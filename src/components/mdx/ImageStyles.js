@@ -9,7 +9,7 @@ export const Img = styled.img`
 
 export const BasicImage = props => {
   return (
-    <>
+    <div>
     <img
       css={css({
         width: props.width || '100%',
@@ -28,9 +28,10 @@ export const BasicImage = props => {
         maxWidth: '660px',
         opacity: '85%',
         lineHeight: '1.4em',
-        marginBottom: '1em'
+        marginBottom: '1em',
+        marginTop: '1em'
       })}>{props.alt}</p>}
-      </>
+      </div>
       )
 }
 
