@@ -12,16 +12,16 @@ export const podcastData = [
         url: 'https://thatsthenorm.com/maggie-appleton-transcript/'
     },
     {
-        podcastName: 'egghead.io Podcast',
-        episodeName: '#43 Turning Technical Concepts into Approachable Illustrated Metaphors',
-        date: 'May 3, 2019',
-        url: 'https://egghead.io/podcasts/turning-technical-concepts-into-approachable-illustrated-metaphors-with-maggie-appleton'
-    },
-    {
         podcastName: 'Maintainers Anonymous',
         episodeName: 'Embodiment Through Metaphors',
         date: 'May 13 2020',
         url: 'https://maintainersanonymous.com/metaphor/'
+    },
+    {
+        podcastName: 'egghead.io Podcast',
+        episodeName: 'Turning Technical Concepts into Approachable Illustrated Metaphors',
+        date: 'May 3, 2019',
+        url: 'https://egghead.io/podcasts/turning-technical-concepts-into-approachable-illustrated-metaphors-with-maggie-appleton'
     },
     {
         podcastName: 'Maintainers Anonymous',
@@ -31,7 +31,7 @@ export const podcastData = [
     },
     {
         podcastName: 'React Podcast',
-        episodeName: '#86 The Power of Mental Model‪s',
+        episodeName: 'The Power of Mental Model‪s',
         date: 'March 3, 2020',
         url: 'https://reactpodcast.simplecast.com/episodes/86'
     },

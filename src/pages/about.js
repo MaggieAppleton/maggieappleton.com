@@ -4,9 +4,13 @@ import Img from 'gatsby-image'
 import Container from 'components/Container'
 import { useStaticQuery, graphql } from 'gatsby'
 import { css } from '@emotion/core'
-import { bpMaxSM } from '../lib/breakpoints'
+import { bpMaxSM, bpMaxMD  } from '../lib/breakpoints'
 import { Link } from 'gatsby'
 import { useTheme } from 'components/Theming'
+import {
+  podcastData,
+  talksData,
+} from '../../static/aboutPageData'
 
 const AboutPage = () => {
 const theme = useTheme()
@@ -41,44 +45,21 @@ const theme = useTheme()
       <Container
         css={css`
         padding: 0;
-          justify-items: center;
-          margin-top: 4em;
-          max-width: 80%;
-          .faqBlock {
-            text-align: center;
-            width: 85%;
-            border: 1px solid ${theme.colors.lightGrey};
-            border-radius: 5px;
-            margin: 1.6em auto 0em;
-            padding: 1em;
-            transition: all 0.3s ease-in-out;
-            h2 {
-              transition: all 0.3s ease-in-out;
-              color: ${theme.colors.darkGrey};
-              margin-top: 0.2em;
-              font-size: 1.8em;
-              line-height: 1.2em;
-            }
-            h4 {
-              transition: all 0.3s ease-in-out;
-              color: ${theme.colors.grey};
-              margin: 0.5em;
-            }
-            :hover {
-              border: 1px solid ${theme.colors.orange};
-              h2, h4 {
-              color: ${theme.colors.black};
-              }
-            }
-          }
+        ${bpMaxMD} {
+          padding: 0 1rem;
+        }
+        justify-items: center;
+        margin-top: 4em;
+        max-width: 1200px;
+          
           .header {
-            max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 4rem;
             display: grid;
             grid-template-columns: 50% 50%;
             grid-gap: 2em;
             ${bpMaxSM} {
               grid-template-columns: 1fr;
+              margin: 0 auto 2rem;
             }
             .headerText {
               max-width: 540px;
@@ -92,8 +73,68 @@ const theme = useTheme()
               p {
                 max-width: 500px;
                 line-height: 1.7em;
+                margin: 1rem 0;
               }
             }
+            }
+          }
+
+          .talksPodcasts {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            ${bpMaxMD} {
+              grid-template-columns: 1fr;
+              grid-gap: 1rem;
+            }
+            grid-gap: 3rem;
+
+            p {
+              margin: 0;
+              padding: 0;
+              font-size: 20px;
+              line-height: 26px;
+            }
+
+            .podtalkItem {
+              padding-bottom: 0.8rem;
+              border-bottom: 1px solid #D6E0EB;
+              margin-bottom: 0.8rem;
+              h5 {
+                margin: 0.3rem 0 0 0;
+              }
+              .date {
+                margin: 0;
+                font-size: 16px;
+                opacity: 70%;
+              }
+            }
+
+            .faqBlock {
+              text-align: center;
+              border: 1px solid ${theme.colors.lightGrey};
+              border-radius: 5px;
+              margin: 1.6rem auto 0em;
+              padding: 1em;
+              transition: all 0.3s ease-in-out;
+              h2 {
+                transition: all 0.3s ease-in-out;
+                color: ${theme.colors.darkGrey};
+                margin-top: 0.2em;
+                font-size: 1.8em;
+                line-height: 1.2em;
+              }
+              h4 {
+                transition: all 0.3s ease-in-out;
+                color: ${theme.colors.grey};
+                margin: 0.5em;
+              }
+              :hover {
+                border: 1px solid ${theme.colors.orange};
+                h2, h4 {
+                color: ${theme.colors.black};
+                }
+              }
+
           }
         `}
       >
@@ -101,15 +142,12 @@ const theme = useTheme()
         <div className="headerText">
             <h1>Maggie Appleton</h1>
             <h2>
-              Art director, designer, anthropologist, and
+             Designer, anthropologist, and
               mediocre developer
             </h2>
             <p>
-              I sit in the middle of a few odd venn diagrams – design,
-              anthropology, and technology are at the core of everything I make.{' '}
-            </p>
-            <p>
-              Combining these into something coherent is a weird and ongoing
+              I sit at the intersection of design,
+              anthropology, and technology. These three are at the core of everything I make. Combining them into a coherent career is a weird and ongoing
               challenge.
             </p>
             <p>
@@ -144,11 +182,44 @@ const theme = useTheme()
             }}
             fluid={data.profilePic.childImageSharp.fluid}
           />
-          <a href='/faq'><div className="faqBlock"><h2>Have questions?<br />I have an FAQ</h2></div></a>
-          <a href='/resources'><div className="faqBlock"><h2>Want to improve your illustration skills?</h2><h4>I have a recommended resources page</h4></div></a>
           </div>
+          </div>
+
+          <section className="talksPodcasts">
+
+          <div>
+              <h3>Talks</h3>
+          {talksData.map((d, i) => {
+            return (
+              <div className="podtalkItem">
+                <a href={d.url}><p>{d.talkTitle}</p></a>
+                <h5>{d.conference}</h5>
+                <h5 className="date">{d.date}</h5>
+              </div>
+            )
+          })}
+            </div>
+
+            <div>
+              <h3>Podcast Chats</h3>
+          {podcastData.map((d, i) => {
+            return (
+              <div className="podtalkItem">
+                <a href={d.url}><p>{d.episodeName}</p></a>
+                <h5>{d.podcastName}</h5>
+                <h5 className="date">{d.date}</h5>
+              </div>
+            )
+          })}
+            </div>
+
+          <div>
+          <a href='/faq'><div className="faqBlock"><h2>Have questions?<br />I have an FAQ</h2></div></a>
+            <a href='/resources'><div className="faqBlock"><h2>Want to improve your illustration skills?</h2><h4>I have a recommended resources page</h4></div></a>
+          </div>
+
+          </section>
           
-        </div>
       </Container>
     </Layout>
   )
