@@ -3,13 +3,13 @@ import Layout from 'components/Layout'
 import { css } from '@emotion/core'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
-import { bpMaxSM } from '../lib/breakpoints'
-import { Book } from '../components/Book'
-import {PaperCard} from '../components/PaperCard'
+import { bpMaxSM } from '../../lib/breakpoints'
+import { Book } from '../../components/Book'
+import {PaperCard} from '../../components/PaperCard'
 import { Link } from 'gatsby'
-import { Tabs, Tab, TabContent } from '../components/Tabs'
+import { Tabs, Tab, TabContent } from '../../components/Tabs'
 
-const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQuery } }) => {
+const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery } }) => {
 
   const [activeTab, setActiveTab] = useState(0)
 
@@ -69,7 +69,7 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQu
         `}
       >
         <h1>The Library</h1>
-        <p class="header-text">Books, papers, talks and podcasts I think are worth paying attention to.<br />Accompanied by loose and opinionated notes.</p><p>To see things I haven't read browse the <Link to='/antilibrary'>Anti Library</Link></p>
+        <p class="header-text">Books, papers, and talks I think are worth paying attention to.<br />Accompanied by loose and opinionated notes.</p><p>To see things I haven't read browse the <Link to='/antilibrary'>Anti Library</Link></p>
 
             <Tabs>
 
@@ -78,8 +78,6 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQu
               <Tab onClick={handleTabSwitch} activeTab={activeTab === 1} id={1}>Papers</Tab>
 
               <Tab onClick={handleTabSwitch} activeTab={activeTab === 2} id={2}>Talks</Tab>
-
-              <Tab onClick={handleTabSwitch} activeTab={activeTab === 3} id={3}>Podcasts</Tab>
 
             </Tabs>
 
@@ -129,20 +127,6 @@ const LibraryPage = ({ data: { site, bookQuery, paperQuery, talkQuery, podcastQu
           </section>
           </TabContent>
 
-            {/* Podcasts Section */}
-            <TabContent activeTab={activeTab === 3}>
-          <section className="books">
-          {podcastQuery.edges.map(({ node: podcast }) => (
-            <Book
-              redirectTo={podcast.frontmatter.redirectTo}
-              slug={podcast.frontmatter.slug}
-              title={podcast.frontmatter.title}
-              key={podcast.id}
-              author={podcast.frontmatter.author}
-            />
-          ))}
-          </section>
-          </TabContent>
 
       </Container>
     </Layout>
@@ -231,37 +215,6 @@ export const libraryPageQuery = graphql`
     talkQuery: allMdx(
       filter: {
         frontmatter: { type: { eq: "talk" }, published: { ne: false } }
-      }
-      sort: { order: DESC, fields: frontmatter___updated }
-      limit: 45
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            title
-            slug
-            updated
-          }
-          parent {
-            ... on File {
-              sourceInstanceName
-            }
-          }
-          frontmatter {
-            title
-            updated(formatString: "MMMM DD, YYYY")
-            slug
-            author
-            redirectTo
-          }
-        }
-      }
-    }
-
-    podcastQuery: allMdx(
-      filter: {
-        frontmatter: { type: { eq: "podcast" }, published: { ne: false } }
       }
       sort: { order: DESC, fields: frontmatter___updated }
       limit: 45
