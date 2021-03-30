@@ -19,17 +19,17 @@ export const BasicImage = props => {
         },
         display: 'block',
         gridColumn: '1/4',
-        margin: props.margin || '2em auto 1.2em',
+        margin: props.margin || '2rem auto 1.2rem',
         borderRadius: '6px',
       })} src={props.src} alt={props.alt} />
       {props.showalt && <p css={css({
-        fontSize: '0.8em',
+        fontSize: '0.8rem',
         textAlign: 'center',
         maxWidth: '660px',
         opacity: '85%',
-        lineHeight: '1.4em',
-        marginBottom: '1em',
-        marginTop: '1em'
+        lineHeight: '1.4rem',
+        marginBottom: '1rem',
+        marginTop: '1rem'
       })}>{props.alt}</p>}
       </div>
       )
@@ -47,7 +47,7 @@ export const TwoCol = props => {
         alignItems: props.alignItems || 'center',
         justifyContent: 'center',
         maxWidth: props.maxwidth || '100vw',
-        margin: props.margin || '1em auto',
+        margin: props.margin || '1rem auto',
         [bpMaxSM]: {
           flexDirection: 'column'
         },
@@ -55,13 +55,13 @@ export const TwoCol = props => {
           minWidth: '30%',
           [bpMinLG]: {
               maxWidth: '500px',
-              padding: '0 1em',
+              padding: '0 1rem',
           },
         },
         div: {
           maxWidth: props.divwidth || '500px',
           minWidth: '30%',
-          padding: props.divpadding || '0 0.2em',
+          padding: props.divpadding || '0 0.2rem',
         },
         img: {
           padding: props.imgpadding,
@@ -106,7 +106,7 @@ export const ImageFrame = props => {
     <div
       css={css({
         gridColumn: '1/4',
-        margin: props.margin || '1.6em auto',
+        margin: props.margin || '1.6rem auto',
         img: {
           width: props.width || '100%',
           maxWidth: '100%',
@@ -134,7 +134,7 @@ export const ImageGrid = props => {
           display: 'flex',
           flexWrap: 'wrap',
           width: '100%',
-          margin: '1.6em auto 1em',
+          margin: '1.6rem auto 1rem',
           maxWidth: '880px',
           flexDirection: 'row',
           [bpMaxSM]: {
@@ -176,16 +176,16 @@ export const FullWidth = props => {
         right: 50%;
         width: 100vw;
         grid-column: 1 / 4;
-        padding: ${props.padding ? props.padding : '2em'};
+        padding: ${props.padding ? props.padding : '2rem'};
         background: ${props.bgcolour};
         height: (100vw * 1.2);
         .innerDiv {
           display: flex;
           align-content: center;
           justify-content: center;
-          padding: ${props.padding ? props.padding : '1em 0 0em'};
+          padding: ${props.padding ? props.padding : '1rem 0 0rem'};
           img {
-            padding: ${props.imgpadding ? props.imgpadding : '1em'};
+            padding: ${props.imgpadding ? props.imgpadding : '1rem'};
           }
         }
       `}
@@ -207,14 +207,14 @@ export const FullWidth2Col = props => {
         right: 50%;
         width: 100vw;
         height: (100vw * 1.2);
-        padding: 2em 0;
+        padding: 2rem 0;
         background: ${props.bgcolour};
         .innerDiv {
-          padding: 2em 0 1em;
+          padding: 2rem 0 1rem;
           max-width: 80%;
           margin: 0 auto;
           display: grid;
-          grid-gap: 1em;
+          grid-gap: 1rem;
           grid-template-columns: 2fr 1fr;
           ${bpMaxSM} {
             grid-template-columns: 1fr;
@@ -225,10 +225,10 @@ export const FullWidth2Col = props => {
             }
           }
           p {
-            padding-top: 2em;
+            padding-top: 2rem;
             color: white;
-            line-height: 1.6em;
-            padding-left: 2em;
+            line-height: 1.6rem;
+            padding-left: 2rem;
           }
         }
       `}
@@ -240,13 +240,23 @@ export const FullWidth2Col = props => {
 
 export const FullWidthImage = props => {
   return (
+    <div css={css({
+      gridColumn: '1/4', justifyContent: 'center', margin: props.margin || '2rem auto 1rem'})}>
     <img
     css={css({
-        width: props.width || '100%',
-        gridColumn: '1/4', justifyContent: 'center',
-        margin: props.margin || '1em auto'})}
+        width: props.width || '100%', margin: 0})}
       alt={props.alt}
       src={props.src}
     />
+      {props.showalt && <p css={css({
+        fontSize: '0.8em',
+        textAlign: 'center',
+        maxWidth: '660px',
+        opacity: '85%',
+        lineHeight: '1.4rem',
+        marginBottom: '1rem',
+        marginTop: '1rem'
+      })}>{props.alt}</p>}
+    </div>
   )
 }
