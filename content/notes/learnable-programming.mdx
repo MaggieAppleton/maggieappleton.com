@@ -1,25 +1,23 @@
 ---
-title: 'Learnable Programming Patterns'
+title: 'Learnable, Visual Programming Patterns'
 slug: learnable-programming
 startDate: 2021-01-12
-updated: 2021-03-30
+updated: 2021-04-02
 published: true
 type: ['note']
-topics: ['Visual Explanation', 'Web Development', 'JavaScript']
+topics: ['Visual Explanation', 'Web Development', 'JavaScript', 'Collaborative Learning']
 growthStage: 'Budding'
 ---
 
 <IntroParagraph>
     
-Bret Victor coined the term <b>Learnable Programming</b> in his <a href="http://worrydream.com/LearnableProgramming">canonical essay</a> lamenting the current state of programming education.  
+Bret Victor coined the term <b>Learnable Programming</b> in his <a href="http://worrydream.com/LearnableProgramming">canonical essay</a> lamenting the current state of programming education. Victor has a few concerns with the way most of us learn to code. Mainly that the learning environments we drop people into are poorly designed.
 
 </IntroParagraph>
 
-Bret has a few concerns with the way most of us learn to code. Mainly that the learning environments we drop people into are poorly designed.
-
 These environments tend to look something like this:
 
-<TwoCol imgmargin="1em auto">
+<TwoCol imgmargin="1em auto" divwidth="590px">
 
 <BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174726/maggieappleton.com/notes/learnable-programming/learnprog_1_nsfflv.png" alt="repl.it slpit screen interface" />
 <BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_4_dk82q8.png" alt="codesandbox split screen interface" />
@@ -28,27 +26,24 @@ These environments tend to look something like this:
 
 </TwoCol>
 
-They're your standard column-based "live coding" interfaces popular across the industry. You write code into one section and hopefully get the output you expected in another. Synatx is abstracted away from the elements it affects. The structures and properties of the language itself are no where to be seen. State is invisible. 
+They're your standard column-based "live coding" interfaces popular across the industry. You write code into one section, and hopefully get the output you expected in another. Syntax is abstracted away from the elements it affects.
 
 ---
 
 It's easy to see why these linear, text-based interfaces _seem_ like the best approach. They look identical to the standard interfaces the whole development industry uses to programme.
 
+All development takes place in an isolated text window. If you type the correct sequence of words and symbols into that editor, the correct series of events happens somewhere out of view. Functions run in an unseen JavaScript engine, interface elements appear in the browser, and somewhere a value changes in a distant database. You only get the end result. To see anything happening in the middle, you have to `console.log` out data at each step of the way. The industry has accepted flying blind as standard operating procedure.
+
 <FullWidthImage width="880px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_2_ieudi6.png" alt="The interface of VS Code – one of the most popular environments for professional programming" showalt />
 
-We're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach.
+So we're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach. But Victor isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
 
-But Victor isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
+He's pointing out that the standard text-based, disembodied, non-graphical interfaces we all put up with are unintuitive to humans who live in a highly visual, spatial, embodied world. While most of our modern user interfaces have graduated to a graphical, 3D space-based system, programming is staunchly attached to the linear text paradigm. 
 
-He's pointing out that the standard text-based, disembodied, non-graphical interfaces we all put up with are unintuitive to humans who live in a highly visual, spatial, embodied world.
+There's good reason for this. While many people have tried to develop [visual programming languages](https://en.wikipedia.org/wiki/Visual_programming_language), they've largely failed to gain traction. There's lots of [well-reasoned](https://www.outsystems.com/blog/posts/visual-programming-language/) [arguments](https://dzone.com/articles/visual-programming-why-its-a-bad-idea) [explaining](https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html) why it's so difficult to design visual systems complex and extensible enough to programme in, so I won't repeat them here.
+The fact is that our current visual languages aren't sophisticated enough to do the job, and  we're a long way from any system that could.
 
-
-
-While most of our modern user interfaces have graduated to a graphical, 3D space-based system, programming is staunchly attached to the linear text paradigm. 
-
-There's good reason for this. While many people have tried to develop [visual programming languages](https://en.wikipedia.org/wiki/Visual_programming_language), they've largely failed to gain traction. There's lots of [well-reasoned](https://www.outsystems.com/blog/posts/visual-programming-language/) [arguments](https://dzone.com/articles/visual-programming-why-its-a-bad-idea) [explaining](https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html) why it's so difficult to design visual systems complex and extensible enough to programme in. We might get there someday, but our current visual languages just aren't sophisticated enough to do the job.
-
-While visual programming isn't great for the scale of complexity professional programmers deal with, it's _ideal_ for people who are learning to code. When the goal is simply to explain what's happening under the hood, creating graphical representations is the best way to help people build clear mental models.
+While visual programming isn't great for the scale of complexity professional programmers deal with, it's _ideal_ for people who are learning to code. When we simply need to explain what's happening under the hood, graphical representations are the best way to help people build clear mental models.
 
 ---
 
@@ -61,27 +56,30 @@ Victor outlined a set of principles he believed all learnable programming enviro
 4. **Create by reacting** to how the programme behaves
 5. **Create by abstracting** from the simple to the complex
 
-I won't expand on these too much as Bret elaborates on them in the [original piece](http://worrydream.com/#!/LearnableProgramming) and provides plenty of tangible examples of how they might look in an interface. 
+Most of these are explicitly **visual**. We need to make what's happening in the programme _readable_ through visual representations of each syntax element, variable, and change of state over time. As Victor puts it:
 
-Victor's principles amount to a kind of [[Pattern Language]] - they're a set of design rules that deal with the way a system works, rather than worrying about the implementation details.
+> "People understand what they can see. If a programmer cannot see what a program is doing, she can't understand it."
 
-Since Bret wrote his piece in 2012, the world of programming education has stepped up its visual game. It's no longer just two column, text-based execution contexts. We're now swimming in interactive visual environments and gamified educational platforms.
+I won't expand on these too much as Victor elaborates on them in the [original piece](http://worrydream.com/#!/LearnableProgramming) and provides plenty of tangible examples of how they might look in an interface. 
 
-I began researching the field to see how many of them were putting Victor's principles into practice. The examples I looked at ranged from full-on illustrated games to lightly animated sequences of text. While none of them fulfill  _all_ of Bret's programmable dreams, there are plenty headed in the right direction.
+Victor's principles amount to a kind of [[Pattern Language]] - they're a set of design rules that define how a system should work.
+
+Since Victor wrote his piece in 2012, the world of programming education has stepped up its visual game. It's no longer just two column, text-based execution contexts. We're now swimming in interactive visual environments and gamified educational platforms.
+
+I began researching the field to see how many of them were putting Victor's principles into practice. The examples I looked at ranged from full-on illustrated games to lightly animated sequences of text. As I explored, I started to notice design patterns beyond the principles Victor outlined.
+
+While Victor defined a set of ideals for a hypothetical learning platform, I became more interested in finding patterns in what already exists. While we're a long way from achieving the '_ideal_' system, there's plenty of good design happening here and now.
 
 ---
 
-## A Pattern Language for Visual Programming
+## A Pattern Language for Learnable, Visual Programming
 
-As I began exploring these visual programming platforms, I started to notice patterns of my own. While Victor defined a set of idealised principles for a non-existent system, I became more interested in finding emergent patterns in systems that already exist.
-
-Here is my working collection of design patterns I've noticed across the space, with specific examples of each one:
 
 
 #### 1. Location and Destination
 The learner should always know where they are on the learning path, and what their destination is.
 
-This one isn't specific to visual programming – it's a well-established principle of UX design that people need to know where in the interface they are right now, and where they're headed.
+This one isn't specific to visual programming – it's a well-established principle of UX design that people need to know where they are, where they've been, and where they're headed.
 
 Making this clear with a visual progress bar is common on learning platforms when we're trying to coax people through the long, hard journey of learning a new programming language or framework. It helps keep them motivated and feel a sense of regular progress. 
 
