@@ -9,7 +9,9 @@ export const Img = styled.img`
 
 export const BasicImage = props => {
   return (
-    <div>
+    <div css={css({
+      gridColumn: '1/4',
+    })}>
     <img
       css={css({
         width: props.width || '100%',
