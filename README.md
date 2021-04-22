@@ -1,6 +1,6 @@
 # Maggie's Internet Space
 
-This repo is public as an example of how you might build a digital garden of your own, but it's not intended to be copied wholesale. It's not a template, and the code isn't designed to be adaptable or modular.
+**This repo is public as an example of how you might build a digital garden of your own, but it's not intended to be copied wholesale. It's not a template, and the code isn't designed to be adaptable or modular.**
 
 Digital gardens should be weird, personal, peculiar creations. The way I've decided to design mine won't fit for your needs, wants, and aesthetic preferences.
 
