@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 const PartName = props => {
   return (
     <Link to={props.to}>
+    {props.focus ? <span>You are here</span> : null}
       <p
         css={css({
           color: '#464E55',
@@ -20,7 +21,6 @@ const PartName = props => {
       >
         {props.partName}
       </p>
-      {props.focus ? <span>You are here</span> : null}
     </Link>
   )
 }
@@ -39,7 +39,7 @@ const MultipartIntro = () => {
         padding: '0.8em 0',
         transition: '0.6s',
         margin: '0 auto',
-        marginBottom: '4em',
+        marginBottom: '1rem',
         '.focus': {
           padding: '14px',
           alignItems: 'center',
@@ -59,6 +59,7 @@ const MultipartIntro = () => {
           padding: '14px',
           alignItems: 'center',
           transition: '0.6s',
+          marginBottom: '2.2rem',
         },
         '.linked': {
           ':hover': {
@@ -99,11 +100,11 @@ const MultipartIntro = () => {
     >
       <div className="focus">
         <span>Part 1</span>
-        <PartName focus partName="A Metaphorical Introduction" />
+        <PartName partName="A Metaphorical Introduction" />
       </div>
-      <div className="outer linked">
+      <div className="outer">
         <span>Part 2</span>
-        <PartName
+        <PartName focus
           partName="Cultural and Linguistic Research"
         />
       </div>
