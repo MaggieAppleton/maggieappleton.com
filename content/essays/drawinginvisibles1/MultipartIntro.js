@@ -100,11 +100,11 @@ const MultipartIntro = () => {
     >
       <div className="focus">
         <span>Part 1</span>
-        <PartName partName="A Metaphorical Introduction" />
+        <PartName focus partName="A Metaphorical Introduction" />
       </div>
       <div className="outer">
         <span>Part 2</span>
-        <PartName focus
+        <PartName 
           partName="Cultural and Linguistic Research"
         />
       </div>
