@@ -76,12 +76,9 @@ const TipLink = ({ noTip, children, href, ...other }) => {
         <LinkTooltip internal href={href}{...other}>
         <span css={css`
           text-decoration: none;
-          line-height: 1;
           position: relative;
           z-index: 0;
           display: inline-block;
-          padding: 3px 0 8px 3px;
-          top: -2px;
           overflow: hidden;
           color: ${theme.colors.orange};
           vertical-align: bottom;
