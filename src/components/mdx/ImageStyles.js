@@ -30,7 +30,7 @@ export const BasicImage = props => {
         maxWidth: '660px',
         opacity: '85%',
         lineHeight: '1.4rem',
-        marginBottom: '1rem',
+        marginBottom: '0.5rem',
         marginTop: '1rem'
       })}>{props.alt}</p>}
       </div>
@@ -123,7 +123,7 @@ export const ImageFrame = props => {
         },
       })}
     >
-      <BasicImage width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
+      <BasicImage showalt={props.showalt} width={props.width} maxwidth={props.maxwidth} alt={props.alt} src={props.src} />
     </div>
   )
 }
