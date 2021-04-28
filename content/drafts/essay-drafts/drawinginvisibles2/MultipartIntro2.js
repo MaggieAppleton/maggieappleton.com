@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinMD } from '../../../src/lib/breakpoints'
+import { bpMinMD } from '../../../../src/lib/breakpoints'
 import { Link } from 'gatsby'
 
 const PartName = props => {
