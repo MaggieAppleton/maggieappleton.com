@@ -11,7 +11,7 @@ import TipLink from './TipLink'
 import NoteSidebar from './NoteSidebar'
 import SimpleCard from '../SimpleCard'
 import LinkCard from './LinkCard'
-import { Spacer } from './Spacer'
+import { Spacer, Halfspacer } from './Spacer'
 import { ComingSoon } from './ComingSoon'
 import { ReadingContext } from './ReadingContext'
 import { Draft } from './Draft'
@@ -107,6 +107,7 @@ export default {
   SimpleCard: props => <SimpleCard {...props} />,
   SmallCenter: props => <SmallCenter {...props} />,
   Spacer: props => <Spacer {...props} />,
+  Halfspacer: props => <Halfspacer {...props} />,
   Subtext: props => <Subtext {...props} />,
   ThreeImageGrid: props => <ThreeImageGrid {...props} />,
   Timeline: props => <Timeline {...props} />,
