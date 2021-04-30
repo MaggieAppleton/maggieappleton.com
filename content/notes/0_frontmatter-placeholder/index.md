@@ -15,4 +15,4 @@ redirects:
   - '/invisible-post-423123'
 ---
 
-This temporarily exists to populate GraphQL fields. Will be removed soon.
+This exists to populate GraphQL fields.
