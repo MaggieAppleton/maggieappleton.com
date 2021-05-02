@@ -132,7 +132,7 @@ export const ImageGrid = props => {
   return (
       <div
         css={css({
-          gridColumn: '1/4',
+          gridColumn: '1 / 4 !important',
           display: 'flex',
           flexWrap: 'wrap',
           width: '100%',
@@ -177,7 +177,7 @@ export const FullWidth = props => {
         position: relative;
         right: 50%;
         width: 100vw;
-        grid-column: 1 / 4;
+        grid-column: 1 / 4 !important;
         padding: ${props.padding ? props.padding : '2rem'};
         background: ${props.bgcolour};
         height: (100vw * 1.2);
@@ -243,7 +243,7 @@ export const FullWidth2Col = props => {
 export const FullWidthImage = props => {
   return (
     <div css={css({
-      gridColumn: '1/4', justifyContent: 'center', margin: props.margin || '2rem auto 1rem'})}>
+      gridColumn: '1/4 !important', justifyContent: 'center', margin: props.margin || '2rem auto 1rem'})}>
     <img
     css={css({
         width: props.width || '100%', margin: 0})}
