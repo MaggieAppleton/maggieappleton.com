@@ -5,7 +5,7 @@ import { gsap }from 'gsap'
 import Subtitle from '../Subtitle'
 import { Paragraph } from '../Paragraph'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { bpMinMD, bpMinSM, bpMaxMD } from '../../../lib/breakpoints'
+import { bpMaxMD } from '../../../lib/breakpoints'
 
 if (typeof window !== `undefined`) {
   gsap.registerPlugin(ScrollTrigger)

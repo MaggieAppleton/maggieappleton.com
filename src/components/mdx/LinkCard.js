@@ -1,7 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from '../Theming'
-import { fonts } from '../../lib/typography'
 
 const LinkCard = ({ title, link, author, children, ...props }) => {
   const theme = useTheme()

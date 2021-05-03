@@ -1,7 +1,6 @@
 import React from 'react'
 import { fonts } from '../lib/typography'
 import { rhythm } from '../lib/typography'
-import Img from 'gatsby-image'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 import { bpMaxMD, bpMaxSM } from '../lib/breakpoints'
