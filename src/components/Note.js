@@ -1,7 +1,6 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { css } from '@emotion/core'
-import { rhythm, fonts } from '../lib/typography'
 import { darken } from 'polished'
 import { bpMaxSM } from '../lib/breakpoints'
 import config from '../../config/website'
@@ -11,7 +10,6 @@ import Layout from './Layout'
 import Share from './Share'
 import { useTheme } from './Theming'
 import get from 'lodash/get'
-import HasMounted from './HasMounted'
 
 export default function Note({ site, note, referenceBlock }) {
   const mdx = get(note, 'childMdx')
