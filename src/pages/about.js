@@ -202,7 +202,7 @@ const theme = useTheme()
 
             <div>
               <h3>Podcast Chats</h3>
-          {podcastData.map((d, i) => {
+          {podcastData.map((d) => {
             return (
               <div className="podtalkItem">
                 <a href={d.url}><p>{d.episodeName}</p></a>

@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import { css } from '@emotion/core'
-import { Link } from 'gatsby'
 
 export default ({ data: { site } }) => (
   <Layout site={site} noFooter>

@@ -1,8 +1,6 @@
 import React from 'react'
 import Layout from 'components/Layout'
 import { graphql } from 'gatsby'
-import { css } from '@emotion/core'
-import { bpMaxSM } from '../lib/breakpoints'
 import Container from 'components/Container'
 
 const StartPage = ({ data: { site } }) => {

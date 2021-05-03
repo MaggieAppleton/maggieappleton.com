@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from 'components/Layout'
-import { lighten, darken } from 'polished'
+import { darken } from 'polished'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import { useTheme } from 'components/Theming'
@@ -269,7 +269,7 @@ export default function Index({
                   css={css`
                     font-family: ${fonts.walsheimLight};
                   `}
-                  to={note.childMarkdownRemark.frontmatter.slug}
+                  to={note.childMdx.frontmatter.slug}
                   aria-label={`View ${note.title}`}
                 >
                   <SimpleCard
@@ -324,10 +324,10 @@ export default function Index({
                     <h4>{note.title}</h4>
                     <div className="metadata">
                       <h6 className="updated">
-                        {note.childMarkdownRemark.frontmatter.updated}
+                        {note.childMdx.frontmatter.updated}
                       </h6>
                       <span>
-                        {note.childMarkdownRemark.frontmatter.growthStage ===
+                        {note.childMdx.frontmatter.growthStage ===
                         'Seedling' ? (
                           <h6 className="growthStage">
                             {' '}
@@ -337,7 +337,7 @@ export default function Index({
                             </span>
                           </h6>
                         ) : null}
-                        {note.childMarkdownRemark.frontmatter.growthStage ===
+                        {note.childMdx.frontmatter.growthStage ===
                         'Budding' ? (
                           <h6 className="growthStage">
                             {' '}
@@ -347,7 +347,7 @@ export default function Index({
                             </span>{' '}
                           </h6>
                         ) : null}
-                        {note.childMarkdownRemark.frontmatter.growthStage ===
+                        {note.childMdx.frontmatter.growthStage ===
                         'Evergreen' ? (
                           <h6 className="growthStage">
                             {' '}
@@ -532,14 +532,14 @@ export const pageQuery = graphql`
     }
 
     notesQuery: allBrainNote(
-      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___updated }
+      sort: { order: DESC, fields: childMdx___frontmatter___updated }
       limit: 6
     ) {
       edges {
         node {
           id
           title
-          childMarkdownRemark {
+          childMdx {
             frontmatter {
               slug
               growthStage
