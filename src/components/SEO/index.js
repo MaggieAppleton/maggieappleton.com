@@ -34,7 +34,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isNotePost }) => (
     `}
     render={({ site: { siteMetadata: seo } }) => {
       const postMeta =
-        frontmatter || postData.childMarkdownRemark.frontmatter || {}
+        frontmatter || postData.childMdx.frontmatter || {}
       const title = isNotePost ? postMeta.title : config.siteTitle
       const description = postMeta.description || seo.description
       const image = postImage ? `${seo.canonicalUrl}${postImage}` : seo.image
@@ -87,7 +87,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isNotePost }) => (
 SEO.propTypes = {
   isNotePost: PropTypes.bool,
   postData: PropTypes.shape({
-    childMarkdownRemark: PropTypes.shape({
+    childMdx: PropTypes.shape({
       frontmatter: PropTypes.any,
       excerpt: PropTypes.any,
     }),
@@ -97,7 +97,7 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   isNotePost: false,
-  postData: { childMarkdownRemark: {} },
+  postData: { childMdx: {} },
   postImage: null,
 }
 

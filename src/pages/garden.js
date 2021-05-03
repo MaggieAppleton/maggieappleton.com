@@ -58,9 +58,9 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
 
     const matchesGrowth = includes(
       activeFilters,
-      note.childMarkdownRemark.frontmatter.growthStage,
+      note.childMdx.frontmatter.growthStage,
     )
-    const matchesTopic = some(note.childMarkdownRemark.frontmatter.topics, t =>
+    const matchesTopic = some(note.childMdx.frontmatter.topics, t =>
       includes(activeFilters, t),
     )
 
@@ -226,7 +226,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
           <div className="notesGrid">
             {displayedNotes.map(({ node: note }) => (
               <Link
-                to={`/${note.childMarkdownRemark.frontmatter.slug}`}
+                to={`/${note.childMdx.frontmatter.slug}`}
                 aria-label={`View ${note.title}`}
               >
                 <SimpleCard
@@ -279,10 +279,10 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                   <h4>{note.title}</h4>
                   <div className="metadata">
                     <h6 className="updated">
-                       {note.childMarkdownRemark.frontmatter.updated}
+                       {note.childMdx.frontmatter.updated}
                     </h6>
                     <span>
-                      {note.childMarkdownRemark.frontmatter.growthStage ===
+                      {note.childMdx.frontmatter.growthStage ===
                       'Seedling' ? (
                         <h6 className="growthStage">
                           {' '}
@@ -292,7 +292,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                           </span>
                         </h6>
                       ) : null}
-                      {note.childMarkdownRemark.frontmatter.growthStage ===
+                      {note.childMdx.frontmatter.growthStage ===
                       'Budding' ? (
                         <h6 className="growthStage">
                           {' '}
@@ -302,7 +302,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                           </span>{' '}
                         </h6>
                       ) : null}
-                      {note.childMarkdownRemark.frontmatter.growthStage ===
+                      {note.childMdx.frontmatter.growthStage ===
                       'Evergreen' ? (
                         <h6 className="growthStage">
                           {' '}
@@ -336,13 +336,13 @@ export const GardenPageQuery = graphql`
     }
 
     notesQuery: allBrainNote(
-      sort: { order: DESC, fields: childMarkdownRemark___frontmatter___updated }
+      sort: { order: DESC, fields: childMdx___frontmatter___updated }
     ) {
       edges {
         node {
           id
           title
-          childMarkdownRemark {
+          childMdx {
             frontmatter {
               growthStage
               topics
