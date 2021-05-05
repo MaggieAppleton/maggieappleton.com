@@ -9,12 +9,13 @@ const PreviousNext = props => {
   return (
     <div
       css={css`
-      margin: auto;
+      width: 660px;
+        margin: auto;
         display: flex;
         justify-content: space-between;
         margin-bottom: 2em;
         margin-top: 3.2em;
-        max-width: 660px;
+        max-width: 100%;
         .linkContainer {
           position: relative;
           display: flex;
