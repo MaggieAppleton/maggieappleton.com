@@ -10,8 +10,7 @@ const theme = useTheme()
 
   return (
     <>
-      <a style={{
-            gridColumn: '1/4', margin: '0 auto', maxWidth: '840px'}} href={url} target="_blank" rel="noopener noreferrer">
+      <a href={url} target="_blank" rel="noopener noreferrer">
         <div
           css={css({
             '.gatsby-image-wrapper': {
@@ -42,20 +41,20 @@ const theme = useTheme()
               alignSelf: 'start',
               opacity: '90%',
               h1: {
-                fontSize: '1.5em',
+                fontSize: '1.5rem',
                 maxWidth: '450px',
                 marginBottom: '16px',
-                lineHeight: '1.2em',
-                marginTop: '0.4em',
+                lineHeight: '1.2rem',
+                marginTop: '0.4rem',
               },
               h5: {
-                fontSize: '0.9em',
+                fontSize: '0.9rem',
                 textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                lineHeight: '1.3em',
+                letterSpacing: '0.1rem',
+                lineHeight: '1.6rem',
               },
               img: {
-                maxWidth: '35%',
+                maxWidth: '30%',
                 borderRadius: '4px',
                 [bpMaxSM]: {
                   maxWidth: '100%',
@@ -63,7 +62,7 @@ const theme = useTheme()
                 }
               },
               '.dataBlock': {
-                paddingLeft: '2em',
+                paddingLeft: '1.8rem',
                 alignSelf: 'center',
                 maxWidth: '70%',
                 [bpMaxSM]: {
@@ -72,8 +71,9 @@ const theme = useTheme()
                 }
               },
               '.description': {
-                lineHeight: '1.4em',
-                fontSize: '1em',
+                lineHeight: '140%',
+                fontSize: '95%',
+                marginTop: '0.4rem'
               },
               ':hover': {
                 transition: 'all 0.4s ease-in-out',
