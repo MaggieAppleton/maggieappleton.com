@@ -24,6 +24,7 @@ const theme = useTheme()
               },
             },
             transition: 'all 350ms ease',
+            margin: '0.8rem 0'
           })}
           {...props}
         >
@@ -33,7 +34,6 @@ const theme = useTheme()
                 flexDirection: 'column',
                 justifyContent: 'center',
               },
-              padding: '8px',
               color: '#464E55',
               display: 'flex',
               flexDirection: 'row',
@@ -44,14 +44,15 @@ const theme = useTheme()
                 fontSize: '1.5rem',
                 maxWidth: '450px',
                 marginBottom: '16px',
-                lineHeight: '1.2rem',
+                lineHeight: '1.7rem',
                 marginTop: '0.4rem',
               },
               h5: {
                 fontSize: '0.9rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1rem',
-                lineHeight: '1.6rem',
+                lineHeight: '1.4rem',
+                marginBottom: '0.4rem'
               },
               img: {
                 maxWidth: '30%',
