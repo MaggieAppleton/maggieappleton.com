@@ -4,7 +4,7 @@ import { fonts, rhythm } from '../../lib/typography'
 export const Paragraph = styled.p`
   text-align: left;
   max-width: 660px;
-  min-width: 360px;
+  min-width: 290px;
   margin: 0;
   line-height: 1.8em;
   fontSize: ${rhythm(0.8)},

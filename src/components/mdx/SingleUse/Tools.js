@@ -50,8 +50,8 @@ const largeImages = css`
 
   }
   h5 {
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 320px;
+    min-width: 320px;
   }
 `
 
