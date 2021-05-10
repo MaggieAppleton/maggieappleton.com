@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinMD, bpMinLG, bpMaxSM } from '../../lib/breakpoints'
+import { bpMinLG, bpMaxSM } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
 export const Img = styled.img`
