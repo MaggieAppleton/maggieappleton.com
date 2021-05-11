@@ -1,6 +1,6 @@
 # Maggie's Internet Space
 
-**This repo is public as an example of how you might build a digital garden of your own, but it's not intended to be copied wholesale. It's not a template, and the code isn't designed to be adaptable or modular.**
+**This repo is public as an example of how you might build a digital garden of your own, but it's not intended to be copied wholesale. The code isn't designed to be adaptable or modular and certainly isn't pretty ;)**
 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
