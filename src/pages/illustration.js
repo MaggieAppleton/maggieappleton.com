@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 import Container from 'components/Container'
 import { graphql } from 'gatsby'
 import IllustrationCard from '../components/IllustrationCard'
+import {bpMaxSM} from '../lib/breakpoints'
 
 const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
   return (
@@ -22,8 +23,11 @@ const IllustrationPage = ({ data: { site, illustrationQuery } }) => {
           .illustrationGrid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 1em;
-            margin-top: 3em;
+            grid-gap: 1rem;
+            margin-top: 3rem;
+            ${bpMaxSM} {
+            grid-template-columns: 1fr;
+            }
           }
         `}
       >
