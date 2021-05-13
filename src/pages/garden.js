@@ -156,10 +156,9 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     ':hover': {
                       color: includes(activeFilters, filter)
                         ? theme.colors.white
-                        : theme.colors.darkGrey,
+                        : darken(0.2, theme.colors.lightGreen),
                       cursor: 'pointer',
-                      background: lighten(0.3, theme.colors.lightGreen),
-                      color: darken(0.2, theme.colors.lightGreen),
+                      background: lighten(0.3, theme.colors.lightGreen)
                     },
 
                     background: includes(activeFilters, filter)

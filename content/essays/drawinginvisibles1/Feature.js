@@ -14,6 +14,9 @@ const Feature = props => {
         flexWrap: 'wrap',
         flexDirection: 'row',
         justifyContent: 'center',
+        div: {
+          marginBottom: '1rem'
+        },
         img: {
           maxWidth: '500px',
           borderRadius: '5px',

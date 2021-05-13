@@ -135,26 +135,23 @@ export const ImageGrid = props => {
           gridColumn: '1 / 4 !important',
           display: 'flex',
           flexWrap: 'wrap',
+          justifyContent: 'center',
           width: '100%',
           margin: '1.6rem auto 1rem',
-          maxWidth: '880px',
+          maxWidth: '1000px',
           flexDirection: 'row',
           [bpMaxSM]: {
             flexDirection: 'column',
             img: {
-              margin: '1% auto',
+              margin: '0 0.3rem',
+              maxWidth: '650px',
             }
           },
           img: {
-            maxWidth: '48%',
-            margin: '1%',
+            maxWidth: '450px',
+            margin: '0 0.3rem',
             height: 'auto',
-            gridAutoFlow: 'row',
             justifySelf: 'center',
-            gridColumn: 'auto'
-          },
-          a: {
-            gridColumn: 'auto'
           },
           p: {
             margin: '0 auto',

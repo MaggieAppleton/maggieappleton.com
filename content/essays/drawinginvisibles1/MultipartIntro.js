@@ -38,10 +38,10 @@ const MultipartIntro = () => {
         padding: '0.8em 0',
         transition: '0.6s',
         margin: '0 auto',
-        marginBottom: '4em',
         '.focus': {
           padding: '14px',
           alignItems: 'center',
+          marginBottom: '3rem',
           transition: '0.6s',
           borderTop: '2px solid #7B44BC',
           p: {
@@ -56,6 +56,7 @@ const MultipartIntro = () => {
         '.outer': {
           borderTop: '1px solid #92A3BB',
           padding: '14px',
+          marginBottom: '3rem',
           alignItems: 'center',
           transition: '0.6s',
         },
