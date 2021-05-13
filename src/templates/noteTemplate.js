@@ -108,20 +108,20 @@ export default function Note({
   )
 }
 
-export const pageQuery = graphql`
-  query($id: String!) {
-    site {
-      ...site
-    }
-    mdx(fields: { id: { eq: $id } }) {
-      frontmatter {
-        title
-        updated(formatString: "MMMM DD, YYYY")
-        slug
-        topics
-        growthStage
-      }
-      body
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query($id: String!) {
+//     site {
+//       ...site
+//     }
+//     mdx(fields: { id: { eq: $id } }) {
+//       frontmatter {
+//         title
+//         updated(formatString: "MMMM DD, YYYY")
+//         slug
+//         topics
+//         growthStage
+//       }
+//       body
+//     }
+//   }
+// `
