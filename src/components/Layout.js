@@ -151,7 +151,8 @@ const getGlobalStyles = theme => {
       }
     }
     pre {
-      margin: 0.6em auto;
+      margin-top: 0.6rem;
+      margin-bottom: 0.6rem;
       overflow-x: auto;
       border-radius: 4px;
       clear: both;

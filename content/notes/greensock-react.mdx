@@ -26,6 +26,8 @@ The issue with combining these two libraries is that React acts as a DOM interlo
 
 React builds it's own internal "tree" of DOM nodes based off our code, and only updates the actual DOM as needed (a concept previously known as the [[React Virtual DOM]]) <Footnote idName={1}>The React team has gone off the term of the _virtual DOM_ and prefer to talk about the _render tree_. Potatoes, potataos. For more on how the virtual DOM works, I have an [illustrated guide](/react-vdom)</Footnote>
 
+<Halfspacer />
+
 <FullWidthImage alt="A diagram of React generating all the DOM nodes for us" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_100,w_1400/v1600973172/maggieappleton.com/notes/gsap/react-greensock-2.png" />
 
 Meanwhile, the GreenSock library usually works by directly animating our DOM elements. Perhaps you can sense the tension in the room...

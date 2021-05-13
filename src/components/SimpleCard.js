@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import { useTheme } from './Theming'
+import {bpMaxSM} from '../lib/breakpoints'
 
 const SimpleCard = props => {
   const theme = useTheme()
@@ -14,17 +15,20 @@ const SimpleCard = props => {
         transition: props.hover
           ? 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;'
           : null,
-        margin: '0.4em auto 0.6em',
+        margin: '0.4rem auto 0.6rem',
         clear: 'both',
-        marginBottom: props.marginbottom ? props.marginbottom : '1em',
-        marginTop: props.margintop ? props.margintop : '1em',
-        padding: props.padding ? props.padding : '0.6em 2em 1.6em',
+        marginBottom: props.marginbottom ? props.marginbottom : '1rem',
+        marginTop: props.margintop ? props.margintop : '1rem',
+        padding: props.padding ? props.padding : '0.6rem 2rem 1.6rem',
+        [bpMaxSM]: {
+          padding: '0.8rem 1rem'
+        },
         width: props.width ? props.width : '100%',
         maxWidth: props.maxWidth ? props.maxWidth : '100%',
         borderRadius: '6px',
         'p, h1, h2, h3, h4, h5, h6, span, button': {
           textAlign: props.textcenter ? 'center' : null,
-          margin: props.center ? '0.8em auto 0' : null,
+          margin: props.center ? '0.8rem auto 0' : null,
         },
         boxShadow: props.hover
           ? '0px 1px 2px rgba(52, 61, 68, 0.1)'
