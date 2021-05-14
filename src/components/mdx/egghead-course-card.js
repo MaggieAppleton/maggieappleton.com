@@ -10,8 +10,7 @@ const EggheadCourseCard = props => {
         css={css({
           display: 'flex',
           justifySelf: 'center',
-          maxWidth: '100%',
-          width: '420px',
+          maxWidth: '420px',
           flexDirection: 'column',
           margin: '0.3em',
           [bpMaxMD]: {
