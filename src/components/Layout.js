@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { lighten, darken } from 'polished'
 import { Global, css } from '@emotion/core'
 import { ThemeProvider, themes } from './Theming'
-import { bpMaxSM } from '../lib/breakpoints'
+import { bpMaxSM, bpMaxMD } from '../lib/breakpoints'
 import Header from './Header/'
 import ResetStyles from '../lib/reset'
 import { fonts, rhythm } from '../lib/typography'
@@ -54,7 +54,7 @@ const getGlobalStyles = theme => {
       white-space: pre-line;
       overflow-wrap: break-word;
     }
-    ${bpMaxSM} {
+    ${bpMaxMD} {
       p,
       em,
       strong, code {
@@ -62,6 +62,22 @@ const getGlobalStyles = theme => {
       }
       h1 {
         font-size: ${rhythm(1.7)};
+      }
+      h2 {
+        font-size: ${rhythm(1.1)};
+      }
+      h3 {
+        font-size: ${rhythm(1)};
+      }
+    }
+    ${bpMaxSM} {
+      p,
+      em,
+      strong, code {
+        font-size: 90%;
+      }
+      h1 {
+        font-size: ${rhythm(1.4)};
       }
       h2 {
         font-size: ${rhythm(1)};
