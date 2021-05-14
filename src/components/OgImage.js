@@ -18,8 +18,8 @@ export default function OgImage() {
           >
             <div
               style={{
-                fontSize: '1.2rem',
-                color: '#5B7492',
+                fontSize: '1.4rem',
+                color: '#6E849D',
                 marginRight: '1rem',
               }}
             >
@@ -30,9 +30,9 @@ export default function OgImage() {
             </svg>
             <div
               style={{
-                fontSize: '1.2rem',
+                fontSize: '1.4rem',
                 fontStyle: 'italic',
-                color: '#5B7492',
+                color: '#6E849D',
                 marginLeft: '1rem',
                 fontFamily: fonts.regularItalic,
               }}
