@@ -1,5 +1,5 @@
 import React from 'react'
-import { bpMinMD } from '../../../src/lib/breakpoints'
+import { bpMaxSM, bpMaxMD } from '../../../src/lib/breakpoints'
 import { css } from '@emotion/core'
 
 const Feature = props => {
@@ -7,8 +7,6 @@ const Feature = props => {
     <span
       css={css({
         gridColumn: '1/4',
-        [bpMinMD]: {
-        },
         marginTop: '60px',
         display: 'flex',
         flexWrap: 'wrap',
@@ -18,8 +16,11 @@ const Feature = props => {
           marginBottom: '1rem'
         },
         img: {
-          maxWidth: '500px',
+          maxWidth: '450px',
           borderRadius: '5px',
+          [bpMaxSM]: {
+            maxWidth: '300px'
+        },
         },
         h5: {
           fontWeight: 'bold',
