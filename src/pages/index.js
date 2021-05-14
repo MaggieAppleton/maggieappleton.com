@@ -59,7 +59,7 @@ const Hero = () => {
               line-height: ${rhythm(1.1)};
           `}
         >
-          Creates visual explanations of technology, anthropology, and programming.
+          Creates visual explanations about design, anthropology, and programming.
         </h2>
         <h4
           css={css`
@@ -75,7 +75,7 @@ const Hero = () => {
             }
           `}
         >
-          Art Director, Designer & Anthropological All-Rounder at{' '}
+          Designer, illustrator, anthropologist, & mediocre developer at{' '}
           <a
             href="https://egghead.io"
             target="_blank"
