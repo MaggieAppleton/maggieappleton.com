@@ -52,13 +52,16 @@ const LinkTooltip = forwardRef((props, ref) => {
       css={css`
         padding: 0.2em;
         font-size: 0.75em;
+        word-break: break-all;
+        white-space: pre-wrap;
+        line-height: 1.3rem;
       `}
     >
       <span css={css`
           word-break: break-all;
-          word-wrap: break-word;
-          overflow: visible;
-          white-space: pre;
+          max-width: 100%;
+          white-space: pre-wrap;
+          line-height: 1.3rem;
         `} ref={ref}>{props.children}</span>
     </Tippy>
   )
@@ -71,7 +74,11 @@ const TipLink = ({ noTip, children, href, ...other }) => {
   if(internal){
     return (
       <GatsbyLink css={css`
-      display: inline-block;`}
+      display: inline-block;
+      word-break: break-all;
+     max-width: 100%;
+      white-space: pre-wrap;
+      line-height: 1.3rem;`}
       to={href}{...other}>
         <LinkTooltip internal href={href}{...other}>
         <span css={css`
@@ -115,6 +122,7 @@ const TipLink = ({ noTip, children, href, ...other }) => {
           color: `${theme.colors.blue}`,
           lineHeight: '1em',
           transition: 'all 0.5s ease',
+          maxWidth: '100%',
           ':hover, :focus': {
             cursor: 'pointer',
             color: `${theme.colors.orange}`,
