@@ -33,7 +33,7 @@ const LinkTooltip = forwardRef((props, ref) => {
           }
         `}
       >
-        <span ref={ref}>{props.children}</span>
+        <div ref={ref}>{props.children}</div>
       </Tippy>
     )
   }
@@ -52,17 +52,17 @@ const LinkTooltip = forwardRef((props, ref) => {
       css={css`
         padding: 0.2em;
         font-size: 0.75em;
-        word-break: break-all;
+        word-break: break-word;
         white-space: pre-wrap;
         line-height: 1.3rem;
       `}
     >
-      <span css={css`
-          word-break: break-all;
+      <div css={css`
+          word-break: break-word;
           max-width: 100%;
           white-space: pre-wrap;
           line-height: 1.3rem;
-        `} ref={ref}>{props.children}</span>
+        `} ref={ref}>{props.children}</div>
     </Tippy>
   )
 })
@@ -75,13 +75,13 @@ const TipLink = ({ noTip, children, href, ...other }) => {
     return (
       <GatsbyLink css={css`
       display: inline-block;
-      word-break: break-all;
+      word-break: break-word;
      max-width: 100%;
       white-space: pre-wrap;
       line-height: 1.3rem;`}
       to={href}{...other}>
         <LinkTooltip internal href={href}{...other}>
-        <span css={css`
+        <div css={css`
           text-decoration: none;
           position: relative;
           z-index: 0;
@@ -108,7 +108,7 @@ const TipLink = ({ noTip, children, href, ...other }) => {
               transition: all 500ms ease-in-out;
               background: ${theme.colors.lightOrange};
           }
-        `}>{children}</span>
+        `}>{children}</div>
       </LinkTooltip>
       </GatsbyLink>
     )
