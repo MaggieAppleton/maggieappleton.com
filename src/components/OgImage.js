@@ -1,4 +1,5 @@
 import React from 'react'
+import { fonts } from '../lib/typography'
 
 export default function OgImage() {
   return (
@@ -12,7 +13,7 @@ export default function OgImage() {
               flexDirection: 'row',
               marginTop: '1rem',
               alignItems: 'center',
-              fontFamily: 'FreightText W01 Book',
+              fontFamily: fonts.regular,
             }}
           >
             <div
@@ -33,7 +34,7 @@ export default function OgImage() {
                 fontStyle: 'italic',
                 color: '#5B7492',
                 marginLeft: '1rem',
-                fontFamily: 'FreightText W01 Book Italic',
+                fontFamily: fonts.regularItalic,
               }}
             >
               Last tended {data.lastEdit}
@@ -62,7 +63,7 @@ const containerStyle = {
 }
 
 const titleStyle = {
-  fontFamily: 'GT Walsheim Pro',
+  fontFamily: fonts.walsheimBold,
   fontWeight: 'bold',
   fontSize: '105px',
   lineHeight: '110%',
