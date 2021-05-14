@@ -51,19 +51,23 @@ export const TwoCol = props => {
         maxWidth: props.maxwidth || '100vw',
         margin: props.margin || '1rem auto',
         [bpMaxSM]: {
-          flexDirection: 'column'
+          flexDirection: 'column',
         },
-        p: {
-          minWidth: '30%',
+        'p, h1, h2, h3, h4, h5': {
           [bpMinLG]: {
               maxWidth: '500px',
               padding: '0 1rem',
+              margin: '0 0 1rem 0'
           },
         },
         div: {
           maxWidth: props.divwidth || '500px',
           minWidth: '30%',
           padding: props.divpadding || '0 0.2rem',
+          [bpMaxSM]: {
+            maxWidth: '280px',
+            minWidth: '80%',
+          },
         },
         img: {
           padding: props.imgpadding,

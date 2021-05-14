@@ -55,11 +55,6 @@ const getGlobalStyles = theme => {
       overflow-wrap: break-word;
     }
     ${bpMaxMD} {
-      p,
-      em,
-      strong, code {
-        font-size: 90%;
-      }
       h1 {
         font-size: ${rhythm(1.7)};
       }
