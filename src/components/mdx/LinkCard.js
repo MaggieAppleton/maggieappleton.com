@@ -12,16 +12,19 @@ const LinkCard = ({ title, link, author, children, ...props }) => {
           border: '1px solid rgba(52, 61, 68, 0.05)',
           transition: 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0s;',
           margin: '0.4rem',
-          padding: '0.2rem 1.4rem',
+          padding: '0.2rem 1rem !important' ,
           width: '400px',
           maxWidth: '400px',
           borderRadius: '6px',
           boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
+          h4: {
+            marginTop: '1rem',
+          },
           [bpMaxSM]: {
             width: '300px',
             maxWidth: '300px',
             margin: '0.2rem',
-          padding: '0 1.2rem',
+          padding: '0 1.2rem !important',
           },
           p: {
             fontSize: '90%'
