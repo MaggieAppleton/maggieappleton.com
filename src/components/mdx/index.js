@@ -55,7 +55,7 @@ import { gsap } from 'gsap'
 import Arrow from './Arrow'
 
 // ------------- Single Use Components--------------- //
-import { Tools, Hardware } from './SingleUse/Tools'
+import { Tools, Hardware, AppQuestion } from './SingleUse/Tools'
 import { MediumMaterialsMeatSection } from './SingleUse/MediumMaterialsMeatSection'
 import { GsapScroller, TweenRedBigBox, TweenSpinningBox, TweenReverseSpinningBox, TweenBlueRedBox } from './SingleUse/GreensockBasics'
 import { StaticCSSPosition, RelativeCSSPosition, AbsoluteCSSPosition, FixedCSSPosition } from './SingleUse/CSSPositions'
@@ -122,6 +122,7 @@ export default {
   // ------------- Single Use Components--------------- //
   Tools: Tools,
   Hardware: Hardware,
+  AppQuestion: AppQuestion,
   GsapScroller: GsapScroller,
   TweenRedBigBox: TweenRedBigBox,
   TweenSpinningBox: TweenSpinningBox,
