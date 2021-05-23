@@ -82,9 +82,9 @@ export const Blockquote = styled.blockquote`
   & > p {
     max-width: 620px;
     text-align: center;
-    margin: 0.8rem auto;
+    margin: 1.8rem auto;
     font-size: 1.7rem;
-    line-height: 1.4rem;
+    line-height: 2.4rem;
     display: inline-block;
   }
   & ::before,
