@@ -36,9 +36,10 @@ import {
   TwoCol,
   ImageGrid,
   ImageFrame,
+  FullWidthSection,
   FullWidth2Col,
   FullWidthImage,
-  FullWidth,
+  FullWidthBackground,
 } from './ImageStyles'
 import Book from '../Book'
 import ResourceBook from './ResourceBook'
@@ -80,7 +81,8 @@ export default {
   Controls: props => <Controls {...props} />,
   Draft: props => <Draft {...props} />,
   Footnote: props => <Footnote {...props} />,
-  FullWidth: props => <FullWidth {...props} />,
+  FullWidthSection: props => <FullWidthSection {...props} />,
+  FullWidthBackground: props => <FullWidthBackground {...props} />,
   FullWidth2Col: props => <FullWidth2Col {...props} />,
   FullWidthImage: props => <FullWidthImage {...props} />,
   h1: props => <Title {...props} />,

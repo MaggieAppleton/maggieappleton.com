@@ -167,7 +167,16 @@ export const ImageGrid = props => {
   )
 }
 
-export const FullWidth = props => {
+export const FullWidthSection = props => {
+  return (
+    <div css={css({
+      gridColumn: '1/4 !important', justifyContent: 'center', margin: props.margin || '2rem auto 1rem', ...props.style})}>
+        {props.children}
+    </div>
+  )
+}
+
+export const FullWidthBackground = props => {
   return (
     <div
       css={css`
@@ -263,3 +272,4 @@ export const FullWidthImage = props => {
     </div>
   )
 }
+
