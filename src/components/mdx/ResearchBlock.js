@@ -8,6 +8,7 @@ export const ResearchBlock = ({ children }) => {
       css={css`
         margin: 0 auto;
         max-width: 660px;
+        grid-column: 1/4;
         opacity: 80%;
         margin-top: 3em;
         line-height: 1.5em;
@@ -20,9 +21,8 @@ export const ResearchBlock = ({ children }) => {
       <h4>References & Research</h4>
       <div
         css={css`
-          display: grid;
-          grip-gap: 1em;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          display: flex;
+          flex-wrap: wrap;
         `}
       >
         {children}
@@ -37,6 +37,7 @@ export const ResearchItem = ({ children, title, link, author }) => {
       css={css`
           font-size: 90%;
           margin: 0.4em;
+          padding-top: 0.4rem;
           p {
             line-height: 1.5em;
             padding: 0em 0.4em 0.4em 0.6em;
