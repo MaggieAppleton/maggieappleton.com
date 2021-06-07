@@ -1,8 +1,8 @@
 ---
-title: 'Learnable, Visual Programming Patterns'
+title: 'Visual, Learnable Programming Patterns'
 slug: learnable-programming
 startDate: 2021-01-12
-updated: 2021-04-02
+updated: 2021-05-26
 published: true
 type: ['note']
 topics: ['Web Development', 'JavaScript', 'Collaborative Learning']
@@ -11,13 +11,15 @@ growthStage: 'Budding'
 
 <IntroParagraph>
     
-Bret Victor coined the term <b>Learnable Programming</b> in his <a href="http://worrydream.com/LearnableProgramming">canonical essay</a> lamenting the current state of programming education. Victor has a few concerns with the way most of us learn to code. Mainly that the learning environments we drop people into are poorly designed.
+Bret Victor coined the term <b>Learnable Programming</b> in his <a href="http://worrydream.com/LearnableProgramming">canonical essay</a> lamenting the current state of programming education.
 
 </IntroParagraph>
 
+ Victor has a few concerns with the way most of us learn to code. Mainly that the learning environments we drop people into are poorly designed.
+
 These environments tend to look something like this:
 
-<TwoCol imgmargin="1em auto" divwidth="590px">
+<TwoCol imgmargin="1em auto" divwidth="590px" margin="1rem auto 0rem">
 
 <BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174726/maggieappleton.com/notes/learnable-programming/learnprog_1_nsfflv.png" alt="repl.it slpit screen interface" />
 <BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_4_dk82q8.png" alt="codesandbox split screen interface" />
@@ -26,15 +28,19 @@ These environments tend to look something like this:
 
 </TwoCol>
 
+<h6 style="text-align: center;" >Interfaces from Repl.it, Codesandbox, freeCodeCamp, and Khan Academy</h6>
+
 They're your standard column-based "live coding" interfaces popular across the industry. You write code into one section, and hopefully get the output you expected in another. Syntax is abstracted away from the elements it affects.
 
 ---
+
+### Industry-Standard Environments
 
 It's easy to see why these linear, text-based interfaces _seem_ like the best approach. They look identical to the standard interfaces the whole development industry uses to programme.
 
 All development takes place in an isolated text window. If you type the correct sequence of words and symbols into that editor, the correct series of events happens somewhere out of view. Functions run in an unseen JavaScript engine, interface elements appear in the browser, and somewhere a value changes in a distant database. You only get the end result. To see anything happening in the middle, you have to `console.log` out data at each step of the way. The industry has accepted flying blind as standard operating procedure.
 
-<FullWidthImage width="880px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_2_ieudi6.png" alt="The interface of VS Code – one of the most popular environments for professional programming" showalt />
+<ImageFrame width="1000px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_2_ieudi6.png" alt="The interface of VS Code – one of the most popular apps for professional programming. If you're writing front-end code, you check the results in a separate browser window." showalt />
 
 So we're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach. But Victor isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
 
@@ -43,11 +49,29 @@ He's pointing out that the standard text-based, disembodied, non-graphical inter
 There's good reason for this. While many people have tried to develop [visual programming languages](https://en.wikipedia.org/wiki/Visual_programming_language), they've largely failed to gain traction. There's lots of [well-reasoned](https://www.outsystems.com/blog/posts/visual-programming-language/) [arguments](https://dzone.com/articles/visual-programming-why-its-a-bad-idea) [explaining](https://mikehadlow.blogspot.com/2018/10/visual-programming-why-its-bad-idea.html) why it's so difficult to design visual systems complex and extensible enough to programme in, so I won't repeat them here.
 The fact is that our current visual languages aren't sophisticated enough to do the job, and  we're a long way from any system that could.
 
+<Halfspacer />
+
+### Visual Programming for Learning
+
 While visual programming isn't great for the scale of complexity professional programmers deal with, it's _ideal_ for people who are learning to code. When we simply need to explain what's happening under the hood, graphical representations are the best way to help people build clear mental models.
+
+People like [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) and [Seymour Paypert](https://en.wikipedia.org/wiki/Seymour_Papert) were the earliest champions of using intuitive visuals to teach programming. Paypert's [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) language defined a generation of visual, turtle-based learning. Through a series of simple commands like `go(20)` and `turn(90)` a small green turtle would move around your canvas leaving a visible trail behind it.
+
+My earliest memory of programming involved directing one of these small green amphibians around in circles.
+
+<BasicImage width="500px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1622109247/maggieappleton.com/notes/learnable-programming/screenshot_eifk3w.png" alt="A classic example of a logo-based interface where you direct a small turtle around a canvas. Source: pythonturtle.org" showalt />
+
+One of the widely-used modern manifestation of Logo is MIT's [Scratch](https://scratch.mit.edu/) learning platform. It expanded the character range beyond just turtles, offering everything from llamas to dancing starfish. More importantly, it allows you to drag-n-drop pieces of programming logic into chains that animate a scene for you.
+
+<ImageFrame width="900px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1622107452/maggieappleton.com/notes/learnable-programming/scratch_aqp3ts.png" alt="The scratch learning platform that allows you to construct clear visual chains of programming commands" showalt />
+
+If we look past the campy, child-friendly aesthetics of Scratch, it's hard to argue this kind of visual interface isn't helpful. There is no need to memorise the syntax, it's easy to browse through the available commands, and the physical shape of each command 
 
 ---
 
 ## Principles of Learnable Programming 
+
+
 
 Victor outlined a set of principles he believed all learnable programming environments should follow. He argues any good educational platform should allow learners to...
 1. **Read the vocabulary** of a language by making clear what each keyword and function does
@@ -72,8 +96,7 @@ While Victor defined a set of ideals for a hypothetical learning platform, I bec
 
 ---
 
-## A Pattern Language for Learnable, Visual Programming
-
+## Current Patterns in Programming Environments
 
 
 #### 1. Location and Destination
