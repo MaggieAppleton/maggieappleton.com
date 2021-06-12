@@ -3,7 +3,7 @@ title: 'The Pattern Language of Project Xanadu'
 slug: xanadu-patterns
 aliases: ['Project Xanadu', 'Pattern Language of Project Xanadu']
 updated: 2021-06-06
-startDate: 2020-07-10
+startDate: 2020-07-12
 published: true
 type: ['note']
 growthStage: 'Seedling'
@@ -28,7 +28,7 @@ To talk about Xanadu, we need to put a pin in our current understanding of _hype
 
 Ted hoped it would be a medium for "[serious electronic literature](https://xanadu.com.au/ted/XUsurvey/xuDation.html)"" – a paradigm shift that would free us from the material constraints of paper. His vision was the first to meaningfully consider how storing information in digital bits could reconfigure the way we read, write, cite, and share words.
 
-Xanadu's failure to mature into a widespread, useable commercial product is great fodder a [dramatic cover story](https://www.wired.com/1995/06/xanadu/). One fuelled by the noticeably combative language in Xanadu's [documentation](https://xanadu.com/). "The computer world is... a continual war over software politics and paradigms" where "we fight on" for "vindication" and "the last laugh." One feels like the dinner guest who has stumbled into a raging martial argument over unwashed tea towels. You don't dare ask for context.
+Xanadu's failure to mature into a widespread, useable commercial product is great fodder a [dramatic cover story](https://www.wired.com/1995/06/xanadu/). One fuelled by the noticeably combative language in Xanadu's [documentation](https://xanadu.com/). "The computer world is a continual war over software politics and paradigms" where "we fight on" for "vindication" and "the last laugh." One feels like the dinner guest who has stumbled into a raging martial argument over unwashed tea towels. You don't dare ask for context.
 
 Yet these historical skirmishes and financial flops are also the least interesting thing about Xanadu. The most interesting part is its **Pattern Language**.
 
@@ -38,9 +38,9 @@ Yet these historical skirmishes and financial flops are also the least interesti
 
 [[Pattern Languages]] are sets of flexible, reusable solutions to common design problems. 
 
-They come from the land of architects: the software developers of the material world. Namely, the architect Christopher Alexander, whose philosophy of constructing vibrant and humane living space escaped the confines of urban planning and infused the world of software design in the late 1980's.
+They come from the land of architects: the software developers of the material world. Namely, the architect [Christopher Alexander](https://en.wikipedia.org/wiki/Christopher_Alexander), whose philosophy of constructing vibrant and humane living space escaped the confines of urban planning and infused the world of software design in the late 1980's.
 
-Alexander defined 253 architectural patterns that themselves became the pattern for writing patterns. Each one is composed of a context, problem, and solution.
+Alexander defined 253 architectural patterns for designing cities, towns, and homes. These became the example patterns for writing patterns. Each one is composed of a context, problem, example, and solution.
 
 For example, the design pattern **A Place to Wait** asks that we create comfortable accommodation and ambient activity whenever someone needs to wait; benches, cafes, reading rooms, miniature playgrounds, three-reel slot machines (if we happen to be in the Las Vegas airport). This solves the problem of huddles of people awkwardly hovering in liminal space; near doorways, taking up sidewalks, anxiously waiting for delayed flights or dental operations or immigration investigations without anything to distract them from uncertain fates.
 
@@ -57,41 +57,27 @@ Taken as a collection of design patterns, Xanadu's documentation suggests soluti
 
 Xanadu became a sad parable, when it should have been a piece of speculative design. A set of seeds scattered into the wind for other people to pick up and plant, rather than the patent-happy industrial farming conglomerate it tried to grow into. 
 
-Curiously enough, there appear to be rogue seedlings sprouting around the web. Escaped Monsanto seeds. A number of Xanadu's design patterns are showing up in modern manifestations.
-
-<Draft />
-
----
-
-Blog themes built with <a href="https://github.com/aengusmcmillin/gatsby-theme-brain">Gatsby</a>, <a href="https://giffmex.org/stroll/stroll.html">TiddlyWiki</a>, and <a href="https://simply-jekyll.netlify.app/index.html">Jekyll</a> are beginning to look an awful lot like those original Xanadu demos and prototypes.
-
-Indie projects like <a href="https://roamresearch.com/">Roam</a>, <a href="https://www.onegraph.com/">OneGraph</a>, and <a href="https://web.hypothes.is/">Hypothes.is</a> make some of its core features possible for the first time.
-
-We're finding ways to backwards engineer the original spirit of Xanadu into the existing structures of the World Wide Web. 
-
-**When futures arrive that do not exactly match our predictions and promises, we fail to recognise them.** They are never as slick and shiny as we want them to be. They don't arrive in a single keynote address, ready to be shipped out in neat packages that are fully backwards compatible with our existing systems, avoiding the messiness of driver installations, legacy software patches, and incompatible hardware. The future arrives iteratively, piece by piece, in slow, unceremonious moments that fly under the radar.
-
+Curiously enough, there appear to be rogue seedlings sprouting around the web. A number of Xanadu's design patterns are showing up in modern manifestations. We're finding ways to backwards engineer the original spirit of Xanadu into the existing structures of the World Wide Web.
 
 # The Patterns
 
 ## 1. Visible Links
 
-Ted Nelson, the inventor of Xanadu, has many gripes.
-One in particular is what he calls "jump links" - the very kind we all use around the web today.
+Ted Nelson has many gripes, and **jump links** are one of his biggest. They're the kind of links we all use around the web today. Clicking a hyperlink is a bit of a gamble. It _jumps_ you into somewhere unknown. You find out when you get there.
 
-Clicking a hyperlink is a bit of a gamble.  It _jumps_ you somewhere unknown. You find out when you get there.
+We've found ways to adapt to this. Venkatesh Rao has a compelling exploration of the [rhetoric of hyperlinking](https://www.ribbonfarm.com/2009/07/01/the-rhetoric-of-the-hyperlink/) that we use to hint at where people are headed.  Most browsers also have URL previews, but they tuck them into the far corner in tiny text. These can only tell you so much when modern URLs are often obscured by link shorteners and overstuffed with tracking queries.
 
-Nelson wasn't keen on this surprise version of linking.  _Visibility_ of where the link connected to was essential in Xanadu.
+These solutions are only a band-aid on the underlying wound. 
 
-<Subtext>
+Nelson considered _visible links_ an essential part of his hypertext system. In the original mockups of his "Xanadocs", linked text would be connected to its source in a rather literal fashion, with brightly coloured highlights running between documents. 
 
-One of the original UI mockups for a "Xanadoc" with visible links between text blocks
+<ImageFrame width="1000px"  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1000/v1589545780/maggieappleton.com/notes/xanadu.png" alt="One of the original UI mockups for a Xanadoc with visible links between text blocks" showalt />
 
-</Subtext>
+This proposed solution relies on two other patterns – parallel documents and transpointing windows (covered below) – but the underlying principle was simply that links made their destinations clear.
 
-<ImageFrame width="880px"  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_960/v1589545780/maggieappleton.com/notes/xanadu.png" />
+The modern web has landed on some fairly decent solutions to this issue: hover previews and unfurls.
 
-<br />
+<Draft />
 
 Link previews that contain excerpts of the destination page hint at this solution. You get to see where you're headed to before you decide to jump.
 
@@ -125,39 +111,48 @@ https://twitter.com/azlenelza/status/1272600877493137408
 
 <ComingSoon />
 
-## 2. Bi-directional Links
+## 2. Parallel Documents
 
 Side-by-side, interactive windows
 
-## 3. Transclusion
+## 3. Transpointing Windows
 
-## 4. Parallel Documents
 
-## 5. Transpointing Windows
+
+## 4. Transclusion
+
+
+
+## 5. Bi-directional Links
 
 Parts of documents visibly point to other parts
 
-## 6. Modular Text Blocks
+## 6. Version Control
+
+In the age of Git, we tend to take this for granted.
+
+## 7. Modular Text Blocks
 
 Blocks construct documents
 
 Notion pioneered this in the note-taking space.
 
-## 7. Stable, Universal Addresses
-
-
-## 8. Version Control
-
-In the age of Git, we tend to take this for granted.
+## 8. Stable, Universal Addresses
 
 
 ## 9. Annotation
 
-## 10. Spatial Arrangements
+[Hypothesis]()
 
-## 11. Multiple Views
+## 10. Micropayments
+
+
+
+## 11. Multiple Views and Spatial Arrangements
+
 
 ## 12. Micropayments
+
 
 
 ---
