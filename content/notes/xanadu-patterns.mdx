@@ -2,7 +2,7 @@
 title: 'The Pattern Language of Project Xanadu'
 slug: xanadu-patterns
 aliases: ['Project Xanadu', 'Pattern Language of Project Xanadu']
-updated: 2021-06-12
+updated: 2021-06-16
 startDate: 2020-07-10
 published: true
 type: ['note']
@@ -26,7 +26,7 @@ And yet the idea of hypertext predates Berners-Lee by two decades. The term was 
 
 To talk about Xanadu, we need to put a pin in our current understanding of _hypertext_. Our preconceived notions of what a link is, how it works, and what digital text is capable of threatens to overwrite the alternate history we're about to explore.
 
-Ted hoped it would be a medium for "[serious electronic literature](https://xanadu.com.au/ted/XUsurvey/xuDation.html)"" – a paradigm shift that would free us from the material constraints of paper. His vision was the first to meaningfully consider how storing information in digital bits could reconfigure the way we read, write, cite, and share words.
+Ted hoped it would be a medium for "[serious electronic literature](https://xanadu.com.au/ted/XUsurvey/xuDation.html)" – a paradigm shift that would free us from the material constraints of paper. His vision was the first to meaningfully consider how storing information in digital bits could reconfigure the way we read, write, cite, and share words.
 
 Xanadu's failure to mature into a widespread, useable commercial product is great fodder a [dramatic cover story](https://www.wired.com/1995/06/xanadu/). One fuelled by the noticeably combative language in Xanadu's [documentation](https://xanadu.com/). "The computer world is a continual war over software politics and paradigms" where "we fight on" for "vindication" and "the last laugh." One feels like the dinner guest who has stumbled into a raging martial argument over unwashed tea towels. You don't dare ask for context.
 
@@ -65,9 +65,11 @@ Curiously enough, there appear to be rogue seedlings sprouting around the web. A
 
 Ted Nelson has many gripes, and **jump links** are one of his biggest. They're the kind of links we all use around the web today. Clicking a hyperlink is a bit of a gamble. It _jumps_ you into somewhere unknown. You find out when you get there.
 
-We've found ways to adapt to this. Venkatesh Rao has a compelling exploration of the [rhetoric of hyperlinking](https://www.ribbonfarm.com/2009/07/01/the-rhetoric-of-the-hyperlink/) that we use to hint at where people are headed.  Most browsers also have URL previews, but they tuck them into the far corner in tiny text. These can only tell you so much when modern URLs are often obscured by link shorteners and overstuffed with tracking queries.
+We've found ways to adapt to this. Venkatesh Rao has a compelling exploration of the [rhetoric of hyperlinking](https://www.ribbonfarm.com/2009/07/01/the-rhetoric-of-the-hyperlink/) that we use to hint at where people are headed.  Most browsers also have URL previews, but they tuck them into the far corner in tiny text:
 
-These solutions are only a band-aid on the underlying wound. 
+<BasicImage src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1623585337/maggieappleton.com/notes/xanadu/hover-preview-url_shrink_kxvwtp.png" width="1000px" alt="URL hover previews showing in the left hand corner of page" />
+
+ These can only tell you so much when modern URLs are often obscured by link shorteners and overstuffed with tracking queries. These solutions are only a band-aid on the underlying wound. They suggest where you're headed, rather than showing you.
 
 Nelson considered _visible links_ an essential part of his hypertext system. In the original mockups of his "Xanadocs", linked text would be connected to its source in a rather literal fashion, with brightly coloured highlights running between documents. 
 
@@ -77,35 +79,22 @@ This proposed solution relies on two other patterns – parallel documents and t
 
 The modern web has landed on some fairly decent solutions to this issue: hover previews and unfurls.
 
+**Hover previews** are when you can see a preview of the page you're headed to when you hover over a link. It's usually an excerpt that gives you the page title, the first few lines of text, and sometimes an image. Wikipedia was one of the first major sites to [add these](https://blog.wikimedia.org/2018/04/18/how-we-designed-page-previews-for-wikipedia/) in 2018.
+
+<ImageFrame width="950px"  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1000/v1592343673/maggieappleton.com/notes/Screenshot_-_2020-06-16_20.49.44.png" alt="Wikipedia's interface showing one of the hover previews that appear over links" showalt />
+
+Hover previews have also become popular in the [[Digital Gardening]] community as a way to help visitors quickly navigate through collections of public notes and essays that are deeply interlinked. The wesbites of <a href="https://notes.andymatuschak.org/">Andy Matuschak</a> and <a href="https://www.gwern.net/index">Gwern Branwen</a> are two classic examples of this in action.
+
+<ImageFrame width="950px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,f_auto,q_auto:good,w_1000/v1592343501/maggieappleton.com/notes/Screenshot_2020-06-16_at_22.38.06.png" alt="Andy Matuschak's notes website featuring hover link previews" showalt />
+
 <Draft />
 
 Link previews that contain excerpts of the destination page hint at this solution. You get to see where you're headed to before you decide to jump.
 
 They're fairly common at this point. The <a href="https://ogp.me/">Open Graph Protocol</a> helped fuel this pattern by making it easy to generate preview cards in social media feeds.
 
-Wikipedia added hover previews in 2018 <Footnote idName={3}><a href="https://blog.wikimedia.org/2018/04/18/how-we-designed-page-previews-for-wikipedia/">Wikipedia page previews announcement</a></Footnote>
-
-<ImageFrame width="880px"  src="https://res.cloudinary.com/dg3gyk0gu/image/upload/c_scale,w_900/v1592343673/maggieappleton.com/notes/Screenshot_-_2020-06-16_20.49.44.png" />
-
-<br />
-
-Among the [[Digital Gardening]] community, creators like <a href="https://notes.andymatuschak.org/">Andy Matuschak</a> have popularised the pattern on personal websites and blogs.
-
-<ImageFrame width="880px" src="https://res.cloudinary.com/dg3gyk0gu/image/upload/v1592343501/maggieappleton.com/notes/Screenshot_2020-06-16_at_22.38.06.png" />
-
-<Subtext center> Andy's notes system featuring link previews </Subtext>
-
-<br />
 
 <p>Previews aren't quite the same as physical links between parts of a page though. You lose the fine-grained associations between specific paragraphs and lines.</p>
-
-<p>A few members of <a href="https://twitter.com/hashtag/roamcult">#roamcult</a> have been leaning into this association with Xanadu, and taking it to the next level. <a href="https://azlen.me/">Azlen Elza</a> recently managed to craft up this crazy demo inside of their Roam Research database:</p>
-
-<Center>
-
-https://twitter.com/azlenelza/status/1272600877493137408
-
-</Center>
 
 ---
 
@@ -117,13 +106,23 @@ Side-by-side, interactive windows
 
 ## 3. Transpointing Windows
 
+LiquidText
 
+<p>A few members of <a href="https://twitter.com/hashtag/roamcult">#roamcult</a> have been leaning into this association with Xanadu, and taking it to the next level. <a href="https://azlen.me/">Azlen Elza</a> recently managed to craft up this crazy demo inside of their Roam Research database:</p>
+
+<Center>
+
+https://twitter.com/azlenelza/status/1272600877493137408
+
+</Center>
 
 ## 4. Transclusion
 
-
+[[Transclusion and Transcopyright Dreams]]
 
 ## 5. Bi-directional Links
+
+[[A Short History of Bi-Directional Links]]
 
 Parts of documents visibly point to other parts
 
@@ -135,23 +134,49 @@ In the age of Git, we tend to take this for granted.
 
 Blocks construct documents
 
-Notion pioneered this in the note-taking space.
+Notion pioneered this in the note-taking space
+
+Explosion of note-taking apps using a block-first approach: Roam, Innos, Clover, Craft, Kosmik
 
 ## 8. Stable, Universal Addresses
 
+The web enforces addresess on the document level rather than the block level
+
+No stability at all, link rot everywhere
+
+URL queries and subpaths
+
+Roam block UIDs
 
 ## 9. Annotation
 
 [Hypothesis]()
 
-## 10. Micropayments
+Google docs comments
 
 
+## 10. Multiple Views and Spatial Arrangements
 
-## 11. Multiple Views and Spatial Arrangements
+Graph previews are a weak version of this
 
+Notion linked databases that offer various view types
 
-## 12. Micropayments
+Most modern dashboards offer multiple ways to view data
+
+ZigZag format
+
+## 11. Micropayments
+
+Jarons Lanier's dreams in Who Owns the Future
+
+The inescapable cost of transactions
+
+Web Monetisation API, Coil
+
+Grant for the Web
+
+Graeber's money-as-debt, soft money, local currencies and DAOs
+
 
 
 
