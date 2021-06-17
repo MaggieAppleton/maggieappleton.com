@@ -16,17 +16,17 @@ export const ReadingContext = ({ children, url }) => {
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <h5 style={{margin: '0', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: `${fonts.walsheim}`, color: `${colors.blue}`, fontWeight: 'black', fontSize: '80%'}}>Why I'm Reading This</h5>
+        <h5 style={{margin: '0', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: `${fonts.walsheim}`, color: `${colors.grey}`, fontWeight: 'black', fontSize: '80%'}}>Why I'm Reading This</h5>
         <a
           target="_blank"
           rel="noopener noreferrer"
           href={url}
           css={css`display: flex; align-items: center; &:hover {
               h6 {
-                  color: ${colors.lightOrange};
+                  color: ${colors.blue};
               }
               rect {
-                  fill: ${colors.lightOrange};
+                  fill: ${colors.blue};
               }
           }`}
         >
