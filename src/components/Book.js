@@ -15,9 +15,10 @@ export const Book = props => {
         key={props.id}
         css={css`
           padding: 0;
-          margin: 0.2rem 1rem;
+          margin: 0 0.8rem;
           margin-bottom: 2rem;
-          width: 300px;
+          width: 280px;
+          max-width: 100%;
           .gatsby-image-wrapper {
             border-radius: 4px;
             transition: all 500ms ease;
@@ -25,11 +26,10 @@ export const Book = props => {
             box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
           }
           ${bpMaxMD} {
-            padding: 0.4rem;
-            margin: 0.6rem 0.3rem;
+            margin: 0 0.4rem 1.4rem;
           }
           ${bpMaxSM} {
-            width: 280px;
+            width: 250px;
           }
           &:hover {
             .gatsby-image-wrapper {
