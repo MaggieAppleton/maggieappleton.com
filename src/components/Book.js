@@ -13,7 +13,38 @@ export const Book = props => {
       <Link to={ props.redirectTo ? `/${props.redirectTo}` : `/${props.slug}`}  aria-label={`View ${props.title}`}>
       <div
         key={props.id}
-        css={css`
+        css={props.small ?
+          (css`
+        padding: 0;
+        margin: 0 0.8rem;
+        margin-bottom: 2rem;
+        width: 260px;
+        max-width: 100%;
+        .gatsby-image-wrapper {
+          border-radius: 4px;
+          transition: all 500ms ease;
+          -webkit-box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
+          box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
+        }
+        ${bpMaxMD} {
+          width: 240px;
+          margin: 0 0.8rem 1.4rem;
+        }
+        ${bpMaxSM} {
+          margin: 0 0.4rem 1.4rem;
+        }
+        &:hover {
+          .gatsby-image-wrapper {
+            transform: translateY(-4px) scale(1.02);
+            -webkit-box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
+            box-shadow: 0px 7px 13px -7px rgba(115, 130, 140, 0.98);
+          }
+          h4 {
+            color: ${theme.colors.black};
+          }
+        }
+      `) : 
+      (css`
           padding: 0;
           margin: 0 1rem;
           margin-bottom: 2rem;
@@ -26,6 +57,7 @@ export const Book = props => {
             box-shadow: 0px 4px 10px -5px rgba(115, 130, 140, 0.98);
           }
           ${bpMaxMD} {
+            width: 260px;
             margin: 0 0.8rem 1.4rem;
           }
           ${bpMaxSM} {
@@ -42,7 +74,8 @@ export const Book = props => {
               color: ${theme.colors.black};
             }
           }
-        `}
+        `)
+        }
       >
         {props.fluidImg ? (
           <Img alt={props.title} fluid={props.fluidImg} />

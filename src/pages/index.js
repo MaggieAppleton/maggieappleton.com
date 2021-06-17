@@ -206,7 +206,8 @@ export default function Index({
           .books {
             display: flex;
             flex-direction: row;
-            padding-top: 2em;
+            flex-wrap: wrap;
+            padding-top: 2rem;
             grid-column: 1 / 3;
             ${bpMaxMD} {
               grid-column: 1 / 1;
@@ -217,22 +218,23 @@ export default function Index({
               align-items: center;
             }
             .bookTitle {
-              padding-right: 3em;
-              margin-bottom: 2em;
+              padding-right: 2rem;
+              margin-bottom: 2rem;
+              max-width: 260px;
             }
           }
           .garden {
-            padding-right: 2em;
-            padding-bottom: 2em;
+            padding-right: 2rem;
+            padding-bottom: 2rem;
             ${bpMaxSM} {
-              margin-bottom: 3em;
+              margin-bottom: 3rem;
             }
             .gardenGrid {
               display: grid;
               grid-template-columns: 1fr;
               ${bpMaxMD} {
                 grid-template-columns: 1fr 1fr;
-                grid-column-gap: 0.6em;
+                grid-column-gap: 0.6rem;
               }
               ${bpMaxSM} {
                 grid-template-columns: 1fr;
@@ -453,6 +455,7 @@ export default function Index({
               css={css`
                 margin-bottom: 1em;
                 line-height: 1.4em;
+                min-width: 220px;
               `}
             >
               A past and present reading collection. Complete with very loose
@@ -469,6 +472,7 @@ export default function Index({
           </span>
           {bookQuery.edges.map(({ node: book }) => (
             <Book
+            small
               redirectTo={book.frontmatter.redirectTo}
               slug={book.frontmatter.slug}
               title={book.frontmatter.title}
