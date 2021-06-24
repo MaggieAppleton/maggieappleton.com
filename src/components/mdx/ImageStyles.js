@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinLG, bpMaxSM } from '../../lib/breakpoints'
+import { bpMinLG, bpMaxSM, bpMaxMD } from '../../lib/breakpoints'
 import styled from '@emotion/styled'
 
 export const Img = styled.img`
@@ -16,7 +16,7 @@ export const BasicImage = props => {
       css={css({
         width: props.width || '100%',
         maxWidth: props.maxwidth || '880px',
-        [bpMaxSM]: {
+        [bpMaxMD]: {
           maxWidth: '100%'
         },
         display: 'block',

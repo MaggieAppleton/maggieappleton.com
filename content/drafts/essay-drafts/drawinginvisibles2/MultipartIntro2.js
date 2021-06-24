@@ -6,6 +6,7 @@ import { Link } from 'gatsby'
 const PartName = props => {
   return (
     <Link to={props.to}>
+    {props.focus ? <span>You are here</span> : null}
       <p
         css={css({
           color: '#464E55',
@@ -20,23 +21,25 @@ const PartName = props => {
       >
         {props.partName}
       </p>
-      {props.focus ? <span>You are here</span> : null}
     </Link>
   )
 }
 
-const MultipartIntro2 = () => {
+const MultipartIntro = () => {
   return (
     <div
       css={css({
-        [bpMinMD]: { gridTemplateColumns: 'repeat(4, 1fr)' },
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        display: 'grid',
-        gridGap: '10px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: '100%',
+        gridColumn: '1/4',
+        justifyContent: 'center',
         alignItems: 'start',
         textAlign: 'center',
-        padding: '10px 0',
+        padding: '0.8em 0',
         transition: '0.6s',
+        margin: '0 auto',
+        marginBottom: '1rem',
         '.focus': {
           padding: '14px',
           alignItems: 'center',
@@ -56,6 +59,7 @@ const MultipartIntro2 = () => {
           padding: '14px',
           alignItems: 'center',
           transition: '0.6s',
+          marginBottom: '2.2rem',
         },
         '.linked': {
           ':hover': {
@@ -74,8 +78,10 @@ const MultipartIntro2 = () => {
         },
         div: {
           height: '140px',
-          display: 'grid',
+          maxWidth: '190px',
+          display: 'block',
           transition: '0.6s',
+          margin: '0 6px'
         },
         p: {
           color: '#718597',
@@ -86,7 +92,7 @@ const MultipartIntro2 = () => {
           color: '#718597',
           alignSelf: 'start',
           fontFamily: 'sans-serif',
-          fontSize: '0.9em',
+          fontSize: '0.8em',
           display: 'block',
           transition: '0.6s',
         },
@@ -94,14 +100,13 @@ const MultipartIntro2 = () => {
     >
       <div className="outer linked">
         <span>Part 1</span>
-        <PartName
-          to="/drawinginvisibles1"
-          partName="A Metaphorical Introduction"
-        />
+        <PartName to="/drawinginvisibles1" partName="A Metaphorical Introduction" />
       </div>
       <div className="focus">
         <span>Part 2</span>
-        <PartName focus partName="Cultural and Linguistic Research" />
+        <PartName focus
+          partName="Cultural and Linguistic Research"
+        />
       </div>
       <div className="outer">
         <span>Part 3</span>
@@ -115,4 +120,4 @@ const MultipartIntro2 = () => {
   )
 }
 
-export default MultipartIntro2
+export default MultipartIntro
