@@ -2,7 +2,7 @@
 title: 'Visual, Learnable Programming Patterns'
 slug: learnable-programming
 startDate: 2021-01-12
-updated: 2021-05-26
+updated: 2021-06-25
 published: true
 type: ['note']
 topics: ['Web Development', 'JavaScript', 'Collaborative Learning']
@@ -11,11 +11,11 @@ growthStage: 'Budding'
 
 <IntroParagraph>
     
-Bret Victor coined the term <b>Learnable Programming</b> in his <a href="http://worrydream.com/LearnableProgramming">canonical essay</a> lamenting the current state of programming education.
+Bret Victor coined the term <b>Learnable Programming</b> in his <a href="http://worrydream.com/LearnableProgramming">canonical essay</a> lamenting the current state of programming education.  Bret has a few concerns with the way most of us learn to code. Mainly that the learning environments we drop people into are poorly designed.
 
 </IntroParagraph>
 
- Victor has a few concerns with the way most of us learn to code. Mainly that the learning environments we drop people into are poorly designed.
+
 
 These environments tend to look something like this:
 
@@ -42,7 +42,7 @@ All development takes place in an isolated text window. If you type the correct 
 
 <ImageFrame width="1000px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_2_ieudi6.png" alt="The interface of VS Code – one of the most popular apps for professional programming. If you're writing front-end code, you check the results in a separate browser window." showalt />
 
-So we're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach. But Victor isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
+So we're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach. But Bret isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
 
 He's pointing out that the standard text-based, disembodied, non-graphical interfaces we all put up with are unintuitive to humans who live in a highly visual, spatial, embodied world. While most of our modern user interfaces have graduated to a graphical, 3D space-based system, programming is staunchly attached to the linear text paradigm. 
 
@@ -55,17 +55,21 @@ The fact is that our current visual languages aren't sophisticated enough to do 
 
 While visual programming isn't great for the scale of complexity professional programmers deal with, it's _ideal_ for people who are learning to code. When we simply need to explain what's happening under the hood, graphical representations are the best way to help people build clear mental models.
 
-People like [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) and [Seymour Paypert](https://en.wikipedia.org/wiki/Seymour_Papert) were the earliest champions of using intuitive visuals to teach programming. Paypert's [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) language defined a generation of visual, turtle-based learning. Through a series of simple commands like `go(20)` and `turn(90)` a small green turtle would move around your canvas leaving a visible trail behind it.
-
-My earliest memory of programming involved directing one of these small green amphibians around in circles.
+Computer history legends like [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) and [Seymour Paypert](https://en.wikipedia.org/wiki/Seymour_Papert) were the earliest champions of using intuitive visuals to teach programming. Paypert developed a language called [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) in the late 1960's where you would type commands to direct a small green turtle around the screen, leaving a visible trail behind it. Through simple instructions like `go(20)` and `turn(90)` and `for i in range(12): go(20) turn(30)` you could draw elaborate graphic patterns. It became widely used in education and a whole generation began their programming lives in Logo.
 
 <BasicImage width="500px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1622109247/maggieappleton.com/notes/learnable-programming/screenshot_eifk3w.png" alt="A classic example of a logo-based interface where you direct a small turtle around a canvas. Source: pythonturtle.org" showalt />
 
-One of the widely-used modern manifestation of Logo is MIT's [Scratch](https://scratch.mit.edu/) learning platform. It expanded the character range beyond just turtles, offering everything from llamas to dancing starfish. More importantly, it allows you to drag-n-drop pieces of programming logic into chains that animate a scene for you.
+My own earliest memory of programming involved directing one of these small green amphibians around in circles. If you want a little throwback, you can play with a live Turtle environment at [Turtle Academy](https://turtleacademy.com/playground)
 
-<ImageFrame width="900px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1622107452/maggieappleton.com/notes/learnable-programming/scratch_aqp3ts.png" alt="The scratch learning platform that allows you to construct clear visual chains of programming commands" showalt />
+The modern manifestation of Logo is MIT's [Scratch](https://scratch.mit.edu/) learning platform. It expanded the character range beyond just turtles, offering everything from llamas to dancing starfish. It also gives you the syntax as drag-n-drop blocks which visually distinguish variables from loops, logic operations, events, and motion commands.
 
-If we look past the campy, child-friendly aesthetics of Scratch, it's hard to argue this kind of visual interface isn't helpful. There is no need to memorise the syntax, it's easy to browse through the available commands, and the physical shape of each command 
+<ImageFrame width="1000px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1400/v1622107452/maggieappleton.com/notes/learnable-programming/scratch_aqp3ts.png" alt="The scratch learning platform that allows you to construct clear visual chains of programming commands" showalt />
+
+If we look past the campy, child-friendly aesthetics of Scratch, it's hard to argue this kind of visual interface isn't helpful. There is no need to memorise the syntax, it's easy to browse through the available commands, and the physical shape and colour of each command limits makes clear where you can and can't put it. Hovering over operations shows you whether they're true or false and variables reveal their current value.
+
+<FullWidthImage width="1000px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/c_scale,f_auto,q_auto:best,w_1400/v1624617679/maggieappleton.com/notes/learnable-programming/scratch_symbols_shrink_gkiw5q.png" alt="A selection of the avaliable programming commands in Scratch" />
+
+I could wax lyrical about the genius of this approach for paragraphs but I'll spare you. The autocomplete, syntax highlighting, and linter systems in modern IDEs <Footnote idName={1}>IDE stands for integrated development environment. These are pimped out code editors that offer programmers a buffet a helpful tools like debuggers, git logs, and advanced search functionality. VSCode, WebStorm, and XCode are all popular IDEs</Footnote> get us close to this, but offer just enough freedom to still hang ourselves sometimes. However you first need to know IDEs exist and _then_ learn how to setup and effectively use one; a heady challenge in itself. Many beginners flail around in blank, unresponsive code files with no autocompletion, syntax snippets, or linters to assist them until someone lets them in on the industry secret (speaking from personal experience here).
 
 ---
 
@@ -73,26 +77,26 @@ If we look past the campy, child-friendly aesthetics of Scratch, it's hard to ar
 
 
 
-Victor outlined a set of principles he believed all learnable programming environments should follow. He argues any good educational platform should allow learners to...
+Bret outlined a set of principles he believed all learnable programming environments should follow. He argues any good educational platform should allow learners to...
 1. **Read the vocabulary** of a language by making clear what each keyword and function does
 2. **Follow the flow** of what happens at each stage in executing a programme 
 3. **See the state** as the programme changes variables over time
 4. **Create by reacting** to how the programme behaves
 5. **Create by abstracting** from the simple to the complex
 
-Most of these are explicitly **visual**. We need to make what's happening in the programme _readable_ through visual representations of each syntax element, variable, and change of state over time. As Victor puts it:
+Most of these are explicitly **visual**. We need to make what's happening in the programme _readable_ through visual representations of each syntax element, variable, and change of state over time. As Bret puts it:
 
 > "People understand what they can see. If a programmer cannot see what a program is doing, she can't understand it."
 
-I won't expand on these too much as Victor elaborates on them in the [original piece](http://worrydream.com/#!/LearnableProgramming) and provides plenty of tangible examples of how they might look in an interface. 
+I won't expand on these too much as Bret elaborates on them in the [original piece](http://worrydream.com/#!/LearnableProgramming) and provides plenty of tangible examples of how they might look in an interface. 
 
-Victor's principles amount to a kind of [[Pattern Language]] - they're a set of design rules that define how a system should work.
+Bret's principles amount to a kind of [[Pattern Language]] - they're a set of design rules that define how a system should work.
 
-Since Victor wrote his piece in 2012, the world of programming education has stepped up its visual game. It's no longer just two column, text-based execution contexts. We're now swimming in interactive visual environments and gamified educational platforms.
+Since Bret wrote his piece in 2012, the world of programming education has stepped up its visual game. It's no longer just two column, text-based execution contexts. We're now swimming in interactive visual environments and gamified educational platforms.
 
-I began researching the field to see how many of them were putting Victor's principles into practice. The examples I looked at ranged from full-on illustrated games to lightly animated sequences of text. As I explored, I started to notice design patterns beyond the principles Victor outlined.
+I began researching the field to see how many of them were putting Bret's principles into practice. The examples I looked at ranged from full-on illustrated games to lightly animated sequences of text. As I explored, I started to notice design patterns beyond the principles Bret outlined.
 
-While Victor defined a set of ideals for a hypothetical learning platform, I became more interested in finding patterns in what already exists. While we're a long way from achieving the '_ideal_' system, there's plenty of good design happening here and now.
+While Bret defined a set of ideals for a hypothetical learning platform, I became more interested in finding patterns in what already exists. While we're a long way from achieving the '_ideal_' system, there's plenty of good design happening here and now.
 
 ---
 
@@ -123,7 +127,7 @@ Instead of one-dimentional abstract symbols and signs, use our embodied understa
 
 Create a direct, instant association between syntax commands and their effects
 
-This is very similar to Victor's 'Read the Vocabulary'
+This is very similar to Bret's 'Read the Vocabulary'
 
 In traditional programming interfaces there's a significant lag between writing syntax, waiting for code to compile, and seeing the change in a browser or printed logs. It's often unclear what _exactly_ changed, and what part of the code changed it.
 
