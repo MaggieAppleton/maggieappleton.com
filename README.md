@@ -33,3 +33,4 @@ If you're looking for resources to build your own, have a look at my [digital ga
 - Search functionality
 - Wiki-style nested note folders
 - Webmentions
+- Browse by tags
