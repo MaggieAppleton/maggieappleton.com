@@ -187,6 +187,7 @@ export const FullWidthBackground = props => {
         position: relative;
         right: 50%;
         width: 100vw;
+        z-index: -1;
         grid-column: 1 / 4 !important;
         padding: ${props.padding ? props.padding : '2rem'};
         background: ${props.bgcolour};

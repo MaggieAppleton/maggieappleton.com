@@ -1,8 +1,8 @@
 ---
-title: 'Visual, Learnable Programming Patterns'
+title: 'Making Programming Visible, Graphical, and Learnable'
 slug: learnable-programming
 startDate: 2021-01-12
-updated: 2021-06-25
+updated: 2021-07-16
 published: true
 type: ['note']
 topics: ['Web Development', 'JavaScript', 'Collaborative Learning']
@@ -32,17 +32,30 @@ These environments tend to look something like this:
 
 They're your standard column-based "live coding" interfaces popular across the industry. You write code into one section, and hopefully get the output you expected in another. Syntax is abstracted away from the elements it affects.
 
----
+<Halfspacer />
 
-### Industry-Standard Environments
+
+### Programming into the Void
 
 It's easy to see why these linear, text-based interfaces _seem_ like the best approach. They look identical to the standard interfaces the whole development industry uses to programme.
 
-All development takes place in an isolated text window. If you type the correct sequence of words and symbols into that editor, the correct series of events happens somewhere out of view. Functions run in an unseen JavaScript engine, interface elements appear in the browser, and somewhere a value changes in a distant database. You only get the end result. To see anything happening in the middle, you have to `console.log` out data at each step of the way. The industry has accepted flying blind as standard operating procedure.
+We write code into an isolated text editor. If you type the correct sequence of words and symbols into the editor, the correct series of events happens somewhere out of view.
 
-<ImageFrame width="1000px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/learnprog_2_ieudi6.png" alt="The interface of VS Code – one of the most popular apps for professional programming. If you're writing front-end code, you check the results in a separate browser window." showalt />
+We start this process in a context that looks something like this...
 
-So we're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach. But Bret isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
+<MysteriousVoid />
+
+...and get the output in a separate browser window. God only know what happened in the middle.
+
+Functions ran in an some unseen JavaScript engine, interface elements drew themselves onto the canvas, and somewhere a value changed in a distant database.
+
+We're only shown the end result. To see anything happening in the middle, we have to `console.log` out data at each step of the way. Or dig into dense developer panels and debuggers. The industry has accepted flying blind as standard operating procedure.
+
+<Halfspacer />
+
+### Raising the Programming Bar
+
+We're training people in the same kind of environment they'll be working in professionally. In the just-get-a-job-mindset that's an excellent approach. But Bret isn't talking about the ideal way to learn programming in the short-term, bootcampy world view. When he talks about these environments as inadequate, he's referencing a much larger paradigm shift around how we should design human-computer interfaces. 
 
 He's pointing out that the standard text-based, disembodied, non-graphical interfaces we all put up with are unintuitive to humans who live in a highly visual, spatial, embodied world. While most of our modern user interfaces have graduated to a graphical, 3D space-based system, programming is staunchly attached to the linear text paradigm. 
 
@@ -97,73 +110,3 @@ I began researching the field to see how many of them were putting Bret's princi
 
 While Bret defined a set of ideals for a hypothetical learning platform, I became more interested in finding patterns in what already exists. While we're a long way from achieving the '_ideal_' system, there's plenty of good design happening here and now.
 
----
-
-## Current Patterns in Programming Environments
-
-
-#### 1. Location and Destination
-The learner should always know where they are on the learning path, and what their destination is.
-
-This one isn't specific to visual programming – it's a well-established principle of UX design that people need to know where they are, where they've been, and where they're headed.
-
-Making this clear with a visual progress bar is common on learning platforms when we're trying to coax people through the long, hard journey of learning a new programming language or framework. It helps keep them motivated and feel a sense of regular progress. 
-
-<Draft />
-
----
-
-#### 2. Embodied Space over Symbols
-
-Instead of one-dimentional abstract symbols and signs, use our embodied understanding of up, down, left, right, front, and back to map concepts to two-dimentional space.
-
-
-#### 3. Immersive Focus
-
-#### 4. Invitation to Explore
-
-#### 5. Direction Connections
-
-Create a direct, instant association between syntax commands and their effects
-
-This is very similar to Bret's 'Read the Vocabulary'
-
-In traditional programming interfaces there's a significant lag between writing syntax, waiting for code to compile, and seeing the change in a browser or printed logs. It's often unclear what _exactly_ changed, and what part of the code changed it.
-
-#### 6. Keep It In Context
-
-#### 7. Cry for Help
-
-#### 8. Revisit the Past
-
-#### 9. Put it in Your Pocket
-
-#### 10. Flow Over Time
-
-#### 11. Compare and Contrast
-
-#### 12. Brownie Points
-
----
-
-#### Flexbox Froggy and Grid Garden
-[Flexbox Froggy](https://flexboxfroggy.com/) and [Grid Garden](https://cssgridgarden.com/) are built by [Codepip](https://codepip.com/) and both teach CSS layout techniques through live reactive demos. Every character you type into the code editor has an immediate reaction in the illustrated demo.  
-This shortens the lag between action and reaction we usually have to deal with when waiting for code to compile, and makes it easier to figure out what each command does.
-
-<FullWidthImage width="800px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174728/maggieappleton.com/notes/learnable-programming/Grid_Garden_-_A_game_for_learning_CSS_grid_a6ba49.png" />
-
-<FullWidthImage width="800px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174725/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_22.58.17_jx3h6w.png" />
-
-The same company made [CSS Diner](https://flukeout.github.io/) which takes a similar approach to teach CSS selectors. Every command you type instantly highlights what's being selected on the illustration.
-
-<FullWidthImage width="800px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174727/maggieappleton.com/notes/learnable-programming/Screenshot_-_2020-06-29_13.47.26_iyq9a2.png" />
-
-#### Vim Adventures
-
-[Vim Adventures](https://vim-adventures.com/) uses the style of a platform game to help learners get comfortable with the essential commands of Vim. Making the metaphor of physical space more obvious by adding pathways and directions helps you think about Vim's interface as a spatial area instead of a regular linear text editor.
-
-<FullWidthImage width="800px" src="https://res.cloudinary.com/dxj9qr5gj/image/upload/v1614174728/maggieappleton.com/notes/learnable-programming/Screenshot_-_2021-02-15_23.19.44_cez50t.png" />
-
-#### Method of Action
-
-While not strictly programming-related, the Bezier Game, the Boolean Game, and the Kerning Game...

@@ -62,6 +62,7 @@ import { GsapScroller, TweenRedBigBox, TweenSpinningBox, TweenReverseSpinningBox
 import { StaticCSSPosition, RelativeCSSPosition, AbsoluteCSSPosition, FixedCSSPosition } from './SingleUse/CSSPositions'
 import {StreamAnimation } from './SingleUse/StreamAnimation'
 import { HackyFormatting } from './SingleUse/HackyFormatting'
+import { MysteriousVoid } from './SingleUse/MysteriousVoid'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,5 +136,6 @@ export default {
   AbsoluteCSSPosition: AbsoluteCSSPosition,
   FixedCSSPosition: FixedCSSPosition,
   StreamAnimation: StreamAnimation,
-  HackyFormatting: HackyFormatting
+  HackyFormatting: HackyFormatting,
+  MysteriousVoid: MysteriousVoid,
 }
