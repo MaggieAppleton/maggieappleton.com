@@ -51,7 +51,7 @@
     "polished": "^3.4.1",
     "prism-react-renderer": "^0.1.7",
     "prism-themes": "^1.1.0",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-gsap": "^2.2.1",
