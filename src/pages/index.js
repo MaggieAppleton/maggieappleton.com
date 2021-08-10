@@ -75,7 +75,7 @@ const Hero = () => {
             }
           `}
         >
-          Designer, illustrator, anthropologist, & mediocre developer at{' '}
+          UX designer, anthropologist, illustrator & mediocre developer at{' '}
           <a
             href="https://egghead.io"
             target="_blank"
