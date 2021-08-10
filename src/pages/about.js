@@ -142,7 +142,7 @@ const theme = useTheme()
         <div className="headerText">
             <h1>Maggie Appleton</h1>
             <h2>
-             Designer, anthropologist, and
+             UX designer, anthropologist, illustrator, and
               mediocre developer
             </h2>
             <p>
@@ -151,7 +151,7 @@ const theme = useTheme()
               challenge.
             </p>
             <p>
-              My work at{' '}
+              At{' '}
               <a
                 href="https://egghead.io/"
                 target="_blank"
@@ -159,7 +159,7 @@ const theme = useTheme()
               >
                 egghead
               </a>
-              {' '}involves designing visual metaphors for invisible, complicated
+              {' '} I work on improving our user experience and designing visual metaphors for invisible, complicated
               software concepts.
             </p>
             <p>
