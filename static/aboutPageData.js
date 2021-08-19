@@ -1,8 +1,20 @@
 export const podcastData = [
     {
+        podcastName: 'Frontend Heroes',
+        episodeName: 'Fortress of Solitude',
+        date: 'August 10, 2021',
+        url: 'https://frontendheroes.transistor.fm/episodes/fortress-of-solitude-w-maggie-appleton'
+    },
+    {
+        podcastName: 'Metamuse',
+        episodeName: 'Visual Programming',
+        date: 'August 5, 2021',
+        url: 'https://museapp.com/podcast/37-visual-programming/'
+    },
+    {
         podcastName: 'The Swyx Mixtape',
         episodeName: 'Growing Digital Gardens and Tending the Web',
-        date: 'Feb 13 2021',
+        date: 'February 13 2021',
         url: 'https://podcasts.apple.com/us/podcast/weekend-drop-digital-gardening-w-maggie-appleton/id1549059398?i=1000508923478'
     },
     {
@@ -38,6 +50,12 @@ export const podcastData = [
 ]
 
 export const talksData = [
+    {
+        talkTitle: 'Tools for Thought as Cultural Systems, Not Computational Objects',
+        date: 'July 2021',
+        conference: 'Augmented Minds Unconference',
+        url: 'https://opencollective.com/psionica/events/augment-minds-7d13842a'
+    },
     {
         talkTitle: 'Drawing the Invisible: React Explained in Five Visual Metaphors',
         date: 'September 2020',
