@@ -4,7 +4,7 @@
 
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-Digital gardens should be weird, personal, peculiar creations. The way I've decided to design mine won't fit for your needs, wants, and aesthetic preferences.
+Digital gardens should be weird, personal, peculiar creations. The way I've decided to design mine may not fit for your needs, wants, and aesthetic preferences.
 
 If you're looking for resources to build your own, have a look at my [digital gardening repo](https://github.com/MaggieAppleton/digital-gardeners). There are some fantastic templates in there that will help you much more than forking my mess will :)
 
