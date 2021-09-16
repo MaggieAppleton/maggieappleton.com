@@ -105,7 +105,7 @@ export default function Note({ site, note, referenceBlock }) {
                                     padding-right: 12px;
                                     color: ${darken(
                                         0.1,
-                                        theme.colors.lightGreen,
+                                        theme.colors.lightGreen500,
                                     )};
                                 }
                                 span {
