@@ -92,7 +92,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     }
                     .filterSection {
                         display: grid;
-                        grid-template-columns: 70% 27%;
+                        grid-template-columns: 70% 30%;
                         font-size: 0.85em;
                         font-family: ${fonts.regularSans};
                         ${bpMaxSM} {
@@ -105,6 +105,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                         flex-wrap: wrap;
                         justify-content: flex-end;
                         align-content: flex-start;
+                        margin-top: 0.3rem;
                         ${bpMaxSM} {
                             justify-content: center;
                             margin-top: 1em;
@@ -113,6 +114,7 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
                     .topicFilter {
                         display: flex;
                         flex-direction: row;
+                        margin-top: 0.3rem;
                         flex-wrap: wrap;
                         justify-content: flex-start;
                         ${bpMaxSM} {
@@ -142,124 +144,128 @@ const GardenPage = ({ data: { site, notesQuery } }) => {
 
                 <div className="filterSection">
                     {/* <svg width="200px" height="30px" css={css`margin: 0 auto;`}><rect fill={theme.colors.lightOrange} width="200px" height="1px" /></svg> */}
-                    <div className="topicFilter">
-                        {filters.topicFilters.map(filter => {
-                            return (
-                                <div
-                                    onClick={() => handleFilterClick(filter)}
-                                    css={css({
-                                        fontSize: '95%',
-                                        padding: '0.2em 0.7em',
-                                        margin: '2px',
-                                        borderRadius: '20px',
-                                        color: includes(activeFilters, filter)
-                                            ? 'black'
-                                            : lighten(
-                                                  0.1,
-                                                  theme.colors.darkGrey,
-                                              ),
-                                        transition: 'all 400ms ease-in-out',
-                                        ':hover': {
+                    <div>
+                        <div className="topicFilter">
+                            {filters.topicFilters.map(filter => {
+                                return (
+                                    <div
+                                        onClick={() =>
+                                            handleFilterClick(filter)
+                                        }
+                                        css={css({
+                                            fontSize: '85%',
+                                            padding: '0.2em 0.7em',
+                                            margin: '2px',
+                                            borderRadius: '20px',
                                             color: includes(
                                                 activeFilters,
                                                 filter,
                                             )
                                                 ? 'black'
-                                                : darken(
-                                                      0.2,
-                                                      theme.colors
-                                                          .lightGreen500,
+                                                : lighten(
+                                                      0.1,
+                                                      theme.colors.darkGrey,
                                                   ),
-                                            cursor: 'pointer',
-                                            background: lighten(
-                                                0.3,
-                                                theme.colors.lightGreen500,
-                                            ),
-                                        },
+                                            transition: 'all 400ms ease-in-out',
+                                            ':hover': {
+                                                color: includes(
+                                                    activeFilters,
+                                                    filter,
+                                                )
+                                                    ? 'black'
+                                                    : darken(
+                                                          0.2,
+                                                          theme.colors
+                                                              .lightGreen500,
+                                                      ),
+                                                cursor: 'pointer',
+                                                background: lighten(
+                                                    0.3,
+                                                    theme.colors.lightGreen500,
+                                                ),
+                                            },
 
-                                        background: includes(
-                                            activeFilters,
-                                            filter,
-                                        )
-                                            ? lighten(
-                                                  0.3,
-                                                  theme.colors.lightGreen500,
-                                              )
-                                            : theme.colors.lightestGrey,
-                                    })}
-                                >
-                                    {filter}
-                                </div>
-                            )
-                        })}
-                    </div>
-                    <div className="growthFilter">
-                        {filters.growthFilters.map(filter => {
-                            return (
-                                <div
-                                    onClick={() =>
-                                        handleFilterClick(filter, {
-                                            clearFilters: filters.growthFilters.filter(
-                                                f => f !== filter,
-                                            ),
-                                        })
-                                    }
-                                    css={css({
-                                        padding: '0.2em 0.8em',
-                                        fontSize: '80%',
-                                        fontWeight: '800',
-                                        textTransform: 'uppercase',
-                                        letterSpacing: '0.05em',
-                                        margin: '2px',
-                                        borderRadius: '20px',
-                                        color: includes(activeFilters, filter)
-                                            ? theme.colors.white
-                                            : darken(
-                                                  0.15,
-                                                  theme.colors.lightGreen500,
-                                              ),
-                                        transition: 'all 300ms ease-in-out',
-                                        ':hover': {
-                                            transition: 'all 300ms ease-in-out',
                                             background: includes(
                                                 activeFilters,
                                                 filter,
                                             )
-                                                ? darken(
-                                                      0.1,
+                                                ? lighten(
+                                                      0.3,
                                                       theme.colors
-                                                          .lightGreen300,
+                                                          .lightGreen500,
                                                   )
-                                                : darken(
-                                                      0.2,
-                                                      theme.colors
-                                                          .lightGreen100,
-                                                  ),
+                                                : theme.colors.lightestGrey,
+                                        })}
+                                    >
+                                        {filter}
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className="growthFilter">
+                            {filters.growthFilters.map(filter => {
+                                return (
+                                    <div
+                                        onClick={() =>
+                                            handleFilterClick(filter, {
+                                                clearFilters: filters.growthFilters.filter(
+                                                    f => f !== filter,
+                                                ),
+                                            })
+                                        }
+                                        css={css({
+                                            fontSize: '85%',
+                                            padding: '0.2em 0.7em',
+                                            margin: '2px',
+                                            borderRadius: '20px',
                                             color: includes(
                                                 activeFilters,
                                                 filter,
                                             )
-                                                ? theme.colors.white
-                                                : darken(
+                                                ? 'black'
+                                                : lighten(
                                                       0.1,
+                                                      theme.colors.darkGrey,
+                                                  ),
+                                            transition: 'all 400ms ease-in-out',
+                                            ':hover': {
+                                                color: includes(
+                                                    activeFilters,
+                                                    filter,
+                                                )
+                                                    ? 'black'
+                                                    : darken(
+                                                          0.2,
+                                                          theme.colors
+                                                              .lightGreen500,
+                                                      ),
+                                                cursor: 'pointer',
+                                                background: lighten(
+                                                    0.3,
+                                                    theme.colors.lightGreen500,
+                                                ),
+                                            },
+
+                                            background: includes(
+                                                activeFilters,
+                                                filter,
+                                            )
+                                                ? lighten(
+                                                      0.3,
                                                       theme.colors
                                                           .lightGreen500,
-                                                  ),
-                                            cursor: 'pointer',
-                                        },
-
-                                        background: includes(
-                                            activeFilters,
-                                            filter,
-                                        )
-                                            ? theme.colors.lightGreen500
-                                            : theme.colors.lightGreen100,
-                                    })}
-                                >
-                                    {filter}
-                                </div>
-                            )
-                        })}
+                                                  )
+                                                : theme.colors.lightestGrey,
+                                        })}
+                                    >
+                                        {filter}
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
 
